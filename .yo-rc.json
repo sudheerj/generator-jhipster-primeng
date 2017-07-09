@@ -1,0 +1,10 @@
+{
+  "generator-jhipster-module": {
+    "promptValues": {
+      "githubName": "sudheerjonna",
+      "authorName": "Sudheer Jonna",
+      "authorEmail": "",
+      "authorUrl": "https://twitter.com/sudheerjonna"
+    }
+  }
+}
