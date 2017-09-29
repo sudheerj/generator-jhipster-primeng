@@ -7,7 +7,7 @@ import { ChartModule } from 'primeng/primeng';
 import {
     BarchartDemoComponent,
     barchartDemoRoute
-} from '../../charts/barchart';
+} from './barchart';
 
 const DASHBOARD_STATES = [
     barchartDemoRoute

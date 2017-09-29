@@ -8,15 +8,54 @@ const BaseGenerator = require('generator-jhipster/generators/generator-base');
 const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
-/* Constants use throughout */
+const ANGULAR_VERSION = '4.2.6';
+const PRIMENG_VERSION = '4.2.1';
+const PRIMENG_EXT_WIZARD_VERSION = '2.1.0';
+const CHARTJS_VERSION = '2.6.0';
 
 module.exports = JhipsterGenerator.extend({
+
+    constructor: function (...args) { // eslint-disable-line object-shorthand
+        generator.apply(this, args);
+
+        this.option('default', {
+            type: String,
+            required: false,
+            description: 'default option'
+        });
+
+        this.defaultOption = this.options.default;
+    },
 
     initializing: {
         readConfig() {
             this.jhipsterAppConfig = this.getJhipsterAppConfig();
             if (!this.jhipsterAppConfig) {
                 this.error('Can\'t read .yo-rc.json');
+            }
+        },
+        readPackageJson() {
+            const fromPath = 'package.json';
+            this.libAngularVersion = ANGULAR_VERSION;
+            if (shelljs.test('-f', fromPath)) {
+                const fileData = this.fs.readJSON(fromPath);
+                if (fileData && fileData.dependencies) {
+                    if (fileData.dependencies['@angular/common']) {
+                        this.libAngularVersion = fileData.dependencies['@angular/common'];
+                    }
+                    if (fileData.dependencies['@angular/animations']) {
+                        this.libAngularAnimationsVersion = fileData.dependencies['@angular/animations'];
+                    }
+                    if (fileData.dependencies.primeng) {
+                        this.libPrimeNgVersion = fileData.dependencies.primeng;
+                    }
+                    if (fileData.dependencies['primeng-extensions-wizard']) {
+                        this.libPrimeNgExtensionsWizardVersion = fileData.dependencies['primeng-extensions-wizard'];
+                    }
+                    if (fileData.dependencies['chart.js']) {
+                        this.libChartJsVersion = fileData.dependencies['chart.js'];
+                    }
+                }
             }
         },
         displayLogo() {
@@ -31,8 +70,8 @@ module.exports = JhipsterGenerator.extend({
             this.log(`\nWelcome to the ${chalk.bold.yellow('JHipster primeng')} generator! ${chalk.yellow(`v${packagejs.version}\n`)}`);
         },
         checkclientFramework() {
-            if (this.jhipsterAppConfig.clientFramework !== 'angular2' && this.jhipsterAppConfig.clientFramework !== 'angularX') {
-                this.env.error(`${chalk.red.bold('ERROR!')} This module works only for Angular2...`);
+            if (this.jhipsterAppConfig.clientFramework !== 'angular4') {
+                this.env.error(`${chalk.red.bold('ERROR!')} This module works only for Angular4...`);
             }
         },
         checkJhipster() {
@@ -63,7 +102,7 @@ module.exports = JhipsterGenerator.extend({
     },
 
     writing() {
-        if (!this.props.confirmation) {
+        if (this.defaultOption === undefined && !this.props.confirmation) {
             return;
         }
 
@@ -96,20 +135,48 @@ module.exports = JhipsterGenerator.extend({
         this.protractorTests = this.jhipsterAppConfig.testFrameworks.indexOf('protractor') !== -1;
         this.angular2AppName = this.getAngular2AppName();
 
+        const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
+        const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
+
         // add dependencies
         try {
-            this.addNpmDependency('@angular/animations', '4.2.4');
-            this.addNpmDependency('primeng', '4.2.1');
-            this.addNpmDependency('primeng-extensions-wizard', '2.1.0');
-            this.addNpmDependency('chart.js', '2.6.0');
-            this.addNpmDependency('font-awesome', '4.7.0');
+            if (this.libAngularAnimationsVersion) {
+                // the version already exists, so try to upgrade instead
+                this.replaceContent('package.json',
+                    `"@angular/animations": "${this.libAngularAnimationsVersion}"`,
+                    `"@angular/animations": "${this.libAngularVersion}"`);
+            } else {
+                this.addNpmDependency('@angular/animations', `${this.libAngularVersion}`);
+            }
+
+            if (this.libPrimeNgVersion) {
+                // the version already exists, so try to upgrade instead
+                this.replaceContent('package.json', `"primeng": "${this.libPrimeNgVersion}"`, `"primeng": "${PRIMENG_VERSION}"`);
+            } else {
+                this.addNpmDependency('primeng', `${PRIMENG_VERSION}`);
+            }
+
+            if (this.libPrimeNgExtensionsWizardVersion) {
+                // the version already exists, so try to upgrade instead
+                this.replaceContent('package.json', `"primeng-extensions-wizard": "${this.libPrimeNgExtensionsWizardVersion}"`, `"primeng-extensions-wizard": "${PRIMENG_EXT_WIZARD_VERSION}"`);
+            } else {
+                this.addNpmDependency('primeng-extensions-wizard', `${PRIMENG_EXT_WIZARD_VERSION}`);
+            }
+
+            if (this.libChartJsVersion) {
+                // the version already exists, so try to upgrade instead
+                this.replaceContent('package.json', `"chart.js": "${this.libChartJsVersion}"`, `"chart.js": "${CHARTJS_VERSION}"`);
+            } else {
+                this.addNpmDependency('chart.js', `${CHARTJS_VERSION}`);
+            }
         } catch (e) {
             this.log(`${chalk.red.bold('ERROR!')}`);
             this.log('  Problem when adding the new librairies in your package.json');
             this.log('  You need to add manually:\n');
-            this.log('  "@angular/animations": "4.1.3",');
-            this.log('  "primeng": "4.2.1"');
-            this.log('  "chart.js": "2.5.0",');
+            this.log(`  "@angular/animations": "${this.libAngularVersion}",`);
+            this.log(`  "primeng": "${PRIMENG_VERSION}"`);
+            this.log(`  "primeng-extensions-wizard": "${PRIMENG_EXT_WIZARD_VERSION}"`);
+            this.log(`  "chart.js": "${CHARTJS_VERSION}",`);
             this.log('');
             this.anyError = true;
         }
