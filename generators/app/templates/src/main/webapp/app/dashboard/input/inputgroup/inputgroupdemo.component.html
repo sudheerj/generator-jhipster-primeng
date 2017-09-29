@@ -1,0 +1,108 @@
+<form novalidate>
+    Text, icon, buttons and other content can be grouped next to an input by wrapping the addons and input inside .ui-inputgroup element. Multiple addons can be used within the same group as well.
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Addons -->
+        <pe-step label="Addons">
+            <h3>Addons</h3>
+            <label for="basic">Addons</label>
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" pInputText placeholder="Username">
+                    </div>
+                </div>
+
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon">$</span>
+                        <input type="text" pInputText placeholder="Price">
+                        <span class="ui-inputgroup-addon">.00</span>
+                    </div>
+                </div>
+
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon">www</span>
+                        <input type="text" pInputText placeholder="Website">
+                    </div>
+                </div>
+            </div>
+        </pe-step>
+
+        <!-- Multiple Addons-->
+        <pe-step label="Multiple Addons">
+            <h3>Multiple Addons</h3>
+            <div class="ui-g">
+                <div class="ui-g-12">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-credit-card"></i></span>
+                        <span class="ui-inputgroup-addon"><i class="fa fa-cc-visa"></i></span>
+                        <input type="text" pInputText placeholder="Price">
+                        <span class="ui-inputgroup-addon">$</span>
+                        <span class="ui-inputgroup-addon">.00</span>
+                    </div>
+                </div>
+            </div>
+        </pe-step>
+
+        <!-- Button Addons -->
+        <pe-step label="Button Addons">
+            <h3>Button Addons</h3>
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <button pButton type="button" label="Search"></button>
+                        <input type="text" pInputText placeholder="Keyword">
+                    </div>
+                </div>
+
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <input type="text" pInputText placeholder="Keyword">
+                        <button pButton type="button" icon="fa-search" class="ui-button-secondary"></button>
+                    </div>
+                </div>
+
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <button pButton type="button" icon="fa-check" class="ui-button-success"></button>
+                        <input type="text" pInputText placeholder="Vote">
+                        <button pButton type="button" icon="fa-close" class="ui-button-danger"></button>
+                    </div>
+                </div>
+            </div>
+        </pe-step>
+
+        <!-- Checkbox and RadioButton -->
+        <pe-step label="Checkbox and RadioButton">
+            <h3>Checkbox and RadioButton</h3>
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><p-checkbox></p-checkbox></span>
+                        <input type="text" pInputText placeholder="Username">
+                    </div>
+                </div>
+
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <input type="text" pInputText placeholder="Price">
+                        <span class="ui-inputgroup-addon"><p-radioButton></p-radioButton></span>
+                    </div>
+                </div>
+
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><p-checkbox></p-checkbox></span>
+                        <input type="text" pInputText placeholder="Website">
+                        <span class="ui-inputgroup-addon"><p-radioButton></p-radioButton></span>
+                    </div>
+                </div>
+            </div>
+        </pe-step>
+
+    </pe-steps>
+
+    <p-growl [value]="msgs"></p-growl>
+</form>

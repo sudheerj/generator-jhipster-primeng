@@ -2,26 +2,28 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
-import {SplitButtonModule} from 'primeng/primeng';
+import {InputTextModule} from 'primeng/primeng';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {
-    SplitbuttonDemoComponent,
-    splitbuttonDemoRoute
+    InputGroupDemoComponent,
+    inputGroupDemoRoute
 } from './';
 
 const DASHBOARD_STATES = [
-    splitbuttonDemoRoute
+    inputGroupDemoRoute
 ];
 
 @NgModule({
     imports: [
         <%= angular2AppName %>SharedModule,
-        SplitButtonModule,
+        InputTextModule,
+        WizardModule,
         RouterModule.forRoot(DASHBOARD_STATES, { useHash: true })
     ],
     declarations: [
-        SplitbuttonDemoComponent
+        InputGroupDemoComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>SplitbuttonDemoModule {}
+export class <%= angular2AppName %>InputGroupDemoModule {}

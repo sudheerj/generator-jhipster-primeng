@@ -4,7 +4,7 @@ import {MenuItem,Message} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-splitbutton',
-    templateUrl: '../../buttons/splitbutton/splitbuttondemo.component.html',
+    templateUrl: './splitbuttondemo.component.html',
     styles: []
 })
 export class SplitbuttonDemoComponent implements OnInit {

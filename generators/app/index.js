@@ -99,7 +99,8 @@ module.exports = JhipsterGenerator.extend({
         // add dependencies
         try {
             this.addNpmDependency('@angular/animations', '4.2.4');
-            this.addNpmDependency('primeng', '4.0.3');
+            this.addNpmDependency('primeng', '4.2.1');
+            this.addNpmDependency('primeng-extensions-wizard', '2.1.0');
             this.addNpmDependency('chart.js', '2.6.0');
             this.addNpmDependency('font-awesome', '4.7.0');
         } catch (e) {
@@ -107,7 +108,7 @@ module.exports = JhipsterGenerator.extend({
             this.log('  Problem when adding the new librairies in your package.json');
             this.log('  You need to add manually:\n');
             this.log('  "@angular/animations": "4.1.3",');
-            this.log('  "primeng": "4.0.3"');
+            this.log('  "primeng": "4.2.1"');
             this.log('  "chart.js": "2.5.0",');
             this.log('');
             this.anyError = true;
@@ -144,6 +145,21 @@ module.exports = JhipsterGenerator.extend({
                         <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.dashboard.button">Button</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="splitbutton" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.dashboard.splitbutton">SplitButton</span>
+                        </a>
+                    </li>
+                   <hr/>
+                   <span tyle="font-weight:bold">Input Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.dashboard.inputgroup">InputGroup</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">

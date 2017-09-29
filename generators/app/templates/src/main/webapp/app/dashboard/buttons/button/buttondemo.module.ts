@@ -7,7 +7,7 @@ import {ButtonModule} from 'primeng/primeng';
 import {
     ButtonDemoComponent,
     buttonDemoRoute
-} from '../../buttons/button';
+} from './';
 
 const DASHBOARD_STATES = [
     buttonDemoRoute

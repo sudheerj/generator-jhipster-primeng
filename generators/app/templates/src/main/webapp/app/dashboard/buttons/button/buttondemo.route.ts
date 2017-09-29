@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 import { UserRouteAccessService } from '../../../shared';
-import { ButtonDemoComponent } from '../../buttons/button/buttondemo.component';
+import { ButtonDemoComponent } from './buttondemo.component';
 
 export const buttonDemoRoute: Route = {
     path: 'button',

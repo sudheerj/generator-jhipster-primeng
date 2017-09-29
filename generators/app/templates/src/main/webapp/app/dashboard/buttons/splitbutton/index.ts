@@ -1,2 +1,2 @@
-export * from '../../buttons/splitbutton/splitbuttondemo.component';
-export * from '../../buttons/splitbutton/splitbuttondemo.route';
+export * from './splitbuttondemo.component';
+export * from './splitbuttondemo.route';

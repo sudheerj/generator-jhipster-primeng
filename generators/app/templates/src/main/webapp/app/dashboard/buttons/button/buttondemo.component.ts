@@ -3,7 +3,7 @@ import { JhiLanguageService } from 'ng-jhipster';
 
 @Component({
     selector: 'jhi-button',
-    templateUrl: '../../buttons/button/buttondemo.component.html',
+    templateUrl: './buttondemo.component.html',
     styles: []
 })
 export class ButtonDemoComponent implements OnInit {

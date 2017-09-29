@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 import { UserRouteAccessService } from '../../../shared';
-import { SplitbuttonDemoComponent } from '../../buttons/splitbutton/splitbuttondemo.component';
+import { SplitbuttonDemoComponent } from './splitbuttondemo.component';
 
 export const splitbuttonDemoRoute: Route = {
     path: 'splitbutton',
