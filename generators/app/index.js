@@ -170,11 +170,11 @@ module.exports = JhipsterGenerator.extend({
                 default: true
             },
             {
-            type: 'list',
-            name: 'theme',
-            message: response => this.getNumberedQuestion('Which theme would you like to use?', true),
-            choices: THEME_OPTIONS,
-            default: 'omega'
+                type: 'list',
+                name: 'theme',
+                message: response => this.getNumberedQuestion('Which theme would you like to use?', true),
+                choices: THEME_OPTIONS,
+                default: 'omega'
             },
         ];
 
@@ -204,7 +204,7 @@ module.exports = JhipsterGenerator.extend({
         const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
         const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
 
-       //this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
+        //this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
 
         let primengResources = `@import "~primeng/resources/primeng.min.css";
                                 @import "~primeng/resources/themes/${themeName}/theme.css";`;
@@ -212,9 +212,9 @@ module.exports = JhipsterGenerator.extend({
         // add a line to a lyric file, using appendFile
         fs.appendFile(CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss',
             primengResources, (err) => {
-            if (err) throw err;
-            console.log('The PrimeNG resources were updated!');
-        });
+                if (err) throw err;
+                console.log('The PrimeNG resources were updated!');
+            });
         // init all variables
         this.anyError = false;
 
@@ -225,7 +225,6 @@ module.exports = JhipsterGenerator.extend({
         this.clientPackageManager = this.jhipsterAppConfig.clientPackageManager;
         this.protractorTests = this.jhipsterAppConfig.testFrameworks.indexOf('protractor') !== -1;
         this.angular2AppName = this.getAngular2AppName();
-
 
 
         // add dependencies
@@ -316,6 +315,114 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.inputgroup">InputGroup</span>
                         </a>
                     </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="calendar" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.calendar">Calendar</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="chips" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.chips">Chips</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="inputswitch" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.inputswitch">InputSwitch</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="mask" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.mask">Mask</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="password" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.password">Password</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="rating" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.rating">Rating</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="spinner" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.spinner">Spinner</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="togglebutton" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.togglebutton">ToggleButton</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="autocomplete" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.autocomplete">AutoComplete</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="checkbox" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.checkbox">Checkbox</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="colorpicker" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.colorpicker">ColorPicker</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="editor" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.editor">Editor</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="listbox" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.listbox">Listbox</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="multiselect" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.multiselect">MultiSelect</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="radiobutton" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.radiobutton">RadioButton</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="slider" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.slider">Slider</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="selectbutton" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.selectbutton">SelectButton</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="tricheckbox" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.tricheckbox">TriCheckbox</span>
+                        </a>
+                    </li>
                    <span tyle="font-weight:bold">Messages Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -350,6 +457,243 @@ module.exports = JhipsterGenerator.extend({
                         <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.multimedia">Multimedia</span>
+                        </a>
+                    </li>
+                   
+                   <span tyle="font-weight:bold">Data Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="datatable" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.datatable">Datatable</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="datagrid" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.datagrid">Datagrid</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="carousel" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.carousel">Carousel</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="orderlist" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.orderlist">OrderList</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="datalist" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.datalist">DataList</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="paginator" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.paginator">Paginator</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="schedule" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.schedule">Schedule</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="treetable" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.treetable">TreeTable</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="datascroller" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.datascroller">DataScroller</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="orgchart" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.orgchart">OrgChart</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="gmap" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.gmap">Gmap</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="picklist" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.picklist">PickList</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="tree" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.tree">Tree</span>
+                        </a>
+                    </li>
+                    <span tyle="font-weight:bold">Dragdrop Components</span>
+                   <hr/>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="dragdrop" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.dragdrop">DragDrop</span>
+                        </a>
+                    </li>
+                    <span tyle="font-weight:bold">Menu Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="menu" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.menu">Menu</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="contextmenu" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.contextmenu">Contextmenu</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="panelmenu" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.panelmenu">Panelmenu</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="steps" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.steps">Steps</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="tieredmenu" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.tieredmenu">Tieredmenu</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="breadcrumb" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.breadcrumb">Breadcrumb</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="megamenu" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.megamenu">Megamenu</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="menubar" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.menubar">Menubar</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="slidemenu" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.slidemenu">Slidemenu</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="tabmenu" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.tabmenu">Tabmenu</span>
+                        </a>
+                    </li>
+                   <span tyle="font-weight:bold">Messages Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="messages" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.messages">Messages</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="growl" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.growl">Growl</span>
+                        </a>
+                    </li>
+                    <span tyle="font-weight:bold">Overlay Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="dialog" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.dialog">Dialog</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="confirmdialog" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.confirmdialog">ConfirmDialog</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="lightbox" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.lightbox">Lightbox</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="overlaypanel" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.overlaypanel">OverlayPanel</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="tooltip" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.tooltip">Tooltip</span>
+                        </a>
+                    </li>
+                    <span tyle="font-weight:bold">Panel Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="accordion" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.accordion">Accordion</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="panel" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.panel">Panel</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="tabview" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.tabview">TabView</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="fieldset" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.fieldset">Fieldset</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="grid" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.grid">grid</span>
+                        </a>
+                    </li>
+                    <span tyle="font-weight:bold">Multimedia Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="toolbar" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.toolbar">ToolBar</span>
                         </a>
                     </li>
                    
@@ -405,6 +749,62 @@ module.exports = JhipsterGenerator.extend({
                         <a class="dropdown-item" routerLink="radarchart" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.radarchart">RadarChart</span>
+                        </a>
+                    </li>
+                    <span style="font-weight:bold">Miscellaneous Components</span>
+                   <hr/>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="responsive" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.responsive">Responsive</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="captcha" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-circle-o-notch" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.captcha">Captcha</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="defer" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-line-chart" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.defer">Defer</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="codehighlighter" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-pie-chart" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.codehighlighter">CodehigHlighter</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="rtl" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.rtl">RTL</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="blockui" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.blockui">BlockUI</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="terminal" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-pie-chart" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.terminal">Terminal</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="inplace" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.inplace">Inplace</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="progressbar" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
                         </a>
                     </li>
                 </ul>
@@ -582,11 +982,72 @@ module.exports = JhipsterGenerator.extend({
                 "inputgroup":"InputGroup",
                 "inputtext":"InputText",
                 "inputtextarea":"InputTextArea",
+                "calendar": "Calendar",
+                "chips": "Chips",
+                "inputswitch":"InputSwitch",
+                "mask":  "Mask",
+                "password":  "Password",
+                "rating":  "Rating",
+                "spinner": "Spinner",
+                "togglebutton": "ToggleButton",
+                "autocomplete": "AutoComplete",
+                "checkbox":  "Checkbox",
+                "colorpicker":"ColorPicker",
+                "editor":  "Editor",
+                "listbox": "Listbox",
+                "multiselect":  "MultiSelect",
+                "radiobutton": "RadioButton",
+                "slider":  "Slider",
+                "selectbutton": "SelectButton",
+                "tricheckbox":  "TriCheckbox",
                 "galleria":"Galleria",
                 "messages":"Messages",
                 "growl":"Growl",
                 "dialog":"Dialog",
-                "confirmdialog":"ConfirmDialog"
+                "confirmdialog":"ConfirmDialog",
+                "lightbox": "Lightbox",
+                "overlaypanel":"OverlayPanel",
+                "tooltip": "Tooltip",
+                "datatable": "DataTable",
+                "datagrid": "DataGrid",
+                "carousel": "Carousel",
+                "orderlist": "OrderList",
+                "datalist": "DataList",
+                "paginator": "Paginator",
+                "schedule": "Schedule",
+                "treetable": "TreeTable",
+                "datascroller": "DataScroller",
+                "orgchart": "OrgChart",
+                "gmap":  "Gmap",
+                "picklist":  "PickList",
+                "tree":  "Tree",
+                "dragdrop":"DragDrop",
+                "menu":  "Menu",
+                "contextmenu":  "ContextMenu",
+                "panelmenu":"PanelMenu",
+                "steps":  "Steps",
+                "tieredmenu":"TieredMenu",
+                "breadcrumb": "Breadcrumb",
+                "megamenu": "MegaMenu",
+                "menubar":  "Menubar",
+                "slidemenu": "SlideMenu",
+                "tabmenu":  "TabMenu",
+                "fileupload":"FileUpload",
+                "accordion":"Accordion",
+                "panel":  "Panel",
+                "tabview":  "TabView",
+                "fieldset":  "Fieldset",
+                "grid":  "Grid",
+                "toolbar": "Toolbar",
+                "responsive": "Responsive",
+                "captcha": "Captcha",
+                "defer":  "Defer",
+                "codehighlighter": "CodehigHlighter",
+                "rtl":  "RTL",
+                "blockui":  "BlockUI",
+                "terminal": "Terminal",
+                "inplace":  "Inplace",
+                "progressbar": "ProgressBar"
             },`;
             this.languages.forEach((language) => {
                 this.template('src/main/webapp/i18n/en/primeng.json', `src/main/webapp/i18n/${language}/primeng.json`);
@@ -606,16 +1067,99 @@ module.exports = JhipsterGenerator.extend({
             });
         }
 
+        const components ={"inputgroup":"inputs",
+            "inputtext":"inputs",
+            "inputtextarea":"inputs",
+            "calendar":"inputs",
+            "chips":"inputs",
+            "inputswitch":"inputs",
+            "mask":"inputs",
+            "password":"inputs",
+            "rating":"inputs",
+            "spinner":"inputs",
+            "togglebutton":"inputs",
+            "autocomplete":"inputs",
+            "checkbox":"inputs",
+            "colorpicker":"inputs",
+            "editor":"inputs",
+            "listbox":"inputs",
+            "multiselect":"inputs",
+            "radiobutton":"inputs",
+            "slider":"inputs",
+            "selectbutton":"inputs",
+            "tricheckbox":"inputs",
+            "button":"buttons",
+            "splitbutton":"buttons",
+            "datatable":"data",
+            "datagrid":"data",
+            "carousel":"data",
+            "orderlist":"data",
+            "datalist":"data",
+            "paginator":"data",
+            "schedule":"data",
+            "treetable":"data",
+            "datascroller":"data",
+            "orgchart":"data",
+            "gmap":"data",
+            "picklist":"data",
+            "tree":"data",
+            "accordion":"panel",
+            "panel":"panel",
+            "tabview":"panel",
+            "fieldset":"panel",
+            "grid":"panel",
+            "toolbar":"panel",
+            "dialog":"overlay",
+            "confirmdialog":"overlay",
+            "lightbox":"overlay",
+            "overlaypanel":"overlay",
+            "tooltip":"overlay",
+            "fileupload":"file",
+            "menu":"menu",
+            "contextmenu":"menu",
+            "panelmenu":"menu",
+            "steps":"menu",
+            "tieredmenu":"menu",
+            "breadcrumb":"menu",
+            "megamenu":"menu",
+            "menubar":"menu",
+            "slidemenu":"menu",
+            "tabmenu":"menu",
+            "barchart":"charts",
+            "doughnutchart":"charts",
+            "linechart":"charts",
+            "piechart":"charts",
+            "polarareachart":"charts",
+            "radarchart":"charts",
+            "messages":"charts",
+            "growl":"charts",
+            "galleria":"charts",
+            "dragdrop":"dragdrop",
+            "responsive":"misc",
+            "captcha":"misc",
+            "defer":"misc",
+            "codehighlighter":"misc",
+            "rtl":"misc",
+            "blockui":"misc",
+            "terminal":"misc",
+            "inplace":"misc",
+            "progressbar":"misc"
+        ];
+
         // copy all primeng files
         this.template('src/main/webapp/app/primeng/primeng.module.ts', 'src/main/webapp/app/primeng/primeng.module.ts');
 
-        this.template('src/main/webapp/app/primeng/multimedia/galleria/index.ts', 'src/main/webapp/app/primeng/multimedia/galleria/index.ts');
-        this.template('src/main/webapp/app/primeng/multimedia/galleria/galleriademo.component.html', 'src/main/webapp/app/primeng/multimedia/galleria/galleriademo.component.html');
-        this.template('src/main/webapp/app/primeng/multimedia/galleria/galleriademo.component.ts', 'src/main/webapp/app/primeng/multimedia/galleria/galleriademo.component.ts');
-        this.template('src/main/webapp/app/primeng/multimedia/galleria/galleriademo.module.ts', 'src/main/webapp/app/primeng/multimedia/galleria/galleriademo.module.ts');
-        this.template('src/main/webapp/app/primeng/multimedia/galleria/galleriademo.route.ts', 'src/main/webapp/app/primeng/multimedia/galleria/galleriademo.route.ts');
+        for (var component in components) {
+            this.template(`src/main/webapp/app/primeng/${components['component']}/${components}/index.ts`, `src/main/webapp/app/primeng/${components['component']}/${components}/index.ts`);
+            this.template(`src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.component.html`, `src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.component.html`);
+            this.template(`src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.component.ts`, `src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.component.ts`);
+            this.template(`src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.module.ts`, `src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.module.ts`);
+            this.template(`src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.route.ts`, `src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.route.ts`);
+        }
 
-        this.template('src/main/webapp/app/primeng/messages/messages/index.ts', 'src/main/webapp/app/primeng/messages/messagesindex.ts');
+
+
+        /*this.template('src/main/webapp/app/primeng/messages/messages/index.ts', 'src/main/webapp/app/primeng/messages/messagesindex.ts');
         this.template('src/main/webapp/app/primeng/messages/messages/messagesdemo.component.html', 'src/main/webapp/app/primeng/messages/messages/messagesdemo.component.html');
         this.template('src/main/webapp/app/primeng/messages/messages/messagesdemo.component.ts', 'src/main/webapp/app/primeng/messages/messages/messagesdemo.component.ts');
         this.template('src/main/webapp/app/primeng/messages/messages/messagesdemo.module.ts', 'src/main/webapp/app/primeng/messages/messages/messagesdemo.module.ts');
@@ -692,6 +1236,61 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.component.ts', 'src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.component.ts');
         this.template('src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.module.ts', 'src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.module.ts');
         this.template('src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.route.ts', 'src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/inputs/calendar/index.ts', 'src/main/webapp/app/primeng/inputs/calendar/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/calendar/calendardemo.component.html', 'src/main/webapp/app/primeng/inputs/calendar/calendardemo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/calendar/calendardemo.component.ts', 'src/main/webapp/app/primeng/inputs/calendar/calendardemo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/calendar/calendardemo.module.ts', 'src/main/webapp/app/primeng/inputs/calendar/calendardemo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/calendar/calendardemo.route.ts', 'src/main/webapp/app/primeng/inputs/calendar/calendardemo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/inputs/chips/index.ts', 'src/main/webapp/app/primeng/inputs/chips/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/chips/chipsdemo.component.html', 'src/main/webapp/app/primeng/inputs/chips/chipsdemo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/chips/chipsdemo.component.ts', 'src/main/webapp/app/primeng/inputs/chips/chipsdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/chips/chipsdemo.module.ts', 'src/main/webapp/app/primeng/inputs/chips/chipsdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/chips/chipsdemo.route.ts', 'src/main/webapp/app/primeng/inputs/chips/chipsdemo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/inputs/inputswitch/index.ts', 'src/main/webapp/app/primeng/inputs/inputswitch/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputswitch/inputswitchdemo.component.html', 'src/main/webapp/app/primeng/inputs/inputswitch/inputswitchdemo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/inputswitch/inputswitchdemo.component.ts', 'src/main/webapp/app/primeng/inputs/inputswitch/inputswitchdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputswitch/inputswitchdemo.module.ts', 'src/main/webapp/app/primeng/inputs/inputswitch/inputswitchdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputswitch/inputswitchdemo.route.ts', 'src/main/webapp/app/primeng/inputs/inputswitch/inputswitchdemo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/inputs/mask/index.ts', 'src/main/webapp/app/primeng/inputs/mask/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/mask/maskdemo.component.html', 'src/main/webapp/app/primeng/inputs/mask/maskdemo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/mask/maskdemo.component.ts', 'src/main/webapp/app/primeng/inputs/mask/maskdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/mask/maskdemo.module.ts', 'src/main/webapp/app/primeng/inputs/mask/maskdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/mask/maskdemo.route.ts', 'src/main/webapp/app/primeng/inputs/mask/maskdemo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/inputs/password/index.ts', 'src/main/webapp/app/primeng/inputs/password/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/password/passworddemo.component.html', 'src/main/webapp/app/primeng/inputs/password/passworddemo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/password/passworddemo.component.ts', 'src/main/webapp/app/primeng/inputs/password/passworddemo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/password/passworddemo.module.ts', 'src/main/webapp/app/primeng/inputs/password/passworddemo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/password/passworddemo.route.ts', 'src/main/webapp/app/primeng/inputs/password/passworddemo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/inputs/rating/index.ts', 'src/main/webapp/app/primeng/inputs/rating/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/rating/ratingdemo.component.html', 'src/main/webapp/app/primeng/inputs/rating/ratingdemo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/rating/ratingdemo.component.ts', 'src/main/webapp/app/primeng/inputs/rating/ratingdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/rating/ratingdemo.module.ts', 'src/main/webapp/app/primeng/inputs/rating/ratingdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/rating/ratingdemo.route.ts', 'src/main/webapp/app/primeng/inputs/rating/ratingdemo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/inputs/spinner/index.ts', 'src/main/webapp/app/primeng/inputs/spinner/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/spinner/spinnerdemo.component.html', 'src/main/webapp/app/primeng/inputs/spinner/spinnerdemo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/spinner/spinnerdemo.component.ts', 'src/main/webapp/app/primeng/inputs/spinner/spinnerdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/spinner/spinnerdemo.module.ts', 'src/main/webapp/app/primeng/inputs/spinner/spinnerdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/spinner/spinnerdemo.route.ts', 'src/main/webapp/app/primeng/inputs/spinner/spinnerdemo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/inputs/togglebutton/index.ts', 'src/main/webapp/app/primeng/inputs/togglebutton/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/togglebutton/togglebuttondemo.component.html', 'src/main/webapp/app/primeng/inputs/togglebutton/togglebuttondemo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/togglebutton/togglebuttondemo.component.ts', 'src/main/webapp/app/primeng/inputs/togglebutton/togglebuttondemo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/togglebutton/togglebuttondemo.module.ts', 'src/main/webapp/app/primeng/inputs/togglebutton/togglebuttondemo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/togglebutton/togglebuttondemo.route.ts', 'src/main/webapp/app/primeng/inputs/togglebutton/togglebuttondemo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/inputs/autocomplete/index.ts', 'src/main/webapp/app/primeng/inputs/autocomplete/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/autocomplete/autocompletedemo.component.html', 'src/main/webapp/app/primeng/inputs/autocomplete/autocompletedemo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/autocomplete/autocompletedemo.component.ts', 'src/main/webapp/app/primeng/inputs/autocomplete/autocompletedemo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/autocomplete/autocompletedemo.module.ts', 'src/main/webapp/app/primeng/inputs/autocomplete/autocompletedemo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/autocomplete/autocompletedemo.route.ts', 'src/main/webapp/app/primeng/inputs/autocomplete/autocompletedemo.route.ts');
+*/
     },
 
     install() {
