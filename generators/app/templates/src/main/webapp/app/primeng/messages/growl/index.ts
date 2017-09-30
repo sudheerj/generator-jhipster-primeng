@@ -1,2 +1,2 @@
-export * from './splitbuttondemo.component';
-export * from './splitbuttondemo.route';
+export * from './growldemo.component';
+export * from './growldemo.route';

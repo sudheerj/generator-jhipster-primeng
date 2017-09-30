@@ -12,6 +12,10 @@ export class GrowlDemoComponent implements OnInit {
     messages: Message[] = [];
     activeIndex: number = 0;
 
+    ngOnInit{
+
+    }
+
     showMessage() {
         this.messages = [];
         this.messages.push({severity: 'info', summary: 'Angular Message', detail: 'Angular4 is ready'});

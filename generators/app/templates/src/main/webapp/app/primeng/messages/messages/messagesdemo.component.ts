@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
+import {MenuItem,Message} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-messages',
@@ -10,6 +11,10 @@ export class MessagesDemoComponent implements OnInit {
     messages: Message[] = [];
     msgs: Message[] = [];
     activeIndex: number = 0;
+
+    ngOnInit{
+
+    }
 
     showMessage() {
         this.messages = [];
