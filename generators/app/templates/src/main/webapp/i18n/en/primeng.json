@@ -21,6 +21,9 @@
             }
         },
         "inputs": {
+            "inputtext": {
+                "title": "InputText"
+            }
             "inputgroup": {
                 "title": "InputGroup"
             }

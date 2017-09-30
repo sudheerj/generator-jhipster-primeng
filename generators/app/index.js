@@ -120,7 +120,7 @@ module.exports = JhipsterGenerator.extend({
         const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
         const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
 
-        this.template(CLIENT_MAIN_SRC_DIR + 'app/content/scss/vendor.scss', CLIENT_MAIN_SRC_DIR + 'app/content/scss/vendor.scss');
+       // this.template(CLIENT_MAIN_SRC_DIR + 'app/content/scss/vendor.scss', CLIENT_MAIN_SRC_DIR + 'app/content/scss/vendor.scss');
 
      /*   this.rewriteFile(
             'src/test/javascript/protractor.conf.js',
@@ -198,6 +198,9 @@ module.exports = JhipsterGenerator.extend({
             this.anyError = true;
         }
 
+        let primengResources =`@import "~primeng/resources/primeng.min.css";
+                               @import "~primeng/resources/themes/darkness/theme.css";`;
+
         // add element to menu
         let primengMenu;
         if (this.enableTranslation) {
@@ -212,6 +215,22 @@ module.exports = JhipsterGenerator.extend({
                 <ul class="dropdown-menu" ngbDropdownMenu>
                    <span tyle="font-weight:bold">Button Components</span>
                    <hr/>
+                   <span tyle="font-weight:bold">Input Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="inputtext" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.inputtext">InputText</span>
+                        </a>
+                    </li>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.inputgroup">InputGroup</span>
+                        </a>
+                    </li>
+                   
+                   <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
@@ -224,16 +243,6 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.splitbutton">SplitButton</span>
                         </a>
                     </li>
-                   <hr/>
-                   <span tyle="font-weight:bold">Input Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.inputgroup">InputGroup</span>
-                        </a>
-                    </li>
-                   
                    <hr/>
                    <span style="font-weight:bold">Chart Components</span>
                    <hr/>
@@ -286,6 +295,31 @@ module.exports = JhipsterGenerator.extend({
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
                     <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="inputtext" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <span>InputText</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <span>InputGroup</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span>Button</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="splitbutton" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <span>SplitButton</span>
+                        </a>
+                    </li>
+                    
+                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="barchart" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
                             <span>BarChart</span>
@@ -319,24 +353,6 @@ module.exports = JhipsterGenerator.extend({
                         <a class="dropdown-item" routerLink="radarchart" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
                             <span>RadarChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span>Button</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="splitbutton" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span>SplitButton</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span>InputGroup</span>
                         </a>
                     </li>
                 </ul>
@@ -377,6 +393,10 @@ module.exports = JhipsterGenerator.extend({
 
         // add chart to vendor
         try {
+            this.rewriteFile(
+                'src/main/webapp/app/vendor.ts',
+                'jhipster-needle-add-element-to-vendor',
+                `${primengResources}`);
             this.rewriteFile(
                 'src/main/webapp/app/vendor.ts',
                 'jhipster-needle-add-element-to-vendor',
@@ -472,6 +492,12 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.component.ts', 'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.component.ts');
         this.template('src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.module.ts', 'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.module.ts');
         this.template('src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.route.ts', 'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/inputs/inputtext/index.ts', 'src/main/webapp/app/primeng/inputs/inputtext/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.component.html', 'src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.component.ts', 'src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.module.ts', 'src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.route.ts', 'src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.route.ts');
 
         this.template('src/main/webapp/app/primeng/inputs/inputgroup/index.ts', 'src/main/webapp/app/primeng/inputs/inputgroup/index.ts');
         this.template('src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.component.html', 'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.component.html');
