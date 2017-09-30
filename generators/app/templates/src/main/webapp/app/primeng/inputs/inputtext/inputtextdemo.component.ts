@@ -2,7 +2,7 @@ import {Component, OnInit } from '@angular/core';
 import {Message} from 'primeng/components/common/api';
 
 @Component({
-    selector: 'jhi-inputgroup',
+    selector: 'jhi-inputtext',
     templateUrl: './inputtextdemo.component.html',
     styles: []
 })

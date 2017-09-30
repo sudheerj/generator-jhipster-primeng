@@ -13,7 +13,6 @@ import { <%= angular2AppName %>PiechartDemoModule } from './charts/piechart/piec
 import { <%= angular2AppName %>PolarareachartDemoModule } from './charts/polarareachart/polarareachartdemo.module';
 import { <%= angular2AppName %>RadarchartDemoModule } from './charts/radarchart/radarchartdemo.module';
 
-
 @NgModule({
     imports: [
 

@@ -5,7 +5,6 @@ import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {SplitButtonModule} from 'primeng/primeng';
 
-
 import {
     SplitbuttonDemoComponent,
     splitbuttonDemoRoute
