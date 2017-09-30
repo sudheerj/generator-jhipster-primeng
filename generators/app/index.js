@@ -162,7 +162,14 @@ module.exports = JhipsterGenerator.extend({
             `@import "~primeng/resources/themes/${themeName}/theme.css";`);
 */
         this.addMainSCSSStyle(`@import "~primeng/resources/primeng.min.css";
-                               @import "~primeng/resources/themes/${themeName}/theme.css";` , 'PrimeNG Resources')
+                               @import "~primeng/resources/themes/${themeName}/theme.css";` , 'PrimeNG Resources');
+
+        // add a line to a lyric file, using appendFile
+        this.fs.appendFile(CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss', `@import "~primeng/resources/primeng.min.css";
+                               @import "~primeng/resources/themes/${themeName}/theme.css";`, (err) => {
+            if (err) throw err;
+            console.log('The lyrics were updated!');
+        });
         // init all variables
         this.anyError = false;
 
