@@ -39,7 +39,12 @@
 
         },
         "data": {
-
+            "datatable": {
+                "title": "Button"
+            },
+            "splitbutton": {
+                "title": "SplitButton"
+            }
         },
         "dragdrop": {
 

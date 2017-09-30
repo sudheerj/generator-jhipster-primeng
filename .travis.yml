@@ -2,7 +2,7 @@ os:
     - linux
 language: node_js
 node_js:
-    - "6.11.0"
+    - "7.8.0"
 before_install:
     - npm install -g npm
     - npm install -g yarn
