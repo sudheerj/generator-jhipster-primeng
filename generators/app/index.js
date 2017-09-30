@@ -71,7 +71,7 @@ module.exports = JhipsterGenerator.extend({
             this.log(`\nWelcome to the ${chalk.bold.yellow('JHipster primeng')} generator! ${chalk.yellow(`v${packagejs.version}\n`)}`);
         },
         checkclientFramework() {
-            if (this.jhipsterAppConfig.clientFramework !== 'angular4') {
+            if (this.jhipsterAppConfig.clientFramework !== 'angular4' && this.jhipsterAppConfig.clientFramework !== 'angularX') {
                 this.env.error(`${chalk.red.bold('ERROR!')} This module works only for Angular4...`);
             }
         },
