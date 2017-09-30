@@ -3,6 +3,7 @@ const chalk = require('chalk');
 const generator = require('yeoman-generator');
 const packagejs = require('../../package.json');
 const semver = require('semver');
+const shelljs = require('shelljs');
 const BaseGenerator = require('generator-jhipster/generators/generator-base');
 
 const JhipsterGenerator = generator.extend({});
