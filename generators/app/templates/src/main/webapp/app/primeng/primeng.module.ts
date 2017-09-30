@@ -13,6 +13,8 @@ import { <%= angular2AppName %>GrowlDemoModule } from './messages/growl/growldem
 import { <%= angular2AppName %>MessagesDemoModule } from './messages/messages/messagesdemo.module';
 import { <%= angular2AppName %>GalleriaDemoModule } from './multimedia/galleria/galleriademo.module';
 
+import { <%= angular2AppName %>FileUploadDemoModule } from './file/fileupload/fileuploaddemo.module';
+
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { <%= angular2AppName %>BarchartDemoModule } from './charts/barchart/barchartdemo.module';
 import { <%= angular2AppName %>DoughnutchartDemoModule } from './charts/doughnutchart/doughnutchartdemo.module';
@@ -34,6 +36,8 @@ import { <%= angular2AppName %>RadarchartDemoModule } from './charts/radarchart/
         <%= angular2AppName %>GrowlDemoModule,
         <%= angular2AppName %>MessagesDemoModule,
         <%= angular2AppName %>GalleriaDemoModule,
+
+        <%= angular2AppName %>FileUploadDemoModule,
 
         <%= angular2AppName %>BarchartDemoModule,
         <%= angular2AppName %>DoughnutchartDemoModule,

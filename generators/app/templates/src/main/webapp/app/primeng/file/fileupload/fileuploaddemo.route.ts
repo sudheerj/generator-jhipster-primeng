@@ -1,13 +1,13 @@
 import { Route } from '@angular/router';
 import { UserRouteAccessService } from '../../../shared';
-import { GrowlDemoComponent } from './growldemo.component';
+import { FileUploadDemoComponent } from './fileuploaddemo.component';
 
-export const growlDemoRoute: Route = {
-    path: 'growl',
-    component: GrowlDemoComponent,
+export const fileuploadDemoRoute: Route = {
+    path: 'fileupload',
+    component: FileUploadDemoComponent,
     data: {
         authorities: ['ROLE_USER'],
-        pageTitle: 'primeng.messages.growl.title'
+        pageTitle: 'primeng.file.fileupload.title'
     },
     canActivate: [UserRouteAccessService]
 };

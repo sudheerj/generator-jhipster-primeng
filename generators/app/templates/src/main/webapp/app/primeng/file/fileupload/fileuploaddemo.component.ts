@@ -10,6 +10,10 @@ import {MenuItem,Message} from 'primeng/components/common/api';
 export class FileUploadDemoComponent implements OnInit {
     activeIndex: number = 0;
 
+    ngOnInit{
+
+    }
+
     multiple: boolean = false;
     auto: boolean = false;
     msgs: Message[] = [];
