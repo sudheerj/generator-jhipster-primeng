@@ -213,7 +213,7 @@ module.exports = JhipsterGenerator.extend({
         fs.appendFile(CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss',
             primengResources, (err) => {
             if (err) throw err;
-            console.log('The lyrics were updated!');
+            console.log('The PrimeNG resources were updated!');
         });
         // init all variables
         this.anyError = false;

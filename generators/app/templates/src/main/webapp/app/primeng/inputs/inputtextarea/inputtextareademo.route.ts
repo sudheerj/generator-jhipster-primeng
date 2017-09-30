@@ -3,7 +3,7 @@ import { UserRouteAccessService } from '../../../shared';
 import { InputTextAreaDemoComponent } from './inputtextareademo.component';
 
 export const inputTextAreaDemoRoute: Route = {
-    path: 'inputtext',
+    path: 'inputtextarea',
     component: InputTextAreaDemoComponent,
     data: {
         authorities: ['ROLE_USER'],
