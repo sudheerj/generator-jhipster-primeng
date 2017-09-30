@@ -7,6 +7,7 @@ import {InputTextModule} from 'primeng/primeng';
 import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
 import {RadioButtonModule} from 'primeng/components/radiobutton/radiobutton';
 import {ButtonModule} from 'primeng/components/button/button';
+import {GrowlModule} from 'primeng/components/growl/growl';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {
@@ -26,6 +27,7 @@ const primeng_STATES = [
         CheckboxModule,
         RadioButtonModule,
         ButtonModule,
+        GrowlModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
