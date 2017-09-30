@@ -4,6 +4,7 @@ const generator = require('yeoman-generator');
 const packagejs = require('../../package.json');
 const semver = require('semver');
 const shelljs = require('shelljs');
+const fs = require('fs');
 const BaseGenerator = require('generator-jhipster/generators/generator-base');
 const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
 
@@ -161,11 +162,11 @@ module.exports = JhipsterGenerator.extend({
             'jhipster-needle-scss-add-vendor',
             `@import "~primeng/resources/themes/${themeName}/theme.css";`);
 */
-        this.addMainSCSSStyle(`@import "~primeng/resources/primeng.min.css";
-                               @import "~primeng/resources/themes/${themeName}/theme.css";` , 'PrimeNG Resources');
+        /*this.addMainSCSSStyle(`@import "~primeng/resources/primeng.min.css";
+                               @import "~primeng/resources/themes/${themeName}/theme.css";` , 'PrimeNG Resources');*/
 
         // add a line to a lyric file, using appendFile
-        this.fs.appendFile(CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss', `@import "~primeng/resources/primeng.min.css";
+        fs.appendFile(CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss', `@import "~primeng/resources/primeng.min.css";
                                @import "~primeng/resources/themes/${themeName}/theme.css";`, (err) => {
             if (err) throw err;
             console.log('The lyrics were updated!');
