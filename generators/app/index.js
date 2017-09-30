@@ -456,7 +456,7 @@ module.exports = JhipsterGenerator.extend({
                 "button": "Button",
                 "splitbutton": "SplitButton",
                 "inputgroup":"InputGroup",
-                "inputtext":'InputText'
+                "inputtext":"InputText"
             },`;
             this.languages.forEach((language) => {
                 this.template('src/main/webapp/i18n/en/primeng.json', `src/main/webapp/i18n/${language}/primeng.json`);
