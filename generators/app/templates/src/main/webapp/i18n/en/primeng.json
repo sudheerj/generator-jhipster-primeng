@@ -1,0 +1,63 @@
+{
+    "primeng": {
+        "charts": {
+            "barchart": {
+                    "title": "BarChart"
+            },
+            "doughnutchart": {
+                    "title": "DoughnutChart"
+            },
+            "linechart": {
+                    "title": "LineChart"
+            },
+            "piechart": {
+                    "title": "PieChart"
+            },
+            "polarareachart": {
+                    "title": "PolarAreaChart"
+            },
+            "radarchart": {
+                    "title": "RadarChart"
+            }
+        },
+        "inputs": {
+            "inputgroup": {
+                "title": "InputGroup"
+            }
+
+        },
+        "buttons": {
+            "button": {
+                "title": "Button"
+            },
+            "splitbutton": {
+                "title": "SplitButton"
+            }
+
+        },
+        "data": {
+
+        },
+        "dragdrop": {
+
+        },
+        "file": {
+
+        },
+        "menu": {
+
+        },
+        "messages": {
+
+        },
+        "multimedia": {
+
+        },
+        "overlay": {
+
+        },
+        "panel": {
+
+        }
+    }
+}

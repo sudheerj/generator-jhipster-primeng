@@ -1,0 +1,9 @@
+<div>
+    <h2>
+        <span<% if (enableTranslation) { %> jhiTranslate="primeng.charts.linechart.title"<% } %>>LineChart</span>
+    </h2>
+    <div class="col-md-8 content-section implementation">
+        <p-growl [value]="msgs"></p-growl>
+        <p-chart type="line" [data]="data" (onDataSelect)="selectData($event)"></p-chart>
+    </div>
+</div>

@@ -11,7 +11,7 @@ describe('administration', () => {
     const username = element(by.id('username'));
     const password = element(by.id('password'));
     const accountMenu = element(by.id('account-menu'));
-    const dashboardMenu = element(by.id('dashboard-menu'));
+    const primengMenu = element(by.id('primeng-menu'));
     const login = element(by.id('login'));
     const logout = element(by.id('logout'));
 
@@ -28,13 +28,13 @@ describe('administration', () => {
     });
 
     beforeEach(() => {
-        dashboardMenu.click();
+        primengMenu.click();
     });
 
     it('should load BarChart', () => {
         element(by.css('[routerLink="barchart"]')).click();
         <%_ if (enableTranslation) { _%>
-        const expect1 = /dashboard.charts.barchart.title/;
+        const expect1 = /primeng.charts.barchart.title/;
         <%_ } else { _%>
         const expect1 = /BarChart/;
         <%_ } _%>
@@ -46,7 +46,7 @@ describe('administration', () => {
     it('should load DoughnutChart', () => {
         element(by.css('[routerLink="doughnutchart"]')).click();
         <%_ if (enableTranslation) { _%>
-        const expect1 = /dashboard.charts.doughnutchart.title/;
+        const expect1 = /primeng.charts.doughnutchart.title/;
         <%_ } else { _%>
         const expect1 = /DoughnutChart/;
         <%_ } _%>
@@ -58,7 +58,7 @@ describe('administration', () => {
     it('should load LineChart', () => {
         element(by.css('[routerLink="linechart"]')).click();
         <%_ if (enableTranslation) { _%>
-        const expect1 = /dashboard.charts.linechart.title/;
+        const expect1 = /primeng.charts.linechart.title/;
         <%_ } else { _%>
         const expect1 = /LineChart/;
         <%_ } _%>
@@ -70,7 +70,7 @@ describe('administration', () => {
     it('should load PieChart', () => {
         element(by.css('[routerLink="piechart"]')).click();
         <%_ if (enableTranslation) { _%>
-        const expect1 = /dashboard.charts.piechart.title/;
+        const expect1 = /primeng.charts.piechart.title/;
         <%_ } else { _%>
         const expect1 = /PieChart/;
         <%_ } _%>
@@ -82,7 +82,7 @@ describe('administration', () => {
     it('should load PolarAreaChart', () => {
         element(by.css('[routerLink="polarareachart"]')).click();
         <%_ if (enableTranslation) { _%>
-        const expect1 = /dashboard.charts.polarareachart.title/;
+        const expect1 = /primeng.charts.polarareachart.title/;
         <%_ } else { _%>
         const expect1 = /PolarAreaChart/;
         <%_ } _%>
@@ -94,7 +94,7 @@ describe('administration', () => {
     it('should load RadarChart', () => {
         element(by.css('[routerLink="radarchart"]')).click();
         <%_ if (enableTranslation) { _%>
-        const expect1 = /dashboard.charts.radarchart.title/;
+        const expect1 = /primeng.charts.radarchart.title/;
         <%_ } else { _%>
         const expect1 = /RadarChart/;
         <%_ } _%>
@@ -106,7 +106,7 @@ describe('administration', () => {
     it('should load Button', () => {
         element(by.css('[routerLink="button"]')).click();
         <%_ if (enableTranslation) { _%>
-            const expect1 = /dashboard.button.button.title/;
+            const expect1 = /primeng.button.button.title/;
             <%_ } else { _%>
             const expect1 = /button/;
             <%_ } _%>
@@ -118,7 +118,7 @@ describe('administration', () => {
     it('should load SplitButton', () => {
         element(by.css('[routerLink="splitbutton"]')).click();
         <%_ if (enableTranslation) { _%>
-            const expect1 = /dashboard.button.splitbutton.title/;
+            const expect1 = /primeng.button.splitbutton.title/;
             <%_ } else { _%>
             const expect1 = /splitbutton/;
             <%_ } _%>

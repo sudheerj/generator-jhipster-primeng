@@ -117,12 +117,15 @@ module.exports = JhipsterGenerator.extend({
             );
         };
 
-        //this.template(MAIN_SRC_DIR + 'scss/main.scss', MAIN_SRC_DIR + 'scss/main.scss');
+        const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
+        const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
+
+        this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss');
 
      /*   this.rewriteFile(
             'src/test/javascript/protractor.conf.js',
             'jhipster-needle-add-protractor-tests',
-            `${dashboardSpec}`);
+            `${primengSpec}`);
 
         this.copyHtml('_index.html', 'src/main/webapp/index.html');*/
 
@@ -137,8 +140,7 @@ module.exports = JhipsterGenerator.extend({
         this.protractorTests = this.jhipsterAppConfig.testFrameworks.indexOf('protractor') !== -1;
         this.angular2AppName = this.getAngular2AppName();
 
-        const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
-        const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
+
 
         // add dependencies
         try {
@@ -185,25 +187,25 @@ module.exports = JhipsterGenerator.extend({
 
         // add module to app.module.ts
         try {
-            this.addAngularModule(this.angular2AppName, 'Dashboard', 'dashboard', 'dashboard', this.enableTranslation, this.clientFramework);
+            this.addAngularModule(this.angular2AppName, 'primeng', 'primeng', 'primeng', this.enableTranslation, this.clientFramework);
         } catch (e) {
             this.log(`${chalk.red.bold('ERROR!')}`);
             this.log('  Problem when updating your app.module.ts');
-            this.log('  You need to import manually the new dashboard.module.ts:\n');
-            this.log(`${chalk.yellow.bold(`  import { ${this.angular2AppName}DashboardModule } from './dashboard/dashboard.module';`)}`);
+            this.log('  You need to import manually the new primeng.module.ts:\n');
+            this.log(`${chalk.yellow.bold(`  import { ${this.angular2AppName}primengModule } from './primeng/primeng.module';`)}`);
             this.log('\n  and:\n');
-            this.log(`${chalk.yellow.bold(`  ${this.angular2AppName}DashboardModule,`)}\n`);
+            this.log(`${chalk.yellow.bold(`  ${this.angular2AppName}primengModule,`)}\n`);
             this.anyError = true;
         }
 
         // add element to menu
-        let dashboardMenu;
+        let primengMenu;
         if (this.enableTranslation) {
-            dashboardMenu = `<li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="dashboard-menu">
+            primengMenu = `<li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="primeng-menu">
                     <span>
                         <i class="fa fa-area-chart" aria-hidden="true"></i>
-                        <span jhiTranslate="global.menu.dashboard.main">Dashboard</span>
+                        <span jhiTranslate="global.menu.primeng.main">primeng</span>
                         <b class="caret"></b>
                     </span>
                 </a>
@@ -213,22 +215,22 @@ module.exports = JhipsterGenerator.extend({
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.dashboard.button">Button</span>
+                            <span jhiTranslate="global.menu.primeng.button">Button</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="splitbutton" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.dashboard.splitbutton">SplitButton</span>
+                            <span jhiTranslate="global.menu.primeng.splitbutton">SplitButton</span>
                         </a>
                     </li>
                    <hr/>
                    <span tyle="font-weight:bold">Input Components</span>
                    <hr/>
                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.dashboard.inputgroup">InputGroup</span>
+                            <span jhiTranslate="global.menu.primeng.inputgroup">InputGroup</span>
                         </a>
                     </li>
                    
@@ -238,47 +240,47 @@ module.exports = JhipsterGenerator.extend({
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="barchart" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.dashboard.barchart">BarChart</span>
+                            <span jhiTranslate="global.menu.primeng.barchart">BarChart</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="doughnutchart" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o-notch" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.dashboard.doughnutchart">BarChart</span>
+                            <span jhiTranslate="global.menu.primeng.doughnutchart">BarChart</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="linechart" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-line-chart" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.dashboard.linechart">LineChart</span>
+                            <span jhiTranslate="global.menu.primeng.linechart">LineChart</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="piechart" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-pie-chart" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.dashboard.piechart">PieChart</span>
+                            <span jhiTranslate="global.menu.primeng.piechart">PieChart</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="polarareachart" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.dashboard.polarareachart">PolarAreaChart</span>
+                            <span jhiTranslate="global.menu.primeng.polarareachart">PolarAreaChart</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="radarchart" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.dashboard.radarchart">RadarChart</span>
+                            <span jhiTranslate="global.menu.primeng.radarchart">RadarChart</span>
                         </a>
                     </li>
                 </ul>
             </li>`;
         } else {
-            dashboardMenu = `<li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="dashboard-menu">
+            primengMenu = `<li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="primeng-menu">
                     <span>
                         <i class="fa fa-area-chart" aria-hidden="true"></i>
-                        <span>Dashboard</span>
+                        <span>primeng</span>
                         <b class="caret"></b>
                     </span>
                 </a>
@@ -344,33 +346,33 @@ module.exports = JhipsterGenerator.extend({
             this.rewriteFile(
                 'src/main/webapp/app/layouts/navbar/navbar.component.html',
                 'jhipster-needle-add-element-to-menu',
-                `${dashboardMenu}`);
+                `${primengMenu}`);
         } catch (e) {
             this.log(`${chalk.red.bold('ERROR!')}`);
             this.log('  Missing needle \'jhipster-needle-add-element-to-menu\' in src/main/webapp/app/layouts/navbar/navbar.component.html');
             this.log('  You need to add manually the menu:\n');
-            this.log(`            ${dashboardMenu}`);
+            this.log(`            ${primengMenu}`);
             this.log('');
             this.anyError = true;
         }
 
         // add protractor tests
         if (this.protractorTests) {
-            const dashboardSpec = '\'./e2e/dashboard/dashboard.spec.ts\',';
+            const primengSpec = '\'./e2e/primeng/primeng.spec.ts\',';
             try {
                 this.rewriteFile(
                     'src/test/javascript/protractor.conf.js',
                     'jhipster-needle-add-protractor-tests',
-                    `${dashboardSpec}`);
+                    `${primengSpec}`);
             } catch (e) {
                 this.log(`${chalk.red.bold('ERROR!')}`);
                 this.log('  Missing needle \'jhipster-needle-add-protractor-tests\' in src/test/javascript/protractor.conf.js');
                 this.log('  You need to add manually in specs item:\n');
-                this.log(`            ${dashboardSpec}`);
+                this.log(`            ${primengSpec}`);
                 this.log('');
                 this.anyError = true;
             }
-            this.template('src/test/javascript/e2e/dashboard/_dashboard.spec.ts', 'src/test/javascript/e2e/dashboard/dashboard.spec.ts');
+            this.template('src/test/javascript/e2e/primeng/_primeng.spec.ts', 'src/test/javascript/e2e/primeng/primeng.spec.ts');
         }
 
         // add chart to vendor
@@ -390,8 +392,8 @@ module.exports = JhipsterGenerator.extend({
 
         // copy all translations
         if (this.enableTranslation) {
-            const dashboardTranslation = `"dashboard": {
-                "main": "Dashboard",
+            const primengTranslation = `"primeng": {
+                "main": "primeng",
                 "barchart": "BarChart",
                 "doughnutchart": "DoughnutChart",
                 "linechart": "LineChart",
@@ -403,79 +405,79 @@ module.exports = JhipsterGenerator.extend({
                 "inputgroup":"InputGroup"
             },`;
             this.languages.forEach((language) => {
-                this.template('src/main/webapp/i18n/en/dashboard.json', `src/main/webapp/i18n/${language}/dashboard.json`);
+                this.template('src/main/webapp/i18n/en/primeng.json', `src/main/webapp/i18n/${language}/primeng.json`);
                 try {
                     this.rewriteFile(
                         `src/main/webapp/i18n/${language}/global.json`,
                         'jhipster-needle-menu-add-element',
-                        `${dashboardTranslation}`);
+                        `${primengTranslation}`);
                 } catch (e) {
                     this.log(`${chalk.red.bold('ERROR!')}`);
                     this.log(`  Missing needle 'jhipster-needle-menu-add-element' in src/main/webapp/i18n/${language}/global.json`);
                     this.log('  You need to add manually:');
-                    this.log(`${dashboardTranslation}`);
+                    this.log(`${primengTranslation}`);
                     this.log('');
                     this.anyError = true;
                 }
             });
         }
 
-        // copy all dashboard files
-        this.template('src/main/webapp/app/dashboard/dashboard.module.ts', 'src/main/webapp/app/dashboard/dashboard.module.ts');
+        // copy all primeng files
+        this.template('src/main/webapp/app/primeng/primeng.module.ts', 'src/main/webapp/app/primeng/primeng.module.ts');
 
-        this.template('src/main/webapp/app/dashboard/charts/barchart/index.ts', 'src/main/webapp/app/dashboard/charts/barchart/index.ts');
-        this.template('src/main/webapp/app/dashboard/charts/barchart/barchartdemo.component.html', 'src/main/webapp/app/dashboard/charts/barchart/barchartdemo.component.html');
-        this.template('src/main/webapp/app/dashboard/charts/barchart/barchartdemo.component.ts', 'src/main/webapp/app/dashboard/charts/barchart/barchartdemo.component.ts');
-        this.template('src/main/webapp/app/dashboard/charts/barchart/barchartdemo.module.ts', 'src/main/webapp/app/dashboard/charts/barchart/barchartdemo.module.ts');
-        this.template('src/main/webapp/app/dashboard/charts/barchart/barchartdemo.route.ts', 'src/main/webapp/app/dashboard/charts/barchart/barchartdemo.route.ts');
+        this.template('src/main/webapp/app/primeng/charts/barchart/index.ts', 'src/main/webapp/app/primeng/charts/barchart/index.ts');
+        this.template('src/main/webapp/app/primeng/charts/barchart/barchartdemo.component.html', 'src/main/webapp/app/primeng/charts/barchart/barchartdemo.component.html');
+        this.template('src/main/webapp/app/primeng/charts/barchart/barchartdemo.component.ts', 'src/main/webapp/app/primeng/charts/barchart/barchartdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/charts/barchart/barchartdemo.module.ts', 'src/main/webapp/app/primeng/charts/barchart/barchartdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/charts/barchart/barchartdemo.route.ts', 'src/main/webapp/app/primeng/charts/barchart/barchartdemo.route.ts');
 
-        this.template('src/main/webapp/app/dashboard/charts/doughnutchart/index.ts', 'src/main/webapp/app/dashboard/charts/doughnutchart/index.ts');
-        this.template('src/main/webapp/app/dashboard/charts/doughnutchart/doughnutchartdemo.component.html', 'src/main/webapp/app/dashboard/charts/doughnutchart/doughnutchartdemo.component.html');
-        this.template('src/main/webapp/app/dashboard/charts/doughnutchart/doughnutchartdemo.component.ts', 'src/main/webapp/app/dashboard/charts/doughnutchart/doughnutchartdemo.component.ts');
-        this.template('src/main/webapp/app/dashboard/charts/doughnutchart/doughnutchartdemo.module.ts', 'src/main/webapp/app/dashboard/charts/doughnutchart/doughnutchartdemo.module.ts');
-        this.template('src/main/webapp/app/dashboard/charts/doughnutchart/doughnutchartdemo.route.ts', 'src/main/webapp/app/dashboard/charts/doughnutchart/doughnutchartdemo.route.ts');
+        this.template('src/main/webapp/app/primeng/charts/doughnutchart/index.ts', 'src/main/webapp/app/primeng/charts/doughnutchart/index.ts');
+        this.template('src/main/webapp/app/primeng/charts/doughnutchart/doughnutchartdemo.component.html', 'src/main/webapp/app/primeng/charts/doughnutchart/doughnutchartdemo.component.html');
+        this.template('src/main/webapp/app/primeng/charts/doughnutchart/doughnutchartdemo.component.ts', 'src/main/webapp/app/primeng/charts/doughnutchart/doughnutchartdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/charts/doughnutchart/doughnutchartdemo.module.ts', 'src/main/webapp/app/primeng/charts/doughnutchart/doughnutchartdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/charts/doughnutchart/doughnutchartdemo.route.ts', 'src/main/webapp/app/primeng/charts/doughnutchart/doughnutchartdemo.route.ts');
 
-        this.template('src/main/webapp/app/dashboard/charts/linechart/index.ts', 'src/main/webapp/app/dashboard/charts/linechart/index.ts');
-        this.template('src/main/webapp/app/dashboard/charts/linechart/linechartdemo.component.html', 'src/main/webapp/app/dashboard/charts/linechart/linechartdemo.component.html');
-        this.template('src/main/webapp/app/dashboard/charts/linechart/linechartdemo.component.ts', 'src/main/webapp/app/dashboard/charts/linechart/linechartdemo.component.ts');
-        this.template('src/main/webapp/app/dashboard/charts/linechart/linechartdemo.module.ts', 'src/main/webapp/app/dashboard/charts/linechart/linechartdemo.module.ts');
-        this.template('src/main/webapp/app/dashboard/charts/linechart/linechartdemo.route.ts', 'src/main/webapp/app/dashboard/charts/linechart/linechartdemo.route.ts');
+        this.template('src/main/webapp/app/primeng/charts/linechart/index.ts', 'src/main/webapp/app/primeng/charts/linechart/index.ts');
+        this.template('src/main/webapp/app/primeng/charts/linechart/linechartdemo.component.html', 'src/main/webapp/app/primeng/charts/linechart/linechartdemo.component.html');
+        this.template('src/main/webapp/app/primeng/charts/linechart/linechartdemo.component.ts', 'src/main/webapp/app/primeng/charts/linechart/linechartdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/charts/linechart/linechartdemo.module.ts', 'src/main/webapp/app/primeng/charts/linechart/linechartdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/charts/linechart/linechartdemo.route.ts', 'src/main/webapp/app/primeng/charts/linechart/linechartdemo.route.ts');
 
-        this.template('src/main/webapp/app/dashboard/charts/piechart/index.ts', 'src/main/webapp/app/dashboard/charts/piechart/index.ts');
-        this.template('src/main/webapp/app/dashboard/charts/piechart/piechartdemo.component.html', 'src/main/webapp/app/dashboard/charts/piechart/piechartdemo.component.html');
-        this.template('src/main/webapp/app/dashboard/charts/piechart/piechartdemo.component.ts', 'src/main/webapp/app/dashboard/charts/piechart/piechartdemo.component.ts');
-        this.template('src/main/webapp/app/dashboard/charts/piechart/piechartdemo.module.ts', 'src/main/webapp/app/dashboard/charts/piechart/piechartdemo.module.ts');
-        this.template('src/main/webapp/app/dashboard/charts/piechart/piechartdemo.route.ts', 'src/main/webapp/app/dashboard/charts/piechart/piechartdemo.route.ts');
+        this.template('src/main/webapp/app/primeng/charts/piechart/index.ts', 'src/main/webapp/app/primeng/charts/piechart/index.ts');
+        this.template('src/main/webapp/app/primeng/charts/piechart/piechartdemo.component.html', 'src/main/webapp/app/primeng/charts/piechart/piechartdemo.component.html');
+        this.template('src/main/webapp/app/primeng/charts/piechart/piechartdemo.component.ts', 'src/main/webapp/app/primeng/charts/piechart/piechartdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/charts/piechart/piechartdemo.module.ts', 'src/main/webapp/app/primeng/charts/piechart/piechartdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/charts/piechart/piechartdemo.route.ts', 'src/main/webapp/app/primeng/charts/piechart/piechartdemo.route.ts');
 
-        this.template('src/main/webapp/app/dashboard/charts/polarareachart/index.ts', 'src/main/webapp/app/dashboard/charts/polarareachart/index.ts');
-        this.template('src/main/webapp/app/dashboard/charts/polarareachart/polarareachartdemo.component.html', 'src/main/webapp/app/dashboard/charts/polarareachart/polarareachartdemo.component.html');
-        this.template('src/main/webapp/app/dashboard/charts/polarareachart/polarareachartdemo.component.ts', 'src/main/webapp/app/dashboard/charts/polarareachart/polarareachartdemo.component.ts');
-        this.template('src/main/webapp/app/dashboard/charts/polarareachart/polarareachartdemo.module.ts', 'src/main/webapp/app/dashboard/charts/polarareachart/polarareachartdemo.module.ts');
-        this.template('src/main/webapp/app/dashboard/charts/polarareachart/polarareachartdemo.route.ts', 'src/main/webapp/app/dashboard/charts/polarareachart/polarareachartdemo.route.ts');
+        this.template('src/main/webapp/app/primeng/charts/polarareachart/index.ts', 'src/main/webapp/app/primeng/charts/polarareachart/index.ts');
+        this.template('src/main/webapp/app/primeng/charts/polarareachart/polarareachartdemo.component.html', 'src/main/webapp/app/primeng/charts/polarareachart/polarareachartdemo.component.html');
+        this.template('src/main/webapp/app/primeng/charts/polarareachart/polarareachartdemo.component.ts', 'src/main/webapp/app/primeng/charts/polarareachart/polarareachartdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/charts/polarareachart/polarareachartdemo.module.ts', 'src/main/webapp/app/primeng/charts/polarareachart/polarareachartdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/charts/polarareachart/polarareachartdemo.route.ts', 'src/main/webapp/app/primeng/charts/polarareachart/polarareachartdemo.route.ts');
 
-        this.template('src/main/webapp/app/dashboard/charts/radarchart/index.ts', 'src/main/webapp/app/dashboard/charts/radarchart/index.ts');
-        this.template('src/main/webapp/app/dashboard/charts/radarchart/radarchartdemo.component.html', 'src/main/webapp/app/dashboard/charts/radarchart/radarchartdemo.component.html');
-        this.template('src/main/webapp/app/dashboard/charts/radarchart/radarchartdemo.component.ts', 'src/main/webapp/app/dashboard/charts/radarchart/radarchartdemo.component.ts');
-        this.template('src/main/webapp/app/dashboard/charts/radarchart/radarchartdemo.module.ts', 'src/main/webapp/app/dashboard/charts/radarchart/radarchartdemo.module.ts');
-        this.template('src/main/webapp/app/dashboard/charts/radarchart/radarchartdemo.route.ts', 'src/main/webapp/app/dashboard/charts/radarchart/radarchartdemo.route.ts');
+        this.template('src/main/webapp/app/primeng/charts/radarchart/index.ts', 'src/main/webapp/app/primeng/charts/radarchart/index.ts');
+        this.template('src/main/webapp/app/primeng/charts/radarchart/radarchartdemo.component.html', 'src/main/webapp/app/primeng/charts/radarchart/radarchartdemo.component.html');
+        this.template('src/main/webapp/app/primeng/charts/radarchart/radarchartdemo.component.ts', 'src/main/webapp/app/primeng/charts/radarchart/radarchartdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/charts/radarchart/radarchartdemo.module.ts', 'src/main/webapp/app/primeng/charts/radarchart/radarchartdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/charts/radarchart/radarchartdemo.route.ts', 'src/main/webapp/app/primeng/charts/radarchart/radarchartdemo.route.ts');
 
-        this.template('src/main/webapp/app/dashboard/buttons/button/index.ts', 'src/main/webapp/app/dashboard/buttons/button/index.ts');
-        this.template('src/main/webapp/app/dashboard/buttons/button/buttondemo.component.html', 'src/main/webapp/app/dashboard/buttons/button/buttondemo.component.html');
-        this.template('src/main/webapp/app/dashboard/buttons/button/buttondemo.component.ts', 'src/main/webapp/app/dashboard/buttons/button/buttondemo.component.ts');
-        this.template('src/main/webapp/app/dashboard/buttons/button/buttondemo.module.ts', 'src/main/webapp/app/dashboard/buttons/button/buttondemo.module.ts');
-        this.template('src/main/webapp/app/dashboard/buttons/button/buttondemo.route.ts', 'src/main/webapp/app/dashboard/buttons/button/buttondemo.route.ts');
+        this.template('src/main/webapp/app/primeng/buttons/button/index.ts', 'src/main/webapp/app/primeng/buttons/button/index.ts');
+        this.template('src/main/webapp/app/primeng/buttons/button/buttondemo.component.html', 'src/main/webapp/app/primeng/buttons/button/buttondemo.component.html');
+        this.template('src/main/webapp/app/primeng/buttons/button/buttondemo.component.ts', 'src/main/webapp/app/primeng/buttons/button/buttondemo.component.ts');
+        this.template('src/main/webapp/app/primeng/buttons/button/buttondemo.module.ts', 'src/main/webapp/app/primeng/buttons/button/buttondemo.module.ts');
+        this.template('src/main/webapp/app/primeng/buttons/button/buttondemo.route.ts', 'src/main/webapp/app/primeng/buttons/button/buttondemo.route.ts');
 
-        this.template('src/main/webapp/app/dashboard/buttons/splitbutton/index.ts', 'src/main/webapp/app/dashboard/buttons/splitbutton/index.ts');
-        this.template('src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.component.html', 'src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.component.html');
-        this.template('src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.component.ts', 'src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.component.ts');
-        this.template('src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.module.ts', 'src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.module.ts');
-        this.template('src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.route.ts', 'src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.route.ts');
+        this.template('src/main/webapp/app/primeng/buttons/splitbutton/index.ts', 'src/main/webapp/app/primeng/buttons/splitbutton/index.ts');
+        this.template('src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.component.html', 'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.component.html');
+        this.template('src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.component.ts', 'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.component.ts');
+        this.template('src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.module.ts', 'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.module.ts');
+        this.template('src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.route.ts', 'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.route.ts');
 
-        this.template('src/main/webapp/app/dashboard/inputs/inputgroup/index.ts', 'src/main/webapp/app/dashboard/inputs/inputgroup/index.ts');
-        this.template('src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.component.html', 'src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.component.html');
-        this.template('src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.component.ts', 'src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.component.ts');
-        this.template('src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.module.ts', 'src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.module.ts');
-        this.template('src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.route.ts', 'src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.route.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputgroup/index.ts', 'src/main/webapp/app/primeng/inputs/inputgroup/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.component.html', 'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.component.ts', 'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.module.ts', 'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.route.ts', 'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.route.ts');
     },
 
     install() {
