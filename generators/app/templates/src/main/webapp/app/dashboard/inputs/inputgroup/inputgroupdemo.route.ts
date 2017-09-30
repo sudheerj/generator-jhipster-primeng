@@ -7,7 +7,7 @@ export const inputGroupDemoRoute: Route = {
     component: InputGroupDemoComponent,
     data: {
         authorities: ['ROLE_USER'],
-        pageTitle: 'dashboard.input.inputgroup.title'
+        pageTitle: 'dashboard.inputs.inputgroup.title'
     },
     canActivate: [UserRouteAccessService]
 };

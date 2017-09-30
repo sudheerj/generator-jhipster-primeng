@@ -20,7 +20,10 @@
                     "title": "RadarChart"
             }
         },
-        "input": {
+        "inputs": {
+            "inputgroup": {
+                "title": "InputGroup"
+            }
 
         },
         "buttons": {

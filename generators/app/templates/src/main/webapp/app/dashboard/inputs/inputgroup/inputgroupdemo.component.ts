@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import {Message} from 'primeng/components/common/api';
 
 @Component({
@@ -6,7 +6,7 @@ import {Message} from 'primeng/components/common/api';
     templateUrl: './inputgroupdemo.component.html',
     styles: []
 })
-export class InputGroupDemo {
+export class InputGroupDemoComponent implements OnInit {
     activeIndex: number = 0;
 
     msgs: Message[] = [];

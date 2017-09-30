@@ -231,12 +231,7 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.dashboard.inputgroup">InputGroup</span>
                         </a>
                     </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="splitbutton" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.dashboard.splitbutton">SplitButton</span>
-                        </a>
-                    </li>
+                   
                    <hr/>
                    <span style="font-weight:bold">Chart Components</span>
                    <hr/>
@@ -336,6 +331,12 @@ module.exports = JhipsterGenerator.extend({
                             <span>SplitButton</span>
                         </a>
                     </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <span>InputGroup</span>
+                        </a>
+                    </li>
                 </ul>
             </li>`;
         }
@@ -398,7 +399,8 @@ module.exports = JhipsterGenerator.extend({
                 "polarareachart": "PolarAreaChart",
                 "radarchart": "RadarChart",
                 "button": "Button",
-                "splitbutton": "SplitButton"
+                "splitbutton": "SplitButton",
+                "inputgroup":"InputGroup"
             },`;
             this.languages.forEach((language) => {
                 this.template('src/main/webapp/i18n/en/dashboard.json', `src/main/webapp/i18n/${language}/dashboard.json`);
@@ -468,6 +470,12 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.component.ts', 'src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.component.ts');
         this.template('src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.module.ts', 'src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.module.ts');
         this.template('src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.route.ts', 'src/main/webapp/app/dashboard/buttons/splitbutton/splitbuttondemo.route.ts');
+
+        this.template('src/main/webapp/app/dashboard/inputs/inputgroup/index.ts', 'src/main/webapp/app/dashboard/inputs/inputgroup/index.ts');
+        this.template('src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.component.html', 'src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.component.html');
+        this.template('src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.component.ts', 'src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.component.ts');
+        this.template('src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.module.ts', 'src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.module.ts');
+        this.template('src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.route.ts', 'src/main/webapp/app/dashboard/inputs/inputgroup/inputgroupdemo.route.ts');
     },
 
     install() {

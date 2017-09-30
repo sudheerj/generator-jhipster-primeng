@@ -1,7 +1,7 @@
 
 import { <%= angular2AppName %>ButtonDemoModule } from './buttons/button/buttondemo.module';
 import { <%= angular2AppName %>SplitbuttonDemoModule } from './buttons/splitbutton/splitbuttondemo.module';
-import { <%= angular2AppName %>InputGroupDemoModule } from './input/inputgroup/inputgroupdemo.module';
+import { <%= angular2AppName %>InputGroupDemoModule } from './inputs/inputgroup/inputgroupdemo.module';
 
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { <%= angular2AppName %>BarchartDemoModule } from './charts/barchart/barchartdemo.module';
