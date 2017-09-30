@@ -120,7 +120,7 @@ module.exports = JhipsterGenerator.extend({
         const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
         const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
 
-       this.template(CLIENT_MAIN_SRC_DIR + 'app/content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'app/content/scss/primeng-resources.scss');
+       this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
 
      /*   this.rewriteFile(
             'src/test/javascript/protractor.conf.js',

@@ -59,7 +59,19 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.component.html',
         'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.component.ts',
         'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.module.ts',
-        'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.route.ts'
+        'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.route.ts',
+
+        'src/main/webapp/app/primeng/inputs/inputtext/index.ts',
+        'src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.component.html',
+        'src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.component.ts',
+        'src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.module.ts',
+        'src/main/webapp/app/primeng/inputs/inputtext/inputtextdemo.route.ts',
+
+        'src/main/webapp/app/primeng/inputs/inputgroup/index.ts',
+        'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.component.html',
+        'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.component.ts',
+        'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.module.ts',
+        'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.route.ts',
     ],
     translation: [
         'src/main/webapp/i18n/en/primeng.json',

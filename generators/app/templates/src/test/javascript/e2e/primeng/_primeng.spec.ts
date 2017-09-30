@@ -108,7 +108,7 @@ describe('administration', () => {
         <%_ if (enableTranslation) { _%>
             const expect1 = /primeng.inputs.inputtext.title/;
             <%_ } else { _%>
-            const expect1 = /inputtext/;
+            const expect1 = /InputText/;
             <%_ } _%>
         element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
             expect(value).toMatch(expect1);
@@ -120,7 +120,7 @@ describe('administration', () => {
         <%_ if (enableTranslation) { _%>
             const expect1 = /primeng.inputs.inputgroup.title/;
             <%_ } else { _%>
-            const expect1 = /inputgroup/;
+            const expect1 = /InputGroup/;
             <%_ } _%>
         element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
             expect(value).toMatch(expect1);
@@ -132,7 +132,7 @@ describe('administration', () => {
         <%_ if (enableTranslation) { _%>
             const expect1 = /primeng.buttons.button.title/;
             <%_ } else { _%>
-            const expect1 = /button/;
+            const expect1 = /Button/;
             <%_ } _%>
         element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
             expect(value).toMatch(expect1);
@@ -144,7 +144,7 @@ describe('administration', () => {
         <%_ if (enableTranslation) { _%>
             const expect1 = /primeng.buttons.splitbutton.title/;
             <%_ } else { _%>
-            const expect1 = /splitbutton/;
+            const expect1 = /SplitButton/;
             <%_ } _%>
         element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
             expect(value).toMatch(expect1);
