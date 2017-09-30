@@ -155,12 +155,14 @@ module.exports = JhipsterGenerator.extend({
         const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
         const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
 
-       this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
-        this.rewriteFile(
+       //this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
+        /*this.rewriteFile(
             'src/main/webapp/content/scss/primeng-resources.scss',
             'jhipster-needle-scss-add-vendor',
             `@import "~primeng/resources/themes/${themeName}/theme.css";`);
-
+*/
+        this.addMainSCSSStyle(`@import "~primeng/resources/primeng.min.css";
+                               @import "~primeng/resources/themes/${themeName}/theme.css";` , 'PrimeNG Resources')
         // init all variables
         this.anyError = false;
 
@@ -230,7 +232,7 @@ module.exports = JhipsterGenerator.extend({
             this.anyError = true;
         }
 
-        let primengResources =`import './primeng-resources.scss';`;
+        //let primengResources =`import './primeng-resources.scss';`;
 
         // add element to menu
         let primengMenu;
@@ -424,10 +426,10 @@ module.exports = JhipsterGenerator.extend({
 
         // add chart to vendor
         try {
-            this.rewriteFile(
+            /*this.rewriteFile(
                 'src/main/webapp/content/scss/vendor.scss',
                 'jhipster-needle-scss-add-vendor',
-                `${primengResources}`);
+                `${primengResources}`);*/
             this.rewriteFile(
                 'src/main/webapp/app/vendor.ts',
                 'jhipster-needle-add-element-to-vendor',
@@ -453,7 +455,8 @@ module.exports = JhipsterGenerator.extend({
                 "radarchart": "RadarChart",
                 "button": "Button",
                 "splitbutton": "SplitButton",
-                "inputgroup":"InputGroup"
+                "inputgroup":"InputGroup",
+                "inputtext":'InputText'
             },`;
             this.languages.forEach((language) => {
                 this.template('src/main/webapp/i18n/en/primeng.json', `src/main/webapp/i18n/${language}/primeng.json`);
