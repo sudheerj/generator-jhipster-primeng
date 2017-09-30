@@ -23,7 +23,7 @@
         "inputs": {
             "inputtext": {
                 "title": "InputText"
-            }
+            },
             "inputgroup": {
                 "title": "InputGroup"
             }
@@ -40,10 +40,10 @@
         },
         "data": {
             "datatable": {
-                "title": "Button"
+                "title": "DataTable"
             },
-            "splitbutton": {
-                "title": "SplitButton"
+            "datagrid": {
+                "title": "DataGrid"
             }
         },
         "dragdrop": {
