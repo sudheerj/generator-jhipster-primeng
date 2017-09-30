@@ -2,9 +2,16 @@
 import { <%= angular2AppName %>ButtonDemoModule } from './buttons/button/buttondemo.module';
 import { <%= angular2AppName %>SplitbuttonDemoModule } from './buttons/splitbutton/splitbuttondemo.module';
 
+import { <%= angular2AppName %>DialogDemoModule } from './overlay/dialog/dialogdemo.module';
+import { <%= angular2AppName %>ConfirmDialogDemoModule } from './overlay/confirmdialog/confirmdialogdemo.module';
+
 import { <%= angular2AppName %>InputTextDemoModule } from './inputs/inputtext/inputtextdemo.module';
 import { <%= angular2AppName %>InputTextAreaDemoModule } from './inputs/inputtextarea/inputtextareademo.module';
 import { <%= angular2AppName %>InputGroupDemoModule } from './inputs/inputgroup/inputgroupdemo.module';
+
+import { <%= angular2AppName %>GrowlDemoModule } from './messages/growl/growldemo.module';
+import { <%= angular2AppName %>MessagesDemoModule } from './messages/messages/messagesdemo.module';
+import { <%= angular2AppName %>GalleriaDemoModule } from './multimedia/galleria/galleriademo.module';
 
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { <%= angular2AppName %>BarchartDemoModule } from './charts/barchart/barchartdemo.module';
@@ -24,12 +31,19 @@ import { <%= angular2AppName %>RadarchartDemoModule } from './charts/radarchart/
         <%= angular2AppName %>InputTextAreaDemoModule,
         <%= angular2AppName %>InputGroupDemoModule,
 
+        <%= angular2AppName %>GrowlDemoModule,
+        <%= angular2AppName %>MessagesDemoModule,
+        <%= angular2AppName %>GalleriaDemoModule,
+
         <%= angular2AppName %>BarchartDemoModule,
         <%= angular2AppName %>DoughnutchartDemoModule,
         <%= angular2AppName %>LinechartDemoModule,
         <%= angular2AppName %>PiechartDemoModule,
         <%= angular2AppName %>PolarareachartDemoModule,
-        <%= angular2AppName %>RadarchartDemoModule
+        <%= angular2AppName %>RadarchartDemoModule,
+
+        <%= angular2AppName %>DialogDemoModule,
+        <%= angular2AppName %>ConfirmDialogDemoModule
 
     ],
     declarations: [],

@@ -316,6 +316,42 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.inputgroup">InputGroup</span>
                         </a>
                     </li>
+                   <span tyle="font-weight:bold">Messages Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="messages" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.messages">Messages</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="growl" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.growl">Growl</span>
+                        </a>
+                    </li>
+                    <span tyle="font-weight:bold">Overlay Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="dialog" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.dialog">Dialog</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="confirmdialog" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.confirmdialog">ConfirmDialog</span>
+                        </a>
+                    </li>
+                    <span tyle="font-weight:bold">Multimedia Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.multimedia">Multimedia</span>
+                        </a>
+                    </li>
                    
                    <hr/>
                    <span tyle="font-weight:bold">Button Components</span>
@@ -408,6 +444,18 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>
                     <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="dialog" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <span>Dialog</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="confirmdialog" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span>ConfirmDialog</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="splitbutton" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
                             <span>SplitButton</span>
@@ -448,6 +496,24 @@ module.exports = JhipsterGenerator.extend({
                         <a class="dropdown-item" routerLink="radarchart" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
                             <span>RadarChart</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="galleria" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-pie-chart" aria-hidden="true"></i>
+                            <span>Galleria</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="messages" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span>Messages</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="growl" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <span>Growl</span>
                         </a>
                     </li>
                 </ul>
@@ -515,7 +581,12 @@ module.exports = JhipsterGenerator.extend({
                 "splitbutton": "SplitButton",
                 "inputgroup":"InputGroup",
                 "inputtext":"InputText",
-                "inputtextarea":"InputTextArea"
+                "inputtextarea":"InputTextArea",
+                "galleria":"Galleria",
+                "messages":"Messages",
+                "growl":"Growl",
+                "dialog":"Dialog",
+                "confirmdialog":"ConfirmDialog"
             },`;
             this.languages.forEach((language) => {
                 this.template('src/main/webapp/i18n/en/primeng.json', `src/main/webapp/i18n/${language}/primeng.json`);
@@ -537,6 +608,24 @@ module.exports = JhipsterGenerator.extend({
 
         // copy all primeng files
         this.template('src/main/webapp/app/primeng/primeng.module.ts', 'src/main/webapp/app/primeng/primeng.module.ts');
+
+        this.template('src/main/webapp/app/primeng/multimedia/galleria/index.ts', 'src/main/webapp/app/primeng/multimedia/galleria/index.ts');
+        this.template('src/main/webapp/app/primeng/multimedia/galleria/galleriademo.component.html', 'src/main/webapp/app/primeng/multimedia/galleria/galleriademo.component.html');
+        this.template('src/main/webapp/app/primeng/multimedia/galleria/galleriademo.component.ts', 'src/main/webapp/app/primeng/multimedia/galleria/galleriademo.component.ts');
+        this.template('src/main/webapp/app/primeng/multimedia/galleria/galleriademo.module.ts', 'src/main/webapp/app/primeng/multimedia/galleria/galleriademo.module.ts');
+        this.template('src/main/webapp/app/primeng/multimedia/galleria/galleriademo.route.ts', 'src/main/webapp/app/primeng/multimedia/galleria/galleriademo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/messages/messages/index.ts', 'src/main/webapp/app/primeng/messages/messagesindex.ts');
+        this.template('src/main/webapp/app/primeng/messages/messages/messagesdemo.component.html', 'src/main/webapp/app/primeng/messages/messages/messagesdemo.component.html');
+        this.template('src/main/webapp/app/primeng/messages/messages/messagesdemo.component.ts', 'src/main/webapp/app/primeng/messages/messages/messagesdemo.component.ts');
+        this.template('src/main/webapp/app/primeng/messages/messages/messagesdemo.module.ts', 'src/main/webapp/app/primeng/messages/messages/messagesdemo.module.ts');
+        this.template('src/main/webapp/app/primeng/messages/messages/messagesdemo.route.ts', 'src/main/webapp/app/primeng/messages/messages/messagesdemo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/messages/growl/index.ts', 'src/main/webapp/app/primeng/messages/growl/index.ts');
+        this.template('src/main/webapp/app/primeng/messages/growl/growldemo.component.html', 'src/main/webapp/app/primeng/messages/growl/growldemo.component.html');
+        this.template('src/main/webapp/app/primeng/messages/growl/growldemo.component.ts', 'src/main/webapp/app/primeng/messages/growl/growldemo.component.ts');
+        this.template('src/main/webapp/app/primeng/messages/growl/growldemo.module.ts', 'src/main/webapp/app/primeng/messages/growl/growldemo.module.ts');
+        this.template('src/main/webapp/app/primeng/messages/growl/growldemo.route.ts', 'src/main/webapp/app/primeng/messages/growl/growldemo.route.ts');
 
         this.template('src/main/webapp/app/primeng/charts/barchart/index.ts', 'src/main/webapp/app/primeng/charts/barchart/index.ts');
         this.template('src/main/webapp/app/primeng/charts/barchart/barchartdemo.component.html', 'src/main/webapp/app/primeng/charts/barchart/barchartdemo.component.html');

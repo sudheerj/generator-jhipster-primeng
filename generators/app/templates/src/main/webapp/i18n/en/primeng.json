@@ -1,25 +1,5 @@
 {
     "primeng": {
-        "charts": {
-            "barchart": {
-                    "title": "BarChart"
-            },
-            "doughnutchart": {
-                    "title": "DoughnutChart"
-            },
-            "linechart": {
-                    "title": "LineChart"
-            },
-            "piechart": {
-                    "title": "PieChart"
-            },
-            "polarareachart": {
-                    "title": "PolarAreaChart"
-            },
-            "radarchart": {
-                    "title": "RadarChart"
-            }
-        },
         "inputs": {
             "inputtext": {
                 "title": "InputText"
@@ -29,6 +9,60 @@
             },
             "inputtextarea": {
                 "title": "InputTextArea"
+            },
+            "calendar": {
+                "title": "Calendar"
+            },
+            "chips": {
+                "title": "Chips"
+            },
+            "inputswitch": {
+                "title": "InputSwitch"
+            },
+            "mask": {
+                "title": "Mask"
+            },
+            "password": {
+                "title": "Password"
+            },
+            "rating": {
+                "title": "Rating"
+            },
+            "spinner": {
+                "title": "Spinner"
+            },
+            "togglebutton": {
+                "title": "ToggleButton"
+            },
+            "autocomplete": {
+                "title": "AutoComplete"
+            },
+            "checkbox": {
+                "title": "Checkbox"
+            },
+            "colorpicker": {
+                "title": "ColorPicker"
+            },
+            "editor": {
+                "title": "Editor"
+            },
+            "listbox": {
+                "title": "Listbox"
+            },
+            "multiselect": {
+                "title": "MultiSelect"
+            },
+            "radiobutton": {
+                "title": "RadioButton"
+            },
+            "slider": {
+                "title": "Slider"
+            },
+            "selectbutton": {
+                "title": "SelectButton"
+            },
+            "tricheckbox": {
+                "title": "TriCheckbox"
             }
 
         },
@@ -47,28 +81,181 @@
             },
             "datagrid": {
                 "title": "DataGrid"
+            },
+            "carousel": {
+                "title": "Carousel"
+            },
+            "orderlist": {
+                "title": "OrderList"
+            },
+            "datalist": {
+                "title": "DataList"
+            },
+            "paginator": {
+                "title": "Paginator"
+            },
+            "schedule": {
+                "title": "Schedule"
+            },
+            "treetable": {
+                "title": "TreeTable"
+            },
+            "datascroller": {
+                "title": "DataScroller"
+            },
+            "orgchart": {
+                "title": "OrgChart"
+            },
+            "gmap": {
+                "title": "Gmap"
+            },
+            "picklist": {
+                "title": "PickList"
+            },
+            "tree": {
+                "title": "Tree"
             }
         },
         "dragdrop": {
-
-        },
-        "file": {
-
+            "dragdrop": {
+                "title": "DragDrop"
+            }
         },
         "menu": {
-
+            "menu": {
+                "title": "Menu"
+            },
+            "contextmenu": {
+                "title": "ContextMenu"
+            },
+            "panelmenu": {
+                "title": "PanelMenu"
+            },
+            "steps": {
+                "title": "Steps"
+            },
+            "tieredmenu": {
+                "title": "TieredMenu"
+            },
+            "breadcrumb": {
+                "title": "Breadcrumb"
+            },
+            "megamenu": {
+                "title": "MegaMenu"
+            },
+            "menubar": {
+                "title": "Menubar"
+            },
+            "slidemenu": {
+                "title": "SlideMenu"
+            },
+            "tabmenu": {
+                "title": "TabMenu"
+            }
         },
         "messages": {
-
+            "messages": {
+                "title": "Messages"
+            },
+            "growl": {
+                "title": "Growl"
+            }
         },
         "multimedia": {
-
+            "galleria": {
+                "title": "Galleria"
+            }
+        },
+        "file": {
+            "fileupload": {
+                "title": "FileUpload"
+            }
         },
         "overlay": {
-
+            "confirmdialog": {
+                "title": "ConfirmDialog"
+            },
+            "dialog": {
+                "title": "Dialog"
+            },
+            "lightbox": {
+                "title": "Lightbox"
+            },
+            "overlaypanel": {
+                "title": "OverlayPanel"
+            },
+            "tooltip": {
+                "title": "Tooltip"
+            }
         },
         "panel": {
-
+            "accordion": {
+                "title": "Accordion"
+            },
+            "panel": {
+                "title": "Panel"
+            },
+            "tabview": {
+                "title": "TabView"
+            },
+            "fieldset": {
+                "title": "Fieldset"
+            },
+            "grid": {
+                "title": "Grid"
+            },
+            "toolbar": {
+                "title": "Toolbar"
+            }
+        },
+        "charts": {
+            "barchart": {
+                "title": "BarChart"
+            },
+            "doughnutchart": {
+                "title": "DoughnutChart"
+            },
+            "linechart": {
+                "title": "LineChart"
+            },
+            "piechart": {
+                "title": "PieChart"
+            },
+            "polarareachart": {
+                "title": "PolarAreaChart"
+            },
+            "radarchart": {
+                "title": "RadarChart"
+            }
+        },
+        "misc": {
+            "responsive": {
+                "title": "Responsive"
+            },
+            "captcha": {
+                "title": "Captcha"
+            },
+            "defer": {
+                "title": "Defer"
+            },
+            "codehighlighter": {
+                "title": "CodehigHlighter"
+            },
+            "rtl": {
+                "title": "RTL"
+            },
+            "blockui": {
+                "title": "BlockUI"
+            },
+            "terminal": {
+                "title": "Terminal"
+            },
+            "inplace": {
+                "title": "Inplace"
+            },
+            "progressbar": {
+                "title": "ProgressBar"
+            }
         }
     }
 }

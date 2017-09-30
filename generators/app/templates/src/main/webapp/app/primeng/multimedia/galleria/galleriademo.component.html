@@ -1,0 +1,24 @@
+<pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+    <!-- Standard -->
+    <pe-step label="Standard">
+        <p-galleria [images]="images" panelWidth="400" panelHeight="320"
+                    [autoPlay]="false" [showCaption]="true">
+        </p-galleria>
+    </pe-step>
+
+    <!-- Auto Play mode -->
+    <pe-step label="Auto Play">
+        <p-galleria [images]="images" panelWidth="400" panelHeight="220">
+        </p-galleria>
+    </pe-step>
+
+    <!-- Events -->
+    <pe-step label="Events">
+        <p-galleria [images]="images" panelWidth="400" panelHeight="220"
+                    [autoPlay]="false" [showCaption]="true"
+                    (onImageClicked)="onImageClicked($event)">
+        </p-galleria>
+    </pe-step>
+</pe-steps>
+
+<p-growl [value]="msgs"></p-growl>
