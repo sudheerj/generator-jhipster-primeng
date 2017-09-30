@@ -1151,11 +1151,11 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/primeng.module.ts', 'src/main/webapp/app/primeng/primeng.module.ts');
 
         for (var component in components) {
-            this.template(`src/main/webapp/app/primeng/${components['component']}/${components}/index.ts`, `src/main/webapp/app/primeng/${components['component']}/${components}/index.ts`);
-            this.template(`src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.component.html`, `src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.component.html`);
-            this.template(`src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.component.ts`, `src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.component.ts`);
-            this.template(`src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.module.ts`, `src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.module.ts`);
-            this.template(`src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.route.ts`, `src/main/webapp/app/primeng/${components['component']}/${components}/${components}demo.route.ts`);
+            this.template(`src/main/webapp/app/primeng/${components['component']}/${component}/index.ts`, `src/main/webapp/app/primeng/${components['component']}/${component}/index.ts`);
+            this.template(`src/main/webapp/app/primeng/${components['component']}/${component}/${component}demo.component.html`, `src/main/webapp/app/primeng/${components['component']}/${component}/${component}demo.component.html`);
+            this.template(`src/main/webapp/app/primeng/${components['component']}/${component}/${component}demo.component.ts`, `src/main/webapp/app/primeng/${components['component']}/${component}/${component}demo.component.ts`);
+            this.template(`src/main/webapp/app/primeng/${components['component']}/${component}/${component}demo.module.ts`, `src/main/webapp/app/primeng/${components['component']}/${component}/${component}demo.module.ts`);
+            this.template(`src/main/webapp/app/primeng/${components['component']}/${component}/${component}demo.route.ts`, `src/main/webapp/app/primeng/${components['component']}/${component}/${component}demo.route.ts`);
         }
 
 
