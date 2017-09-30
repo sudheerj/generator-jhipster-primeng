@@ -158,16 +158,9 @@ module.exports = JhipsterGenerator.extend({
 
        this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
         this.rewriteFile(
-            'src/main/webapp/content/scss/primeng-resources.css',
+            'src/main/webapp/content/scss/primeng-resources.scss',
             'jhipster-needle-add-element-to-vendor',
             `@import "~primeng/resources/themes/${themeName}/theme.css";`);
-
-     /*   this.rewriteFile(
-            'src/test/javascript/protractor.conf.js',
-            'jhipster-needle-add-protractor-tests',
-            `${primengSpec}`);
-
-        this.copyHtml('_index.html', 'src/main/webapp/index.html');*/
 
         // init all variables
         this.anyError = false;
@@ -252,8 +245,6 @@ module.exports = JhipsterGenerator.extend({
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
-                   <span tyle="font-weight:bold">Button Components</span>
-                   <hr/>
                    <span tyle="font-weight:bold">Input Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -269,6 +260,8 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>
                    
+                   <hr/>
+                   <span tyle="font-weight:bold">Button Components</span>
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
