@@ -15,4 +15,7 @@ export class InputGroupDemoComponent implements OnInit {
         this.msgs.length = 0;
         this.msgs.push({severity: 'info', summary: label});
     }
+
+    ngOnInit() {
+    }
 }
