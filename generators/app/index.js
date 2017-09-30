@@ -142,7 +142,6 @@ module.exports = JhipsterGenerator.extend({
         }
 
         themeName = this.props["theme"];
-        console.log("****theme***"+themeName);
 
         // function to use directly template
         this.template = function (source, destination) {
@@ -159,7 +158,7 @@ module.exports = JhipsterGenerator.extend({
        this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
         this.rewriteFile(
             'src/main/webapp/content/scss/primeng-resources.scss',
-            'jhipster-needle-add-element-to-vendor',
+            'jhipster-needle-scss-add-vendor',
             `@import "~primeng/resources/themes/${themeName}/theme.css";`);
 
         // init all variables
@@ -427,7 +426,7 @@ module.exports = JhipsterGenerator.extend({
         try {
             this.rewriteFile(
                 'src/main/webapp/content/scss/vendor.scss',
-                'jhipster-needle-add-element-to-vendor',
+                'jhipster-needle-scss-add-vendor',
                 `${primengResources}`);
             this.rewriteFile(
                 'src/main/webapp/app/vendor.ts',
