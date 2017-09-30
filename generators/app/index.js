@@ -38,6 +38,54 @@ const THEME_OPTIONS = [
     {
         value: 'bootstrap',
         name: 'Bootstrap'
+    },
+    {
+        value: 'cupertino',
+        name: 'Cupertino'
+    },
+    {
+        value: 'flick',
+        name: 'Flick'
+    },
+    {
+        value: 'kasper',
+        name: 'Kasper'
+    },
+    {
+        value: 'lightness',
+        name: 'Lightness'
+    },
+    {
+        value: 'ludvig',
+        name: 'Ludvig'
+    },
+    {
+        value: 'pepper-grinder',
+        name: 'Pepper-Grinder'
+    },
+    {
+        value: 'redmond',
+        name: 'Redmond'
+    },
+    {
+        value: 'rocket',
+        name: 'Rocket'
+    },
+    {
+        value: 'south-street',
+        name: 'South-Street'
+    },
+    {
+        value: 'start',
+        name: 'Start'
+    },
+    {
+        value: 'tronstatic',
+        name: 'Tronstatic'
+    },
+    {
+        value: 'voclain',
+        name: 'Voclain'
     }
 ];
 
@@ -157,17 +205,13 @@ module.exports = JhipsterGenerator.extend({
         const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
 
        //this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
-        /*this.rewriteFile(
-            'src/main/webapp/content/scss/primeng-resources.scss',
-            'jhipster-needle-scss-add-vendor',
-            `@import "~primeng/resources/themes/${themeName}/theme.css";`);
-*/
-        /*this.addMainSCSSStyle(`@import "~primeng/resources/primeng.min.css";
-                               @import "~primeng/resources/themes/${themeName}/theme.css";` , 'PrimeNG Resources');*/
+
+        let primengResources = `@import "~primeng/resources/primeng.min.css";
+                                @import "~primeng/resources/themes/${themeName}/theme.css";`;
 
         // add a line to a lyric file, using appendFile
-        fs.appendFile(CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss', `@import "~primeng/resources/primeng.min.css";
-                               @import "~primeng/resources/themes/${themeName}/theme.css";`, (err) => {
+        fs.appendFile(CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss',
+            primengResources, (err) => {
             if (err) throw err;
             console.log('The lyrics were updated!');
         });
@@ -240,8 +284,6 @@ module.exports = JhipsterGenerator.extend({
             this.anyError = true;
         }
 
-        //let primengResources =`import './primeng-resources.scss';`;
-
         // add element to menu
         let primengMenu;
         if (this.enableTranslation) {
@@ -260,6 +302,12 @@ module.exports = JhipsterGenerator.extend({
                         <a class="dropdown-item" routerLink="inputtext" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inputtext">InputText</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="inputtextarea" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.inputtextarea">InputTextArea</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
@@ -339,6 +387,12 @@ module.exports = JhipsterGenerator.extend({
                         <a class="dropdown-item" routerLink="inputtext" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
                             <span>InputText</span>
+                        </a>
+                    </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="inputtextarea" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <span>InputTextArea</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
@@ -434,10 +488,6 @@ module.exports = JhipsterGenerator.extend({
 
         // add chart to vendor
         try {
-            /*this.rewriteFile(
-                'src/main/webapp/content/scss/vendor.scss',
-                'jhipster-needle-scss-add-vendor',
-                `${primengResources}`);*/
             this.rewriteFile(
                 'src/main/webapp/app/vendor.ts',
                 'jhipster-needle-add-element-to-vendor',
@@ -464,7 +514,8 @@ module.exports = JhipsterGenerator.extend({
                 "button": "Button",
                 "splitbutton": "SplitButton",
                 "inputgroup":"InputGroup",
-                "inputtext":"InputText"
+                "inputtext":"InputText",
+                "inputtextarea":"InputTextArea"
             },`;
             this.languages.forEach((language) => {
                 this.template('src/main/webapp/i18n/en/primeng.json', `src/main/webapp/i18n/${language}/primeng.json`);
@@ -546,6 +597,12 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.component.ts', 'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.component.ts');
         this.template('src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.module.ts', 'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.module.ts');
         this.template('src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.route.ts', 'src/main/webapp/app/primeng/inputs/inputgroup/inputgroupdemo.route.ts');
+
+        this.template('src/main/webapp/app/primeng/inputs/inputtextarea/index.ts', 'src/main/webapp/app/primeng/inputs/inputtextarea/index.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.component.html', 'src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.component.html');
+        this.template('src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.component.ts', 'src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.component.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.module.ts', 'src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.module.ts');
+        this.template('src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.route.ts', 'src/main/webapp/app/primeng/inputs/inputtextarea/inputtextareademo.route.ts');
     },
 
     install() {

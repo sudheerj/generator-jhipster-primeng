@@ -1,0 +1,25 @@
+<form novalidate>
+    Inputtextarea add styling and autoResize functionality to standard textare element.
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <<h3 class="first">Default</h3>
+            <textarea rows="5" cols="30" pInputTextarea></textarea>
+        </pe-step>
+
+      <!-- AutoResize -->
+        <pe-step label="AutoResize">
+            <h3>AutoResize</h3>
+            <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+        </pe-step>
+
+        <!-- Disabled -->
+        <pe-step label="Disabled">
+            <h3>Disabled</h3>
+            <textarea rows="5" cols="30" pInputTextarea disabled="true"></textarea>
+        </pe-step>
+
+    </pe-steps>
+
+   <!-- <p-growl [value]="msgs"></p-growl>-->
+</form>

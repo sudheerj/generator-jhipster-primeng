@@ -3,6 +3,7 @@ import { <%= angular2AppName %>ButtonDemoModule } from './buttons/button/buttond
 import { <%= angular2AppName %>SplitbuttonDemoModule } from './buttons/splitbutton/splitbuttondemo.module';
 
 import { <%= angular2AppName %>InputTextDemoModule } from './inputs/inputtext/inputtextdemo.module';
+import { <%= angular2AppName %>InputTextAreaDemoModule } from './inputs/inputtextarea/inputtextareademo.module';
 import { <%= angular2AppName %>InputGroupDemoModule } from './inputs/inputgroup/inputgroupdemo.module';
 
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -20,6 +21,7 @@ import { <%= angular2AppName %>RadarchartDemoModule } from './charts/radarchart/
         <%= angular2AppName %>SplitbuttonDemoModule,
 
         <%= angular2AppName %>InputTextDemoModule,
+        <%= angular2AppName %>InputTextAreaDemoModule,
         <%= angular2AppName %>InputGroupDemoModule,
 
         <%= angular2AppName %>BarchartDemoModule,

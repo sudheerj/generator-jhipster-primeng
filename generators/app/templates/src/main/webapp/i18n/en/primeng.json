@@ -26,6 +26,9 @@
             },
             "inputgroup": {
                 "title": "InputGroup"
+            },
+            "inputtextarea": {
+                "title": "InputTextArea"
             }
 
         },
