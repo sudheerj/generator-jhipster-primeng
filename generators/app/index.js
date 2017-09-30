@@ -15,6 +15,31 @@ const PRIMENG_VERSION = '4.2.1';
 const PRIMENG_EXT_WIZARD_VERSION = '2.1.0';
 const CHARTJS_VERSION = '2.6.0';
 
+let themeName = 'omega';
+
+const THEME_OPTIONS = [
+    {
+        value: 'omega',
+        name: 'Omega'
+    },
+    {
+        value: 'cruze',
+        name: 'Cruze'
+    },
+    {
+        value: 'darkness',
+        name: 'Darkness'
+    },
+    {
+        value: 'home',
+        name: 'Home'
+    },
+    {
+        value: 'bootstrap',
+        name: 'Bootstrap'
+    }
+];
+
 module.exports = JhipsterGenerator.extend({
 
     constructor: function (...args) { // eslint-disable-line object-shorthand
@@ -85,6 +110,7 @@ module.exports = JhipsterGenerator.extend({
         }
     },
 
+
     prompting() {
         const done = this.async();
         const prompts = [
@@ -93,7 +119,14 @@ module.exports = JhipsterGenerator.extend({
                 name: 'confirmation',
                 message: 'Do you want to install PrimeNG?',
                 default: true
-            }
+            },
+            {
+            type: 'list',
+            name: 'theme',
+            message: response => this.getNumberedQuestion('Which theme would you like to use?', true),
+            choices: THEME_OPTIONS,
+            default: 'omega'
+            },
         ];
 
         this.prompt(prompts).then((props) => {
@@ -107,6 +140,9 @@ module.exports = JhipsterGenerator.extend({
         if (this.defaultOption === undefined && !this.props.confirmation) {
             return;
         }
+
+        themeName = this.props["theme"];
+        console.log("****theme***"+themeName);
 
         // function to use directly template
         this.template = function (source, destination) {
