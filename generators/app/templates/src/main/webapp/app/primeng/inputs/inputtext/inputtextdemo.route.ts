@@ -2,7 +2,7 @@ import { Route } from '@angular/router';
 import { UserRouteAccessService } from '../../../shared';
 import { InputTextDemoComponent } from './inputtextdemo.component';
 
-export const inputGroupDemoRoute: Route = {
+export const inputTextDemoRoute: Route = {
     path: 'inputtext',
     component: InputTextDemoComponent,
     data: {
