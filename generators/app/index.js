@@ -120,7 +120,7 @@ module.exports = JhipsterGenerator.extend({
         const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
         const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
 
-       // this.template(CLIENT_MAIN_SRC_DIR + 'app/content/scss/vendor.scss', CLIENT_MAIN_SRC_DIR + 'app/content/scss/vendor.scss');
+       this.template(CLIENT_MAIN_SRC_DIR + 'app/content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'app/content/scss/primeng-resources.scss');
 
      /*   this.rewriteFile(
             'src/test/javascript/protractor.conf.js',
@@ -198,8 +198,7 @@ module.exports = JhipsterGenerator.extend({
             this.anyError = true;
         }
 
-        let primengResources =`@import "~primeng/resources/primeng.min.css";
-                               @import "~primeng/resources/themes/darkness/theme.css";`;
+        let primengResources =`import '../content/scss/primeng-resources.scss';`;
 
         // add element to menu
         let primengMenu;

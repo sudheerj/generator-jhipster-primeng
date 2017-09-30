@@ -1,0 +1,31 @@
+<form novalidate>
+    InputText is an extension to standard input element with theming.
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <h3>Basic</h3>
+            <label for="basic">Basic</label>
+            <input id="input" type="text" size="30" pInputText [(ngModel)]="text">
+            <span id="text">{text}}</span>
+        </pe-step>
+
+        <!-- Float label-->
+        <pe-step label="Float label">
+            <h3>Float label</h3>
+            <span class="ui-float-label">
+                <input id="float-input" type="text" size="30" pInputText>
+                <label for="float-input">Username</label>
+            </span>
+        </pe-step>
+
+        <!-- Disabled -->
+        <pe-step label="Disabled">
+            <h3>Disabled</h3>
+            <input id="disabled-input" type="text" size="30" pInputText [disabled]="disabled" />
+            <button id="disabled-btn" type="button" (click)="toggleDisabled()" pButton label="Toggle"></button>
+        </pe-step>
+
+    </pe-steps>
+
+    <p-growl [value]="msgs"></p-growl>
+</form>
