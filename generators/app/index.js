@@ -157,6 +157,10 @@ module.exports = JhipsterGenerator.extend({
         const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
 
        this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
+        this.rewriteFile(
+            'src/main/webapp/content/scss/primeng-resources.css',
+            'jhipster-needle-add-element-to-vendor',
+            `@import "~primeng/resources/themes/${themeName}/theme.css";`);
 
      /*   this.rewriteFile(
             'src/test/javascript/protractor.conf.js',
@@ -234,7 +238,7 @@ module.exports = JhipsterGenerator.extend({
             this.anyError = true;
         }
 
-        let primengResources =`import '../content/scss/primeng-resources.scss';`;
+        let primengResources =`import './primeng-resources.scss';`;
 
         // add element to menu
         let primengMenu;
@@ -429,7 +433,7 @@ module.exports = JhipsterGenerator.extend({
         // add chart to vendor
         try {
             this.rewriteFile(
-                'src/main/webapp/app/vendor.ts',
+                'src/main/webapp/content/scss/vendor.scss',
                 'jhipster-needle-add-element-to-vendor',
                 `${primengResources}`);
             this.rewriteFile(
