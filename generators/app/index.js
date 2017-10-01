@@ -15,6 +15,8 @@ const ANGULAR_VERSION = '4.2.6';
 const PRIMENG_VERSION = '4.2.1';
 const PRIMENG_EXT_WIZARD_VERSION = '2.1.0';
 const CHARTJS_VERSION = '2.6.0';
+const FULLCALENDAR_VERSION = '3.5.0';
+const QUILL_VERSION = '1.1.8';
 
 let themeName = 'omega';
 
@@ -128,6 +130,19 @@ module.exports = JhipsterGenerator.extend({
                     if (fileData.dependencies['primeng-extensions-wizard']) {
                         this.libPrimeNgExtensionsWizardVersion = fileData.dependencies['primeng-extensions-wizard'];
                     }
+
+                    if (fileData.dependencies['chart.js']) {
+                        this.libChartJsVersion = fileData.dependencies['chart.js'];
+                    }
+
+                    if (fileData.dependencies['fullcalendar']) {
+                        this.libFullcalendarVersion = fileData.dependencies['fullcalendar'];
+                    }
+
+                    if (fileData.dependencies['quill']) {
+                        this.libQuillVersion = fileData.dependencies['quill'];
+                    }
+
                     if (fileData.dependencies['chart.js']) {
                         this.libChartJsVersion = fileData.dependencies['chart.js'];
                     }
@@ -258,6 +273,21 @@ module.exports = JhipsterGenerator.extend({
             } else {
                 this.addNpmDependency('chart.js', `${CHARTJS_VERSION}`);
             }
+
+            if (this.libFullcalendarVersion) {
+                // the version already exists, so try to upgrade instead
+                this.replaceContent('package.json', `"full-calendar": "${this.libFullcalendarVersion}"`, `"full-calendar": "${FULLCALENDAR_VERSION}"`);
+            } else {
+                this.addNpmDependency('full-calendar', `${FULLCALENDAR_VERSION}`);
+            }
+
+            if (this.libQuillVersion) {
+                // the version already exists, so try to upgrade instead
+                this.replaceContent('package.json', `"quill": "${this.libQuillVersion}"`, `"quill": "${QUILL_VERSION}"`);
+            } else {
+                this.addNpmDependency('quill', `${QUILL_VERSION}`);
+            }
+
         } catch (e) {
             this.log(`${chalk.red.bold('ERROR!')}`);
             this.log('  Problem when adding the new librairies in your package.json');
