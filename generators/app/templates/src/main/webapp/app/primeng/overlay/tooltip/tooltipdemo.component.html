@@ -1,0 +1,37 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <input type="text" pInputText pTooltip="Enter your favourite component name" />
+        </pe-step>
+
+        <!-- Position -->
+        <pe-step label="Position" [styleClass]="">
+            <div [ngClass]="'center-align'">
+                <input type="text" pInputText pTooltip="Enter your favourite component name" tooltipPosition="top" placeholder="Top aligned tooltip"/><br/><br/>
+                <input type="text" pInputText pTooltip="Enter your favourite component name" tooltipPosition="right" placeholder="Right aligned tooltip"/><br/><br/>
+                <input type="text" pInputText pTooltip="Enter your favourite component name" tooltipPosition="bottom" placeholder="Bottom aligned tooltip"/><br/><br/>
+                <input type="text" pInputText pTooltip="Enter your favourite component name" tooltipPosition="left" placeholder="Left aligned tooltip"/><br/><br/>
+            </div>
+        </pe-step>
+
+        <!-- Tooltip Event -->
+        <pe-step label="Tooltip Event">
+            <input type="text" pInputText pTooltip="Enter your favourite component name" tooltipEvent="focus" placeholder="Focus inputbox"/>
+        </pe-step>
+
+        <!-- Tooltip Delay -->
+        <pe-step label="Tooltip Delay">
+            <input type="text" pInputText pTooltip="Enter your favourite component name" tooltipEvent="focus" placeholder="Focus inputbox" showDelay="1000" hideDelay="400"/>
+        </pe-step>
+
+        <!-- Disabled Tooltip -->
+        <pe-step label="Disabled">
+            <input type="text" pInputText pTooltip="Enter your favourite component name" tooltipDisabled="true"/>
+        </pe-step>
+
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

@@ -1,0 +1,102 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
+        <!-- Basic -->
+        <pe-step label="Basic" >
+            <p-orderList [value]="countries">
+                <ng-template let-country pTemplate="item">
+                    <div class="ui-helper-clearfix">
+                        <img src="/assets/data/images/country/{{country.code.toLowerCase()}}.png" />
+                        <span class="content-format">{{country.flag}} {{country.name}}({{country.dial_code}})</span>
+                    </div>
+                </ng-template>
+            </p-orderList>
+        </pe-step>
+        <!-- Control Selection -->
+        <pe-step label="Control Selection">
+            <p-orderList [value]="countries" [metaKeySelection]="false" >
+                <ng-template let-country pTemplate="item">
+                    <div class="ui-helper-clearfix">
+                        <img src="/assets/data/images/country/{{country.code.toLowerCase()}}.png" />
+                        <span class="content-format">{{country.flag}} {{country.name}}({{country.dial_code}})</span>
+                    </div>
+                </ng-template>
+            </p-orderList>
+        </pe-step>
+
+        <!-- Headers-->
+        <pe-step label="Headers">
+            <p-orderList [value]="countries"  header="Favourite countries" >
+                <ng-template let-country pTemplate="item">
+                    <div class="ui-helper-clearfix">
+                        <img src="/assets/data/images/country/{{country.code.toLowerCase()}}.png" />
+                        <span class="content-format">{{country.flag}} {{country.name}}({{country.dial_code}})</span>
+                    </div>
+                </ng-template>
+            </p-orderList>
+        </pe-step>
+
+        <!-- Responsive -->
+        <pe-step label="Responsive">
+            <p-orderList [value]="countries" [responsive]="true" >
+                <ng-template let-country pTemplate="item">
+                    <div class="ui-helper-clearfix">
+                        <img src="/assets/data/images/country/{{country.code.toLowerCase()}}.png" />
+                        <span class="content-format">{{country.flag}} {{country.name}}({{country.dial_code}})</span>
+                    </div>
+                </ng-template>
+            </p-orderList>
+        </pe-step>
+
+        <!-- Filters -->
+        <pe-step label="Filters" >
+            <p-orderList [value]="countries" [responsive]="true" filterBy="name,code" filterPlaceHolder="Search country">
+                <ng-template let-country pTemplate="item">
+                    <div class="ui-helper-clearfix">
+                        <img src="/assets/data/images/country/{{country.code.toLowerCase()}}.png" />
+                        <span class="content-format">{{country.flag}} {{country.name}}({{country.dial_code}})</span>
+                    </div>
+                </ng-template>
+            </p-orderList>
+        </pe-step>
+
+        <!-- Drag&Drop -->
+        <pe-step label="Drag&Drop" >
+            <p-orderList [value]="countries" [dragdrop]="true" dragdropScope="name">
+                <ng-template let-country pTemplate="item">
+                    <div class="ui-helper-clearfix">
+                        <img src="/assets/data/images/country/{{country.code.toLowerCase()}}.png" />
+                        <span class="content-format">{{country.flag}} {{country.name}}({{country.dial_code}})</span>
+                    </div>
+                </ng-template>
+            </p-orderList>
+        </pe-step>
+
+        <!-- Events -->
+        <pe-step label="Events">
+            <p-orderList [value]="countries" (onReorder)="onReorder($event)">
+                <ng-template let-country pTemplate="item">
+                    <div class="ui-helper-clearfix">
+                        <img src="/assets/data/images/country/{{country.code.toLowerCase()}}.png" />
+                        <span class="content-format">{{country.flag}} {{country.name}}({{country.dial_code}})</span>
+                    </div>
+                </ng-template>
+            </p-orderList>
+        </pe-step>
+
+        <!-- Customized-->
+        <pe-step label="(Customized)">
+            <p-orderList [value]="countries"  header="Favourite countries" [responsive]="true"  (onReorder)="onReorder($event)" [listStyle]="{'width':'100%', 'height':'300px'}">
+                <ng-template let-country pTemplate="item">
+                    <div class="ui-helper-clearfix">
+                        <img src="/assets/data/images/country/{{country.code.toLowerCase()}}.png" />
+                        <span class="content-format">{{country.flag}} {{country.name}}({{country.dial_code}})</span>
+                    </div>
+                </ng-template>
+            </p-orderList>
+        </pe-step>
+
+
+    </pe-steps>
+</form>
+
+<p-growl [value]="msgs"></p-growl>

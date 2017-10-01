@@ -1,0 +1,84 @@
+<pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
+    <!-- Basic -->
+    <pe-step label="Basic">
+        <p-tree [value]="basicTree"></p-tree>
+    </pe-step>
+    <!-- Single Selection -->
+    <pe-step label="Single Selection">
+        <p-tree [value]="singleSelectionTree" selectionMode="single" [(selection)]="selectedPlace"
+                (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)"></p-tree>
+        <div>Selected Node: {{selectedPlace ? selectedPlace.label : 'none'}}</div>
+    </pe-step>
+    <!-- Multiple Selection -->
+    <pe-step label="Multiple Selection">
+        <p-tree [value]="multipleSelectionTree" selectionMode="multiple" [(selection)]="selectedPlaces"
+                (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)"></p-tree>
+        <div>Selected Nodes: <span *ngFor="let place of selectedPlaces">{{place.label}} </span></div>
+    </pe-step>
+    <!-- Multiple Selection(with Checkbox)-->
+    <pe-step label="Checkbox Selection">
+        <p-tree [value]="checkboxSelectionTree" selectionMode="checkbox" [(selection)]="selectMultiplePlaces"
+                (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)"></p-tree>
+        <div>Selected Nodes: <span *ngFor="let place of selectMultiplePlaces">{{place.label}} </span></div>
+    </pe-step>
+    <!-- Customized content -->
+    <pe-step label="Customized content">
+        <p-tree [value]="templateTree">
+            <ng-template let-node pTemplate="default">
+                <input [(ngModel)]="node.label" type="text" style="width:100%"/>
+            </ng-template>
+        </p-tree>
+    </pe-step>
+
+    <!-- Horizontal Tree -->
+    <pe-step label="Horizontal">
+        <p-tree [value]="horizontalTree" layout="horizontal" selectionMode="single"
+                [(selection)]="selectedTour"></p-tree>
+        <div>Selected Node: {{selectedTour ? selectedTour.label : 'none'}}</div>
+    </pe-step>
+
+    <!-- Lazy loading -->
+    <pe-step label="Lazy loading">
+        <p-tree [value]="lazyTree" (onNodeExpand)="nodeExpand($event)"
+                [style]="{'max-height':'200px','overflow':'auto'}"></p-tree>
+    </pe-step>
+
+    <!-- Contextmenu -->
+    <pe-step label="Contextmenu">
+        <p-tree [value]="contextMenuTree" selectionMode="single" [(selection)]="selectedTouristPlace"
+                [contextMenu]="cm"></p-tree>
+        <p-contextMenu #cm [model]="items"></p-contextMenu>
+    </pe-step>
+    <!-- Drag and Drop -->
+    <pe-step label="Drag and Drop">
+        <div class="ui-g ui-fluid">
+            <div class="ui-g-12 ui-md-3">
+                <h4>Available Packages</h4>
+                <p-tree [value]="dragDropTreeOne" draggableNodes="true" droppableNodes="true"
+                        dragdropScope="source"></p-tree>
+            </div>
+            <div class="ui-g-12 ui-md-1" style="text-align:center">
+                <i class="fa fa-exchange" class="dnd-exchange"></i>
+            </div>
+            <div class="ui-g-12 ui-md-3">
+                <h4>Choose your package</h4>
+                <p-tree [value]="dragDropTreeTwo" draggableNodes="true" droppableNodes="true"
+                        dragdropScope="target"></p-tree>
+            </div>
+            <div class="ui-g-12 ui-md-1">
+
+            </div>
+        </div>
+    </pe-step>
+    <!-- Programmatic Tree expansion -->
+    <pe-step label="Programmatic Tree expansion">
+        <p-tree #expandingTree [value]="programmaticTree"></p-tree>
+        <div>
+            <button pButton type="text" label="Expand all" (click)="expandAll()"></button>
+            <button pButton type="text" label="Collapse all" (click)="collapseAll()"></button>
+        </div>
+    </pe-step>
+
+</pe-steps>
+
+<p-growl [value]="msgs"></p-growl>

@@ -1,0 +1,15 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
+        <!-- Basic -->
+        <pe-step label="Basic" >
+            <p-panelMenu [model]="items" ></p-panelMenu>
+        </pe-step>
+        <!-- Expanded -->
+        <pe-step label="Expanded">
+            <p-panelMenu [model]="expandeditems"></p-panelMenu>
+        </pe-step>
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

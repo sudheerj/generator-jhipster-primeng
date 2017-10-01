@@ -1,0 +1,23 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
+        <!-- Basic -->
+        <pe-step label="Basic" >
+            <h3 class="first">Basic</h3>
+            <p-steps [model]="items"></p-steps>
+        </pe-step>
+        <!-- Clickable -->
+        <pe-step label="Clickable" [styleClass]="'layout-format'">
+            <h3>Clickable</h3>
+            <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+        </pe-step>
+
+        <!-- Custom Style -->
+        <pe-step label="Custom Style" [styleClass]="'layout-format'">
+            <h3>Custom Style</h3>
+            <p-steps [model]="items" styleClass="steps-custom"></p-steps>
+        </pe-step>
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

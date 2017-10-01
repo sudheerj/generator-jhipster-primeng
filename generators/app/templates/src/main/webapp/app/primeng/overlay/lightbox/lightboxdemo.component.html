@@ -1,0 +1,25 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Images -->
+        <pe-step label="Images">
+            <p-lightbox [images]="images" name="image"></p-lightbox>
+        </pe-step>
+
+        <!-- Content Type -->
+        <pe-step label="Content Type">
+            <p-lightbox type="content" name="content">
+                <a class="group" href="#">
+                    Watch PrimeNG Video
+                </a>
+                <iframe width="500" height="300" src="/assets/data/videos/ironman.mp4" frameborder="0" allowfullscreen></iframe>
+            </p-lightbox>
+        </pe-step>
+
+        <!-- Effects -->
+        <pe-step label="Effects">
+            <p-lightbox [images]="images" name="effects" easing="ease-out" effectDuration="1000ms"></p-lightbox>
+        </pe-step>
+    </pe-steps>
+</form>
+
+<p-growl [value]="msgs"></p-growl>

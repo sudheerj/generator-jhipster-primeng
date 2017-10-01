@@ -1,0 +1,51 @@
+<form novalidate>
+    <h1>Rate your faviourite Single page applications</h1>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <h3>Enter rating</h3>
+            Angular
+            <p-rating name="basic" [(ngModel)]="angular"></p-rating>
+            Rating: {{angular}}
+        </pe-step>
+
+        <!-- Cancel Control -->
+        <pe-step label="Cancel Control" [styleClass]="'multicheckbox-height'">
+            <h3>Cancel Control</h3>
+            Ember
+            <p-rating name="cancel" [(ngModel)]="ember" [cancel]="false" stars="10"></p-rating>
+            Rating: {{ember}}
+        </pe-step>
+
+        <!-- Events -->
+        <pe-step label="Events">
+            <h3>Events</h3>
+            React
+            <p-rating name="events" [(ngModel)]="react" (onRate)="handleRate($event)"
+                      (onCancel)="handleCancel($event)"></p-rating>
+            Rating: {{react}}
+        </pe-step>
+
+        <!-- ReadOnly/Disabled -->
+        <pe-step label="ReadOnly/Disabled" [styleClass]="'multicheckbox-height'">
+            <h3>ReadOnly/Disabled</h3>
+            <span *ngIf="selectedType =='readonly'">
+            Knockout
+            <p-rating name="readonly" [ngModel]="knockout" readonly="true"></p-rating>
+                 Rating: {{knockout}}
+                </span>
+            <span *ngIf="selectedType =='disable'">
+            VueJS
+            <p-rating name="disabled" [ngModel]="vuejs" disabled="true"></p-rating>
+            Rating: {{vuejs}}
+        </span>
+            <br/>
+            <p-selectButton name="option" [options]="types" [(ngModel)]="selectedType"></p-selectButton>
+        </pe-step>
+
+    </pe-steps>
+
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

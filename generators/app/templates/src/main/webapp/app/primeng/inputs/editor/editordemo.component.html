@@ -1,0 +1,50 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Default Toolbar -->
+        <pe-step label="Default Toolbar">
+            <h3>Default Toolbar</h3>
+            <p-editor name="basic" [(ngModel)]="basictext" styleClass="editor-dimensions"></p-editor>
+            <br/><br/>
+            <p>Content: {{basictext}}</p>
+        </pe-step>
+
+        <!-- Custom Toolbar -->
+        <pe-step label="Custom Toolbar" [styleClass]="'multicheckbox-height'">
+            <h3>Custom Toolbar</h3>
+            <p-editor name="custom" [(ngModel)]="customtext" styleClass="editor-dimensions">
+                <p-header>
+        <span class="ql-formats">
+            <button class="ql-bold"></button>
+            <button class="ql-italic"></button>
+            <button class="ql-underline"></button>
+            <button class="ql-clean"></button>
+        </span>
+                </p-header>
+            </p-editor>
+            <br/><br/>
+            <p>Content: {{customtext}}</p>
+        </pe-step>
+
+        <!-- Events -->
+        <pe-step label="Events">
+            <h3>Events</h3>
+            <p-editor name="events" [(ngModel)]="eventstext" styleClass="editor-dimensions"
+                      (onTextChange)="onTextChange()"
+                      (onSelectionChange)="onSelectionChange()"></p-editor>
+            <br/><br/>
+            <p>Content: {{eventstext}}</p>
+        </pe-step>
+
+        <!-- ReadOnly -->
+        <pe-step label="ReadOnly">
+            <h3>ReadOnly</h3>
+            <p-editor name="readonlyInput" [(ngModel)]="readonlytext" styleClass="editor-dimensions"
+                      [readOnly]="true"></p-editor>
+            <br/><br/>
+            <p>Content: {{readonlytext}}</p>
+        </pe-step>
+
+    </pe-steps>
+</form>
+
+<p-growl [value]="msgs"></p-growl>

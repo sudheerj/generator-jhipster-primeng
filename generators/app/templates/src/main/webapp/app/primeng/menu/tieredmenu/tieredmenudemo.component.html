@@ -1,0 +1,29 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
+        <!-- Basic -->
+        <pe-step label="Basic" >
+            <p-tieredMenu [model]="items"></p-tieredMenu>
+        </pe-step>
+        <!-- Popup -->
+        <pe-step label="Popup" [styleClass]="'layout-format'">
+            <p-tieredMenu #popmenu [model]="items" [popup]="true"></p-tieredMenu>
+            <button type="button" pButton icon="fa fa-list" label="Show" (click)="popmenu.toggle($event)"></button>
+        </pe-step>
+
+        <!-- AppendTo -->
+        <pe-step label="AppendTo" [styleClass]="'layout-format'">
+            <p-tieredMenu [model]="items" [appendTo]="btn"></p-tieredMenu>
+            <button type="button" pButton icon="fa fa-list" label="Show" #btn></button>
+        </pe-step>
+
+        <!-- Methods -->
+        <pe-step label="Methods" [styleClass]="'layout-format'">
+            <p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>
+            <button type="button" pButton icon="fa fa-list" label="Toggle" (click)="menu.toggle($event)"></button>
+            <button type="button" pButton icon="fa fa-list" label="Show" (click)="menu.show($event)"></button>
+            <button type="button" pButton icon="fa fa-list" label="Hide" (click)="menu.hide()"></button>
+        </pe-step>
+    </pe-steps>
+</form>
+
+<p-growl [value]="msgs"></p-growl>

@@ -1,0 +1,99 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <h3>Select country</h3>
+            <p-autoComplete [(ngModel)]="country" name="basic"
+                            [suggestions]="filteredCountries"
+                            (completeMethod)="filterCountries($event)"
+                            field="name" [size]="30"
+                            placeholder="Type your favourite Country" [minLength]="1"></p-autoComplete>
+        </pe-step>
+
+        <!-- Multiple -->
+        <pe-step label="Multiple">
+            <h3>Multiple selection</h3>
+            <p-autoComplete [(ngModel)]="countries" name="multiple" [suggestions]="filteredCountriesMultiple"
+                            (completeMethod)="filterCountriesMultiple($event)"
+                            [minLength]="1" placeholder="Type Country"
+                            field="name" [multiple]="true">
+            </p-autoComplete>
+        </pe-step>
+
+        <!-- Dropdown -->
+        <pe-step label="Dropdown">
+            <h3>Dropdown</h3>
+            <p-autoComplete [(ngModel)]="topAsianCountry" name="dropdown" [suggestions]="filteredTopAsiaCountries"
+                            (completeMethod)="filterTopAsiaCountries($event)" [size]="30"
+                            [minLength]="1" placeholder="Type top asian country name" [dropdown]="true"
+                            (onDropdownClick)="handleDropdownClick($event)" >
+            </p-autoComplete>
+        </pe-step>
+
+        <!-- Object display -->
+        <pe-step label="Object display">
+            <h3>Object display</h3>
+            <label for="instance">Country:</label>
+            <p-autoComplete id="instance" [(ngModel)]="countryInstance" name="instance"
+                            [suggestions]="filteredCountryInstances"
+                            (completeMethod)="filterCountryInstances($event)" field="name"></p-autoComplete>
+        </pe-step>
+
+        <!-- Templating -->
+        <pe-step label="Templating">
+            <h3>Templating</h3>
+            <p-autoComplete [(ngModel)]="customCountry" name="template" [suggestions]="filteredCustomCountries"
+                            field="name" (completeMethod)="filterCustomCountries($event)" [size]="30"
+                            [minLength]="1" placeholder="Start your search">
+                <ng-template let-country pTemplate="item">
+                    <div class="ui-helper-clearfix" class="template-border">
+                        <img src="/assets/data/images/country/{{country.code.toLowerCase()}}.png"
+                             class="country-image"/>
+                        <div class="country-text">{{country.name}}</div>
+                    </div>
+                </ng-template>
+            </p-autoComplete>
+        </pe-step>
+
+        <!-- Events -->
+        <pe-step label="Events">
+            <h3>Events:onFocus,onBur,onSelect,onUnselect,onClear</h3>
+            <div style="display: inline-block">
+                <p-autoComplete [(ngModel)]="topcountrySingle" name="eventsSingle" [suggestions]="filteredTopAsiaCountries"
+                                (completeMethod)="filterTopAsiaCountries($event)"
+                                [minLength]="1" placeholder="Type top asia country name"
+                                (onClear)="onClearInput($event)">
+                </p-autoComplete>
+                <p-autoComplete [(ngModel)]="topcountry" name="eventsMultiple" [suggestions]="filteredTopAsiaCountries"
+                                (completeMethod)="filterTopAsiaCountries($event)"
+                                [minLength]="1" placeholder="Type top asia country name" [dropdown]="true" [multiple]="true"
+                                (onFocus)="onFocus()" (onBlur)="onBlur()" (onSelect)="onSelect()"
+                                (onUnselect)="onUnselect()" (onClear)="onClearInput($event)"
+                                (onDropdownClick)="handleDropdownClick($event)">
+                </p-autoComplete>
+            </div>
+
+        </pe-step>
+
+        <!-- ReadOnly/Disabled -->
+        <pe-step label="ReadOnly/Disabled">
+            <h3>ReadOnly/Disabled</h3>
+            <span *ngIf="selectedType =='readonly'">
+        <p-autoComplete [(ngModel)]="country" name="readonly" [suggestions]="filteredCountries"
+                        (completeMethod)="filterCountries($event)"
+                        field="name" [size]="30"
+                        placeholder="Type your favourite Country"
+                        [minLength]="1" [readonly]="selectedType =='readonly'"></p-autoComplete>
+            </span>
+            <span *ngIf="selectedType =='disable'">
+                 <p-autoComplete [(ngModel)]="country" name="disabled" [suggestions]="filteredCountries"
+                                 (completeMethod)="filterCountries($event)"
+                                 field="name" [size]="30"
+                                 placeholder="Type your favourite Country" [minLength]="1"
+                                 [disabled]="selectedType =='disable'"></p-autoComplete>
+            </span>
+            <p-selectButton name="option" [options]="types" [(ngModel)]="selectedType"></p-selectButton>
+        </pe-step>
+    </pe-steps>
+</form>
+<p-growl [value]="msgs"></p-growl>

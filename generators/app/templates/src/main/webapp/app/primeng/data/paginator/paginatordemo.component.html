@@ -1,0 +1,12 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);" [stepClass]="'layout-format'">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <p-paginator rows="10" totalRecords="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
+
+        </pe-step>
+        
+    </pe-steps>
+</form>
+
+<p-growl [value]="msgs"></p-growl>
