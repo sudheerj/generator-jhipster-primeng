@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {MenuItem,Message} from 'primeng/components/common/api';
+import {ConfirmationService} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-confirmdialog',
@@ -10,6 +11,8 @@ import {MenuItem,Message} from 'primeng/components/common/api';
 export class ConfirmDialogDemoComponent implements OnInit {
     msgs: Message[] = [];
     activeIndex: number = 0;
+
+    ngOnInit(){}
 
     constructor(private confirmationService: ConfirmationService) {}
 

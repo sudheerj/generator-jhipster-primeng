@@ -1,2 +1,2 @@
-export * from './buttondemo.component';
+export * from './treedemo.component';
 export * from './treedemo.route';

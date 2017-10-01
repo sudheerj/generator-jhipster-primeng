@@ -34,4 +34,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>TabViewDemoComponentDemoModule {}
+export class <%= angular2AppName %>TabViewDemoModule {}

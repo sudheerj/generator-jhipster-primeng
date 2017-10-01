@@ -10,7 +10,7 @@ import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {
     GrowlDemoComponent,
-    GrowlDemoRoute
+    growlDemoRoute
 } from './';
 
 const primeng_STATES = [

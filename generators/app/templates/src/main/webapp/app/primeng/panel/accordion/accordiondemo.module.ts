@@ -40,4 +40,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>AccordionDemoComponentDemoModule {}
+export class <%= angular2AppName %>AccordionDemoModule {}

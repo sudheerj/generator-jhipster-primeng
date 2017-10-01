@@ -15,7 +15,7 @@ import {APP_BASE_HREF} from '@angular/common';
 
 import {
     FileUploadDemoComponent,
-    FileUploadDemoRoute
+    fileUploadDemoRoute
 } from './';
 
 const primeng_STATES = [

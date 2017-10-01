@@ -13,7 +13,7 @@ import {GrowlModule} from 'primeng/components/growl/growl';
 
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
-import {TreeNodeService} from './section/service/treenode.service';
+import {TreeNodeService} from './service/treenode.service';
 
 
 import {
@@ -29,7 +29,6 @@ const primeng_STATES = [
     imports: [
         <%= angular2AppName %>SharedModule,
         BrowserModule,
-        routes,
         FormsModule,
         HttpModule,
         TreeTableModule,

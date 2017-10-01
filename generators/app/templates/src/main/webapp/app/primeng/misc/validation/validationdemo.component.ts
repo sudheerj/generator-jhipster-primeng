@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem,Message} from 'primeng/components/common/api';
+import {MenuItem,Message,SelectItem} from 'primeng/components/common/api';
 import {Validators,FormControl,FormGroup,FormBuilder} from '@angular/forms';
 
 @Component({

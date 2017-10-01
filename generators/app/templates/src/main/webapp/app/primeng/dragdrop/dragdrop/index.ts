@@ -1,2 +1,2 @@
-export * from './buttondemo.component';
-export * from './buttondemo.route';
+export * from './dragdropdemo.component';
+export * from './dragdropdemo.route';

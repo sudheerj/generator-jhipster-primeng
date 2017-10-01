@@ -3,11 +3,11 @@ import { JhiLanguageService } from 'ng-jhipster';
 import {MenuItem,Message} from 'primeng/components/common/api';
 
 @Component({
-    selector: 'jhi-menu',
-    templateUrl: './menudemo.component.html',
+    selector: 'jhi-panelmenu',
+    templateUrl: './panelmenudemo.component.html',
     styles: []
 })
-export class MenuDemoComponent implements OnInit {
+export class PanelMenuDemoComponent implements OnInit {
     activeIndex: number = 0;
     msgs: Message[] = [];
     private items: MenuItem[];

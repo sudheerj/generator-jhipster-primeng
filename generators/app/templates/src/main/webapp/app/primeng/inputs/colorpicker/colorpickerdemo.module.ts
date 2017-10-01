@@ -30,4 +30,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>ColorpickerDemoModule {}
+export class <%= angular2AppName %>ColorPickerDemoModule {}

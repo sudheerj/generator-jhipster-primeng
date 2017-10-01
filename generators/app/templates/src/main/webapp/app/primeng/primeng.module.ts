@@ -43,7 +43,6 @@ import { <%= angular2AppName %>FieldsetDemoModule } from './panel/fieldset/field
 import { <%= angular2AppName %>ToolbarDemoModule } from './panel/toolbar/toolbardemo.module';
 import { <%= angular2AppName %>GridDemoModule } from './panel/grid/griddemo.module';
 
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { <%= angular2AppName %>DataTableDemoModule } from './data/datatable/datatabledemo.module';
 import { <%= angular2AppName %>DataGridDemoModule } from './data/datagrid/datagriddemo.module';
 import { <%= angular2AppName %>DataListDemoModule } from './data/datalist/datalistdemo.module';
@@ -51,14 +50,13 @@ import { <%= angular2AppName %>DataScrollerDemoModule } from './data/datascrolle
 import { <%= angular2AppName %>PickListDemoModule } from './data/picklist/picklistdemo.module';
 import { <%= angular2AppName %>OrderListDemoModule } from './data/orderlist/orderlistdemo.module';
 import { <%= angular2AppName %>ScheduleDemoModule } from './data/schedule/scheduledemo.module';
-import { <%= angular2AppName %>TreeModule } from './data/tree/treedemo.module';
+import { <%= angular2AppName %>TreeDemoModule } from './data/tree/treedemo.module';
 import { <%= angular2AppName %>TreeTableDemoModule } from './data/treetable/treetabledemo.module';
 import { <%= angular2AppName %>PaginatorDemoModule } from './data/paginator/paginatordemo.module';
-import { <%= angular2AppName %>GmapModule } from './data/gmap/gmapdemo.module';
+import { <%= angular2AppName %>GmapDemoModule } from './data/gmap/gmapdemo.module';
 import { <%= angular2AppName %>OrgChartDemoModule } from './data/orgchart/orgchartdemo.module';
 import { <%= angular2AppName %>CarouselDemoModule } from './data/carousel/carouseldemo.module';
 
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { <%= angular2AppName %>BarchartDemoModule } from './charts/barchart/barchartdemo.module';
 import { <%= angular2AppName %>DoughnutchartDemoModule } from './charts/doughnutchart/doughnutchartdemo.module';
 import { <%= angular2AppName %>LinechartDemoModule } from './charts/linechart/linechartdemo.module';
@@ -86,7 +84,7 @@ import { <%= angular2AppName %>DeferDemoModule } from './misc/defer/deferdemo.mo
 import { <%= angular2AppName %>InplaceDemoModule } from './misc/inplace/inplacedemo.module';
 import { <%= angular2AppName %>ProgressBarDemoModule } from './misc/progressbar/progressbardemo.module';
 import { <%= angular2AppName %>RTLDemoModule } from './misc/rtl/rtldemo.module';
-import { <%= angular2AppName %>TerminalDemoModule } from './misc/termnial/terminaldemo.module';
+import { <%= angular2AppName %>TerminalDemoModule } from './misc/terminal/terminaldemo.module';
 import { <%= angular2AppName %>ValidationDemoModule } from './misc/validation/validationdemo.module';
 
 
@@ -160,7 +158,7 @@ import { <%= angular2AppName %>ValidationDemoModule } from './misc/validation/va
         <%= angular2AppName %>DataListDemoModule,
         <%= angular2AppName %>DataScrollerDemoModule,
         <%= angular2AppName %>ScheduleDemoModule,
-        <%= angular2AppName %>OrderListemoModule,
+        <%= angular2AppName %>OrderListDemoModule,
         <%= angular2AppName %>PickListDemoModule,
         <%= angular2AppName %>TreeDemoModule,
         <%= angular2AppName %>TreeTableDemoModule,

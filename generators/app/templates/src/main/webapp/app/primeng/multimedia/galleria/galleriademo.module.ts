@@ -8,7 +8,7 @@ import {GalleriaModule} from 'primeng/primeng';
 
 import {
     GalleriaDemoComponent,
-    GalleriaDemoRoute
+    galleriaDemoRoute
 } from './';
 
 const primeng_STATES = [

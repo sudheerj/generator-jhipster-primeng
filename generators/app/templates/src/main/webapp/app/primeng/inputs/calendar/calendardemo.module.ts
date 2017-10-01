@@ -15,7 +15,7 @@ import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {
     CalendarDemoComponent,
-    CalendarDemoRoute
+    calendarDemoRoute
 } from './';
 
 const primeng_STATES = [

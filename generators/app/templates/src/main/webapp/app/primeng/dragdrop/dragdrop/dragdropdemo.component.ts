@@ -38,7 +38,4 @@ export class DragdropDemoComponent implements OnInit {
     dragEnd(event: any) {
         this.draggedDoc = null;
     }
-
-    ngOnInit() {
-    }
 }

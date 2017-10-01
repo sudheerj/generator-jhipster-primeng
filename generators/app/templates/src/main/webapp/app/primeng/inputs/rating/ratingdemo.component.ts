@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message} from 'primeng/components/common/api';
+import {Message, SelectItem} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-rating',

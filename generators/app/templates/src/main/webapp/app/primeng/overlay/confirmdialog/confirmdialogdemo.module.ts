@@ -7,13 +7,12 @@ import {GrowlModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/primeng';
 import {ConfirmDialogModule} from 'primeng/components/confirmdialog/confirmdialog';
 import {ConfirmationService} from 'primeng/components/common/api';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {APP_BASE_HREF} from '@angular/common';
 
 
 import {
     ConfirmDialogDemoComponent,
-    ConfirmDialogDemoRoute
+    confirmDialogDemoRoute
 } from './';
 
 const primeng_STATES = [

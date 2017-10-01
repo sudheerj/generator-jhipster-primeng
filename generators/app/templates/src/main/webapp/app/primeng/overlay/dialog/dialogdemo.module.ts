@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
     DialogDemoComponent,
-    DialogDemoRoute
+    dialogDemoRoute
 } from './';
 
 const primeng_STATES = [

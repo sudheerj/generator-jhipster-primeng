@@ -3,6 +3,8 @@ import { JhiLanguageService } from 'ng-jhipster';
 import {Message} from 'primeng/components/common/api';
 import {ScoreService} from './service/scoreservice';
 import Score from './service/score';
+import {OverlayPanel} from 'primeng/components/overlaypanel/overlaypanel';
+
 
 @Component({
     selector: 'jhi-overlaypanel',

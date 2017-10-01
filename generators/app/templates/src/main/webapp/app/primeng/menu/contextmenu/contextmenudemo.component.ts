@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {MenuItem,Message} from 'primeng/components/common/api';
+import {EmployeeService} from './service/employee.service';
+import Employee from './service/employee';
 
 @Component({
     selector: 'jhi-contextmenu',

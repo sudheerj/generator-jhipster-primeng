@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
+import {Message} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-dialog',
@@ -14,6 +15,8 @@ export class DialogDemoComponent implements OnInit {
 
     msgs: Message[] = [];
     activeIndex: number = 0;
+
+    ngOnInit(){}
 
     showBasicDialog() {
         this.basic = true;

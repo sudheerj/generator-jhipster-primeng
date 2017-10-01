@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
     OverlayPanelDemoComponent,
-    overlaypanelRoute
+    overlaypanelDemoRoute
 } from './';
 
 const primeng_STATES = [

@@ -8,7 +8,7 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {DeferModule} from 'primeng/primeng';
 import {DataTableModule} from 'primeng/primeng';
-import {BrowserService} from './section/service/browser.service';
+import {BrowserService} from './service/browser.service';
 
 import {
     InplaceDemoComponent,
@@ -34,4 +34,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>GrowlDemoModule {}
+export class <%= angular2AppName %>InplaceDemoModule {}
