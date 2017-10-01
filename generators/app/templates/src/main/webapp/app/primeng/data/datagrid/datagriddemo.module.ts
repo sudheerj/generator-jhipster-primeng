@@ -10,7 +10,7 @@ import {DialogModule} from 'primeng/components/dialog/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
-import {BrowserService} from './section/service/browser.service';
+import {BrowserService} from './service/browser.service';
 
 
 import {

@@ -11,7 +11,7 @@ import {OrganizationChartModule} from 'primeng/components/organizationchart/orga
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {DialogModule} from 'primeng/components/dialog/dialog';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
-import {VCardService} from './section/service/vcard.service';
+import {VCardService} from './service/vcard.service';
 
 import {
     OrgChartDemoComponent,

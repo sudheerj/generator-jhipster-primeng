@@ -6,7 +6,7 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {BrowserService} from './section/service/browser.service';
+import {BrowserService} from './service/browser.service';
 import {CarouselModule} from 'primeng/components/carousel/carousel';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
