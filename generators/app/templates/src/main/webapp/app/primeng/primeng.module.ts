@@ -56,6 +56,7 @@ import { <%= angular2AppName %>TreeTableDemoModule } from './data/treetable/tree
 import { <%= angular2AppName %>PaginatorDemoModule } from './data/paginator/paginatordemo.module';
 import { <%= angular2AppName %>GmapModule } from './data/gmap/gmapdemo.module';
 import { <%= angular2AppName %>OrgChartDemoModule } from './data/orgchart/orgchartdemo.module';
+import { <%= angular2AppName %>CarouselDemoModule } from './data/carousel/carouseldemo.module';
 
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { <%= angular2AppName %>BarchartDemoModule } from './charts/barchart/barchartdemo.module';
@@ -165,7 +166,8 @@ import { <%= angular2AppName %>ValidationDemoModule } from './misc/validation/va
         <%= angular2AppName %>TreeTableDemoModule,
         <%= angular2AppName %>PaginatorDemoModule,
         <%= angular2AppName %>OrgChartDemoModule,
-        <%= angular2AppName %>GmapDemoModule
+        <%= angular2AppName %>GmapDemoModule,
+        <%= angular2AppName %>CarouselDemoModule
 
 
     ],
