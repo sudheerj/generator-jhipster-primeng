@@ -1,0 +1,38 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);" [stepClass]="'layout-format'">
+        <!-- Basic -->
+        <pe-step label="Basic" >
+
+
+            <p-carousel headerText="Basic" [value]="basicBrowsers">
+                <ng-template let-car pTemplate="item">
+                    <div class="ui-grid ui-grid-responsive">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-12"><img src="/assets/data/images/{{browser.code}}.png" width="60"></div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-6">Engine:</div>
+                            <div class="ui-grid-col-6">{{browser.engine}}</div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-6">Browser:</div>
+                            <div class="ui-grid-col-6">{{browser.browser}}</div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-6">Platform: </div>
+                            <div class="ui-grid-col-6">{{browser.platform}}</div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-6">Grade: </div>
+                            <div class="ui-grid-col-6">{{browser.grade}}</div>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </pe-step>
+
+
+    </pe-steps>
+</form>
+
+<p-growl [value]="msgs"></p-growl>
