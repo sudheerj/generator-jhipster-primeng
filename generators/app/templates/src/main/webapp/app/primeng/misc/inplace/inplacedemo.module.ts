@@ -2,19 +2,21 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
+import {APP_BASE_HREF} from '@angular/common';
+
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
-import {ButtonModule} from 'primeng/primeng';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
-
+import {DeferModule} from 'primeng/primeng';
+import {DataTableModule} from 'primeng/primeng';
+import {BrowserService} from './section/service/browser.service';
 
 import {
-    GrowlDemoComponent,
-    GrowlDemoRoute
+    InplaceDemoComponent,
+    inplaceDemoRoute
 } from './';
 
 const primeng_STATES = [
-    growlDemoRoute
+    inplaceDemoRoute
 ];
 
 @NgModule({
@@ -23,12 +25,12 @@ const primeng_STATES = [
         CommonModule,
         BrowserAnimationsModule,
         GrowlModule,
-        WizardModule,
-        ButtonModule,
+        DeferModule,
+        DataTableModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [
-        GrowlDemoComponent
+        InplaceDemoComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

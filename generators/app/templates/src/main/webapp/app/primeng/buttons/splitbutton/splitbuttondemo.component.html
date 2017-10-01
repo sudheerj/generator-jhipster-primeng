@@ -1,8 +1,36 @@
-<div>
-    <h2>
-        <span<% if (enableTranslation) { %> jhiTranslate="primeng.buttons.splitbutton.title"<% } %>>SplitButton</span>
-    </h2>
-    <div class="col-md-8 content-section implementation">
-        <p-splitButton label="Save" icon="fa-check" (onClick)="save()" [model]="items"></p-splitButton>
-    </div>
-</div>
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)" >
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <h3>Manage AngularConnect User Account</h3>
+            <p-splitButton label="Create" (onClick)="create()" [model]="items"></p-splitButton>
+        </pe-step>
+        <!-- Icons and Theming -->
+        <pe-step label="Icons and Theming">
+            <h3>Manage AngularConnect User Account</h3>
+            <p-splitButton label="Create" icon="fa-check" iconPos="right" menuStyleClass="customized-menu" [model]="itemsIcons"></p-splitButton>
+        </pe-step>
+        <!-- Split Button severity with classes -->
+        <pe-step label="Button severity with classes">
+            <p-splitButton [model]="items" label="Primary"></p-splitButton>
+            <p-splitButton [model]="items" label="Secondary" styleClass="ui-splitbutton-secondary"></p-splitButton>
+            <p-splitButton [model]="items" label="Success" styleClass="ui-button-success"></p-splitButton>
+            <p-splitButton [model]="items" label="Info" styleClass="ui-button-info"></p-splitButton>
+            <p-splitButton [model]="items" label="Warning" styleClass="ui-button-warning"></p-splitButton>
+            <p-splitButton [model]="items" label="Danger" styleClass="ui-button-danger"></p-splitButton>
+        </pe-step>
+        <!-- Events -->
+        <pe-step label="Events">
+            <h3>Manage AngularConnect User Account</h3>
+            <p-splitButton label="Create" icon="fa-check" (onClick)="create()" [model]="items"></p-splitButton>
+        </pe-step>
+        <!-- Disabled -->
+        <pe-step label="Disabled">
+            <h3>Manage AngularConnect User Account</h3>
+            <p-splitButton label="Create" icon="fa-check" [model]="items" disabled="true"></p-splitButton>
+        </pe-step>
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

@@ -334,9 +334,9 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>
                     <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="mask" routerLinkActive="active" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="inputmask" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.mask">Mask</span>
+                            <span jhiTranslate="global.menu.primeng.mask">InputMask</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
@@ -394,9 +394,9 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>
                     <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="multiselect" routerLinkActive="active" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="select" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.multiselect">MultiSelect</span>
+                            <span jhiTranslate="global.menu.primeng.select">MultiSelect&Dropdown</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
@@ -417,12 +417,7 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.selectbutton">SelectButton</span>
                         </a>
                     </li>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="tricheckbox" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.tricheckbox">TriCheckbox</span>
-                        </a>
-                    </li>
+                   
                    <span tyle="font-weight:bold">Messages Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -985,21 +980,20 @@ module.exports = JhipsterGenerator.extend({
                 "calendar": "Calendar",
                 "chips": "Chips",
                 "inputswitch":"InputSwitch",
-                "mask":  "Mask",
+                "inputmask":  "InputMask",
                 "password":  "Password",
                 "rating":  "Rating",
                 "spinner": "Spinner",
                 "togglebutton": "ToggleButton",
                 "autocomplete": "AutoComplete",
-                "checkbox":  "Checkbox",
+                "checkbox":  "Checkbox&TriCheckbox",
                 "colorpicker":"ColorPicker",
                 "editor":  "Editor",
                 "listbox": "Listbox",
-                "multiselect":  "MultiSelect",
+                "select":  "MultiSelect&Dropdown",
                 "radiobutton": "RadioButton",
                 "slider":  "Slider",
                 "selectbutton": "SelectButton",
-                "tricheckbox":  "TriCheckbox",
                 "galleria":"Galleria",
                 "messages":"Messages",
                 "growl":"Growl",
@@ -1039,10 +1033,8 @@ module.exports = JhipsterGenerator.extend({
                 "fieldset":  "Fieldset",
                 "grid":  "Grid",
                 "toolbar": "Toolbar",
-                "responsive": "Responsive",
                 "captcha": "Captcha",
                 "defer":  "Defer",
-                "codehighlighter": "CodehigHlighter",
                 "rtl":  "RTL",
                 "blockui":  "BlockUI",
                 "terminal": "Terminal",
@@ -1074,7 +1066,7 @@ module.exports = JhipsterGenerator.extend({
             "calendar": "inputs",
             "chips": "inputs",
             "inputswitch": "inputs",
-            "mask": "inputs",
+            "inputmask": "inputs",
             "password": "inputs",
             "rating": "inputs",
             "spinner": "inputs",
@@ -1084,7 +1076,7 @@ module.exports = JhipsterGenerator.extend({
             "colorpicker": "inputs",
             "editor": "inputs",
             "listbox": "inputs",
-            "multiselect": "inputs",
+            "select": "inputs",
             "radiobutton": "inputs",
             "slider": "inputs",
             "selectbutton": "inputs",
@@ -1136,10 +1128,8 @@ module.exports = JhipsterGenerator.extend({
             "growl": "charts",
             "galleria": "charts",
             "dragdrop": "dragdrop",
-            "responsive": "misc",
             "captcha": "misc",
             "defer": "misc",
-            "codehighlighter": "misc",
             "rtl": "misc",
             "blockui": "misc",
             "terminal": "misc",

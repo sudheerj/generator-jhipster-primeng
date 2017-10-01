@@ -1,8 +1,37 @@
-<div>
-    <h2>
-        <span<% if (enableTranslation) { %> jhiTranslate="primeng.buttons.button.title"<% } %>>Button</span>
-    </h2>
-    <div class="col-md-8 content-section implementation">
-        <button pButton type="button" (click)="count()" label="Click"></button>
-    </div>
-</div>
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <button name="basic" pButton type="button" label="ClickMe"></button>
+        </pe-step>
+
+        <!-- Enhanced buttons with Icons -->
+        <pe-step label="Enhanced buttons with Icons">
+            <button pButton type="button" icon="fa-close"></button>
+            <button pButton type="button" icon="fa-check" label="Yes"></button>
+            <button pButton type="button" icon="fa-check" iconPos="right" label="Yes"></button>
+        </pe-step>
+
+        <!-- Button severity with classes -->
+        <pe-step label="Button severity with classes">
+            <button pButton type="button" label="Primary"></button>
+            <button pButton type="button" label="Secondary" class="ui-button-secondary"></button>
+            <button pButton type="button" label="Success" class="ui-button-success"></button>
+            <button pButton type="button" label="Info" class="ui-button-info"></button>
+            <button pButton type="button" label="Warning" class="ui-button-warning"></button>
+            <button pButton type="button" label="Danger" class="ui-button-danger"></button>
+        </pe-step>
+
+        <!-- Events -->
+        <pe-step label="Events:click">
+            <button pButton type="button" (click)="clickMe()" label="Notify"></button>
+        </pe-step>
+
+        <!-- Disable Button -->
+        <pe-step label="Disabled">
+            <button pButton type="button" [disabled]="true" label="Disabled"></button>
+        </pe-step>
+    </pe-steps>
+</form>
+
+<p-growl [value]="msgs"></p-growl>

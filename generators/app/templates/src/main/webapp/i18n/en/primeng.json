@@ -38,7 +38,7 @@
                 "title": "AutoComplete"
             },
             "checkbox": {
-                "title": "Checkbox"
+                "title": "Checkbox&Tricheckbox"
             },
             "colorpicker": {
                 "title": "ColorPicker"
@@ -49,8 +49,8 @@
             "listbox": {
                 "title": "Listbox"
             },
-            "multiselect": {
-                "title": "MultiSelect"
+            "select": {
+                "title": "MultiSelect&Dropdown"
             },
             "radiobutton": {
                 "title": "RadioButton"
@@ -60,9 +60,6 @@
             },
             "selectbutton": {
                 "title": "SelectButton"
-            },
-            "tricheckbox": {
-                "title": "TriCheckbox"
             }
 
         },

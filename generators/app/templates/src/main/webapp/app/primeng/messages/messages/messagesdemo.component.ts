@@ -12,7 +12,7 @@ export class MessagesDemoComponent implements OnInit {
     msgs: Message[] = [];
     activeIndex: number = 0;
 
-    ngOnInit{
+    ngOnInit(){
 
     }
 

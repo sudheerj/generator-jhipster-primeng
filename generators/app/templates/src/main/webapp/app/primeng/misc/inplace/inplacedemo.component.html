@@ -1,0 +1,51 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <h3 class="first">Basic</h3>
+            <p-inplace closable="closable">
+    <span pInplaceDisplay>
+        Click to Edit
+    </span>
+                <span pInplaceContent>
+        <input type="text" value="PrimeNG" pInputText>
+    </span>
+            </p-inplace>
+        </pe-step>
+
+        <!-- Image-->
+        <pe-step label="Image">
+            <h3>Image</h3>
+            <p-inplace>
+    <span pInplaceDisplay>
+        <span class="fa fa-picture-o"></span><span style="margin-left:8px">View Picture</span>
+    </span>
+                <span pInplaceContent>
+        <img src="assets/showcase/images/demo/galleria/galleria5.jpg" alt="Nature">
+    </span>
+            </p-inplace>
+        </pe-step>
+
+        <!-- Data-->
+        <pe-step label="Data">
+            <h3>Data</h3>
+            <p-inplace>
+    <span pInplaceDisplay>
+        <span class="fa fa-table"></span><span style="margin-left:8px">View Data</span>
+    </span>
+                <span pInplaceContent>
+        <p-dataTable [value]="cars">
+            <p-column field="vin" header="Vin"></p-column>
+            <p-column field="year" header="Year"></p-column>
+            <p-column field="brand" header="Brand"></p-column>
+            <p-column field="color" header="Color"></p-column>
+        </p-dataTable>
+    </span>
+            </p-inplace>
+        </pe-step>
+
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

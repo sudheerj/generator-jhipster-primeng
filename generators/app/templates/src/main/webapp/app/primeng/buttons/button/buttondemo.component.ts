@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
+import {Message} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-button',
@@ -7,12 +8,20 @@ import { JhiLanguageService } from 'ng-jhipster';
     styles: []
 })
 export class ButtonDemoComponent implements OnInit {
+    msgs: Message[] = [];
+    activeIndex: number = 0;
+
     clicks: number = 0;
 
-    count() {
-        this.clicks++;
+    clickMe() {
+        this.msgs = [];
+        this.msgs.push({severity: 'info', summary: 'The button is clicked ' + (++this.clicks) + ' times'});
     }
 
+    onChangeStep(label: string) {
+        this.msgs.length = 0;
+        this.msgs.push({severity: 'info', summary: label});
+    }
     ngOnInit() {
     }
 }

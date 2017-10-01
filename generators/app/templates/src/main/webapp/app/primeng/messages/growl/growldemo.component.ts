@@ -12,7 +12,7 @@ export class GrowlDemoComponent implements OnInit {
     messages: Message[] = [];
     activeIndex: number = 0;
 
-    ngOnInit{
+    ngOnInit(){
 
     }
 
