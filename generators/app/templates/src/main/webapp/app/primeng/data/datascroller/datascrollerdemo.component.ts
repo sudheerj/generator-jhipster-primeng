@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {BrowserService} from './service/browser.service';
-import Browser from './service/browser';
+import {BrowserService} from './service/browser.service.ts';
+import Browser from './service/browser.ts';
 import {Message} from 'primeng/components/common/api';
 
 @Component({
@@ -52,7 +52,5 @@ export class DataScrollerDemoComponent implements OnInit {
     onChangeStep(label: string) {
         this.msgs.length = 0;
         this.msgs.push({severity: 'info', summary: label});
-    }
-    ngOnInit() {
     }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {Message} from 'primeng/components/common/api';
-import {CountryService} from './service/country.service';
-import Country from './service/country';
+import {CountryService} from './service/country.service.ts';
+import Country from './service/country.ts';
 
 @Component({
     selector: 'jhi-orderlist',

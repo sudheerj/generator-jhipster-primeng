@@ -9,29 +9,38 @@ import {Message,SelectItem} from 'primeng/components/common/api';
 export class ListboxDemoComponent implements OnInit {
     msgs: Message[] = [];
 
-    basicinput: number;
+    cities: SelectItem[];
 
-    custominput: number;
+    selectedCity: string;
 
-    separatorinput: number;
+    selectedCities: string[];
 
-    eventsinput: number;
+    cars: SelectItem[];
 
-    readonlyinput: number = 50;
+    selectedCar: string = 'BMW';
 
-    disabledinput: number = 100;
+    constructor() {
+        this.cities = [];
+        this.cities.push({label:'New York', value:'New York'});
+        this.cities.push({label:'Rome', value:'Rome'});
+        this.cities.push({label:'London', value:'London'});
+        this.cities.push({label:'Istanbul', value:'Istanbul'});
+        this.cities.push({label:'Paris', value:'Paris'});
 
-    types: SelectItem[];
-
-    selectedType: string = 'readonly';
+        this.cars = [];
+        this.cars.push({label: 'Audi', value: 'Audi'});
+        this.cars.push({label: 'BMW', value: 'BMW'});
+        this.cars.push({label: 'Fiat', value: 'Fiat'});
+        this.cars.push({label: 'Ford', value: 'Ford'});
+        this.cars.push({label: 'Honda', value: 'Honda'});
+        this.cars.push({label: 'Jaguar', value: 'Jaguar'});
+        this.cars.push({label: 'Mercedes', value: 'Mercedes'});
+        this.cars.push({label: 'Renault', value: 'Renault'});
+        this.cars.push({label: 'VW', value: 'VW'});
+        this.cars.push({label: 'Volvo', value: 'Volvo'});
+    }
 
     activeIndex: number = 0;
-
-    onChange(event: any) {
-        this.msgs = [];
-        this.msgs.push(
-            {severity: 'info', summary: 'Spinner value is changed'});
-    }
 
     ngOnInit() {
         this.types = [];

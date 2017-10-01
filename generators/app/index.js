@@ -276,9 +276,9 @@ module.exports = JhipsterGenerator.extend({
 
             if (this.libFullcalendarVersion) {
                 // the version already exists, so try to upgrade instead
-                this.replaceContent('package.json', `"full-calendar": "${this.libFullcalendarVersion}"`, `"full-calendar": "${FULLCALENDAR_VERSION}"`);
+                this.replaceContent('package.json', `"fullcalendar": "${this.libFullcalendarVersion}"`, `"fullcalendar": "${FULLCALENDAR_VERSION}"`);
             } else {
-                this.addNpmDependency('full-calendar', `${FULLCALENDAR_VERSION}`);
+                this.addNpmDependency('fullcalendar', `${FULLCALENDAR_VERSION}`);
             }
 
             if (this.libQuillVersion) {

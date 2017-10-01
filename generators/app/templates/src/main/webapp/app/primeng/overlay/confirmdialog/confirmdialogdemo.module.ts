@@ -23,7 +23,7 @@ const primeng_STATES = [
     imports: [
         <%= angular2AppName %>SharedModule,
         CommonModule,
-        ConfirmDialogModule
+        ConfirmDialogModule,
         BrowserAnimationsModule,
         GrowlModule,
         ButtonModule,

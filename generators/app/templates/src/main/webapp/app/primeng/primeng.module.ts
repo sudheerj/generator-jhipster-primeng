@@ -1,4 +1,6 @@
 
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 import { <%= angular2AppName %>ButtonDemoModule } from './buttons/button/buttondemo.module';
 import { <%= angular2AppName %>SplitbuttonDemoModule } from './buttons/splitbutton/splitbuttondemo.module';
 
@@ -35,7 +37,6 @@ import { <%= angular2AppName %>GalleriaDemoModule } from './multimedia/galleria/
 
 import { <%= angular2AppName %>FileUploadDemoModule } from './file/fileupload/fileuploaddemo.module';
 
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { <%= angular2AppName %>AccordionDemoModule } from './panel/accordion/accordiondemo.module';
 import { <%= angular2AppName %>PanelDemoModule } from './panel/panel/paneldemo.module';
 import { <%= angular2AppName %>TabViewDemoModule } from './panel/tabview/tabviewdemo.module';
@@ -91,15 +92,15 @@ import { <%= angular2AppName %>ValidationDemoModule } from './misc/validation/va
 @NgModule({
     imports: [
 
-    <%= angular2AppName %>BlockUIDemoModule,
-    <%= angular2AppName %>CaptchaDemoModule,
-    <%= angular2AppName %>DeferDemoModule,
-    <%= angular2AppName %>InplaceDemoModule,
-    <%= angular2AppName %>ProgressBarDemoModule,
-    <%= angular2AppName %>InputMaskDemoModule,
-    <%= angular2AppName %>RTLDemoModule,
-    <%= angular2AppName %>TerminalDemoModule,
-    <%= angular2AppName %>ValidationDemoModule,
+        <%= angular2AppName %>BlockUIDemoModule,
+        <%= angular2AppName %>CaptchaDemoModule,
+        <%= angular2AppName %>DeferDemoModule,
+        <%= angular2AppName %>InplaceDemoModule,
+        <%= angular2AppName %>ProgressBarDemoModule,
+        <%= angular2AppName %>InputMaskDemoModule,
+        <%= angular2AppName %>RTLDemoModule,
+        <%= angular2AppName %>TerminalDemoModule,
+        <%= angular2AppName %>ValidationDemoModule,
 
         <%= angular2AppName %>ButtonDemoModule,
         <%= angular2AppName %>SplitbuttonDemoModule,

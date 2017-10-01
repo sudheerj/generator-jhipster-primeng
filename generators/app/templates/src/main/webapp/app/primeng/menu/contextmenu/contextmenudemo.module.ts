@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
-import {ContextMenuModule} from 'primeng/components/menu/menu';
+import {ContextMenuModule} from 'primeng/components/contextmenu/contextmenu';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {
     ContextMenuDemoComponent,

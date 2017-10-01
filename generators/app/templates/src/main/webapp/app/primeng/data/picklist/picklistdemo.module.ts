@@ -8,7 +8,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {PickListModule} from 'primeng/components/picklist/picklist';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {CountryService} from './service/country.service';
+import {CountryService} from './service/country.service.ts';
 
 
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';

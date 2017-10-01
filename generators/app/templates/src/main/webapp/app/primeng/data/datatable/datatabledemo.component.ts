@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {Message,SelectItem} from 'primeng/components/common/api';
 import {LazyLoadEvent} from 'primeng/components/common/api';
-import {BrowserService} from './service/browser.service';
-import Browser from './service/browser';
-import MyBrowser from './service/mybrowser';
+import {BrowserService} from './service/browser.service.ts';
+import Browser from './service/browser.ts';
+import MyBrowser from './service/mybrowser.ts';
 
 @Component({
     selector: 'jhi-datatable',

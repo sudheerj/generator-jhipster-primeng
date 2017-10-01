@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
-import {MenuBarModule} from 'primeng/components/menubar/menubar';
+import {MenubarModule} from 'primeng/components/menubar/menubar';
 import {InputTextModule} from 'primeng/components/inputtext/inputtext';
 import {ButtonModule} from 'primeng/components/button/button';
 import {

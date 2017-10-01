@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {EmployeeService} from './service/employee.service';
-import {Employee} from './model/employee';
+import {EmployeeService} from './service/employee.service.ts';
+import {Employee} from './model/employee.ts';
 import {Message} from 'primeng/components/common/api';
 import {Subscription} from 'rxjs';
 import 'rxjs/add/operator/finally';

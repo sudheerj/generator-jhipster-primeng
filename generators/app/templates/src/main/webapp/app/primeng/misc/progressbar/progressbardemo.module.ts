@@ -27,7 +27,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         FormsModule,
         ProgressBarModule,
-        GrowlModule
+        GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

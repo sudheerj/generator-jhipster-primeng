@@ -15,7 +15,7 @@ import {
 } from './';
 
 const primeng_STATES = [
-    overlaypanelRoute
+    overlaypanelDemoRoute
 ];
 
 @NgModule({

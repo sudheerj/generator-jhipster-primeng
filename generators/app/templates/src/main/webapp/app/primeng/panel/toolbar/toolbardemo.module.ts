@@ -8,11 +8,11 @@ import {FormsModule} from '@angular/forms';
 // import needed PrimeNG modules here
 
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
-import {ToolbarModule} from 'primeng/primeng';
-import {InputTextModule} from 'primeng/primeng';
-import {SplitButtonModule} from 'primeng/primeng';
-import {ButtonModule} from 'primeng/primeng';
-import {GrowlModule} from 'primeng/primeng';
+import {ToolbarModule} from 'primeng/components/toolbar/toolbar';
+import {InputTextModule} from 'primeng/components/inputtext/inputtext';
+import {SplitButtonModule} from 'primeng/components/splitbutton/splitbutton';
+import {ButtonModule} from 'primeng/components/button/button';
+import {GrowlModule} from 'primeng/components/growl/growl';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {

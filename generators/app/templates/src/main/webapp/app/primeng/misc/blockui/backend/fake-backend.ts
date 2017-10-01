@@ -4,8 +4,8 @@
 
 import {Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod, XHRBackend, RequestOptions} from '@angular/http';
 import {MockBackend, MockConnection} from '@angular/http/testing';
-import {employees} from './employees';
-import {Employee} from '../model/employee';
+import {employees} from './employees.ts';
+import {Employee} from '../model/employee.ts';
 
 function fakeBackendFactory(backend: MockBackend, options: BaseRequestOptions, realBackend: XHRBackend) {
     // first, get employess from the local storage or initial data array

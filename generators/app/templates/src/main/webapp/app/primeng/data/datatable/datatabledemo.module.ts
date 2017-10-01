@@ -16,7 +16,7 @@ import {MultiSelectModule} from 'primeng/components/multiselect/multiselect';
 import {SliderModule} from 'primeng/components/slider/slider';
 import {DropdownModule} from 'primeng/components/dropdown/dropdown';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {BrowserService} from './service/browser.service';
+import {BrowserService} from './service/browser.service.ts';
 
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 import {
@@ -44,7 +44,7 @@ const primeng_STATES = [
         DropdownModule,
         MultiSelectModule,
         WizardModule,
-        GrowlModule
+        GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [
