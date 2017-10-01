@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {DataScrollerModule} from 'primeng/components/datascroller/datascroller';
@@ -9,6 +10,7 @@ import {DialogModule} from 'primeng/components/dialog/dialog';
 import {ButtonModule} from 'primeng/components/button/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
+import {BrowserService} from './section/service/browser.service';
 
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 import {
@@ -36,6 +38,7 @@ const primeng_STATES = [
     declarations: [
         DataScrollerDemoComponent
     ],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'},BrowserService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angular2AppName %>DataScrollerDemoModule {}

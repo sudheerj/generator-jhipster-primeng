@@ -6,6 +6,8 @@ import {DataListModule} from 'primeng/components/datalist/datalist';
 import {DialogModule} from 'primeng/components/dialog/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
+import {BrowserService} from './section/service/browser.service';
+import {APP_BASE_HREF} from '@angular/common';
 
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
@@ -32,6 +34,8 @@ const primeng_STATES = [
     declarations: [
         DataListDemoComponent
     ],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'},BrowserService],
+
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angular2AppName %>DataListDemoModule {}
