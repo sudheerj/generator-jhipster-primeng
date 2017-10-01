@@ -6,10 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
-import {PanelModule} from 'primeng/components/panel/panel';
-import {ButtonModule} from 'primeng/components/button/button';
-import {SplitButtonModule} from 'primeng/components/splitbutton/splitbutton';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {PanelModule} from 'primeng/primeng';
+import {ButtonModule} from 'primeng/primeng';
+import {SplitButtonModule} from 'primeng/primeng';
+import {GrowlModule} from 'primeng/primeng';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {
