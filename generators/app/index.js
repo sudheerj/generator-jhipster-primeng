@@ -778,12 +778,7 @@ module.exports = JhipsterGenerator.extend({
                     </li>
                     <span style="font-weight:bold">Miscellaneous Components</span>
                    <hr/>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="responsive" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.responsive">Responsive</span>
-                        </a>
-                    </li>
+                    
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="captcha" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o-notch" aria-hidden="true"></i>
@@ -794,12 +789,6 @@ module.exports = JhipsterGenerator.extend({
                         <a class="dropdown-item" routerLink="defer" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-line-chart" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.defer">Defer</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="codehighlighter" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-pie-chart" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.codehighlighter">CodehigHlighter</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
@@ -1110,7 +1099,6 @@ module.exports = JhipsterGenerator.extend({
             "radiobutton": "inputs",
             "slider": "inputs",
             "selectbutton": "inputs",
-            "tricheckbox": "inputs",
             "button": "buttons",
             "splitbutton": "buttons",
             "datatable": "data",
