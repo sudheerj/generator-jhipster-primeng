@@ -36,4 +36,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>FieldsetDemoComponentDemoModule {}
+export class <%= angular2AppName %>FieldsetDemoModule {}
