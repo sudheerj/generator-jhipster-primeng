@@ -1168,7 +1168,7 @@ module.exports = JhipsterGenerator.extend({
 
         let browserComponents = {"carousel":"data", "datagrid":"data", "datalist":"data", "datascroller":"data", "datatable":"data", "grid":"panel", "defer":"misc", "inplace":"misc"};
         for (var component in browserComponents) {
-            this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/browser.json`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/browser.json`);
+            this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/browsers.json`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/browsers.json`);
             this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/images/firefox.png`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/images/firefox.png`);
             this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/images/ie.png`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/images/ie.png`);
             this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/images/safari.png`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/images/safari.png`);
