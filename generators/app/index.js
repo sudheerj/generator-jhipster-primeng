@@ -1185,11 +1185,8 @@ module.exports = JhipsterGenerator.extend({
         }
 
         this.template(`src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts`, `src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts`);
-        this.template(`src/main/webapp/app/primeng/data/defer/service/mybrowser.ts`, `src/main/webapp/app/primeng/data/defer/service/mybrowser.ts`);
-        this.template(`src/main/webapp/app/primeng/data/inplace/service/mybrowser.ts`, `src/main/webapp/app/primeng/data/inplace/service/mybrowser.ts`);
-
-
-
+        this.template(`src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts`, `src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts`);
+        this.template(`src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts`, `src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts`);
 
         let cityComponents = {"tree":"data", "treetable":"data"};
         for (var component in cityComponents) {
