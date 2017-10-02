@@ -13,7 +13,7 @@ import {GrowlModule} from 'primeng/components/growl/growl';
 
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
-import {TreeNodeService} from './service/treenode.service.ts';
+import {TreeNodeService} from './service/treenode.service';
 
 
 import {

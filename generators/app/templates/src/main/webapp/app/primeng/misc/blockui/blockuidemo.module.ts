@@ -18,8 +18,8 @@ import {BlockUIModule} from 'primeng/components/blockui/blockui';
 
 import {MockBackend} from '@angular/http/testing';
 import {BaseRequestOptions} from '@angular/http';
-import {fakeBackendProvider} from './backend/fake-backend.ts';
-import {EmployeeService} from './service/employee.service.ts';
+import {fakeBackendProvider} from './backend/fake-backend';
+import {EmployeeService} from './service/employee.service';
 
 import {
     BlockUIDemoComponent,

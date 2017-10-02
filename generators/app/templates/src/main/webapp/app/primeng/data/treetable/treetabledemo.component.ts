@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {Message,TreeNode,MenuItem} from 'primeng/components/common/api';
-import {TreeNodeService} from './service/treenode.service.ts';
+import {TreeNodeService} from './service/treenode.service';
 
 @Component({
     selector: 'jhi-treetable',

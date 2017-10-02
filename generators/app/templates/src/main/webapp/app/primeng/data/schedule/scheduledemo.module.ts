@@ -16,7 +16,7 @@ import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/components/button/button';
 
-import {EventService} from './service/event.service.ts';
+import {EventService} from './service/event.service';
 
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 

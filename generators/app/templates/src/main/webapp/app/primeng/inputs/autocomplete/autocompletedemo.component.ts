@@ -1,7 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 import {Message,SelectItem} from 'primeng/components/common/api';
-import {CountryService} from './service/country.service.ts';
-import Country from './service/country.ts';
+import {CountryService} from './service/country.service';
+import Country from './service/country';
 
 @Component({
     selector: 'jhi-autocomplete',

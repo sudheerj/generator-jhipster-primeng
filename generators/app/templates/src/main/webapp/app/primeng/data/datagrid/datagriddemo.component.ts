@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {Message} from 'primeng/components/common/api';
-import {BrowserService} from './service/browser.service.ts';
-import Browser from './service/browser.ts';
+import {BrowserService} from './service/browser.service';
+import Browser from './service/browser';
 
 @Component({
     selector: 'jhi-datagrid',

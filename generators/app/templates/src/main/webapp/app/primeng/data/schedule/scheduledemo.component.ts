@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {Message} from 'primeng/components/common/api';
-import {EventService} from './service/event.service.ts';
-import {MyEvent} from './event/event.ts';
+import {EventService} from './service/event.service';
+import {MyEvent} from './event/event';
 
 @Component({
     selector: 'jhi-schedule',

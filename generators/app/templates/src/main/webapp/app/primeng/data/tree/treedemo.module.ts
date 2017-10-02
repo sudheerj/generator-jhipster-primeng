@@ -11,7 +11,7 @@ import {TreeDragDropService} from 'primeng/components/common/api';
 import {ButtonModule} from 'primeng/components/button/button';
 import {ContextMenuModule} from 'primeng/components/contextmenu/contextmenu';
 import {GrowlModule} from 'primeng/primeng';
-import {TreeNodeService} from './service/treenode.service.ts';
+import {TreeNodeService} from './service/treenode.service';
 
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 import {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {Message} from 'primeng/components/common/api';
-import {ScoreService} from './service/scoreservice.ts';
-import Score from './service/score.ts';
+import {ScoreService} from './service/score.service';
+import Score from './service/score';
 import {OverlayPanel} from 'primeng/components/overlaypanel/overlaypanel';
 
 

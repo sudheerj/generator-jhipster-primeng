@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {DocumentService} from './service/document.service.ts';
-import {Document} from './service/document.ts';
+import {DocumentService} from './service/document.service';
+import {Document} from './service/document';
 
 @Component({
     selector: 'jhi-dragdrop',
