@@ -10,7 +10,7 @@ export class VCardService {
     }
 
     getVCards(): Observable<VCard[]> {
-        return this.http.get('/assets/data/vcards.json')
+        return this.http.get('../assets/data/vcards.json')
             .map(response => response.json().data);
     }
 }
