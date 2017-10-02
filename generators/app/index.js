@@ -12,7 +12,7 @@ const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
 const ANGULAR_VERSION = '4.2.6';
-const PRIMENG_VERSION = '4.2.1';
+const PRIMENG_VERSION = '4.1.0';
 const PRIMENG_EXT_WIZARD_VERSION = '2.1.0';
 const CHARTJS_VERSION = '2.6.0';
 const FULLCALENDAR_VERSION = '3.5.0';
@@ -1183,6 +1183,13 @@ module.exports = JhipsterGenerator.extend({
             this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.service.ts`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.service.ts`);
             this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.ts`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.ts`);
         }
+
+        this.template(`src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts`, `src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts`);
+        this.template(`src/main/webapp/app/primeng/data/defer/service/mybrowser.ts`, `src/main/webapp/app/primeng/data/defer/service/mybrowser.ts`);
+        this.template(`src/main/webapp/app/primeng/data/inplace/service/mybrowser.ts`, `src/main/webapp/app/primeng/data/inplace/service/mybrowser.ts`);
+
+
+
 
         let cityComponents = {"tree":"data", "treetable":"data"};
         for (var component in cityComponents) {

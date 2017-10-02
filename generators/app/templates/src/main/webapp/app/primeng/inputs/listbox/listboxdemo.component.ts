@@ -43,9 +43,7 @@ export class ListboxDemoComponent implements OnInit {
     activeIndex: number = 0;
 
     ngOnInit() {
-        this.types = [];
-        this.types.push({label: 'ReadOnly', value: 'readonly'});
-        this.types.push({label: 'Disabled', value: 'disable'});
+
     }
 
     onChangeStep(label: string) {

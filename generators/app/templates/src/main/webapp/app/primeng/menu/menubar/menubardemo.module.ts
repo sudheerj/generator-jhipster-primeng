@@ -21,7 +21,7 @@ const primeng_STATES = [
         <%= angular2AppName %>SharedModule,
         CommonModule,
         BrowserAnimationsModule,
-        MenuBarModule,
+        MenubarModule,
         GrowlModule,
         ButtonModule,
         InputTextModule,

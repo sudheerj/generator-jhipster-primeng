@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {DataListModule} from 'primeng/components/datalist/datalist';
 import {DialogModule} from 'primeng/components/dialog/dialog';
+import {ButtonModule} from 'primeng/components/button/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {BrowserService} from './service/browser.service';
