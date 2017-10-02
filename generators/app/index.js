@@ -1451,8 +1451,10 @@ module.exports = JhipsterGenerator.extend({
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/countries.json`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/countries.json`);
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`);
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
-            for(code in codes)
-            this.copyImageFiles(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/images/${code}`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/images/${code}`);
+            _this = this;
+            codes.forEach(function(code) {
+                this.copyImageFiles(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/images/country/${code}`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/images/country/${code}`);
+            });
         }
         this.template(`src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts`, `src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts`);
 
