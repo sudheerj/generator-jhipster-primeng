@@ -10,7 +10,7 @@ import {MenuItem,Message} from 'primeng/components/common/api';
 export class MegaMenuDemoComponent implements OnInit {
     activeIndex: number = 0;
     msgs: Message[] = [];
-    private items: MenuItem[];
+    private items: object;
 
     ngOnInit() {
         this.items = [

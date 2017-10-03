@@ -97,9 +97,9 @@ export class TreeDemoComponent implements OnInit {
         }
     }
 
-    viewFile(selectPlace: TreeNode) {
+    viewFile(selectPlace: TreeNode[]) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Node selected with right click', detail: selectPlace.label});
+        this.msgs.push({severity: 'info', summary: 'Node selected with right click', detail: selectPlace[0].label});
     }
 
     unselectFile() {

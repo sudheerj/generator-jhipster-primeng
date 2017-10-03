@@ -190,7 +190,7 @@ module.exports = JhipsterGenerator.extend({
             {
                 type: 'list',
                 name: 'theme',
-                message: response => this.getNumberedQuestion('Which theme would you like to use?', true),
+                message: 'Which theme would you like to use?',
                 choices: THEME_OPTIONS,
                 default: 'omega'
             },
@@ -786,7 +786,12 @@ module.exports = JhipsterGenerator.extend({
                     </li>
                     <span style="font-weight:bold">Miscellaneous Components</span>
                    <hr/>
-                    
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="validation" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-circle-o-notch" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.validation">Validation</span>
+                        </a>
+                    </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="captcha" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o-notch" aria-hidden="true"></i>
@@ -1060,6 +1065,7 @@ module.exports = JhipsterGenerator.extend({
                 "fieldset":  "Fieldset",
                 "grid":  "Grid",
                 "toolbar": "Toolbar",
+                "validation":"validation",
                 "captcha": "Captcha",
                 "defer":  "Defer",
                 "rtl":  "RTL",
@@ -1160,7 +1166,8 @@ module.exports = JhipsterGenerator.extend({
             "blockui": "misc",
             "terminal": "misc",
             "inplace": "misc",
-            "progressbar": "misc"
+            "progressbar": "misc",
+            "validation": "misc"
         };
 
         // copy all primeng files
@@ -1201,8 +1208,8 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles(`src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/man.png`, `src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/man.png`);
         this.copyImageFiles(`src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/women.png`, `src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/women.png`);
         this.template(`src/main/webapp/app/primeng/data/orgchart/assets/data/vcards.json`, `src/main/webapp/app/primeng/data/orgchart/assets/data/vcards.json`);
-        this.template(`src/main/webapp/app/primeng/data/orgchart/service/vcard.ts`, `src/main/webapp/app/primeng/data/schedule/service/vcard.ts`);
-        this.template(`src/main/webapp/app/primeng/data/orgchart/service/vcard.service.ts`, `src/main/webapp/app/primeng/data/schedule/service/vcard.service.ts`);
+        this.template(`src/main/webapp/app/primeng/data/orgchart/service/vcard.ts`, `src/main/webapp/app/primeng/data/orgchart/service/vcard.ts`);
+        this.template(`src/main/webapp/app/primeng/data/orgchart/service/vcard.service.ts`, `src/main/webapp/app/primeng/data/orgchart/service/vcard.service.ts`);
 
         this.copyImageFiles(`src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primefaces.png`, `src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primefaces.png`);
         this.copyImageFiles(`src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primeng.png`, `src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primeng.png`);
