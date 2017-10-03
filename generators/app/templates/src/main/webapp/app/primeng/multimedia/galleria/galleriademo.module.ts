@@ -5,6 +5,7 @@ import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {GalleriaModule} from 'primeng/primeng';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {
     GalleriaDemoComponent,
@@ -22,6 +23,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         GrowlModule,
         GalleriaModule,
+        WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

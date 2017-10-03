@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {SplitButtonModule} from 'primeng/primeng';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {
     SplitbuttonDemoComponent,

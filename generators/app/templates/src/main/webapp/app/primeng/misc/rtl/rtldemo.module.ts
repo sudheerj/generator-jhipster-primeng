@@ -5,6 +5,8 @@ import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {AccordionModule} from 'primeng/primeng';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+
 
 import {
     RTLDemoComponent,
@@ -22,6 +24,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         GrowlModule,
         AccordionModule,
+        WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

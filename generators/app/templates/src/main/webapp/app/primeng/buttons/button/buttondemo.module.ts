@@ -3,6 +3,8 @@ import { RouterModule } from '@angular/router';
 
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {ButtonModule} from 'primeng/primeng';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+
 
 import {
     ButtonDemoComponent,

@@ -7,7 +7,7 @@ import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {ButtonModule} from 'primeng/components/button/button';
 import {GrowlModule} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {
     OverlayPanelDemoComponent,
@@ -26,6 +26,7 @@ const primeng_STATES = [
         DataTableModule,
         GrowlModule,
         BrowserAnimationsModule,
+        WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

@@ -9,6 +9,8 @@ import {GrowlModule} from 'primeng/primeng';
 import {DeferModule} from 'primeng/primeng';
 import {DataTableModule} from 'primeng/primeng';
 import {BrowserService} from './service/browser.service';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+
 
 import {
     InplaceDemoComponent,
@@ -27,6 +29,7 @@ const primeng_STATES = [
         GrowlModule,
         DeferModule,
         DataTableModule,
+        WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

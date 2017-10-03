@@ -3,7 +3,7 @@ import { UserRouteAccessService } from '../../../shared';
 import { ConfirmDialogDemoComponent } from './confirmdialogdemo.component';
 
 export const confirmDialogDemoRoute: Route = {
-    path: 'growl',
+    path: 'confirmdialog',
     component: ConfirmDialogDemoComponent,
     data: {
         authorities: ['ROLE_USER'],
