@@ -922,7 +922,6 @@ module.exports = JhipsterGenerator.extend({
                 </ul>
             </li>`;
         }
-        this.log(`${primengMenu}`);
         try {
             this.rewriteFile(
                 'src/main/webapp/app/layouts/navbar/navbar.component.html',
