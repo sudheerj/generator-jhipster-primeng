@@ -410,7 +410,7 @@ module.exports = JhipsterGenerator.extend({
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="checkbox" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.checkbox">Checkbox</span>
+                            <span jhiTranslate="global.menu.primeng.checkbox">Checkbox&TrieCheckbox</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
@@ -470,26 +470,12 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.growl">Growl</span>
                         </a>
                     </li>
-                    <span tyle="font-weight:bold">Overlay Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="dialog" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.dialog">Dialog</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="confirmdialog" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.confirmdialog">ConfirmDialog</span>
-                        </a>
-                    </li>
                     <span tyle="font-weight:bold">Multimedia Components</span>
                    <hr/>
                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="galleria" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.multimedia">Multimedia</span>
+                            <span jhiTranslate="global.menu.primeng.galleria">Galleria</span>
                         </a>
                     </li>
                    
@@ -573,6 +559,12 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.tree">Tree</span>
                         </a>
                     </li>
+                    <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="treetable" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.treetable">TreeTable</span>
+                        </a>
+                    </li>
                     <span tyle="font-weight:bold">Dragdrop Components</span>
                    <hr/>
                     <li uiSrefActive="active">
@@ -643,20 +635,6 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.tabmenu">Tabmenu</span>
                         </a>
                     </li>
-                   <span tyle="font-weight:bold">Messages Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="messages" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.messages">Messages</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="growl" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.growl">Growl</span>
-                        </a>
-                    </li>
                     <span tyle="font-weight:bold">Overlay Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -721,8 +699,6 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.grid">grid</span>
                         </a>
                     </li>
-                    <span tyle="font-weight:bold">Multimedia Components</span>
-                   <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="toolbar" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
@@ -946,6 +922,7 @@ module.exports = JhipsterGenerator.extend({
                 </ul>
             </li>`;
         }
+        this.log(`${primengMenu}`);
         try {
             this.rewriteFile(
                 'src/main/webapp/app/layouts/navbar/navbar.component.html',
