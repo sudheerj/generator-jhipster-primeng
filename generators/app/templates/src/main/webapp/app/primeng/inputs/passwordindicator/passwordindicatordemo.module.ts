@@ -9,12 +9,12 @@ import {GrowlModule} from 'primeng/components/growl/growl';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {
-    PasswordDemoComponent,
-    passwordDemoRoute
+    PasswordIndicatorDemoComponent,
+    passwordindicatorDemoRoute
 } from './';
 
 const primeng_STATES = [
-    passwordDemoRoute
+    passwordindicatorDemoRoute
 ];
 
 @NgModule({
@@ -32,4 +32,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>PasswordDemoModule {}
+export class <%= angular2AppName %>PasswordIndicatorDemoModule {}

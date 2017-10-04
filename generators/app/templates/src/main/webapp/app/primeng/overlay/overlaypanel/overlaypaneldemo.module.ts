@@ -1,5 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {OverlayPanelModule} from 'primeng/components/overlaypanel/overlaypanel';
@@ -8,6 +9,7 @@ import {ButtonModule} from 'primeng/components/button/button';
 import {GrowlModule} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {ScoreService} from './service/score.service';
 
 import {
     OverlayPanelDemoComponent,
@@ -32,6 +34,8 @@ const primeng_STATES = [
     declarations: [
         OverlayPanelDemoComponent
     ],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, ScoreService],
+
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angular2AppName %>OverlayPanelDemoModule {}

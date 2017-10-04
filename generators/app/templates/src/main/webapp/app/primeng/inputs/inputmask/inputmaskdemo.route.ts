@@ -3,7 +3,7 @@ import { UserRouteAccessService } from '../../../shared';
 import { InputMaskDemoComponent } from './inputmaskdemo.component';
 
 export const inputmaskDemoRoute: Route = {
-    path: 'chips',
+    path: 'inputmask',
     component: InputMaskDemoComponent,
     data: {
         authorities: ['ROLE_USER'],

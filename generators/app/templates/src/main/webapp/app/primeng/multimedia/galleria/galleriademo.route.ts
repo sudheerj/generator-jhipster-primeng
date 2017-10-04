@@ -3,7 +3,7 @@ import { UserRouteAccessService } from '../../../shared';
 import { GalleriaDemoComponent } from './galleriademo.component';
 
 export const galleriaDemoRoute: Route = {
-    path: 'growl',
+    path: 'galleria',
     component: GalleriaDemoComponent,
     data: {
         authorities: ['ROLE_USER'],

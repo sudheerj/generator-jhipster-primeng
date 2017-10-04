@@ -2,11 +2,11 @@ import {Component, OnInit } from '@angular/core';
 import {Message} from 'primeng/components/common/api';
 
 @Component({
-    selector: 'jhi-password',
-    templateUrl: './passworddemo.component.html',
+    selector: 'jhi-passwordindicator',
+    templateUrl: './passwordindicatordemo.component.html',
     styles: []
 })
-export class PasswordDemoComponent implements OnInit {
+export class PasswordIndicatorDemoComponent implements OnInit {
     password: string;
     msgs: Message[] = [];
     activeIndex: number = 0;

@@ -5,7 +5,7 @@
         <pe-step label="Basic">
             <h3>Basic</h3>
             <label for="input">Basic</label>
-            <input id="input" type="text" size="30" pInputText [(ngModel)]="text" >
+            <input id="input" name="input" type="text" size="30" pInputText [(ngModel)]="text" >
             <span id="text">{{text}}</span>
         </pe-step>
 
@@ -13,7 +13,7 @@
         <pe-step label="Float label">
             <h3>Float label</h3>
             <span class="ui-float-label">
-                <input id="float-input" pInputText type="text" size="30"  >
+                <input id="float-input" name="float" pInputText type="text" size="30"  >
                 <label for="float-input">Username</label>
             </span>
         </pe-step>
@@ -21,8 +21,8 @@
         <!-- Disabled -->
         <pe-step label="Disabled">
             <h3>Disabled</h3>
-            <input id="disabled-input" type="text" size="30" pInputText [disabled]="disabled" />
-            <button id="disabled-btn" type="button" (click)="toggleDisabled()" pButton label="Toggle"></button>
+            <input id="disabled-input" name="disabled" type="text" size="30" pInputText [disabled]="disabled" />
+            <button id="disabled-btn" name="disableBtn" type="button" (click)="toggleDisabled()" pButton label="Toggle"></button>
         </pe-step>
 
     </pe-steps>

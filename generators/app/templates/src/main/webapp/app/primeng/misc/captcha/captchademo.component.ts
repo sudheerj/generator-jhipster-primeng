@@ -22,4 +22,9 @@ export class CaptchaDemoComponent implements OnInit {
     this.msgs.push({severity: 'info', summary: 'Succees', detail: 'User Responded'});
     }
 
+    onChangeStep(label: string) {
+        this.msgs.length = 0;
+        this.msgs.push({severity: 'info', summary: label});
+    }
+
 }

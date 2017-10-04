@@ -10,6 +10,7 @@ import {DeferModule} from 'primeng/primeng';
 import {DataTableModule} from 'primeng/primeng';
 import {BrowserService} from './service/browser.service';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {BrowserService} from './service/browser.service';
 
 
 import {
@@ -35,6 +36,8 @@ const primeng_STATES = [
     declarations: [
         InplaceDemoComponent
     ],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
+
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angular2AppName %>InplaceDemoModule {}

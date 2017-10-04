@@ -19,7 +19,7 @@ import { <%= angular2AppName %>ChipsDemoModule } from './inputs/chips/chipsdemo.
 import { <%= angular2AppName %>ColorPickerDemoModule } from './inputs/colorpicker/colorpickerdemo.module';
 import { <%= angular2AppName %>InputMaskDemoModule } from './inputs/inputmask/inputmaskdemo.module';
 import { <%= angular2AppName %>InputSwitchDemoModule } from './inputs/inputswitch/inputswitchdemo.module';
-import { <%= angular2AppName %>PasswordDemoModule } from './inputs/password/passworddemo.module';
+import { <%= angular2AppName %>PasswordIndicatorDemoModule } from './inputs/passwordindicator/passwordindicatordemo.module';
 import { <%= angular2AppName %>AutoCompleteDemoModule } from './inputs/autocomplete/autocompletedemo.module';
 import { <%= angular2AppName %>SliderDemoModule } from './inputs/slider/sliderdemo.module';
 import { <%= angular2AppName %>SpinnerDemoModule } from './inputs/spinner/spinnerdemo.module';
@@ -92,6 +92,17 @@ import { <%= angular2AppName %>ValidationDemoModule } from './misc/validation/va
 @NgModule({
     imports: [
 
+        <%= angular2AppName %>MenuDemoModule,
+        <%= angular2AppName %>ContextMenuDemoModule,
+        <%= angular2AppName %>PanelMenuDemoModule,
+        <%= angular2AppName %>StepsDemoModule,
+        <%= angular2AppName %>TieredMenuDemoModule,
+        <%= angular2AppName %>BreadcrumbDemoModule,
+        <%= angular2AppName %>MegaMenuDemoModule,
+        <%= angular2AppName %>MenuBarDemoModule,
+        <%= angular2AppName %>SlideMenuDemoModule,
+        <%= angular2AppName %>TabMenuDemoModule,
+
         <%= angular2AppName %>BlockUIDemoModule,
         <%= angular2AppName %>CaptchaDemoModule,
         <%= angular2AppName %>DeferDemoModule,
@@ -112,7 +123,7 @@ import { <%= angular2AppName %>ValidationDemoModule } from './misc/validation/va
         <%= angular2AppName %>ChipsDemoModule,
         <%= angular2AppName %>InputMaskDemoModule,
         <%= angular2AppName %>InputSwitchDemoModule,
-        <%= angular2AppName %>PasswordDemoModule,
+        <%= angular2AppName %>PasswordIndicatorDemoModule,
         <%= angular2AppName %>AutoCompleteDemoModule,
         <%= angular2AppName %>SliderDemoModule,
         <%= angular2AppName %>SpinnerDemoModule,

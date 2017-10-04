@@ -1,11 +1,13 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {DragDropModule} from 'primeng/components/dragdrop/dragdrop';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {DataGridModule} from 'primeng/components/datagrid/datagrid';
 import {PanelModule} from 'primeng/components/panel/panel';
+import {DocumentService} from './service/document.service';
 
 import {
     DragdropDemoComponent,
@@ -28,6 +30,8 @@ const primeng_STATES = [
     declarations: [
         DragdropDemoComponent
     ],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, DocumentService],
+
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angular2AppName %>DragDropDemoModule {}

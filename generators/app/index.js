@@ -16,7 +16,7 @@ const PRIMENG_VERSION = '4.2.1';
 const PRIMENG_EXT_WIZARD_VERSION = '2.1.0';
 const CHARTJS_VERSION = '2.6.0';
 const FULLCALENDAR_VERSION = '3.5.0';
-const QUILL_VERSION = '1.1.8';
+const QUILL_VERSION = '1.2.6';
 
 const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
 const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
@@ -194,6 +194,62 @@ module.exports = JhipsterGenerator.extend({
                 choices: THEME_OPTIONS,
                 default: 'omega'
             },
+            {
+                type: 'checkbox',
+                name: 'componentGroups',
+                message: 'Which component categories you would like to include?',
+                choices: [{
+                    name: 'input',
+                    value: 'input',
+                    checked: false
+                }, {
+                    name: 'button',
+                    value: 'button',
+                    checked: false
+                }, {
+                    name: 'data',
+                    value: 'data',
+                    checked: false
+                }, {
+                    name: 'panel',
+                    value: 'panel',
+                    checked: false
+                }, {
+                    name: 'overlay',
+                    value: 'overlay',
+                    checked: false
+                }, {
+                    name: 'file',
+                    value: 'file',
+                    checked: false
+                }, {
+                    name: 'menu',
+                    value: 'menu',
+                    checked: false
+                }, {
+                    name: 'charts',
+                    value: 'charts',
+                    checked: false
+                }, {
+                    name: 'messages',
+                    value: 'messages',
+                    checked: false
+                }, {
+                    name: 'multimedia',
+                    value: 'multimedia',
+                    checked: false
+                }, {
+                    name: 'dragdrop',
+                    value: 'dragdrop',
+                    checked: false
+                }, {
+                    name: 'misc',
+                    value: 'misc',
+                    checked: false
+                }
+
+                ]
+            }
         ];
 
         this.prompt(prompts).then((props) => {
@@ -209,6 +265,8 @@ module.exports = JhipsterGenerator.extend({
         }
 
         themeName = this.props["theme"];
+        var categories = this.props["componentGroups"];
+        this.log(categories);
 
         // function to use directly template
         this.template = function (source, destination) {
@@ -230,7 +288,8 @@ module.exports = JhipsterGenerator.extend({
         //this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
 
         let primengResources = `@import "~primeng/resources/primeng.min.css";
-                                @import "~primeng/resources/themes/${themeName}/theme.css";`;
+                                @import "~primeng/resources/themes/${themeName}/theme.css";
+                                @import "~quill/dist/quill.snow.css";
 
         // add a line to a lyric file, using appendFile
         fs.appendFile(CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss',
@@ -374,13 +433,13 @@ module.exports = JhipsterGenerator.extend({
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputmask" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.mask">InputMask</span>
+                            <span jhiTranslate="global.menu.primeng.inputmask">InputMask</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="password" routerLinkActive="active" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="passwordindicator" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.password">Password</span>
+                            <span jhiTranslate="global.menu.primeng.passwordindicator">Password Indicator</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
@@ -955,6 +1014,38 @@ module.exports = JhipsterGenerator.extend({
             this.template('src/test/javascript/e2e/primeng/_primeng.spec.ts', 'src/test/javascript/e2e/primeng/primeng.spec.ts');
         }
 
+
+
+// add captcha to vendor
+try {
+    this.rewriteFile(
+        'src/main/webapp/app/vendor.ts',
+        'jhipster-needle-add-element-to-vendor',
+        '<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script>;');
+} catch (e) {
+    this.log(`${chalk.red.bold('ERROR!')}`);
+    this.log('  Missing needle \'jhipster-needle-add-element-to-vendor\' in src/main/webapp/app/vendor.ts');
+    this.log('  You need to add manually:\n');
+    this.log(`${chalk.yellow.bold('https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha';')}`);
+    this.log('');
+    this.anyError = true;
+}
+
+// add quill to vendor
+try {
+    this.rewriteFile(
+        'src/main/webapp/app/vendor.ts',
+        'jhipster-needle-add-element-to-vendor',
+        'import \'quill/dist/quill.js\';');
+} catch (e) {
+    this.log(`${chalk.red.bold('ERROR!')}`);
+    this.log('  Missing needle \'jhipster-needle-add-element-to-vendor\' in src/main/webapp/app/vendor.ts');
+    this.log('  You need to add manually:\n');
+    this.log(`${chalk.yellow.bold('import \'quill/dist//quill.js\';')}`);
+    this.log('');
+    this.anyError = true;
+}
+
         // add chart to vendor
         try {
             this.rewriteFile(
@@ -989,7 +1080,7 @@ module.exports = JhipsterGenerator.extend({
                 "chips": "Chips",
                 "inputswitch":"InputSwitch",
                 "inputmask":  "InputMask",
-                "password":  "Password",
+                "password":  "Password Indicator",
                 "rating":  "Rating",
                 "spinner": "Spinner",
                 "togglebutton": "ToggleButton",
@@ -1076,7 +1167,7 @@ module.exports = JhipsterGenerator.extend({
             "chips": "inputs",
             "inputswitch": "inputs",
             "inputmask": "inputs",
-            "password": "inputs",
+            "passwordindicator": "inputs",
             "rating": "inputs",
             "spinner": "inputs",
             "togglebutton": "inputs",
@@ -1157,7 +1248,16 @@ module.exports = JhipsterGenerator.extend({
             this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.route.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.route.ts`);
         }
 
-        let browserComponents = {"carousel":"data", "datagrid":"data", "datalist":"data", "datascroller":"data", "datatable":"data", "grid":"panel", "defer":"misc", "inplace":"misc"};
+        let browserComponents = {
+            "carousel": "data",
+            "datagrid": "data",
+            "datalist": "data",
+            "datascroller": "data",
+            "datatable": "data",
+            "grid": "panel",
+            "defer": "misc",
+            "inplace": "misc"
+        };
         for (var component in browserComponents) {
             this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/browsers.json`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/browsers.json`);
             this.copyImageFiles(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/images/firefox.png`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/images/firefox.png`);
@@ -1171,7 +1271,7 @@ module.exports = JhipsterGenerator.extend({
         this.template(`src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts`, `src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts`);
         this.template(`src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts`, `src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts`);
 
-        let cityComponents = {"tree":"data", "treetable":"data"};
+        let cityComponents = {"tree": "data", "treetable": "data"};
         for (var component in cityComponents) {
             this.template(`src/main/webapp/app/primeng/${cityComponents[component]}/${component}/assets/data/cities.json`, `src/main/webapp/app/primeng/${cityComponents[component]}/${component}/assets/data/cities.json`);
             this.template(`src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`, `src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`);
@@ -1236,7 +1336,7 @@ module.exports = JhipsterGenerator.extend({
         this.template(`src/main/webapp/app/primeng/misc/blockui/model/employee.ts`, `src/main/webapp/app/primeng/misc/blockui/model/employee.ts`);
         this.template(`src/main/webapp/app/primeng/misc/blockui/service/employee.service.ts`, `src/main/webapp/app/primeng/misc/blockui/service/employee.service.ts`);
 
-        let codes=["ad.png",
+        let codes = ["ad.png",
             "ae.png",
             "af.png",
             "ag.png",
@@ -1337,109 +1437,109 @@ module.exports = JhipsterGenerator.extend({
             "la.png",
             "lb.png",
             "lc.png",
-        "li.png",
-        "lk.png",
-        "lr.png",
-        "ls.png",
-        "lt.png",
-        "lu.png",
-        "lv.png",
-        "ly.png",
-        "ma.png",
-        "mc.png",
-        "md.png",
-        "me.png",
-        "mg.png",
-        "mh.png",
-        "mk.png",
-        "ml.png",
-        "mm.png",
-        "mn.png",
-        "mr.png",
-        "mt.png",
-        "mu.png",
-        "mv.png",
-        "mw.png",
-        "mx.png",
-        "my.png",
-        "mz.png",
-        "na.png",
-        "ne.png",
-        "ng.png",
-        "ni.png",
-        "nl.png",
-        "no.png",
-        "np.png",
-        "nr.png",
-        "nz.png",
-        "om.png",
-        "pa.png",
-        "pe.png",
-        "pg.png",
-        "ph.png",
-        "pk.png",
-        "pl.png",
-        "pt.png",
-        "pw.png",
-        "py.png",
-        "qa.png",
-        "ro.png",
-        "rs.png",
-        "ru.png",
-        "rw.png",
-        "sa.png",
-        "sb.png",
-        "sc.png",
-        "sd.png",
-        "se.png",
-        "sg.png",
-        "si.png",
-        "sk.png",
-        "sl.png",
-        "sm.png",
-        "sn.png",
-        "so.png",
-        "sr.png",
-        "st.png",
-        "sv.png",
-        "sy.png",
-        "sz.png",
-        "td.png",
-        "tg.png",
-        "th.png",
-        "tj.png",
-        "tl.png",
-        "tm.png",
-        "tn.png",
-        "to.png",
-        "tr.png",
-        "tt.png",
-        "tv.png",
-        "tw.png",
-        "tz.png",
-        "ua.png",
-        "ug.png",
-        "us.png",
-        "uy.png",
-        "uz.png",
-        "va.png",
-        "vc.png",
-        "ve.png",
-        "vn.png",
-        "vu.png",
-        "ws.png",
-        "ye.png",
-        "za.png",
-        "zm.png",
-        "zw.png"];
+            "li.png",
+            "lk.png",
+            "lr.png",
+            "ls.png",
+            "lt.png",
+            "lu.png",
+            "lv.png",
+            "ly.png",
+            "ma.png",
+            "mc.png",
+            "md.png",
+            "me.png",
+            "mg.png",
+            "mh.png",
+            "mk.png",
+            "ml.png",
+            "mm.png",
+            "mn.png",
+            "mr.png",
+            "mt.png",
+            "mu.png",
+            "mv.png",
+            "mw.png",
+            "mx.png",
+            "my.png",
+            "mz.png",
+            "na.png",
+            "ne.png",
+            "ng.png",
+            "ni.png",
+            "nl.png",
+            "no.png",
+            "np.png",
+            "nr.png",
+            "nz.png",
+            "om.png",
+            "pa.png",
+            "pe.png",
+            "pg.png",
+            "ph.png",
+            "pk.png",
+            "pl.png",
+            "pt.png",
+            "pw.png",
+            "py.png",
+            "qa.png",
+            "ro.png",
+            "rs.png",
+            "ru.png",
+            "rw.png",
+            "sa.png",
+            "sb.png",
+            "sc.png",
+            "sd.png",
+            "se.png",
+            "sg.png",
+            "si.png",
+            "sk.png",
+            "sl.png",
+            "sm.png",
+            "sn.png",
+            "so.png",
+            "sr.png",
+            "st.png",
+            "sv.png",
+            "sy.png",
+            "sz.png",
+            "td.png",
+            "tg.png",
+            "th.png",
+            "tj.png",
+            "tl.png",
+            "tm.png",
+            "tn.png",
+            "to.png",
+            "tr.png",
+            "tt.png",
+            "tv.png",
+            "tw.png",
+            "tz.png",
+            "ua.png",
+            "ug.png",
+            "us.png",
+            "uy.png",
+            "uz.png",
+            "va.png",
+            "vc.png",
+            "ve.png",
+            "vn.png",
+            "vu.png",
+            "ws.png",
+            "ye.png",
+            "za.png",
+            "zm.png",
+            "zw.png"];
 
-        let countryComponents = {"orderlist":"data", "picklist":"data", "autocomplete":"inputs", "select":"inputs"};
+        let countryComponents = {"orderlist": "data", "picklist": "data", "autocomplete": "inputs", "select": "inputs"};
         for (var component in countryComponents) {
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/countries.json`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/countries.json`);
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`);
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
             _this = this;
-            codes.forEach(function(code) {
+            codes.forEach(function (code) {
                 _this.copyImageFiles(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/images/country/${code}`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/images/country/${code}`);
             });
         }

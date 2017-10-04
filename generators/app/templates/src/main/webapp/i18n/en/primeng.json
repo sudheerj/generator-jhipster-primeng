@@ -19,8 +19,8 @@
             "inputswitch": {
                 "title": "InputSwitch"
             },
-            "mask": {
-                "title": "Mask"
+            "inputmask": {
+                "title": "InputMask"
             },
             "password": {
                 "title": "Password"

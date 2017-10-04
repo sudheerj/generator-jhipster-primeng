@@ -9,34 +9,21 @@ import {Message, SelectItem} from 'primeng/components/common/api';
 export class CheckboxDemoComponent implements OnInit {
     msgs: Message[] = [];
 
-    basicinput: number;
-
-    custominput: number;
-
-    separatorinput: number;
-
-    eventsinput: number;
-
-    readonlyinput: number = 50;
-
-    disabledinput: number = 100;
-
-    types: SelectItem[];
-
-    selectedType: string = 'readonly';
+    checked: boolean;
+    selectedVersions: string[] = ['AngularJS1.0','AngularV4.0'];
+    status: any = true;
+    feature: boolean = true;
 
     activeIndex: number = 0;
 
-    onChange(event: any) {
+    onChangeCheckbox() {
         this.msgs = [];
-        this.msgs.push(
-            {severity: 'info', summary: 'Spinner value is changed'});
+        this.msgs.push({severity: 'info', summary: 'Checkbox status is changed'});
     }
 
-    ngOnInit() {
-        this.types = [];
-        this.types.push({label: 'ReadOnly', value: 'readonly'});
-        this.types.push({label: 'Disabled', value: 'disable'});
+    onChangeTristate() {
+        this.msgs = [];
+        this.msgs.push({severity: 'info', summary: 'Tristate Checkbox status is changed'});
     }
 
     onChangeStep(label: string) {

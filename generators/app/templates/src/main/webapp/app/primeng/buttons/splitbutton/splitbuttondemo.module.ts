@@ -5,6 +5,7 @@ import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {SplitButtonModule} from 'primeng/primeng';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {GrowlModule} from 'primeng/primeng';
 
 import {
     SplitbuttonDemoComponent,
@@ -21,6 +22,7 @@ const primeng_STATES = [
         CommonModule,
         BrowserAnimationsModule,
         SplitButtonModule,
+        GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

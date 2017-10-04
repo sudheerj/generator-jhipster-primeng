@@ -22,9 +22,9 @@ export class ToggleButtonDemoComponent implements OnInit {
     onToggleButton(e: any) {
         this.msgs = [];
         if (e.checked) {
-            this.msgs.push({severity: 'info', summary: 'I confirm the booking'});
+            this.msgs.push({severity: 'info', summary: 'I like Angular Framework'});
         } else {
-            this.msgs.push({severity: 'info', summary: 'I reject the booking'});
+            this.msgs.push({severity: 'info', summary: 'I dont like Angular Framework'});
         }
     }
 
