@@ -289,7 +289,7 @@ module.exports = JhipsterGenerator.extend({
 
         let primengResources = `@import "~primeng/resources/primeng.min.css";
                                 @import "~primeng/resources/themes/${themeName}/theme.css";
-                                @import "~quill/dist/quill.snow.css";
+                                @import "~quill/dist/quill.snow.css";`
 
         // add a line to a lyric file, using appendFile
         fs.appendFile(CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss',
