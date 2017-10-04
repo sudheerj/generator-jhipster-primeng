@@ -138,12 +138,12 @@ module.exports = JhipsterGenerator.extend({
                         this.libChartJsVersion = fileData.dependencies['chart.js'];
                     }
 
-                    if (fileData.dependencies['fullcalendar']) {
-                        this.libFullcalendarVersion = fileData.dependencies['fullcalendar'];
+                    if (fileData.dependencies.fullcalendar) {
+                        this.libFullcalendarVersion = fileData.dependencies.fullcalendar;
                     }
 
-                    if (fileData.dependencies['quill']) {
-                        this.libQuillVersion = fileData.dependencies['quill'];
+                    if (fileData.dependencies.quill) {
+                        this.libQuillVersion = fileData.dependencies.quill;
                     }
 
                     if (fileData.dependencies['chart.js']) {
@@ -264,8 +264,8 @@ module.exports = JhipsterGenerator.extend({
             return;
         }
 
-        themeName = this.props["theme"];
-        var categories = this.props["componentGroups"];
+        themeName = this.props.theme;
+        const categories = this.props.componentGroups;
         this.log(categories);
 
         // function to use directly template
@@ -285,14 +285,14 @@ module.exports = JhipsterGenerator.extend({
             );
         };
 
-        //this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
+        // this.template(CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss', CLIENT_MAIN_SRC_DIR + 'content/scss/primeng-resources.scss');
 
-        let primengResources = `@import "~primeng/resources/primeng.min.css";
+        const primengResources = `@import "~primeng/resources/primeng.min.css";
                                 @import "~primeng/resources/themes/${themeName}/theme.css";
-                                @import "~quill/dist/quill.snow.css";`
+                                @import "~quill/dist/quill.snow.css";`;
 
         // add a line to a lyric file, using appendFile
-        fs.appendFile(CLIENT_MAIN_SRC_DIR + 'content/scss/vendor.scss',
+        fs.appendFile(`${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss`,
             primengResources, (err) => {
                 if (err) throw err;
                 console.log('The PrimeNG resources were updated!');
@@ -354,7 +354,6 @@ module.exports = JhipsterGenerator.extend({
             } else {
                 this.addNpmDependency('quill', `${QUILL_VERSION}`);
             }
-
         } catch (e) {
             this.log(`${chalk.red.bold('ERROR!')}`);
             this.log('  Problem when adding the new librairies in your package.json');
@@ -1015,36 +1014,35 @@ module.exports = JhipsterGenerator.extend({
         }
 
 
-
 // add captcha to vendor
-try {
-    this.rewriteFile(
+        try {
+            this.rewriteFile(
         'src/main/webapp/app/vendor.ts',
         'jhipster-needle-add-element-to-vendor',
         '<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script>;');
-} catch (e) {
-    this.log(`${chalk.red.bold('ERROR!')}`);
-    this.log('  Missing needle \'jhipster-needle-add-element-to-vendor\' in src/main/webapp/app/vendor.ts');
-    this.log('  You need to add manually:\n');
-    this.log(`${chalk.yellow.bold('https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha';')}`);
-    this.log('');
-    this.anyError = true;
-}
+        } catch (e) {
+            this.log(`${chalk.red.bold('ERROR!')}`);
+            this.log('  Missing needle \'jhipster-needle-add-element-to-vendor\' in src/main/webapp/app/vendor.ts');
+            this.log('  You need to add manually:\n');
+            this.log(`${chalk.yellow.bold('https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha')}`);
+            this.log('');
+            this.anyError = true;
+        }
 
 // add quill to vendor
-try {
-    this.rewriteFile(
+        try {
+            this.rewriteFile(
         'src/main/webapp/app/vendor.ts',
         'jhipster-needle-add-element-to-vendor',
         'import \'quill/dist/quill.js\';');
-} catch (e) {
-    this.log(`${chalk.red.bold('ERROR!')}`);
-    this.log('  Missing needle \'jhipster-needle-add-element-to-vendor\' in src/main/webapp/app/vendor.ts');
-    this.log('  You need to add manually:\n');
-    this.log(`${chalk.yellow.bold('import \'quill/dist//quill.js\';')}`);
-    this.log('');
-    this.anyError = true;
-}
+        } catch (e) {
+            this.log(`${chalk.red.bold('ERROR!')}`);
+            this.log('  Missing needle \'jhipster-needle-add-element-to-vendor\' in src/main/webapp/app/vendor.ts');
+            this.log('  You need to add manually:\n');
+            this.log(`${chalk.yellow.bold('import \'quill/dist//quill.js\';')}`);
+            this.log('');
+            this.anyError = true;
+        }
 
         // add chart to vendor
         try {
@@ -1160,81 +1158,81 @@ try {
         }
 
         const components = {
-            "inputgroup": "inputs",
-            "inputtext": "inputs",
-            "inputtextarea": "inputs",
-            "calendar": "inputs",
-            "chips": "inputs",
-            "inputswitch": "inputs",
-            "inputmask": "inputs",
-            "passwordindicator": "inputs",
-            "rating": "inputs",
-            "spinner": "inputs",
-            "togglebutton": "inputs",
-            "autocomplete": "inputs",
-            "checkbox": "inputs",
-            "colorpicker": "inputs",
-            "editor": "inputs",
-            "listbox": "inputs",
-            "select": "inputs",
-            "radiobutton": "inputs",
-            "slider": "inputs",
-            "selectbutton": "inputs",
-            "button": "buttons",
-            "splitbutton": "buttons",
-            "datatable": "data",
-            "datagrid": "data",
-            "carousel": "data",
-            "orderlist": "data",
-            "datalist": "data",
-            "paginator": "data",
-            "schedule": "data",
-            "treetable": "data",
-            "datascroller": "data",
-            "orgchart": "data",
-            "gmap": "data",
-            "picklist": "data",
-            "tree": "data",
-            "accordion": "panel",
-            "panel": "panel",
-            "tabview": "panel",
-            "fieldset": "panel",
-            "grid": "panel",
-            "toolbar": "panel",
-            "dialog": "overlay",
-            "confirmdialog": "overlay",
-            "lightbox": "overlay",
-            "overlaypanel": "overlay",
-            "tooltip": "overlay",
-            "fileupload": "file",
-            "menu": "menu",
-            "contextmenu": "menu",
-            "panelmenu": "menu",
-            "steps": "menu",
-            "tieredmenu": "menu",
-            "breadcrumb": "menu",
-            "megamenu": "menu",
-            "menubar": "menu",
-            "slidemenu": "menu",
-            "tabmenu": "menu",
-            "barchart": "charts",
-            "doughnutchart": "charts",
-            "linechart": "charts",
-            "piechart": "charts",
-            "polarareachart": "charts",
-            "radarchart": "charts",
-            "messages": "messages",
-            "growl": "messages",
-            "galleria": "multimedia",
-            "dragdrop": "dragdrop",
-            "captcha": "misc",
-            "defer": "misc",
-            "rtl": "misc",
-            "blockui": "misc",
-            "terminal": "misc",
-            "inplace": "misc",
-            "progressbar": "misc",
-            "validation": "misc"
+            inputgroup: 'inputs',
+            inputtext: 'inputs',
+            inputtextarea: 'inputs',
+            calendar: 'inputs',
+            chips: 'inputs',
+            inputswitch: 'inputs',
+            inputmask: 'inputs',
+            passwordindicator: 'inputs',
+            rating: 'inputs',
+            spinner: 'inputs',
+            togglebutton: 'inputs',
+            autocomplete: 'inputs',
+            checkbox: 'inputs',
+            colorpicker: 'inputs',
+            editor: 'inputs',
+            listbox: 'inputs',
+            select: 'inputs',
+            radiobutton: 'inputs',
+            slider: 'inputs',
+            selectbutton: 'inputs',
+            button: 'buttons',
+            splitbutton: 'buttons',
+            datatable: 'data',
+            datagrid: 'data',
+            carousel: 'data',
+            orderlist: 'data',
+            datalist: 'data',
+            paginator: 'data',
+            schedule: 'data',
+            treetable: 'data',
+            datascroller: 'data',
+            orgchart: 'data',
+            gmap: 'data',
+            picklist: 'data',
+            tree: 'data',
+            accordion: 'panel',
+            panel: 'panel',
+            tabview: 'panel',
+            fieldset: 'panel',
+            grid: 'panel',
+            toolbar: 'panel',
+            dialog: 'overlay',
+            confirmdialog: 'overlay',
+            lightbox: 'overlay',
+            overlaypanel: 'overlay',
+            tooltip: 'overlay',
+            fileupload: 'file',
+            menu: 'menu',
+            contextmenu: 'menu',
+            panelmenu: 'menu',
+            steps: 'menu',
+            tieredmenu: 'menu',
+            breadcrumb: 'menu',
+            megamenu: 'menu',
+            menubar: 'menu',
+            slidemenu: 'menu',
+            tabmenu: 'menu',
+            barchart: 'charts',
+            doughnutchart: 'charts',
+            linechart: 'charts',
+            piechart: 'charts',
+            polarareachart: 'charts',
+            radarchart: 'charts',
+            messages: 'messages',
+            growl: 'messages',
+            galleria: 'multimedia',
+            dragdrop: 'dragdrop',
+            captcha: 'misc',
+            defer: 'misc',
+            rtl: 'misc',
+            blockui: 'misc',
+            terminal: 'misc',
+            inplace: 'misc',
+            progressbar: 'misc',
+            validation: 'misc'
         };
 
         // copy all primeng files
@@ -1248,15 +1246,15 @@ try {
             this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.route.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.route.ts`);
         }
 
-        let browserComponents = {
-            "carousel": "data",
-            "datagrid": "data",
-            "datalist": "data",
-            "datascroller": "data",
-            "datatable": "data",
-            "grid": "panel",
-            "defer": "misc",
-            "inplace": "misc"
+        const browserComponents = {
+            carousel: 'data',
+            datagrid: 'data',
+            datalist: 'data',
+            datascroller: 'data',
+            datatable: 'data',
+            grid: 'panel',
+            defer: 'misc',
+            inplace: 'misc'
         };
         for (var component in browserComponents) {
             this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/browsers.json`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/assets/data/browsers.json`);
@@ -1267,284 +1265,283 @@ try {
             this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.ts`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.ts`);
         }
 
-        this.template(`src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts`, `src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts`);
-        this.template(`src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts`, `src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts`);
-        this.template(`src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts`, `src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts`);
+        this.template('src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts', 'src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts');
+        this.template('src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts', 'src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts');
+        this.template('src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts', 'src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts');
 
-        let cityComponents = {"tree": "data", "treetable": "data"};
+        const cityComponents = { tree: 'data', treetable: 'data' };
         for (var component in cityComponents) {
             this.template(`src/main/webapp/app/primeng/${cityComponents[component]}/${component}/assets/data/cities.json`, `src/main/webapp/app/primeng/${cityComponents[component]}/${component}/assets/data/cities.json`);
             this.template(`src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`, `src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`);
         }
 
-        this.template(`src/main/webapp/app/primeng/data/schedule/assets/data/scheduleevents.json`, `src/main/webapp/app/primeng/data/schedule/assets/data/scheduleevents.json`);
-        this.template(`src/main/webapp/app/primeng/data/schedule/event/event.ts`, `src/main/webapp/app/primeng/data/schedule/event/event.ts`);
-        this.template(`src/main/webapp/app/primeng/data/schedule/service/event.service.ts`, `src/main/webapp/app/primeng/data/schedule/service/event.service.ts`);
+        this.template('src/main/webapp/app/primeng/data/schedule/assets/data/scheduleevents.json', 'src/main/webapp/app/primeng/data/schedule/assets/data/scheduleevents.json');
+        this.template('src/main/webapp/app/primeng/data/schedule/event/event.ts', 'src/main/webapp/app/primeng/data/schedule/event/event.ts');
+        this.template('src/main/webapp/app/primeng/data/schedule/service/event.service.ts', 'src/main/webapp/app/primeng/data/schedule/service/event.service.ts');
 
-        this.copyImageFiles(`src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/man.png`, `src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/man.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/women.png`, `src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/women.png`);
-        this.template(`src/main/webapp/app/primeng/data/orgchart/assets/data/vcards.json`, `src/main/webapp/app/primeng/data/orgchart/assets/data/vcards.json`);
-        this.template(`src/main/webapp/app/primeng/data/orgchart/service/vcard.ts`, `src/main/webapp/app/primeng/data/orgchart/service/vcard.ts`);
-        this.template(`src/main/webapp/app/primeng/data/orgchart/service/vcard.service.ts`, `src/main/webapp/app/primeng/data/orgchart/service/vcard.service.ts`);
+        this.copyImageFiles('src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/man.png', 'src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/man.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/women.png', 'src/main/webapp/app/primeng/data/orgchart/assets/data/avatar/women.png');
+        this.template('src/main/webapp/app/primeng/data/orgchart/assets/data/vcards.json', 'src/main/webapp/app/primeng/data/orgchart/assets/data/vcards.json');
+        this.template('src/main/webapp/app/primeng/data/orgchart/service/vcard.ts', 'src/main/webapp/app/primeng/data/orgchart/service/vcard.ts');
+        this.template('src/main/webapp/app/primeng/data/orgchart/service/vcard.service.ts', 'src/main/webapp/app/primeng/data/orgchart/service/vcard.service.ts');
 
-        this.copyImageFiles(`src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primefaces.png`, `src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primefaces.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primeng.png`, `src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primeng.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primereact.png`, `src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primereact.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primeui.png`, `src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primeui.png`);
-        this.template(`src/main/webapp/app/primeng/menu/contextmenu/assets/data/employees.json`, `src/main/webapp/app/primeng/menu/contextmenu/assets/data/employees.json`);
-        this.template(`src/main/webapp/app/primeng/menu/contextmenu/service/employee.ts`, `src/main/webapp/app/primeng/menu/contextmenu/service/employee.ts`);
-        this.template(`src/main/webapp/app/primeng/menu/contextmenu/service/employee.service.ts`, `src/main/webapp/app/primeng/menu/contextmenu/service/employee.service.ts`);
+        this.copyImageFiles('src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primefaces.png', 'src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primefaces.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primeng.png', 'src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primeng.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primereact.png', 'src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primereact.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primeui.png', 'src/main/webapp/app/primeng/menu/contextmenu/assets/data/images/primeui.png');
+        this.template('src/main/webapp/app/primeng/menu/contextmenu/assets/data/employees.json', 'src/main/webapp/app/primeng/menu/contextmenu/assets/data/employees.json');
+        this.template('src/main/webapp/app/primeng/menu/contextmenu/service/employee.ts', 'src/main/webapp/app/primeng/menu/contextmenu/service/employee.ts');
+        this.template('src/main/webapp/app/primeng/menu/contextmenu/service/employee.service.ts', 'src/main/webapp/app/primeng/menu/contextmenu/service/employee.service.ts');
 
-        this.copyImageFiles(`src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Golf.png`, `src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Golf.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Jetta.png`, `src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Jetta.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Passat.png`, `src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Passat.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Polo.png`, `src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Polo.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Scirocco.png`, `src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Scirocco.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Touareg.png`, `src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Touareg.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Yeni.png`, `src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Yeni.png`);
+        this.copyImageFiles('src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Golf.png', 'src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Golf.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Jetta.png', 'src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Jetta.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Passat.png', 'src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Passat.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Polo.png', 'src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Polo.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Scirocco.png', 'src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Scirocco.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Touareg.png', 'src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Touareg.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Yeni.png', 'src/main/webapp/app/primeng/multimedia/galleria/assets/data/images/cars/Yeni.png');
 
-        this.copyImageFiles(`src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/dvi.png`, `src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/dvi.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/mid.png`, `src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/mid.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/mp3.png`, `src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/mp3.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/perl.png`, `src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/perl.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/ppt.png`, `src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/ppt.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/swf.png`, `src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/swf.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/wav.png`, `src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/wav.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/xls.png`, `src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/xls.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/xml.png`, `src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/xml.png`);
-        this.template(`src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/documents.json`, `src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/documents.json`);
-        this.template(`src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.ts`, `src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.ts`);
-        this.template(`src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.service.ts`, `src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.service.ts`);
+        this.copyImageFiles('src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/dvi.png', 'src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/dvi.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/mid.png', 'src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/mid.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/mp3.png', 'src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/mp3.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/perl.png', 'src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/perl.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/ppt.png', 'src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/ppt.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/swf.png', 'src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/swf.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/wav.png', 'src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/wav.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/xls.png', 'src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/xls.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/xml.png', 'src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/images/docs/xml.png');
+        this.template('src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/documents.json', 'src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/documents.json');
+        this.template('src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.ts', 'src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.ts');
+        this.template('src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.service.ts', 'src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.service.ts');
 
-        this.copyImageFiles(`src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primefaces.png`, `src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primefaces.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primeng.png`, `src/main/webapp/app/overlay/overlaypanel/assets/data/images/primeng.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primereact.png`, `src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primereact.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primeui.png`, `src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primeui.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primefaces.png`, `src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primefaces.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primeng.png`, `src/main/webapp/app/overlay/lightbox/assets/data/images/primeng.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primereact.png`, `src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primereact.png`);
-        this.copyImageFiles(`src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primeui.png`, `src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primeui.png`);
-        //this.copyImageFiles(`src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/videos/ironman.mp4`, `src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/videos/ironman.mp4`);
-        //this.copyImageFiles(`src/main/webapp/app/primeng/overlay/lightbox/assets/data/videos/ironman.mp4`, `src/main/webapp/app/primeng/overlay/lightbox/assets/data/videos/ironman.mp4`);
-        this.template(`src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/scores.json`, `src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/scores.json`);
-        this.template(`src/main/webapp/app/primeng/overlay/overlaypanel/service/score.ts`, `src/main/webapp/app/primeng/overlay/overlaypanel/service/score.ts`);
-        this.template(`src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts`, `src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts`);
+        this.copyImageFiles('src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primefaces.png', 'src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primefaces.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primeng.png', 'src/main/webapp/app/overlay/overlaypanel/assets/data/images/primeng.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primereact.png', 'src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primereact.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primeui.png', 'src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/images/primeui.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primefaces.png', 'src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primefaces.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primeng.png', 'src/main/webapp/app/overlay/lightbox/assets/data/images/primeng.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primereact.png', 'src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primereact.png');
+        this.copyImageFiles('src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primeui.png', 'src/main/webapp/app/primeng/overlay/lightbox/assets/data/images/primeui.png');
+        // this.copyImageFiles(`src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/videos/ironman.mp4`, `src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/videos/ironman.mp4`);
+        // this.copyImageFiles(`src/main/webapp/app/primeng/overlay/lightbox/assets/data/videos/ironman.mp4`, `src/main/webapp/app/primeng/overlay/lightbox/assets/data/videos/ironman.mp4`);
+        this.template('src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/scores.json', 'src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/scores.json');
+        this.template('src/main/webapp/app/primeng/overlay/overlaypanel/service/score.ts', 'src/main/webapp/app/primeng/overlay/overlaypanel/service/score.ts');
+        this.template('src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts', 'src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts');
 
-        this.template(`src/main/webapp/app/primeng/misc/blockui/backend/employees.ts`, `src/main/webapp/app/primeng/misc/blockui/backend/employees.ts`);
-        this.template(`src/main/webapp/app/primeng/misc/blockui/backend/fake-backend.ts`, `src/main/webapp/app/primeng/misc/blockui/backend/fake-backend.ts`);
-        this.template(`src/main/webapp/app/primeng/misc/blockui/backend/uuid.ts`, `src/main/webapp/app/primeng/misc/blockui/backend/uuid.ts`);
-        this.template(`src/main/webapp/app/primeng/misc/blockui/model/employee.ts`, `src/main/webapp/app/primeng/misc/blockui/model/employee.ts`);
-        this.template(`src/main/webapp/app/primeng/misc/blockui/service/employee.service.ts`, `src/main/webapp/app/primeng/misc/blockui/service/employee.service.ts`);
+        this.template('src/main/webapp/app/primeng/misc/blockui/backend/employees.ts', 'src/main/webapp/app/primeng/misc/blockui/backend/employees.ts');
+        this.template('src/main/webapp/app/primeng/misc/blockui/backend/fake-backend.ts', 'src/main/webapp/app/primeng/misc/blockui/backend/fake-backend.ts');
+        this.template('src/main/webapp/app/primeng/misc/blockui/backend/uuid.ts', 'src/main/webapp/app/primeng/misc/blockui/backend/uuid.ts');
+        this.template('src/main/webapp/app/primeng/misc/blockui/model/employee.ts', 'src/main/webapp/app/primeng/misc/blockui/model/employee.ts');
+        this.template('src/main/webapp/app/primeng/misc/blockui/service/employee.service.ts', 'src/main/webapp/app/primeng/misc/blockui/service/employee.service.ts');
 
-        let codes = ["ad.png",
-            "ae.png",
-            "af.png",
-            "ag.png",
-            "al.png",
-            "am.png",
-            "ao.png",
-            "ar.png",
-            "at.png",
-            "au.png",
-            "az.png",
-            "ba.png",
-            "bb.png",
-            "bd.png",
-            "be.png",
-            "bf.png",
-            "bg.png",
-            "bh.png",
-            "bi.png",
-            "bj.png",
-            "bn.png",
-            "bo.png",
-            "br.png",
-            "bs.png",
-            "bt.png",
-            "bw.png",
-            "by.png",
-            "bz.png",
-            "ca.png",
-            "cd.png",
-            "cf.png",
-            "cg.png",
-            "ch.png",
-            "ci.png",
-            "cl.png",
-            "cm.png",
-            "cn.png",
-            "co.png",
-            "cr.png",
-            "cu.png",
-            "cv.png",
-            "cy.png",
-            "cz.png",
-            "de.png",
-            "dj.png",
-            "dk.png",
-            "dm.png",
-            "do.png",
-            "dz.png",
-            "ec.png",
-            "ee.png",
-            "eg.png",
-            "eh.png",
-            "er.png",
-            "es.png",
-            "et.png",
-            "fi.png",
-            "fj.png",
-            "fm.png",
-            "fr.png",
-            "ga.png",
-            "gb.png",
-            "gd.png",
-            "ge.png",
-            "gh.png",
-            "gm.png",
-            "gn.png",
-            "gq.png",
-            "gr.png",
-            "gt.png",
-            "gw.png",
-            "gy.png",
-            "hn.png",
-            "hr.png",
-            "ht.png",
-            "hu.png",
-            "id.png",
-            "ie.png",
-            "il.png",
-            "in.png",
-            "iq.png",
-            "ir.png",
-            "is.png",
-            "it.png",
-            "jm.png",
-            "jo.png",
-            "jp.png",
-            "ke.png",
-            "kg.png",
-            "kh.png",
-            "ki.png",
-            "km.png",
-            "kn.png",
-            "kp.png",
-            "kr.png",
-            "ks.png",
-            "kw.png",
-            "kz.png",
-            "la.png",
-            "lb.png",
-            "lc.png",
-            "li.png",
-            "lk.png",
-            "lr.png",
-            "ls.png",
-            "lt.png",
-            "lu.png",
-            "lv.png",
-            "ly.png",
-            "ma.png",
-            "mc.png",
-            "md.png",
-            "me.png",
-            "mg.png",
-            "mh.png",
-            "mk.png",
-            "ml.png",
-            "mm.png",
-            "mn.png",
-            "mr.png",
-            "mt.png",
-            "mu.png",
-            "mv.png",
-            "mw.png",
-            "mx.png",
-            "my.png",
-            "mz.png",
-            "na.png",
-            "ne.png",
-            "ng.png",
-            "ni.png",
-            "nl.png",
-            "no.png",
-            "np.png",
-            "nr.png",
-            "nz.png",
-            "om.png",
-            "pa.png",
-            "pe.png",
-            "pg.png",
-            "ph.png",
-            "pk.png",
-            "pl.png",
-            "pt.png",
-            "pw.png",
-            "py.png",
-            "qa.png",
-            "ro.png",
-            "rs.png",
-            "ru.png",
-            "rw.png",
-            "sa.png",
-            "sb.png",
-            "sc.png",
-            "sd.png",
-            "se.png",
-            "sg.png",
-            "si.png",
-            "sk.png",
-            "sl.png",
-            "sm.png",
-            "sn.png",
-            "so.png",
-            "sr.png",
-            "st.png",
-            "sv.png",
-            "sy.png",
-            "sz.png",
-            "td.png",
-            "tg.png",
-            "th.png",
-            "tj.png",
-            "tl.png",
-            "tm.png",
-            "tn.png",
-            "to.png",
-            "tr.png",
-            "tt.png",
-            "tv.png",
-            "tw.png",
-            "tz.png",
-            "ua.png",
-            "ug.png",
-            "us.png",
-            "uy.png",
-            "uz.png",
-            "va.png",
-            "vc.png",
-            "ve.png",
-            "vn.png",
-            "vu.png",
-            "ws.png",
-            "ye.png",
-            "za.png",
-            "zm.png",
-            "zw.png"];
+        const codes = ['ad.png',
+            'ae.png',
+            'af.png',
+            'ag.png',
+            'al.png',
+            'am.png',
+            'ao.png',
+            'ar.png',
+            'at.png',
+            'au.png',
+            'az.png',
+            'ba.png',
+            'bb.png',
+            'bd.png',
+            'be.png',
+            'bf.png',
+            'bg.png',
+            'bh.png',
+            'bi.png',
+            'bj.png',
+            'bn.png',
+            'bo.png',
+            'br.png',
+            'bs.png',
+            'bt.png',
+            'bw.png',
+            'by.png',
+            'bz.png',
+            'ca.png',
+            'cd.png',
+            'cf.png',
+            'cg.png',
+            'ch.png',
+            'ci.png',
+            'cl.png',
+            'cm.png',
+            'cn.png',
+            'co.png',
+            'cr.png',
+            'cu.png',
+            'cv.png',
+            'cy.png',
+            'cz.png',
+            'de.png',
+            'dj.png',
+            'dk.png',
+            'dm.png',
+            'do.png',
+            'dz.png',
+            'ec.png',
+            'ee.png',
+            'eg.png',
+            'eh.png',
+            'er.png',
+            'es.png',
+            'et.png',
+            'fi.png',
+            'fj.png',
+            'fm.png',
+            'fr.png',
+            'ga.png',
+            'gb.png',
+            'gd.png',
+            'ge.png',
+            'gh.png',
+            'gm.png',
+            'gn.png',
+            'gq.png',
+            'gr.png',
+            'gt.png',
+            'gw.png',
+            'gy.png',
+            'hn.png',
+            'hr.png',
+            'ht.png',
+            'hu.png',
+            'id.png',
+            'ie.png',
+            'il.png',
+            'in.png',
+            'iq.png',
+            'ir.png',
+            'is.png',
+            'it.png',
+            'jm.png',
+            'jo.png',
+            'jp.png',
+            'ke.png',
+            'kg.png',
+            'kh.png',
+            'ki.png',
+            'km.png',
+            'kn.png',
+            'kp.png',
+            'kr.png',
+            'ks.png',
+            'kw.png',
+            'kz.png',
+            'la.png',
+            'lb.png',
+            'lc.png',
+            'li.png',
+            'lk.png',
+            'lr.png',
+            'ls.png',
+            'lt.png',
+            'lu.png',
+            'lv.png',
+            'ly.png',
+            'ma.png',
+            'mc.png',
+            'md.png',
+            'me.png',
+            'mg.png',
+            'mh.png',
+            'mk.png',
+            'ml.png',
+            'mm.png',
+            'mn.png',
+            'mr.png',
+            'mt.png',
+            'mu.png',
+            'mv.png',
+            'mw.png',
+            'mx.png',
+            'my.png',
+            'mz.png',
+            'na.png',
+            'ne.png',
+            'ng.png',
+            'ni.png',
+            'nl.png',
+            'no.png',
+            'np.png',
+            'nr.png',
+            'nz.png',
+            'om.png',
+            'pa.png',
+            'pe.png',
+            'pg.png',
+            'ph.png',
+            'pk.png',
+            'pl.png',
+            'pt.png',
+            'pw.png',
+            'py.png',
+            'qa.png',
+            'ro.png',
+            'rs.png',
+            'ru.png',
+            'rw.png',
+            'sa.png',
+            'sb.png',
+            'sc.png',
+            'sd.png',
+            'se.png',
+            'sg.png',
+            'si.png',
+            'sk.png',
+            'sl.png',
+            'sm.png',
+            'sn.png',
+            'so.png',
+            'sr.png',
+            'st.png',
+            'sv.png',
+            'sy.png',
+            'sz.png',
+            'td.png',
+            'tg.png',
+            'th.png',
+            'tj.png',
+            'tl.png',
+            'tm.png',
+            'tn.png',
+            'to.png',
+            'tr.png',
+            'tt.png',
+            'tv.png',
+            'tw.png',
+            'tz.png',
+            'ua.png',
+            'ug.png',
+            'us.png',
+            'uy.png',
+            'uz.png',
+            'va.png',
+            'vc.png',
+            've.png',
+            'vn.png',
+            'vu.png',
+            'ws.png',
+            'ye.png',
+            'za.png',
+            'zm.png',
+            'zw.png'];
 
-        let countryComponents = {"orderlist": "data", "picklist": "data", "autocomplete": "inputs", "select": "inputs"};
+        const countryComponents = { orderlist: 'data', picklist: 'data', autocomplete: 'inputs', select: 'inputs' };
         for (var component in countryComponents) {
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/countries.json`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/countries.json`);
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`);
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
             _this = this;
-            codes.forEach(function (code) {
+            codes.forEach((code) => {
                 _this.copyImageFiles(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/images/country/${code}`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/images/country/${code}`);
             });
         }
-        this.template(`src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts`, `src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts`);
-
+        this.template('src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts', 'src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts');
     },
 
     install() {
