@@ -195,13 +195,13 @@ module.exports = JhipsterGenerator.extend({
                 default: 'omega'
             },
             {
-                type: 'checkbox',
+                type: 'list',
                 name: 'componentGroups',
                 message: 'Which component categories you would like to include?',
                 choices: [{
                     name: 'input',
                     value: 'input',
-                    checked: false
+                    checked: true
                 }, {
                     name: 'button',
                     value: 'button',
