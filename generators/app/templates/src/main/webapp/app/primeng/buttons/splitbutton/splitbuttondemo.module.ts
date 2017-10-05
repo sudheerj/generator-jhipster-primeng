@@ -23,6 +23,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         SplitButtonModule,
         GrowlModule,
+        WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

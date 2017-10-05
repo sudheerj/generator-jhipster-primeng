@@ -8,6 +8,7 @@ import {Message, SelectItem} from 'primeng/components/common/api';
 })
 export class InputSwitchDemoComponent implements OnInit {
     msgs: Message[] = [];
+    activeIndex: number = 0;
 
     checked1: boolean = false;
 

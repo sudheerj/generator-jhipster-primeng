@@ -6,6 +6,8 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {TabMenuModule} from 'primeng/components/tabmenu/tabmenu';
 import {ButtonModule} from 'primeng/components/button/button';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+
 import {
     TabMenuDemoComponent,
     tabmenuDemoRoute
@@ -23,6 +25,7 @@ const primeng_STATES = [
         TabMenuModule,
         GrowlModule,
         ButtonModule,
+        WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

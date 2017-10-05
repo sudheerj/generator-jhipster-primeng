@@ -20,6 +20,7 @@ const primeng_STATES = [
     imports: [
         <%= angular2AppName %>SharedModule,
         ButtonModule,
+        WizardModule,
         GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

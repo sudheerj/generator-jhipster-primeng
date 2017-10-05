@@ -7,6 +7,8 @@ import {GrowlModule} from 'primeng/primeng';
 import {MenubarModule} from 'primeng/components/menubar/menubar';
 import {InputTextModule} from 'primeng/components/inputtext/inputtext';
 import {ButtonModule} from 'primeng/components/button/button';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+
 import {
     MenuBarDemoComponent,
     menubarDemoRoute
@@ -24,6 +26,7 @@ const primeng_STATES = [
         MenubarModule,
         GrowlModule,
         ButtonModule,
+        WizardModule,
         InputTextModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

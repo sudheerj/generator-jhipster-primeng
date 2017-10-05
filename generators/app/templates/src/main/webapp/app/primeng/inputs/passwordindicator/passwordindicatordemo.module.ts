@@ -28,7 +28,7 @@ const primeng_STATES = [
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [
-        PasswordDemoComponent
+        PasswordIndicatorDemoComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

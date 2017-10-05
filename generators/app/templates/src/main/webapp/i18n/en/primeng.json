@@ -22,8 +22,8 @@
             "inputmask": {
                 "title": "InputMask"
             },
-            "password": {
-                "title": "Password"
+            "passwordindicator": {
+                "title": "PasswordIndicator"
             },
             "rating": {
                 "title": "Rating"

@@ -6,6 +6,8 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {StepsModule} from 'primeng/components/steps/steps';
 import {ButtonModule} from 'primeng/components/button/button';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+
 import {
     StepsDemoComponent,
     stepsDemoRoute
@@ -23,6 +25,7 @@ const primeng_STATES = [
         StepsModule,
         GrowlModule,
         ButtonModule,
+        WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

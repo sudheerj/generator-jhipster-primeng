@@ -5,6 +5,8 @@ import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {PanelMenuModule} from 'primeng/components/panelmenu/panelmenu';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+
 import {
     PanelMenuDemoComponent,
     panelmenuDemoRoute
@@ -21,6 +23,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         PanelMenuModule,
         GrowlModule,
+        WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

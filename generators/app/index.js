@@ -1015,11 +1015,11 @@ module.exports = JhipsterGenerator.extend({
 
 
 // add captcha to vendor
-        try {
+       /* try {
             this.rewriteFile(
         'src/main/webapp/app/vendor.ts',
         'jhipster-needle-add-element-to-vendor',
-        '<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script>;');
+        'import \'https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha\';');
         } catch (e) {
             this.log(`${chalk.red.bold('ERROR!')}`);
             this.log('  Missing needle \'jhipster-needle-add-element-to-vendor\' in src/main/webapp/app/vendor.ts');
@@ -1027,7 +1027,7 @@ module.exports = JhipsterGenerator.extend({
             this.log(`${chalk.yellow.bold('https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha')}`);
             this.log('');
             this.anyError = true;
-        }
+        }*/
 
 // add quill to vendor
         try {

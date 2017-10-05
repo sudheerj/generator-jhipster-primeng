@@ -6,6 +6,8 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {ContextMenuModule} from 'primeng/components/contextmenu/contextmenu';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+
 import {
     ContextMenuDemoComponent,
     contextmenuDemoRoute
@@ -23,6 +25,7 @@ const primeng_STATES = [
         ContextMenuModule,
         GrowlModule,
         DataTableModule,
+        WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

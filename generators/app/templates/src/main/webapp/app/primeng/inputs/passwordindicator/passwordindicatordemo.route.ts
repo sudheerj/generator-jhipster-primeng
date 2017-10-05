@@ -3,7 +3,7 @@ import { UserRouteAccessService } from '../../../shared';
 import { PasswordIndicatorDemoComponent } from './passwordindicatordemo.component';
 
 export const passwordindicatorDemoRoute: Route = {
-    path: 'password',
+    path: 'passwordindicator',
     component: PasswordIndicatorDemoComponent,
     data: {
         authorities: ['ROLE_USER'],

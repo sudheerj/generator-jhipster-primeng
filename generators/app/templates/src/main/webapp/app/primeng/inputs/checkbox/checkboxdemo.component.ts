@@ -16,6 +16,8 @@ export class CheckboxDemoComponent implements OnInit {
 
     activeIndex: number = 0;
 
+    ngOnInit(){}
+
     onChangeCheckbox() {
         this.msgs = [];
         this.msgs.push({severity: 'info', summary: 'Checkbox status is changed'});
