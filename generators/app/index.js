@@ -606,7 +606,7 @@ module.exports = JhipsterGenerator.extend({
                 type: 'checkbox',
                 name: 'componentGroups',
                 message: 'Which components you would like to include?',
-                choices: COMPONENT_CHOICE_LIST;
+                choices: COMPONENT_CHOICE_LIST
             }
         ];
 
@@ -1512,6 +1512,13 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/misc/blockui/model/employee.ts', 'src/main/webapp/app/primeng/misc/blockui/model/employee.ts');
         this.template('src/main/webapp/app/primeng/misc/blockui/service/employee.service.ts', 'src/main/webapp/app/primeng/misc/blockui/service/employee.service.ts');
 
+        const countryComponents = { orderlist: 'data', picklist: 'data', autocomplete: 'inputs', select: 'inputs' };
+        for (var component in countryComponents) {
+            this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`);
+            this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
+
+        }
+        this.template('src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts', 'src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts');
 
         this.template(`src/main/webapp/assets/data/json/browsers/browsers.json`, `src/main/webapp/app/primeng/assets/data/json/browsers/browsers.json`);
         this.copyImageFiles(`src/main/webapp/assets/data/images/browsers/firefox.png`, `src/main/webapp/content/primeng/assets/data/images/browsers/firefox.png`);
@@ -1548,19 +1555,11 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/assets/data/json/scores/scores.json', 'src/main/webapp/app/primeng/assets/data/json/scores/scores.json');
         this.template(`src/main/webapp/assets/data/json/countries/countries.json`, `src/main/webapp/app/primeng/assets/data/json/countries/countries.json`);
 
-
         _this = this;
         codes.forEach((code) => {
             _this.copyImageFiles(`src/main/webapp/assets/data/images/countries/${code}`, `src/main/webapp/app/primeng/assets/data/images/countries/${code}`);
         });
 
-        const countryComponents = { orderlist: 'data', picklist: 'data', autocomplete: 'inputs', select: 'inputs' };
-        for (var component in countryComponents) {
-            this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`);
-            this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
-
-        }
-        this.template('src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts', 'src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts');
     },
 
     install() {
@@ -1583,7 +1582,6 @@ module.exports = JhipsterGenerator.extend({
             };
             this.installDependencies(installConfig);
         } else {
-            this.log('');
             if (this.clientPackageManager === 'yarn') {
                 this.warning(`There is some problem. You need to resolve them, and launch ${chalk.yellow.bold('yarn install')}`);
             } else {
