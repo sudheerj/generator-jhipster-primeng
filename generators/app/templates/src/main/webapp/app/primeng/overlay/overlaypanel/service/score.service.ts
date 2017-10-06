@@ -11,7 +11,7 @@ export class ScoreService {
     }
 
     getScores(): Observable<Score[]> {
-        return this.http.get('/assets/data/scores.json')
+        return this.http.get('/assets/data/json/scores/scores.json')
             .map(response => response.json().data as Score[]);
     }
 }

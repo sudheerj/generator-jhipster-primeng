@@ -11,7 +11,7 @@ export class TreeNodeService {
     }
 
     getTouristPlaces(): Observable<any[]> {
-        return this.http.get('/assets/data/cities.json')
+        return this.http.get('/assets/data/json/cities/cities.json')
             .map(response => response.json().data);
     }
 }

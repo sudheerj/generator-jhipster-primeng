@@ -4,7 +4,7 @@
         <pe-step label="Basic">
             <p>View PrimeNG Logo</p>
             <p-overlayPanel #overlaybasic>
-                <img src="/assets/data/images/primeng.png" alt="PrimeNG Logo" />
+                <img src="/assets/data/images/logos/primeng.png" alt="PrimeNG Logo" />
             </p-overlayPanel>
             <button type="button" pButton label="Logo" (click)="overlaybasic.toggle($event)"></button>
         </pe-step>
@@ -40,7 +40,7 @@
         <!-- Events -->
         <pe-step label="Events">
             <p-overlayPanel #overlayevents (onBeforeShow)="onBeforeShow()" (onAfterShow)="onAfterShow()" (onBeforeHide)="onBeforeHide()" (onAfterHide)="onAfterHide()">
-                <img src="/assets/data/images/primeng.png" alt="PrimeNG Logo" />
+                <img src="/assets/data/images/logos/primeng.png" alt="PrimeNG Logo" />
             </p-overlayPanel>
             <button type="button" pButton label="Logo" (click)="overlayevents.toggle($event)"></button>
         </pe-step>

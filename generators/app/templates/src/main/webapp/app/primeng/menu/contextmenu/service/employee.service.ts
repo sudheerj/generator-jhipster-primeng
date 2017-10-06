@@ -11,7 +11,7 @@ export class EmployeeService {
     }
 
     getEmployees(): Observable<Employee[]> {
-        return this.http.get('/assets/data/employees.json')
+        return this.http.get('/assets/data/json/employees/employees.json')
             .map(response => response.json().data as Employee[]);
     }
 }
