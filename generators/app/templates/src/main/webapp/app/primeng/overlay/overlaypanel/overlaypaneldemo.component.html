@@ -4,7 +4,7 @@
         <pe-step label="Basic">
             <p>View PrimeNG Logo</p>
             <p-overlayPanel #overlaybasic>
-                <img src="/assets/data/images/logos/primeng.png" alt="PrimeNG Logo" />
+                <img src="/content/primeng/assets/data/images/logos/primeng.png" alt="PrimeNG Logo" />
             </p-overlayPanel>
             <button type="button" pButton label="Logo" (click)="overlaybasic.toggle($event)"></button>
         </pe-step>
@@ -12,7 +12,7 @@
         <pe-step label="Customization">
             <i class="fa fa-search" (mouseenter)="overlaycustom.show($event)" ></i>
             <p-overlayPanel #overlaycustom [showCloseIcon]="true" [dismissable]="false">
-                <iframe width="500" height="300" src="/assets/data/videos/ironman.mp4"  allowfullscreen></iframe>
+                <iframe width="500" height="300" src="/content/primeng/assets/data/videos/ironman.mp4"  allowfullscreen></iframe>
             </p-overlayPanel>
 
         </pe-step>
@@ -40,7 +40,7 @@
         <!-- Events -->
         <pe-step label="Events">
             <p-overlayPanel #overlayevents (onBeforeShow)="onBeforeShow()" (onAfterShow)="onAfterShow()" (onBeforeHide)="onBeforeHide()" (onAfterHide)="onAfterHide()">
-                <img src="/assets/data/images/logos/primeng.png" alt="PrimeNG Logo" />
+                <img src="/content/primeng/assets/data/images/logos/primeng.png" alt="PrimeNG Logo" />
             </p-overlayPanel>
             <button type="button" pButton label="Logo" (click)="overlayevents.toggle($event)"></button>
         </pe-step>
