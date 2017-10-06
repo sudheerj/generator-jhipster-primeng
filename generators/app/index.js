@@ -1298,12 +1298,12 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/assets/data/json/events/scheduleevents.json', 'src/main/webapp/app/primeng/assets/data/json/events/scheduleevents.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/man.png', 'src/main/webapp/content/primeng/assets/data/avatars/man.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/women.png', 'src/main/webapp/content/primeng/assets/data/avatars/women.png');
-        this.template('src/main/webapp/assets/data/json/vcards/vcards.json', 'src/main/webapp/content/primeng/assets/data/json/vcards/vcards.json');
+        this.template('src/main/webapp/assets/data/json/vcards/vcards.json', 'src/main/webapp/app/primeng/assets/data/json/vcards/vcards.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primefaces.png', 'src/main/webapp/content/primeng/assets/data/images/primefaces.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primeng.png', 'src/main/webapp/content/primeng/assets/data/images/primeng.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primereact.png', 'src/main/webapp/content/primeng/assets/data/images/primereact.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primeui.png', 'src/main/webapp/content/primeng/assets/data/images/primeui.png');
-        this.template('src/main/webapp/assets/data/json/employees/employees.json', 'src/main/webapp/content/primeng/assets/data/employees.json');
+        this.template('src/main/webapp/assets/data/json/employees/employees.json', 'src/main/webapp/app/primeng/assets/data/json/employees/employees.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/cars/Golf.png', 'src/main/webapp/content/primeng/assets/data/images/cars/Golf.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/cars/Jetta.png', 'src/main/webapp/content/primeng/assets/data/images/cars/Jetta.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/cars/Passat.png', 'src/main/webapp/content/primeng/assets/data/images/cars/Passat.png');
@@ -1321,8 +1321,8 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles('src/main/webapp/assets/data/images/docs/xls.png', 'src/main/webapp/content/primeng/assets/data/images/docs/xls.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/docs/xml.png', 'src/main/webapp/content/primeng/assets/data/images/docs/xml.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/loader/loader.svg', 'src/main/webapp/content/primeng/assets/data/images/loader/loader.svg');
-        this.template('src/main/webapp/assets/data/json/documents/documents.json', 'src/main/webapp/app/primeng/dragdrop/dragdrop/assets/data/json/documents/documents.json');
-        this.template('src/main/webapp/assets/data/json/scores/scores.json', 'src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/json/scores/scores.json');
+        this.template('src/main/webapp/assets/data/json/documents/documents.json', 'src/main/webapp/app/primeng/assets/data/json/documents/documents.json');
+        this.template('src/main/webapp/assets/data/json/scores/scores.json', 'src/main/webapp/app/primeng/assets/data/json/scores/scores.json');
 
         const codes = ['ad.png',
             'ae.png',
