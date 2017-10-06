@@ -183,6 +183,9 @@
             },
             "tooltip": {
                 "title": "Tooltip"
+            },
+            "sidebar": {
+                "title": "SideBar"
             }
         },
         "panel": {
@@ -203,9 +206,6 @@
             },
             "toolbar": {
                 "title": "Toolbar"
-            },
-            "sidebar": {
-                "title": "SideBar"
             }
         },
         "charts": {

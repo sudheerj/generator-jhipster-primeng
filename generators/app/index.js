@@ -385,7 +385,7 @@ const components = {
     fieldset: 'panel',
     grid: 'panel',
     toolbar: 'panel',
-    sidebar: 'panel',
+    sidebar: 'overlay',
     dialog: 'overlay',
     confirmdialog: 'overlay',
     lightbox: 'overlay',
