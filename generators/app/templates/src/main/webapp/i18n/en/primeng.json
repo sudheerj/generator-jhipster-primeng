@@ -203,6 +203,9 @@
             },
             "toolbar": {
                 "title": "Toolbar"
+            },
+            "sidebar": {
+                "title": "SideBar"
             }
         },
         "charts": {

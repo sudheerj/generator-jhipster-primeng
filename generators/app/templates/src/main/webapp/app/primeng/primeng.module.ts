@@ -9,6 +9,7 @@ import { <%= angular2AppName %>ConfirmDialogDemoModule } from './overlay/confirm
 import { <%= angular2AppName %>LightboxDemoModule } from './overlay/lightbox/lightboxdemo.module';
 import { <%= angular2AppName %>TooltipDemoModule } from './overlay/tooltip/tooltipdemo.module';
 import { <%= angular2AppName %>OverlayPanelDemoModule } from './overlay/overlaypanel/overlaypaneldemo.module';
+import { <%= angular2AppName %>SideBarDemoModule } from './overlay/sidebar/sidebardemo.module';
 
 import { <%= angular2AppName %>InputTextDemoModule } from './inputs/inputtext/inputtextdemo.module';
 import { <%= angular2AppName %>InputTextAreaDemoModule } from './inputs/inputtextarea/inputtextareademo.module';
@@ -164,6 +165,7 @@ import { <%= angular2AppName %>ValidationDemoModule } from './misc/validation/va
         <%= angular2AppName %>LightboxDemoModule,
         <%= angular2AppName %>TooltipDemoModule,
         <%= angular2AppName %>OverlayPanelDemoModule,
+        <%= angular2AppName %>SideBarDemoModule,
 
         <%= angular2AppName %>DataTableDemoModule,
         <%= angular2AppName %>DataGridDemoModule,
