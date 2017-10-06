@@ -1550,7 +1550,7 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles('src/main/webapp/assets/data/images/docs/wav.png', 'src/main/webapp/content/primeng/assets/data/images/docs/wav.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/docs/xls.png', 'src/main/webapp/content/primeng/assets/data/images/docs/xls.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/docs/xml.png', 'src/main/webapp/content/primeng/assets/data/images/docs/xml.png');
-        this.copyImageFiles('src/main/webapp/assets/data/images/loader/loader.svg', 'src/main/webapp/content/primeng/assets/data/images/loaders/loader.svg');
+        this.copyImageFiles('src/main/webapp/assets/data/images/loaders/loader.svg', 'src/main/webapp/content/primeng/assets/data/images/loaders/loader.svg');
         this.template('src/main/webapp/assets/data/json/documents/documents.json', 'src/main/webapp/app/primeng/assets/data/json/documents/documents.json');
         this.template('src/main/webapp/assets/data/json/scores/scores.json', 'src/main/webapp/app/primeng/assets/data/json/scores/scores.json');
         this.template(`src/main/webapp/assets/data/json/countries/countries.json`, `src/main/webapp/app/primeng/assets/data/json/countries/countries.json`);

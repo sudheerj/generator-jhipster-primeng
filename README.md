@@ -61,3 +61,9 @@ npm update -g generator-jhipster-primeng
 
 In your JHipster project, launch `yo jhipster-primeng` and confirm.
 
+[npm-image]: https://img.shields.io/npm/v/generator-jhipster-primeng.svg
+[npm-url]: https://npmjs.org/package/generator-jhipster-primeng
+[travis-image]: https://travis-ci.org/sudheerj/generator-jhipster-primeng.svg?branch=master
+[travis-url]: https://travis-ci.org/sudheerj/generator-jhipster-primeng
+[daviddm-image]: https://david-dm.org/sudheerj/generator-jhipster-primeng.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/sudheerj/generator-jhipster-module
