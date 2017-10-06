@@ -195,9 +195,9 @@ module.exports = JhipsterGenerator.extend({
                 default: 'omega'
             },
             {
-                type: 'list',
+                type: 'checkbox',
                 name: 'componentGroups',
-                message: 'Which component categories you would like to include?',
+                message: 'Which components you would like to include?',
                 choices: [{
                     name: 'input',
                     value: 'input',
@@ -265,7 +265,7 @@ module.exports = JhipsterGenerator.extend({
         }
 
         themeName = this.props.theme;
-        const categories = this.props.componentGroups;
+        this.categories = this.props.componentGroups;
         this.log(categories);
 
         // function to use directly template
@@ -289,10 +289,10 @@ module.exports = JhipsterGenerator.extend({
 
         const primengResources = `@import "~primeng/resources/primeng.min.css";
                                 @import "~primeng/resources/themes/${themeName}/theme.css";
-                                @import "~quill/dist/quill.core.css"
+                                @import "~quill/dist/quill.core.css";
                                 @import "~quill/dist/quill.snow.css";`;
 
-        // add a line to a lyric file, using appendFile
+        // append PrimeNG resources using appendFile
         fs.appendFile(`${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss`,
             primengResources, (err) => {
                 if (err) throw err;
@@ -380,19 +380,8 @@ module.exports = JhipsterGenerator.extend({
             this.anyError = true;
         }
 
-        // add element to menu
-        let primengMenu;
-        if (this.enableTranslation) {
-            primengMenu = `<li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="primeng-menu">
-                    <span>
-                        <i class="fa fa-area-chart" aria-hidden="true"></i>
-                        <span jhiTranslate="global.menu.primeng.main">primeng</span>
-                        <b class="caret"></b>
-                    </span>
-                </a>
-                <ul class="dropdown-menu" ngbDropdownMenu>
-                   <span tyle="font-weight:bold">Input Components</span>
+        this.inputComponents = `<hr/>
+                   <span style="font-weight:bold">Input Components</span>
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputtext" routerLinkActive="active" (click)="collapseNavbar()">
@@ -513,8 +502,9 @@ module.exports = JhipsterGenerator.extend({
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.selectbutton">SelectButton</span>
                         </a>
-                    </li>
-                   
+                    </li>`;
+
+        this.messageComponents = `<hr/> 
                    <span tyle="font-weight:bold">Messages Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -528,7 +518,9 @@ module.exports = JhipsterGenerator.extend({
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.growl">Growl</span>
                         </a>
-                    </li>
+                    </li>`;
+
+        this.multimediaComponents = `<hr/>
                     <span tyle="font-weight:bold">Multimedia Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -536,8 +528,9 @@ module.exports = JhipsterGenerator.extend({
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.galleria">Galleria</span>
                         </a>
-                    </li>
-                   
+                    </li>`;
+
+        this.dataComponents = `<hr/>
                    <span tyle="font-weight:bold">Data Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -623,7 +616,8 @@ module.exports = JhipsterGenerator.extend({
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.treetable">TreeTable</span>
                         </a>
-                    </li>
+                    </li>`;
+        this.dragdropComponents = ` <hr/>
                     <span tyle="font-weight:bold">Dragdrop Components</span>
                    <hr/>
                     <li uiSrefActive="active">
@@ -631,69 +625,73 @@ module.exports = JhipsterGenerator.extend({
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.dragdrop">DragDrop</span>
                         </a>
-                    </li>
-                    <span tyle="font-weight:bold">Menu Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="menu" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.menu">Menu</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="contextmenu" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.contextmenu">Contextmenu</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="panelmenu" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.panelmenu">Panelmenu</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="steps" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.steps">Steps</span>
-                        </a>
-                    </li>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="tieredmenu" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.tieredmenu">Tieredmenu</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="breadcrumb" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.breadcrumb">Breadcrumb</span>
-                        </a>
-                    </li>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="megamenu" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.megamenu">Megamenu</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="menubar" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.menubar">Menubar</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="slidemenu" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.slidemenu">Slidemenu</span>
-                        </a>
-                    </li>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="tabmenu" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.tabmenu">Tabmenu</span>
-                        </a>
-                    </li>
+                    </li>`;
+
+        this.menuComponents = `<hr/>
+            <span tyle="font-weight:bold">Menu Components</span>
+        <hr/>
+        <li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="menu" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.menu">Menu</span>
+            </a>
+            </li>
+            <li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="contextmenu" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.contextmenu">Contextmenu</span>
+            </a>
+            </li>
+            <li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="panelmenu" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.panelmenu">Panelmenu</span>
+            </a>
+            </li>
+            <li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="steps" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.steps">Steps</span>
+            </a>
+            </li>
+            <li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="tieredmenu" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.tieredmenu">Tieredmenu</span>
+            </a>
+            </li>
+            <li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="breadcrumb" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.breadcrumb">Breadcrumb</span>
+            </a>
+            </li>
+            <li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="megamenu" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.megamenu">Megamenu</span>
+            </a>
+            </li>
+            <li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="menubar" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.menubar">Menubar</span>
+            </a>
+            </li>
+            <li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="slidemenu" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.slidemenu">Slidemenu</span>
+            </a>
+            </li>
+            <li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="tabmenu" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.tabmenu">Tabmenu</span>
+            </a>
+            </li>`;
+
+        this.overlayComponents = `<hr/>
                     <span tyle="font-weight:bold">Overlay Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -725,7 +723,8 @@ module.exports = JhipsterGenerator.extend({
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.tooltip">Tooltip</span>
                         </a>
-                    </li>
+                    </li>`;
+        this.panelComponents = `<hr/>
                     <span tyle="font-weight:bold">Panel Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -763,9 +762,8 @@ module.exports = JhipsterGenerator.extend({
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.toolbar">ToolBar</span>
                         </a>
-                    </li>
-                   
-                   <hr/>
+                    </li>`;
+        this.buttonComponents = ` <hr/>
                    <span tyle="font-weight:bold">Button Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -779,8 +777,8 @@ module.exports = JhipsterGenerator.extend({
                             <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.splitbutton">SplitButton</span>
                         </a>
-                    </li>
-                   <hr/>
+                    </li>`;
+        this.chartComponents = `<hr/>
                    <span style="font-weight:bold">Chart Components</span>
                    <hr/>
                     <li uiSrefActive="active">
@@ -818,7 +816,8 @@ module.exports = JhipsterGenerator.extend({
                             <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.radarchart">RadarChart</span>
                         </a>
-                    </li>
+                    </li>`;
+        this.miscComponents = ` <hr/>
                     <span style="font-weight:bold">Miscellaneous Components</span>
                    <hr/>
                     <li uiSrefActive="active">
@@ -868,7 +867,24 @@ module.exports = JhipsterGenerator.extend({
                             <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
                         </a>
-                    </li>
+                    </li>`;
+        this.componentGroups = this.categories.indexOf("inputs")> -1 ? this.inputComponents : "" + this.categories.indexOf("buttons")>-1 ? this.buttonComponents : "" + this.categories.indexOf("data")>-1 ? this.dataComponents : "" +
+                               this.categories.indexOf("panel")>-1 ? this.panelComponents : "" + this.categories.indexOf("dragdrop")>-1 ? this.dragdropComponents : "" + this.categories.indexOf("file")>-1 ? this.fileComponents : "" +
+                               this.categories.indexOf("charts")>-1 ? this.chartComponents : "" + this.categories.indexOf("menu")>-1 ? this.menuComponents : "" + this.categories.indexOf("messages")>-1 ? this.messagesComponents : "" +
+                               this.categories.indexOf("overlay")>-1 ? this.overlayComponents : "" + this.categories.indexOf("charts")>-1 ? this.chartComponents : "" + this.categories.indexOf("multimedia")>-1 ? this.multimediaComponents : "";
+        // add element to menu
+        let primengMenu;
+        if (this.enableTranslation) {
+            primengMenu = `<li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="primeng-menu">
+                    <span>
+                        <i class="fa fa-area-chart" aria-hidden="true"></i>
+                        <span jhiTranslate="global.menu.primeng.main">primeng</span>
+                        <b class="caret"></b>
+                    </span>
+                </a>
+                <ul class="dropdown-menu" ngbDropdownMenu>
+                      ${this.componentGroups}
                 </ul>
             </li>`;
         } else {
@@ -1015,7 +1031,7 @@ module.exports = JhipsterGenerator.extend({
         }
 
 
-// add captcha to vendor
+    // add captcha to vendor
        /* try {
             this.rewriteFile(
         'src/main/webapp/app/vendor.ts',
@@ -1030,7 +1046,7 @@ module.exports = JhipsterGenerator.extend({
             this.anyError = true;
         }*/
 
-// add quill to vendor
+    // add quill to vendor
         try {
             this.rewriteFile(
         'src/main/webapp/app/vendor.ts',
@@ -1299,10 +1315,10 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/man.png', 'src/main/webapp/content/primeng/assets/data/avatars/man.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/women.png', 'src/main/webapp/content/primeng/assets/data/avatars/women.png');
         this.template('src/main/webapp/assets/data/json/vcards/vcards.json', 'src/main/webapp/app/primeng/assets/data/json/vcards/vcards.json');
-        this.copyImageFiles('src/main/webapp/assets/data/images/logos/primefaces.png', 'src/main/webapp/content/primeng/assets/data/images/primefaces.png');
-        this.copyImageFiles('src/main/webapp/assets/data/images/logos/primeng.png', 'src/main/webapp/content/primeng/assets/data/images/primeng.png');
-        this.copyImageFiles('src/main/webapp/assets/data/images/logos/primereact.png', 'src/main/webapp/content/primeng/assets/data/images/primereact.png');
-        this.copyImageFiles('src/main/webapp/assets/data/images/logos/primeui.png', 'src/main/webapp/content/primeng/assets/data/images/primeui.png');
+        this.copyImageFiles('src/main/webapp/assets/data/images/logos/primefaces.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primefaces.png');
+        this.copyImageFiles('src/main/webapp/assets/data/images/logos/primeng.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primeng.png');
+        this.copyImageFiles('src/main/webapp/assets/data/images/logos/primereact.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primereact.png');
+        this.copyImageFiles('src/main/webapp/assets/data/images/logos/primeui.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primeui.png');
         this.template('src/main/webapp/assets/data/json/employees/employees.json', 'src/main/webapp/app/primeng/assets/data/json/employees/employees.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/cars/Golf.png', 'src/main/webapp/content/primeng/assets/data/images/cars/Golf.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/cars/Jetta.png', 'src/main/webapp/content/primeng/assets/data/images/cars/Jetta.png');
@@ -1320,9 +1336,11 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles('src/main/webapp/assets/data/images/docs/wav.png', 'src/main/webapp/content/primeng/assets/data/images/docs/wav.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/docs/xls.png', 'src/main/webapp/content/primeng/assets/data/images/docs/xls.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/docs/xml.png', 'src/main/webapp/content/primeng/assets/data/images/docs/xml.png');
-        this.copyImageFiles('src/main/webapp/assets/data/images/loader/loader.svg', 'src/main/webapp/content/primeng/assets/data/images/loader/loader.svg');
+        this.copyImageFiles('src/main/webapp/assets/data/images/loader/loader.svg', 'src/main/webapp/content/primeng/assets/data/images/loaders/loader.svg');
         this.template('src/main/webapp/assets/data/json/documents/documents.json', 'src/main/webapp/app/primeng/assets/data/json/documents/documents.json');
         this.template('src/main/webapp/assets/data/json/scores/scores.json', 'src/main/webapp/app/primeng/assets/data/json/scores/scores.json');
+        this.template(`src/main/webapp/assets/data/json/countries/countries.json`, `src/main/webapp/app/primeng/assets/data/json/countries/countries.json`);
+
 
         const codes = ['ad.png',
             'ae.png',
@@ -1521,15 +1539,16 @@ module.exports = JhipsterGenerator.extend({
             'zm.png',
             'zw.png'];
 
+        _this = this;
+        codes.forEach((code) => {
+            _this.copyImageFiles(`src/main/webapp/assets/data/images/countries/${code}`, `src/main/webapp/app/primeng/assets/data/images/countries/${code}`);
+        });
+
         const countryComponents = { orderlist: 'data', picklist: 'data', autocomplete: 'inputs', select: 'inputs' };
         for (var component in countryComponents) {
-            this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/countries.json`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/countries.json`);
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`);
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
-            _this = this;
-            codes.forEach((code) => {
-                _this.copyImageFiles(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/images/country/${code}`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/assets/data/images/country/${code}`);
-            });
+
         }
         this.template('src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts', 'src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts');
     },
