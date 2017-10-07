@@ -2,7 +2,7 @@
     <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
         <!-- Basic -->
         <pe-step label="Basic">
-            <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000"}">
+            <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
             <h1 style="font-weight:normal">Left Sidebar</h1>
             <button pButton type="button" (click)="visibleSidebar1 = false" label="Save" class="ui-button-success"></button>
             <button pButton type="button" (click)="visibleSidebar1 = false" label="Cancel" class="ui-button-secondary"></button>
@@ -12,7 +12,7 @@
 
         <!-- Position -->
         <pe-step label="Position" [styleClass]="">
-            <p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000"}">
+            <p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000">
             <h1 style="font-weight:normal">Right Sidebar</h1>
             <button pButton type="button" (click)="visibleSidebar2 = false" label="Save" class="ui-button-success"></button>
             <button pButton type="button" (click)="visibleSidebar2 = false" label="Cancel" class="ui-button-secondary"></button>
@@ -22,7 +22,7 @@
 
         <!-- Tooltip Event -->
         <pe-step label="Tooltip Event">
-            <p-sidebar [(visible)]="visibleSidebar3" position="top" [baseZIndex]="10000"}">
+            <p-sidebar [(visible)]="visibleSidebar3" position="top" [baseZIndex]="10000">
             <h1 style="font-weight:normal">Top Sidebar</h1>
             <button pButton type="button" (click)="visibleSidebar3 = false" label="Save" class="ui-button-success"></button>
             <button pButton type="button" (click)="visibleSidebar3 = false" label="Cancel" class="ui-button-secondary"></button>
@@ -42,7 +42,7 @@
 
         <!-- Disabled Tooltip -->
         <pe-step label="Disabled">
-            <p-sidebar [(visible)]="visibleSidebar5" [fullScreen]="true" [baseZIndex]="10000"}">
+            <p-sidebar [(visible)]="visibleSidebar5" [fullScreen]="true" [baseZIndex]="10000">
             <h1 style="font-weight:normal">Full Screen Sidebar</h1>
             <button pButton type="button" (click)="visibleSidebar5 = false" label="Save" class="ui-button-success"></button>
             <button pButton type="button" (click)="visibleSidebar5 = false" label="Cancel" class="ui-button-secondary"></button>
