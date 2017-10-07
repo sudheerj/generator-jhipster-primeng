@@ -95,12 +95,12 @@ const THEME_OPTIONS = [
 ];
 
 const COMPONENT_CHOICE_LIST = [{
-    name: 'input',
-    value: 'input',
+    name: 'inputs',
+    value: 'inputs',
     checked: true
     }, {
-    name: 'button',
-    value: 'button',
+    name: 'buttons',
+    value: 'buttons',
     checked: false
     }, {
     name: 'data',
@@ -1189,7 +1189,7 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.radarchart">RadarChart</span>
                         </a>
                     </li>`;
-        this.miscComponents = ` <hr/>
+        this.miscComponents = `<hr/>
                     <span style="font-weight:bold">Miscellaneous Components</span>
                    <hr/>
                     <li uiSrefActive="active">
@@ -1240,10 +1240,11 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
                         </a>
                     </li>`;
-        this.componentGroups = (this.categories.indexOf("inputs") > -1 ? this.inputComponents : "") + (this.categories.indexOf("buttons") > -1 ? this.buttonComponents : "") + (this.categories.indexOf("data")>-1 ? this.dataComponents : "") +
-                                (this.categories.indexOf("panel") > -1 ? this.panelComponents : "") + (this.categories.indexOf("dragdrop") > -1 ? this.dragdropComponents : "") + (this.categories.indexOf("file")>-1 ? this.fileComponents : "") +
-                                (this.categories.indexOf("charts") > -1 ? this.chartComponents : "") + (this.categories.indexOf("menu") > -1 ? this.menuComponents : "") + (this.categories.indexOf("messages")>-1 ? this.messageComponents : "" )+
-                                (this.categories.indexOf("overlay") > -1 ? this.overlayComponents : "") + (this.categories.indexOf("charts") > -1 ? this.chartComponents : "") + (this.categories.indexOf("multimedia")>-1 ? this.multimediaComponents : "");
+        this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
+                                (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('file') > -1 ? this.fileComponents : '') +
+                                (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('menu') > -1 ? this.menuComponents : '') + (this.categories.indexOf('messages') > -1 ? this.messageComponents : '') +
+                                (this.categories.indexOf('overlay') > -1 ? this.overlayComponents : '') + (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('multimedia') > -1 ? this.multimediaComponents : '') +
+                                (this.categories.indexOf('misc') > -1 ? this.miscComponents : '');
         // add element to menu
         let primengMenu;
         if (this.enableTranslation) {
