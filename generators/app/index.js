@@ -886,6 +886,16 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
 
+        this.fileComponents = `<hr/>
+                    <span tyle="font-weight:bold">File Components</span>
+                   <hr/>
+                   <li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="fileupload" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <span jhiTranslate="global.file.primeng.fileupload">FileUpload</span>
+                        </a>
+                    </li>`;
+
         this.dataComponents = `<hr/>
                    <span tyle="font-weight:bold">Data Components</span>
                    <hr/>
@@ -1230,10 +1240,10 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
                         </a>
                     </li>`;
-        this.componentGroups = this.categories.indexOf("inputs")> -1 ? this.inputComponents : "" + this.categories.indexOf("buttons")>-1 ? this.buttonComponents : "" + this.categories.indexOf("data")>-1 ? this.dataComponents : "" +
-                               this.categories.indexOf("panel")>-1 ? this.panelComponents : "" + this.categories.indexOf("dragdrop")>-1 ? this.dragdropComponents : "" + this.categories.indexOf("file")>-1 ? this.fileComponents : "" +
-                               this.categories.indexOf("charts")>-1 ? this.chartComponents : "" + this.categories.indexOf("menu")>-1 ? this.menuComponents : "" + this.categories.indexOf("messages")>-1 ? this.messagesComponents : "" +
-                               this.categories.indexOf("overlay")>-1 ? this.overlayComponents : "" + this.categories.indexOf("charts")>-1 ? this.chartComponents : "" + this.categories.indexOf("multimedia")>-1 ? this.multimediaComponents : "";
+        this.componentGroups = (this.categories.indexOf("inputs") > -1 ? this.inputComponents : "") + (this.categories.indexOf("buttons") > -1 ? this.buttonComponents : "") + (this.categories.indexOf("data")>-1 ? this.dataComponents : "") +
+                                (this.categories.indexOf("panel") > -1 ? this.panelComponents : "") + (this.categories.indexOf("dragdrop") > -1 ? this.dragdropComponents : "") + (this.categories.indexOf("file")>-1 ? this.fileComponents : "") +
+                                (this.categories.indexOf("charts") > -1 ? this.chartComponents : "") + (this.categories.indexOf("menu") > -1 ? this.menuComponents : "") + (this.categories.indexOf("messages")>-1 ? this.messageComponents : "" )+
+                                (this.categories.indexOf("overlay") > -1 ? this.overlayComponents : "") + (this.categories.indexOf("charts") > -1 ? this.chartComponents : "") + (this.categories.indexOf("multimedia")>-1 ? this.multimediaComponents : "");
         // add element to menu
         let primengMenu;
         if (this.enableTranslation) {
@@ -1526,8 +1536,8 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles(`src/main/webapp/assets/data/images/browsers/safari.png`, `src/main/webapp/content/primeng/assets/data/images/browsers/safari.png`);
         this.template(`src/main/webapp/assets/data/json/cities/cities.json`, `src/main/webapp/app/primeng/assets/data/json/cities/cities.json`);
         this.template('src/main/webapp/assets/data/json/events/scheduleevents.json', 'src/main/webapp/app/primeng/assets/data/json/events/scheduleevents.json');
-        this.copyImageFiles('src/main/webapp/assets/data/images/avatars/man.png', 'src/main/webapp/content/primeng/assets/data/avatars/man.png');
-        this.copyImageFiles('src/main/webapp/assets/data/images/avatars/women.png', 'src/main/webapp/content/primeng/assets/data/avatars/women.png');
+        this.copyImageFiles('src/main/webapp/assets/data/images/avatars/man.png', 'src/main/webapp/content/primeng/assets/data/images/avatars/man.png');
+        this.copyImageFiles('src/main/webapp/assets/data/images/avatars/women.png', 'src/main/webapp/content/primeng/assets/data/images/avatars/women.png');
         this.template('src/main/webapp/assets/data/json/vcards/vcards.json', 'src/main/webapp/app/primeng/assets/data/json/vcards/vcards.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primefaces.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primefaces.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primeng.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primeng.png');
@@ -1557,7 +1567,7 @@ module.exports = JhipsterGenerator.extend({
 
         _this = this;
         codes.forEach((code) => {
-            _this.copyImageFiles(`src/main/webapp/assets/data/images/countries/${code}`, `src/main/webapp/app/primeng/assets/data/images/countries/${code}`);
+            _this.copyImageFiles(`src/main/webapp/assets/data/images/countries/${code}`, `src/main/webapp/content/${code}`);
         });
 
     },
