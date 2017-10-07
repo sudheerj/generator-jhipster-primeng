@@ -603,15 +603,23 @@ module.exports = JhipsterGenerator.extend({
                 default: 'omega'
             },
             {
+                type: 'confirm',
+                name: 'selectAll',
+                message: 'Do you want to use PrimeNG components?',
+                default: true
+            },
+            {
                 type: 'checkbox',
                 name: 'componentGroups',
                 message: 'Which components you would like to include?',
-                choices: COMPONENT_CHOICE_LIST
+                choices: COMPONENT_CHOICE_LIST,
+                when: !this.selectAll
             }
         ];
 
         this.prompt(prompts).then((props) => {
             this.props = props;
+            this.selectAll = this.props.selectAll;
             // To access props later use this.props.someOption;
             done();
         });
@@ -624,7 +632,6 @@ module.exports = JhipsterGenerator.extend({
 
         themeName = this.props.theme;
         this.categories = this.props.componentGroups;
-        this.log(this.categories);
 
         // function to use directly template
         this.template = function (source, destination) {
@@ -1240,11 +1247,14 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
                         </a>
                     </li>`;
-        this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
-                                (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('file') > -1 ? this.fileComponents : '') +
-                                (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('menu') > -1 ? this.menuComponents : '') + (this.categories.indexOf('messages') > -1 ? this.messageComponents : '') +
-                                (this.categories.indexOf('overlay') > -1 ? this.overlayComponents : '') + (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('multimedia') > -1 ? this.multimediaComponents : '') +
-                                (this.categories.indexOf('misc') > -1 ? this.miscComponents : '');
+        if (this.selectAll) {
+            this.componentGroups = this.inputComponents + this.buttonComponents + this.dataComponents + this.panelComponents + this.dragdropComponents + this.fileComponents + this.chartComponents + this.menuComponents + this.messageComponents + this.overlayComponents + this.multimediaComponents + this.miscComponents;
+        } else {
+            this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
+                (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('file') > -1 ? this.fileComponents : '') +
+                (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('menu') > -1 ? this.menuComponents : '') + (this.categories.indexOf('messages') > -1 ? this.messageComponents : '') +
+                (this.categories.indexOf('overlay') > -1 ? this.overlayComponents : '') + (this.categories.indexOf('multimedia') > -1 ? this.multimediaComponents : '') + (this.categories.indexOf('misc') > -1 ? this.miscComponents : '');
+        }
         // add element to menu
         let primengMenu;
         if (this.enableTranslation) {
