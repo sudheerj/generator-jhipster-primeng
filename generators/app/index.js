@@ -602,18 +602,18 @@ module.exports = JhipsterGenerator.extend({
                 choices: THEME_OPTIONS,
                 default: 'omega'
             },
-            {
+           /* {
                 type: 'confirm',
                 name: 'selectAll',
-                message: 'Do you want to use PrimeNG components?',
+                message: 'Do you want to use all PrimeNG components?',
                 default: true
-            },
+            },*/
             {
                 type: 'checkbox',
                 name: 'componentGroups',
                 message: 'Which components you would like to include?',
                 choices: COMPONENT_CHOICE_LIST,
-                when: !this.selectAll
+                //when: !this.selectAll
             }
         ];
 
@@ -649,6 +649,8 @@ module.exports = JhipsterGenerator.extend({
                 this.destinationPath(destination)
             );
         };
+
+        this.copyExternalAssetsInWebpack('primeng', 'primeng');
 
         const primengResources = `@import "~primeng/resources/primeng.min.css";
                                 @import "~primeng/resources/themes/${themeName}/theme.css";
@@ -1247,14 +1249,14 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
                         </a>
                     </li>`;
-        if (this.selectAll) {
+        /*if (this.selectAll) {
             this.componentGroups = this.inputComponents + this.buttonComponents + this.dataComponents + this.panelComponents + this.dragdropComponents + this.fileComponents + this.chartComponents + this.menuComponents + this.messageComponents + this.overlayComponents + this.multimediaComponents + this.miscComponents;
-        } else {
+        } else {*/
             this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
                 (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('file') > -1 ? this.fileComponents : '') +
                 (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('menu') > -1 ? this.menuComponents : '') + (this.categories.indexOf('messages') > -1 ? this.messageComponents : '') +
                 (this.categories.indexOf('overlay') > -1 ? this.overlayComponents : '') + (this.categories.indexOf('multimedia') > -1 ? this.multimediaComponents : '') + (this.categories.indexOf('misc') > -1 ? this.miscComponents : '');
-        }
+       // }
         // add element to menu
         let primengMenu;
         if (this.enableTranslation) {
