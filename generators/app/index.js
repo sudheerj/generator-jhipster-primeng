@@ -1568,7 +1568,7 @@ module.exports = JhipsterGenerator.extend({
 
         _this = this;
         codes.forEach((code) => {
-            _this.copyImageFiles(`src/main/webapp/assets/data/images/countries/${code}`, `src/main/webapp/content/${code}`);
+            _this.copyImageFiles(`src/main/webapp/assets/data/images/countries/${code}`, `src/main/webapp/content/images/${code}`);
         });
 
     },
