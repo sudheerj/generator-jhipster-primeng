@@ -1256,7 +1256,7 @@ module.exports = JhipsterGenerator.extend({
                         <b class="caret"></b>
                     </span>
                 </a>
-                <ul class="dropdown-menu" ngbDropdownMenu>
+                <ul class="dropdown-menu" ngbDropdownMenu style="max-height:500px;overflow: scroll">
                       ${this.componentGroups}
                 </ul>
             </li>`;
@@ -1531,20 +1531,20 @@ module.exports = JhipsterGenerator.extend({
         }
         this.template('src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts', 'src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts');
 
-        this.template(`src/main/webapp/assets/data/json/browsers/browsers.json`, `src/main/webapp/app/primeng/assets/data/json/browsers/browsers.json`);
+        this.template(`src/main/webapp/assets/data/json/browsers/browsers.json`, `src/main/webapp/content/primeng/assets/data/json/browsers/browsers.json`);
         this.copyImageFiles(`src/main/webapp/assets/data/images/browsers/firefox.png`, `src/main/webapp/content/primeng/assets/data/images/browsers/firefox.png`);
         this.copyImageFiles(`src/main/webapp/assets/data/images/browsers/ie.png`, `src/main/webapp/content/primeng/assets/data/images/browsers/ie.png`);
         this.copyImageFiles(`src/main/webapp/assets/data/images/browsers/safari.png`, `src/main/webapp/content/primeng/assets/data/images/browsers/safari.png`);
-        this.template(`src/main/webapp/assets/data/json/cities/cities.json`, `src/main/webapp/app/primeng/assets/data/json/cities/cities.json`);
-        this.template('src/main/webapp/assets/data/json/events/scheduleevents.json', 'src/main/webapp/app/primeng/assets/data/json/events/scheduleevents.json');
+        this.template(`src/main/webapp/assets/data/json/cities/cities.json`, `src/main/webapp/content/primeng/assets/data/json/cities/cities.json`);
+        this.template('src/main/webapp/assets/data/json/events/scheduleevents.json', 'src/main/webapp/content/primeng/assets/data/json/events/scheduleevents.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/man.png', 'src/main/webapp/content/primeng/assets/data/images/avatars/man.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/women.png', 'src/main/webapp/content/primeng/assets/data/images/avatars/women.png');
-        this.template('src/main/webapp/assets/data/json/vcards/vcards.json', 'src/main/webapp/app/primeng/assets/data/json/vcards/vcards.json');
+        this.template('src/main/webapp/assets/data/json/vcards/vcards.json', 'src/main/webapp/content/primeng/assets/data/json/vcards/vcards.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primefaces.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primefaces.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primeng.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primeng.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primereact.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primereact.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primeui.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primeui.png');
-        this.template('src/main/webapp/assets/data/json/employees/employees.json', 'src/main/webapp/app/primeng/assets/data/json/employees/employees.json');
+        this.template('src/main/webapp/assets/data/json/employees/employees.json', 'src/main/webapp/content/primeng/assets/data/json/employees/employees.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/cars/Golf.png', 'src/main/webapp/content/primeng/assets/data/images/cars/Golf.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/cars/Jetta.png', 'src/main/webapp/content/primeng/assets/data/images/cars/Jetta.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/cars/Passat.png', 'src/main/webapp/content/primeng/assets/data/images/cars/Passat.png');
@@ -1562,13 +1562,13 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles('src/main/webapp/assets/data/images/docs/xls.png', 'src/main/webapp/content/primeng/assets/data/images/docs/xls.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/docs/xml.png', 'src/main/webapp/content/primeng/assets/data/images/docs/xml.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/loaders/loader.svg', 'src/main/webapp/content/primeng/assets/data/images/loaders/loader.svg');
-        this.template('src/main/webapp/assets/data/json/documents/documents.json', 'src/main/webapp/app/primeng/assets/data/json/documents/documents.json');
-        this.template('src/main/webapp/assets/data/json/scores/scores.json', 'src/main/webapp/app/primeng/assets/data/json/scores/scores.json');
-        this.template(`src/main/webapp/assets/data/json/countries/countries.json`, `src/main/webapp/app/primeng/assets/data/json/countries/countries.json`);
+        this.template('src/main/webapp/assets/data/json/documents/documents.json', 'src/main/webapp/content/primeng/assets/data/json/documents/documents.json');
+        this.template('src/main/webapp/assets/data/json/scores/scores.json', 'src/main/webapp/content/primeng/assets/data/json/scores/scores.json');
+        this.template(`src/main/webapp/assets/data/json/countries/countries.json`, `src/main/webapp/content/primeng/assets/data/json/countries/countries.json`);
 
         _this = this;
         codes.forEach((code) => {
-            _this.copyImageFiles(`src/main/webapp/assets/data/images/countries/${code}`, `src/main/webapp/content/images/${code}`);
+            _this.copyImageFiles(`src/main/webapp/assets/data/images/countries/${code}`, `src/main/webapp/content/primeng/assets/data/images/countries/${code}`);
         });
 
     },
