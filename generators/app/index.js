@@ -602,18 +602,11 @@ module.exports = JhipsterGenerator.extend({
                 choices: THEME_OPTIONS,
                 default: 'omega'
             },
-           /* {
-                type: 'confirm',
-                name: 'selectAll',
-                message: 'Do you want to use all PrimeNG components?',
-                default: true
-            },*/
             {
                 type: 'checkbox',
                 name: 'componentGroups',
                 message: 'Which components you would like to include?',
                 choices: COMPONENT_CHOICE_LIST,
-                //when: !this.selectAll
             }
         ];
 
@@ -745,7 +738,7 @@ module.exports = JhipsterGenerator.extend({
             this.anyError = true;
         }
 
-        this.inputComponents = `<hr/>
+        this.inputComponents = `
                    <span style="font-weight:bold">Input Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -869,8 +862,8 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
 
-        this.messageComponents = `<hr/> 
-                   <span tyle="font-weight:bold">Messages Components</span>
+        this.messageComponents = `
+                   <span style="font-weight:bold">Messages Components</span>
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="messages" routerLinkActive="active" (click)="collapseNavbar()">
@@ -885,8 +878,8 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
 
-        this.multimediaComponents = `<hr/>
-                    <span tyle="font-weight:bold">Multimedia Components</span>
+        this.multimediaComponents = `
+                    <span style="font-weight:bold">Multimedia Components</span>
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="galleria" routerLinkActive="active" (click)="collapseNavbar()">
@@ -895,8 +888,8 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
 
-        this.fileComponents = `<hr/>
-                    <span tyle="font-weight:bold">File Components</span>
+        this.fileComponents = `
+                    <span style="font-weight:bold">File Components</span>
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="fileupload" routerLinkActive="active" (click)="collapseNavbar()">
@@ -905,8 +898,8 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
 
-        this.dataComponents = `<hr/>
-                   <span tyle="font-weight:bold">Data Components</span>
+        this.dataComponents = `
+                   <span style="font-weight:bold">Data Components</span>
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="datatable" routerLinkActive="active" (click)="collapseNavbar()">
@@ -950,12 +943,6 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.schedule">Schedule</span>
                         </a>
                     </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="treetable" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.treetable">TreeTable</span>
-                        </a>
-                    </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="datascroller" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
@@ -992,8 +979,8 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.treetable">TreeTable</span>
                         </a>
                     </li>`;
-        this.dragdropComponents = ` <hr/>
-                    <span tyle="font-weight:bold">Dragdrop Components</span>
+        this.dragdropComponents = `
+                    <span style="font-weight:bold">Dragdrop Components</span>
                    <hr/>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="dragdrop" routerLinkActive="active" (click)="collapseNavbar()">
@@ -1002,8 +989,8 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
 
-        this.menuComponents = `<hr/>
-            <span tyle="font-weight:bold">Menu Components</span>
+        this.menuComponents = `
+            <span style="font-weight:bold">Menu Components</span>
         <hr/>
         <li uiSrefActive="active">
             <a class="dropdown-item" routerLink="menu" routerLinkActive="active" (click)="collapseNavbar()">
@@ -1066,8 +1053,8 @@ module.exports = JhipsterGenerator.extend({
             </a>
             </li>`;
 
-        this.overlayComponents = `<hr/>
-                    <span tyle="font-weight:bold">Overlay Components</span>
+        this.overlayComponents = `
+                    <span style="font-weight:bold">Overlay Components</span>
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="dialog" routerLinkActive="active" (click)="collapseNavbar()">
@@ -1105,8 +1092,8 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.sidebar">SideBar</span>
                         </a>
                     </li>`;
-        this.panelComponents = `<hr/>
-                    <span tyle="font-weight:bold">Panel Components</span>
+        this.panelComponents = `
+                    <span style="font-weight:bold">Panel Components</span>
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="accordion" routerLinkActive="active" (click)="collapseNavbar()">
@@ -1144,8 +1131,8 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.toolbar">ToolBar</span>
                         </a>
                     </li>`;
-        this.buttonComponents = ` <hr/>
-                   <span tyle="font-weight:bold">Button Components</span>
+        this.buttonComponents = `
+                   <span style="font-weight:bold">Button Components</span>
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
@@ -1159,7 +1146,7 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.splitbutton">SplitButton</span>
                         </a>
                     </li>`;
-        this.chartComponents = `<hr/>
+        this.chartComponents = `
                    <span style="font-weight:bold">Chart Components</span>
                    <hr/>
                     <li uiSrefActive="active">
@@ -1198,7 +1185,7 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.radarchart">RadarChart</span>
                         </a>
                     </li>`;
-        this.miscComponents = `<hr/>
+        this.miscComponents = `
                     <span style="font-weight:bold">Miscellaneous Components</span>
                    <hr/>
                     <li uiSrefActive="active">
@@ -1249,14 +1236,10 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
                         </a>
                     </li>`;
-        /*if (this.selectAll) {
-            this.componentGroups = this.inputComponents + this.buttonComponents + this.dataComponents + this.panelComponents + this.dragdropComponents + this.fileComponents + this.chartComponents + this.menuComponents + this.messageComponents + this.overlayComponents + this.multimediaComponents + this.miscComponents;
-        } else {*/
             this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
                 (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('file') > -1 ? this.fileComponents : '') +
                 (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('menu') > -1 ? this.menuComponents : '') + (this.categories.indexOf('messages') > -1 ? this.messageComponents : '') +
                 (this.categories.indexOf('overlay') > -1 ? this.overlayComponents : '') + (this.categories.indexOf('multimedia') > -1 ? this.multimediaComponents : '') + (this.categories.indexOf('misc') > -1 ? this.miscComponents : '');
-       // }
         // add element to menu
         let primengMenu;
         if (this.enableTranslation) {
@@ -1556,6 +1539,10 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primeng.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primeng.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primereact.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primereact.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/primeui.png', 'src/main/webapp/content/primeng/assets/data/images/logos/primeui.png');
+        this.copyImageFiles('src/main/webapp/assets/data/images/logos/angularjs.png', 'src/main/webapp/content/primeng/assets/data/images/logos/angularjs.png');
+        this.copyImageFiles('src/main/webapp/assets/data/images/logos/angular2.svg', 'src/main/webapp/content/primeng/assets/data/images/logos/angular2.svg');
+        this.copyImageFiles('src/main/webapp/assets/data/images/logos/angular4.png', 'src/main/webapp/content/primeng/assets/data/images/logos/angular4.png');
+
         this.template('src/main/webapp/assets/data/json/employees/employees.json', 'src/main/webapp/content/primeng/assets/data/json/employees/employees.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/cars/Golf.png', 'src/main/webapp/content/primeng/assets/data/images/cars/Golf.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/cars/Jetta.png', 'src/main/webapp/content/primeng/assets/data/images/cars/Jetta.png');

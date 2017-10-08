@@ -7,7 +7,7 @@ import {GrowlModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/primeng';
 import {FileUploadModule} from 'primeng/components/fileupload/fileupload';
 import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
-
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
@@ -31,6 +31,7 @@ const primeng_STATES = [
         CheckboxModule,
         GrowlModule,
         ButtonModule,
+        WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

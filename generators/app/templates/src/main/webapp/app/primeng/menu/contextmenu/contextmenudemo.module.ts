@@ -1,4 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {APP_BASE_HREF} from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
@@ -7,6 +8,7 @@ import {GrowlModule} from 'primeng/primeng';
 import {ContextMenuModule} from 'primeng/components/contextmenu/contextmenu';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {EmployeeService} from './service/employee.service';
 
 import {
     ContextMenuDemoComponent,
@@ -31,6 +33,7 @@ const primeng_STATES = [
     declarations: [
         ContextMenuDemoComponent
     ],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'},EmployeeService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angular2AppName %>ContextMenuDemoModule {}

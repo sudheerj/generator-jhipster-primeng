@@ -1,7 +1,16 @@
-<p-growl [value]="msgs"></p-growl>
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <p-growl [value]="msgs"></p-growl>
 
-<h3>Static value</h3>
-<p-progressBar [value]="40"></p-progressBar>
+            <h3>Static value</h3>
+            <p-progressBar [value]="40"></p-progressBar>
+        </pe-step>
+        <pe-step label="Dynamic value" [styleClass]="'layout-format'">
 
-<h3>Dynamic value</h3>
-<p-progressBar [value]="value"></p-progressBar>
+            <h3>Dynamic value</h3>
+            <p-progressBar [value]="value"></p-progressBar>
+        </pe-step>
+    </pe-steps>
+</form>

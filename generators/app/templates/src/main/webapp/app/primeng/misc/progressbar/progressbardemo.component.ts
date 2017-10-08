@@ -12,7 +12,8 @@ import 'rxjs/add/operator/take';
     styles: []
 })
 export class ProgressBarDemoComponent implements OnInit {
-    msgs: Message[];
+    activeIndex: number = 0;
+    msgs: Message[] = [];
 
     value: number;
     interval$: Subscription;
@@ -28,6 +29,11 @@ export class ProgressBarDemoComponent implements OnInit {
 
     ngOnDestroy() {
         this.interval$.unsubscribe();
+    }
+
+    onChangeStep(label: string) {
+        this.msgs.length = 0;
+        this.msgs.push({severity: 'info', summary: label});
     }
 
 }
