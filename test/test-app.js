@@ -5,10 +5,7 @@ const fse = require('fs-extra');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
-const deps = [
-    [helpers.createDummyGenerator(), 'jhipster:modules']
-];
-
+const categories = ['inputs','data','menu','panel','overlay','file','misc','charts','dragdrop','buttons','multimedia','messages'];
 const expectedFiles = {
     primeng: [
         'src/main/webapp/app/primeng/primeng.module.ts',
@@ -493,7 +490,6 @@ describe('JHipster generator primeng components', () => {
                 .withPrompts({
                     confirmation: true
                 })
-                .withGenerators(deps)
                 .on('end', done);
         });
 
@@ -517,7 +513,6 @@ describe('JHipster generator primeng components', () => {
                 .withPrompts({
                     confirmation: true
                 })
-                .withGenerators(deps)
                 .on('end', done);
         });
 
@@ -541,7 +536,6 @@ describe('JHipster generator primeng components', () => {
                 .withPrompts({
                     confirmation: true
                 })
-                .withGenerators(deps)
                 .on('end', done);
         });
 
@@ -565,7 +559,6 @@ describe('JHipster generator primeng components', () => {
                 .withPrompts({
                     confirmation: true
                 })
-                .withGenerators(deps)
                 .on('end', done);
         });
 
@@ -619,29 +612,6 @@ describe('JHipster generator primeng components', () => {
             assert.noFile(expectedFiles.primeng);
             assert.noFile(expectedFiles.translation);
             assert.noFile(expectedFiles.protractor);
-        });
-    });
-
-    describe('On JHipster 4.9.0', () => {
-        beforeEach((done) => {
-            helpers
-                .run(path.join(__dirname, '../generators/app'))
-                .inTmpDir((dir) => {
-                    fse.copySync(path.join(__dirname, '../test/templates/jhipster-4.9.0'), dir);
-                })
-                .withOptions({
-                    skipInstall: true
-                })
-                .withPrompts({
-                    confirmation: true
-                })
-                .on('end', done);
-        });
-
-        it('generate all primeng files', () => {
-            assert.file(expectedFiles.primeng);
-            assert.file(expectedFiles.translation);
-            assert.file(expectedFiles.protractor);
         });
     });
 });
