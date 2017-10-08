@@ -16,7 +16,7 @@ const PRIMENG_VERSION = '4.2.2';
 const PRIMENG_EXT_WIZARD_VERSION = '2.1.0';
 const CHARTJS_VERSION = '2.6.0';
 const FULLCALENDAR_VERSION = '3.5.0';
-const QUILL_VERSION = '1.2.6';
+const QUILL_VERSION = '1.3.2';
 
 const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
 const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
@@ -720,6 +720,8 @@ module.exports = JhipsterGenerator.extend({
             this.log(`  "primeng": "${PRIMENG_VERSION}"`);
             this.log(`  "primeng-extensions-wizard": "${PRIMENG_EXT_WIZARD_VERSION}"`);
             this.log(`  "chart.js": "${CHARTJS_VERSION}",`);
+            this.log(`  "fullcalendar": "${FULLCALENDAR_VERSION}",`);
+            this.log(`  "quill": "${QUILL_VERSION}",`);
             this.log('');
             this.anyError = true;
         }
@@ -1423,7 +1425,7 @@ module.exports = JhipsterGenerator.extend({
             this.log(`${chalk.red.bold('ERROR!')}`);
             this.log('  Missing needle \'jhipster-needle-add-element-to-vendor\' in src/main/webapp/app/vendor.ts');
             this.log('  You need to add manually:\n');
-            this.log(`${chalk.yellow.bold('import \'quill/dist//quill.js\';')}`);
+            this.log(`${chalk.yellow.bold('import \'quill/dist/quill.js\';')}`);
             this.log('');
             this.anyError = true;
         }

@@ -16,7 +16,7 @@ function fakeBackendFactory(backend: MockBackend, options: BaseRequestOptions, r
         // wrap in timeout to simulate server api call
         setTimeout(() => {
             // get all employees
-            if (connection.request.url.endsWith('/backend/employees') &&
+            if (connection.request.url.endsWith('/fake-backend/employees') &&
                 connection.request.method === RequestMethod.Get) {
                 connection.mockRespond(new Response(new ResponseOptions({
                     status: 200,
@@ -27,7 +27,7 @@ function fakeBackendFactory(backend: MockBackend, options: BaseRequestOptions, r
             }
 
             // delete employee
-            if (connection.request.url.match(/\/backend\/employees\/.{36}$/) &&
+            if (connection.request.url.match(/\/fake-backend\/employees\/.{36}$/) &&
                 connection.request.method === RequestMethod.Delete) {
                 let urlParts = connection.request.url.split('/');
                 let id = urlParts[urlParts.length - 1];

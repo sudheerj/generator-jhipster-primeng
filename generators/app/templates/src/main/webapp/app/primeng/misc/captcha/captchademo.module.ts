@@ -3,8 +3,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
-import {GrowlModule} from 'primeng/primeng';
-import {CaptchaModule} from 'primeng/primeng';
+import {GrowlModule} from 'primeng/components/growl/growl';
+import {CaptchaModule} from 'primeng/components/captcha/captcha';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {

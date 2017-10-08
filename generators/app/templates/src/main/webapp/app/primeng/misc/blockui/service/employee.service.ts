@@ -31,13 +31,13 @@ export class EmployeeService {
     }
 
     getEmployees(): Observable<Employee[]> {
-        return this.http.get('/backend/employees')
+        return this.http.get('/fake-backend/employees')
             .map(response => response.json() as Employee[])
             .catch(EmployeeService.handleError);
     }
 
     deleteEmployee(id: string): Observable<any> {
-        return this.http.delete('/backend/employees/' + id)
+        return this.http.delete('/fake-backend/employees/' + id)
             .map(response => response.json())
             .catch(EmployeeService.handleError);
     }
