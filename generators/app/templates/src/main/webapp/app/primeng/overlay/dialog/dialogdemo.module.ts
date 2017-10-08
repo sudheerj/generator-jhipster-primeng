@@ -24,6 +24,7 @@ const primeng_STATES = [
         DialogModule,
         GrowlModule,
         BrowserAnimationsModule,
+        WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [
