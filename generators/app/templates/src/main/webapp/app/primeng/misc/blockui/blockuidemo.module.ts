@@ -14,12 +14,11 @@ import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {DialogModule} from 'primeng/components/dialog/dialog';
 import {MessagesModule} from 'primeng/components/messages/messages';
 import {BlockUIModule} from 'primeng/components/blockui/blockui';
-
-
 import {MockBackend} from '@angular/http/testing';
 import {BaseRequestOptions} from '@angular/http';
 import {fakeBackendProvider} from './backend/fake-backend';
 import {EmployeeService} from './service/employee.service';
+import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {
     BlockUIDemoComponent,
@@ -42,6 +41,7 @@ const primeng_STATES = [
         DataTableModule,
         DialogModule,
         MessagesModule,
+        WizardModule,
         BlockUIModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

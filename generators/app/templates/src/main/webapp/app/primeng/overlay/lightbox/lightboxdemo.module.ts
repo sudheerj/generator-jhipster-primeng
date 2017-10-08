@@ -7,7 +7,6 @@ import {GrowlModule} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
-
 import {
     LightboxDemoComponent,
     lightboxDemoRoute

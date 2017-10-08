@@ -1,4 +1,8 @@
-<p-messages [value]="msgs"></p-messages>
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <p-messages [value]="msgs"></p-messages>
 
 <p-dataTable [value]="employees" selectionMode="single" [(selection)]="selectedEmployee"
              [paginator]="true" rows="15" [responsive]="true" #dtable>
@@ -34,3 +38,5 @@
         </div>
     </div>
 </p-blockUI>
+        </pe-step>
+    </pe-steps>

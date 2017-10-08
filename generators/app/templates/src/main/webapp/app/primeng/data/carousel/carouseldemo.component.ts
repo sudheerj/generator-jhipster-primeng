@@ -12,27 +12,15 @@ import {Message} from 'primeng/components/common/api';
 export class CarouselDemoComponent implements OnInit {
     msgs: Message[] = [];
     activeIndex: number = 0;
-    totalRecords: number = 100;
-
     basicBrowsers: Browser[];
-    facetBrowsers: Browser[];
-    paginationBrowsers: Browser[];
     lazyloadingBrowsers: Browser[];
-    eventsBrowsers: Browser[];
-    advancedBrowsers: Browser[];
-
     selectedBrowser: Browser;
-
     displayDialog: boolean;
 
     constructor(private browserService: BrowserService) { }
 
     ngOnInit() {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.slice(0,4));
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.facetBrowsers = browsers.slice(0,4));
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.paginationBrowsers = browsers);
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.eventsBrowsers = browsers);
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.advancedBrowsers = browsers);
     }
 
     selectBrowser(browser: Browser) {

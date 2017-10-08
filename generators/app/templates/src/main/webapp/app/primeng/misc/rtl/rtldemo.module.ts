@@ -7,7 +7,6 @@ import {GrowlModule} from 'primeng/primeng';
 import {AccordionModule} from 'primeng/primeng';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
-
 import {
     RTLDemoComponent,
     rtlDemoRoute

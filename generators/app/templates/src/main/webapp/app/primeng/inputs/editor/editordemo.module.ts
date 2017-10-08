@@ -7,6 +7,7 @@ import {EditorModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/primeng';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {SharedModule} from "primeng/components/common/shared";
 
 import {
     EditorDemoComponent,
@@ -25,6 +26,7 @@ const primeng_STATES = [
         GrowlModule,
         ButtonModule,
         WizardModule,
+        SharedModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

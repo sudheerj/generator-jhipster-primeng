@@ -7,7 +7,6 @@ import {MessagesModule} from 'primeng/primeng';
 import {GrowlModule} from 'primeng/primeng';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
-
 import {
     MessagesDemoComponent,
     messagesDemoRoute

@@ -115,8 +115,8 @@ const COMPONENT_CHOICE_LIST = [{
     value: 'overlay',
     checked: false
     }, {
-    name: 'file',
-    value: 'file',
+    name: 'fileupload',
+    value: 'fileupload',
     checked: false
     }, {
     name: 'menu',
@@ -143,7 +143,6 @@ const COMPONENT_CHOICE_LIST = [{
     value: 'misc',
     checked: false
     }
-
 ];
 
 const codes = ['ad.png',
@@ -391,7 +390,7 @@ const components = {
     lightbox: 'overlay',
     overlaypanel: 'overlay',
     tooltip: 'overlay',
-    fileupload: 'file',
+    fileupload: 'fileupload',
     menu: 'menu',
     contextmenu: 'menu',
     panelmenu: 'menu',
@@ -743,121 +742,121 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputtext" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inputtext">InputText</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputtextarea" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inputtextarea">InputTextArea</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inputgroup">InputGroup</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="calendar" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.calendar">Calendar</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="chips" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.chips">Chips</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputswitch" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inputswitch">InputSwitch</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputmask" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inputmask">InputMask</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="passwordindicator" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.passwordindicator">Password Indicator</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="rating" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.rating">Rating</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="spinner" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.spinner">Spinner</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="togglebutton" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.togglebutton">ToggleButton</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="autocomplete" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.autocomplete">AutoComplete</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="checkbox" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.checkbox">Checkbox&TrieCheckbox</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="colorpicker" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.colorpicker">ColorPicker</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="editor" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.editor">Editor</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="listbox" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.listbox">Listbox</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="select" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.select">MultiSelect&Dropdown</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="radiobutton" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.radiobutton">RadioButton</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="slider" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.slider">Slider</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="selectbutton" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.selectbutton">SelectButton</span>
                         </a>
                     </li>`;
@@ -867,13 +866,13 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="messages" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.messages">Messages</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="growl" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.growl">Growl</span>
                         </a>
                     </li>`;
@@ -883,7 +882,7 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="galleria" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.galleria">Galleria</span>
                         </a>
                     </li>`;
@@ -893,7 +892,7 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="fileupload" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.file.primeng.fileupload">FileUpload</span>
                         </a>
                     </li>`;
@@ -903,79 +902,79 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="datatable" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.datatable">Datatable</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="datagrid" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.datagrid">Datagrid</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="carousel" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.carousel">Carousel</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="orderlist" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.orderlist">OrderList</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="datalist" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.datalist">DataList</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="paginator" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.paginator">Paginator</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="schedule" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.schedule">Schedule</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="datascroller" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.datascroller">DataScroller</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="orgchart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.orgchart">OrgChart</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="gmap" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.gmap">Gmap</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="picklist" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.picklist">PickList</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="tree" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.tree">Tree</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="treetable" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.treetable">TreeTable</span>
                         </a>
                     </li>`;
@@ -984,7 +983,7 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="dragdrop" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.dragdrop">DragDrop</span>
                         </a>
                     </li>`;
@@ -994,61 +993,61 @@ module.exports = JhipsterGenerator.extend({
         <hr/>
         <li uiSrefActive="active">
             <a class="dropdown-item" routerLink="menu" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.menu">Menu</span>
             </a>
             </li>
             <li uiSrefActive="active">
             <a class="dropdown-item" routerLink="contextmenu" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.contextmenu">Contextmenu</span>
             </a>
             </li>
             <li uiSrefActive="active">
             <a class="dropdown-item" routerLink="panelmenu" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.panelmenu">Panelmenu</span>
             </a>
             </li>
             <li uiSrefActive="active">
             <a class="dropdown-item" routerLink="steps" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.steps">Steps</span>
             </a>
             </li>
             <li uiSrefActive="active">
             <a class="dropdown-item" routerLink="tieredmenu" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.tieredmenu">Tieredmenu</span>
             </a>
             </li>
             <li uiSrefActive="active">
             <a class="dropdown-item" routerLink="breadcrumb" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.breadcrumb">Breadcrumb</span>
             </a>
             </li>
             <li uiSrefActive="active">
             <a class="dropdown-item" routerLink="megamenu" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.megamenu">Megamenu</span>
             </a>
             </li>
             <li uiSrefActive="active">
             <a class="dropdown-item" routerLink="menubar" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.menubar">Menubar</span>
             </a>
             </li>
             <li uiSrefActive="active">
             <a class="dropdown-item" routerLink="slidemenu" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.slidemenu">Slidemenu</span>
             </a>
             </li>
             <li uiSrefActive="active">
             <a class="dropdown-item" routerLink="tabmenu" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.tabmenu">Tabmenu</span>
             </a>
             </li>`;
@@ -1058,37 +1057,37 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="dialog" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.dialog">Dialog</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="confirmdialog" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.confirmdialog">ConfirmDialog</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="lightbox" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.lightbox">Lightbox</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="overlaypanel" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.overlaypanel">OverlayPanel</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="tooltip" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.tooltip">Tooltip</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="sidebar" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.sidebar">SideBar</span>
                         </a>
                     </li>`;
@@ -1097,37 +1096,37 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="accordion" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.accordion">Accordion</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="panel" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.panel">Panel</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="tabview" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.tabview">TabView</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="fieldset" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.fieldset">Fieldset</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="grid" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.grid">grid</span>
                         </a>
                     </li>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="toolbar" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.toolbar">ToolBar</span>
                         </a>
                     </li>`;
@@ -1136,13 +1135,13 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.button">Button</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="splitbutton" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.splitbutton">SplitButton</span>
                         </a>
                     </li>`;
@@ -1190,49 +1189,49 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="validation" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o-notch" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.validation">Validation</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="captcha" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o-notch" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.captcha">Captcha</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="defer" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-line-chart" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.defer">Defer</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="rtl" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.rtl">RTL</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="blockui" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.blockui">BlockUI</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="terminal" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-pie-chart" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.terminal">Terminal</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inplace" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inplace">Inplace</span>
                         </a>
                     </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="progressbar" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
                         </a>
                     </li>`;
@@ -1524,7 +1523,7 @@ module.exports = JhipsterGenerator.extend({
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
 
         }
-        this.template('src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts', 'src/main/webapp/app/primeng/file/fileupload/backend/fake-backend.ts');
+        this.template('src/main/webapp/app/primeng/fileupload/fileupload/backend/fake-backend.ts', 'src/main/webapp/app/primeng/fileupload/fileupload/backend/fake-backend.ts');
 
         this.template(`src/main/webapp/assets/data/json/browsers/browsers.json`, `src/main/webapp/content/primeng/assets/data/json/browsers/browsers.json`);
         this.copyImageFiles(`src/main/webapp/assets/data/images/browsers/firefox.png`, `src/main/webapp/content/primeng/assets/data/images/browsers/firefox.png`);

@@ -16,7 +16,9 @@ export class DialogDemoComponent implements OnInit {
     msgs: Message[] = [];
     activeIndex: number = 0;
 
-    ngOnInit(){}
+    ngOnInit() {
+
+    }
 
     showBasicDialog() {
         this.basic = true;

@@ -7,7 +7,6 @@ import {GrowlModule} from 'primeng/primeng';
 import {TerminalModule} from 'primeng/primeng';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
-
 import {
     TerminalDemoComponent,
     terminalDemoRoute

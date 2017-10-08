@@ -32,5 +32,7 @@ export class ColorpickerDemoComponent implements OnInit {
         this.msgs.push({severity: 'info', summary: label});
     }
 
-    ngOnInit(){}
+    ngOnInit(){
+
+    }
 }
