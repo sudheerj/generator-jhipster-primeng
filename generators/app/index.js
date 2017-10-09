@@ -642,6 +642,8 @@ module.exports = JhipsterGenerator.extend({
             );
         };
 
+        const primengResources = `@import "~primeng/resources/primeng.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
+
         if (this.copyExternalAssetsInWebpack) {
             this.copyExternalAssetsInWebpack('primeng', 'primeng');
         } else {
@@ -649,17 +651,17 @@ module.exports = JhipsterGenerator.extend({
             this.log(chalk.yellow('  - inside CopyWebpackPlugin function of webpack.common.ts file: ') +  '{ from: \'./src/main/webapp/content/primeng\', to: \'content/primeng\'}');
         }
 
-        const primengResources = `@import "~primeng/resources/primeng.min.css";
-                                @import "~primeng/resources/themes/${themeName}/theme.css";
-                                @import "~quill/dist/quill.core.css";
-                                @import "~quill/dist/quill.snow.css";`;
+        if (this.addVendorSCSSStyle) {
+            this.addVendorSCSSStyle(primengResources, `PrimeNG and it's third-party dependencies resources`);
+        } else {
+            // append PrimeNG resources using appendFile
+            fs.appendFile(`${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss`,
+                primengResources, (err) => {
+                    if (err) throw err;
+                    console.log('The PrimeNG resources were updated!');
+                });
+        }
 
-        // append PrimeNG resources using appendFile
-        fs.appendFile(`${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss`,
-            primengResources, (err) => {
-                if (err) throw err;
-                console.log('The PrimeNG resources were updated!');
-            });
         // init all variables
         this.anyError = false;
 
