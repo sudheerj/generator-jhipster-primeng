@@ -7,7 +7,7 @@ export const fileuploadDemoRoute: Route = {
     component: FileUploadDemoComponent,
     data: {
         authorities: ['ROLE_USER'],
-        pageTitle: 'primeng.file.fileupload.title'
+        pageTitle: 'primeng.fileupload.fileupload.title'
     },
     canActivate: [UserRouteAccessService]
 };

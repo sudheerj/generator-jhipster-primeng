@@ -642,7 +642,7 @@ module.exports = JhipsterGenerator.extend({
             );
         };
 
-        const primengResources = `@import "~primeng/resources/primeng.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
+        const primengResources = `\n@import "~primeng/resources/primeng.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
 
         if (this.copyExternalAssetsInWebpack) {
             this.copyExternalAssetsInWebpack('primeng', 'primeng');
@@ -900,14 +900,14 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
 
-        this.fileComponents = `
+        this.fileuploadComponents = `
                    <hr/>
                     <span style="font-weight:bold">File Components</span>
                    <hr/>
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="fileupload" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.file.primeng.fileupload">FileUpload</span>
+                            <span jhiTranslate="global.fileupload.primeng.fileupload">FileUpload</span>
                         </a>
                     </li>`;
 
@@ -1258,7 +1258,7 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
             this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
-                (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('file') > -1 ? this.fileComponents : '') +
+                (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('fileupload') > -1 ? this.fileuploadComponents : '') +
                 (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('menu') > -1 ? this.menuComponents : '') + (this.categories.indexOf('messages') > -1 ? this.messageComponents : '') +
                 (this.categories.indexOf('overlay') > -1 ? this.overlayComponents : '') + (this.categories.indexOf('multimedia') > -1 ? this.multimediaComponents : '') + (this.categories.indexOf('misc') > -1 ? this.miscComponents : '');
         // add element to menu
