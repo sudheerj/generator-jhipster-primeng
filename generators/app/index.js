@@ -719,7 +719,6 @@ module.exports = JhipsterGenerator.extend({
             } else {
                 this.addNpmDependency('chart.js', `${CHARTJS_VERSION}`);
             }
-            "moment": "2.18.1",
 
             if (this.libFullcalendarVersion) {
                 // the version already exists, so try to upgrade instead
