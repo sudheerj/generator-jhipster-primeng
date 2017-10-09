@@ -642,7 +642,12 @@ module.exports = JhipsterGenerator.extend({
             );
         };
 
-        this.copyExternalAssetsInWebpack('primeng', 'primeng');
+        if (this.copyExternalAssetsInWebpack) {
+            this.copyExternalAssetsInWebpack('primeng', 'primeng');
+        } else {
+            this.log(chalk.yellow('WARNING the function copyExternalAssetsInWebpack is missing, you need to add the missing resource path in webpack.common.ts:'));
+            this.log(chalk.yellow('  - inside CopyWebpackPlugin function of webpack.common.ts file: ') +  '{ from: \'./src/main/webapp/content/primeng\', to: \'content/primeng\'}');
+        }
 
         const primengResources = `@import "~primeng/resources/primeng.min.css";
                                 @import "~primeng/resources/themes/${themeName}/theme.css";
