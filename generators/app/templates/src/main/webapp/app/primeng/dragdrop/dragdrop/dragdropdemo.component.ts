@@ -9,6 +9,8 @@ import {Document} from './service/document';
     styles: []
 })
 export class DragdropDemoComponent implements OnInit {
+    msgs: Message[] = [];
+    activeIndex: number = 0;
     availableDocs: Document[];
     deletedDocs: Document[];
     draggedDoc: Document;
@@ -37,5 +39,10 @@ export class DragdropDemoComponent implements OnInit {
 
     dragEnd(event: any) {
         this.draggedDoc = null;
+    }
+
+    onChangeStep(label: string) {
+        this.msgs.length = 0;
+        this.msgs.push({severity: 'info', summary: label});
     }
 }

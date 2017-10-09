@@ -653,12 +653,13 @@ module.exports = JhipsterGenerator.extend({
 
         if (this.addVendorSCSSStyle) {
             this.addVendorSCSSStyle(primengResources, `PrimeNG and it's third-party dependencies resources`);
+            this.log('The PrimeNG resources were updated using JHipster API!');
         } else {
             // append PrimeNG resources using appendFile
             fs.appendFile(`${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss`,
                 primengResources, (err) => {
                     if (err) throw err;
-                    console.log('The PrimeNG resources were updated!');
+                    this.log('The PrimeNG resources were updated!');
                 });
         }
 
