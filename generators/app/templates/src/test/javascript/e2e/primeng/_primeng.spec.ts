@@ -646,7 +646,7 @@ describe('administration', () => {
     it('should load FileUpload', () => {
         element(by.css('[routerLink="fileupload"]')).click();
         <%_ if (enableTranslation) { _%>
-            const expect1 = /primeng.file.fileupload.title/;
+            const expect1 = /primeng.fileupload.fileupload.title/;
             <%_ } else { _%>
             const expect1 = /FileUpload/;
             <%_ } _%>

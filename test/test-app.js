@@ -5,7 +5,7 @@ const fse = require('fs-extra');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
-const categories = ['inputs','data','menu','panel','overlay','file','misc','charts','dragdrop','buttons','multimedia','messages'];
+const categories = ['inputs','data','menu','panel','overlay','fileupload','misc','charts','dragdrop','buttons','multimedia','messages'];
 const expectedFiles = {
     primeng: [
         'src/main/webapp/app/primeng/primeng.module.ts',
@@ -130,11 +130,11 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/inputs/togglebutton/togglebuttondemo.module.ts',
         'src/main/webapp/app/primeng/inputs/togglebutton/togglebuttondemo.route.ts',
 
-        'src/main/webapp/app/primeng/file/fileupload/index.ts',
-        'src/main/webapp/app/primeng/file/fileupload/fileuploaddemo.component.html',
-        'src/main/webapp/app/primeng/file/fileupload/fileuploaddemo.component.ts',
-        'src/main/webapp/app/primeng/file/fileupload/fileuploaddemo.module.ts',
-        'src/main/webapp/app/primeng/file/fileupload/fileuploaddemo.route.ts',
+        'src/main/webapp/app/primeng/fileupload/fileupload/index.ts',
+        'src/main/webapp/app/primeng/fileupload/fileupload/fileuploaddemo.component.html',
+        'src/main/webapp/app/primeng/fileupload/fileupload/fileuploaddemo.component.ts',
+        'src/main/webapp/app/primeng/fileupload/fileupload/fileuploaddemo.module.ts',
+        'src/main/webapp/app/primeng/fileupload/fileupload/fileuploaddemo.route.ts',
 
         'src/main/webapp/app/primeng/dragdrop/dragdrop/index.ts',
         'src/main/webapp/app/primeng/dragdrop/dragdrop/dragdropdemo.component.html',

@@ -36,7 +36,7 @@ import { <%= angular2AppName %>GrowlDemoModule } from './messages/growl/growldem
 import { <%= angular2AppName %>MessagesDemoModule } from './messages/messages/messagesdemo.module';
 import { <%= angular2AppName %>GalleriaDemoModule } from './multimedia/galleria/galleriademo.module';
 
-import { <%= angular2AppName %>FileUploadDemoModule } from './file/fileupload/fileuploaddemo.module';
+import { <%= angular2AppName %>FileUploadDemoModule } from './fileupload/fileupload/fileuploaddemo.module';
 
 import { <%= angular2AppName %>AccordionDemoModule } from './panel/accordion/accordiondemo.module';
 import { <%= angular2AppName %>PanelDemoModule } from './panel/panel/paneldemo.module';
