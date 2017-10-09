@@ -748,6 +748,7 @@ module.exports = JhipsterGenerator.extend({
         }
 
         this.inputComponents = `
+                   <hr/>
                    <span style="font-weight:bold">Input Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -872,6 +873,7 @@ module.exports = JhipsterGenerator.extend({
                     </li>`;
 
         this.messageComponents = `
+                   <hr/>
                    <span style="font-weight:bold">Messages Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -888,6 +890,7 @@ module.exports = JhipsterGenerator.extend({
                     </li>`;
 
         this.multimediaComponents = `
+                   <hr/>
                     <span style="font-weight:bold">Multimedia Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -898,6 +901,7 @@ module.exports = JhipsterGenerator.extend({
                     </li>`;
 
         this.fileComponents = `
+                   <hr/>
                     <span style="font-weight:bold">File Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -908,6 +912,7 @@ module.exports = JhipsterGenerator.extend({
                     </li>`;
 
         this.dataComponents = `
+                   <hr/>
                    <span style="font-weight:bold">Data Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -989,6 +994,7 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
         this.dragdropComponents = `
+                   <hr/>
                     <span style="font-weight:bold">Dragdrop Components</span>
                    <hr/>
                     <li uiSrefActive="active">
@@ -999,6 +1005,7 @@ module.exports = JhipsterGenerator.extend({
                     </li>`;
 
         this.menuComponents = `
+            <hr/>
             <span style="font-weight:bold">Menu Components</span>
         <hr/>
         <li uiSrefActive="active">
@@ -1063,6 +1070,7 @@ module.exports = JhipsterGenerator.extend({
             </li>`;
 
         this.overlayComponents = `
+                   <hr/>
                     <span style="font-weight:bold">Overlay Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -1102,6 +1110,7 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
         this.panelComponents = `
+                   <hr/>
                     <span style="font-weight:bold">Panel Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -1141,6 +1150,7 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
         this.buttonComponents = `
+                   <hr/>
                    <span style="font-weight:bold">Button Components</span>
                    <hr/>
                    <li uiSrefActive="active">
@@ -1156,6 +1166,7 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
         this.chartComponents = `
+                   <hr/>
                    <span style="font-weight:bold">Chart Components</span>
                    <hr/>
                     <li uiSrefActive="active">
@@ -1195,6 +1206,7 @@ module.exports = JhipsterGenerator.extend({
                         </a>
                     </li>`;
         this.miscComponents = `
+                   <hr/>
                     <span style="font-weight:bold">Miscellaneous Components</span>
                    <hr/>
                     <li uiSrefActive="active">
