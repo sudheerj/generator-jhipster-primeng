@@ -1,6 +1,6 @@
 {
   "name": "generator-jhipster-primeng",
-  "version": "0.0.80",
+  "version": "0.0.81",
   "description": "Generate PrimeNG Components",
   "keywords": [
     "yeoman-generator",
@@ -52,7 +52,7 @@
     "yeoman-test": "1.6.0"
   },
   "scripts": {
-    "test": "mocha test/*"
+    "test": "mocha --timeout 15000 test/*"
   },
   "license": "Apache-2.0",
   "bugs": {

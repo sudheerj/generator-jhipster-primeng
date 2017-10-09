@@ -655,14 +655,14 @@ module.exports = JhipsterGenerator.extend({
         } else {
             this.log(`${chalk.yellow('WARNING the function copyExternalAssetsInWebpack is missing, you need to add the missing resource path in webpack.common.ts:')}`);
             this.log(`${chalk.yellow('  - inside CopyWebpackPlugin function of webpack.common.ts file: ') +  '{ from: \'./src/main/webapp/content/primeng\', to: \'content/primeng\'}'}`);
-        };
+        }
 
         if (this.addExternalResourcesToRoot) {
             this.addExternalResourcesToRoot(`${primengRootResources}`, 'PrimeNG resources added here');
         } else {
             this.log(`${chalk.yellow('WARNING the function addExternalResourcesToRoot is missing, you need to add the missing resource path in the head section of index.html file:')}`);
             this.log(`${chalk.yellow('Add the resources- ')} ${primengRootResources}`);
-        };
+        }
 
         if (this.addVendorSCSSStyle) {
             this.addVendorSCSSStyle(primengResources, `PrimeNG and it's third-party dependencies resources`);
@@ -1273,10 +1273,14 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
                         </a>
                     </li>`;
-            this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
-                (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('fileupload') > -1 ? this.fileuploadComponents : '') +
-                (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('menu') > -1 ? this.menuComponents : '') + (this.categories.indexOf('messages') > -1 ? this.messageComponents : '') +
-                (this.categories.indexOf('overlay') > -1 ? this.overlayComponents : '') + (this.categories.indexOf('multimedia') > -1 ? this.multimediaComponents : '') + (this.categories.indexOf('misc') > -1 ? this.miscComponents : '');
+           if(this.categories) {
+               this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
+                   (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('fileupload') > -1 ? this.fileuploadComponents : '') +
+                   (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('menu') > -1 ? this.menuComponents : '') + (this.categories.indexOf('messages') > -1 ? this.messageComponents : '') +
+                   (this.categories.indexOf('overlay') > -1 ? this.overlayComponents : '') + (this.categories.indexOf('multimedia') > -1 ? this.multimediaComponents : '') + (this.categories.indexOf('misc') > -1 ? this.miscComponents : '');
+           } else {
+               this.componentGroups = '';
+           }
         // add element to menu
         let primengMenu;
         if (this.enableTranslation) {
