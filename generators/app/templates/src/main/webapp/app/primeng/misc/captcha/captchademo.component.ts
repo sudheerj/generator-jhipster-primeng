@@ -9,7 +9,6 @@ import {MenuItem, Message} from 'primeng/components/common/api';
 })
 export class CaptchaDemoComponent implements OnInit {
     msgs: Message[] = [];
-    messages: Message[] = [];
     activeIndex: number = 0;
 
     ngOnInit() {

@@ -15,6 +15,7 @@ const ANGULAR_VERSION = '4.2.6';
 const PRIMENG_VERSION = '4.2.2';
 const PRIMENG_EXT_WIZARD_VERSION = '2.1.0';
 const CHARTJS_VERSION = '2.6.0';
+const MOMENT_VERSION = '2.18.1';
 const FULLCALENDAR_VERSION = '3.5.0';
 const QUILL_VERSION = '1.3.2';
 
@@ -545,6 +546,10 @@ module.exports = JhipsterGenerator.extend({
                         this.libChartJsVersion = fileData.dependencies['chart.js'];
                     }
 
+                    if (fileData.dependencies.moment) {
+                        this.libMomentVersion = fileData.dependencies.moment;
+                    }
+
                     if (fileData.dependencies.fullcalendar) {
                         this.libFullcalendarVersion = fileData.dependencies.fullcalendar;
                     }
@@ -643,13 +648,21 @@ module.exports = JhipsterGenerator.extend({
         };
 
         const primengResources = `\n@import "~primeng/resources/primeng.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
+        const primengRootResources = `<script src=\"https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha\" async defer></script> \n <script src=\"https://cdn.quilljs.com/1.0.0/quill.js\"></script> \n  <script type=\"text/javascript\" src=\"https://maps.google.com/maps/api/js?key=AIzaSyA6Ar0UymhiklJBzEPLKKn2QHwbjdz3XV0\" ></script>\n`;
 
         if (this.copyExternalAssetsInWebpack) {
             this.copyExternalAssetsInWebpack('primeng', 'primeng');
         } else {
-            this.log(chalk.yellow('WARNING the function copyExternalAssetsInWebpack is missing, you need to add the missing resource path in webpack.common.ts:'));
-            this.log(chalk.yellow('  - inside CopyWebpackPlugin function of webpack.common.ts file: ') +  '{ from: \'./src/main/webapp/content/primeng\', to: \'content/primeng\'}');
-        }
+            this.log(`${chalk.yellow('WARNING the function copyExternalAssetsInWebpack is missing, you need to add the missing resource path in webpack.common.ts:')}`);
+            this.log(`${chalk.yellow('  - inside CopyWebpackPlugin function of webpack.common.ts file: ') +  '{ from: \'./src/main/webapp/content/primeng\', to: \'content/primeng\'}'}`);
+        };
+
+        if (this.addExternalResourcesToRoot) {
+            this.addExternalResourcesToRoot(`${primengRootResources}`, 'PrimeNG resources added here');
+        } else {
+            this.log(`${chalk.yellow('WARNING the function addExternalResourcesToRoot is missing, you need to add the missing resource path in the head section of index.html file:')}`);
+            this.log(`${chalk.yellow('Add the resources- ${primengRootResources}')}`);
+        };
 
         if (this.addVendorSCSSStyle) {
             this.addVendorSCSSStyle(primengResources, `PrimeNG and it's third-party dependencies resources`);
@@ -706,11 +719,14 @@ module.exports = JhipsterGenerator.extend({
             } else {
                 this.addNpmDependency('chart.js', `${CHARTJS_VERSION}`);
             }
+            "moment": "2.18.1",
 
             if (this.libFullcalendarVersion) {
                 // the version already exists, so try to upgrade instead
+                this.replaceContent('package.json', `"moment": "${this.libMomentVersion}"`, `"moment": "${MOMENT_VERSION}"`);
                 this.replaceContent('package.json', `"fullcalendar": "${this.libFullcalendarVersion}"`, `"fullcalendar": "${FULLCALENDAR_VERSION}"`);
             } else {
+                this.addNpmDependency('moment', `${MOMENT_VERSION}`);
                 this.addNpmDependency('fullcalendar', `${FULLCALENDAR_VERSION}`);
             }
 
@@ -728,6 +744,7 @@ module.exports = JhipsterGenerator.extend({
             this.log(`  "primeng": "${PRIMENG_VERSION}"`);
             this.log(`  "primeng-extensions-wizard": "${PRIMENG_EXT_WIZARD_VERSION}"`);
             this.log(`  "chart.js": "${CHARTJS_VERSION}",`);
+            this.log(`  "moment": "${MOMENT_VERSION}",`);
             this.log(`  "fullcalendar": "${FULLCALENDAR_VERSION}",`);
             this.log(`  "quill": "${QUILL_VERSION}",`);
             this.log('');
@@ -1328,7 +1345,7 @@ module.exports = JhipsterGenerator.extend({
                             <span>SplitButton</span>
                         </a>
                     </li>
-                    
+
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="barchart" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
@@ -1552,6 +1569,7 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles(`src/main/webapp/assets/data/images/browsers/ie.png`, `src/main/webapp/content/primeng/assets/data/images/browsers/ie.png`);
         this.copyImageFiles(`src/main/webapp/assets/data/images/browsers/safari.png`, `src/main/webapp/content/primeng/assets/data/images/browsers/safari.png`);
         this.template(`src/main/webapp/assets/data/json/cities/cities.json`, `src/main/webapp/content/primeng/assets/data/json/cities/cities.json`);
+        this.template(`src/main/webapp/assets/data/json/places/places.json`, `src/main/webapp/content/primeng/assets/data/json/places/places.json`);
         this.template('src/main/webapp/assets/data/json/events/scheduleevents.json', 'src/main/webapp/content/primeng/assets/data/json/events/scheduleevents.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/man.png', 'src/main/webapp/content/primeng/assets/data/images/avatars/man.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/women.png', 'src/main/webapp/content/primeng/assets/data/images/avatars/women.png');

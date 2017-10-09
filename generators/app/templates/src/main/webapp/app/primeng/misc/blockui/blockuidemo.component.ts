@@ -17,6 +17,7 @@ export class BlockUIDemoComponent implements OnInit {
     blockedTable: boolean;
     blockedPage: boolean;
     msgs: Message[] = [];
+    activeIndex: number = 0;
 
     get$: Subscription;
     delete$: Subscription;
@@ -72,6 +73,11 @@ export class BlockUIDemoComponent implements OnInit {
     private showSuccess(successMsg: string) {
         this.msgs = [];
         this.msgs.push({severity: 'success', detail: successMsg});
+    }
+
+    onChangeStep(label: string) {
+        this.msgs.length = 0;
+        this.msgs.push({severity: 'info', summary: label});
     }
 
 }

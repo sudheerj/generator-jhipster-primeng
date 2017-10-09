@@ -7,7 +7,6 @@ import {APP_BASE_HREF} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {DataTableModule} from 'primeng/primeng';
-
 import {DeferModule} from 'primeng/primeng';
 import {BrowserService} from './service/browser.service';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';

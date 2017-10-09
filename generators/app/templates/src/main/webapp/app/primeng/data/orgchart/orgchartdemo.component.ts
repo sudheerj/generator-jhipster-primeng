@@ -112,7 +112,9 @@ export class OrgChartDemoComponent implements OnInit {
     }
 
     ngOnDestroy() {
-        this.get$.unsubscribe();
+        if(this.get$) {
+            this.get$.unsubscribe();
+        }
     }
 
     onNodeSelect(event: any) {

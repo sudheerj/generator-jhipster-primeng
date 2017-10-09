@@ -5,9 +5,9 @@ import {CommonModule} from '@angular/common';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
-import {GrowlModule} from 'primeng/primeng';
-import {DeferModule} from 'primeng/primeng';
-import {DataTableModule} from 'primeng/primeng';
+import {GrowlModule} from 'primeng/components/growl/growl';
+import {InplaceModule} from 'primeng/components/inplace/inplace';
+import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {BrowserService} from './service/browser.service';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
@@ -27,7 +27,7 @@ const primeng_STATES = [
         CommonModule,
         BrowserAnimationsModule,
         GrowlModule,
-        DeferModule,
+        InplaceModule,
         DataTableModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
