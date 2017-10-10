@@ -648,7 +648,13 @@ module.exports = JhipsterGenerator.extend({
         };
 
         const primengResources = `\n@import "~primeng/resources/primeng.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
-        const primengRootResources = `<script src=\"https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha\" async defer></script> \n <script src=\"https://cdn.quilljs.com/1.0.0/quill.js\"></script> \n  <script type=\"text/javascript\" src=\"https://maps.google.com/maps/api/js?key=AIzaSyA6Ar0UymhiklJBzEPLKKn2QHwbjdz3XV0\" ></script>\n`;
+        const primengRootResources = `<script src=\"https://code.jquery.com/jquery-2.2.4.min.js\"></script>\n
+                                      <link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css\">\n
+                                      <script src=\"https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha\" async defer>\n
+                                      </script> \n <script src=\"https://cdn.quilljs.com/1.0.0/quill.js\"></script> \n  
+                                      <script type=\"text/javascript\" src=\"https://maps.google.com/maps/api/js?key=AIzaSyA6Ar0UymhiklJBzEPLKKn2QHwbjdz3XV0\" ></script>\n
+                                      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js\"></script> \n
+                                      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js\"></script>\n`;
 
         if (this.copyExternalAssetsInWebpack) {
             this.copyExternalAssetsInWebpack('primeng', 'primeng');
@@ -1016,7 +1022,7 @@ module.exports = JhipsterGenerator.extend({
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="dragdrop" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.dragdrop">DragDrop</span>
+                            <span jhiTranslate="global.dragdrop.primeng.dragdrop">DragDrop</span>
                         </a>
                     </li>`;
 
