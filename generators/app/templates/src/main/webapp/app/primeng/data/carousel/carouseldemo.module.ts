@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
-import {DataTableModule} from 'primeng/components/datatable/datatable';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {BrowserService} from './service/browser.service';
@@ -22,7 +21,6 @@ const primeng_STATES = [
 @NgModule({
     imports: [
         <%= angular2AppName %>SharedModule,
-        DataTableModule,
         BrowserAnimationsModule,
         GrowlModule,
         CarouselModule,

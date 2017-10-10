@@ -1,6 +1,6 @@
 {
   "name": "generator-jhipster-primeng",
-  "version": "0.0.82",
+  "version": "0.0.83",
   "description": "Generate PrimeNG Components",
   "keywords": [
     "yeoman-generator",

@@ -9,15 +9,8 @@ import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {ButtonModule} from 'primeng/components/button/button';
-import {InputTextModule} from 'primeng/components/inputtext/inputtext';
-import {DataTableModule} from 'primeng/components/datatable/datatable';
-import {DialogModule} from 'primeng/components/dialog/dialog';
-import {MessagesModule} from 'primeng/components/messages/messages';
+import {PanelModule} from 'primeng/components/panel/panel';
 import {BlockUIModule} from 'primeng/components/blockui/blockui';
-import {MockBackend} from '@angular/http/testing';
-import {BaseRequestOptions} from '@angular/http';
-import {fakeBackendProvider} from './backend/fake-backend';
-import {EmployeeService} from './service/employee.service';
 import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
 
 import {
@@ -31,16 +24,13 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angular2AppName %>SharedModule ,
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
         HttpModule,
         ButtonModule,
-        InputTextModule,
-        DataTableModule,
-        DialogModule,
-        MessagesModule,
+        PanelModule,
         WizardModule,
         BlockUIModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
@@ -50,11 +40,7 @@ const primeng_STATES = [
     ],
     providers: [
         {provide: APP_BASE_HREF, useValue: '/'},
-        EmployeeService,
-        fakeBackendProvider,
-        MockBackend,
-        BaseRequestOptions
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>BlockUIDemoModule {}
+export class TestBlockUIDemoModule {}

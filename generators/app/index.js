@@ -1559,11 +1559,6 @@ module.exports = JhipsterGenerator.extend({
         // this.copyImageFiles(`src/main/webapp/app/primeng/overlay/lightbox/assets/data/videos/ironman.mp4`, `src/main/webapp/app/primeng/overlay/lightbox/assets/data/videos/ironman.mp4`);
         this.template('src/main/webapp/app/primeng/overlay/overlaypanel/service/score.ts', 'src/main/webapp/app/primeng/overlay/overlaypanel/service/score.ts');
         this.template('src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts', 'src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts');
-        this.template('src/main/webapp/app/primeng/misc/blockui/backend/employees.ts', 'src/main/webapp/app/primeng/misc/blockui/backend/employees.ts');
-        this.template('src/main/webapp/app/primeng/misc/blockui/backend/fake-backend.ts', 'src/main/webapp/app/primeng/misc/blockui/backend/fake-backend.ts');
-        this.template('src/main/webapp/app/primeng/misc/blockui/backend/uuid.ts', 'src/main/webapp/app/primeng/misc/blockui/backend/uuid.ts');
-        this.template('src/main/webapp/app/primeng/misc/blockui/model/employee.ts', 'src/main/webapp/app/primeng/misc/blockui/model/employee.ts');
-        this.template('src/main/webapp/app/primeng/misc/blockui/service/employee.service.ts', 'src/main/webapp/app/primeng/misc/blockui/service/employee.service.ts');
 
         const countryComponents = { orderlist: 'data', picklist: 'data', autocomplete: 'inputs', select: 'inputs' };
         for (var component in countryComponents) {
