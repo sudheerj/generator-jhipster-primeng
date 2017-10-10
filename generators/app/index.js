@@ -929,7 +929,7 @@ module.exports = JhipsterGenerator.extend({
                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="fileupload" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.fileupload.primeng.fileupload">FileUpload</span>
+                            <span jhiTranslate="global.menu.primeng.fileupload">FileUpload</span>
                         </a>
                     </li>`;
 
@@ -1022,7 +1022,7 @@ module.exports = JhipsterGenerator.extend({
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="dragdrop" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.dragdrop.primeng.dragdrop">DragDrop</span>
+                            <span jhiTranslate="global.menu.primeng.dragdrop">DragDrop</span>
                         </a>
                     </li>`;
 
