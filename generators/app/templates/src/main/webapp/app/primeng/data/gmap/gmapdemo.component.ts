@@ -7,7 +7,8 @@ declare var google: any;
 @Component({
     selector: 'jhi-gmap',
     templateUrl: './gmapdemo.component.html',
-    styles: []
+    styles: [],
+    styleUrls: ['./gmapdemo.component.scss'],
 })
 export class GmapDemoComponent implements OnInit {
     options: any;
