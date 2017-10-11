@@ -1606,7 +1606,7 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/assets/data/json/documents/documents.json', 'src/main/webapp/content/primeng/assets/data/json/documents/documents.json');
         this.template('src/main/webapp/assets/data/json/scores/scores.json', 'src/main/webapp/content/primeng/assets/data/json/scores/scores.json');
         this.template(`src/main/webapp/assets/data/json/countries/countries.json`, `src/main/webapp/content/primeng/assets/data/json/countries/countries.json`);
-        this.template('src/main/webapp/app/primeng/data/gmap/gmapdemo.component.scss', 'src/main/webapp/app/primeng/gmap/gmapdemo.component.scss');
+        this.template('src/main/webapp/app/primeng/data/gmap/gmapdemo.component.scss', 'src/main/webapp/app/primeng/data/gmap/gmapdemo.component.scss');
 
 
         _this = this;

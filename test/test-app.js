@@ -27,6 +27,8 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/inputs/autocomplete/autocompletedemo.component.ts',
         'src/main/webapp/app/primeng/inputs/autocomplete/autocompletedemo.module.ts',
         'src/main/webapp/app/primeng/inputs/autocomplete/autocompletedemo.route.ts',
+        'src/main/webapp/app/primeng/inputs/autocomplete/service/country.ts',
+        'src/main/webapp/app/primeng/inputs/autocomplete/service/country.service.ts',
 
         'src/main/webapp/app/primeng/inputs/calendar/index.ts',
         'src/main/webapp/app/primeng/inputs/calendar/calendardemo.component.html',
@@ -105,6 +107,8 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/inputs/select/selectdemo.component.ts',
         'src/main/webapp/app/primeng/inputs/select/selectdemo.module.ts',
         'src/main/webapp/app/primeng/inputs/select/selectdemo.route.ts',
+        'src/main/webapp/app/primeng/inputs/select/service/country.service.ts',
+        'src/main/webapp/app/primeng/inputs/select/service/country.ts',
 
         'src/main/webapp/app/primeng/inputs/selectbutton/index.ts',
         'src/main/webapp/app/primeng/inputs/selectbutton/selectbuttondemo.component.html',
@@ -135,12 +139,15 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/fileupload/fileupload/fileuploaddemo.component.ts',
         'src/main/webapp/app/primeng/fileupload/fileupload/fileuploaddemo.module.ts',
         'src/main/webapp/app/primeng/fileupload/fileupload/fileuploaddemo.route.ts',
+        'src/main/webapp/app/primeng/fileupload/fileupload/backend/fake-backend.ts',
 
         'src/main/webapp/app/primeng/dragdrop/dragdrop/index.ts',
         'src/main/webapp/app/primeng/dragdrop/dragdrop/dragdropdemo.component.html',
         'src/main/webapp/app/primeng/dragdrop/dragdrop/dragdropdemo.component.ts',
         'src/main/webapp/app/primeng/dragdrop/dragdrop/dragdropdemo.module.ts',
         'src/main/webapp/app/primeng/dragdrop/dragdrop/dragdropdemo.route.ts',
+        'src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.service.ts',
+        'src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.ts',
 
         'src/main/webapp/app/primeng/buttons/button/index.ts',
         'src/main/webapp/app/primeng/buttons/button/buttondemo.component.html',
@@ -159,33 +166,44 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/data/carousel/carouseldemo.component.ts',
         'src/main/webapp/app/primeng/data/carousel/carouseldemo.module.ts',
         'src/main/webapp/app/primeng/data/carousel/carouseldemo.route.ts',
+        'src/main/webapp/app/primeng/data/carousel/service/browser.service.ts',
+        'src/main/webapp/app/primeng/data/carousel/service/browser.ts',
 
         'src/main/webapp/app/primeng/data/datagrid/index.ts',
         'src/main/webapp/app/primeng/data/datagrid/datagriddemo.component.html',
         'src/main/webapp/app/primeng/data/datagrid/datagriddemo.component.ts',
         'src/main/webapp/app/primeng/data/datagrid/datagriddemo.module.ts',
         'src/main/webapp/app/primeng/data/datagrid/datagriddemo.route.ts',
+        'src/main/webapp/app/primeng/data/datagrid/service/browser.service.ts',
+        'src/main/webapp/app/primeng/data/datagrid/service/browser.ts',
 
         'src/main/webapp/app/primeng/data/datalist/index.ts',
         'src/main/webapp/app/primeng/data/datalist/datalistdemo.component.html',
         'src/main/webapp/app/primeng/data/datalist/datalistdemo.component.ts',
         'src/main/webapp/app/primeng/data/datalist/datalistdemo.module.ts',
         'src/main/webapp/app/primeng/data/datalist/datalistdemo.route.ts',
+        'src/main/webapp/app/primeng/data/datalist/service/browser.service.ts',
+        'src/main/webapp/app/primeng/data/datalist/service/browser.ts',
 
         'src/main/webapp/app/primeng/data/datascroller/index.ts',
         'src/main/webapp/app/primeng/data/datascroller/datascrollerdemo.component.html',
         'src/main/webapp/app/primeng/data/datascroller/datascrollerdemo.component.ts',
         'src/main/webapp/app/primeng/data/datascroller/datascrollerdemo.module.ts',
         'src/main/webapp/app/primeng/data/datascroller/datascrollerdemo.route.ts',
+        'src/main/webapp/app/primeng/data/datascroller/service/browser.service.ts',
+        'src/main/webapp/app/primeng/data/datascroller/service/browser.ts',
 
         'src/main/webapp/app/primeng/data/datatable/index.ts',
         'src/main/webapp/app/primeng/data/datatable/datatabledemo.component.html',
         'src/main/webapp/app/primeng/data/datatable/datatabledemo.component.ts',
         'src/main/webapp/app/primeng/data/datatable/datatabledemo.module.ts',
         'src/main/webapp/app/primeng/data/datatable/datatabledemo.route.ts',
+        'src/main/webapp/app/primeng/data/datatable/service/browser.service.ts',
+        'src/main/webapp/app/primeng/data/datatable/service/browser.ts',
 
         'src/main/webapp/app/primeng/data/gmap/index.ts',
         'src/main/webapp/app/primeng/data/gmap/gmapdemo.component.html',
+        'src/main/webapp/app/primeng/data/gmap/gmapdemo.component.scss',
         'src/main/webapp/app/primeng/data/gmap/gmapdemo.component.ts',
         'src/main/webapp/app/primeng/data/gmap/gmapdemo.module.ts',
         'src/main/webapp/app/primeng/data/gmap/gmapdemo.route.ts',
@@ -195,12 +213,16 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/data/orderlist/orderlistdemo.component.ts',
         'src/main/webapp/app/primeng/data/orderlist/orderlistdemo.module.ts',
         'src/main/webapp/app/primeng/data/orderlist/orderlistdemo.route.ts',
+        'src/main/webapp/app/primeng/data/orderlist/service/browser.service.ts',
+        'src/main/webapp/app/primeng/data/orderlist/service/browser.ts',
 
         'src/main/webapp/app/primeng/data/orgchart/index.ts',
         'src/main/webapp/app/primeng/data/orgchart/orgchartdemo.component.html',
         'src/main/webapp/app/primeng/data/orgchart/orgchartdemo.component.ts',
         'src/main/webapp/app/primeng/data/orgchart/orgchartdemo.module.ts',
         'src/main/webapp/app/primeng/data/orgchart/orgchartdemo.route.ts',
+        'src/main/webapp/app/primeng/data/orgchart/service/vcard.service.ts',
+        'src/main/webapp/app/primeng/data/orgchart/service/vcard.ts',
 
         'src/main/webapp/app/primeng/data/paginator/index.ts',
         'src/main/webapp/app/primeng/data/paginator/paginatordemo.component.html',
@@ -213,24 +235,30 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/data/picklist/picklistdemo.component.ts',
         'src/main/webapp/app/primeng/data/picklist/picklistdemo.module.ts',
         'src/main/webapp/app/primeng/data/picklist/picklistdemo.route.ts',
+        'src/main/webapp/app/primeng/data/picklist/service/country.service.ts',
+        'src/main/webapp/app/primeng/data/picklist/service/country.ts',
 
         'src/main/webapp/app/primeng/data/schedule/index.ts',
         'src/main/webapp/app/primeng/data/schedule/scheduledemo.component.html',
         'src/main/webapp/app/primeng/data/schedule/scheduledemo.component.ts',
         'src/main/webapp/app/primeng/data/schedule/scheduledemo.module.ts',
         'src/main/webapp/app/primeng/data/schedule/scheduledemo.route.ts',
+        'src/main/webapp/app/primeng/data/schedule/event/event.ts',
+        'src/main/webapp/app/primeng/data/schedule/service/event.service.ts',
 
         'src/main/webapp/app/primeng/data/tree/index.ts',
         'src/main/webapp/app/primeng/data/tree/treedemo.component.html',
         'src/main/webapp/app/primeng/data/tree/treedemo.component.ts',
         'src/main/webapp/app/primeng/data/tree/treedemo.module.ts',
         'src/main/webapp/app/primeng/data/tree/treedemo.route.ts',
+        'src/main/webapp/app/primeng/data/tree/service/treedemo.service.ts',
 
         'src/main/webapp/app/primeng/data/treetable/index.ts',
         'src/main/webapp/app/primeng/data/treetable/treetabledemo.component.html',
         'src/main/webapp/app/primeng/data/treetable/treetabledemo.component.ts',
         'src/main/webapp/app/primeng/data/treetable/treetabledemo.module.ts',
         'src/main/webapp/app/primeng/data/treetable/treetabledemo.route.ts',
+        'src/main/webapp/app/primeng/data/treetable/service/treenode.service.ts',
 
         'src/main/webapp/app/primeng/menu/breadcrumb/index.ts',
         'src/main/webapp/app/primeng/menu/breadcrumb/breadcrumbdemo.component.html',
@@ -243,6 +271,8 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/menu/contextmenu/contextmenudemo.component.ts',
         'src/main/webapp/app/primeng/menu/contextmenu/contextmenudemo.module.ts',
         'src/main/webapp/app/primeng/menu/contextmenu/contextmenudemo.route.ts',
+        'src/main/webapp/app/primeng/menu/contextmenu/service/employee.service.ts',
+        'src/main/webapp/app/primeng/menu/contextmenu/service/employee.ts',
 
         'src/main/webapp/app/primeng/menu/megamenu/index.ts',
         'src/main/webapp/app/primeng/menu/megamenu/megamenudemo.component.html',
@@ -285,6 +315,10 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/menu/tabmenu/tabmenudemo.component.ts',
         'src/main/webapp/app/primeng/menu/tabmenu/tabmenudemo.module.ts',
         'src/main/webapp/app/primeng/menu/tabmenu/tabmenudemo.route.ts',
+        'src/main/webapp/app/primeng/menu/tabmenu/pages/downloads.component.html',
+        'src/main/webapp/app/primeng/menu/tabmenu/pages/downloads.component.ts',
+        'src/main/webapp/app/primeng/menu/tabmenu/pages/overview.component.html',
+        'src/main/webapp/app/primeng/menu/tabmenu/pages/overview.component.ts',
 
         'src/main/webapp/app/primeng/menu/tieredmenu/index.ts',
         'src/main/webapp/app/primeng/menu/tieredmenu/tieredmenudemo.component.html',
@@ -321,12 +355,18 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/misc/defer/deferdemo.component.ts',
         'src/main/webapp/app/primeng/misc/defer/deferdemo.module.ts',
         'src/main/webapp/app/primeng/misc/defer/deferdemo.route.ts',
+        'src/main/webapp/app/primeng/misc/defer/service/browser.service.ts',
+        'src/main/webapp/app/primeng/misc/defer/service/browser.ts',
+        'src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts',
 
         'src/main/webapp/app/primeng/misc/inplace/index.ts',
         'src/main/webapp/app/primeng/misc/inplace/inplacedemo.component.html',
         'src/main/webapp/app/primeng/misc/inplace/inplacedemo.component.ts',
         'src/main/webapp/app/primeng/misc/inplace/inplacedemo.module.ts',
         'src/main/webapp/app/primeng/misc/inplace/inplacedemo.route.ts',
+        'src/main/webapp/app/primeng/misc/inplace/service/browser.service.ts',
+        'src/main/webapp/app/primeng/misc/inplace/service/browser.ts',
+        'src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts',
 
         'src/main/webapp/app/primeng/misc/progressbar/index.ts',
         'src/main/webapp/app/primeng/misc/progressbar/progressbardemo.component.html',
@@ -381,6 +421,8 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/overlay/overlaypanel/overlaypaneldemo.component.ts',
         'src/main/webapp/app/primeng/overlay/overlaypanel/overlaypaneldemo.module.ts',
         'src/main/webapp/app/primeng/overlay/overlaypanel/overlaypaneldemo.route.ts',
+        'src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts',
+        'src/main/webapp/app/primeng/overlay/overlaypanel/service/score.ts',
 
         'src/main/webapp/app/primeng/overlay/sidebar/index.ts',
         'src/main/webapp/app/primeng/overlay/sidebar/sidebardemo.component.html',
@@ -411,6 +453,8 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/panel/grid/griddemo.component.ts',
         'src/main/webapp/app/primeng/panel/grid/griddemo.module.ts',
         'src/main/webapp/app/primeng/panel/grid/griddemo.route.ts',
+        'src/main/webapp/app/primeng/panel/grid/service/browser.service.ts',
+        'src/main/webapp/app/primeng/panel/grid/service/browser.ts',
 
         'src/main/webapp/app/primeng/panel/panel/index.ts',
         'src/main/webapp/app/primeng/panel/panel/paneldemo.component.html',
@@ -490,7 +534,7 @@ describe('JHipster generator primeng components', () => {
                 .withPrompts({
                     confirmation: true
                 })
-                .then(done());
+                .on("end", done);
         });
 
         it('generate all primeng files', () => {
