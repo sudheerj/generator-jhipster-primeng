@@ -56,7 +56,8 @@ To update this module:
 ```bash
 npm update -g generator-jhipster-primeng
 ```
-
+# What next?
+Please check the roadmap list https://github.com/sudheerj/generator-jhipster-primeng/wiki/Roadmap . If you need a new feature please raise a github request for the discussion.
 # Usage
 
 In your JHipster project, launch `yo jhipster-primeng` and confirm.
