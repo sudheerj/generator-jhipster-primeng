@@ -660,7 +660,7 @@ module.exports = JhipsterGenerator.extend({
             this.copyExternalAssetsInWebpack('primeng', 'primeng');
         } else {
             this.log(`${chalk.yellow('WARNING the function copyExternalAssetsInWebpack is missing, you need to add the missing resource path in webpack.common.ts:')}`);
-            this.log(`${chalk.yellow('  - inside CopyWebpackPlugin function of webpack.common.ts file: ') + '{ from: \'./src/main/webapp/content/primeng\', to: \'content/primeng\'}'}`);
+            this.log(`${`${chalk.yellow('  - inside CopyWebpackPlugin function of webpack.common.ts file: ')}{ from: './src/main/webapp/content/primeng', to: 'content/primeng'}`}`);
         }
 
         if (this.addExternalResourcesToRoot) {
@@ -671,7 +671,7 @@ module.exports = JhipsterGenerator.extend({
         }
 
         if (this.addVendorSCSSStyle) {
-            this.addVendorSCSSStyle(primengResources, `PrimeNG and it's third-party dependencies resources`);
+            this.addVendorSCSSStyle(primengResources, 'PrimeNG and it\'s third-party dependencies resources');
             this.log('The PrimeNG resources were updated using JHipster API!');
         } else {
             // append PrimeNG resources using appendFile
@@ -1539,7 +1539,7 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/menu/contextmenu/service/employee.service.ts', 'src/main/webapp/app/primeng/menu/contextmenu/service/employee.service.ts');
         this.template('src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.ts', 'src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.ts');
         this.template('src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.service.ts', 'src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.service.ts');
-        this.copyImageFiles(`src/main/webapp/assets/data/videos/ironman.mp4`, `src/main/webapp/content/primeng/assets/data/videos/ironman.mp4`);
+        this.copyImageFiles('src/main/webapp/assets/data/videos/ironman.mp4', 'src/main/webapp/content/primeng/assets/data/videos/ironman.mp4');
         this.template('src/main/webapp/app/primeng/overlay/overlaypanel/service/score.ts', 'src/main/webapp/app/primeng/overlay/overlaypanel/service/score.ts');
         this.template('src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts', 'src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts');
 
@@ -1547,16 +1547,15 @@ module.exports = JhipsterGenerator.extend({
         for (const component in countryComponents) {
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`);
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
-
         }
         this.template('src/main/webapp/app/primeng/fileupload/fileupload/backend/fake-backend.ts', 'src/main/webapp/app/primeng/fileupload/fileupload/backend/fake-backend.ts');
 
-        this.template(`src/main/webapp/assets/data/json/browsers/browsers.json`, `src/main/webapp/content/primeng/assets/data/json/browsers/browsers.json`);
-        this.copyImageFiles(`src/main/webapp/assets/data/images/browsers/firefox.png`, `src/main/webapp/content/primeng/assets/data/images/browsers/firefox.png`);
-        this.copyImageFiles(`src/main/webapp/assets/data/images/browsers/ie.png`, `src/main/webapp/content/primeng/assets/data/images/browsers/ie.png`);
-        this.copyImageFiles(`src/main/webapp/assets/data/images/browsers/safari.png`, `src/main/webapp/content/primeng/assets/data/images/browsers/safari.png`);
-        this.template(`src/main/webapp/assets/data/json/cities/cities.json`, `src/main/webapp/content/primeng/assets/data/json/cities/cities.json`);
-        this.template(`src/main/webapp/assets/data/json/places/places.json`, `src/main/webapp/content/primeng/assets/data/json/places/places.json`);
+        this.template('src/main/webapp/assets/data/json/browsers/browsers.json', 'src/main/webapp/content/primeng/assets/data/json/browsers/browsers.json');
+        this.copyImageFiles('src/main/webapp/assets/data/images/browsers/firefox.png', 'src/main/webapp/content/primeng/assets/data/images/browsers/firefox.png');
+        this.copyImageFiles('src/main/webapp/assets/data/images/browsers/ie.png', 'src/main/webapp/content/primeng/assets/data/images/browsers/ie.png');
+        this.copyImageFiles('src/main/webapp/assets/data/images/browsers/safari.png', 'src/main/webapp/content/primeng/assets/data/images/browsers/safari.png');
+        this.template('src/main/webapp/assets/data/json/cities/cities.json', 'src/main/webapp/content/primeng/assets/data/json/cities/cities.json');
+        this.template('src/main/webapp/assets/data/json/places/places.json', 'src/main/webapp/content/primeng/assets/data/json/places/places.json');
         this.template('src/main/webapp/assets/data/json/events/scheduleevents.json', 'src/main/webapp/content/primeng/assets/data/json/events/scheduleevents.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/man.png', 'src/main/webapp/content/primeng/assets/data/images/avatars/man.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/women.png', 'src/main/webapp/content/primeng/assets/data/images/avatars/women.png');
@@ -1589,7 +1588,7 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles('src/main/webapp/assets/data/images/loaders/loader.svg', 'src/main/webapp/content/primeng/assets/data/images/loaders/loader.svg');
         this.template('src/main/webapp/assets/data/json/documents/documents.json', 'src/main/webapp/content/primeng/assets/data/json/documents/documents.json');
         this.template('src/main/webapp/assets/data/json/scores/scores.json', 'src/main/webapp/content/primeng/assets/data/json/scores/scores.json');
-        this.template(`src/main/webapp/assets/data/json/countries/countries.json`, `src/main/webapp/content/primeng/assets/data/json/countries/countries.json`);
+        this.template('src/main/webapp/assets/data/json/countries/countries.json', 'src/main/webapp/content/primeng/assets/data/json/countries/countries.json');
         this.template('src/main/webapp/app/primeng/data/gmap/gmapdemo.component.scss', 'src/main/webapp/app/primeng/data/gmap/gmapdemo.component.scss');
 
 
@@ -1597,7 +1596,6 @@ module.exports = JhipsterGenerator.extend({
         codes.forEach((code) => {
             _this.copyImageFiles(`src/main/webapp/assets/data/images/countries/${code}`, `src/main/webapp/content/primeng/assets/data/images/countries/${code}`);
         });
-
     },
 
     install() {
@@ -1619,12 +1617,10 @@ module.exports = JhipsterGenerator.extend({
                 callback: injectDependenciesAndConstants
             };
             this.installDependencies(installConfig);
+        } else if (this.clientPackageManager === 'yarn') {
+            this.warning(`There is some problem. You need to resolve them, and launch ${chalk.yellow.bold('yarn install')}`);
         } else {
-            if (this.clientPackageManager === 'yarn') {
-                this.warning(`There is some problem. You need to resolve them, and launch ${chalk.yellow.bold('yarn install')}`);
-            } else {
-                this.warning(`There is some problem. You need to resolve them, and launch ${chalk.yellow.bold('npm install')}`);
-            }
+            this.warning(`There is some problem. You need to resolve them, and launch ${chalk.yellow.bold('npm install')}`);
         }
     },
 
