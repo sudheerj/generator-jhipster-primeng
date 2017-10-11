@@ -650,8 +650,8 @@ module.exports = JhipsterGenerator.extend({
         const primengResources = `\n@import "~primeng/resources/primeng.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
         const primengRootResources = `<script src=\"https://code.jquery.com/jquery-2.2.4.min.js\"></script>
                                       <link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css\">
-                                      <script src=\"https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha\" async defer>
-                                      </script> \n <script src=\"https://cdn.quilljs.com/1.0.0/quill.js\"></script>  
+                                      <script src=\"https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha\" async defer></script>
+                                      <script src=\"https://cdn.quilljs.com/1.0.0/quill.js\"></script>  
                                       <script type=\"text/javascript\" src=\"https://maps.google.com/maps/api/js?key=AIzaSyA6Ar0UymhiklJBzEPLKKn2QHwbjdz3XV0\" ></script>
                                       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js\"></script>
                                       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js\"></script>\n`;
@@ -1466,7 +1466,7 @@ module.exports = JhipsterGenerator.extend({
             this.rewriteFile(
         'src/main/webapp/app/vendor.ts',
         'jhipster-needle-add-element-to-vendor',
-        'import \'quill/dist/quill.js\';');
+        'import \'quill/dist/quill.js\';\n import \'../../../../node_modules/fullcalendar/dist/fullcalendar.js\';');
         } catch (e) {
             this.log(`${chalk.red.bold('ERROR!')}`);
             this.log('  Missing needle \'jhipster-needle-add-element-to-vendor\' in src/main/webapp/app/vendor.ts');
@@ -1555,8 +1555,7 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/menu/contextmenu/service/employee.service.ts', 'src/main/webapp/app/primeng/menu/contextmenu/service/employee.service.ts');
         this.template('src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.ts', 'src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.ts');
         this.template('src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.service.ts', 'src/main/webapp/app/primeng/dragdrop/dragdrop/service/document.service.ts');
-        // this.copyImageFiles(`src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/videos/ironman.mp4`, `src/main/webapp/app/primeng/overlay/overlaypanel/assets/data/videos/ironman.mp4`);
-        // this.copyImageFiles(`src/main/webapp/app/primeng/overlay/lightbox/assets/data/videos/ironman.mp4`, `src/main/webapp/app/primeng/overlay/lightbox/assets/data/videos/ironman.mp4`);
+        this.copyImageFiles(`src/main/webapp/assets/data/videos/ironman.mp4`, `src/main/webapp/content/primeng/assets/data/videos/ironman.mp4`);
         this.template('src/main/webapp/app/primeng/overlay/overlaypanel/service/score.ts', 'src/main/webapp/app/primeng/overlay/overlaypanel/service/score.ts');
         this.template('src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts', 'src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts');
 
@@ -1607,6 +1606,8 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/assets/data/json/documents/documents.json', 'src/main/webapp/content/primeng/assets/data/json/documents/documents.json');
         this.template('src/main/webapp/assets/data/json/scores/scores.json', 'src/main/webapp/content/primeng/assets/data/json/scores/scores.json');
         this.template(`src/main/webapp/assets/data/json/countries/countries.json`, `src/main/webapp/content/primeng/assets/data/json/countries/countries.json`);
+        this.template('src/main/webapp/app/primeng/data/gmap/gmapdemo.component.scss', 'src/main/webapp/app/primeng/gmap/gmapdemo.component.scss');
+
 
         _this = this;
         codes.forEach((code) => {
