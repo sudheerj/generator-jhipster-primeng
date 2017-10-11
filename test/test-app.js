@@ -5,7 +5,7 @@ const fse = require('fs-extra');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
-const categories = ['inputs','data','menu','panel','overlay','fileupload','misc','charts','dragdrop','buttons','multimedia','messages'];
+//const categories = ['inputs','data','menu','panel','overlay','fileupload','misc','charts','dragdrop','buttons','multimedia','messages'];
 const expectedFiles = {
     primeng: [
         'src/main/webapp/app/primeng/primeng.module.ts',
@@ -490,7 +490,7 @@ describe('JHipster generator primeng components', () => {
                 .withPrompts({
                     confirmation: true
                 })
-                .on('end', done);
+                .then(done());
         });
 
         it('generate all primeng files', () => {
@@ -513,7 +513,7 @@ describe('JHipster generator primeng components', () => {
                 .withPrompts({
                     confirmation: true
                 })
-                .on('end', done);
+                .then(done());
         });
 
         it('generate all primeng files', () => {
@@ -536,7 +536,7 @@ describe('JHipster generator primeng components', () => {
                 .withPrompts({
                     confirmation: true
                 })
-                .on('end', done);
+                .then(done());
         });
 
         it('generate all primeng files', () => {
@@ -559,7 +559,7 @@ describe('JHipster generator primeng components', () => {
                 .withPrompts({
                     confirmation: true
                 })
-                .on('end', done);
+                .then(done());
         });
 
         it('generate all primeng files', () => {
@@ -582,7 +582,7 @@ describe('JHipster generator primeng components', () => {
                 .withPrompts({
                     confirmation: true
                 })
-                .on('end', done);
+                .then(done());
         });
 
         it('generate all primeng files', () => {
@@ -605,7 +605,7 @@ describe('JHipster generator primeng components', () => {
                 .withPrompts({
                     confirmation: false
                 })
-                .on('end', done);
+                .then(done());
         });
 
         it('generate all primeng files', () => {
