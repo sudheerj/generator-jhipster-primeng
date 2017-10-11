@@ -99,51 +99,51 @@ const COMPONENT_CHOICE_LIST = [{
     name: 'inputs',
     value: 'inputs',
     checked: true
-    }, {
+}, {
     name: 'buttons',
     value: 'buttons',
     checked: false
-    }, {
+}, {
     name: 'data',
     value: 'data',
     checked: false
-    }, {
+}, {
     name: 'panel',
     value: 'panel',
     checked: false
-    }, {
+}, {
     name: 'overlay',
     value: 'overlay',
     checked: false
-    }, {
+}, {
     name: 'fileupload',
     value: 'fileupload',
     checked: false
-    }, {
+}, {
     name: 'menu',
     value: 'menu',
     checked: false
-    }, {
+}, {
     name: 'charts',
     value: 'charts',
     checked: false
-    }, {
+}, {
     name: 'messages',
     value: 'messages',
     checked: false
-    }, {
+}, {
     name: 'multimedia',
     value: 'multimedia',
     checked: false
-    }, {
+}, {
     name: 'dragdrop',
     value: 'dragdrop',
     checked: false
-    }, {
+}, {
     name: 'misc',
     value: 'misc',
     checked: false
-    }
+}
 ];
 
 const codes = ['ad.png',
@@ -648,19 +648,19 @@ module.exports = JhipsterGenerator.extend({
         };
 
         const primengResources = `\n@import "~primeng/resources/primeng.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
-        const primengRootResources = `<script src=\"https://code.jquery.com/jquery-2.2.4.min.js\"></script>
-                                      <link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css\">
-                                      <script src=\"https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha\" async defer></script>
-                                      <script src=\"https://cdn.quilljs.com/1.0.0/quill.js\"></script>  
-                                      <script type=\"text/javascript\" src=\"https://maps.google.com/maps/api/js?key=AIzaSyA6Ar0UymhiklJBzEPLKKn2QHwbjdz3XV0\" ></script>
-                                      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js\"></script>
-                                      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js\"></script>\n`;
+        const primengRootResources = `<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+                                      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css">
+                                      <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script>
+                                      <script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>  
+                                      <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyA6Ar0UymhiklJBzEPLKKn2QHwbjdz3XV0" ></script>
+                                      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+                                      <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>\n`;
 
         if (this.copyExternalAssetsInWebpack) {
             this.copyExternalAssetsInWebpack('primeng', 'primeng');
         } else {
             this.log(`${chalk.yellow('WARNING the function copyExternalAssetsInWebpack is missing, you need to add the missing resource path in webpack.common.ts:')}`);
-            this.log(`${chalk.yellow('  - inside CopyWebpackPlugin function of webpack.common.ts file: ') +  '{ from: \'./src/main/webapp/content/primeng\', to: \'content/primeng\'}'}`);
+            this.log(`${chalk.yellow('  - inside CopyWebpackPlugin function of webpack.common.ts file: ') + '{ from: \'./src/main/webapp/content/primeng\', to: \'content/primeng\'}'}`);
         }
 
         if (this.addExternalResourcesToRoot) {
@@ -1279,14 +1279,14 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
                         </a>
                     </li>`;
-           if(this.categories) {
-               this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
+        if (this.categories) {
+            this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
                    (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('fileupload') > -1 ? this.fileuploadComponents : '') +
                    (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('menu') > -1 ? this.menuComponents : '') + (this.categories.indexOf('messages') > -1 ? this.messageComponents : '') +
                    (this.categories.indexOf('overlay') > -1 ? this.overlayComponents : '') + (this.categories.indexOf('multimedia') > -1 ? this.multimediaComponents : '') + (this.categories.indexOf('misc') > -1 ? this.miscComponents : '');
-           } else {
-               this.componentGroups = '';
-           }
+        } else {
+            this.componentGroups = '';
+        }
         // add element to menu
         let primengMenu;
         if (this.enableTranslation) {
@@ -1431,35 +1431,19 @@ module.exports = JhipsterGenerator.extend({
             const primengSpec = '\'./e2e/primeng/primeng.spec.ts\',';
             try {
                 this.rewriteFile(
-                    'src/test/javascript/protractor.conf.js',
+                    `${CLIENT_TEST_SRC_DIR}protractor.conf.js`,
                     'jhipster-needle-add-protractor-tests',
                     `${primengSpec}`);
             } catch (e) {
                 this.log(`${chalk.red.bold('ERROR!')}`);
-                this.log('  Missing needle \'jhipster-needle-add-protractor-tests\' in src/test/javascript/protractor.conf.js');
+                this.log(`  Missing needle 'jhipster-needle-add-protractor-tests' in ${CLIENT_TEST_SRC_DIR}protractor.conf.js`);
                 this.log('  You need to add manually in specs item:\n');
                 this.log(`            ${primengSpec}`);
                 this.log('');
                 this.anyError = true;
             }
-            this.template('src/test/javascript/e2e/primeng/_primeng.spec.ts', 'src/test/javascript/e2e/primeng/primeng.spec.ts');
+            this.template(`${CLIENT_TEST_SRC_DIR}e2e/primeng/_primeng.spec.ts`, `${CLIENT_TEST_SRC_DIR}e2e/primeng/primeng.spec.ts`);
         }
-
-
-    // add captcha to vendor
-       /* try {
-            this.rewriteFile(
-        'src/main/webapp/app/vendor.ts',
-        'jhipster-needle-add-element-to-vendor',
-        'import \'https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha\';');
-        } catch (e) {
-            this.log(`${chalk.red.bold('ERROR!')}`);
-            this.log('  Missing needle \'jhipster-needle-add-element-to-vendor\' in src/main/webapp/app/vendor.ts');
-            this.log('  You need to add manually:\n');
-            this.log(`${chalk.yellow.bold('https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha')}`);
-            this.log('');
-            this.anyError = true;
-        }*/
 
     // add quill to vendor
         try {
@@ -1515,7 +1499,7 @@ module.exports = JhipsterGenerator.extend({
         // copy all primeng files
         this.template('src/main/webapp/app/primeng/primeng.module.ts', 'src/main/webapp/app/primeng/primeng.module.ts');
 
-        for (var component in components) {
+        for (const component in components) {
             this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/index.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/index.ts`);
             this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.html`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.html`);
             this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.ts`);
@@ -1533,7 +1517,7 @@ module.exports = JhipsterGenerator.extend({
             defer: 'misc',
             inplace: 'misc'
         };
-        for (var component in browserComponents) {
+        for (const component in browserComponents) {
             this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.service.ts`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.service.ts`);
             this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.ts`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.ts`);
         }
@@ -1543,7 +1527,7 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts', 'src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts');
 
         const cityComponents = { tree: 'data', treetable: 'data' };
-        for (var component in cityComponents) {
+        for (const component in cityComponents) {
             this.template(`src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`, `src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`);
         }
 
@@ -1560,7 +1544,7 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts', 'src/main/webapp/app/primeng/overlay/overlaypanel/service/score.service.ts');
 
         const countryComponents = { orderlist: 'data', picklist: 'data', autocomplete: 'inputs', select: 'inputs' };
-        for (var component in countryComponents) {
+        for (const component in countryComponents) {
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`);
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
 
