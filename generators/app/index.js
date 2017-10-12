@@ -675,17 +675,18 @@ module.exports = JhipsterGenerator.extend({
             this.log('The PrimeNG resources were updated using JHipster API!');
         } else {
             // append PrimeNG resources using appendFile
+            const temp = this;
             fs.stat(`${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss`, (err, stat) => {
                 if (err == null) {
                     // Exist
                     fs.appendFile(`${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss`,
                         primengResources, (err) => {
                             if (err) throw err;
-                            console.log('The PrimeNG resources were updated!');
+                            temp.log('The PrimeNG resources were updated!');
                         });
-                } else if (err.code == 'ENOENT') {
+                } else if (err.code === 'ENOENT') {
                     // NO exist
-                    console.log(`The File ${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss doesn't exist!`);
+                    temp.log(`The File ${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss doesn't exist!`);
                 }
             });
         }

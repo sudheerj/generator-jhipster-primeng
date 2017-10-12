@@ -52,7 +52,7 @@
     "yeoman-test": "1.6.0"
   },
   "scripts": {
-    "test": "mocha test/* --timeout 300000"
+    "test": "mocha test/* --timeout 500000"
   },
   "license": "Apache-2.0",
   "bugs": {
