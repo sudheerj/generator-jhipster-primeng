@@ -681,11 +681,11 @@ module.exports = JhipsterGenerator.extend({
                     fs.appendFile(`${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss`,
                         primengResources, (err) => {
                             if (err) throw err;
-                            this.log('The PrimeNG resources were updated!');
+                            console.log('The PrimeNG resources were updated!');
                         });
                 } else if (err.code == 'ENOENT') {
                     // NO exist
-                    this.log(`The File ${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss doesn't exist!`);
+                    console.log(`The File ${CLIENT_MAIN_SRC_DIR}content/scss/vendor.scss doesn't exist!`);
                 }
             });
         }
