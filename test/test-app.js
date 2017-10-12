@@ -658,4 +658,4 @@ describe('JHipster generator primeng components', () => {
             assert.noFile(expectedFiles.protractor);
         });
     });
-});
+}).timeout(500000);
