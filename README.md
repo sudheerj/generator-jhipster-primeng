@@ -1,6 +1,6 @@
 # generator-jhipster-primeng
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Dependency Status][daviddm-image]][daviddm-url]
-> JHipster module, Generate PrimeNG sample components
+> JHipster module, Generate PrimeNG sample components(**85 components and 17 themes**)
 
 <div align="center">
   <a href="http://jhipster.github.io">
@@ -58,6 +58,10 @@ npm update -g generator-jhipster-primeng
 ```
 # What next?
 Please check the roadmap list https://github.com/sudheerj/generator-jhipster-primeng/wiki/Roadmap . If you need a new feature please raise a github request for the discussion.
+
+# Blog
+http://sudheerjonna.com/blog/2017/10/09/jhipster-meets-primeng-or-primeng-meets-jhipster/
+
 # Usage
 
 In your JHipster project, launch `yo jhipster-primeng` and confirm.
