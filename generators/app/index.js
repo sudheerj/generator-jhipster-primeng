@@ -1509,13 +1509,11 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/primeng.module.ts', 'src/main/webapp/app/primeng/primeng.module.ts');
 
         Object.keys(components).forEach((component) => {
-            if (Object.prototype.toString.call(components[component]) === '[object Object]') {
-                _this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/index.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/index.ts`);
-                _this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.html`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.html`);
-                _this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.ts`);
-                _this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.module.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.module.ts`);
-                _this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.route.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.route.ts`);
-            }
+            this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/index.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/index.ts`);
+            this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.html`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.html`);
+            this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.component.ts`);
+            this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.module.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.module.ts`);
+            this.template(`src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.route.ts`, `src/main/webapp/app/primeng/${components[component]}/${component}/${component}demo.route.ts`);
         });
 
         const browserComponents = {
@@ -1530,10 +1528,8 @@ module.exports = JhipsterGenerator.extend({
         };
 
         Object.keys(browserComponents).forEach((component) => {
-            if (Object.prototype.toString.call(browserComponents[component]) === '[object Object]') {
-                _this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.service.ts`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.service.ts`);
-                _this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.ts`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.ts`);
-            }
+            this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.service.ts`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.service.ts`);
+            this.template(`src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.ts`, `src/main/webapp/app/primeng/${browserComponents[component]}/${component}/service/browser.ts`);
         });
 
         this.template('src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts', 'src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts');
@@ -1543,9 +1539,7 @@ module.exports = JhipsterGenerator.extend({
         const cityComponents = { tree: 'data', treetable: 'data' };
 
         Object.keys(cityComponents).forEach((component) => {
-            if (Object.prototype.toString.call(cityComponents[component]) === '[object Object]') {
-                this.template(`src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`, `src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`);
-            }
+            this.template(`src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`, `src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`);
         });
 
         this.template('src/main/webapp/app/primeng/data/schedule/event/event.ts', 'src/main/webapp/app/primeng/data/schedule/event/event.ts');
@@ -1568,10 +1562,8 @@ module.exports = JhipsterGenerator.extend({
         const countryComponents = { orderlist: 'data', picklist: 'data', autocomplete: 'inputs', select: 'inputs' };
 
         Object.keys(countryComponents).forEach((component) => {
-            if (Object.prototype.toString.call(countryComponents[component]) === '[object Object]') {
-                _this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`);
-                _this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
-            }
+            this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`);
+            this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
         });
         this.template('src/main/webapp/app/primeng/fileupload/fileupload/backend/fake-backend.ts', 'src/main/webapp/app/primeng/fileupload/fileupload/backend/fake-backend.ts');
         this.template('src/main/webapp/assets/data/json/browsers/browsers.json', 'src/main/webapp/content/primeng/assets/data/json/browsers/browsers.json');
