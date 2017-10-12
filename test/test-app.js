@@ -152,7 +152,7 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/buttons/button/buttondemo.component.html',
         'src/main/webapp/app/primeng/buttons/button/buttondemo.component.ts',
         'src/main/webapp/app/primeng/buttons/button/buttondemo.module.ts',
-        'src/main/webapp/app/primeng/buttons/button/dragdropdemo.route.ts',
+        'src/main/webapp/app/primeng/buttons/button/buttondemo.route.ts',
 
         'src/main/webapp/app/primeng/buttons/splitbutton/index.ts',
         'src/main/webapp/app/primeng/buttons/splitbutton/splitbuttondemo.component.html',
