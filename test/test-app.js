@@ -199,6 +199,7 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/data/datatable/datatabledemo.route.ts',
         'src/main/webapp/app/primeng/data/datatable/service/browser.service.ts',
         'src/main/webapp/app/primeng/data/datatable/service/browser.ts',
+        'src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts',
 
         'src/main/webapp/app/primeng/data/gmap/index.ts',
         'src/main/webapp/app/primeng/data/gmap/gmapdemo.component.html',
@@ -212,8 +213,8 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/data/orderlist/orderlistdemo.component.ts',
         'src/main/webapp/app/primeng/data/orderlist/orderlistdemo.module.ts',
         'src/main/webapp/app/primeng/data/orderlist/orderlistdemo.route.ts',
-        'src/main/webapp/app/primeng/data/orderlist/service/browser.service.ts',
-        'src/main/webapp/app/primeng/data/orderlist/service/browser.ts',
+        'src/main/webapp/app/primeng/data/orderlist/service/country.service.ts',
+        'src/main/webapp/app/primeng/data/orderlist/service/country.ts',
 
         'src/main/webapp/app/primeng/data/orgchart/index.ts',
         'src/main/webapp/app/primeng/data/orgchart/orgchartdemo.component.html',
@@ -250,7 +251,7 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/data/tree/treedemo.component.ts',
         'src/main/webapp/app/primeng/data/tree/treedemo.module.ts',
         'src/main/webapp/app/primeng/data/tree/treedemo.route.ts',
-        'src/main/webapp/app/primeng/data/tree/service/treedemo.service.ts',
+        'src/main/webapp/app/primeng/data/tree/service/treenode.service.ts',
 
         'src/main/webapp/app/primeng/data/treetable/index.ts',
         'src/main/webapp/app/primeng/data/treetable/treetabledemo.component.html',
