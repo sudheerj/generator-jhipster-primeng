@@ -1,22 +1,22 @@
 <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
     <!-- Basic -->
     <pe-step label="Basic" >
-        <p-gmap [options]="options" [styleClass]="'dimensions'"></p-gmap>
+        <p-gmap [options]="options" [style]="{'width':'100%','height':'400px'}"></p-gmap>
     </pe-step>
     <!-- Overlays -->
     <pe-step label="Overlays">
-        <p-gmap [options]="options" [overlays]="overlays" [styleClass]="'dimensions'"></p-gmap>
+        <p-gmap [options]="options" [overlays]="overlays" [style]="{'width':'100%','height':'400px'}"></p-gmap>
     </pe-step>
     <!-- GoogleMap API -->
     <pe-step label="GoogleMap API">
-        <p-gmap #gmapObject [options]="options" [styleClass]="'dimensions'"></p-gmap>
+        <p-gmap #gmapObject [options]="options" [style]="{'width':'100%','height':'400px'}"></p-gmap>
         <button type="button" pButton label="Zoom In" icon="fa-search-plus" (click)="zoomIn(gmapObject.getMap())"></button>
     </pe-step>
 
     <!-- Events-->
     <pe-step label="Events">
         <p-gmap #gmap [options]="options" [overlays]="overlaysEvents"
-                (onMapReady)="handleMapReady($event)" (onMapClick)="handleMapClick($event)" (onOverlayClick)="handleOverlayClick($event)" (onOverlayDragStart)="handleDragStart($event)" (onOverlayDragEnd)="handleDragEnd($event)" (onZoomChanged)="handleZoomChanged($event)" (onMapDragEnd)="handleMapDragEnd($event)" [styleClass]="'dimensions'"></p-gmap>
+                (onMapReady)="handleMapReady($event)" (onMapClick)="handleMapClick($event)" (onOverlayClick)="handleOverlayClick($event)" (onOverlayDragStart)="handleDragStart($event)" (onOverlayDragEnd)="handleDragEnd($event)" (onZoomChanged)="handleZoomChanged($event)" (onMapDragEnd)="handleMapDragEnd($event)" [style]="{'width':'100%','height':'400px'}"></p-gmap>
         <button type="button" pButton label="Clear" icon="fa-close" (click)="clear()"></button>
         <button type="button" pButton label="Reset" icon="fa-map-marker" (click)="initOverlays()" ></button>
         <button type="button" pButton label="Zoom In" icon="fa-search-plus" (click)="zoomIn(gmap.getMap())"></button>

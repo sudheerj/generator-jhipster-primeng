@@ -958,7 +958,7 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.datagrid">Datagrid</span>
                         </a>
                     </li>
-                   <li uiSrefActive="active">
+                   <li uiSrefActive="active" style="pointer-events: none;">
                         <a class="dropdown-item" routerLink="carousel" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.carousel">Carousel</span>
