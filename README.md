@@ -1,5 +1,5 @@
 # generator-jhipster-primeng
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Dependency Status][daviddm-image]][daviddm-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![npm][![npm](https://img.shields.io/npm/dt/generator-jhipster-primeng.svg)]()  [![Dependency Status][daviddm-image]][daviddm-url]
 > JHipster module, Generate PrimeNG sample components(**85 components and 17 themes**)
 
 <div align="center">
