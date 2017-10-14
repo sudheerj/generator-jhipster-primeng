@@ -1479,37 +1479,37 @@ module.exports = JhipsterGenerator.extend({
             </li>`;
         this.barchartComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="barchart" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.barchart">BarChart</span>
             </a>
             </li>`;
         this.doughnutchartComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="doughnutchart" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.doughnutchart">DoughnutChart</span>
             </a>
             </li>`;
         this.linechartComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="linechart" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-line-chart" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.linechart">LineChart</span>
             </a>
             </li>`;
         this.piechartComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="piechart" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-pie-chart" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.piechart">PieChart</span>
             </a>
             </li>`;
         this.polarareachartComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="polarareachart" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.polarareachart">PolarAreaChart</span>
             </a>
             </li>`;
         this.radarchartComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="radarchart" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.radarchart">RadarChart</span>
             </a>
             </li>`;
@@ -1629,7 +1629,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('fileupload') > -1 ? this.fileuploadComponents : '') +
                 (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('menu') > -1 ? this.menuComponents : '') + (this.categories.indexOf('messages') > -1 ? this.messageComponents : '') +
                 (this.categories.indexOf('overlay') > -1 ? this.overlayComponents : '') + (this.categories.indexOf('multimedia') > -1 ? this.multimediaComponents : '') + (this.categories.indexOf('misc') > -1 ? this.miscComponents : '');
-        } else {
+        } else if (this.componentList) {
             this.componentGroups = (this.componentList.indexOf('autocomplete') > -1 ? this.autocompleteComponent : '') + (this.componentList.indexOf('calendar') > -1 ? this.calendarComponent : '') + (this.componentList.indexOf('checkbox') > -1 ? this.chipsComponent : '') + (this.componentList.indexOf('colorpicker') > -1 ? this.colorpickerComponent : '') +
                 (this.componentList.indexOf('editor') > -1 ? this.editorComponent : '') + (this.componentList.indexOf('inputgroup') > -1 ? this.inputgroupComponent : '') + (this.componentList.indexOf('inputmask') > -1 ? this.inputmaskComponent : '') +
                 (this.componentList.indexOf('inputswitch') > -1 ? this.inputswitchComponent : '') + (this.componentList.indexOf('inputtext') > -1 ? this.inputComponent : '') + (this.componentList.indexOf('inputtextarea') > -1 ? this.inputtextareaComponent : '') +
