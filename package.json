@@ -5,7 +5,9 @@
   "keywords": [
     "yeoman-generator",
     "jhipster-module",
-    "primeng"
+    "primeng",
+    "spring-boot",
+    "angular"
   ],
   "homepage": "https://github.com/sudheerj/generator-jhipster-primeng",
   "author": {
