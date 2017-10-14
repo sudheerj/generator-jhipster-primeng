@@ -95,7 +95,7 @@ const THEME_OPTIONS = [
     }
 ];
 
-const COMPONENT_CHOICE_LIST = [{
+const COMPONENT_GROUP_CHOICE_LIST = [{
     name: 'inputs',
     value: 'inputs',
     checked: true
@@ -142,6 +142,313 @@ const COMPONENT_CHOICE_LIST = [{
 }, {
     name: 'misc',
     value: 'misc',
+    checked: false
+}
+];
+
+const COMPONENT_CHOICE_LIST = [{
+    name: 'AutoComplete',
+    value: 'autocomplete',
+    checked: true
+}, {
+    name: 'Calendar',
+    value: 'calendar',
+    checked: false
+}, {
+    name: 'Checkbox',
+    value: 'checkbox',
+    checked: false
+}, {
+    name: 'Chips',
+    value: 'chips',
+    checked: false
+}, {
+    name: 'ColorPicker',
+    value: 'colorpicker',
+    checked: false
+}, {
+    name: 'Editor',
+    value: 'editor',
+    checked: false
+}, {
+    name: 'InputGroup',
+    value: 'inputgroup',
+    checked: false
+}, {
+    name: 'InputMask',
+    value: 'inputmask',
+    checked: false
+}, {
+    name: 'InputSwitch',
+    value: 'inputswitch',
+    checked: false
+}, {
+    name: 'InputText',
+    value: 'inputtext',
+    checked: false
+}, {
+    name: 'InputTextarea',
+    value: 'inputtextarea',
+    checked: false
+}, {
+    name: 'ListBox',
+    value: 'listbox',
+    checked: false
+}, {
+    name: 'PasswordIndicator',
+    value: 'passwordindicator',
+    checked: false
+}, {
+    name: 'RadioButton',
+    value: 'radiobutton',
+    checked: false
+}, {
+    name: 'Rating',
+    value: 'rating',
+    checked: false
+}, {
+    name: 'Select',
+    value: 'select',
+    checked: false
+}, {
+    name: 'SelectButton',
+    value: 'selectbutton',
+    checked: false
+}, {
+    name: 'Slider',
+    value: 'slider',
+    checked: false
+}, {
+    name: 'Spinner',
+    value: 'spinner',
+    checked: false
+}, {
+    name: 'ToggleButton',
+    value: 'togglebutton',
+    checked: false
+}, {
+    name: 'Button',
+    value: 'button',
+    checked: false
+}, {
+    name: 'SplitButton',
+    value: 'splitbutton',
+    checked: false
+}, {
+    name: 'Carousel',
+    value: 'carousel',
+    checked: false
+}, {
+    name: 'DataGrid',
+    value: 'datagrid',
+    checked: false
+}, {
+    name: 'DataList',
+    value: 'datalist',
+    checked: false
+}, {
+    name: 'DataScroller',
+    value: 'datascroller',
+    checked: false
+}, {
+    name: 'DataTable',
+    value: 'datatable',
+    checked: false
+}, {
+    name: 'GMap',
+    value: 'gmap',
+    checked: false
+}, {
+    name: 'OrderList',
+    value: 'orderlist',
+    checked: false
+}, {
+    name: 'OrgChart',
+    value: 'orgchart',
+    checked: false
+}, {
+    name: 'Paginator',
+    value: 'paginator',
+    checked: false
+}, {
+    name: 'PickList',
+    value: 'picklist',
+    checked: false
+}, {
+    name: 'Schedule',
+    value: 'schedule',
+    checked: false
+}, {
+    name: 'Tree',
+    value: 'tree',
+    checked: false
+}, {
+    name: 'TreeTable',
+    value: 'treetable',
+    checked: false
+}, {
+    name: 'Accordion',
+    value: 'accordion',
+    checked: false
+}, {
+    name: 'Fieldset',
+    value: 'fieldset',
+    checked: false
+}, {
+    name: 'Grid',
+    value: 'grid',
+    checked: false
+}, {
+    name: 'Panel',
+    value: 'panel',
+    checked: false
+}, {
+    name: 'TabView',
+    value: 'tabview',
+    checked: false
+}, {
+    name: 'Toolbar',
+    value: 'toolbar',
+    checked: false
+}, {
+    name: 'ConfirmDialog',
+    value: 'confirmdialog',
+    checked: false
+}, {
+    name: 'Dialog',
+    value: 'dialog',
+    checked: false
+}, {
+    name: 'Lightbox',
+    value: 'lightbox',
+    checked: false
+}, {
+    name: 'OverlayPanel',
+    value: 'overlaypanel',
+    checked: false
+}, {
+    name: 'SideBar',
+    value: 'sidebar',
+    checked: false
+}, {
+    name: 'Tooltip',
+    value: 'tooltip',
+    checked: false
+}, {
+    name: 'Fileupload',
+    value: 'fileupload',
+    checked: false
+}, {
+    name: 'Breadcrumb',
+    value: 'breadcrumb',
+    checked: false
+}, {
+    name: 'ContextMenu',
+    value: 'contextmenu',
+    checked: false
+}, {
+    name: 'MegaMenu',
+    value: 'megamenu',
+    checked: false
+}, {
+    name: 'Menu',
+    value: 'menu',
+    checked: false
+}, {
+    name: 'MenuBar',
+    value: 'menubar',
+    checked: false
+}, {
+    name: 'PanelMenu',
+    value: 'panelmenu',
+    checked: false
+}, {
+    name: 'SlideMenu',
+    value: 'slidemenu',
+    checked: false
+}, {
+    name: 'Steps',
+    value: 'steps',
+    checked: false
+}, {
+    name: 'TabMenu',
+    value: 'TabMenu',
+    checked: false
+}, {
+    name: 'TieredMenu',
+    value: 'tieredmenu',
+    checked: false
+}, {
+    name: 'BarChart',
+    value: 'barchart',
+    checked: false
+}, {
+    name: 'DoughnutChart',
+    value: 'doughnutchart',
+    checked: false
+}, {
+    name: 'LineChart',
+    value: 'linechart',
+    checked: false
+}, {
+    name: 'PieChart',
+    value: 'piechart',
+    checked: false
+}, {
+    name: 'PolarAreaChart',
+    value: 'polarareachart',
+    checked: false
+}, {
+    name: 'RadarChart',
+    value: 'radarchart',
+    checked: false
+}, {
+    name: 'Growl',
+    value: 'growl',
+    checked: false
+}, {
+    name: 'Messages',
+    value: 'messages',
+    checked: false
+}, {
+    name: 'Galleria',
+    value: 'galleria',
+    checked: false
+}, {
+    name: 'DragDrop',
+    value: 'dragdrop',
+    checked: false
+}, {
+    name: 'BlockUI',
+    value: 'blockui',
+    checked: false
+}, {
+    name: 'Captcha',
+    value: 'captcha',
+    checked: false
+}, {
+    name: 'Defer',
+    value: 'defer',
+    checked: false
+}, {
+    name: 'Inplace',
+    value: 'inplace',
+    checked: false
+}, {
+    name: 'ProgressBar',
+    value: 'progressbar',
+    checked: false
+}, {
+    name: 'RTL',
+    value: 'rtl',
+    checked: false
+}, {
+    name: 'Terminal',
+    value: 'terminal',
+    checked: false
+}, {
+    name: 'Validation',
+    value: 'validation',
     checked: false
 }
 ];
@@ -607,10 +914,29 @@ module.exports = JhipsterGenerator.extend({
                 default: 'omega'
             },
             {
+                type: 'list',
+                name: 'selectionCriteria',
+                message: 'What is the preferred selection criteria',
+                choices: [{ name: 'Component Groups', value: 'group' }, { name: 'Individual Components', value: 'component' }],
+                default: 'group'
+            },
+            {
                 type: 'checkbox',
                 name: 'componentGroups',
+                message: 'Which component groups you would like to include?',
+                choices: COMPONENT_GROUP_CHOICE_LIST,
+                when(response) {
+                    return response.selectionCriteria === 'group';
+                }
+            },
+            {
+                type: 'checkbox',
+                name: 'componentList',
                 message: 'Which components you would like to include?',
                 choices: COMPONENT_CHOICE_LIST,
+                when(response) {
+                    return response.selectionCriteria === 'component';
+                }
             }
         ];
 
@@ -629,6 +955,7 @@ module.exports = JhipsterGenerator.extend({
 
         themeName = this.props.theme;
         this.categories = this.props.componentGroups;
+        this.componentList = this.props.componentList;
 
         // function to use directly template
         this.template = function (source, destination) {
@@ -777,524 +1104,557 @@ module.exports = JhipsterGenerator.extend({
             this.log(`${chalk.yellow.bold(`  ${this.angular2AppName}primengModule,`)}\n`);
             this.anyError = true;
         }
-
-        this.inputComponents = `
-                   <hr/>
-                   <span style="font-weight:bold">Input Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
+        this.inputComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputtext" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inputtext">InputText</span>
                         </a>
-                    </li>
-                    <li uiSrefActive="active">
+                    </li>`;
+        this.inputtextareaComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputtextarea" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inputtextarea">InputTextArea</span>
                         </a>
-                    </li>
-                   <li uiSrefActive="active">
+                    </li>`;
+        this.inputgroupComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inputgroup">InputGroup</span>
                         </a>
-                    </li>
-                    <li uiSrefActive="active">
+                    </li>`;
+        this.calendarComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="calendar" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.calendar">Calendar</span>
                         </a>
-                    </li>
-                    <li uiSrefActive="active">
+                    </li>`;
+        this.chipsComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="chips" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.chips">Chips</span>
                         </a>
-                    </li>
-                   <li uiSrefActive="active">
+                    </li>`;
+        this.inputswitchComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputswitch" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inputswitch">InputSwitch</span>
                         </a>
-                    </li>
-                    <li uiSrefActive="active">
+                    </li>`;
+        this.inputmaskComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="inputmask" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.inputmask">InputMask</span>
                         </a>
-                    </li>
-                    <li uiSrefActive="active">
+                    </li>`;
+        this.passwordindicatorComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="passwordindicator" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.passwordindicator">Password Indicator</span>
                         </a>
-                    </li>
-                   <li uiSrefActive="active">
+                    </li>`;
+        this.ratingComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="rating" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.rating">Rating</span>
                         </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="spinner" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.spinner">Spinner</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="togglebutton" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.togglebutton">ToggleButton</span>
-                        </a>
-                    </li>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="autocomplete" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.autocomplete">AutoComplete</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="checkbox" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.checkbox">Checkbox&TrieCheckbox</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="colorpicker" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.colorpicker">ColorPicker</span>
-                        </a>
-                    </li>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="editor" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.editor">Editor</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="listbox" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.listbox">Listbox</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="select" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.select">MultiSelect&Dropdown</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="radiobutton" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.radiobutton">RadioButton</span>
-                        </a>
-                    </li>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="slider" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.slider">Slider</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="selectbutton" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.selectbutton">SelectButton</span>
-                        </a>
                     </li>`;
 
-        this.messageComponents = `
-                   <hr/>
-                   <span style="font-weight:bold">Messages Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
+        this.spinnerComponent = `<li uiSrefActive="active">
+                                    <a class="dropdown-item" routerLink="spinner" routerLinkActive="active" (click)="collapseNavbar()">
+                                        <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                                        <span jhiTranslate="global.menu.primeng.spinner">Spinner</span>
+                                    </a>
+                                 </li>`;
+        this.togglebuttonComponent = `<li uiSrefActive="active">
+                                        <a class="dropdown-item" routerLink="togglebutton" routerLinkActive="active" (click)="collapseNavbar()">
+                                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                                            <span jhiTranslate="global.menu.primeng.togglebutton">ToggleButton</span>
+                                        </a>
+                                      </li>`;
+        this.autocompleteComponent = `<li uiSrefActive="active">
+                                        <a class="dropdown-item" routerLink="autocomplete" routerLinkActive="active" (click)="collapseNavbar()">
+                                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                                            <span jhiTranslate="global.menu.primeng.autocomplete">AutoComplete</span>
+                                        </a>
+                                      </li>`;
+        this.checkboxComponent = `<li uiSrefActive="active">
+                                    <a class="dropdown-item" routerLink="checkbox" routerLinkActive="active" (click)="collapseNavbar()">
+                                        <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                                        <span jhiTranslate="global.menu.primeng.checkbox">Checkbox&TrieCheckbox</span>
+                                    </a>
+                                  </li>`;
+        this.colorpickerComponent = `<li uiSrefActive="active">
+                                        <a class="dropdown-item" routerLink="colorpicker" routerLinkActive="active" (click)="collapseNavbar()">
+                                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                                            <span jhiTranslate="global.menu.primeng.colorpicker">ColorPicker</span>
+                                        </a>
+                                     </li>`;
+        this.editorComponent = `<li uiSrefActive="active">
+                                        <a class="dropdown-item" routerLink="editor" routerLinkActive="active" (click)="collapseNavbar()">
+                                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                                            <span jhiTranslate="global.menu.primeng.editor">Editor</span>
+                                        </a>
+                                </li>`;
+        this.listboxComponent = `<li uiSrefActive="active">
+                                    <a class="dropdown-item" routerLink="listbox" routerLinkActive="active" (click)="collapseNavbar()">
+                                        <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                                        <span jhiTranslate="global.menu.primeng.listbox">Listbox</span>
+                                    </a>
+                                 </li>`;
+        this.selectComponent = `<li uiSrefActive="active">
+                                    <a class="dropdown-item" routerLink="select" routerLinkActive="active" (click)="collapseNavbar()">
+                                        <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                                        <span jhiTranslate="global.menu.primeng.select">MultiSelect&Dropdown</span>
+                                    </a>
+                                </li>`;
+        this.radiobuttonComponent = `<li uiSrefActive="active">
+                                        <a class="dropdown-item" routerLink="radiobutton" routerLinkActive="active" (click)="collapseNavbar()">
+                                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                                            <span jhiTranslate="global.menu.primeng.radiobutton">RadioButton</span>
+                                        </a>
+                                     </li>`;
+        this.sliderComponent = `<li uiSrefActive="active">
+                                    <a class="dropdown-item" routerLink="slider" routerLinkActive="active" (click)="collapseNavbar()">
+                                        <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                                        <span jhiTranslate="global.menu.primeng.slider">Slider</span>
+                                    </a>
+                                </li>`;
+        this.selectbuttonComponent = `<li uiSrefActive="active">
+                                        <a class="dropdown-item" routerLink="selectbutton" routerLinkActive="active" (click)="collapseNavbar()">
+                                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                                            <span jhiTranslate="global.menu.primeng.selectbutton">SelectButton</span>
+                                        </a>
+                                      </li>`;
+        this.messageComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="messages" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.messages">Messages</span>
                         </a>
-                    </li>
-                    <li uiSrefActive="active">
+                    </li>`;
+        this.growlComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="growl" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.growl">Growl</span>
                         </a>
                     </li>`;
-
-        this.multimediaComponents = `
-                   <hr/>
-                    <span style="font-weight:bold">Multimedia Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
+        this.galleriaComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="galleria" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.galleria">Galleria</span>
                         </a>
                     </li>`;
-
-        this.fileuploadComponents = `
-                   <hr/>
-                    <span style="font-weight:bold">File Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
+        this.fileuploadComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="fileupload" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.fileupload">FileUpload</span>
                         </a>
                     </li>`;
-
-        this.dataComponents = `
-                   <hr/>
-                   <span style="font-weight:bold">Data Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
+        this.carouselComponent = `<li uiSrefActive="active" style="pointer-events: none;">
+            <a class="dropdown-item" routerLink="carousel" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.carousel">Carousel</span>
+            </a>
+            </li>`;
+        this.datatableComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="datatable" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.datatable">Datatable</span>
                         </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="datagrid" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.datagrid">Datagrid</span>
-                        </a>
-                    </li>
-                   <li uiSrefActive="active" style="pointer-events: none;">
-                        <a class="dropdown-item" routerLink="carousel" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.carousel">Carousel</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="orderlist" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.orderlist">OrderList</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="datalist" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.datalist">DataList</span>
-                        </a>
-                    </li>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="paginator" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.paginator">Paginator</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="schedule" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.schedule">Schedule</span>
-                        </a>
-                    </li>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="datascroller" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.datascroller">DataScroller</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="orgchart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.orgchart">OrgChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="gmap" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.gmap">Gmap</span>
-                        </a>
-                    </li>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="picklist" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.picklist">PickList</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="tree" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.tree">Tree</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="treetable" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.treetable">TreeTable</span>
-                        </a>
                     </li>`;
-        this.dragdropComponents = `
-                   <hr/>
-                    <span style="font-weight:bold">Dragdrop Components</span>
-                   <hr/>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="dragdrop" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.dragdrop">DragDrop</span>
-                        </a>
-                    </li>`;
-
-        this.menuComponents = `
-            <hr/>
-            <span style="font-weight:bold">Menu Components</span>
-        <hr/>
-        <li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="menu" routerLinkActive="active" (click)="collapseNavbar()">
+        this.datagridComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="datagrid" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-            <span jhiTranslate="global.menu.primeng.menu">Menu</span>
+            <span jhiTranslate="global.menu.primeng.datagrid">Datagrid</span>
             </a>
-            </li>
-            <li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="contextmenu" routerLinkActive="active" (click)="collapseNavbar()">
+            </li>`;
+        this.orderlistComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="orderlist" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-            <span jhiTranslate="global.menu.primeng.contextmenu">Contextmenu</span>
+            <span jhiTranslate="global.menu.primeng.orderlist">OrderList</span>
             </a>
-            </li>
-            <li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="panelmenu" routerLinkActive="active" (click)="collapseNavbar()">
+            </li>`;
+        this.datalistComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="datalist" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-            <span jhiTranslate="global.menu.primeng.panelmenu">Panelmenu</span>
+            <span jhiTranslate="global.menu.primeng.datalist">DataList</span>
             </a>
-            </li>
-            <li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="steps" routerLinkActive="active" (click)="collapseNavbar()">
+            </li>`;
+        this.paginatorComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="paginator" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-            <span jhiTranslate="global.menu.primeng.steps">Steps</span>
+            <span jhiTranslate="global.menu.primeng.paginator">Paginator</span>
             </a>
-            </li>
-            <li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="tieredmenu" routerLinkActive="active" (click)="collapseNavbar()">
+            </li>`;
+        this.scheduleComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="schedule" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-            <span jhiTranslate="global.menu.primeng.tieredmenu">Tieredmenu</span>
+            <span jhiTranslate="global.menu.primeng.schedule">Schedule</span>
             </a>
-            </li>
-            <li uiSrefActive="active">
+            </li>`;
+        this.datascrollerComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="datascroller" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.datascroller">DataScroller</span>
+            </a>
+            </li>`;
+        this.orgchartComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="orgchart" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.orgchart">OrgChart</span>
+            </a>
+            </li>`;
+        this.gmapComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="gmap" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.gmap">Gmap</span>
+            </a>
+            </li>`;
+        this.picklistComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="picklist" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.picklist">PickList</span>
+            </a>
+            </li>`;
+        this.treeComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="tree" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.tree">Tree</span>
+            </a>
+            </li>`;
+        this.treetableComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="treetable" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.treetable">TreeTable</span>
+            </a>
+            </li>`;
+        this.accordionComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="accordion" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.accordion">Accordion</span>
+            </a>
+            </li>`;
+        this.fieldsetComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="fieldset" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.fieldset">Fieldset</span>
+            </a>
+            </li>`;
+        this.gridComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="grid" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.grid">grid</span>
+            </a>
+            </li>`;
+        this.panelComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="panel" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.panel">Panel</span>
+            </a>
+            </li>`;
+        this.tabviewComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="tabview" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.tabview">TabView</span>
+            </a>
+            </li>`;
+        this.toolbarComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="toolbar" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.toolbar">ToolBar</span>
+            </a>
+            </li>`;
+        this.breadcrumbComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="breadcrumb" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.breadcrumb">Breadcrumb</span>
             </a>
-            </li>
-            <li uiSrefActive="active">
+            </li>`;
+        this.contextmenuComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="contextmenu" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.contextmenu">Contextmenu</span>
+            </a>
+            </li>`;
+        this.megamenuComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="megamenu" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.megamenu">Megamenu</span>
             </a>
-            </li>
-            <li uiSrefActive="active">
+            </li>`;
+        this.menuComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="menu" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.menu">Menu</span>
+            </a>
+            </li>`;
+        this.menubarComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="menubar" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.menubar">Menubar</span>
             </a>
-            </li>
-            <li uiSrefActive="active">
+            </li>`;
+        this.panelmenuComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="panelmenu" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.panelmenu">Panelmenu</span>
+            </a>
+            </li>`;
+        this.slidemenuComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="slidemenu" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.slidemenu">Slidemenu</span>
             </a>
-            </li>
-            <li uiSrefActive="active">
+            </li>`;
+        this.stepsComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="steps" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.steps">Steps</span>
+            </a>
+            </li>`;
+        this.tabmenuComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="tabmenu" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.tabmenu">Tabmenu</span>
             </a>
             </li>`;
+        this.tieredmenuComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="tieredmenu" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.tieredmenu">Tieredmenu</span>
+            </a>
+            </li>`;
+        this.confirmdialogComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="confirmdialog" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.confirmdialog">ConfirmDialog</span>
+            </a>
+            </li>`;
+        this.dialogComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="dialog" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.dialog">Dialog</span>
+            </a>
+            </li>`;
+        this.lightboxComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="lightbox" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.lightbox">Lightbox</span>
+            </a>
+            </li>`;
+        this.overlaypanelComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="overlaypanel" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.overlaypanel">OverlayPanel</span>
+            </a>
+            </li>`;
+        this.sidebarComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="sidebar" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.sidebar">SideBar</span>
+            </a>
+            </li>`;
+        this.tooltipComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="tooltip" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.tooltip">Tooltip</span>
+            </a>
+            </li>`;
+        this.dragdropComponent = `<li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="dragdrop" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.dragdrop">DragDrop</span>
+                        </a>
+                    </li>`;
+        this.buttonComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.button">Button</span>
+            </a>
+            </li>`;
+        this.splitbuttonComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="splitbutton" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.splitbutton">SplitButton</span>
+            </a>
+            </li>`;
+        this.barchartComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="barchart" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.barchart">BarChart</span>
+            </a>
+            </li>`;
+        this.doughnutchartComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="doughnutchart" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.doughnutchart">DoughnutChart</span>
+            </a>
+            </li>`;
+        this.linechartComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="linechart" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-line-chart" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.linechart">LineChart</span>
+            </a>
+            </li>`;
+        this.piechartComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="piechart" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-pie-chart" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.piechart">PieChart</span>
+            </a>
+            </li>`;
+        this.polarareachartComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="polarareachart" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.polarareachart">PolarAreaChart</span>
+            </a>
+            </li>`;
+        this.radarchartComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="radarchart" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.radarchart">RadarChart</span>
+            </a>
+            </li>`;
+        this.blockuiComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="blockui" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.blockui">BlockUI</span>
+            </a>
+            </li>`;
+        this.captchaComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="captcha" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.captcha">Captcha</span>
+            </a>
+            </li>`;
+        this.deferComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="defer" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.defer">Defer</span>
+            </a>
+            </li>`;
+        this.inplaceComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="inplace" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.inplace">Inplace</span>
+            </a>
+            </li>`;
+        this.progressbarComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="progressbar" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
+            </a>
+            </li>`;
+        this.rtlComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="rtl" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.rtl">RTL</span>
+            </a>
+            </li>`;
+        this.terminalComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="terminal" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.terminal">Terminal</span>
+            </a>
+            </li>`;
+        this.validationComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="validation" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.validation">Validation</span>
+            </a>
+            </li>`;
+
+
+        this.inputComponents = `
+                   <hr/>
+                   <span style="font-weight:bold">Input Components</span>
+                   <hr/> ${this.autocompleteComponent}${this.calendarComponent}${this.checkboxComponent}${this.chipsComponent}${this.colorpickerComponent}${this.editorComponent}${this.inputgroupComponent}${this.inputmaskComponent}${this.inputswitchComponent}${this.inputComponent}${this.inputtextareaComponent}${this.listboxComponent}${this.passwordindicatorComponent}${this.radiobuttonComponent}${this.ratingComponent}${this.selectComponent}${this.selectbuttonComponent}${this.sliderComponent}${this.spinnerComponent}${this.togglebuttonComponent}`;
+
+
+        this.messageComponents = `
+                   <hr/>
+                   <span style="font-weight:bold">Messages Components</span>
+                   <hr/> ${
+                    this.messageComponent}${this.growlComponent}`;
+
+
+        this.multimediaComponents = `
+                   <hr/>
+                    <span style="font-weight:bold">Multimedia Components</span>
+                   <hr/>
+                   ${this.galleriaComponent}`;
+
+        this.fileuploadComponents = `
+                   <hr/>
+                    <span style="font-weight:bold">File Components</span>
+                   <hr/>
+                   ${this.fileuploadComponent}`;
+
+        this.dataComponents = `
+                   <hr/>
+                   <span style="font-weight:bold">Data Components</span>
+                   <hr/>
+                    ${this.carouselComponent}${this.datagridComponent}${this.datalistComponent}${this.datascrollerComponent}${this.datatableComponent}${this.gmapComponent}${this.orderlistComponent}${this.orgchartComponent}${this.paginatorComponent}${this.picklistComponent}${this.scheduleComponent}${this.treeComponent}${this.treetableComponent}`;
+        this.dragdropComponents = `
+                   <hr/>
+                    <span style="font-weight:bold">Dragdrop Components</span>
+                   <hr/>
+                    ${this.dragdropComponent}`;
+
+        this.menuComponents = `
+            <hr/>
+            <span style="font-weight:bold">Menu Components</span>
+        <hr/>${this.breadcrumbComponent}${this.contextmenuComponent}${this.megamenuComponent}${this.menuComponent}${this.menubarComponent}${this.panelmenuComponent}${this.slidemenuComponent}${this.stepsComponent}${this.tabmenuComponent}${this.tieredmenuComponent}`;
 
         this.overlayComponents = `
                    <hr/>
                     <span style="font-weight:bold">Overlay Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="dialog" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.dialog">Dialog</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="confirmdialog" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.confirmdialog">ConfirmDialog</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="lightbox" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.lightbox">Lightbox</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="overlaypanel" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.overlaypanel">OverlayPanel</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="tooltip" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.tooltip">Tooltip</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="sidebar" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.sidebar">SideBar</span>
-                        </a>
-                    </li>`;
+                   <hr/>${this.confirmdialogComponent}${this.dialogComponent}${this.lightboxComponent}${this.overlaypanelComponent}${this.sidebarComponent}${this.tooltipComponent}`;
         this.panelComponents = `
                    <hr/>
                     <span style="font-weight:bold">Panel Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="accordion" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.accordion">Accordion</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="panel" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.panel">Panel</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="tabview" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.tabview">TabView</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="fieldset" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.fieldset">Fieldset</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="grid" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.grid">grid</span>
-                        </a>
-                    </li>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="toolbar" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.toolbar">ToolBar</span>
-                        </a>
-                    </li>`;
+                   <hr/>${this.accordionComponent}${this.fieldsetComponent}${this.gridComponent}${this.panelComponent}${this.tabviewComponent}${this.toolbarComponent}`;
         this.buttonComponents = `
                    <hr/>
                    <span style="font-weight:bold">Button Components</span>
-                   <hr/>
-                   <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.button">Button</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="splitbutton" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.splitbutton">SplitButton</span>
-                        </a>
-                    </li>`;
+                   <hr/>${this.buttonComponent}${this.splitbuttonComponent}`;
         this.chartComponents = `
                    <hr/>
                    <span style="font-weight:bold">Chart Components</span>
-                   <hr/>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="barchart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.barchart">BarChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="doughnutchart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o-notch" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.doughnutchart">BarChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="linechart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-line-chart" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.linechart">LineChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="piechart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-pie-chart" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.piechart">PieChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="polarareachart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.polarareachart">PolarAreaChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="radarchart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.radarchart">RadarChart</span>
-                        </a>
-                    </li>`;
+                   <hr/>${this.barchartComponent}${this.doughnutchartComponent}${this.linechartComponent}${this.piechartComponent}${this.polarareachartComponent}${this.radarchartComponent}`;
         this.miscComponents = `
                    <hr/>
                     <span style="font-weight:bold">Miscellaneous Components</span>
-                   <hr/>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="validation" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.validation">Validation</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="captcha" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.captcha">Captcha</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="defer" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.defer">Defer</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="rtl" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.rtl">RTL</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="blockui" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.blockui">BlockUI</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="terminal" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.terminal">Terminal</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="inplace" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.inplace">Inplace</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="progressbar" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.progressbar">ProgressBar</span>
-                        </a>
-                    </li>`;
+                   <hr/>${this.blockuiComponent}${this.captchaComponent}${this.deferComponent}${this.inplaceComponent}${this.progressbarComponent}${this.rtlComponent}${this.terminalComponent}${this.validationComponent}`;
         if (this.categories) {
             this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
                 (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('fileupload') > -1 ? this.fileuploadComponents : '') +
                 (this.categories.indexOf('charts') > -1 ? this.chartComponents : '') + (this.categories.indexOf('menu') > -1 ? this.menuComponents : '') + (this.categories.indexOf('messages') > -1 ? this.messageComponents : '') +
                 (this.categories.indexOf('overlay') > -1 ? this.overlayComponents : '') + (this.categories.indexOf('multimedia') > -1 ? this.multimediaComponents : '') + (this.categories.indexOf('misc') > -1 ? this.miscComponents : '');
         } else {
-            this.componentGroups = '';
+            this.componentGroups = (this.componentList.indexOf('autocomplete') > -1 ? this.autocompleteComponent : '') + (this.componentList.indexOf('calendar') > -1 ? this.calendarComponent : '') + (this.componentList.indexOf('checkbox') > -1 ? this.chipsComponent : '') + (this.componentList.indexOf('colorpicker') > -1 ? this.colorpickerComponent : '') +
+                (this.componentList.indexOf('editor') > -1 ? this.editorComponent : '') + (this.componentList.indexOf('inputgroup') > -1 ? this.inputgroupComponent : '') + (this.componentList.indexOf('inputmask') > -1 ? this.inputmaskComponent : '') +
+                (this.componentList.indexOf('inputswitch') > -1 ? this.inputswitchComponent : '') + (this.componentList.indexOf('inputtext') > -1 ? this.inputComponent : '') + (this.componentList.indexOf('inputtextarea') > -1 ? this.inputtextareaComponent : '') +
+                (this.componentList.indexOf('listbox') > -1 ? this.listboxComponent : '') + (this.componentList.indexOf('passwordindicator') > -1 ? this.passwordindicatorComponent : '') + (this.componentList.indexOf('radiobutton') > -1 ? this.radiobuttonComponent : '') +
+                (this.componentList.indexOf('rating') > -1 ? this.ratingComponent : '') + (this.componentList.indexOf('select') > -1 ? this.selectComponent : '') + (this.componentList.indexOf('selectbutton') > -1 ? this.selectbuttonComponent : '') +
+                (this.componentList.indexOf('slider') > -1 ? this.sliderComponent : '') + (this.componentList.indexOf('spinner') > -1 ? this.spinnerComponent : '') + (this.componentList.indexOf('togglebutton') > -1 ? this.togglebuttonComponent : '') +
+                (this.componentList.indexOf('button') > -1 ? this.buttonComponent : '') + (this.componentList.indexOf('splitbutton') > -1 ? this.splitbuttonComponent : '') + (this.componentList.indexOf('carousel') > -1 ? this.carouselComponent : '') +
+                (this.componentList.indexOf('datagrid') > -1 ? this.datagridComponent : '') + (this.componentList.indexOf('datalist') > -1 ? this.datalistComponent : '') + (this.componentList.indexOf('datascroller') > -1 ? this.datascrollerComponent : '') +
+                (this.componentList.indexOf('datatable') > -1 ? this.datatableComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
+                (this.componentList.indexOf('paginator') > -1 ? this.paginatorComponent : '') + (this.componentList.indexOf('picklist') > -1 ? this.picklistComponent : '') + (this.componentList.indexOf('schedule') > -1 ? this.scheduleComponent : '') +
+                (this.componentList.indexOf('tree') > -1 ? this.treeComponent : '') + (this.componentList.indexOf('treetable') > -1 ? this.treetableComponent : '') + (this.componentList.indexOf('accordion') > -1 ? this.accordionComponent : '') +
+                (this.componentList.indexOf('fieldset') > -1 ? this.fieldsetComponent : '') + (this.componentList.indexOf('grid') > -1 ? this.gridComponent : '') + (this.componentList.indexOf('panel') > -1 ? this.panelComponent : '') +
+                (this.componentList.indexOf('tabview') > -1 ? this.tabviewComponent : '') + (this.componentList.indexOf('toolbar') > -1 ? this.toolbarComponent : '') + (this.componentList.indexOf('confirmdialog') > -1 ? this.confirmdialogComponent : '') +
+                (this.componentList.indexOf('dialog') > -1 ? this.dialogComponent : '') + (this.componentList.indexOf('lightbox') > -1 ? this.lightboxComponent : '') + (this.componentList.indexOf('overlaypanel') > -1 ? this.overlaypanelComponent : '') +
+                (this.componentList.indexOf('sidebar') > -1 ? this.sidebarComponent : '') + (this.componentList.indexOf('tooltip') > -1 ? this.tooltipComponent : '') + (this.componentList.indexOf('fileupload') > -1 ? this.fileuploadComponent : '') +
+                (this.componentList.indexOf('breadcrumb') > -1 ? this.breadcrumbComponent : '') + (this.componentList.indexOf('contextmenu') > -1 ? this.contextmenuComponent : '') +
+                (this.componentList.indexOf('megamenu') > -1 ? this.megamenuComponent : '') + (this.componentList.indexOf('menu') > -1 ? this.menuComponent : '') + (this.componentList.indexOf('menubar') > -1 ? this.menubarComponent : '') +
+                (this.componentList.indexOf('panelmenu') > -1 ? this.panelmenuComponent : '') + (this.componentList.indexOf('slidemenu') > -1 ? this.slidemenuComponent : '') + (this.componentList.indexOf('steps') > -1 ? this.stepsComponent : '') + (this.componentList.indexOf('tabmenu') > -1 ? this.tabmenuComponent : '') +
+                (this.componentList.indexOf('tieredmenu') > -1 ? this.tieredmenuComponent : '') + (this.componentList.indexOf('barchart') > -1 ? this.barchartComponent : '') + (this.componentList.indexOf('doughnutchart') > -1 ? this.doughnutchartComponent : '') +
+                (this.componentList.indexOf('linechart') > -1 ? this.linechartComponent : '') + (this.componentList.indexOf('piechart') > -1 ? this.piechartComponent : '') + (this.componentList.indexOf('polarareachart') > -1 ? this.polarareachartComponent : '') +
+                (this.componentList.indexOf('radarchart') > -1 ? this.radarchartComponent : '') + (this.componentList.indexOf('growl') > -1 ? this.growlComponent : '') + (this.componentList.indexOf('messages') > -1 ? this.messageComponent : '') +
+                (this.componentList.indexOf('galleria') > -1 ? this.galleriaComponent : '') + (this.componentList.indexOf('dragdrop') > -1 ? this.dragdropComponent : '') + (this.componentList.indexOf('blockui') > -1 ? this.blockuiComponent : '') +
+                (this.componentList.indexOf('captcha') > -1 ? this.captchaComponent : '') + (this.componentList.indexOf('defer') > -1 ? this.deferComponent : '') + (this.componentList.indexOf('inplace') > -1 ? this.inplaceComponent : '') +
+                (this.componentList.indexOf('progressbar') > -1 ? this.progressbarComponent : '') + (this.componentList.indexOf('rtl') > -1 ? this.rtlComponent : '') + (this.componentList.indexOf('terminal') > -1 ? this.terminalComponent : '') +
+                (this.componentList.indexOf('validation') > -1 ? this.validationComponent : '');
         }
         // add element to menu
         let primengMenu;
