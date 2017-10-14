@@ -510,7 +510,7 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/charts/radarchart/radarchartdemo.module.ts',
         'src/main/webapp/app/primeng/charts/radarchart/radarchartdemo.route.ts',
 
-        'src/main/webapp/assets/data/json/browsers/browsers.json',
+        /*'src/main/webapp/assets/data/json/browsers/browsers.json',
         'src/main/webapp/assets/data/json/cities/cities.json',
         'src/main/webapp/assets/data/json/countries/countries.json',
         'src/main/webapp/assets/data/json/documents/documents.json',
@@ -548,7 +548,7 @@ const expectedFiles = {
         'src/main/webapp/assets/data/images/logos/primefaces.png',
         'src/main/webapp/assets/data/images/logos/primeng.png',
         'src/main/webapp/assets/data/images/logos/primereact.png',
-        'src/main/webapp/assets/data/images/logos/primeui.png',
+        'src/main/webapp/assets/data/images/logos/primeui.png',*/
 
     ],
     translation: [
