@@ -43,4 +43,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class TestBlockUIDemoModule {}
+export class <%= angular2AppName %>BlockUIDemoModule {} {}
