@@ -1,18 +1,18 @@
 <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
     <!-- Basic -->
     <pe-step label="Basic" [styleClass]="'container-format'">
-        <p-contextMenu [global]="true" [model]="documentItems"></p-contextMenu>
+        <p-contextMenu [global]="true" [model]="documentItems" appendTo="body"></p-contextMenu>
     </pe-step>
     <!-- Customization -->
     <pe-step label="Customization">
-        <p-contextMenu [target]="image" [model]="targetItems"></p-contextMenu>
+        <p-contextMenu [target]="image" [model]="targetItems" appendTo="body"></p-contextMenu>
         <img #image src="/content/primeng/assets/data/images/logos/primeng.png" alt="Logo">
     </pe-step>
 
     <!-- DataTable Integration-->
 
     <pe-step label="DataTable Integration">
-        <p-contextMenu #contextmenu [model]="tableItems"></p-contextMenu>
+        <p-contextMenu #contextmenu [model]="tableItems" appendTo="body"></p-contextMenu>
         <p-dataTable [value]="employees" selectionMode="single" [(selection)]="selectedEmployee" [contextMenu]="contextmenu">
             <p-header>Employee Information</p-header>
             <p-column field="id" header="Employee ID"></p-column>

@@ -3,7 +3,7 @@
         <!-- Basic -->
         <pe-step label="Basic">
             <p>View PrimeNG Logo</p>
-            <p-overlayPanel #overlaybasic>
+            <p-overlayPanel #overlaybasic appendTo="body">
                 <img src="/content/primeng/assets/data/images/logos/primeng.png" alt="PrimeNG Logo" />
             </p-overlayPanel>
             <button type="button" pButton label="Logo" (click)="overlaybasic.toggle($event)"></button>
@@ -11,7 +11,7 @@
         <!-- Customization -->
         <pe-step label="Customization">
             <i class="fa fa-search" (mouseenter)="overlaycustom.show($event)" ></i>
-            <p-overlayPanel #overlaycustom [showCloseIcon]="true" [dismissable]="false">
+            <p-overlayPanel #overlaycustom [showCloseIcon]="true" [dismissable]="false" appendTo="body">
                 <iframe width="500" height="300" src="/content/primeng/assets/data/videos/ironman.mp4"  allowfullscreen></iframe>
             </p-overlayPanel>
 
@@ -30,7 +30,7 @@
                 <p-column field="scala" header="Scala"></p-column>
                 <p-column field="play" header="Play"></p-column>
             </p-dataTable>
-            <p-overlayPanel #overlayintegration>
+            <p-overlayPanel #overlayintegration appendTo="body">
                 Total marks: <span>{{marks}}</span> <br/>
                 Percentage: <span>{{percentage}}%</span>
             </p-overlayPanel>
@@ -39,7 +39,7 @@
 
         <!-- Events -->
         <pe-step label="Events">
-            <p-overlayPanel #overlayevents (onBeforeShow)="onBeforeShow()" (onAfterShow)="onAfterShow()" (onBeforeHide)="onBeforeHide()" (onAfterHide)="onAfterHide()">
+            <p-overlayPanel #overlayevents (onBeforeShow)="onBeforeShow()" (onAfterShow)="onAfterShow()" (onBeforeHide)="onBeforeHide()" (onAfterHide)="onAfterHide()" appendTo="body">
                 <img src="/content/primeng/assets/data/images/logos/primeng.png" alt="PrimeNG Logo" />
             </p-overlayPanel>
             <button type="button" pButton label="Logo" (click)="overlayevents.toggle($event)"></button>

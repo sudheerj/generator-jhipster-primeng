@@ -462,8 +462,8 @@
 
     <!-- DataTable Contextmenu Integration-->
     <pe-step label="DataTable + ContextMenu">
-        <p-contextMenu #contextmenu [model]="tableItems"></p-contextMenu>
-        <p-dataTable [value]="employees" selectionMode="single" [(selection)]="selectedEmployee"
+        <p-contextMenu #contextmenu [model]="tableItems" appendTo="body"></p-contextMenu>
+        <p-dataTable [value]="browsers" selectionMode="single" [(selection)]="selectedBrowser"
                      [contextMenu]="contextmenu">
             <p-header>Browser Information</p-header>
             <p-column field="engine" header="Engine"></p-column>
