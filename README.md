@@ -73,3 +73,5 @@ In your JHipster project, launch `yo jhipster-primeng` and confirm.
 [travis-url]: https://travis-ci.org/sudheerj/generator-jhipster-primeng
 [daviddm-image]: https://david-dm.org/sudheerj/generator-jhipster-primeng.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/sudheerj/generator-jhipster-module
+[coveralls-image]: https://coveralls.io/repos/sudheerj/generator-jhipster-primeng/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/sudheerj/generator-jhipster-primeng?branch=master
