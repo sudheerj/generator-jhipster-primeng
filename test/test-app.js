@@ -203,7 +203,6 @@ const expectedFiles = {
 
         'src/main/webapp/app/primeng/data/gmap/index.ts',
         'src/main/webapp/app/primeng/data/gmap/gmapdemo.component.html',
-        'src/main/webapp/app/primeng/data/gmap/gmapdemo.component.scss',
         'src/main/webapp/app/primeng/data/gmap/gmapdemo.component.ts',
         'src/main/webapp/app/primeng/data/gmap/gmapdemo.module.ts',
         'src/main/webapp/app/primeng/data/gmap/gmapdemo.route.ts',
