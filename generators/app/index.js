@@ -992,6 +992,7 @@ module.exports = JhipsterGenerator.extend({
 
         if (this.addExternalResourcesToRoot) {
             this.addExternalResourcesToRoot(`${primengRootResources}`, 'PrimeNG resources added here');
+            this.log(`${chalk.yellow('Add the resources in the head section of index.html file- ')} ${primengRootResources}`);
         } else {
             this.log(`${chalk.yellow('WARNING the function addExternalResourcesToRoot is missing, you need to add the missing resource path in the head section of index.html file:')}`);
             this.log(`${chalk.yellow('Add the resources- ')} ${primengRootResources}`);
