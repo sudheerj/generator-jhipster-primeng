@@ -189,46 +189,46 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         value: 'inputtext',
         checked: false
     }, {
-    name: 'InputTextarea',
-    value: 'inputtextarea',
-    checked: false
-}, {
-    name: 'ListBox',
-    value: 'listbox',
-    checked: false
-}, {
-    name: 'PasswordIndicator',
-    value: 'passwordindicator',
-    checked: false
-}, {
-    name: 'RadioButton',
-    value: 'radiobutton',
-    checked: false
-}, {
-    name: 'Rating',
-    value: 'rating',
-    checked: false
-}, {
-    name: 'Select',
-    value: 'select',
-    checked: false
-}, {
-    name: 'SelectButton',
-    value: 'selectbutton',
-    checked: false
-}, {
-    name: 'Slider',
-    value: 'slider',
-    checked: false
-}, {
-    name: 'Spinner',
-    value: 'spinner',
-    checked: false
-}, {
-    name: 'ToggleButton',
-    value: 'togglebutton',
-    checked: false
-}, new inquirer.Separator(' == Button Components == '), {
+        name: 'InputTextarea',
+        value: 'inputtextarea',
+        checked: false
+    }, {
+        name: 'ListBox',
+        value: 'listbox',
+        checked: false
+    }, {
+        name: 'PasswordIndicator',
+        value: 'passwordindicator',
+        checked: false
+    }, {
+        name: 'RadioButton',
+        value: 'radiobutton',
+        checked: false
+    }, {
+        name: 'Rating',
+        value: 'rating',
+        checked: false
+    }, {
+        name: 'Select',
+        value: 'select',
+        checked: false
+    }, {
+        name: 'SelectButton',
+        value: 'selectbutton',
+        checked: false
+    }, {
+        name: 'Slider',
+        value: 'slider',
+        checked: false
+    }, {
+        name: 'Spinner',
+        value: 'spinner',
+        checked: false
+    }, {
+        name: 'ToggleButton',
+        value: 'togglebutton',
+        checked: false
+    }, new inquirer.Separator(' == Button Components == '), {
     name: 'Button',
     value: 'button',
     checked: false
