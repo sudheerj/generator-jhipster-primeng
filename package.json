@@ -1,6 +1,6 @@
 {
   "name": "generator-jhipster-primeng",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Generate PrimeNG Components",
   "keywords": [
     "yeoman-generator",
@@ -30,7 +30,8 @@
     "mkdirp": "0.5.1",
     "semver": "5.3.0",
     "shelljs": "0.7.8",
-    "yeoman-generator": "1.1.1"
+    "yeoman-generator": "1.1.1",
+    "inquirer": "3.3.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
@@ -56,7 +57,8 @@
     "yeoman-test": "1.6.0"
   },
   "scripts": {
-    "test": "mocha test/* --timeout 500000"
+    "test": "mocha test/* --timeout 500000",
+    "lint": "eslint ."
   },
   "license": "Apache-2.0",
   "bugs": {

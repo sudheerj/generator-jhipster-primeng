@@ -5,6 +5,7 @@ const packagejs = require('../../package.json');
 const semver = require('semver');
 const shelljs = require('shelljs');
 const fs = require('fs');
+const inquirer = require('inquirer');
 const BaseGenerator = require('generator-jhipster/generators/generator-base');
 const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
 
@@ -146,47 +147,48 @@ const COMPONENT_GROUP_CHOICE_LIST = [{
 }
 ];
 
-const COMPONENT_CHOICE_LIST = [{
-    name: 'AutoComplete',
-    value: 'autocomplete',
-    checked: true
-}, {
-    name: 'Calendar',
-    value: 'calendar',
-    checked: false
-}, {
-    name: 'Checkbox',
-    value: 'checkbox',
-    checked: false
-}, {
-    name: 'Chips',
-    value: 'chips',
-    checked: false
-}, {
-    name: 'ColorPicker',
-    value: 'colorpicker',
-    checked: false
-}, {
-    name: 'Editor',
-    value: 'editor',
-    checked: false
-}, {
-    name: 'InputGroup',
-    value: 'inputgroup',
-    checked: false
-}, {
-    name: 'InputMask',
-    value: 'inputmask',
-    checked: false
-}, {
-    name: 'InputSwitch',
-    value: 'inputswitch',
-    checked: false
-}, {
-    name: 'InputText',
-    value: 'inputtext',
-    checked: false
-}, {
+const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Inputs == '),
+    {
+        name: 'AutoComplete',
+        value: 'autocomplete',
+        checked: true
+    }, {
+        name: 'Calendar',
+        value: 'calendar',
+        checked: false
+    }, {
+        name: 'Checkbox',
+        value: 'checkbox',
+        checked: false
+    }, {
+        name: 'Chips',
+        value: 'chips',
+        checked: false
+    }, {
+        name: 'ColorPicker',
+        value: 'colorpicker',
+        checked: false
+    }, {
+        name: 'Editor',
+        value: 'editor',
+        checked: false
+    }, {
+        name: 'InputGroup',
+        value: 'inputgroup',
+        checked: false
+    }, {
+        name: 'InputMask',
+        value: 'inputmask',
+        checked: false
+    }, {
+        name: 'InputSwitch',
+        value: 'inputswitch',
+        checked: false
+    }, {
+        name: 'InputText',
+        value: 'inputtext',
+        checked: false
+    }, {
     name: 'InputTextarea',
     value: 'inputtextarea',
     checked: false
@@ -226,7 +228,7 @@ const COMPONENT_CHOICE_LIST = [{
     name: 'ToggleButton',
     value: 'togglebutton',
     checked: false
-}, {
+}, new inquirer.Separator(' == Buttons == '), {
     name: 'Button',
     value: 'button',
     checked: false
@@ -234,7 +236,7 @@ const COMPONENT_CHOICE_LIST = [{
     name: 'SplitButton',
     value: 'splitbutton',
     checked: false
-}, {
+}, new inquirer.Separator(' == Data == '), {
     name: 'Carousel',
     value: 'carousel',
     checked: false
@@ -286,7 +288,7 @@ const COMPONENT_CHOICE_LIST = [{
     name: 'TreeTable',
     value: 'treetable',
     checked: false
-}, {
+}, new inquirer.Separator(' == Panel == '), {
     name: 'Accordion',
     value: 'accordion',
     checked: false
@@ -310,7 +312,7 @@ const COMPONENT_CHOICE_LIST = [{
     name: 'Toolbar',
     value: 'toolbar',
     checked: false
-}, {
+}, new inquirer.Separator(' == Overlays == '), {
     name: 'ConfirmDialog',
     value: 'confirmdialog',
     checked: false
@@ -334,11 +336,11 @@ const COMPONENT_CHOICE_LIST = [{
     name: 'Tooltip',
     value: 'tooltip',
     checked: false
-}, {
+}, new inquirer.Separator(' == FileUpload == '), {
     name: 'Fileupload',
     value: 'fileupload',
     checked: false
-}, {
+}, new inquirer.Separator(' == Menus == '), {
     name: 'Breadcrumb',
     value: 'breadcrumb',
     checked: false
@@ -378,7 +380,7 @@ const COMPONENT_CHOICE_LIST = [{
     name: 'TieredMenu',
     value: 'tieredmenu',
     checked: false
-}, {
+}, new inquirer.Separator(' == Charts == '), {
     name: 'BarChart',
     value: 'barchart',
     checked: false
@@ -402,7 +404,7 @@ const COMPONENT_CHOICE_LIST = [{
     name: 'RadarChart',
     value: 'radarchart',
     checked: false
-}, {
+}, new inquirer.Separator(' == Messages == '), {
     name: 'Growl',
     value: 'growl',
     checked: false
@@ -410,15 +412,15 @@ const COMPONENT_CHOICE_LIST = [{
     name: 'Messages',
     value: 'messages',
     checked: false
-}, {
+}, new inquirer.Separator(' == Multimedia == '), {
     name: 'Galleria',
     value: 'galleria',
     checked: false
-}, {
+}, new inquirer.Separator(' == Drag&Drop == '), {
     name: 'DragDrop',
     value: 'dragdrop',
     checked: false
-}, {
+}, new inquirer.Separator(' == Misc == '), {
     name: 'BlockUI',
     value: 'blockui',
     checked: false
@@ -916,7 +918,7 @@ module.exports = JhipsterGenerator.extend({
             {
                 type: 'list',
                 name: 'selectionCriteria',
-                message: 'What is the preferred selection criteria',
+                message: 'What is the preferred component selection criteria',
                 choices: [{ name: 'Component Groups', value: 'group' }, { name: 'Individual Components', value: 'component' }],
                 default: 'group'
             },
@@ -927,6 +929,12 @@ module.exports = JhipsterGenerator.extend({
                 choices: COMPONENT_GROUP_CHOICE_LIST,
                 when(response) {
                     return response.selectionCriteria === 'group';
+                },
+                validate(answer) {
+                    if (answer.length < 1) {
+                        return 'You must choose at least one group.';
+                    }
+                    return true;
                 }
             },
             {
@@ -934,8 +942,15 @@ module.exports = JhipsterGenerator.extend({
                 name: 'componentList',
                 message: 'Which components you would like to include?',
                 choices: COMPONENT_CHOICE_LIST,
+                paginated: true,
                 when(response) {
                     return response.selectionCriteria === 'component';
+                },
+                validate(answer) {
+                    if (answer.length < 1) {
+                        return 'You must choose at least one component.';
+                    }
+                    return true;
                 }
             }
         ];
