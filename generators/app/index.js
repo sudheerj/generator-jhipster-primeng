@@ -147,7 +147,7 @@ const COMPONENT_GROUP_CHOICE_LIST = [{
 }
 ];
 
-const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Inputs == '),
+const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '),
     {
         name: 'AutoComplete',
         value: 'autocomplete',
@@ -228,7 +228,7 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Inputs == '),
     name: 'ToggleButton',
     value: 'togglebutton',
     checked: false
-}, new inquirer.Separator(' == Buttons == '), {
+}, new inquirer.Separator(' == Button Components == '), {
     name: 'Button',
     value: 'button',
     checked: false
@@ -236,7 +236,7 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Inputs == '),
     name: 'SplitButton',
     value: 'splitbutton',
     checked: false
-}, new inquirer.Separator(' == Data == '), {
+}, new inquirer.Separator(' == Data Components == '), {
     name: 'Carousel',
     value: 'carousel',
     checked: false
@@ -288,7 +288,7 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Inputs == '),
     name: 'TreeTable',
     value: 'treetable',
     checked: false
-}, new inquirer.Separator(' == Panel == '), {
+}, new inquirer.Separator(' == Panel Components == '), {
     name: 'Accordion',
     value: 'accordion',
     checked: false
@@ -312,7 +312,7 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Inputs == '),
     name: 'Toolbar',
     value: 'toolbar',
     checked: false
-}, new inquirer.Separator(' == Overlays == '), {
+}, new inquirer.Separator(' == Overlay Components == '), {
     name: 'ConfirmDialog',
     value: 'confirmdialog',
     checked: false
@@ -336,11 +336,11 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Inputs == '),
     name: 'Tooltip',
     value: 'tooltip',
     checked: false
-}, new inquirer.Separator(' == FileUpload == '), {
+}, new inquirer.Separator(' == FileUpload Components == '), {
     name: 'Fileupload',
     value: 'fileupload',
     checked: false
-}, new inquirer.Separator(' == Menus == '), {
+}, new inquirer.Separator(' == Menu Components == '), {
     name: 'Breadcrumb',
     value: 'breadcrumb',
     checked: false
@@ -380,7 +380,7 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Inputs == '),
     name: 'TieredMenu',
     value: 'tieredmenu',
     checked: false
-}, new inquirer.Separator(' == Charts == '), {
+}, new inquirer.Separator(' == Chart Components == '), {
     name: 'BarChart',
     value: 'barchart',
     checked: false
@@ -404,7 +404,7 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Inputs == '),
     name: 'RadarChart',
     value: 'radarchart',
     checked: false
-}, new inquirer.Separator(' == Messages == '), {
+}, new inquirer.Separator(' == Message Components == '), {
     name: 'Growl',
     value: 'growl',
     checked: false
@@ -412,15 +412,15 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Inputs == '),
     name: 'Messages',
     value: 'messages',
     checked: false
-}, new inquirer.Separator(' == Multimedia == '), {
+}, new inquirer.Separator(' == Multimedia Components == '), {
     name: 'Galleria',
     value: 'galleria',
     checked: false
-}, new inquirer.Separator(' == Drag&Drop == '), {
+}, new inquirer.Separator(' == Drag&Drop Components == '), {
     name: 'DragDrop',
     value: 'dragdrop',
     checked: false
-}, new inquirer.Separator(' == Misc == '), {
+}, new inquirer.Separator(' == Miscellaneous Components == '), {
     name: 'BlockUI',
     value: 'blockui',
     checked: false
