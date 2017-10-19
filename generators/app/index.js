@@ -229,230 +229,230 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         value: 'togglebutton',
         checked: false
     }, new inquirer.Separator(' == Button Components == '), {
-    name: 'Button',
-    value: 'button',
-    checked: false
-}, {
-    name: 'SplitButton',
-    value: 'splitbutton',
-    checked: false
-}, new inquirer.Separator(' == Data Components == '), {
-    name: 'Carousel',
-    value: 'carousel',
-    checked: false
-}, {
-    name: 'DataGrid',
-    value: 'datagrid',
-    checked: false
-}, {
-    name: 'DataList',
-    value: 'datalist',
-    checked: false
-}, {
-    name: 'DataScroller',
-    value: 'datascroller',
-    checked: false
-}, {
-    name: 'DataTable',
-    value: 'datatable',
-    checked: false
-}, {
-    name: 'GMap',
-    value: 'gmap',
-    checked: false
-}, {
-    name: 'OrderList',
-    value: 'orderlist',
-    checked: false
-}, {
-    name: 'OrgChart',
-    value: 'orgchart',
-    checked: false
-}, {
-    name: 'Paginator',
-    value: 'paginator',
-    checked: false
-}, {
-    name: 'PickList',
-    value: 'picklist',
-    checked: false
-}, {
-    name: 'Schedule',
-    value: 'schedule',
-    checked: false
-}, {
-    name: 'Tree',
-    value: 'tree',
-    checked: false
-}, {
-    name: 'TreeTable',
-    value: 'treetable',
-    checked: false
-}, new inquirer.Separator(' == Panel Components == '), {
-    name: 'Accordion',
-    value: 'accordion',
-    checked: false
-}, {
-    name: 'Fieldset',
-    value: 'fieldset',
-    checked: false
-}, {
-    name: 'Grid',
-    value: 'grid',
-    checked: false
-}, {
-    name: 'Panel',
-    value: 'panel',
-    checked: false
-}, {
-    name: 'TabView',
-    value: 'tabview',
-    checked: false
-}, {
-    name: 'Toolbar',
-    value: 'toolbar',
-    checked: false
-}, new inquirer.Separator(' == Overlay Components == '), {
-    name: 'ConfirmDialog',
-    value: 'confirmdialog',
-    checked: false
-}, {
-    name: 'Dialog',
-    value: 'dialog',
-    checked: false
-}, {
-    name: 'Lightbox',
-    value: 'lightbox',
-    checked: false
-}, {
-    name: 'OverlayPanel',
-    value: 'overlaypanel',
-    checked: false
-}, {
-    name: 'SideBar',
-    value: 'sidebar',
-    checked: false
-}, {
-    name: 'Tooltip',
-    value: 'tooltip',
-    checked: false
-}, new inquirer.Separator(' == FileUpload Components == '), {
-    name: 'Fileupload',
-    value: 'fileupload',
-    checked: false
-}, new inquirer.Separator(' == Menu Components == '), {
-    name: 'Breadcrumb',
-    value: 'breadcrumb',
-    checked: false
-}, {
-    name: 'ContextMenu',
-    value: 'contextmenu',
-    checked: false
-}, {
-    name: 'MegaMenu',
-    value: 'megamenu',
-    checked: false
-}, {
-    name: 'Menu',
-    value: 'menu',
-    checked: false
-}, {
-    name: 'MenuBar',
-    value: 'menubar',
-    checked: false
-}, {
-    name: 'PanelMenu',
-    value: 'panelmenu',
-    checked: false
-}, {
-    name: 'SlideMenu',
-    value: 'slidemenu',
-    checked: false
-}, {
-    name: 'Steps',
-    value: 'steps',
-    checked: false
-}, {
-    name: 'TabMenu',
-    value: 'TabMenu',
-    checked: false
-}, {
-    name: 'TieredMenu',
-    value: 'tieredmenu',
-    checked: false
-}, new inquirer.Separator(' == Chart Components == '), {
-    name: 'BarChart',
-    value: 'barchart',
-    checked: false
-}, {
-    name: 'DoughnutChart',
-    value: 'doughnutchart',
-    checked: false
-}, {
-    name: 'LineChart',
-    value: 'linechart',
-    checked: false
-}, {
-    name: 'PieChart',
-    value: 'piechart',
-    checked: false
-}, {
-    name: 'PolarAreaChart',
-    value: 'polarareachart',
-    checked: false
-}, {
-    name: 'RadarChart',
-    value: 'radarchart',
-    checked: false
-}, new inquirer.Separator(' == Message Components == '), {
-    name: 'Growl',
-    value: 'growl',
-    checked: false
-}, {
-    name: 'Messages',
-    value: 'messages',
-    checked: false
-}, new inquirer.Separator(' == Multimedia Components == '), {
-    name: 'Galleria',
-    value: 'galleria',
-    checked: false
-}, new inquirer.Separator(' == Drag&Drop Components == '), {
-    name: 'DragDrop',
-    value: 'dragdrop',
-    checked: false
-}, new inquirer.Separator(' == Miscellaneous Components == '), {
-    name: 'BlockUI',
-    value: 'blockui',
-    checked: false
-}, {
-    name: 'Captcha',
-    value: 'captcha',
-    checked: false
-}, {
-    name: 'Defer',
-    value: 'defer',
-    checked: false
-}, {
-    name: 'Inplace',
-    value: 'inplace',
-    checked: false
-}, {
-    name: 'ProgressBar',
-    value: 'progressbar',
-    checked: false
-}, {
-    name: 'RTL',
-    value: 'rtl',
-    checked: false
-}, {
-    name: 'Terminal',
-    value: 'terminal',
-    checked: false
-}, {
-    name: 'Validation',
-    value: 'validation',
-    checked: false
-}
+        name: 'Button',
+        value: 'button',
+        checked: false
+    }, {
+        name: 'SplitButton',
+        value: 'splitbutton',
+        checked: false
+    }, new inquirer.Separator(' == Data Components == '), {
+        name: 'Carousel',
+        value: 'carousel',
+        checked: false
+    }, {
+        name: 'DataGrid',
+        value: 'datagrid',
+        checked: false
+    }, {
+        name: 'DataList',
+        value: 'datalist',
+        checked: false
+    }, {
+        name: 'DataScroller',
+        value: 'datascroller',
+        checked: false
+    }, {
+        name: 'DataTable',
+        value: 'datatable',
+        checked: false
+    }, {
+        name: 'GMap',
+        value: 'gmap',
+        checked: false
+    }, {
+        name: 'OrderList',
+        value: 'orderlist',
+        checked: false
+    }, {
+        name: 'OrgChart',
+        value: 'orgchart',
+        checked: false
+    }, {
+        name: 'Paginator',
+        value: 'paginator',
+        checked: false
+    }, {
+        name: 'PickList',
+        value: 'picklist',
+        checked: false
+    }, {
+        name: 'Schedule',
+        value: 'schedule',
+        checked: false
+    }, {
+        name: 'Tree',
+        value: 'tree',
+        checked: false
+    }, {
+        name: 'TreeTable',
+        value: 'treetable',
+        checked: false
+    }, new inquirer.Separator(' == Panel Components == '), {
+        name: 'Accordion',
+        value: 'accordion',
+        checked: false
+    }, {
+        name: 'Fieldset',
+        value: 'fieldset',
+        checked: false
+    }, {
+        name: 'Grid',
+        value: 'grid',
+        checked: false
+    }, {
+        name: 'Panel',
+        value: 'panel',
+        checked: false
+    }, {
+        name: 'TabView',
+        value: 'tabview',
+        checked: false
+    }, {
+        name: 'Toolbar',
+        value: 'toolbar',
+        checked: false
+    }, new inquirer.Separator(' == Overlay Components == '), {
+        name: 'ConfirmDialog',
+        value: 'confirmdialog',
+        checked: false
+    }, {
+        name: 'Dialog',
+        value: 'dialog',
+        checked: false
+    }, {
+        name: 'Lightbox',
+        value: 'lightbox',
+        checked: false
+    }, {
+        name: 'OverlayPanel',
+        value: 'overlaypanel',
+        checked: false
+    }, {
+        name: 'SideBar',
+        value: 'sidebar',
+        checked: false
+    }, {
+        name: 'Tooltip',
+        value: 'tooltip',
+        checked: false
+    }, new inquirer.Separator(' == FileUpload Components == '), {
+        name: 'Fileupload',
+        value: 'fileupload',
+        checked: false
+    }, new inquirer.Separator(' == Menu Components == '), {
+        name: 'Breadcrumb',
+        value: 'breadcrumb',
+        checked: false
+    }, {
+        name: 'ContextMenu',
+        value: 'contextmenu',
+        checked: false
+    }, {
+        name: 'MegaMenu',
+        value: 'megamenu',
+        checked: false
+    }, {
+        name: 'Menu',
+        value: 'menu',
+        checked: false
+    }, {
+        name: 'MenuBar',
+        value: 'menubar',
+        checked: false
+    }, {
+        name: 'PanelMenu',
+        value: 'panelmenu',
+        checked: false
+    }, {
+        name: 'SlideMenu',
+        value: 'slidemenu',
+        checked: false
+    }, {
+        name: 'Steps',
+        value: 'steps',
+        checked: false
+    }, {
+        name: 'TabMenu',
+        value: 'TabMenu',
+        checked: false
+    }, {
+        name: 'TieredMenu',
+        value: 'tieredmenu',
+        checked: false
+    }, new inquirer.Separator(' == Chart Components == '), {
+        name: 'BarChart',
+        value: 'barchart',
+        checked: false
+    }, {
+        name: 'DoughnutChart',
+        value: 'doughnutchart',
+        checked: false
+    }, {
+        name: 'LineChart',
+        value: 'linechart',
+        checked: false
+    }, {
+        name: 'PieChart',
+        value: 'piechart',
+        checked: false
+    }, {
+        name: 'PolarAreaChart',
+        value: 'polarareachart',
+        checked: false
+    }, {
+        name: 'RadarChart',
+        value: 'radarchart',
+        checked: false
+    }, new inquirer.Separator(' == Message Components == '), {
+        name: 'Growl',
+        value: 'growl',
+        checked: false
+    }, {
+        name: 'Messages',
+        value: 'messages',
+        checked: false
+    }, new inquirer.Separator(' == Multimedia Components == '), {
+        name: 'Galleria',
+        value: 'galleria',
+        checked: false
+    }, new inquirer.Separator(' == Drag&Drop Components == '), {
+        name: 'DragDrop',
+        value: 'dragdrop',
+        checked: false
+    }, new inquirer.Separator(' == Miscellaneous Components == '), {
+        name: 'BlockUI',
+        value: 'blockui',
+        checked: false
+    }, {
+        name: 'Captcha',
+        value: 'captcha',
+        checked: false
+    }, {
+        name: 'Defer',
+        value: 'defer',
+        checked: false
+    }, {
+        name: 'Inplace',
+        value: 'inplace',
+        checked: false
+    }, {
+        name: 'ProgressBar',
+        value: 'progressbar',
+        checked: false
+    }, {
+        name: 'RTL',
+        value: 'rtl',
+        checked: false
+    }, {
+        name: 'Terminal',
+        value: 'terminal',
+        checked: false
+    }, {
+        name: 'Validation',
+        value: 'validation',
+        checked: false
+    }
 ];
 
 const codes = ['ad.png',
