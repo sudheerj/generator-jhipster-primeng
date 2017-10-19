@@ -63,24 +63,24 @@ npm update -g generator-jhipster-primeng
 2. Select your faviourite theme
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/theme.png">
+    <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/theme.png" height="400" width="600">
 </div>
 
 3. Either select component group or individual components
 
  <div align="center">
-     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/groups.png">
+     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/groups.png" height="400" width="600">
  </div>
  
  
  <div align="center">
-     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/components.png">
+     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/components.png" height="400" width="600">
  </div>
  
  4. Select your component and navigate to required features
  
  <div align="center">
-     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/application.png">
+     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/application.png" height="400" width="600">
  </div>
 
 # What next?
