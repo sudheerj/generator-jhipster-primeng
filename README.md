@@ -57,6 +57,32 @@ To update this module:
 ```bash
 npm update -g generator-jhipster-primeng
 ```
+## Getting Started
+
+1. Run JHipster-PrimeNG module using yo jhipster-primeng
+2. Select your faviourite theme
+
+<div align="center">
+    <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/theme.png">
+</div>
+
+3. Either select component group or individual components
+
+ <div align="center">
+     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/groups.png">
+ </div>
+ 
+ 
+ <div align="center">
+     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/components.png">
+ </div>
+ 
+ 4. Select your component and navigate to required features
+ 
+ <div align="center">
+     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/application.png">
+ </div>
+
 # What next?
 Please check the roadmap list https://github.com/sudheerj/generator-jhipster-primeng/wiki/Roadmap . If you need a new feature please raise a github request for the discussion.
 
