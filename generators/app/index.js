@@ -925,7 +925,7 @@ module.exports = JhipsterGenerator.extend({
             {
                 type: 'checkbox',
                 name: 'componentGroups',
-                message: 'Which component groups you would like to include?',
+                message: 'Which component groups you would like to use?',
                 choices: COMPONENT_GROUP_CHOICE_LIST,
                 when(response) {
                     return response.selectionCriteria === 'group';
@@ -940,7 +940,7 @@ module.exports = JhipsterGenerator.extend({
             {
                 type: 'checkbox',
                 name: 'componentList',
-                message: 'Which components you would like to include?',
+                message: 'Which components you would like to use?',
                 choices: COMPONENT_CHOICE_LIST,
                 paginated: true,
                 when(response) {
