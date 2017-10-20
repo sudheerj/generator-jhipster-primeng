@@ -30,6 +30,8 @@ As this is a [JHipster](http://jhipster.github.io/) module, we expect you have J
 
 # Installation
 
+<!---
+
 ## With Yarn
 
 To install this module:
@@ -43,7 +45,7 @@ To update this module:
 ```bash
 yarn global upgrade generator-jhipster-primeng
 ```
-
+-->
 ## With NPM
 
 To install this module:
