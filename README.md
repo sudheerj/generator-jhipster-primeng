@@ -20,9 +20,10 @@ This is a [JHipster](http://jhipster.github.io/) module, that is meant to be use
 The minimum required version of JHipster is **>=4.9.0**.
 
 This module is used to generate components, using [PrimeNG](https://www.primefaces.org/primeng).
+<hr/>
 
 To encourage us and if you like the project then click start(💫)
-
+<hr/>
 
 # Prerequisites
 
@@ -33,8 +34,6 @@ As this is a [JHipster](http://jhipster.github.io/) module, we expect you have J
 # Installation
 
 <!---
-
-## With Yarn
 
 To install this module:
 
