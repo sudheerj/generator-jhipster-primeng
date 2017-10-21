@@ -1,5 +1,5 @@
 # generator-jhipster-primeng
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] <!--[![Coverage Status][coveralls-image]][coveralls-url] [![npm](https://img.shields.io/npm/dt/generator-jhipster-primeng.svg)]()--> [![Dependency Status][daviddm-image]][daviddm-url] [![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg)]()[![Known Vulnerabilities](https://snyk.io/test/github/sudheerj/generator-jhipster-primeng/badge.svg)](https://snyk.io/test/github/sudheerj/generator-jhipster-primeng)
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] <!--[![Coverage Status][coveralls-image]][coveralls-url]--> [![npm](https://img.shields.io/npm/dt/generator-jhipster-primeng.svg)]() [![Dependency Status][daviddm-image]][daviddm-url] [![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg)]()[![Known Vulnerabilities](https://snyk.io/test/github/sudheerj/generator-jhipster-primeng/badge.svg)](https://snyk.io/test/github/sudheerj/generator-jhipster-primeng)
 > JHipster module, Generate PrimeNG sample components 
  (**85 components and 17 themes**)
 
@@ -20,6 +20,8 @@ This is a [JHipster](http://jhipster.github.io/) module, that is meant to be use
 The minimum required version of JHipster is **>=4.9.0**.
 
 This module is used to generate components, using [PrimeNG](https://www.primefaces.org/primeng).
+
+To encourage us and if you like the project then click start(💫)
 
 
 # Prerequisites
