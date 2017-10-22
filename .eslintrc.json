@@ -3,6 +3,10 @@
         "node": true,
         "es6": true
     },
+    "globals": {
+        "document": true,
+        "window": true
+    },
     "extends": ["airbnb-base"],
     "rules": {
         "indent": [2, 4],
