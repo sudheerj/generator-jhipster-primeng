@@ -913,6 +913,8 @@ module.exports = JhipsterGenerator.extend({
                 name: 'theme',
                 message: 'Which theme would you like to use?',
                 choices: THEME_OPTIONS,
+                paginated: true,
+                pageSize: 10,
                 default: 'omega'
             },
             {
@@ -943,6 +945,7 @@ module.exports = JhipsterGenerator.extend({
                 message: 'Which components you would like to use?',
                 choices: COMPONENT_CHOICE_LIST,
                 paginated: true,
+                pageSize: 10,
                 when(response) {
                     return response.selectionCriteria === 'component';
                 },
