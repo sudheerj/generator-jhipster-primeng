@@ -1700,9 +1700,7 @@ module.exports = JhipsterGenerator.extend({
                     ${this.componentGroups}
                 </ul>
             </li>`;
-            const htmlObject = document.createElement('div');
-            htmlObject.innerHTML = primengMenu;
-            const menuLabel = htmlObject.getElementsByTagName('span');
+            const menuLabel = primengMenu.getElementsByTagName('span');
             for (let i = 0; i < menuLabel.length; i++) {
                 menuLabel[i].removeAttribute('jhiTranslate');
             }
