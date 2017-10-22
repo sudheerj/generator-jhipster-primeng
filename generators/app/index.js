@@ -1697,105 +1697,14 @@ module.exports = JhipsterGenerator.extend({
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="inputtext" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span>InputText</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="inputtextarea" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span>InputTextArea</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="inputgroup" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span>InputGroup</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="button" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span>Button</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="dialog" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span>Dialog</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="confirmdialog" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span>ConfirmDialog</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="splitbutton" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span>SplitButton</span>
-                        </a>
-                    </li>
-
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="barchart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
-                            <span>BarChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="doughnutchart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o-notch" aria-hidden="true"></i>
-                            <span>DoughnutChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="linechart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-line-chart" aria-hidden="true"></i>
-                            <span>LineChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="piechart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-pie-chart" aria-hidden="true"></i>
-                            <span>PieChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="polarareachart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span>PolarAreaChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="radarchart" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span>RadarChart</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="galleria" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-pie-chart" aria-hidden="true"></i>
-                            <span>Galleria</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="messages" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-bullseye" aria-hidden="true"></i>
-                            <span>Messages</span>
-                        </a>
-                    </li>
-                    <li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="growl" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-star-o" aria-hidden="true"></i>
-                            <span>Growl</span>
-                        </a>
-                    </li>
+                    ${this.componentGroups}
                 </ul>
             </li>`;
+            const htmlObject = primengMenu.createElement('div');
+            const menuLabel = htmlObject.getElementsByTagName('span');
+            for (let i = 0; i < x.length; i++) {
+                menuLabel[i].removeAttribute('jhiTranslate');
+            }
         }
         try {
             this.rewriteFile(
