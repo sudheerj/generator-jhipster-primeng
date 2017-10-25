@@ -2,7 +2,7 @@ import { Component} from '@angular/core';
 import {Message} from 'primeng/components/common/api';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
-import MyBrowser from './service/mybrowser';
+import { JhiLanguageService } from 'ng-jhipster';
 
 @Component({
     selector: 'jhi-defer',

@@ -3,7 +3,6 @@ import { JhiLanguageService } from 'ng-jhipster';
 import {MenuItem,Message,SelectItem} from 'primeng/components/common/api';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
-import MyBrowser from './service/mybrowser';
 
 @Component({
     selector: 'jhi-inplace',
