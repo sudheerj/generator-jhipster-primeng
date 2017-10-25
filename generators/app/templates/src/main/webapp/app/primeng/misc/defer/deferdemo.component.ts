@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem,Message,SelectItem} from 'primeng/components/common/api';
+import { Component} from '@angular/core';
+import {Message} from 'primeng/components/common/api';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
 import MyBrowser from './service/mybrowser';
@@ -10,7 +9,7 @@ import MyBrowser from './service/mybrowser';
     templateUrl: './deferdemo.component.html',
     styles: []
 })
-export class DeferDemoComponent implements OnInit {
+export class DeferDemoComponent{
     msgs: Message[] = [];
 
     activeIndex: number = 0;
@@ -18,8 +17,6 @@ export class DeferDemoComponent implements OnInit {
     browsers: Browser[];
 
     constructor(private browserService: BrowserService) { }
-
-    ngOnInit(){}
 
     initData() {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.browsers = browsers);

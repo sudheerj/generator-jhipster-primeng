@@ -920,7 +920,7 @@ module.exports = JhipsterGenerator.extend({
             {
                 type: 'list',
                 name: 'selectionCriteria',
-                message: 'What is the preferred component selection criteria',
+                message: 'What is your preferred component selection criteria',
                 choices: [{ name: 'Component Groups', value: 'group' }, { name: 'Individual Components', value: 'component' }],
                 default: 'group'
             },
@@ -1018,7 +1018,7 @@ module.exports = JhipsterGenerator.extend({
 
         if (this.addVendorSCSSStyle) {
             this.addVendorSCSSStyle(primengResources, 'PrimeNG and it\'s third-party dependencies resources');
-            this.log('The PrimeNG resources were updated using JHipster API!');
+            this.log('The PrimeNG resources were updated successfully using JHipster API!');
         } else {
             // append PrimeNG resources using appendFile
             const temp = this;
