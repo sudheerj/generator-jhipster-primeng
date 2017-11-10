@@ -1587,7 +1587,7 @@ module.exports = JhipsterGenerator.extend({
             </a>
             </li>`;
         this.progressspinnerComponent = `<li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="validation" routerLinkActive="active" (click)="collapseNavbar()">
+            <a class="dropdown-item" routerLink="progressspinner" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.progressspinner">Progress Spinner</span>
             </a>
