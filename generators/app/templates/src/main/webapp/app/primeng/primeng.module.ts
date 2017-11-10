@@ -88,7 +88,7 @@ import { <%= angular2AppName %>ProgressBarDemoModule } from './misc/progressbar/
 import { <%= angular2AppName %>RTLDemoModule } from './misc/rtl/rtldemo.module';
 import { <%= angular2AppName %>TerminalDemoModule } from './misc/terminal/terminaldemo.module';
 import { <%= angular2AppName %>ValidationDemoModule } from './misc/validation/validationdemo.module';
-
+import { <%= angular2AppName %>ProgressSpinnerDemoModule } from './misc/progressspinner/progressspinnerdemo.module';
 
 @NgModule({
     imports: [
@@ -179,8 +179,8 @@ import { <%= angular2AppName %>ValidationDemoModule } from './misc/validation/va
         <%= angular2AppName %>PaginatorDemoModule,
         <%= angular2AppName %>OrgChartDemoModule,
         <%= angular2AppName %>GmapDemoModule,
-        <%= angular2AppName %>CarouselDemoModule
-
+        <%= angular2AppName %>CarouselDemoModule,
+        <%= angular2AppName %>ProgressSpinnerDemoModule
 
     ],
     declarations: [],

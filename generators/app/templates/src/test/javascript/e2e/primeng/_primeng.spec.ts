@@ -919,6 +919,18 @@ describe('administration', () => {
         });
     });
 
+    it('should load Progress Spinner', () => {
+        element(by.css('[routerLink="progressspinner"]')).click();
+        <%_ if (enableTranslation) { _%>
+            const expect1 = /primeng.misc.progressspinner.title/;
+            <%_ } else { _%>
+            const expect1 = /ProgressSpinner/;
+            <%_ } _%>
+        element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
+            expect(value).toMatch(expect1);
+        });
+    });
+
     it('should load Button', () => {
         element(by.css('[routerLink="button"]')).click();
         <%_ if (enableTranslation) { _%>
