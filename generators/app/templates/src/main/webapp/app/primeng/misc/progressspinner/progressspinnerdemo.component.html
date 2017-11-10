@@ -1,0 +1,16 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <p-growl [value]="msgs"></p-growl>
+
+            <h3>Basic</h3>
+            <p-progressSpinner></p-progressSpinner>
+        </pe-step>
+        <pe-step label="Customer" [styleClass]="'layout-format'">
+
+            <h3>Custom</h3>
+            <p-progressSpinner [style]="{width: '50px', height: '50px'}" strokeWidth="8" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
+        </pe-step>
+    </pe-steps>
+</form>

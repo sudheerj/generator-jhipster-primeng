@@ -255,6 +255,9 @@
             },
             "progressbar": {
                 "title": "ProgressBar"
+            },
+            "progressspinner": {
+                "title": "ProgressSpinner"
             }
         }
     }

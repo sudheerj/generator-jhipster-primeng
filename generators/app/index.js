@@ -452,6 +452,10 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         name: 'Validation',
         value: 'validation',
         checked: false
+    }, {
+        name: 'ProgressSpinner',
+        value: 'progressspinner',
+        checked: false
     }
 ];
 
@@ -728,7 +732,8 @@ const components = {
     terminal: 'misc',
     inplace: 'misc',
     progressbar: 'misc',
-    validation: 'misc'
+    validation: 'misc',
+    progressspinner: 'misc'
 };
 
 const primengTranslation = `"primeng": {
@@ -808,7 +813,8 @@ const primengTranslation = `"primeng": {
                 "blockui":  "BlockUI",
                 "terminal": "Terminal",
                 "inplace":  "Inplace",
-                "progressbar": "ProgressBar"
+                "progressbar": "ProgressBar",
+                "progressspinner": "ProgressSpinner"
             },`;
 
 module.exports = JhipsterGenerator.extend({
@@ -1580,6 +1586,12 @@ module.exports = JhipsterGenerator.extend({
             <span jhiTranslate="global.menu.primeng.validation">Validation</span>
             </a>
             </li>`;
+        this.progressspinnerComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="validation" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.progressspinner">Progress Spinner</span>
+            </a>
+            </li>`;
 
 
         this.inputComponents = `
@@ -1642,7 +1654,7 @@ module.exports = JhipsterGenerator.extend({
         this.miscComponents = `
                    <hr/>
                     <span style="font-weight:bold">Miscellaneous Components</span>
-                   <hr/>${this.blockuiComponent}${this.captchaComponent}${this.deferComponent}${this.inplaceComponent}${this.progressbarComponent}${this.rtlComponent}${this.terminalComponent}${this.validationComponent}`;
+                   <hr/>${this.blockuiComponent}${this.captchaComponent}${this.deferComponent}${this.inplaceComponent}${this.progressbarComponent}${this.rtlComponent}${this.terminalComponent}${this.validationComponent}${this.progressspinnerComponent}`;
         if (this.categories) {
             this.componentGroups = (this.categories.indexOf('inputs') > -1 ? this.inputComponents : '') + (this.categories.indexOf('buttons') > -1 ? this.buttonComponents : '') + (this.categories.indexOf('data') > -1 ? this.dataComponents : '') +
                 (this.categories.indexOf('panel') > -1 ? this.panelComponents : '') + (this.categories.indexOf('dragdrop') > -1 ? this.dragdropComponents : '') + (this.categories.indexOf('fileupload') > -1 ? this.fileuploadComponents : '') +
@@ -1673,7 +1685,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('galleria') > -1 ? this.galleriaComponent : '') + (this.componentList.indexOf('dragdrop') > -1 ? this.dragdropComponent : '') + (this.componentList.indexOf('blockui') > -1 ? this.blockuiComponent : '') +
                 (this.componentList.indexOf('captcha') > -1 ? this.captchaComponent : '') + (this.componentList.indexOf('defer') > -1 ? this.deferComponent : '') + (this.componentList.indexOf('inplace') > -1 ? this.inplaceComponent : '') +
                 (this.componentList.indexOf('progressbar') > -1 ? this.progressbarComponent : '') + (this.componentList.indexOf('rtl') > -1 ? this.rtlComponent : '') + (this.componentList.indexOf('terminal') > -1 ? this.terminalComponent : '') +
-                (this.componentList.indexOf('validation') > -1 ? this.validationComponent : '');
+                (this.componentList.indexOf('validation') > -1 ? this.validationComponent : '') + (this.componentList.indexOf('progressspinner') > -1 ? this.progressspinnerComponent : '');
         }
         // add element to menu
         let primengMenu;
