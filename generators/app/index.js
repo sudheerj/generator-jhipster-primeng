@@ -12,8 +12,8 @@ const jhipsterConstants = require('generator-jhipster/generators/generator-const
 const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
-const ANGULAR_VERSION = '4.2.6';
-const PRIMENG_VERSION = '4.3.0';
+const ANGULAR_VERSION = '5.1.0';
+const PRIMENG_VERSION = '5.0.2';
 const PRIMENG_EXT_WIZARD_VERSION = '2.1.0';
 const CHARTJS_VERSION = '2.6.0';
 const MOMENT_VERSION = '2.18.1';
@@ -891,7 +891,7 @@ module.exports = JhipsterGenerator.extend({
             this.log(`\nWelcome to the ${chalk.bold.yellow('JHipster primeng')} generator! ${chalk.yellow(`v${packagejs.version}\n`)}`);
         },
         checkclientFramework() {
-            if (this.jhipsterAppConfig.clientFramework !== 'angular4' && this.jhipsterAppConfig.clientFramework !== 'angularX') {
+            if (this.jhipsterAppConfig.clientFramework !== 'angular5' && this.jhipsterAppConfig.clientFramework !== 'angularX') {
                 this.env.error(`${chalk.red.bold('ERROR!')} This module works only for Angular4...`);
             }
         },
