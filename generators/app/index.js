@@ -892,7 +892,7 @@ module.exports = JhipsterGenerator.extend({
         },
         checkclientFramework() {
             if (this.jhipsterAppConfig.clientFramework !== 'angular5' && this.jhipsterAppConfig.clientFramework !== 'angularX') {
-                this.env.error(`${chalk.red.bold('ERROR!')} This module works only for Angular4...`);
+                this.env.error(`${chalk.red.bold('ERROR!')} This module works only for Angular5...`);
             }
         },
         checkJhipster() {
@@ -1077,7 +1077,7 @@ module.exports = JhipsterGenerator.extend({
                 // the version already exists, so try to upgrade instead
                 this.replaceContent('package.json', `"primeng-extensions": "${this.libPrimeNgExtensionsVersion}"`, `"primeng-extensions": "${PRIMENG_EXTENSIONS_VERSION}"`);
             } else {
-                this.addNpmDependency('primeng-extensions', `${PRIMENG_EXT_VERSION}`);
+                this.addNpmDependency('primeng-extensions', `${PRIMENG_EXTENSIONS_VERSION}`);
             }
 
             if (this.libChartJsVersion) {
@@ -1107,8 +1107,8 @@ module.exports = JhipsterGenerator.extend({
             this.log('  Problem when adding the new librairies in your package.json');
             this.log('  You need to add manually:\n');
             this.log(`  "@angular/animations": "${this.libAngularVersion}",`);
-            this.log(`  "primeng": "${PRIMENG_VERSION}"`);
-            this.log(`  "primeng-extensions": "${PRIMENG_EXTENSIONS_VERSION}"`);
+            this.log(`  "primeng": "${PRIMENG_VERSION}",`);
+            this.log(`  "primeng-extensions": "${PRIMENG_EXTENSIONS_VERSION}",`);
             this.log(`  "chart.js": "${CHARTJS_VERSION}",`);
             this.log(`  "moment": "${MOMENT_VERSION}",`);
             this.log(`  "fullcalendar": "${FULLCALENDAR_VERSION}",`);
