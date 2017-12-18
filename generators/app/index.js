@@ -14,7 +14,7 @@ util.inherits(JhipsterGenerator, BaseGenerator);
 
 const ANGULAR_VERSION = '5.1.0';
 const PRIMENG_VERSION = '5.0.2';
-const PRIMENG_EXT_WIZARD_VERSION = '2.2.0';
+const PRIMENG_EXTENSIONS_VERSION = '0.0.1';
 const CHARTJS_VERSION = '2.6.0';
 const MOMENT_VERSION = '2.18.1';
 const FULLCALENDAR_VERSION = '3.5.0';
@@ -853,8 +853,8 @@ module.exports = JhipsterGenerator.extend({
                     if (fileData.dependencies.primeng) {
                         this.libPrimeNgVersion = fileData.dependencies.primeng;
                     }
-                    if (fileData.dependencies['primeng-extensions-wizard']) {
-                        this.libPrimeNgExtensionsWizardVersion = fileData.dependencies['primeng-extensions-wizard'];
+                    if (fileData.dependencies['primeng-extensions']) {
+                        this.libPrimeNgExtensionsVersion = fileData.dependencies['primeng-extensions'];
                     }
 
                     if (fileData.dependencies['chart.js']) {
@@ -1073,11 +1073,11 @@ module.exports = JhipsterGenerator.extend({
                 this.addNpmDependency('primeng', `${PRIMENG_VERSION}`);
             }
 
-            if (this.libPrimeNgExtensionsWizardVersion) {
+            if (this.libPrimeNgExtensionsVersion) {
                 // the version already exists, so try to upgrade instead
-                this.replaceContent('package.json', `"primeng-extensions-wizard": "${this.libPrimeNgExtensionsWizardVersion}"`, `"primeng-extensions-wizard": "${PRIMENG_EXT_WIZARD_VERSION}"`);
+                this.replaceContent('package.json', `"primeng-extensions": "${this.libPrimeNgExtensionsVersion}"`, `"primeng-extensions": "${PRIMENG_EXTENSIONS_VERSION}"`);
             } else {
-                this.addNpmDependency('primeng-extensions-wizard', `${PRIMENG_EXT_WIZARD_VERSION}`);
+                this.addNpmDependency('primeng-extensions', `${PRIMENG_EXT_VERSION}`);
             }
 
             if (this.libChartJsVersion) {
@@ -1108,7 +1108,7 @@ module.exports = JhipsterGenerator.extend({
             this.log('  You need to add manually:\n');
             this.log(`  "@angular/animations": "${this.libAngularVersion}",`);
             this.log(`  "primeng": "${PRIMENG_VERSION}"`);
-            this.log(`  "primeng-extensions-wizard": "${PRIMENG_EXT_WIZARD_VERSION}"`);
+            this.log(`  "primeng-extensions": "${PRIMENG_EXTENSIONS_VERSION}"`);
             this.log(`  "chart.js": "${CHARTJS_VERSION}",`);
             this.log(`  "moment": "${MOMENT_VERSION}",`);
             this.log(`  "fullcalendar": "${FULLCALENDAR_VERSION}",`);
