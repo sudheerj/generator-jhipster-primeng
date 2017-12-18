@@ -6,7 +6,7 @@ import {TooltipModule} from 'primeng/components/tooltip/tooltip';
 import {InputTextModule} from 'primeng/components/inputtext/inputtext';
 import {GrowlModule} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 
 import {

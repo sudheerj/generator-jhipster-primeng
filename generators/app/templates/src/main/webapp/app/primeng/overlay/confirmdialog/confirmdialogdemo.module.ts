@@ -8,7 +8,7 @@ import {ButtonModule} from 'primeng/primeng';
 import {ConfirmDialogModule} from 'primeng/components/confirmdialog/confirmdialog';
 import {ConfirmationService} from 'primeng/components/common/api';
 import {APP_BASE_HREF} from '@angular/common';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     ConfirmDialogDemoComponent,

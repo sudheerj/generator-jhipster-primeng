@@ -9,7 +9,7 @@ import {GrowlModule} from 'primeng/components/growl/growl';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {DeferModule} from 'primeng/components/defer/defer';
 import {BrowserService} from './service/browser.service';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 
 

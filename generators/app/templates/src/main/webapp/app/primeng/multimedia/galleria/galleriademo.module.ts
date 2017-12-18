@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {GalleriaModule} from 'primeng/primeng';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     GalleriaDemoComponent,

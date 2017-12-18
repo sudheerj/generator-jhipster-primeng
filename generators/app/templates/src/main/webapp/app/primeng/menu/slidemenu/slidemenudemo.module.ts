@@ -6,7 +6,7 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {SlideMenuModule} from 'primeng/components/slidemenu/slidemenu';
 import {ButtonModule} from 'primeng/components/button/button';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     SlideMenuDemoComponent,

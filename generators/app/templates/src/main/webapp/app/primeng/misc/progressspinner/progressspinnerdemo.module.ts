@@ -6,7 +6,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {APP_BASE_HREF} from '@angular/common';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 // import needed PrimeNG modules here
 import {ProgressSpinnerModule} from 'primeng/components/progressspinner/progressspinner';
 import {GrowlModule} from 'primeng/components/growl/growl';

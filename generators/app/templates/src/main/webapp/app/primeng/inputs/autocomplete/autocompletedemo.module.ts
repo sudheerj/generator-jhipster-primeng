@@ -7,7 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {AutoCompleteModule} from 'primeng/components/autocomplete/autocomplete';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 import {CountryService} from './service/country.service';
 
 

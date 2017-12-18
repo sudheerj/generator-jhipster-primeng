@@ -11,7 +11,7 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {ButtonModule} from 'primeng/components/button/button';
 import {PanelModule} from 'primeng/components/panel/panel';
 import {BlockUIModule} from 'primeng/components/blockui/blockui';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     BlockUIDemoComponent,

@@ -7,7 +7,7 @@ import {GrowlModule} from 'primeng/primeng';
 import {MenubarModule} from 'primeng/components/menubar/menubar';
 import {InputTextModule} from 'primeng/components/inputtext/inputtext';
 import {ButtonModule} from 'primeng/components/button/button';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     MenuBarDemoComponent,

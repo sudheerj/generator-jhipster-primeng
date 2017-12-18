@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {InputMaskModule} from 'primeng/primeng';
 import {RadioButtonModule} from 'primeng/components/radiobutton/radiobutton';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     InputMaskDemoComponent,

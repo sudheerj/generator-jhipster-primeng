@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
 import {TriStateCheckboxModule} from 'primeng/components/tristatecheckbox/tristatecheckbox';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     CheckboxDemoComponent,

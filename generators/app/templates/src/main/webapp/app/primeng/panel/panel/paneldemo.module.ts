@@ -10,7 +10,7 @@ import {PanelModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/primeng';
 import {SplitButtonModule} from 'primeng/primeng';
 import {GrowlModule} from 'primeng/primeng';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     PanelDemoComponent,

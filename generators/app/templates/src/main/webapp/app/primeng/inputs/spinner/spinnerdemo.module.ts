@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {SpinnerModule} from 'primeng/components/spinner/spinner';
 import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     SpinnerDemoComponent,

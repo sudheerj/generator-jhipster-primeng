@@ -5,7 +5,7 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
 import {InputTextareaModule} from 'primeng/primeng';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     InputTextAreaDemoComponent,

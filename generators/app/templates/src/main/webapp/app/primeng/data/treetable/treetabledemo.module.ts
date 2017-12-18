@@ -11,7 +11,7 @@ import {ButtonModule} from 'primeng/components/button/button';
 import {ContextMenuModule} from 'primeng/components/contextmenu/contextmenu';
 import {GrowlModule} from 'primeng/components/growl/growl';
 
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {TreeNodeService} from './service/treenode.service';
 

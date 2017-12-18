@@ -12,7 +12,7 @@ import {GrowlModule} from 'primeng/components/growl/growl';
 import {CountryService} from './service/country.service';
 
 
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     OrderlistDemoComponent,

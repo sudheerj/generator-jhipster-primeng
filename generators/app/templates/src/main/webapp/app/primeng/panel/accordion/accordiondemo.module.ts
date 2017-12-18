@@ -11,7 +11,7 @@ import {FormsModule} from '@angular/forms';
 import {AccordionModule} from 'primeng/components/accordion/accordion';
 import {ButtonModule} from 'primeng/components/button/button';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {WizardModule} from 'primeng-extensions-wizard/components/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
     AccordionDemoComponent,
