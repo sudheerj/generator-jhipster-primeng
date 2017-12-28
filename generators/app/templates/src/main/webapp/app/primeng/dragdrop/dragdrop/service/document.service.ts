@@ -10,8 +10,8 @@ export class DocumentService {
     }
 
     getDocuments(): Observable<Document[]> {
-        return this.http.get('content/primeng/assets/data/json/documents/documents.json')
-            .map(response => response.map((doc: any) => ({
+        return this.http.get('content/primeng/assets/data/json/documents/documents.json', { observe: 'response' })
+            .map(response => response.json().data.map((doc: any) => ({
                 // make a copy because we must convert ISO-8601 string to Date
                 id: doc.id,
                 title: doc.title,
