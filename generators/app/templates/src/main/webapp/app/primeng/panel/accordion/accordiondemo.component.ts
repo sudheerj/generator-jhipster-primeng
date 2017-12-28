@@ -8,9 +8,9 @@ import {Message} from 'primeng/components/common/api';
 })
 export class AccordionDemoComponent implements OnInit {
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
-    accordionActiveIndexes: number[] = [0,2];
+    accordionActiveIndexes: number[] = [0, 2];
 
     onTabClose(event: any) {
         this.msgs = [];
@@ -27,5 +27,5 @@ export class AccordionDemoComponent implements OnInit {
         this.msgs.push({severity: 'info', summary: label});
     }
 
-    ngOnInit(){}
+    ngOnInit() {}
 }

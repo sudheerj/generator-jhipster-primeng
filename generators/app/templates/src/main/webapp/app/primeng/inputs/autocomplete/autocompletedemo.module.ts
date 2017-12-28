@@ -10,7 +10,6 @@ import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 import {CountryService} from './service/country.service';
 
-
 import {
     AutocompleteDemoComponent,
     autocompleteDemoRoute

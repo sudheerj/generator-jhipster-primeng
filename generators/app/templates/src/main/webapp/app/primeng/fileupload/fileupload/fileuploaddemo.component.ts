@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem,Message} from 'primeng/components/common/api';
+import {MenuItem, Message} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-fileupload',
@@ -8,24 +8,22 @@ import {MenuItem,Message} from 'primeng/components/common/api';
     styles: []
 })
 export class FileUploadDemoComponent implements OnInit {
-    activeIndex: number = 0;
 
-    ngOnInit(){
-
-    }
-
-    multiple: boolean = false;
-    auto: boolean = false;
+    activeIndex = 0;
+    multiple = false;
+    auto = false;
     msgs: Message[] = [];
     uploadMsgs: Message[] = [];
     uploadedFiles: any[] = [];
+
+    ngOnInit() {}
 
     onBeforeSend(event: any) {
         (<XMLHttpRequest>event.xhr).setRequestHeader('jwt', 'xyz123');
     }
 
     onUpload(event: any) {
-        for (let file of event.files) {
+        for (const file of event.files) {
             this.uploadedFiles.push(file);
         }
 

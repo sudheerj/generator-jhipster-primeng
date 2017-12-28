@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message,TreeNode,MenuItem} from 'primeng/components/common/api';
+import {Message, TreeNode, MenuItem} from 'primeng/components/common/api';
 import {TreeNodeService} from './service/treenode.service';
 
 @Component({
@@ -11,7 +11,7 @@ import {TreeNodeService} from './service/treenode.service';
 export class TreeTableDemoComponent implements OnInit {
     msgs: Message[] = [];
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     basicTreeTable: TreeNode[];
 
@@ -71,13 +71,13 @@ export class TreeTableDemoComponent implements OnInit {
 
     onRowDblclick(event: any) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Node Selected', detail: "The TreeTable row double click is invoked"});
+        this.msgs.push({severity: 'info', summary: 'Node Selected', detail: 'The TreeTable row double click is invoked'});
     }
 
     nodeExpand(event: any) {
         if (event.node) {
-            //in a real application, make a call to a remote url to load children of the current node and add the new nodes as children
-            this.nodeService.getTouristPlaces().subscribe(nodes => event.node.children = nodes);
+            // in a real application, make a call to a remote url to load children of the current node and add the new nodes as children
+            this.nodeService.getTouristPlaces().subscribe((nodes) => event.node.children = nodes);
         }
     }
 
@@ -87,7 +87,7 @@ export class TreeTableDemoComponent implements OnInit {
     }
 
     deleteNode(node: TreeNode) {
-        node.parent.children = node.parent.children.filter( n => n.data !== node.data);
+        node.parent.children = node.parent.children.filter( (n) => n.data !== node.data);
         this.msgs = [];
         this.msgs.push({severity: 'info', summary: 'Node Deleted', detail: node.data.name});
     }

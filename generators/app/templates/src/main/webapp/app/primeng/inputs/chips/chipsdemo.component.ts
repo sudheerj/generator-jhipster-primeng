@@ -15,9 +15,9 @@ export class ChipsDemoComponent implements OnInit {
 
     complexcontacts: string[];
 
-    disabledcontacts: string[] = ['PrimeTek','GeekoTek'];
+    disabledcontacts: string[] = ['PrimeTek', 'GeekoTek'];
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     onAddContact() {
         this.msgs.length = 0;
@@ -36,7 +36,7 @@ export class ChipsDemoComponent implements OnInit {
         this.msgs.push({severity: 'info', summary: label});
     }
 
-    ngOnInit(){
+    ngOnInit() {
 
     }
 }

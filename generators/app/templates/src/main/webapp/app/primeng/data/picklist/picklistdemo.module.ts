@@ -30,7 +30,7 @@ const primeng_STATES = [
         GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'},CountryService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService],
     declarations: [
         PicklistDemoComponent
     ],

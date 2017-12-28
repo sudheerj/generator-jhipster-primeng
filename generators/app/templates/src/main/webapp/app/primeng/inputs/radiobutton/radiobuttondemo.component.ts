@@ -10,11 +10,11 @@ export class RadioButtonDemoComponent implements OnInit {
     msgs: Message[] = [];
 
     basic: string;
-    defaultSelection: string = 'Angular';
+    defaultSelection = 'Angular';
     eventsSelection: string;
-    disabledSelection: string = 'Angular';
+    disabledSelection = 'Angular';
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     selectFramework(e: any) {
         this.msgs = [];
@@ -26,5 +26,5 @@ export class RadioButtonDemoComponent implements OnInit {
         this.msgs.push({severity: 'info', summary: label});
     }
 
-    ngOnInit(){}
+    ngOnInit() {}
 }

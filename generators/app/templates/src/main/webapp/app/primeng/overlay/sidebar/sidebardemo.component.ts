@@ -9,7 +9,7 @@ import {Message} from 'primeng/components/common/api';
 })
 export class SideBarDemoComponent implements OnInit {
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     visibleSidebar1;
 
@@ -26,5 +26,5 @@ export class SideBarDemoComponent implements OnInit {
         this.msgs.push({severity: 'info', summary: label});
     }
 
-    ngOnInit(){}
+    ngOnInit() {}
 }

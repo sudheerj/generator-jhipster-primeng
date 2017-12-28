@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem,Message} from 'primeng/components/common/api';
+import {MenuItem, Message} from 'primeng/components/common/api';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs';
 import 'rxjs/add/observable/interval';
@@ -11,8 +11,8 @@ import 'rxjs/add/operator/take';
     templateUrl: './progressbardemo.component.html',
     styles: []
 })
-export class ProgressBarDemoComponent implements OnInit {
-    activeIndex: number = 0;
+export class ProgressBarDemoComponent implements OnInit, OnDestroy {
+    activeIndex = 0;
     msgs: Message[] = [];
 
     value: number;
@@ -21,7 +21,7 @@ export class ProgressBarDemoComponent implements OnInit {
     ngOnInit() {
         const interval = Observable.interval(800).take(100);
         this.interval$ = interval.subscribe(
-            x => this.value = x + 1,
+            (x) => this.value = x + 1,
             () => {/** no error handling */ },
             () => this.msgs = [{severity: 'info', summary: 'Success', detail: 'Process completed'}]
         );

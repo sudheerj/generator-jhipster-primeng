@@ -11,7 +11,7 @@ export class SliderDemoComponent implements OnInit {
 
     basicinput: number;
 
-    custominput: number = 20;
+    custominput = 20;
 
     eventsinput: number;
 
@@ -23,13 +23,13 @@ export class SliderDemoComponent implements OnInit {
 
     verticalinput: number;
 
-    rangeValues: number[] = [30,90];
+    rangeValues: number[] = [30, 90];
 
     types: SelectItem[];
 
-    selectedType: string = 'readonly';
+    selectedType = 'readonly';
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     onChange() {
         this.msgs.length = 0;

@@ -9,21 +9,21 @@ import {Message, SelectItem} from 'primeng/components/common/api';
 export class RatingDemoComponent implements OnInit {
     msgs: Message[] = [];
 
-    angular: number = 5;
+    angular = 5;
 
     react: number;
 
-    ember: number = 6;
+    ember = 6;
 
-    knockout: number = 2;
+    knockout = 2;
 
-    vuejs: number = 3;
+    vuejs = 3;
 
     types: SelectItem[];
 
-    selectedType: string = 'readonly';
+    selectedType = 'readonly';
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     handleRate(event: any) {
         this.msgs.push(

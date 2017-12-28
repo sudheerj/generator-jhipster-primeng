@@ -17,15 +17,15 @@ export class SpinnerDemoComponent implements OnInit {
 
     eventsinput: number;
 
-    readonlyinput: number = 50;
+    readonlyinput = 50;
 
-    disabledinput: number = 100;
+    disabledinput = 100;
 
     types: SelectItem[];
 
-    selectedType: string = 'readonly';
+    selectedType = 'readonly';
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     onChange(event: any) {
         this.msgs = [];

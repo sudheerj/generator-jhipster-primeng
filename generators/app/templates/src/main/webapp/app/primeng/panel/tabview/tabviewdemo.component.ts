@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message,MenuItem} from 'primeng/primeng';
+import {Message, MenuItem} from 'primeng/primeng';
 
 @Component({
     selector: 'jhi-tabview',
@@ -9,7 +9,7 @@ import {Message,MenuItem} from 'primeng/primeng';
 export class TabViewDemoComponent implements OnInit {
     msgs: Message[] = [];
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     onTabChange(event: any) {
         this.msgs = [];
@@ -26,5 +26,5 @@ export class TabViewDemoComponent implements OnInit {
         this.msgs.push({severity: 'info', summary: label});
     }
 
-    ngOnInit(){}
+    ngOnInit() {}
 }

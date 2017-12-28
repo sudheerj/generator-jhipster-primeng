@@ -15,7 +15,6 @@ import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {TreeNodeService} from './service/treenode.service';
 
-
 import {
     TreeTableDemoComponent,
     treetableDemoRoute
@@ -41,7 +40,7 @@ const primeng_STATES = [
     declarations: [
         TreeTableDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'},TreeNodeService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, TreeNodeService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angular2AppName %>TreeTableDemoModule {}

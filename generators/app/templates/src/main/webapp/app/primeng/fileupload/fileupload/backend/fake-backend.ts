@@ -1,13 +1,13 @@
 /**
  * An implementation for the Mock-Backend which can be used instead of the json-server
  * when FileUpload uses Angular Http service. See issue: https://github.com/primefaces/primeng/issues/2594
- * 
+ *
  * app.modules.ts should be extended as follows:
- * 
+ *
  * import {MockBackend} from '@angular/http/testing';
  * import {BaseRequestOptions} from '@angular/http';
  * import {fakeBackendProvider} from './backend/fake-backend';
- * 
+ *
  * providers: [
  *  {provide: APP_BASE_HREF, useValue: '/'},
  *   fakeBackendProvider,
@@ -36,8 +36,8 @@ function fakeBackendFactory(backend: MockBackend, options: BaseRequestOptions, r
             }
 
             // pass through any requests not handled above
-            let realHttp = new Http(realBackend, options);
-            let requestOptions = new RequestOptions({
+            const realHttp = new Http(realBackend, options);
+            const requestOptions = new RequestOptions({
                 method: connection.request.method,
                 headers: connection.request.headers,
                 body: connection.request.getBody(),

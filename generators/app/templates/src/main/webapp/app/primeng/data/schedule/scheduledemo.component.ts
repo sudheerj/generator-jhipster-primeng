@@ -11,7 +11,7 @@ import {MyEvent} from './event/event';
 })
 export class ScheduleDemoComponent implements OnInit {
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     events: any[];
 
@@ -19,16 +19,16 @@ export class ScheduleDemoComponent implements OnInit {
 
     event: MyEvent;
 
-    dialogVisible: boolean = false;
+    dialogVisible = false;
 
-    idGen: number = 100;
+    idGen = 100;
 
     de: any;
 
     constructor(private eventService: EventService) { }
 
     ngOnInit() {
-        this.eventService.getEvents().subscribe((events: any) => {this.events = events;});
+        this.eventService.getEvents().subscribe((events: any) => {this.events = events; });
 
         this.headerConfig = {
             left: 'prev,next today',
@@ -50,10 +50,10 @@ export class ScheduleDemoComponent implements OnInit {
     }
 
     loadEvents(event: any) {
-        let start = event.view.start;
-        let end = event.view.end;
+        const start = event.view.start;
+        const end = event.view.end;
         // In real time the service call filtered based on start and end dates
-        this.eventService.getEvents().subscribe((events: any) => {this.events = events;});
+        this.eventService.getEvents().subscribe((events: any) => {this.events = events; });
     }
 
     handleDayClick(event: any) {
@@ -66,8 +66,8 @@ export class ScheduleDemoComponent implements OnInit {
         this.event = new MyEvent();
         this.event.title = e.calEvent.title;
 
-        let start = e.calEvent.start;
-        let end = e.calEvent.end;
+        const start = e.calEvent.start;
+        const end = e.calEvent.end;
         if (e.view.name === 'month') {
             start.stripTime();
         }
@@ -134,9 +134,9 @@ export class ScheduleDemoComponent implements OnInit {
     }
 
     saveEvent() {
-        //update
+        // update
         if ( this.event.id) {
-            let index: number = this.findEventIndexById(this.event.id);
+            const index: number = this.findEventIndexById(this.event.id);
             if (index >= 0) {
                 this.events[index] = this.event;
             }
@@ -150,7 +150,7 @@ export class ScheduleDemoComponent implements OnInit {
     }
 
     deleteEvent() {
-        let index: number = this.findEventIndexById(this.event.id);
+        const index: number = this.findEventIndexById(this.event.id);
         if (index >= 0) {
             this.events.splice(index, 1);
         }

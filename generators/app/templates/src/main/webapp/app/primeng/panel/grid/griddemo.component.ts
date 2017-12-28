@@ -9,11 +9,11 @@ import {Message} from 'primeng/components/common/api';
 export class GridDemoComponent implements OnInit {
     msgs: Message[] = [];
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     onChangeStep(label: string) {
         this.msgs.length = 0;
         this.msgs.push({severity: 'info', summary: label});
     }
-    ngOnInit(){}
+    ngOnInit() {}
 }

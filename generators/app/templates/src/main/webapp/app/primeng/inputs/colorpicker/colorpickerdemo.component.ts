@@ -8,13 +8,13 @@ import {Message} from 'primeng/components/common/api';
 })
 export class ColorpickerDemoComponent implements OnInit {
     msgs: Message[] = [];
-    color1: string = '55ff66';
+    color1 = '55ff66';
 
     color2: string;
 
     color3: string;
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     colorFormat1: string;
 
@@ -32,7 +32,7 @@ export class ColorpickerDemoComponent implements OnInit {
         this.msgs.push({severity: 'info', summary: label});
     }
 
-    ngOnInit(){
+    ngOnInit() {
 
     }
 }

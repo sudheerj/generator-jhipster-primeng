@@ -9,15 +9,15 @@ import {Message} from 'primeng/components/common/api';
 export class ToggleButtonDemoComponent implements OnInit {
     msgs: Message[] = [];
 
-    basic: boolean = false;
+    basic = false;
 
-    customized: boolean = true;
+    customized = true;
 
-    events: boolean = false;
+    events = false;
 
-    disabled: boolean = false;
+    disabled = false;
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     onToggleButton(e: any) {
         this.msgs = [];
@@ -38,5 +38,5 @@ export class ToggleButtonDemoComponent implements OnInit {
         this.msgs.push({severity: 'info', summary: label});
     }
 
-    ngOnInit(){}
+    ngOnInit() {}
 }

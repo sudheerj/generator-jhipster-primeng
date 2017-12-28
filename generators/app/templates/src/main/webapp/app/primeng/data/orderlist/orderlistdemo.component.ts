@@ -11,7 +11,7 @@ import Country from './service/country';
 })
 export class OrderlistDemoComponent implements OnInit {
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     countries: Country[];
 

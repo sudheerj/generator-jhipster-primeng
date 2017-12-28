@@ -10,11 +10,11 @@ import {Message} from 'primeng/components/common/api';
 export class BlockUIDemoComponent {
 
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
-    blockedPanel: boolean = false;
+    blockedPanel = false;
 
-    blockedDocument: boolean = false;
+    blockedDocument = false;
 
     blockDocument() {
         this.blockedDocument = true;

@@ -10,7 +10,7 @@ import {Message} from 'primeng/components/common/api';
 export class LightboxDemoComponent implements OnInit {
     images: any[];
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     ngOnInit() {
         this.images = [];

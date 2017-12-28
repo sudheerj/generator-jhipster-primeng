@@ -9,10 +9,10 @@ import { JhiLanguageService } from 'ng-jhipster';
     templateUrl: './deferdemo.component.html',
     styles: []
 })
-export class DeferDemoComponent{
+export class DeferDemoComponent {
     msgs: Message[] = [];
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     browsers: Browser[];
 
@@ -21,7 +21,6 @@ export class DeferDemoComponent{
     initData() {
         this.browserService.getBrowsers().subscribe((browsers: any) => setTimeout(() => this.browsers = browsers, 0));
     }
-
 
     onChangeStep(label: string) {
         this.msgs.length = 0;

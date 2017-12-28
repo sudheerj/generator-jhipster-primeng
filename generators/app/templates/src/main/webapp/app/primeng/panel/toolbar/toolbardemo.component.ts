@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message,MenuItem} from 'primeng/components/common/api';
+import {Message, MenuItem} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-toolbar',

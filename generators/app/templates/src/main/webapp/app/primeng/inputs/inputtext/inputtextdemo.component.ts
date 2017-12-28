@@ -7,13 +7,13 @@ import {Message} from 'primeng/components/common/api';
     styles: []
 })
 export class InputTextDemoComponent implements OnInit {
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     msgs: Message[] = [];
 
     text: string;
 
-    disabled: boolean = true;
+    disabled = true;
 
     toggleDisabled() {
         this.disabled = !this.disabled;

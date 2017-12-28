@@ -33,7 +33,7 @@ const primeng_STATES = [
     declarations: [
         ContextMenuDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'},EmployeeService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, EmployeeService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angular2AppName %>ContextMenuDemoModule {}

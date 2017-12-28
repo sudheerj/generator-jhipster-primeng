@@ -5,7 +5,6 @@ import {ScoreService} from './service/score.service';
 import Score from './service/score';
 import {OverlayPanel} from 'primeng/components/overlaypanel/overlaypanel';
 
-
 @Component({
     selector: 'jhi-overlaypanel',
     templateUrl: './overlaypaneldemo.component.html',
@@ -17,7 +16,7 @@ export class OverlayPanelDemoComponent implements OnInit {
     marks: string;
     percentage: string;
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     constructor(private scoreService: ScoreService) { }
 

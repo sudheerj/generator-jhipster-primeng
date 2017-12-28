@@ -7,7 +7,7 @@ import {Message} from 'primeng/components/common/api';
     styles: []
 })
 export class InputMaskDemoComponent implements OnInit {
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     basic: string;
     event: string;
@@ -16,9 +16,9 @@ export class InputMaskDemoComponent implements OnInit {
     serial: string;
     slot: string;
     optional: string;
-    readonly: boolean = true;
-    disabled: boolean = true;
-    format: string = 'Option1';
+    readonly = true;
+    disabled = true;
+    format = 'Option1';
 
     msgs: Message[] = [];
 
@@ -33,7 +33,7 @@ export class InputMaskDemoComponent implements OnInit {
         this.msgs.push({severity: 'info', summary: label});
     }
 
-    ngOnInit(){
+    ngOnInit() {
 
     }
 }

@@ -12,6 +12,6 @@ export class CountryService {
 
     getCountries(): Observable<Country[]> {
         return this.http.get('content/primeng/assets/data/json/countries/countries.json')
-            .map(response => response as Country[]);
+            .map((response) => response as Country[]);
     }
 }

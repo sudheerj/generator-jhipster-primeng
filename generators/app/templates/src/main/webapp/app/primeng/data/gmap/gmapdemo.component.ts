@@ -28,7 +28,7 @@ export class GmapDemoComponent implements OnInit {
 
     draggable: boolean;
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     msgs: Message[] = [];
 
@@ -58,10 +58,10 @@ export class GmapDemoComponent implements OnInit {
 
     handleOverlayClick(event: any) {
         this.msgs = [];
-        let isMarker = event.overlay.getTitle !== undefined;
+        const isMarker = event.overlay.getTitle !== undefined;
 
         if (isMarker) {
-            let title = event.overlay.getTitle();
+            const title = event.overlay.getTitle();
             this.infoWindow.setContent('' + title + '');
             this.infoWindow.open(event.map, event.overlay);
             event.map.setCenter(event.overlay.getPosition());

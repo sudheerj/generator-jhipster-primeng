@@ -11,6 +11,6 @@ export class VCardService {
 
     getVCards(): Observable<VCard[]> {
         return this.http.get('content/primeng/assets/data/json/vcards/vcards.json')
-            .map(response => response as VCard[]);
+            .map((response) => response as VCard[]);
     }
 }

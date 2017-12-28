@@ -9,8 +9,8 @@ import {Message} from 'primeng/components/common/api';
 })
 export class PaginatorDemoComponent implements OnInit {
     msgs: Message[] = [];
-    activeIndex: number = 0;
-    totalRecords: number = 100;
+    activeIndex = 0;
+    totalRecords = 100;
 
     onChangeStep(label: string) {
         this.msgs.length = 0;

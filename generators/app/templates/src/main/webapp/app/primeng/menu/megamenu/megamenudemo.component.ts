@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem,Message} from 'primeng/components/common/api';
+import {MenuItem, Message} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-megamenu',
@@ -8,7 +8,7 @@ import {MenuItem,Message} from 'primeng/components/common/api';
     styles: []
 })
 export class MegaMenuDemoComponent implements OnInit {
-    activeIndex: number = 0;
+    activeIndex = 0;
     msgs: Message[] = [];
     private items: object;
 
@@ -20,21 +20,21 @@ export class MegaMenuDemoComponent implements OnInit {
                     [
                         {
                             label: 'Home Furnishing',
-                            items: [{label: 'Cushions'},{label: 'Throws'},{label: 'Rugs & Doormats'},{label: 'Curtains'}]
+                            items: [{label: 'Cushions'}, {label: 'Throws'}, {label: 'Rugs & Doormats'}, {label: 'Curtains'}]
                         },
                         {
                             label: 'Home Accessories',
-                            items: [{label: 'Artificial Flowers'},{label: 'Lighting'},{label: 'Storage'},{label: 'Photo Frames'}]
+                            items: [{label: 'Artificial Flowers'}, {label: 'Lighting'}, {label: 'Storage'}, {label: 'Photo Frames'}]
                         }
                     ],
                     [
                         {
                             label: 'Cooking & Dinner',
-                            items: [{label: 'Cookware'},{label: 'Dinnerware'},{label: 'Bakerware'}]
+                            items: [{label: 'Cookware'}, {label: 'Dinnerware'}, {label: 'Bakerware'}]
                         },
                         {
                             label: 'Bed & Bath',
-                            items: [{label: 'Towels'},{label: 'Bath Mats'}]
+                            items: [{label: 'Towels'}, {label: 'Bath Mats'}]
                         }
                     ]
                 ]
@@ -45,32 +45,32 @@ export class MegaMenuDemoComponent implements OnInit {
                     [
                         {
                             label: 'Clothing',
-                            items: [{label: 'Shirts'},{label: 'Trousers'},{label: 'Jeans'}]
+                            items: [{label: 'Shirts'}, {label: 'Trousers'}, {label: 'Jeans'}]
                         },
                         {
                             label: 'Shoes & Boots',
-                            items: [{label: 'Boots'},{label: 'Slippers'},{label: 'Casual Shoes'}]
+                            items: [{label: 'Boots'}, {label: 'Slippers'}, {label: 'Casual Shoes'}]
                         },
 
                     ],
                     [
                         {
                             label: 'Suits',
-                            items: [{label: 'Luxury suits'},{label: 'Summer suits'}]
+                            items: [{label: 'Luxury suits'}, {label: 'Summer suits'}]
                         },
                         {
                             label: 'Accessories',
-                            items: [{label: 'Bags'},{label: 'Hats'},{label: 'Ties'}]
+                            items: [{label: 'Bags'}, {label: 'Hats'}, {label: 'Ties'}]
                         }
                     ],
                     [
                         {
                             label: 'Collections',
-                            items: [{label: 'Gadgets'},{label: 'Holiday shop'}]
+                            items: [{label: 'Gadgets'}, {label: 'Holiday shop'}]
                         },
                         {
                             label: 'Underware & pyjamas',
-                            items: [{label: 'Socks'},{label: 'Underware'}]
+                            items: [{label: 'Socks'}, {label: 'Underware'}]
                         }
                     ]
                 ]
@@ -81,21 +81,21 @@ export class MegaMenuDemoComponent implements OnInit {
                     [
                         {
                             label: 'Clothing',
-                            items: [{label: 'Blazers'},{label: 'Shorts'},{label: 'Skirts'}]
+                            items: [{label: 'Blazers'}, {label: 'Shorts'}, {label: 'Skirts'}]
                         },
                         {
                             label: 'Footwear',
-                            items: [{label: 'Boots'},{label: 'Sandals'}]
+                            items: [{label: 'Boots'}, {label: 'Sandals'}]
                         },
                         {
                             label: 'Bags',
-                            items: [{label: 'Hand bags'},{label: 'Hats'}]
+                            items: [{label: 'Hand bags'}, {label: 'Hats'}]
                         }
                     ],
                     [
                         {
                             label: 'Fit',
-                            items: [{label: 'Maternity'},{label: 'Fuller bust'}]
+                            items: [{label: 'Maternity'}, {label: 'Fuller bust'}]
                         }
                     ]
                 ]
@@ -106,21 +106,21 @@ export class MegaMenuDemoComponent implements OnInit {
                     [
                         {
                             label: 'Boys',
-                            items: [{label: 'Coats'},{label: 'Shirts'}]
+                            items: [{label: 'Coats'}, {label: 'Shirts'}]
                         },
                         {
                             label: 'Girls',
-                            items: [{label: 'Tops'},{label: 'Skirts'}]
+                            items: [{label: 'Tops'}, {label: 'Skirts'}]
                         }
                     ],
                     [
                         {
                             label: 'Toys',
-                            items: [{label: 'Toys'},{label: 'Fancy Dress'}]
+                            items: [{label: 'Toys'}, {label: 'Fancy Dress'}]
                         },
                         {
                             label: 'Collections',
-                            items: [{label: 'Wedding'},{label: 'Holiday'}]
+                            items: [{label: 'Wedding'}, {label: 'Holiday'}]
                         }
                     ]
                 ]

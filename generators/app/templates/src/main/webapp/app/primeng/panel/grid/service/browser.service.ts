@@ -12,6 +12,6 @@ export class BrowserService {
 
     getBrowsers(): Observable<Browser[]> {
         return this.http.get('/assets/data/json/browsers/browsers.json')
-            .map(response => response as Browser[]);
+            .map((response) => response as Browser[]);
     }
 }

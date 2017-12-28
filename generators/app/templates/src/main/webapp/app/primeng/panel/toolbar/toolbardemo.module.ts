@@ -4,7 +4,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 
-
 // import needed PrimeNG modules here
 
 import { <%= angular2AppName %>SharedModule } from '../../../shared';

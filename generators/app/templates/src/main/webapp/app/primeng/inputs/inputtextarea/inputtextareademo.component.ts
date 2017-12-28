@@ -7,10 +7,9 @@ import {Message} from 'primeng/components/common/api';
     styles: []
 })
 export class InputTextAreaDemoComponent implements OnInit {
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     msgs: Message[] = [];
-
 
     onChangeStep(label: string) {
         this.msgs.length = 0;
