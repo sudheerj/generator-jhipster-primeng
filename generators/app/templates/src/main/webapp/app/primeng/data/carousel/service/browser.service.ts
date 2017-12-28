@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Http, Response} from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import Browser from './browser';
@@ -7,7 +8,7 @@ import Browser from './browser';
 @Injectable()
 export class BrowserService {
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
     }
 
     getBrowsers(): Observable<Browser[]> {
