@@ -11,13 +11,13 @@ import {Message} from 'primeng/components/common/api';
 })
 export class CarouselDemoComponent implements OnInit {
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
     basicBrowsers: Browser[];
 
     constructor(private browserService: BrowserService) { }
 
     ngOnInit() {
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.slice(0,10));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.slice(0, 10));
     }
 
     onChangeStep(label: string) {

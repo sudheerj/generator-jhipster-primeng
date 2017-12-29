@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem,Message} from 'primeng/components/common/api';
+import {MenuItem, Message} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-steps',
@@ -9,16 +9,16 @@ import {MenuItem,Message} from 'primeng/components/common/api';
         .ui-steps .ui-steps-item {
             width: 25%;
         }
-        
+
         .ui-steps.steps-custom {
             margin-bottom: 30px;
         }
-         
+
         .ui-steps.steps-custom .ui-steps-item .ui-menuitem-link {
             height: 10px;
             padding: 0 1em;
         }
-         
+
         .ui-steps.steps-custom .ui-steps-item .ui-steps-number {
             background-color: #0081c2;
             color: #FFFFFF;
@@ -28,7 +28,7 @@ import {MenuItem,Message} from 'primeng/components/common/api';
             margin-top: -14px;
             margin-bottom: 10px;
         }
-        
+
         .ui-steps.steps-custom .ui-steps-item .ui-steps-title {
             color: #555555;
         }
@@ -36,7 +36,7 @@ import {MenuItem,Message} from 'primeng/components/common/api';
     encapsulation: ViewEncapsulation.None
 })
 export class StepsDemoComponent implements OnInit {
-    activeIndex: number = 0;
+    activeIndex = 0;
     msgs: Message[] = [];
     private items: MenuItem[];
 
@@ -46,7 +46,7 @@ export class StepsDemoComponent implements OnInit {
             command: (event: any) => {
                 this.activeIndex = 0;
                 this.msgs.length = 0;
-                this.msgs.push({severity:'info', summary:'First Step', detail: event.item.label});
+                this.msgs.push({severity: 'info', summary: 'First Step', detail: event.item.label});
             }
         },
             {
@@ -54,7 +54,7 @@ export class StepsDemoComponent implements OnInit {
                 command: (event: any) => {
                     this.activeIndex = 1;
                     this.msgs.length = 0;
-                    this.msgs.push({severity:'info', summary:'Seat Selection', detail: event.item.label});
+                    this.msgs.push({severity: 'info', summary: 'Seat Selection', detail: event.item.label});
                 }
             },
             {
@@ -62,7 +62,7 @@ export class StepsDemoComponent implements OnInit {
                 command: (event: any) => {
                     this.activeIndex = 2;
                     this.msgs.length = 0;
-                    this.msgs.push({severity:'info', summary:'Pay with CC', detail: event.item.label});
+                    this.msgs.push({severity: 'info', summary: 'Pay with CC', detail: event.item.label});
                 }
             },
             {
@@ -70,7 +70,7 @@ export class StepsDemoComponent implements OnInit {
                 command: (event: any) => {
                     this.activeIndex = 3;
                     this.msgs.length = 0;
-                    this.msgs.push({severity:'info', summary:'Last Step', detail: event.item.label});
+                    this.msgs.push({severity: 'info', summary: 'Last Step', detail: event.item.label});
                 }
             }
         ];

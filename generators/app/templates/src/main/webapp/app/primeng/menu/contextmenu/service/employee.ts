@@ -6,5 +6,3 @@ interface Employee {
 }
 
 export default Employee;
-
-

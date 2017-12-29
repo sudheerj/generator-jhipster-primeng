@@ -6,7 +6,6 @@ import {ButtonModule} from 'primeng/primeng';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 import {GrowlModule} from 'primeng/primeng';
 
-
 import {
     ButtonDemoComponent,
     buttonDemoRoute

@@ -9,14 +9,13 @@ import {MenuItem, Message} from 'primeng/components/common/api';
 })
 export class CaptchaDemoComponent implements OnInit {
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     ngOnInit() {
 
     }
 
-    showResponse(event)
-    {
+    showResponse(event) {
     this.msgs = [];
     this.msgs.push({severity: 'info', summary: 'Succees', detail: 'User Responded'});
     }

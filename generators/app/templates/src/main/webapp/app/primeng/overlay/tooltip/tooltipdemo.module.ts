@@ -8,7 +8,6 @@ import {GrowlModule} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
-
 import {
     TooltipDemoComponent,
     tooltipDemoRoute

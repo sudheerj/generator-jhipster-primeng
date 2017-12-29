@@ -35,7 +35,7 @@ const primeng_STATES = [
     declarations: [
         DataListDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'},BrowserService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message,TreeNode,MenuItem} from 'primeng/components/common/api';
+import {Message, TreeNode, MenuItem} from 'primeng/components/common/api';
 import {TreeNodeService} from './service/treenode.service';
 import {Tree} from 'primeng/components/tree/tree';
 
@@ -11,7 +11,7 @@ import {Tree} from 'primeng/components/tree/tree';
 })
 export class TreeDemoComponent implements OnInit {
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     @ViewChild('expandingTree')
     expandingTree: Tree;
@@ -92,7 +92,7 @@ export class TreeDemoComponent implements OnInit {
 
     nodeExpand(event: any) {
         if (event.node) {
-            //in a real application, make a call to a remote url to load children of the current node and add the new nodes as children
+            // in a real application, make a call to a remote url to load children of the current node and add the new nodes as children
             this.nodeService.getTouristPlaces().subscribe((nodes: any) => event.node.children = nodes);
         }
     }
@@ -121,7 +121,7 @@ export class TreeDemoComponent implements OnInit {
     expandRecursive(node: TreeNode, isExpand: boolean) {
         node.expanded = isExpand;
         if (node.children) {
-            node.children.forEach( childNode => {
+            node.children.forEach( (childNode) => {
                 this.expandRecursive(childNode, isExpand);
             } );
         }

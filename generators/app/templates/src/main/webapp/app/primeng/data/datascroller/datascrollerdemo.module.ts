@@ -38,7 +38,7 @@ const primeng_STATES = [
     declarations: [
         DataScrollerDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'},BrowserService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angular2AppName %>DataScrollerDemoModule {}

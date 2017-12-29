@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message,SelectItem} from 'primeng/components/common/api';
+import {Message, SelectItem} from 'primeng/components/common/api';
 import {CountryService} from './service/country.service';
 import Country from './service/country';
 
@@ -23,10 +23,10 @@ export class AutocompleteDemoComponent implements OnInit {
     filteredTopAsiaCountries: any[];
     filteredCountryInstances: Country[];
     filteredCustomCountries: Country[];
-    selectedType: string = 'readonly';
+    selectedType = 'readonly';
     types: SelectItem[];
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     constructor(private countryService: CountryService) {
     }
@@ -57,28 +57,28 @@ export class AutocompleteDemoComponent implements OnInit {
     }
 
     filterCountryInstances(event: any) {
-        let query = event.query;
+        const query = event.query;
         this.countryService.getCountries().subscribe((countries: Country[]) => {
             this.filteredCountryInstances = this.filterCountry(query, countries);
         });
     }
 
     filterCountries(event: any) {
-        let query = event.query;
+        const query = event.query;
         this.countryService.getCountries().subscribe((countries: Country[]) => {
             this.filteredCountries = this.filterCountry(query, countries);
         });
     }
 
     filterCountriesMultiple(event: any) {
-        let query = event.query;
+        const query = event.query;
         this.countryService.getCountries().subscribe((countries: Country[]) => {
             this.filteredCountriesMultiple = this.filterCountry(query, countries);
         });
     }
 
     filterCustomCountries(event: any) {
-        let query = event.query;
+        const query = event.query;
         this.countryService.getCountries().subscribe((countries: Country[]) => {
             this.filteredCustomCountries = this.filterCountry(query, countries);
         });
@@ -86,7 +86,7 @@ export class AutocompleteDemoComponent implements OnInit {
 
     filterTopAsiaCountries(event: any) {
         this.filteredTopAsiaCountries = [];
-        for (let country of this.topAsiaCountries) {
+        for (const country of this.topAsiaCountries) {
             if (country.toLowerCase().indexOf(event.query.toLowerCase()) === 0) {
                 this.filteredTopAsiaCountries.push(country);
             }
@@ -101,8 +101,8 @@ export class AutocompleteDemoComponent implements OnInit {
     }
 
     filterCountry(query: any, countries: Country[]): Country[] {
-        let filtered: any[] = [];
-        for (let country of countries) {
+        const filtered: any[] = [];
+        for (const country of countries) {
             if (country.name.toLowerCase().indexOf(query.toLowerCase()) === 0) {
                 filtered.push(country);
             }

@@ -48,7 +48,7 @@ const primeng_STATES = [
         GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'},EventService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, EventService],
     declarations: [
         ScheduleDemoComponent
     ],

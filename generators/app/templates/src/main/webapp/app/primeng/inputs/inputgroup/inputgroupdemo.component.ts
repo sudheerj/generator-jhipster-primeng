@@ -7,7 +7,7 @@ import {Message} from 'primeng/components/common/api';
     styles: []
 })
 export class InputGroupDemoComponent implements OnInit {
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     msgs: Message[] = [];
 

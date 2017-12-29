@@ -11,7 +11,7 @@ import {Message} from 'primeng/components/common/api';
 })
 export class DragdropDemoComponent implements OnInit {
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
     availableDocs: Document[];
     deletedDocs: Document[];
     draggedDoc: Document;

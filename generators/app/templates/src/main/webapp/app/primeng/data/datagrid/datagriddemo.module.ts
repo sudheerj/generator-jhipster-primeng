@@ -12,7 +12,6 @@ import {GrowlModule} from 'primeng/components/growl/growl';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 import {BrowserService} from './service/browser.service';
 
-
 import {
     DataGridDemoComponent,
     datagridDemoRoute
@@ -36,7 +35,7 @@ const primeng_STATES = [
     declarations: [
         DataGridDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'},BrowserService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

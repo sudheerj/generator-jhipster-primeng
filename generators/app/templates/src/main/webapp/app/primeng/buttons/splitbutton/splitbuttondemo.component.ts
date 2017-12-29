@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem,Message} from 'primeng/components/common/api';
+import {MenuItem, Message} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-splitbutton',
@@ -13,7 +13,7 @@ export class SplitbuttonDemoComponent implements OnInit {
     items: MenuItem[];
     itemsIcons: MenuItem[];
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     ngOnInit() {
         this.items = [

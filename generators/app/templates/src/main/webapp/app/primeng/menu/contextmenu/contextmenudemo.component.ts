@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem,Message} from 'primeng/components/common/api';
+import {MenuItem, Message} from 'primeng/components/common/api';
 import {EmployeeService} from './service/employee.service';
 import Employee from './service/employee';
 
@@ -12,7 +12,7 @@ import Employee from './service/employee';
 export class ContextMenuDemoComponent implements OnInit {
     selectedEmployee: Employee;
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
     employees: Employee[];
     private documentItems: MenuItem[];
     private targetItems: MenuItem[];

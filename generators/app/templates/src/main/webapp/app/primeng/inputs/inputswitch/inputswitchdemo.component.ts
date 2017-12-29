@@ -8,18 +8,18 @@ import {Message, SelectItem} from 'primeng/components/common/api';
 })
 export class InputSwitchDemoComponent implements OnInit {
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
-    checked1: boolean = false;
+    checked1 = false;
 
-    checked2: boolean = true;
+    checked2 = true;
 
     onChangeStep(label: string) {
         this.msgs.length = 0;
         this.msgs.push({severity: 'info', summary: label});
     }
 
-    ngOnInit(){
+    ngOnInit() {
 
     }
 }

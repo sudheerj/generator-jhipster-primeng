@@ -68,7 +68,6 @@ import { <%= angular2AppName %>RadarchartDemoModule } from './charts/radarchart/
 
 import { <%= angular2AppName %>DragDropDemoModule } from './dragdrop/dragdrop/dragdropdemo.module';
 
-
 import { <%= angular2AppName %>MenuDemoModule } from './menu/menu/menudemo.module';
 import { <%= angular2AppName %>ContextMenuDemoModule } from './menu/contextmenu/contextmenudemo.module';
 import { <%= angular2AppName %>PanelMenuDemoModule } from './menu/panelmenu/panelmenudemo.module';

@@ -11,7 +11,7 @@ export class PanelDemoComponent implements OnInit {
 
     items: MenuItem[];
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     ngOnInit() {
         this.items = [

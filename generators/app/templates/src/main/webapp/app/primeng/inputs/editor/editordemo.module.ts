@@ -7,7 +7,7 @@ import {EditorModule} from 'primeng/components/editor/editor';
 import {ButtonModule} from 'primeng/components/button/button';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
-import {SharedModule} from "primeng/components/common/shared";
+import {SharedModule} from 'primeng/components/common/shared';
 
 import {
     EditorDemoComponent,

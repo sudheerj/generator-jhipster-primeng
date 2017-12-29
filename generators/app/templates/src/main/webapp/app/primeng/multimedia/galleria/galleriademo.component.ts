@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem,Message} from 'primeng/components/common/api';
+import {MenuItem, Message} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-galleria',
@@ -8,7 +8,7 @@ import {MenuItem,Message} from 'primeng/components/common/api';
     styles: []
 })
 export class GalleriaDemoComponent implements OnInit {
-    activeIndex: number = 0;
+    activeIndex = 0;
     msgs: Message[] = [];
 
     images: any[];

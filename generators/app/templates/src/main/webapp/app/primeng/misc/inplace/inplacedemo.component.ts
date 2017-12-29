@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem,Message,SelectItem} from 'primeng/components/common/api';
+import {MenuItem, Message, SelectItem} from 'primeng/components/common/api';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
 
@@ -12,14 +12,14 @@ import Browser from './service/browser';
 export class InplaceDemoComponent implements OnInit {
     msgs: Message[] = [];
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     basicBrowsers: Browser[];
 
     constructor(private browserService: BrowserService) { }
 
-    ngOnInit(){
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.slice(0,10));
+    ngOnInit() {
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.slice(0, 10));
     }
 
     onChangeStep(label: string) {

@@ -11,7 +11,6 @@ import {GrowlModule} from 'primeng/components/growl/growl';
 
 import {CountryService} from './service/country.service';
 
-
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
 import {
@@ -34,7 +33,7 @@ const primeng_STATES = [
         GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'},CountryService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService],
     declarations: [
         OrderlistDemoComponent
     ],

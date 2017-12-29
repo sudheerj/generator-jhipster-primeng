@@ -39,7 +39,7 @@ const primeng_STATES = [
     declarations: [
         TreeDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'},TreeDragDropService,TreeNodeService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, TreeDragDropService, TreeNodeService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angular2AppName %>TreeDemoModule {}

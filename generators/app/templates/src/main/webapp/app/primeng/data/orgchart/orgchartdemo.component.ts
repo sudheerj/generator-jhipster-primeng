@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {Subscription} from 'rxjs';
 import {Message, TreeNode} from 'primeng/components/common/api';
@@ -10,8 +10,8 @@ import {VCard} from './service/vcard';
     templateUrl: './orgchartdemo.component.html',
     styles: []
 })
-export class OrgChartDemoComponent implements OnInit {
-    activeIndex: number = 0;
+export class OrgChartDemoComponent implements OnInit, OnDestroy {
+    activeIndex = 0;
     msgs: Message[] = [];
     get$: Subscription;
 
@@ -19,7 +19,7 @@ export class OrgChartDemoComponent implements OnInit {
     dataAdvanced: TreeNode[];
     selectedNode: TreeNode;
 
-    display: boolean = false;
+    display = false;
     selectedVCard: VCard;
     private availableVCards: VCard[];
 
@@ -112,7 +112,7 @@ export class OrgChartDemoComponent implements OnInit {
     }
 
     ngOnDestroy() {
-        if(this.get$) {
+        if (this.get$) {
             this.get$.unsubscribe();
         }
     }

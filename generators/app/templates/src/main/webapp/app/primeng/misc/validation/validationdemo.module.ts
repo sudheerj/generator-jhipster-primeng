@@ -13,7 +13,7 @@ import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
 import {TriStateCheckboxModule} from 'primeng/components/tristatecheckbox/tristatecheckbox';
 import {BrowserModule} from '@angular/platform-browser';
 import {APP_BASE_HREF} from '@angular/common';
-import {FormsModule,ReactiveFormsModule}    from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 

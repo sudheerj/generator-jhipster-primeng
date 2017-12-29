@@ -25,9 +25,9 @@ export class CalendarDemoComponent implements OnInit {
     time: boolean;
     de: any;
     types: SelectItem[];
-    selectedHourFormat: string = '12';
+    selectedHourFormat = '12';
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     onSelect() {
         this.msgs.push({severity: 'info', summary: 'The calendar date is selected'});
@@ -74,13 +74,13 @@ export class CalendarDemoComponent implements OnInit {
         this.types.push({label: '12H Format', value: '12'});
         this.types.push({label: '24H Format', value: '24'});
 
-        let today = new Date();
-        let month = today.getMonth();
-        let year = today.getFullYear();
-        let prevMonth = (month === 0) ? 11 : month - 1;
-        let prevYear = (prevMonth === 11) ? year - 1 : year;
-        let nextMonth = (month === 11) ? 0 : month + 1;
-        let nextYear = (nextMonth === 0) ? year + 1 : year;
+        const today = new Date();
+        const month = today.getMonth();
+        const year = today.getFullYear();
+        const prevMonth = (month === 0) ? 11 : month - 1;
+        const prevYear = (prevMonth === 11) ? year - 1 : year;
+        const nextMonth = (month === 11) ? 0 : month + 1;
+        const nextYear = (nextMonth === 0) ? year + 1 : year;
         this.minDate = new Date();
         this.minDate.setMonth(prevMonth);
         this.minDate.setFullYear(prevYear);
@@ -88,9 +88,9 @@ export class CalendarDemoComponent implements OnInit {
         this.maxDate.setMonth(nextMonth);
         this.maxDate.setFullYear(nextYear);
 
-        let invalidDate = new Date();
+        const invalidDate = new Date();
         invalidDate.setDate(today.getDate() - 3);
-        this.invalidDates = [today,invalidDate];
+        this.invalidDates = [today, invalidDate];
 
     }
 

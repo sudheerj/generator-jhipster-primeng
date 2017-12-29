@@ -11,8 +11,6 @@ import {DeferModule} from 'primeng/components/defer/defer';
 import {BrowserService} from './service/browser.service';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
-
-
 import {
     DeferDemoComponent,
     deferDemoRoute
@@ -36,7 +34,7 @@ const primeng_STATES = [
     declarations: [
         DeferDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'},BrowserService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -3,5 +3,5 @@ export class MyEvent {
     title: string;
     start: string;
     end: string;
-    allDay: boolean = true;
+    allDay = true;
 }

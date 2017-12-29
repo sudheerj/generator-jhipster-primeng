@@ -11,7 +11,7 @@ export class FieldsetDemoComponent implements OnInit {
 
     basic: string;
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     beforeToggle() {
         this.msgs = [];
@@ -29,5 +29,5 @@ export class FieldsetDemoComponent implements OnInit {
         this.msgs.length = 0;
         this.msgs.push({severity: 'info', summary: label});
     }
-    ngOnInit(){}
+    ngOnInit() {}
 }

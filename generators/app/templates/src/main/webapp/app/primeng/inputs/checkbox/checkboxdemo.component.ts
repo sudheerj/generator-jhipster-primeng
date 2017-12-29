@@ -10,13 +10,13 @@ export class CheckboxDemoComponent implements OnInit {
     msgs: Message[] = [];
 
     checked: boolean;
-    selectedVersions: string[] = ['AngularJS1.0','AngularV4.0'];
+    selectedVersions: string[] = ['AngularJS1.0', 'AngularV4.0'];
     status: any = true;
-    feature: boolean = true;
+    feature = true;
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
-    ngOnInit(){}
+    ngOnInit() {}
 
     onChangeCheckbox() {
         this.msgs = [];

@@ -9,9 +9,9 @@ import {Message} from 'primeng/components/common/api';
 })
 export class ButtonDemoComponent implements OnInit {
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
-    clicks: number = 0;
+    clicks = 0;
 
     clickMe() {
         this.msgs = [];

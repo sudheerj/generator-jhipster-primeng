@@ -8,13 +8,13 @@ import {Message} from 'primeng/components/common/api';
     styles: []
 })
 export class DialogDemoComponent implements OnInit {
-    basic: boolean = false;
-    custom: boolean = false;
-    advanced: boolean = false;
-    events: boolean = false;
+    basic = false;
+    custom = false;
+    advanced = false;
+    events = false;
 
     msgs: Message[] = [];
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     ngOnInit() {
 

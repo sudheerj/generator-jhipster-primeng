@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message,SelectItem} from 'primeng/components/common/api';
+import {Message, SelectItem} from 'primeng/components/common/api';
 import {LazyLoadEvent} from 'primeng/components/common/api';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
@@ -21,7 +21,7 @@ import MyBrowser from './service/mybrowser';
 export class DataTableDemoComponent implements OnInit {
     msgs: Message[] = [];
 
-    activeIndex: number = 0;
+    activeIndex = 0;
 
     browser: Browser = new MyBrowser();
 
@@ -39,7 +39,7 @@ export class DataTableDemoComponent implements OnInit {
 
     newBrowser: boolean;
 
-    totalRecords: number = 100;
+    totalRecords = 100;
 
     engines: SelectItem[];
 
@@ -55,7 +55,7 @@ export class DataTableDemoComponent implements OnInit {
 
     ngOnInit() {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.browsers = browsers);
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.slice(0,10));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.slice(0, 10));
         this.cols = [
             {field: 'engine', header: 'Engine'},
             {field: 'browser', header: 'Browser'},
@@ -63,7 +63,7 @@ export class DataTableDemoComponent implements OnInit {
             {field: 'grade', header: 'Grade'}
         ];
         this.columnOptions = [];
-        for (let col of this.cols) {
+        for (const col of this.cols) {
             this.columnOptions.push({label: col.header, value: col});
         }
 
@@ -191,11 +191,11 @@ export class DataTableDemoComponent implements OnInit {
     }
 
     loadBrowsersLazy(event: LazyLoadEvent) {
-        //event.first = First row offset
-        //event.rows = Number of rows per page
-        //event.sortField = Field name to sort with
-        //event.sortOrder = Sort order as number, 1 for asc and -1 for dec
-        //filters: FilterMetadata object having field as key and filter value, filter matchMode as value
+        // event.first = First row offset
+        // event.rows = Number of rows per page
+        // event.sortField = Field name to sort with
+        // event.sortOrder = Sort order as number, 1 for asc and -1 for dec
+        // filters: FilterMetadata object having field as key and filter value, filter matchMode as value
 
         this.browserService.getBrowsers().subscribe((browsers: any) =>
             this.browsers = browsers.slice(event.first, (event.first + event.rows)));
@@ -208,7 +208,7 @@ export class DataTableDemoComponent implements OnInit {
     }
 
     save() {
-        let browsers = [...this.browsers];
+        const browsers = [...this.browsers];
         if (this.newBrowser) {
             browsers.push(this.browser);
         } else {
@@ -220,8 +220,8 @@ export class DataTableDemoComponent implements OnInit {
     }
 
     delete() {
-        let index = this.findSelectedBrowserIndex();
-        this.browsers = this.browsers.filter( (val,i) => i !== index);
+        const index = this.findSelectedBrowserIndex();
+        this.browsers = this.browsers.filter( (val, i) => i !== index);
         this.browser = null;
         this.displayDialog = false;
     }

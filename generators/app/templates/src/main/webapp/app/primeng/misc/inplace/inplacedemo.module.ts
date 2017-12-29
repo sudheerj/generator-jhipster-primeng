@@ -11,7 +11,6 @@ import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {BrowserService} from './service/browser.service';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
-
 import {
     InplaceDemoComponent,
     inplaceDemoRoute

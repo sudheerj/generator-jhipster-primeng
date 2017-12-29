@@ -12,6 +12,6 @@ export class EmployeeService {
 
     getEmployees(): Observable<Employee[]> {
         return this.http.get('content/primeng/assets/data/json/employees/employees.json')
-            .map(response => response as Employee[]);
+            .map((response) => response as Employee[]);
     }
 }

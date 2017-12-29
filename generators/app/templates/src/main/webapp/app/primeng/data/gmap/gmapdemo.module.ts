@@ -14,7 +14,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
 
-
 import {
     GmapDemoComponent,
     gmapDemoRoute

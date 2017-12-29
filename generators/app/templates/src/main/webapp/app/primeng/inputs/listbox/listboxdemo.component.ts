@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message,SelectItem} from 'primeng/components/common/api';
+import {Message, SelectItem} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-listbox',
@@ -17,15 +17,17 @@ export class ListboxDemoComponent implements OnInit {
 
     cars: SelectItem[];
 
-    selectedCar: string = 'BMW';
+    selectedCar = 'BMW';
+
+    activeIndex = 0;
 
     constructor() {
         this.cities = [];
-        this.cities.push({label:'New York', value:'New York'});
-        this.cities.push({label:'Rome', value:'Rome'});
-        this.cities.push({label:'London', value:'London'});
-        this.cities.push({label:'Istanbul', value:'Istanbul'});
-        this.cities.push({label:'Paris', value:'Paris'});
+        this.cities.push({label: 'New York', value: 'New York'});
+        this.cities.push({label: 'Rome', value: 'Rome'});
+        this.cities.push({label: 'London', value: 'London'});
+        this.cities.push({label: 'Istanbul', value: 'Istanbul'});
+        this.cities.push({label: 'Paris', value: 'Paris'});
 
         this.cars = [];
         this.cars.push({label: 'Audi', value: 'Audi'});
@@ -39,8 +41,6 @@ export class ListboxDemoComponent implements OnInit {
         this.cars.push({label: 'VW', value: 'VW'});
         this.cars.push({label: 'Volvo', value: 'Volvo'});
     }
-
-    activeIndex: number = 0;
 
     ngOnInit() {
 

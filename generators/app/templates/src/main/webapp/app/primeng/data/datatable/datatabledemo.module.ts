@@ -50,7 +50,7 @@ const primeng_STATES = [
     declarations: [
         DataTableDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'},BrowserService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angular2AppName %>DataTableDemoModule {}
