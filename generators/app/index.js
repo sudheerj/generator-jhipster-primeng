@@ -12,9 +12,9 @@ const jhipsterConstants = require('generator-jhipster/generators/generator-const
 const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
-const ANGULAR_VERSION = '5.1.0';
+const ANGULAR_VERSION = '5.2.0-beta.1';
 const PRIMENG_VERSION = '5.0.2';
-const PRIMENG_EXTENSIONS_VERSION = '0.3.0';
+const PRIMENG_EXTENSIONS_VERSION = '0.0.17';
 const CHARTJS_VERSION = '2.6.0';
 const MOMENT_VERSION = '2.18.1';
 const FULLCALENDAR_VERSION = '3.5.0';
