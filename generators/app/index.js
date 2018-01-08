@@ -14,7 +14,7 @@ util.inherits(JhipsterGenerator, BaseGenerator);
 
 const ANGULAR_VERSION = '5.2.0-beta.1';
 const PRIMENG_VERSION = '5.0.2';
-const PRIMENG_EXTENSIONS_VERSION = '0.0.23';
+const PRIMENG_EXTENSIONS_VERSION = '0.0.38';
 const CHARTJS_VERSION = '2.6.0';
 const MOMENT_VERSION = '2.18.1';
 const FULLCALENDAR_VERSION = '3.5.0';
