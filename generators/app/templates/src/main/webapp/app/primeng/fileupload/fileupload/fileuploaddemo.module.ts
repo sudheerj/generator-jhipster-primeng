@@ -7,7 +7,7 @@ import {GrowlModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/primeng';
 import {FileUploadModule} from 'primeng/components/fileupload/fileupload';
 import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';

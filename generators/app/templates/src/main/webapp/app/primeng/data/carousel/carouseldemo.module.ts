@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {BrowserService} from './service/browser.service';
 import {CarouselModule} from 'primeng/components/carousel/carousel';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     CarouselDemoComponent,

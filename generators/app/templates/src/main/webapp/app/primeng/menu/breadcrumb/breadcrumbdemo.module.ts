@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {BreadcrumbModule} from 'primeng/components/breadcrumb/breadcrumb';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     BreadcrumbDemoComponent,

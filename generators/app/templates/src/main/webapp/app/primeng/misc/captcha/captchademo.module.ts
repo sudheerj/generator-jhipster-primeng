@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {CaptchaModule} from 'primeng/components/captcha/captcha';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     CaptchaDemoComponent,

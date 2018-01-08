@@ -7,7 +7,7 @@ import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {DataGridModule} from 'primeng/components/datagrid/datagrid';
 import {PanelModule} from 'primeng/components/panel/panel';
 import {DocumentService} from './service/document.service';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     DragdropDemoComponent,

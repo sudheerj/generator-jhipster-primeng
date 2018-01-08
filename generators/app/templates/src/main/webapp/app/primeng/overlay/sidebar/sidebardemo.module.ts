@@ -6,7 +6,7 @@ import {ButtonModule} from 'primeng/components/button/button';
 import {SidebarModule} from 'primeng/components/sidebar/sidebar';
 import {GrowlModule} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     SideBarDemoComponent,

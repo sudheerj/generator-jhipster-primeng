@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {RatingModule} from 'primeng/components/rating/rating';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     RatingDemoComponent,

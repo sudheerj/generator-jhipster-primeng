@@ -10,7 +10,7 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {OrganizationChartModule} from 'primeng/components/organizationchart/organizationchart';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {DialogModule} from 'primeng/components/dialog/dialog';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {VCardService} from './service/vcard.service';
 
 import {

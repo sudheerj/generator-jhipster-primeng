@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {ListboxModule} from 'primeng/components/listbox/listbox';
 import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     ListboxDemoComponent,

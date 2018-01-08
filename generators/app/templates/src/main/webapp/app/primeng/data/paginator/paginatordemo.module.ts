@@ -5,7 +5,7 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {PaginatorModule} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     PaginatorDemoComponent,

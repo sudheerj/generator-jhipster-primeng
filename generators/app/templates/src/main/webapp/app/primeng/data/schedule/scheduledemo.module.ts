@@ -18,7 +18,7 @@ import {ButtonModule} from 'primeng/components/button/button';
 
 import {EventService} from './service/event.service';
 
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     ScheduleDemoComponent,

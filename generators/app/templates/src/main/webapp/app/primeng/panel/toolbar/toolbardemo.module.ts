@@ -12,7 +12,7 @@ import {InputTextModule} from 'primeng/components/inputtext/inputtext';
 import {SplitButtonModule} from 'primeng/components/splitbutton/splitbutton';
 import {ButtonModule} from 'primeng/components/button/button';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     ToolbarDemoComponent,

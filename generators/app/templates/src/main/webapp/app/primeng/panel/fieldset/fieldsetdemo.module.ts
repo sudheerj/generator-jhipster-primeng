@@ -9,7 +9,7 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
 import {FieldsetModule} from 'primeng/components/fieldset/fieldset';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     FieldsetDemoComponent,

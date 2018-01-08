@@ -8,7 +8,7 @@ import {DropdownModule} from 'primeng/components/dropdown/dropdown';
 import {MultiSelectModule} from 'primeng/components/multiselect/multiselect';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {CountryService} from './service/country.service';
 
 import {

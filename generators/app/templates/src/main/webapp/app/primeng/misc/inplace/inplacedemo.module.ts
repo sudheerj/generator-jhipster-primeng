@@ -9,7 +9,7 @@ import {GrowlModule} from 'primeng/components/growl/growl';
 import {InplaceModule} from 'primeng/components/inplace/inplace';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {BrowserService} from './service/browser.service';
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     InplaceDemoComponent,

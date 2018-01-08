@@ -12,7 +12,7 @@ import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
 import {ButtonModule} from 'primeng/components/button/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     GmapDemoComponent,

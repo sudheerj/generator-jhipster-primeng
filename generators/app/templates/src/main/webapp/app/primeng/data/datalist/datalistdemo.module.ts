@@ -10,7 +10,7 @@ import {GrowlModule} from 'primeng/components/growl/growl';
 import {BrowserService} from './service/browser.service';
 import {APP_BASE_HREF} from '@angular/common';
 
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     DataListDemoComponent,

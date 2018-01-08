@@ -13,7 +13,7 @@ import {ContextMenuModule} from 'primeng/components/contextmenu/contextmenu';
 import {GrowlModule} from 'primeng/primeng';
 import {TreeNodeService} from './service/treenode.service';
 
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {
     TreeDemoComponent,
     treeDemoRoute

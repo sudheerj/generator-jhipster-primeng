@@ -18,7 +18,7 @@ import {DropdownModule} from 'primeng/components/dropdown/dropdown';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {BrowserService} from './service/browser.service';
 
-import {WizardModule} from 'primeng-extensions/components/wizard/wizard.module';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {
     DataTableDemoComponent,
     datatableDemoRoute
