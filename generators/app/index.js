@@ -998,7 +998,7 @@ module.exports = JhipsterGenerator.extend({
             );
         };
 
-        const primengResources = `\n@import "~primeng/resources/primeng.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
+        const primengResources = `\n@import "~primeng/resources/primeng.min.css";\n@import "~primeng-extensions/resources/primeng-extensions.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
         const primengRootResources = `<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
                                       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css"/>
                                       <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script>
