@@ -28,7 +28,7 @@ export class ScheduleDemoComponent implements OnInit {
     constructor(private eventService: EventService) { }
 
     ngOnInit() {
-        this.eventService.getEvents().subscribe((events: any) => {this.events = events; });
+        this.eventService.getEvents().subscribe((events: any) => {this.events = events.data; });
 
         this.headerConfig = {
             left: 'prev,next today',
@@ -53,7 +53,7 @@ export class ScheduleDemoComponent implements OnInit {
         const start = event.view.start;
         const end = event.view.end;
         // In real time the service call filtered based on start and end dates
-        this.eventService.getEvents().subscribe((events: any) => {this.events = events; });
+        this.eventService.getEvents().subscribe((events: any) => {this.events = events.data; });
     }
 
     handleDayClick(event: any) {

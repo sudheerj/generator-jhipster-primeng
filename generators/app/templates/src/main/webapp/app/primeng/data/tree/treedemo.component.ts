@@ -43,22 +43,22 @@ export class TreeDemoComponent implements OnInit {
     constructor(private nodeService: TreeNodeService) { }
 
     ngOnInit() {
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.basicTree = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.singleSelectionTree = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.multipleSelectionTree = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.checkboxSelectionTree = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.templateTree = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.programmaticTree = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.lazyTree = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.contextMenuTree = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.dragDropTreeOne = places);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.basicTree = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.singleSelectionTree = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.multipleSelectionTree = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.checkboxSelectionTree = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.templateTree = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.programmaticTree = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.lazyTree = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.contextMenuTree = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.dragDropTreeOne = places.data);
         this.nodeService.getTouristPlaces().subscribe((places: any) => {
             this.horizontalTree = [{
                 label: 'Root',
                 children: places
             }];
         });
-        this.nodeService.getTouristPlaces().subscribe((files: any) => this.dragDropTreeOne = files);
+        this.nodeService.getTouristPlaces().subscribe((files: any) => this.dragDropTreeOne = files.data);
 
         this.dragDropTreeTwo = [
             {
@@ -93,7 +93,7 @@ export class TreeDemoComponent implements OnInit {
     nodeExpand(event: any) {
         if (event.node) {
             // in a real application, make a call to a remote url to load children of the current node and add the new nodes as children
-            this.nodeService.getTouristPlaces().subscribe((nodes: any) => event.node.children = nodes);
+            this.nodeService.getTouristPlaces().subscribe((nodes: any) => event.node.children = nodes.data);
         }
     }
 

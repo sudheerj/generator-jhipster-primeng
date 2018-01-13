@@ -28,11 +28,11 @@ export class DataGridDemoComponent implements OnInit {
     constructor(private browserService: BrowserService) { }
 
     ngOnInit() {
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.slice(0, 12));
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.facetBrowsers = browsers.slice(0, 12));
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.paginationBrowsers = browsers);
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.responsiveBrowsers = browsers);
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.advancedBrowsers = browsers);
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 12));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.facetBrowsers = browsers.data.slice(0, 12));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.paginationBrowsers = browsers.data);
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.responsiveBrowsers = browsers.data);
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.advancedBrowsers = browsers.data);
     }
 
     selectBrowser(browser: Browser) {
@@ -53,7 +53,7 @@ export class DataGridDemoComponent implements OnInit {
     loadData(event: any) {
         const start = event.first; // event.first = First row offset
         const end = start + event.rows; // event.rows = Number of rows per page
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.lazyloadingBrowsers = browsers.slice(start, end));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.lazyloadingBrowsers = browsers.data.slice(start, end));
     }
 
     onChangeStep(label: string) {

@@ -121,7 +121,7 @@ export class OrgChartDemoComponent implements OnInit, OnDestroy {
         if (this.availableVCards == null) {
             this.get$ = this.vcardService.getVCards().subscribe(
                 (vcards: VCard[]) => {
-                    this.availableVCards = vcards;
+                    this.availableVCards = vcards.data;
                     this.showInfo(event);
                 });
         } else {

@@ -45,13 +45,13 @@ export class TreeTableDemoComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.basicTreeTable = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.singleSelectionTreeTable = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.multipleSelectionTreeTable = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.checkboxSelectionTreeTable = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.templateTreeTable = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.contextmenuTreeTable = places);
-        this.nodeService.getTouristPlaces().subscribe((places: any) => this.lazyTreeTable = places);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.basicTreeTable = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.singleSelectionTreeTable = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.multipleSelectionTreeTable = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.checkboxSelectionTreeTable = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.templateTreeTable = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.contextmenuTreeTable = places.data);
+        this.nodeService.getTouristPlaces().subscribe((places: any) => this.lazyTreeTable = places.data);
 
         this.items = [
             {label: 'View', icon: 'fa-search', command: (event) => this.viewNode(this.selectedPlace)},
@@ -77,7 +77,7 @@ export class TreeTableDemoComponent implements OnInit {
     nodeExpand(event: any) {
         if (event.node) {
             // in a real application, make a call to a remote url to load children of the current node and add the new nodes as children
-            this.nodeService.getTouristPlaces().subscribe((nodes) => event.node.children = nodes);
+            this.nodeService.getTouristPlaces().subscribe((nodes) => event.node.children = nodes.data);
         }
     }
 

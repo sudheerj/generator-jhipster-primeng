@@ -54,8 +54,8 @@ export class DataTableDemoComponent implements OnInit {
     constructor(private browserService: BrowserService) { }
 
     ngOnInit() {
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.browsers = browsers);
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.slice(0, 10));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.browsers = browsers.data);
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 10));
         this.cols = [
             {field: 'engine', header: 'Engine'},
             {field: 'browser', header: 'Browser'},
@@ -198,7 +198,7 @@ export class DataTableDemoComponent implements OnInit {
         // filters: FilterMetadata object having field as key and filter value, filter matchMode as value
 
         this.browserService.getBrowsers().subscribe((browsers: any) =>
-            this.browsers = browsers.slice(event.first, (event.first + event.rows)));
+            this.browsers = browsers.data.slice(event.first, (event.first + event.rows)));
     }
 
     addBrowser() {

@@ -19,7 +19,7 @@ export class DeferDemoComponent {
     constructor(private browserService: BrowserService) { }
 
     initData() {
-        this.browserService.getBrowsers().subscribe((browsers: any) => setTimeout(() => this.browsers = browsers, 0));
+        this.browserService.getBrowsers().subscribe((browsers: any) => setTimeout(() => this.browsers = browsers.data, 0));
     }
 
     onChangeStep(label: string) {

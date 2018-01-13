@@ -27,11 +27,11 @@ export class DataScrollerDemoComponent implements OnInit {
     constructor(private browserService: BrowserService) { }
 
     ngOnInit() {
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.slice(0, 4));
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.facetBrowsers = browsers.slice(0, 4));
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.inlineBrowsers = browsers);
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.loaderBrowsers = browsers);
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.lazyloadingBrowsers = browsers.slice(0, 4));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 4));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.facetBrowsers = browsers.data.slice(0, 4));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.inlineBrowsers = browsers.data);
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.loaderBrowsers = browsers.data);
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.lazyloadingBrowsers = browsers.data.slice(0, 4));
     }
 
     selectBrowser(browser: Browser) {
@@ -46,7 +46,7 @@ export class DataScrollerDemoComponent implements OnInit {
     loadData(event: any) {
         const start = event.first; // event.first = First row offset
         const end = start + event.rows; // event.rows = Number of rows per page
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.lazyloadingBrowsers = browsers.slice(start, end));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.lazyloadingBrowsers = browsers.data.slice(start, end));
     }
 
     onChangeStep(label: string) {

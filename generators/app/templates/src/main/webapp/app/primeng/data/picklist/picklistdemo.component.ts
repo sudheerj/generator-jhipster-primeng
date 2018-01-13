@@ -21,7 +21,7 @@ export class PicklistDemoComponent implements OnInit {
 
     ngOnInit() {
         this.countryService.getCountries().subscribe((countries: Country[]) => {
-            this.sourceCountries = countries;
+            this.sourceCountries = countries.data;
         });
         this.targetCountries = [];
     }

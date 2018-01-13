@@ -21,7 +21,7 @@ export class DragdropDemoComponent implements OnInit {
 
     ngOnInit() {
         this.deletedDocs = [];
-        this.docService.getDocuments().subscribe((docs: Document[]) => this.availableDocs = docs);
+        this.docService.getDocuments().subscribe((docs: Document[]) => this.availableDocs = docs.data);
     }
 
     dragStart(event: any, doc: Document) {

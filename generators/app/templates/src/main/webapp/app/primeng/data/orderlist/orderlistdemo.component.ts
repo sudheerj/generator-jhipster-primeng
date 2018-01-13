@@ -19,7 +19,7 @@ export class OrderlistDemoComponent implements OnInit {
 
     ngOnInit() {
         this.countryService.getCountries().subscribe((countries: Country[]) => {
-            this.countries = countries;
+            this.countries = countries.data;
         });
     }
 

@@ -23,7 +23,7 @@ export class ContextMenuDemoComponent implements OnInit {
 
     ngOnInit() {
         this.employeeService.getEmployees().subscribe((employees: Employee[]) => {
-            this.employees = employees;
+            this.employees = employees.data;
         });
         this.documentItems = [
             {

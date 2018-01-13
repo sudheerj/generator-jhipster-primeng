@@ -19,7 +19,7 @@ export class InplaceDemoComponent implements OnInit {
     constructor(private browserService: BrowserService) { }
 
     ngOnInit() {
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.slice(0, 10));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 10));
     }
 
     onChangeStep(label: string) {

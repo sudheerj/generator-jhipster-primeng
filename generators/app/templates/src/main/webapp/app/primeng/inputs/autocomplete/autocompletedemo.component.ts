@@ -59,28 +59,28 @@ export class AutocompleteDemoComponent implements OnInit {
     filterCountryInstances(event: any) {
         const query = event.query;
         this.countryService.getCountries().subscribe((countries: Country[]) => {
-            this.filteredCountryInstances = this.filterCountry(query, countries);
+            this.filteredCountryInstances = this.filterCountry(query, countries.data);
         });
     }
 
     filterCountries(event: any) {
         const query = event.query;
         this.countryService.getCountries().subscribe((countries: Country[]) => {
-            this.filteredCountries = this.filterCountry(query, countries);
+            this.filteredCountries = this.filterCountry(query, countries.data);
         });
     }
 
     filterCountriesMultiple(event: any) {
         const query = event.query;
         this.countryService.getCountries().subscribe((countries: Country[]) => {
-            this.filteredCountriesMultiple = this.filterCountry(query, countries);
+            this.filteredCountriesMultiple = this.filterCountry(query, countries.data);
         });
     }
 
     filterCustomCountries(event: any) {
         const query = event.query;
         this.countryService.getCountries().subscribe((countries: Country[]) => {
-            this.filteredCustomCountries = this.filterCountry(query, countries);
+            this.filteredCustomCountries = this.filterCountry(query, countries.data);
         });
     }
 
