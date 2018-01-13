@@ -120,7 +120,7 @@ export class OrgChartDemoComponent implements OnInit, OnDestroy {
     onNodeSelect(event: any) {
         if (this.availableVCards == null) {
             this.get$ = this.vcardService.getVCards().subscribe(
-                (vcards: VCard[]) => {
+                (vcards: any) => {
                     this.availableVCards = vcards.data;
                     this.showInfo(event);
                 });

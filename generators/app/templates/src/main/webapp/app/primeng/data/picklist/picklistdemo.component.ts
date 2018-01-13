@@ -20,7 +20,7 @@ export class PicklistDemoComponent implements OnInit {
     constructor(private countryService: CountryService) { }
 
     ngOnInit() {
-        this.countryService.getCountries().subscribe((countries: Country[]) => {
+        this.countryService.getCountries().subscribe((countries: any) => {
             this.sourceCountries = countries.data;
         });
         this.targetCountries = [];

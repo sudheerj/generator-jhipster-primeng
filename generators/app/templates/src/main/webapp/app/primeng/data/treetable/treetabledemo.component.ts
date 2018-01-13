@@ -77,7 +77,7 @@ export class TreeTableDemoComponent implements OnInit {
     nodeExpand(event: any) {
         if (event.node) {
             // in a real application, make a call to a remote url to load children of the current node and add the new nodes as children
-            this.nodeService.getTouristPlaces().subscribe((nodes) => event.node.children = nodes.data);
+            this.nodeService.getTouristPlaces().subscribe((nodes: any) => event.node.children = nodes.data);
         }
     }
 
