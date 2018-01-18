@@ -13,7 +13,7 @@ const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
 const ANGULAR_VERSION = '5.2.0-beta.1';
-const PRIMENG_VERSION = '5.0.2';
+const PRIMENG_VERSION = '5.2.0-RC1';
 const PRIMENG_EXTENSIONS_VERSION = '0.0.39';
 const CHARTJS_VERSION = '2.6.0';
 const MOMENT_VERSION = '2.18.1';
@@ -192,7 +192,7 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         name: 'InputTextarea',
         value: 'inputtextarea',
         checked: false
-    }, {
+    },   {
         name: 'ListBox',
         value: 'listbox',
         checked: false
@@ -312,7 +312,11 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         name: 'Toolbar',
         value: 'toolbar',
         checked: false
-    }, new inquirer.Separator(' == Overlay Components == '), {
+    }, {
+        name: 'ScrollPanel',
+        value: 'scrollpanel',
+        checked: false
+    },new inquirer.Separator(' == Overlay Components == '), {
         name: 'ConfirmDialog',
         value: 'confirmdialog',
         checked: false
@@ -698,6 +702,7 @@ const components = {
     fieldset: 'panel',
     grid: 'panel',
     toolbar: 'panel',
+    scrollpanel: 'panel',
     sidebar: 'overlay',
     dialog: 'overlay',
     confirmdialog: 'overlay',
@@ -814,7 +819,8 @@ const primengTranslation = `"primeng": {
                 "terminal": "Terminal",
                 "inplace":  "Inplace",
                 "progressbar": "ProgressBar",
-                "progressspinner": "ProgressSpinner"
+                "progressspinner": "ProgressSpinner",
+                "scrollpanel": "ScrollPanel"
             },`;
 
 module.exports = JhipsterGenerator.extend({
@@ -1376,6 +1382,12 @@ module.exports = JhipsterGenerator.extend({
             <span jhiTranslate="global.menu.primeng.panel">Panel</span>
             </a>
             </li>`;
+        this.scrollpanelComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="panel" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.scrollpanel">ScrollPanel</span>
+            </a>
+            </li>`;
         this.tabviewComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="tabview" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
@@ -1642,7 +1654,7 @@ module.exports = JhipsterGenerator.extend({
         this.panelComponents = `
                    <hr/>
                     <span style="font-weight:bold">Panel Components</span>
-                   <hr/>${this.accordionComponent}${this.fieldsetComponent}${this.gridComponent}${this.panelComponent}${this.tabviewComponent}${this.toolbarComponent}`;
+                   <hr/>${this.accordionComponent}${this.fieldsetComponent}${this.gridComponent}${this.panelComponent}${this.tabviewComponent}${this.toolbarComponent}${this.scrollpanelComponent}`;
         this.buttonComponents = `
                    <hr/>
                    <span style="font-weight:bold">Button Components</span>
@@ -1672,7 +1684,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('datatable') > -1 ? this.datatableComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
                 (this.componentList.indexOf('paginator') > -1 ? this.paginatorComponent : '') + (this.componentList.indexOf('picklist') > -1 ? this.picklistComponent : '') + (this.componentList.indexOf('schedule') > -1 ? this.scheduleComponent : '') +
                 (this.componentList.indexOf('tree') > -1 ? this.treeComponent : '') + (this.componentList.indexOf('treetable') > -1 ? this.treetableComponent : '') + (this.componentList.indexOf('accordion') > -1 ? this.accordionComponent : '') +
-                (this.componentList.indexOf('fieldset') > -1 ? this.fieldsetComponent : '') + (this.componentList.indexOf('grid') > -1 ? this.gridComponent : '') + (this.componentList.indexOf('panel') > -1 ? this.panelComponent : '') +
+                (this.componentList.indexOf('fieldset') > -1 ? this.fieldsetComponent : '') + (this.componentList.indexOf('grid') > -1 ? this.gridComponent : '') + (this.componentList.indexOf('panel') > -1 ? this.panelComponent : '') + (this.componentList.indexOf('scrollpanel') > -1 ? this.scrollpanelComponent : '') +
                 (this.componentList.indexOf('tabview') > -1 ? this.tabviewComponent : '') + (this.componentList.indexOf('toolbar') > -1 ? this.toolbarComponent : '') + (this.componentList.indexOf('confirmdialog') > -1 ? this.confirmdialogComponent : '') +
                 (this.componentList.indexOf('dialog') > -1 ? this.dialogComponent : '') + (this.componentList.indexOf('lightbox') > -1 ? this.lightboxComponent : '') + (this.componentList.indexOf('overlaypanel') > -1 ? this.overlaypanelComponent : '') +
                 (this.componentList.indexOf('sidebar') > -1 ? this.sidebarComponent : '') + (this.componentList.indexOf('tooltip') > -1 ? this.tooltipComponent : '') + (this.componentList.indexOf('fileupload') > -1 ? this.fileuploadComponent : '') +

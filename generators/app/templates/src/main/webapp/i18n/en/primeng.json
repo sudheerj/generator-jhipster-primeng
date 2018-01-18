@@ -206,6 +206,9 @@
             },
             "toolbar": {
                 "title": "Toolbar"
+            },
+            "scrollpanel": {
+                "title": "ScrollPanel"
             }
         },
         "charts": {

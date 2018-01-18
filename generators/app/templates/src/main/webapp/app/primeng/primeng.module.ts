@@ -44,6 +44,7 @@ import { <%= angular2AppName %>TabViewDemoModule } from './panel/tabview/tabview
 import { <%= angular2AppName %>FieldsetDemoModule } from './panel/fieldset/fieldsetdemo.module';
 import { <%= angular2AppName %>ToolbarDemoModule } from './panel/toolbar/toolbardemo.module';
 import { <%= angular2AppName %>GridDemoModule } from './panel/grid/griddemo.module';
+import { <%= angular2AppName %>ScrollPanelDemoModule } from './panel/scrollpanel/scrollpaneldemo.module';
 
 import { <%= angular2AppName %>DataTableDemoModule } from './data/datatable/datatabledemo.module';
 import { <%= angular2AppName %>DataGridDemoModule } from './data/datagrid/datagriddemo.module';
@@ -149,6 +150,7 @@ import { <%= angular2AppName %>ProgressSpinnerDemoModule } from './misc/progress
         <%= angular2AppName %>FieldsetDemoModule,
         <%= angular2AppName %>ToolbarDemoModule,
         <%= angular2AppName %>GridDemoModule,
+        <%= angular2AppName %>ScrollPanelDemoModule,
 
         <%= angular2AppName %>BarchartDemoModule,
         <%= angular2AppName %>DoughnutchartDemoModule,
