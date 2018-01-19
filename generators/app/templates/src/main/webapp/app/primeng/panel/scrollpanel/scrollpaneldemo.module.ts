@@ -1,5 +1,6 @@
 import {NgModule}     from '@angular/core';
 import {CommonModule} from '@angular/common';
+import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {ScrollPanelModule} from 'primeng/primeng';
 import {CodeHighlighterModule} from 'primeng/primeng';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
@@ -19,7 +20,6 @@ const primeng_STATES = [
         <%= angular2AppName %>SharedModule,
 		CommonModule,
 		ScrollPanelModule,
-		ScrollPanelDemoRoutingModule,
         CodeHighlighterModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
