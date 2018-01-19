@@ -12,8 +12,8 @@ const jhipsterConstants = require('generator-jhipster/generators/generator-const
 const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
-const ANGULAR_VERSION = '5.2.0-beta.1';
-const PRIMENG_VERSION = '5.2.0-RC1';
+const ANGULAR_VERSION = '5.2.1';
+const PRIMENG_VERSION = '5.2.0-rc.1';
 const PRIMENG_EXTENSIONS_VERSION = '0.0.39';
 const CHARTJS_VERSION = '2.6.0';
 const MOMENT_VERSION = '2.18.1';
