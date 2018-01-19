@@ -1383,7 +1383,7 @@ module.exports = JhipsterGenerator.extend({
             </a>
             </li>`;
         this.scrollpanelComponent = `<li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="panel" routerLinkActive="active" (click)="collapseNavbar()">
+            <a class="dropdown-item" routerLink="scrollpanel" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.scrollpanel">ScrollPanel</span>
             </a>
