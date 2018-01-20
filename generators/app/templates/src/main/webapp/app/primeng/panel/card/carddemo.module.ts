@@ -8,7 +8,6 @@ import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
 import {CardModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/primeng';
-import {SplitButtonModule} from 'primeng/primeng';
 import {GrowlModule} from 'primeng/primeng';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
@@ -28,7 +27,6 @@ const primeng_STATES = [
         FormsModule,
         CardModule,
         GrowlModule,
-        SplitButtonModule,
         ButtonModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

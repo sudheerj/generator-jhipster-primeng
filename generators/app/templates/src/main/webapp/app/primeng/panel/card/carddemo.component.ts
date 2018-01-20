@@ -1,4 +1,4 @@
-import {Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {Message, MenuItem} from 'primeng/components/common/api';
 
 @Component({
