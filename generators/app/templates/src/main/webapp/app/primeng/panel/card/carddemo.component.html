@@ -1,0 +1,29 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <p-card title="Simple Card" [style]="{width: '360px'}">
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+                    quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</div>
+            </p-card>
+        </pe-step>
+
+        <!-- Toggleable -->
+        <pe-step label="Toggleable">
+            <p-card title="Advanced Card" subtitle="Subtitle" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+                <p-header>
+                    <img src="Card" src="assets/showcase/images/usercard.png">
+                </p-header>
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+                    quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</div>
+                <p-footer>
+                    <button pButton type="button" label="Save" icon="fa-check"></button>
+                    <button pButton type="button" label="Cancel" icon="fa-close" class="ui-button-secondary"></button>
+                </p-footer>
+            </p-card>
+        </pe-step>
+
+    </pe-steps>
+</form>
+
+<p-growl [value]="msgs"></p-growl>

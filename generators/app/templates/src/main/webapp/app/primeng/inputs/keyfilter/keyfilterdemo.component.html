@@ -1,0 +1,55 @@
+<form novalidate>
+    InputText is an extension to standard input element with theming.
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+        <pe-step label="Built-In">
+            <h3>Built-In</h3>
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-4">
+                    <input type="text" pInputText pKeyFilter="int" placeholder="Integers">
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <input type="text" pInputText pKeyFilter="num" placeholder="Numbers">
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <input type="text" pInputText pKeyFilter="money" placeholder="Money">
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <input type="text" pInputText pKeyFilter="hex" placeholder="Hex">
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <input type="text" pInputText pKeyFilter="alpha" placeholder="Alphabetic">
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <input type="text" pInputText pKeyFilter="alphanum" placeholder="Alphanumberic">
+                </div>
+            </div>
+        </pe-step>
+
+      <!-- Custom -->
+        <pe-step label="Custom">
+            <h3>Custom Filter</h3>
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-4">
+                    <input type="text" pInputText [pKeyFilter]="blockSpecial" placeholder="Block # < > * !">
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <input type="text" pInputText [pKeyFilter]="blockSpace" placeholder="Block space key">
+                </div>
+            </div>
+        </pe-step>
+
+        <!-- Disabled -->
+        <pe-step label="Validate Mode">
+            <h3>Validate Mode</h3>
+            <form #form="ngForm">
+                <label for="cc" style="display:block;margin-bottom:4px">Credit Card</label>
+                <input id="cc" type="text" name="cc" [(ngModel)]="cc" pInputText [pKeyFilter]="ccRegex" [pValidateOnly]="true" placeholder="1234-1234-1234-1234">
+                <p-message severity="error" text="Not a valid number" [@errorState]="form.dirty && !form.valid ? 'visible' : 'hidden'"></p-message>
+            </form>
+        </pe-step>
+
+    </pe-steps>
+
+   <p-growl [value]="msgs"></p-growl>
+</form>

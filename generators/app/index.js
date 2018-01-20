@@ -316,7 +316,11 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         name: 'ScrollPanel',
         value: 'scrollpanel',
         checked: false
-    },new inquirer.Separator(' == Overlay Components == '), {
+    }, {
+        name: 'Card',
+        value: 'card',
+        checked: false
+    }, new inquirer.Separator(' == Overlay Components == '), {
         name: 'ConfirmDialog',
         value: 'confirmdialog',
         checked: false
@@ -681,6 +685,7 @@ const components = {
     radiobutton: 'inputs',
     slider: 'inputs',
     selectbutton: 'inputs',
+    keyfilter: 'inputs',
     button: 'buttons',
     splitbutton: 'buttons',
     datatable: 'data',
@@ -703,6 +708,7 @@ const components = {
     grid: 'panel',
     toolbar: 'panel',
     scrollpanel: 'panel',
+    card: 'panel',
     sidebar: 'overlay',
     dialog: 'overlay',
     confirmdialog: 'overlay',
@@ -820,7 +826,9 @@ const primengTranslation = `"primeng": {
                 "inplace":  "Inplace",
                 "progressbar": "ProgressBar",
                 "progressspinner": "ProgressSpinner",
-                "scrollpanel": "ScrollPanel"
+                "scrollpanel": "ScrollPanel",
+                "card": "Card",
+                "keyfilter": "KeyFilter"
             },`;
 
 module.exports = JhipsterGenerator.extend({
@@ -1189,7 +1197,12 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.rating">Rating</span>
                         </a>
                     </li>`;
-
+        this.keyfilterComponent = `<li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="keyfilter" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.keyfilter">KeyFilter</span>
+                        </a>
+                    </li>`;
         this.spinnerComponent = `<li uiSrefActive="active">
                                     <a class="dropdown-item" routerLink="spinner" routerLinkActive="active" (click)="collapseNavbar()">
                                         <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
@@ -1362,6 +1375,12 @@ module.exports = JhipsterGenerator.extend({
             <a class="dropdown-item" routerLink="accordion" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.accordion">Accordion</span>
+            </a>
+            </li>`;
+        this.cardComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="card" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.card">Card</span>
             </a>
             </li>`;
         this.fieldsetComponent = `<li uiSrefActive="active">
@@ -1676,6 +1695,7 @@ module.exports = JhipsterGenerator.extend({
             this.componentGroups = (this.componentList.indexOf('autocomplete') > -1 ? this.autocompleteComponent : '') + (this.componentList.indexOf('calendar') > -1 ? this.calendarComponent : '') + (this.componentList.indexOf('checkbox') > -1 ? this.chipsComponent : '') + (this.componentList.indexOf('colorpicker') > -1 ? this.colorpickerComponent : '') +
                 (this.componentList.indexOf('editor') > -1 ? this.editorComponent : '') + (this.componentList.indexOf('inputgroup') > -1 ? this.inputgroupComponent : '') + (this.componentList.indexOf('inputmask') > -1 ? this.inputmaskComponent : '') +
                 (this.componentList.indexOf('inputswitch') > -1 ? this.inputswitchComponent : '') + (this.componentList.indexOf('inputtext') > -1 ? this.inputComponent : '') + (this.componentList.indexOf('inputtextarea') > -1 ? this.inputtextareaComponent : '') +
+                (this.componentList.indexOf('keyfilter') > -1 ? this.keyfilterComponent : '') +
                 (this.componentList.indexOf('listbox') > -1 ? this.listboxComponent : '') + (this.componentList.indexOf('passwordindicator') > -1 ? this.passwordindicatorComponent : '') + (this.componentList.indexOf('radiobutton') > -1 ? this.radiobuttonComponent : '') +
                 (this.componentList.indexOf('rating') > -1 ? this.ratingComponent : '') + (this.componentList.indexOf('select') > -1 ? this.selectComponent : '') + (this.componentList.indexOf('selectbutton') > -1 ? this.selectbuttonComponent : '') +
                 (this.componentList.indexOf('slider') > -1 ? this.sliderComponent : '') + (this.componentList.indexOf('spinner') > -1 ? this.spinnerComponent : '') + (this.componentList.indexOf('togglebutton') > -1 ? this.togglebuttonComponent : '') +
@@ -1683,7 +1703,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('datagrid') > -1 ? this.datagridComponent : '') + (this.componentList.indexOf('datalist') > -1 ? this.datalistComponent : '') + (this.componentList.indexOf('datascroller') > -1 ? this.datascrollerComponent : '') +
                 (this.componentList.indexOf('datatable') > -1 ? this.datatableComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
                 (this.componentList.indexOf('paginator') > -1 ? this.paginatorComponent : '') + (this.componentList.indexOf('picklist') > -1 ? this.picklistComponent : '') + (this.componentList.indexOf('schedule') > -1 ? this.scheduleComponent : '') +
-                (this.componentList.indexOf('tree') > -1 ? this.treeComponent : '') + (this.componentList.indexOf('treetable') > -1 ? this.treetableComponent : '') + (this.componentList.indexOf('accordion') > -1 ? this.accordionComponent : '') +
+                (this.componentList.indexOf('tree') > -1 ? this.treeComponent : '') + (this.componentList.indexOf('treetable') > -1 ? this.treetableComponent : '') + (this.componentList.indexOf('accordion') > -1 ? this.accordionComponent : '') + (this.componentList.indexOf('card') > -1 ? this.cardComponent : '') +
                 (this.componentList.indexOf('fieldset') > -1 ? this.fieldsetComponent : '') + (this.componentList.indexOf('grid') > -1 ? this.gridComponent : '') + (this.componentList.indexOf('panel') > -1 ? this.panelComponent : '') + (this.componentList.indexOf('scrollpanel') > -1 ? this.scrollpanelComponent : '') +
                 (this.componentList.indexOf('tabview') > -1 ? this.tabviewComponent : '') + (this.componentList.indexOf('toolbar') > -1 ? this.toolbarComponent : '') + (this.componentList.indexOf('confirmdialog') > -1 ? this.confirmdialogComponent : '') +
                 (this.componentList.indexOf('dialog') > -1 ? this.dialogComponent : '') + (this.componentList.indexOf('lightbox') > -1 ? this.lightboxComponent : '') + (this.componentList.indexOf('overlaypanel') > -1 ? this.overlaypanelComponent : '') +

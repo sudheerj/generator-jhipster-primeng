@@ -60,6 +60,9 @@
             },
             "selectbutton": {
                 "title": "SelectButton"
+            },
+            "keyfilter": {
+                "title": "KeyFilter"
             }
 
         },
@@ -209,6 +212,9 @@
             },
             "scrollpanel": {
                 "title": "ScrollPanel"
+            },
+            "card": {
+                "title": "Card"
             }
         },
         "charts": {

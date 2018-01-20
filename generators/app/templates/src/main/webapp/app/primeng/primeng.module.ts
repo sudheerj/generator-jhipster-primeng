@@ -11,6 +11,7 @@ import { <%= angular2AppName %>TooltipDemoModule } from './overlay/tooltip/toolt
 import { <%= angular2AppName %>OverlayPanelDemoModule } from './overlay/overlaypanel/overlaypaneldemo.module';
 import { <%= angular2AppName %>SideBarDemoModule } from './overlay/sidebar/sidebardemo.module';
 
+import { <%= angular2AppName %>KeyFilterDemoModule } from './inputs/keyfilter/keyfilterdemo.module';
 import { <%= angular2AppName %>InputTextDemoModule } from './inputs/inputtext/inputtextdemo.module';
 import { <%= angular2AppName %>InputTextAreaDemoModule } from './inputs/inputtextarea/inputtextareademo.module';
 import { <%= angular2AppName %>InputGroupDemoModule } from './inputs/inputgroup/inputgroupdemo.module';
@@ -45,6 +46,7 @@ import { <%= angular2AppName %>FieldsetDemoModule } from './panel/fieldset/field
 import { <%= angular2AppName %>ToolbarDemoModule } from './panel/toolbar/toolbardemo.module';
 import { <%= angular2AppName %>GridDemoModule } from './panel/grid/griddemo.module';
 import { <%= angular2AppName %>ScrollPanelDemoModule } from './panel/scrollpanel/scrollpaneldemo.module';
+import { <%= angular2AppName %>CardDemoModule } from './panel/card/carddemo.module';
 
 import { <%= angular2AppName %>DataTableDemoModule } from './data/datatable/datatabledemo.module';
 import { <%= angular2AppName %>DataGridDemoModule } from './data/datagrid/datagriddemo.module';
@@ -137,6 +139,7 @@ import { <%= angular2AppName %>ProgressSpinnerDemoModule } from './misc/progress
         <%= angular2AppName %>EditorDemoModule,
         <%= angular2AppName %>ColorPickerDemoModule,
         <%= angular2AppName %>CheckboxDemoModule,
+        <%= angular2AppName %>KeyFilterDemoModule,
 
         <%= angular2AppName %>GrowlDemoModule,
         <%= angular2AppName %>MessagesDemoModule,
@@ -151,6 +154,7 @@ import { <%= angular2AppName %>ProgressSpinnerDemoModule } from './misc/progress
         <%= angular2AppName %>ToolbarDemoModule,
         <%= angular2AppName %>GridDemoModule,
         <%= angular2AppName %>ScrollPanelDemoModule,
+        <%= angular2AppName %>CardDemoModule,
 
         <%= angular2AppName %>BarchartDemoModule,
         <%= angular2AppName %>DoughnutchartDemoModule,
