@@ -2,11 +2,11 @@ import {Component, OnInit } from '@angular/core';
 import {Message, MenuItem} from 'primeng/components/common/api';
 
 @Component({
-    selector: 'jhi-panel',
+    selector: 'jhi-card',
     templateUrl: './carddemo.component.html',
     styles: []
 })
-export class CardDemoComponent implements OnInit {
+export class CardDemoComponent {
     msgs: Message[] = [];
 
     items: MenuItem[];

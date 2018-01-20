@@ -1,9 +1,10 @@
 import {Component, OnInit } from '@angular/core';
 import {Message} from 'primeng/components/common/api';
+import {trigger,state,style,transition,animate} from '@angular/animations';
 
 @Component({
-    selector: 'jhi-inputtext',
-    templateUrl: './inputtextdemo.component.html',
+    selector: 'jhi-keyfilter',
+    templateUrl: './keyfilterdemo.component.html',
     styles: [],
     animations: [
         trigger('errorState', [
