@@ -49,6 +49,7 @@ import { <%= angular2AppName %>ScrollPanelDemoModule } from './panel/scrollpanel
 import { <%= angular2AppName %>CardDemoModule } from './panel/card/carddemo.module';
 
 import { <%= angular2AppName %>DataTableDemoModule } from './data/datatable/datatabledemo.module';
+import { <%= angular2AppName %>TableDemoModule } from './data/table/tabledemo.module';
 import { <%= angular2AppName %>DataGridDemoModule } from './data/datagrid/datagriddemo.module';
 import { <%= angular2AppName %>DataListDemoModule } from './data/datalist/datalistdemo.module';
 import { <%= angular2AppName %>DataScrollerDemoModule } from './data/datascroller/datascrollerdemo.module';
@@ -173,6 +174,7 @@ import { <%= angular2AppName %>ProgressSpinnerDemoModule } from './misc/progress
         <%= angular2AppName %>SideBarDemoModule,
 
         <%= angular2AppName %>DataTableDemoModule,
+        <%= angular2AppName %>TableDemoModule,
         <%= angular2AppName %>DataGridDemoModule,
         <%= angular2AppName %>DataListDemoModule,
         <%= angular2AppName %>DataScrollerDemoModule,

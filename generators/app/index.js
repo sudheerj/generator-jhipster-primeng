@@ -13,7 +13,7 @@ const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
 const ANGULAR_VERSION = '5.2.1';
-const PRIMENG_VERSION = '5.2.0-rc.1';
+const PRIMENG_VERSION = '5.2.0-rc.2';
 const PRIMENG_EXTENSIONS_VERSION = '~0.0.40';
 const CHARTJS_VERSION = '2.6.0';
 const MOMENT_VERSION = '2.18.1';
@@ -255,6 +255,10 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
     }, {
         name: 'DataTable',
         value: 'datatable',
+        checked: false
+    },  {
+        name: 'Table',
+        value: 'table',
         checked: false
     }, {
         name: 'GMap',
@@ -689,6 +693,7 @@ const components = {
     button: 'buttons',
     splitbutton: 'buttons',
     datatable: 'data',
+    table: 'data',
     datagrid: 'data',
     carousel: 'data',
     orderlist: 'data',
@@ -787,6 +792,7 @@ const primengTranslation = `"primeng": {
                 "sidebar": "SideBar",
                 "tooltip": "Tooltip",
                 "datatable": "DataTable",
+                "table": "Table",
                 "datagrid": "DataGrid",
                 "carousel": "Carousel",
                 "orderlist": "OrderList",
@@ -1305,6 +1311,12 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.datatable">Datatable</span>
                         </a>
                     </li>`;
+        this.tableComponent = `<li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="table" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.datatable">Table</span>
+                        </a>
+                    </li>`;
         this.datagridComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="datagrid" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
@@ -1654,7 +1666,7 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <span style="font-weight:bold">Data Components</span>
                    <hr/>
-                    ${this.carouselComponent}${this.datagridComponent}${this.datalistComponent}${this.datascrollerComponent}${this.datatableComponent}${this.gmapComponent}${this.orderlistComponent}${this.orgchartComponent}${this.paginatorComponent}${this.picklistComponent}${this.scheduleComponent}${this.treeComponent}${this.treetableComponent}`;
+                    ${this.carouselComponent}${this.datagridComponent}${this.datalistComponent}${this.datascrollerComponent}${this.datatableComponent}${this.tableComponent}${this.gmapComponent}${this.orderlistComponent}${this.orgchartComponent}${this.paginatorComponent}${this.picklistComponent}${this.scheduleComponent}${this.treeComponent}${this.treetableComponent}`;
         this.dragdropComponents = `
                    <hr/>
                     <span style="font-weight:bold">Dragdrop Components</span>
@@ -1701,7 +1713,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('slider') > -1 ? this.sliderComponent : '') + (this.componentList.indexOf('spinner') > -1 ? this.spinnerComponent : '') + (this.componentList.indexOf('togglebutton') > -1 ? this.togglebuttonComponent : '') +
                 (this.componentList.indexOf('button') > -1 ? this.buttonComponent : '') + (this.componentList.indexOf('splitbutton') > -1 ? this.splitbuttonComponent : '') + (this.componentList.indexOf('carousel') > -1 ? this.carouselComponent : '') +
                 (this.componentList.indexOf('datagrid') > -1 ? this.datagridComponent : '') + (this.componentList.indexOf('datalist') > -1 ? this.datalistComponent : '') + (this.componentList.indexOf('datascroller') > -1 ? this.datascrollerComponent : '') +
-                (this.componentList.indexOf('datatable') > -1 ? this.datatableComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
+                (this.componentList.indexOf('datatable') > -1 ? this.datatableComponent : '') + (this.componentList.indexOf('table') > -1 ? this.tableComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
                 (this.componentList.indexOf('paginator') > -1 ? this.paginatorComponent : '') + (this.componentList.indexOf('picklist') > -1 ? this.picklistComponent : '') + (this.componentList.indexOf('schedule') > -1 ? this.scheduleComponent : '') +
                 (this.componentList.indexOf('tree') > -1 ? this.treeComponent : '') + (this.componentList.indexOf('treetable') > -1 ? this.treetableComponent : '') + (this.componentList.indexOf('accordion') > -1 ? this.accordionComponent : '') + (this.componentList.indexOf('card') > -1 ? this.cardComponent : '') +
                 (this.componentList.indexOf('fieldset') > -1 ? this.fieldsetComponent : '') + (this.componentList.indexOf('grid') > -1 ? this.gridComponent : '') + (this.componentList.indexOf('panel') > -1 ? this.panelComponent : '') + (this.componentList.indexOf('scrollpanel') > -1 ? this.scrollpanelComponent : '') +

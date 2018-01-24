@@ -1,0 +1,935 @@
+
+<pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
+    <!-- Basic -->
+    <pe-step label="Basic">
+        <p-table [value]="basicBrowsers">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Engine</th>
+                    <th>Browser</th>
+                    <th>Platform</th>
+                    <th>Grade</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-browser>
+                <tr>
+                    <td>{{browser.engine}}</td>
+                    <td>{{browser.browser}}</td>
+                    <td>{{browser.platform}}</td>
+                    <td>{{browser.grade}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+
+    <!-- Dynamic columns-->
+    <pe-step label="Dynamic columns">
+        <p-table [columns]="cols" [value]="basicBrowsers">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+
+    <!-- Sections-->
+    <pe-step label="Sections">
+        <p-table [columns]="cols" [value]="basicBrowsers">
+            <ng-template pTemplate="caption">
+                List of Browsers
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="footer" let-columns>
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{col.header}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                There are {{basicBrowsers?.length}} browsers
+            </ng-template>
+        </p-table>
+    </pe-step>
+
+    <!-- Style -->
+    <pe-step label="Style">
+        <p-table [columns]="cols" [value]="basicBrowsers">
+            <ng-template pTemplate="colgroup" let-columns>
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col style="background-color:#E89E16 !important">
+                </colgroup>
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                    <td>col.header</td>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [ngClass]="rowData.version > 5 ? 'new-version' : null">
+                    <td *ngFor="let col of columns" [ngClass]="rowData[col.field] < 5 ? 'old-version' : null">
+                        <td>rowData[col.field]</td>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+
+    <!-- Single selection -->
+    <pe-step label="Single selection">
+        <p-table [columns]="cols" [value]="basicBrowsers" selectionMode="single" [(selection)]="selectedBrowser" dataKey="id">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div style="text-align: left">
+                    <div style="text-align: left">Selected Browser: {{selectedBrowser ? selectedBrowser.engine + ' - ' +
+                        selectedBrowser.browser + ' - ' + selectedBrowser.platform + ' - ' + selectedBrowser.grade:
+                        'none'}}
+                    </div>
+                </div>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Multiple selection -->
+    <pe-step label="Multiple selection">
+        <p-table [columns]="cols" [value]="basicBrowsers" selectionMode="multiple" [(selection)]="selectedBrowsers">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex="rowIndex">
+                <tr [pSelectableRow]="rowData" [pSelectableRowIndex]="rowIndex">
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <ul>
+                    <li *ngFor="let browser of selectedBrowsers" style="text-align: left">{{browser.engine + ' - ' +
+                        browser.browser +
+                        ' - ' + browser.platform + ' - ' + browser.grade}}
+                    </li>
+                </ul>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Selection events-->
+    <pe-step label="Selection events">
+        <p-table [columns]="cols" [value]="basicBrowsers" selectionMode="single" [(selection)]="selectedBrowser" dataKey="id"
+                 (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)"
+                 (onRowClick)="onRowClick($event)" (onRowDblClick)="onRowDblClick($event)">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- RadioButton selection -->
+    <pe-step label="RadioButton selection">
+        <p-table [columns]="cols" [value]="basicBrowsers" [(selection)]="selectedBrowser" dataKey="id">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th style="width: 2.25em"></th>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td>
+                        <p-tableRadioButton [value]="rowData"></p-tableRadioButton>
+                    </td>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div style="text-align: left">Selected Browser: {{selectedBrowser ? selectedBrowser.engine + ' - ' +
+                    selectedBrowser.browser + ' - ' + selectedBrowser.platform + ' - ' + selectedBrowser.grade:
+                    'none'}}
+                </div>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Checkbox selection -->
+    <pe-step label="Checkbox selection">
+        <p-table [columns]="cols" [value]="basicBrowsers" [(selection)]="selectedBrowsers" dataKey="id">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th style="width: 2.25em">
+                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                    </th>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td>
+                        <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+                    </td>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <ul>
+                    <li *ngFor="let browser of selectedBrowsers" style="text-align: left">{{browser.engine + ' - ' +
+                        browser.browser +
+                        ' - ' + browser.platform + ' - ' + browser.grade}}
+                    </li>
+                </ul>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Sorting -->
+    <pe-step label="Sorting">
+        <h3 class="first">Single Column</h3>
+        <p-table [columns]="cols" [value]="basicBrowsers" (onSort)="onSort($event)">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                        {{col.header}}
+                        <p-sortIcon [field]="col.field"></p-sortIcon>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <h3>Multiple Columns</h3>
+        <p-table [columns]="cols" [value]="basicBrowsers" sortMode="multiple" (onSort)="onSort($event)">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                        {{col.header}}
+                        <p-sortIcon [field]="col.field"></p-sortIcon>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Filtering -->
+    <pe-step label="Filtering">
+        <p-table #dt [columns]="cols" [value]="browsers" [paginator]="true" [rows]="10" (onFilter)="onFilter($event)">
+            <ng-template pTemplate="caption">
+                <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+                <tr>
+                    <th *ngFor="let col of columns" [ngSwitch]="col.field">
+                        <input *ngSwitchCase="'browser'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+                        <div *ngSwitchCase="'rating'">
+                            <i class="fa fa-close"
+                               (click)="ratingFilter=null;dt.filter(null,col.field,col.filterMatchMode)"></i>
+                            <p-slider [styleClass]="'slider-layout'" [(ngModel)]="ratingFilter" [min]="1"
+                                      [max]="10"
+                                      (onSlideEnd)="dt.filter($event.value,col.field,col.filterMatchMode)"></p-slider>
+                        </div>
+                        <p-dropdown *ngSwitchCase="'engine'" [options]="engines" [style]="{'width':'100%'}"
+                                    (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)"
+                                    styleClass="ui-column-filter"></p-dropdown>
+                        <p-multiSelect  *ngSwitchCase="'grade'"  [options]="grades" defaultLabel="All grades"
+                                       (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)"
+                                       styleClass="ui-column-filter"></p-multiSelect>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Pagination -->
+    <pe-step label="Pagination">
+        <p-table [columns]="cols" [value]="browsers" [paginator]="true" [rows]="10" [pageLinks]="3" [rowsPerPageOptions]="[10,15,20]" paginatorPosition="both" (onPage)="onPage($event)">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Editable -->
+    <pe-step label="Editable">
+        <p-table [columns]="cols" [value]="basicBrowsers">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th>Browser</th>
+                    <th>Platform</th>
+                    <th>Engine</th>
+                    <th>Grade</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td pEditableColumn>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input type="text" [(ngModel)]="rowData.browser">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{rowData.browser}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td pEditableColumn>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input type="text" [(ngModel)]="rowData.platform" required>
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{rowData.platform}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td pEditableColumn>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input type="text" [(ngModel)]="rowData.engine">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{rowData.engine}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td pEditableColumn>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input type="text" [(ngModel)]="rowData.grade">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{rowData.grade}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Row expansion -->
+    <pe-step label="Row expansion">
+        <p-table [columns]="cols" [value]="browsers" dataKey="id">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th style="width: 2.25em"></th>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
+                <tr>
+                    <td>
+                        <a href="#" [pRowToggler]="rowData">
+                            <i [ngClass]="expanded ? 'fa fa-fw fa-chevron-circle-down' : 'fa fa-fw fa-chevron-circle-right'"></i>
+                        </a>
+                    </td>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="rowexpansion" let-browser let-columns="columns">
+                <div class="ui-grid ui-grid-responsive ui-fluid rowexpansion-layout">
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-9">
+                            <div class="ui-grid ui-grid-responsive ui-grid-pad">
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2 label">Engine:</div>
+                                    <div class="ui-grid-col-10">{{browser.engine}}</div>
+                                </div>
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2 label">Browser:</div>
+                                    <div class="ui-grid-col-10">{{browser.browser}}</div>
+                                </div>
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2 label">Plaftform:</div>
+                                    <div class="ui-grid-col-10">{{browser.platform}}</div>
+                                </div>
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2 label">Version:</div>
+                                    <div class="ui-grid-col-10">{{browser.version}}</div>
+                                </div>
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2 label">Rating:</div>
+                                    <div class="ui-grid-col-10">{{browser.rating}}</div>
+                                </div>
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2 label">Grade:</div>
+                                    <div class="ui-grid-col-10">{{browser.grade}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Resizable -->
+    <pe-step label="Resizable">
+        <h3 class="first">Fit Mode</h3>
+        <p-table [columns]="cols" [value]="basicBrowsers" [resizableColumns]="true">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns" pResizableColumn>
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+        <h3>Expand Mode</h3>
+        <p-table [columns]="cols" [value]="basicBrowsers" [resizableColumns]="true" columnResizeMode="expand">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns" pResizableColumn>
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Reorder -->
+    <pe-step label="Reorder">
+        <p-table [columns]="cols" [value]="basicBrowsers" [reorderableColumns]="true">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns" pReorderableColumn>
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Column Grouping -->
+    <pe-step label="Column Grouping">
+        <p-table [value]="basicBrowsers">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th rowspan="3">Browser</th>
+                    <th colspan="4">Details</th>
+                </tr>
+                <tr>
+                    <th colspan="2">Environment</th>
+                    <th colspan="2">Performance</th>
+                </tr>
+                <tr>
+                    <th>Engine</th>
+                    <th>Platform</th>
+                    <th>Rating</th>
+                    <th>Grade</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-browser>
+                <tr>
+                    <td>{{browser.browser}}</td>
+                    <td>{{browser.engine}}</td>
+                    <td>{{browser.platform}}</td>
+                    <td>{{browser.rating}}</td>
+                    <td>{{browser.grade}}</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="footer">
+                <tr>
+                    <td colspan="5">*Please note that Chrome browser details not included</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Row grouping -->
+    <pe-step label="Row grouping">
+        <h3 class="first">Subheader</h3>
+        <p-table [value]="browsers" sortField="brand" sortMode="single" (onSort)="onSort()">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Engine</th>
+                    <th>Browser</th>
+                    <th>Platform</th>
+                    <th>Grade</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
+                <tr class="ui-widget-header" *ngIf="rowGroupMetadata[rowData.brand].index === rowIndex">
+                    <td colspan="3">
+                        <span style="font-weight:bold">{{rowData.engine}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{rowData.browser}}</td>
+                    <td>{{rowData.platform}}</td>
+                    <td>{{rowData.grade}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+        <h3>Rowspan</h3>
+        <p-table [value]="browsers" sortField="brand" sortMode="single" (onSort)="onSort()">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Browser</th>
+                    <th>Platform</th>
+                    <th>Grade</th>
+                    <th>Engine</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
+                <tr>
+                    <td *ngIf="rowGroupMetadata[rowData.browser].index === rowIndex" [attr.rowspan]="rowGroupMetadata[rowData.browser].size">
+                        {{rowData.browser}}
+                    </td>
+                    <td>{{rowData.platform}}</td>
+                    <td>{{rowData.grade}}</td>
+                    <td>{{rowData.engine}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Lazy loading -->
+    <pe-step label="Lazy loading ">
+        <p-table [columns]="cols" [value]="browsers" [lazy]="true" (onLazyLoad)="loadBrowsersLazy($event)"
+                 [paginator]="true" [rows]="10" [totalRecords]="totalRecords">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Scrolling -->
+    <pe-step label="Scrolling">
+        <p-table [columns]="cols" [value]="browsers" [scrollable]="true" scrollHeight="200px">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+        <p-table [columns]="cols" [value]="browsers" [scrollable]="true" [rows]="20" scrollHeight="200px"
+                 [virtualScroll]="true" (onLazyLoad)="loadBrowsersLazy($event)"
+                 [lazy]="true" [totalRecords]="totalRecords" [loading]="loading">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+        <p-table [columns]="cols" [value]="browsers" [scrollable]="true" [style]="{width:'500px'}">
+            <ng-template pTemplate="colgroup" let-columns>
+                <colgroup>
+                    <col *ngFor="let col of columns" style="width:250px">
+                </colgroup>
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+        <p-table [columns]="cols" [value]="browsers" [scrollable]="true" [style]="{width:'500px'}" scrollHeight="200px">
+            <ng-template pTemplate="colgroup" let-columns>
+                <colgroup>
+                    <col *ngFor="let col of columns" style="width:250px">
+                </colgroup>
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+        <p-table [columns]="cols" [value]="browsers" [frozenValue]="frozenBrowsers" [scrollable]="true" scrollHeight="200px">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="frozenrows" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        <b>{{rowData[col.field]}}</b>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+        <p-table [columns]="scrollableCols" [frozenColumns]="frozenCols" [value]="browsers" [scrollable]="true" scrollHeight="200px" frozenWidth="200px">
+            <ng-template pTemplate="colgroup" let-columns>
+                <colgroup>
+                    <col *ngFor="let col of columns" style="width:200px">
+                </colgroup>
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+        <p-table [columns]="scrollableCols" [frozenColumns]="frozenCols" [frozenValue]="frozenBrowsers" [value]="browsers" [scrollable]="true" scrollHeight="200px" frozenWidth="200px">
+            <ng-template pTemplate="colgroup" let-columns>
+                <colgroup>
+                    <col *ngFor="let col of columns" style="width:200px">
+                </colgroup>
+            </ng-template>
+            <ng-template pTemplate="frozenrows" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        <b>{{rowData[col.field]}}</b>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </pe-step>
+
+    <!-- Responsive -->
+    <pe-step label="Responsive">
+        <button pButton type="button" (click)="toggle()" class="responsive-toggle" label="Toggle"
+                icon="fa-list"></button>
+        <p-table [columns]="cols" [value]="browsers" [responsive]="true" [rows]="3" [paginator]="true" [pageLinks]="3" [responsive]="true"
+                 [stacked]="stacked">
+            <ng-template pTemplate="caption">
+                List of Browsers
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        <span class="ui-column-title">{{col.header}}</span>
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                There are {{browsers?.length}} browsers
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Column Toggler -->
+    <pe-step label="Column Toggler">
+        <p-table [columns]="selectedColumns" [value]="basicBrowsers">
+            <ng-template pTemplate="caption">
+                <div style="text-align:left">
+                    <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header"
+                                   selectedItemsLabel="{0} columns selected" [style]="{minWidth: '200px'}" defaultLabel="Choose Columns"></p-multiSelect>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                    <td>col.header</td>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        <td>rowData[col.field]</td>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- Export-->
+    <pe-step label="Export">
+        <p-table #dt [columns]="cols" [value]="basicBrowsers" selectionMode="multiple" [(selection)]="selectedBrowsers" exportFilename="browsers" csvSeparator=";">
+            <ng-template pTemplate="caption">
+                <div class="ui-helper-clearfix">
+                    <button type="button" pButton icon="fa-file-o" iconPos="left" label="All Data" (click)="dt.exportCSV()" style="float:left"></button>
+                    <button type="button" pButton icon="fa-file" iconPos="left" label="Selection Only" (click)="dt.exportCSV({selectionOnly:true})" style="float:right"></button>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+
+    <!-- DataTable Contextmenu Integration-->
+    <pe-step label="DataTable + ContextMenu">
+        <p-contextMenu #contextmenu [model]="tableItems" appendTo="body"></p-contextMenu>
+        <p-table [columns]="cols" [value]="browsers" [(contextMenuSelection)]="selectedBrowser" [contextMenu]="contextmenu">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pContextMenuRow]="rowData">
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </pe-step>
+    <!-- CRUD Operations -->
+    <pe-step label="CRUD Operations">
+        <p-table [columns]="cols" [value]="browsers" [immutable]="false" selectionMode="single" [(selection)]="selectedBrowser" (onRowSelect)="onRowSelectCRUD($event)" [paginator]="true" rows="15">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="summary" let-rowData>
+                <div style="text-align:left">
+                    <button type="button" pButton icon="fa-plus" (click)="addBrowser()" label="Add"></button>
+                </div>
+            </ng-template>
+
+        </p-table>
+
+        <p-dialog header="Browser Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade"
+                  [modal]="true">
+            <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="browser">
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-4"><label for="engine">Engine</label></div>
+                    <div class="ui-grid-col-8"><input pInputText id="engine" [(ngModel)]="browser.engine"/></div>
+                </div>
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-4"><label for="browser">Browser</label></div>
+                    <div class="ui-grid-col-8"><input pInputText id="browser" [(ngModel)]="browser.browser"/></div>
+                </div>
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-4"><label for="platform">Platform</label></div>
+                    <div class="ui-grid-col-8"><input pInputText id="platform" [(ngModel)]="browser.platform"/></div>
+                </div>
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-4"><label for="grade">Grade</label></div>
+                    <div class="ui-grid-col-8"><input pInputText id="grade" [(ngModel)]="browser.grade"/></div>
+                </div>
+            </div>
+            <p-footer>
+                <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                    <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
+                    <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+                </div>
+            </p-footer>
+        </p-dialog>
+
+    </pe-step>
+</pe-steps>
+
+
+<p-growl [value]="msgs"></p-growl>

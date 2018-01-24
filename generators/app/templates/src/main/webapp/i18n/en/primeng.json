@@ -79,6 +79,9 @@
             "datatable": {
                 "title": "DataTable"
             },
+            "table": {
+                "title": "Table"
+            },
             "datagrid": {
                 "title": "DataGrid"
             },
