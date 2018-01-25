@@ -1866,6 +1866,7 @@ module.exports = JhipsterGenerator.extend({
             datalist: 'data',
             datascroller: 'data',
             datatable: 'data',
+            table: 'data',
             grid: 'panel',
             defer: 'misc',
             inplace: 'misc'
@@ -1879,9 +1880,9 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts', 'src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts');
         this.template('src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts', 'src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts');
         this.template('src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts', 'src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts');
+        this.template('src/main/webapp/app/primeng/data/table/service/mybrowser.ts', 'src/main/webapp/app/primeng/data/table/service/mybrowser.ts');
 
         const cityComponents = { tree: 'data', treetable: 'data' };
-
         Object.keys(cityComponents).forEach((component) => {
             this.template(`src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`, `src/main/webapp/app/primeng/${cityComponents[component]}/${component}/service/treenode.service.ts`);
         });
