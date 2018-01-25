@@ -169,11 +169,6 @@ export class TableDemoComponent implements OnInit {
 
     onSort(event: any) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Sort field:', detail: event.field});
-        this.msgs.push({severity: 'info', summary: 'Sort order: ', detail: event.order});
-        if (event.multisortmeta) {
-            this.msgs.push({severity: 'info', summary: 'Multisort Meta data:', detail: event.multisortmeta});
-        }
     }
 
     onFilter(event: any) {

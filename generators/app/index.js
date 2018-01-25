@@ -1314,7 +1314,7 @@ module.exports = JhipsterGenerator.extend({
         this.tableComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="table" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.datatable">Table</span>
+                            <span jhiTranslate="global.menu.primeng.table">Table</span>
                         </a>
                     </li>`;
         this.datagridComponent = `<li uiSrefActive="active">

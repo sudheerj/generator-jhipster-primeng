@@ -89,14 +89,14 @@
             <ng-template pTemplate="header" let-columns>
                 <tr>
                     <th *ngFor="let col of columns">
-                    <td>col.header</td>
+                        {{col.header}}
                     </th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-rowData let-columns="columns">
                 <tr [ngClass]="rowData.version > 5 ? 'new-version' : null">
                     <td *ngFor="let col of columns" [ngClass]="rowData[col.field] < 5 ? 'old-version' : null">
-                        <td>rowData[col.field]</td>
+                    <td>rowData[col.field]</td>
                     </td>
                 </tr>
             </ng-template>
@@ -306,8 +306,8 @@
                                     (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)"
                                     styleClass="ui-column-filter"></p-dropdown>
                         <p-multiSelect  *ngSwitchCase="'grade'"  [options]="grades" defaultLabel="All grades"
-                                       (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)"
-                                       styleClass="ui-column-filter"></p-multiSelect>
+                                        (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)"
+                                        styleClass="ui-column-filter"></p-multiSelect>
                     </th>
                 </tr>
             </ng-template>
@@ -550,7 +550,7 @@
     <!-- Row grouping -->
     <pe-step label="Row grouping">
         <h3 class="first">Subheader</h3>
-        <p-table [value]="browsers" sortField="brand" sortMode="single" (onSort)="onSort()">
+        <p-table [value]="browsers"  sortMode="single" (onSort)="onSort()">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Engine</th>
@@ -560,7 +560,7 @@
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
-                <tr class="ui-widget-header" *ngIf="rowGroupMetadata[rowData.brand].index === rowIndex">
+                <tr class="ui-widget-header">
                     <td colspan="3">
                         <span style="font-weight:bold">{{rowData.engine}}</span>
                     </td>
@@ -574,7 +574,7 @@
         </p-table>
 
         <h3>Rowspan</h3>
-        <p-table [value]="browsers" sortField="brand" sortMode="single" (onSort)="onSort()">
+        <p-table [value]="browsers"  sortMode="single" (onSort)="onSort()">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Browser</th>
@@ -585,7 +585,7 @@
             </ng-template>
             <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
                 <tr>
-                    <td *ngIf="rowGroupMetadata[rowData.browser].index === rowIndex" [attr.rowspan]="rowGroupMetadata[rowData.browser].size">
+                    <td >
                         {{rowData.browser}}
                     </td>
                     <td>{{rowData.platform}}</td>
@@ -815,14 +815,14 @@
             <ng-template pTemplate="header" let-columns>
                 <tr>
                     <th *ngFor="let col of columns">
-                    <td>col.header</td>
+                        {{col.header}}
                     </th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-rowData let-columns="columns">
                 <tr>
                     <td *ngFor="let col of columns">
-                        <td>rowData[col.field]</td>
+                    <td>rowData[col.field]</td>
                     </td>
                 </tr>
             </ng-template>
