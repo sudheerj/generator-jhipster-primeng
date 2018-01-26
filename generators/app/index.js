@@ -192,7 +192,7 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         name: 'InputTextarea',
         value: 'inputtextarea',
         checked: false
-    },   {
+    }, {
         name: 'ListBox',
         value: 'listbox',
         checked: false
@@ -256,7 +256,7 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         name: 'DataTable',
         value: 'datatable',
         checked: false
-    },  {
+    }, {
         name: 'Table',
         value: 'table',
         checked: false
