@@ -13,12 +13,12 @@ const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
 const ANGULAR_VERSION = '5.2.1';
-const PRIMENG_VERSION = '5.2.0-rc.2';
-const PRIMENG_EXTENSIONS_VERSION = '~0.0.40';
-const CHARTJS_VERSION = '2.6.0';
-const MOMENT_VERSION = '2.18.1';
-const FULLCALENDAR_VERSION = '3.5.0';
-const QUILL_VERSION = '1.3.2';
+const PRIMENG_VERSION = '5.2.0';
+const PRIMENG_EXTENSIONS_VERSION = '0.0.39';
+const CHARTJS_VERSION = '2.7.1';
+const MOMENT_VERSION = '2.20.1';
+const FULLCALENDAR_VERSION = '3.8.2';
+const QUILL_VERSION = '1.3.5';
 
 const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
 const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
