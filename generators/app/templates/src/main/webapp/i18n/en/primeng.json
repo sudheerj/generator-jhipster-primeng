@@ -117,6 +117,9 @@
             },
             "tree": {
                 "title": "Tree"
+            },
+            "dataview": {
+                "title": "DataView"
             }
         },
         "dragdrop": {

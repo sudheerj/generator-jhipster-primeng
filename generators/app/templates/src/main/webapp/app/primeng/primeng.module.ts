@@ -62,6 +62,7 @@ import { <%= angular2AppName %>PaginatorDemoModule } from './data/paginator/pagi
 import { <%= angular2AppName %>GmapDemoModule } from './data/gmap/gmapdemo.module';
 import { <%= angular2AppName %>OrgChartDemoModule } from './data/orgchart/orgchartdemo.module';
 import { <%= angular2AppName %>CarouselDemoModule } from './data/carousel/carouseldemo.module';
+import { <%= angular2AppName %>DataViewDemoModule } from './data/dataview/dataviewdemo.module';
 
 import { <%= angular2AppName %>BarchartDemoModule } from './charts/barchart/barchartdemo.module';
 import { <%= angular2AppName %>DoughnutchartDemoModule } from './charts/doughnutchart/doughnutchartdemo.module';
@@ -177,6 +178,7 @@ import { <%= angular2AppName %>ProgressSpinnerDemoModule } from './misc/progress
         <%= angular2AppName %>TableDemoModule,
         <%= angular2AppName %>DataGridDemoModule,
         <%= angular2AppName %>DataListDemoModule,
+        <%= angular2AppName %>DataViewDemoModule,
         <%= angular2AppName %>DataScrollerDemoModule,
         <%= angular2AppName %>ScheduleDemoModule,
         <%= angular2AppName %>OrderListDemoModule,
