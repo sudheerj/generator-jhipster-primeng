@@ -292,6 +292,10 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         name: 'TreeTable',
         value: 'treetable',
         checked: false
+    }, {
+        name: 'DataView',
+        value: 'dataview',
+        checked: false
     }, new inquirer.Separator(' == Panel Components == '), {
         name: 'Accordion',
         value: 'accordion',
@@ -698,6 +702,7 @@ const components = {
     carousel: 'data',
     orderlist: 'data',
     datalist: 'data',
+    dataview: 'data',
     paginator: 'data',
     schedule: 'data',
     treetable: 'data',
@@ -797,6 +802,7 @@ const primengTranslation = `"primeng": {
                 "carousel": "Carousel",
                 "orderlist": "OrderList",
                 "datalist": "DataList",
+                "dataview": "DataView",
                 "paginator": "Paginator",
                 "schedule": "Schedule",
                 "treetable": "TreeTable",
@@ -1335,6 +1341,12 @@ module.exports = JhipsterGenerator.extend({
             <span jhiTranslate="global.menu.primeng.datalist">DataList</span>
             </a>
             </li>`;
+        this.dataviewComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="datalist" routerLinkActive="active" (click)="collapseNavbar()">
+            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+            <span jhiTranslate="global.menu.primeng.dataview">DataView</span>
+            </a>
+            </li>`;
         this.paginatorComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="paginator" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
@@ -1713,7 +1725,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('slider') > -1 ? this.sliderComponent : '') + (this.componentList.indexOf('spinner') > -1 ? this.spinnerComponent : '') + (this.componentList.indexOf('togglebutton') > -1 ? this.togglebuttonComponent : '') +
                 (this.componentList.indexOf('button') > -1 ? this.buttonComponent : '') + (this.componentList.indexOf('splitbutton') > -1 ? this.splitbuttonComponent : '') + (this.componentList.indexOf('carousel') > -1 ? this.carouselComponent : '') +
                 (this.componentList.indexOf('datagrid') > -1 ? this.datagridComponent : '') + (this.componentList.indexOf('datalist') > -1 ? this.datalistComponent : '') + (this.componentList.indexOf('datascroller') > -1 ? this.datascrollerComponent : '') +
-                (this.componentList.indexOf('datatable') > -1 ? this.datatableComponent : '') + (this.componentList.indexOf('table') > -1 ? this.tableComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
+                (this.componentList.indexOf('datatable') > -1 ? this.datatableComponent : '') + (this.componentList.indexOf('table') > -1 ? this.tableComponent : '') + (this.componentList.indexOf('dataview') > -1 ? this.dataviewComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
                 (this.componentList.indexOf('paginator') > -1 ? this.paginatorComponent : '') + (this.componentList.indexOf('picklist') > -1 ? this.picklistComponent : '') + (this.componentList.indexOf('schedule') > -1 ? this.scheduleComponent : '') +
                 (this.componentList.indexOf('tree') > -1 ? this.treeComponent : '') + (this.componentList.indexOf('treetable') > -1 ? this.treetableComponent : '') + (this.componentList.indexOf('accordion') > -1 ? this.accordionComponent : '') + (this.componentList.indexOf('card') > -1 ? this.cardComponent : '') +
                 (this.componentList.indexOf('fieldset') > -1 ? this.fieldsetComponent : '') + (this.componentList.indexOf('grid') > -1 ? this.gridComponent : '') + (this.componentList.indexOf('panel') > -1 ? this.panelComponent : '') + (this.componentList.indexOf('scrollpanel') > -1 ? this.scrollpanelComponent : '') +
@@ -1867,6 +1879,7 @@ module.exports = JhipsterGenerator.extend({
             datascroller: 'data',
             datatable: 'data',
             table: 'data',
+            dataview: 'data',
             grid: 'panel',
             defer: 'misc',
             inplace: 'misc'

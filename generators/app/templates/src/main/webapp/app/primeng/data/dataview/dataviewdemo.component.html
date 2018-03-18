@@ -1,0 +1,84 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);" [stepClass]="'layout-format'">
+        <!-- Basic -->
+        <pe-step label="Basic" >
+            <p-dataView [value]="basicBrowsers" [rows]="5">
+                <ng-template let-browser pTemplate="listItem">
+                    <div>
+                        {{browser.browser}}
+                    </div>
+                </ng-template>
+            </p-dataView>
+        </pe-step>
+        <!-- Grid layout -->
+        <pe-step label="Grid layout" >
+            <p-dataView [value]="basicBrowsers" [rows]="5" layout="grid">
+                <ng-template let-browser pTemplate="gridItem">
+                    <div class="ui-g-12 ui-md-3">
+                        {{browser.engine}}
+                    </div>
+                </ng-template>
+            </p-dataView>
+        </pe-step>
+        <!-- Sections -->
+        <pe-step label="Sections" >
+            <p-dataView [value]="basicBrowsers" [rows]="5">
+                <p-header>List of Browsers</p-header>
+                <p-footer>Choose from the list.</p-footer>
+                <ng-template let-browser pTemplate="listItem">
+                    <div>
+                        {{browser.browser}}
+                    </div>
+                </ng-template>
+            </p-dataView>
+        </pe-step>
+        <!-- Paginator -->
+        <pe-step label="Paginator" [paginator="true" [rows]="10">
+            <p-dataView [value]="basicBrowsers" [rows]="5">
+                <ng-template let-browser pTemplate="listItem">
+                    <div>
+                        {{browser.browser}}
+                    </div>
+                </ng-template>
+                <ng-template let-browser pTemplate="gridItem">
+                    <div class="ui-g-12 ui-md-3">
+                        {{browser.engine}}
+                    </div>
+                </ng-template>
+            </p-dataView>
+        </pe-step>
+        <!-- Sorting -->
+        <p-dataView [value]="basicBrowsers" [sortField]="sortField" [sortOrder]="sortOrder">
+            <p-header>
+                <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By"
+                            (onChange)="onSortChange($event)" [autoWidth]="false" [style]="{'min-width':'15em'}"></p-dropdown>
+            </p-header>
+            <ng-template let-browser pTemplate="listItem">
+                <div>
+                    {{browser.browser}}
+                </div>
+            </ng-template>
+            <ng-template let-browser pTemplate="gridItem">
+                <div class="ui-g-12 ui-md-3">
+                    {{browser.engine}}
+                </div>
+            </ng-template>
+        </p-dataView>
+        <!-- Filtering -->
+        <p-dataView #dv [value]="basicBrowsers" filterBy="grade">
+            <p-header>
+                <input type="search" pInputText placeholder="Search by grade" (keyup)="dv.filter($event.target.value)">
+            </p-header>
+            <ng-template let-browser pTemplate="listItem">
+                {{browser.browser}}
+            </ng-template>
+            <ng-template let-browser pTemplate="gridItem">
+                {{browser.engine}}
+            </ng-template>
+        </p-dataView>
+
+
+    </pe-steps>
+</form>
+
+<p-growl [value]="msgs"></p-growl>
