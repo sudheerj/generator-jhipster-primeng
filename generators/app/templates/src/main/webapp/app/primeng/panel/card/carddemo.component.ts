@@ -13,7 +13,6 @@ export class CardDemoComponent {
 
     activeIndex = 0;
 
-
     onChangeStep(label: string) {
         this.msgs.length = 0;
         this.msgs.push({severity: 'info', summary: label});

@@ -1,6 +1,6 @@
 import {Component, OnInit } from '@angular/core';
 import {Message} from 'primeng/components/common/api';
-import {trigger,state,style,transition,animate} from '@angular/animations';
+import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
     selector: 'jhi-keyfilter',
@@ -24,7 +24,7 @@ export class KeyFilterDemoComponent implements OnInit {
 
     msgs: Message[] = [];
 
-    blockSpecial: RegExp = /^[^<>*!]+$/
+    blockSpecial: RegExp = /^[^<>*!]+$/;
 
     blockSpace: RegExp = /[^\s]/;
 
