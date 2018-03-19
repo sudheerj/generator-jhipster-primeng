@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import {Message} from 'primeng/components/common/api';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
@@ -16,10 +16,11 @@ export class DeferDemoComponent {
 
     browsers: Browser[];
 
-    constructor(private browserService: BrowserService) { }
+    constructor(private browserService: BrowserService, private cdr: ChangeDetectorRef) { }
 
     initData() {
         this.browserService.getBrowsers().subscribe((browsers: any) => setTimeout(() => this.browsers = browsers.data, 0));
+        this.cdr.detectChanges();
     }
 
     onChangeStep(label: string) {

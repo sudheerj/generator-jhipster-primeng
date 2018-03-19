@@ -17,16 +17,6 @@ import MyBrowser from './service/mybrowser';
         .ui-grid-row div label {
             font-weight: bold;
         }
-        
-        .old-car {
-            background-color: #1CA979 !important;
-            color: #ffffff !important;
-        }
-
-        .very-old-car {
-            background-color: #2CA8B1 !important;
-            color: #ffffff !important;
-        }
     `]})
 export class TableDemoComponent implements OnInit {
     msgs: Message[] = [];

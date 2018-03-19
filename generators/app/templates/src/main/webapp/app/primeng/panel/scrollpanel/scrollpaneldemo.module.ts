@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { <%= angular2AppName %>SharedModule } from '../../../shared';
 import {ScrollPanelModule} from 'primeng/primeng';
@@ -16,16 +16,18 @@ const primeng_STATES = [
 ];
 
 @NgModule({
-	imports: [
+    imports: [
         <%= angular2AppName %>SharedModule,
-		CommonModule,
-		ScrollPanelModule,
+        CommonModule,
+        ScrollPanelModule,
         CodeHighlighterModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
-	],
-	declarations: [
+    ],
+    declarations: [
         ScrollPanelDemoComponent
-	]
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
+
 export class <%= angular2AppName %>ScrollPanelDemoModule {}
