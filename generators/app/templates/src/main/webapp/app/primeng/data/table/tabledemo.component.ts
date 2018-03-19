@@ -23,7 +23,7 @@ import MyBrowser from './service/mybrowser';
             color: #ffffff !important;
         }
 
-         .very-old-car {
+        .very-old-car {
             background-color: #2CA8B1 !important;
             color: #ffffff !important;
         }
