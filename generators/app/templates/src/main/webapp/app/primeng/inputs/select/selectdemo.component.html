@@ -35,6 +35,12 @@
             <p>Selected Countries: {{selectedCountries}}</p>
         </pe-step>
 
+        <!-- MultiSelect no header-->
+        <pe-step label="MultiSelect Without Header">
+            <p-multiSelect name="multiselect" [options]="countries" [(ngModel)]="selectedCountries" [showHeader]="false"></p-multiSelect>
+            <p>Selected Countries: {{selectedCountries}}</p>
+        </pe-step>
+
         <!-- Events -->
         <pe-step label="Events">
             <h3>Drodown Events:onFocus,onBlur,onChange</h3>
