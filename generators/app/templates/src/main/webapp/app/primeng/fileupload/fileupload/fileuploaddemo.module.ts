@@ -8,8 +8,6 @@ import {ButtonModule} from 'primeng/primeng';
 import {FileUploadModule} from 'primeng/components/fileupload/fileupload';
 import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
