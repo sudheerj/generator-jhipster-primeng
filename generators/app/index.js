@@ -13,7 +13,7 @@ const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
 const ANGULAR_VERSION = '6.0.2';
-const PRIMENG_VERSION = '6.0.0-alpha.1';
+const PRIMENG_VERSION = '6.0.0-alpha.2';
 const PRIMENG_EXTENSIONS_VERSION = '0.0.39';
 const CHARTJS_VERSION = '2.7.1';
 const MOMENT_VERSION = '2.20.1';

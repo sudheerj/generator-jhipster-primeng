@@ -4,8 +4,8 @@
  *
  * app.modules.ts should be extended as follows:
  *
- * import {MockBackend} from '@angular/http/testing';
- * import {BaseRequestOptions} from '@angular/http';
+ * import {MockBackend} from '@angular/common/http/testing';
+ * import {BaseRequestOptions} from '@angular/common/http';
  * import {fakeBackendProvider} from './backend/fake-backend';
  *
  * providers: [
@@ -16,8 +16,8 @@
  * ]
  */
 
-import {Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod, XHRBackend, RequestOptions} from '@angular/http';
-import {MockBackend, MockConnection} from '@angular/http/testing';
+import {Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod, XHRBackend, RequestOptions} from '@angular/common/http';
+import {MockBackend, MockConnection} from '@angular/common/http/testing';
 
 function fakeBackendFactory(backend: MockBackend, options: BaseRequestOptions, realBackend: XHRBackend) {
     // configure fake backend
