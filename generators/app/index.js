@@ -1923,7 +1923,6 @@ module.exports = JhipsterGenerator.extend({
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.ts`);
             this.template(`src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`, `src/main/webapp/app/primeng/${countryComponents[component]}/${component}/service/country.service.ts`);
         });
-        this.template('src/main/webapp/app/primeng/fileupload/fileupload/backend/fake-backend.ts', 'src/main/webapp/app/primeng/fileupload/fileupload/backend/fake-backend.ts');
         this.template('src/main/webapp/assets/data/json/browsers/browsers.json', 'src/main/webapp/content/primeng/assets/data/json/browsers/browsers.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/browsers/firefox.png', 'src/main/webapp/content/primeng/assets/data/images/browsers/firefox.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/browsers/ie.png', 'src/main/webapp/content/primeng/assets/data/images/browsers/ie.png');

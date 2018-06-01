@@ -138,7 +138,6 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/fileupload/fileupload/fileuploaddemo.component.ts',
         'src/main/webapp/app/primeng/fileupload/fileupload/fileuploaddemo.module.ts',
         'src/main/webapp/app/primeng/fileupload/fileupload/fileuploaddemo.route.ts',
-        'src/main/webapp/app/primeng/fileupload/fileupload/backend/fake-backend.ts',
 
         'src/main/webapp/app/primeng/dragdrop/dragdrop/index.ts',
         'src/main/webapp/app/primeng/dragdrop/dragdrop/dragdropdemo.component.html',
