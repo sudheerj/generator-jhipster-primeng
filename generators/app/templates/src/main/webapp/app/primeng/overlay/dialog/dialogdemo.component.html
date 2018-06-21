@@ -49,7 +49,23 @@
             <button type="button" (click)="showAdvancedDialog()" pButton icon="fa-external-link-square"
                     label="Advanced"></button>
         </pe-step>
+        <!-- maximizable -->
+        <pe-step label="Events">
+            <p-dialog header="Godfather I" [(visible)]="display" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70"
+                      [maximizable]="true" [baseZIndex]="10000">
+                <p>PrimeNG is a collection of rich UI components for Angular. PrimeNG is a sibling of the popular
+                    JavaServer Faces Component Suite, PrimeFaces.
+                    All widgets are open source and free to use under MIT License.
+                    PrimeNG is developed by PrimeTek Informatics, a company with years of expertise in developing open
+                    source UI components.</p>
+                <p-footer>
+                    <button type="button" pButton icon="pi pi-check" (click)="display=false" label="Yes"></button>
+                    <button type="button" pButton icon="pi pi-close" (click)="display=false" label="No"></button>
+                </p-footer>
+            </p-dialog>
 
+            <button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" label="Show"></button>
+        </pe-step>
         <!-- Events -->
         <pe-step label="Events">
             <p-dialog name="events" header="PrimeNG" [(visible)]="events" (onShow)="showDialog()" (onHide)="hideDialog()">
@@ -57,7 +73,7 @@
                     JavaServer Faces Component Suite, PrimeFaces.
                     All widgets are open source and free to use under MIT License.
                     PrimeNG is developed by PrimeTek Informatics, a company with years of expertise in developing open
-                    source UI components..</p>
+                    source UI components.</p>
             </p-dialog>
             <button type="button" (click)="showEventsDialog()" pButton icon="fa-external-link-square"
                     label="Events"></button>
