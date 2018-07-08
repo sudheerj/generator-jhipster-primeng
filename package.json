@@ -1,13 +1,14 @@
 {
   "name": "generator-jhipster-primeng",
-  "version": "2.0.53",
+  "version": "2.0.55",
   "description": "Generate PrimeNG Components",
   "keywords": [
     "yeoman-generator",
     "jhipster-module",
     "primeng",
     "spring-boot",
-    "angular"
+    "angular",
+    "jhipster-5"
   ],
   "homepage": "https://github.com/sudheerj/generator-jhipster-primeng",
   "author": {

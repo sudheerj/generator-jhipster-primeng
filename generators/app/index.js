@@ -14,6 +14,7 @@ util.inherits(JhipsterGenerator, BaseGenerator);
 
 const ANGULAR_VERSION = '6.0.2';
 const PRIMENG_VERSION = '6.0.0';
+const PRIMEICONS_VERSION = '1.0.0-beta.9';
 const PRIMENG_EXTENSIONS_VERSION = '0.0.39';
 const CHARTJS_VERSION = '2.7.1';
 const MOMENT_VERSION = '2.20.1';
@@ -886,6 +887,9 @@ module.exports = JhipsterGenerator.extend({
                     if (fileData.dependencies['chart.js']) {
                         this.libChartJsVersion = fileData.dependencies['chart.js'];
                     }
+                    if (fileData.dependencies['primeicons']) {
+                        this.libPrimeIconsVersion = fileData.dependencies['primeicons'];
+                    }
 
                     if (fileData.dependencies.moment) {
                         this.libMomentVersion = fileData.dependencies.moment;
@@ -1078,7 +1082,7 @@ module.exports = JhipsterGenerator.extend({
         this.clientFramework = this.jhipsterAppConfig.clientFramework;
         this.clientPackageManager = this.jhipsterAppConfig.clientPackageManager;
         this.protractorTests = this.jhipsterAppConfig.testFrameworks.indexOf('protractor') !== -1;
-        this.angular2AppName = this.getAngular2AppName();
+        this.angularAppName = this.getAngularAppName();
 
 
         // add dependencies
@@ -1113,6 +1117,13 @@ module.exports = JhipsterGenerator.extend({
                 this.addNpmDependency('chart.js', `${CHARTJS_VERSION}`);
             }
 
+            if (this.libPrimeIconsVersion) {
+                // the version already exists, so try to upgrade instead
+                this.replaceContent('package.json', `"primeicons": "${this.libPrimeIconsVersion}"`, `"primeicons": "${PRIMEICONS_VERSION}"`);
+            } else {
+                this.addNpmDependency('primeicons', `${PRIMEICONS_VERSION}`);
+            }
+
             if (this.libFullcalendarVersion) {
                 // the version already exists, so try to upgrade instead
                 this.replaceContent('package.json', `"moment": "${this.libMomentVersion}"`, `"moment": "${MOMENT_VERSION}"`);
@@ -1136,6 +1147,7 @@ module.exports = JhipsterGenerator.extend({
             this.log(`  "primeng": "${PRIMENG_VERSION}",`);
             this.log(`  "primeng-extensions": "${PRIMENG_EXTENSIONS_VERSION}",`);
             this.log(`  "chart.js": "${CHARTJS_VERSION}",`);
+            this.log(`  "primeicons": "${PRIMEICONS_VERSION}",`);
             this.log(`  "moment": "${MOMENT_VERSION}",`);
             this.log(`  "fullcalendar": "${FULLCALENDAR_VERSION}",`);
             this.log(`  "quill": "${QUILL_VERSION}",`);
@@ -1145,14 +1157,14 @@ module.exports = JhipsterGenerator.extend({
 
         // add module to app.module.ts
         try {
-            this.addAngularModule(this.angular2AppName, 'primeng', 'primeng', 'primeng', this.enableTranslation, this.clientFramework);
+            this.addAngularModule(this.angularAppName, 'primeng', 'primeng', 'primeng', this.enableTranslation, this.clientFramework);
         } catch (e) {
             this.log(`${chalk.red.bold('ERROR!')}`);
             this.log('  Problem when updating your app.module.ts');
             this.log('  You need to import manually the new primeng.module.ts:\n');
-            this.log(`${chalk.yellow.bold(`  import { ${this.angular2AppName}primengModule } from './primeng/primeng.module';`)}`);
+            this.log(`${chalk.yellow.bold(`  import { ${this.angularAppName}primengModule } from './primeng/primeng.module';`)}`);
             this.log('\n  and:\n');
-            this.log(`${chalk.yellow.bold(`  ${this.angular2AppName}primengModule,`)}\n`);
+            this.log(`${chalk.yellow.bold(`  ${this.angularAppName}primengModule,`)}\n`);
             this.anyError = true;
         }
         this.inputComponent = `<li uiSrefActive="active">
