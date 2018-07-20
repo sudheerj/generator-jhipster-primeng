@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
 import {ToggleButtonModule} from 'primeng/components/togglebutton/togglebutton';
 import {GrowlModule} from 'primeng/components/growl/growl';
@@ -18,7 +18,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         FormsModule,
         ToggleButtonModule,
         GrowlModule,
@@ -30,4 +30,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>ToggleButtonDemoModule {}
+export class <%= angularXAppName %>ToggleButtonDemoModule {}

@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {PaginatorModule} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
@@ -18,7 +18,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         PaginatorModule,
         GrowlModule,
         WizardModule,
@@ -29,4 +29,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>PaginatorDemoModule {}
+export class <%= angularXAppName %>PaginatorDemoModule {}

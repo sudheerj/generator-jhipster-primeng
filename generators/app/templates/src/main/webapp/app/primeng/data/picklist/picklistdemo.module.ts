@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {PickListModule} from 'primeng/components/picklist/picklist';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {CountryService} from './service/country.service';
@@ -22,7 +22,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         FormsModule,
         HttpClientModule,
         PickListModule,
@@ -36,4 +36,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>PickListDemoModule {}
+export class <%= angularXAppName %>PickListDemoModule {}

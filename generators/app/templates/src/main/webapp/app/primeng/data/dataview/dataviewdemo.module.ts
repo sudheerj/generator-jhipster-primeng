@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {DataViewModule} from 'primeng/components/dataview/dataview';
 import {DialogModule} from 'primeng/components/dialog/dialog';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -24,7 +24,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         FormsModule,
         DataViewModule,
         HttpClientModule,
@@ -41,4 +41,4 @@ const primeng_STATES = [
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>DataViewDemoModule {}
+export class <%= angularXAppName %>DataViewDemoModule {}

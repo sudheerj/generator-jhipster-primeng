@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { UserRouteAccessService } from '../../../shared';
+import { UserRouteAccessService } from '../../../core/auth/user-route-access-service';
 import { PanelMenuDemoComponent } from './panelmenudemo.component';
 
 export const panelmenuDemoRoute: Route = {

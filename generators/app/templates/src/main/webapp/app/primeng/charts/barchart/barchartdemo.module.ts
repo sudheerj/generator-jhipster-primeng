@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import { ChartModule } from 'primeng/primeng';
 
 import {
@@ -15,7 +15,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         ChartModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
@@ -24,4 +24,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>BarchartDemoModule {}
+export class <%= angularXAppName %>BarchartDemoModule {}

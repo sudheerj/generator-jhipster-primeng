@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {ButtonModule} from 'primeng/primeng';
 import {DataGridModule} from 'primeng/components/datagrid/datagrid';
 import {PanelModule} from 'primeng/components/panel/panel';
@@ -23,7 +23,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         ButtonModule,
         DataGridModule,
         PanelModule,
@@ -39,4 +39,4 @@ const primeng_STATES = [
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>DataGridDemoModule {}
+export class <%= angularXAppName %>DataGridDemoModule {}

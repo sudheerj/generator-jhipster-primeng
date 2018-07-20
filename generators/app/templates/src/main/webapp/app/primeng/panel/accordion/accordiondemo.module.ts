@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
 import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
 import {AccordionModule} from 'primeng/components/accordion/accordion';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -24,7 +24,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         BrowserAnimationsModule,
         FormsModule,
         AccordionModule,
@@ -40,4 +40,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>AccordionDemoModule {}
+export class <%= angularXAppName %>AccordionDemoModule {}

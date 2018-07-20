@@ -887,8 +887,8 @@ module.exports = JhipsterGenerator.extend({
                     if (fileData.dependencies['chart.js']) {
                         this.libChartJsVersion = fileData.dependencies['chart.js'];
                     }
-                    if (fileData.dependencies['primeicons']) {
-                        this.libPrimeIconsVersion = fileData.dependencies['primeicons'];
+                    if (fileData.dependencies.primeicons) {
+                        this.libPrimeIconsVersion = fileData.dependencies.primeicons;
                     }
 
                     if (fileData.dependencies.moment) {
@@ -1082,7 +1082,7 @@ module.exports = JhipsterGenerator.extend({
         this.clientFramework = this.jhipsterAppConfig.clientFramework;
         this.clientPackageManager = this.jhipsterAppConfig.clientPackageManager;
         this.protractorTests = this.jhipsterAppConfig.testFrameworks.indexOf('protractor') !== -1;
-        this.angularAppName = this.getAngularAppName();
+        this.angularXAppName = this.getAngularXAppName();
 
 
         // add dependencies
@@ -1157,14 +1157,14 @@ module.exports = JhipsterGenerator.extend({
 
         // add module to app.module.ts
         try {
-            this.addAngularModule(this.angularAppName, 'primeng', 'primeng', 'primeng', this.enableTranslation, this.clientFramework);
+            this.addAngularModule(this.angularXAppName, 'primeng', 'primeng', 'primeng', this.enableTranslation, this.clientFramework);
         } catch (e) {
             this.log(`${chalk.red.bold('ERROR!')}`);
             this.log('  Problem when updating your app.module.ts');
             this.log('  You need to import manually the new primeng.module.ts:\n');
-            this.log(`${chalk.yellow.bold(`  import { ${this.angularAppName}primengModule } from './primeng/primeng.module';`)}`);
+            this.log(`${chalk.yellow.bold(`  import { ${this.angularXAppName}primengModule } from './primeng/primeng.module';`)}`);
             this.log('\n  and:\n');
-            this.log(`${chalk.yellow.bold(`  ${this.angularAppName}primengModule,`)}\n`);
+            this.log(`${chalk.yellow.bold(`  ${this.angularXAppName}primengModule,`)}\n`);
             this.anyError = true;
         }
         this.inputComponent = `<li uiSrefActive="active">

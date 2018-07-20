@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {TabMenuModule} from 'primeng/components/tabmenu/tabmenu';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -19,7 +19,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         CommonModule,
         BrowserAnimationsModule,
         TabMenuModule,
@@ -33,4 +33,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>TabMenuDemoModule {}
+export class <%= angularXAppName %>TabMenuDemoModule {}

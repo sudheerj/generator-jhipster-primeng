@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { UserRouteAccessService } from '../../../shared';
+import { UserRouteAccessService } from '../../../core/auth/user-route-access-service';
 import { PiechartDemoComponent } from '../../charts/piechart/piechartdemo.component';
 
 export const piechartDemoRoute: Route = {

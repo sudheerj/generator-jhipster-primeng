@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 
 // import needed PrimeNG modules here
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {ToolbarModule} from 'primeng/components/toolbar/toolbar';
 import {InputTextModule} from 'primeng/components/inputtext/inputtext';
 import {SplitButtonModule} from 'primeng/components/splitbutton/splitbutton';
@@ -25,7 +25,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
@@ -42,4 +42,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>ToolbarDemoModule {}
+export class <%= angularXAppName %>ToolbarDemoModule {}

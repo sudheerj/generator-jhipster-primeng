@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
 import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
 import {TriStateCheckboxModule} from 'primeng/components/tristatecheckbox/tristatecheckbox';
@@ -19,7 +19,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         FormsModule,
         CheckboxModule,
         GrowlModule,
@@ -32,4 +32,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>CheckboxDemoModule {}
+export class <%= angularXAppName %>CheckboxDemoModule {}

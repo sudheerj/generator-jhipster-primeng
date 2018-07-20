@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {AccordionModule} from 'primeng/primeng';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
@@ -18,7 +18,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         CommonModule,
         BrowserAnimationsModule,
         GrowlModule,
@@ -31,4 +31,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>RTLDemoModule {}
+export class <%= angularXAppName %>RTLDemoModule {}

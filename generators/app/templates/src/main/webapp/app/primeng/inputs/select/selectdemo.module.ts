@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
 import {DropdownModule} from 'primeng/components/dropdown/dropdown';
 import {MultiSelectModule} from 'primeng/components/multiselect/multiselect';
@@ -22,7 +22,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         FormsModule,
         DropdownModule,
         MultiSelectModule,
@@ -38,4 +38,4 @@ const primeng_STATES = [
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>SelectDemoModule {}
+export class <%= angularXAppName %>SelectDemoModule {}

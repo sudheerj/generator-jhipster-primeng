@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {CommonModule} from '@angular/common';
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {PanelModule} from 'primeng/components/panel/panel';
 import {DropdownModule} from 'primeng/components/dropdown/dropdown';
@@ -28,7 +28,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         BrowserModule,
         FormsModule,
         BrowserAnimationsModule,
@@ -50,4 +50,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>ValidationDemoModule {}
+export class <%= angularXAppName %>ValidationDemoModule {}

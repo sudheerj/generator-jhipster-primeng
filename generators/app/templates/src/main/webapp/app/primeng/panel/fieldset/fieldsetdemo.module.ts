@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import needed PrimeNG modules here
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
 import {FieldsetModule} from 'primeng/components/fieldset/fieldset';
 import {GrowlModule} from 'primeng/components/growl/growl';
@@ -22,7 +22,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
@@ -36,4 +36,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>FieldsetDemoModule {}
+export class <%= angularXAppName %>FieldsetDemoModule {}

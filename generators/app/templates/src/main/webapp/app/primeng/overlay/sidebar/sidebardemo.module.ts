@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {ButtonModule} from 'primeng/components/button/button';
 import {SidebarModule} from 'primeng/components/sidebar/sidebar';
 import {GrowlModule} from 'primeng/primeng';
@@ -19,7 +19,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         ButtonModule,
         SidebarModule,
         GrowlModule,
@@ -32,4 +32,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>SideBarDemoModule {}
+export class <%= angularXAppName %>SideBarDemoModule {}

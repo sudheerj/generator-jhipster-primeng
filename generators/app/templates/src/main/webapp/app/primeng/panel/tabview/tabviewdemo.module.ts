@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 
 // import needed PrimeNG modules here
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {TabViewModule} from 'primeng/components/tabview/tabview';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
@@ -21,7 +21,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         BrowserModule,
         FormsModule,
         TabViewModule,
@@ -34,4 +34,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>TabViewDemoModule {}
+export class <%= angularXAppName %>TabViewDemoModule {}

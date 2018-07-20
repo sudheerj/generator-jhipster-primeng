@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
 import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
 import {CalendarModule} from 'primeng/components/calendar/calendar';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -23,7 +23,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         FormsModule,
         CalendarModule,
         GrowlModule,
@@ -38,4 +38,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>CalendarDemoModule {}
+export class <%= angularXAppName %>CalendarDemoModule {}

@@ -3,7 +3,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/primeng';
 import {ContextMenuModule} from 'primeng/components/contextmenu/contextmenu';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
@@ -21,7 +21,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         CommonModule,
         BrowserAnimationsModule,
         ContextMenuModule,
@@ -36,4 +36,4 @@ const primeng_STATES = [
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, EmployeeService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>ContextMenuDemoModule {}
+export class <%= angularXAppName %>ContextMenuDemoModule {}

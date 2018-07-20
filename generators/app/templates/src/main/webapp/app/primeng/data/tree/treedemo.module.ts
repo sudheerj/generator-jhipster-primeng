@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {TreeModule} from 'primeng/components/tree/tree';
 import {TreeDragDropService} from 'primeng/components/common/api';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -25,7 +25,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         BrowserModule,
         FormsModule,
         HttpClientModule,
@@ -42,4 +42,4 @@ const primeng_STATES = [
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, TreeDragDropService, TreeNodeService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>TreeDemoModule {}
+export class <%= angularXAppName %>TreeDemoModule {}

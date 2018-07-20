@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {OverlayPanelModule} from 'primeng/components/overlaypanel/overlaypanel';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -22,7 +22,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         ButtonModule,
         OverlayPanelModule,
         DataTableModule,
@@ -38,4 +38,4 @@ const primeng_STATES = [
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>OverlayPanelDemoModule {}
+export class <%= angularXAppName %>OverlayPanelDemoModule {}

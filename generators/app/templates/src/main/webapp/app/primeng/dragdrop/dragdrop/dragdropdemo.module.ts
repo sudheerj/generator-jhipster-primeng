@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {DragDropModule} from 'primeng/components/dragdrop/dragdrop';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {DataGridModule} from 'primeng/components/datagrid/datagrid';
@@ -20,7 +20,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         DragDropModule,
         DataTableModule,
         DataGridModule,
@@ -35,4 +35,4 @@ const primeng_STATES = [
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>DragDropDemoModule {}
+export class <%= angularXAppName %>DragDropDemoModule {}

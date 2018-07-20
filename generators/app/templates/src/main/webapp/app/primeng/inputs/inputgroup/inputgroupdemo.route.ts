@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { UserRouteAccessService } from '../../../shared';
+import { UserRouteAccessService } from '../../../core/auth/user-route-access-service';
 import { InputGroupDemoComponent } from './inputgroupdemo.component';
 
 export const inputGroupDemoRoute: Route = {

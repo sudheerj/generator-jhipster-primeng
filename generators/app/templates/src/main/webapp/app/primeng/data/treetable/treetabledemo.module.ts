@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {TreeTableModule} from 'primeng/components/treetable/treetable';
 import {ButtonModule} from 'primeng/components/button/button';
 import {ContextMenuModule} from 'primeng/components/contextmenu/contextmenu';
@@ -26,7 +26,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         BrowserModule,
         FormsModule,
         HttpClientModule,
@@ -43,4 +43,4 @@ const primeng_STATES = [
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, TreeNodeService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>TreeTableDemoModule {}
+export class <%= angularXAppName %>TreeTableDemoModule {}

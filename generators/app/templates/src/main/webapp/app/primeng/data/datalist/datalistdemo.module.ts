@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angular2AppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {DataListModule} from 'primeng/components/datalist/datalist';
 import {DialogModule} from 'primeng/components/dialog/dialog';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -23,7 +23,7 @@ const primeng_STATES = [
 
 @NgModule({
     imports: [
-        <%= angular2AppName %>SharedModule,
+        <%= angularXAppName %>SharedModule,
         ButtonModule,
         DataListModule,
         DialogModule,
@@ -39,4 +39,4 @@ const primeng_STATES = [
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angular2AppName %>DataListDemoModule {}
+export class <%= angularXAppName %>DataListDemoModule {}
