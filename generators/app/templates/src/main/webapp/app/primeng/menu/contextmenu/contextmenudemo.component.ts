@@ -126,8 +126,8 @@ export class ContextMenuDemoComponent implements OnInit {
         ];
 
         this.tableItems = [
-            {label: 'View', icon: 'fa-search', command: (event) => this.viewEmployee(this.selectedEmployee)},
-            {label: 'Delete', icon: 'fa-close', command: (event) => this.deleteEmployee(this.selectedEmployee)},
+            {label: 'View', icon: 'fa-search', command: event => this.viewEmployee(this.selectedEmployee)},
+            {label: 'Delete', icon: 'fa-close', command: event => this.deleteEmployee(this.selectedEmployee)},
             {label: 'Help', icon: 'fa-close', url: 'https://www.opm.gov/policy-data-oversight/worklife/employee-assistance-programs/'}
         ];
     }

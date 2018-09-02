@@ -19,7 +19,7 @@ export class TerminalDemoComponent implements OnInit, OnDestroy {
     ngOnInit() {}
 
     constructor(private terminalService: TerminalService) {
-        this.terminalService.commandHandler.subscribe((command) => {
+        this.terminalService.commandHandler.subscribe(command => {
             const response = (command === 'date') ? new Date().toDateString() : 'Unknown command: ' + command;
             this.terminalService.sendResponse(response);
         });

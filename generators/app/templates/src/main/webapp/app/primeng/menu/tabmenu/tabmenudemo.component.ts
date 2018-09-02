@@ -17,7 +17,7 @@ export class TabMenuDemoComponent implements OnInit {
     ngOnInit() {
         this.items = [
             {label: 'Overview', icon: 'fa-bar-chart', routerLink: ['/pages/overview']},
-            {label: 'Showcase', icon: 'fa-calendar', command: (event) => {
+            {label: 'Showcase', icon: 'fa-calendar', command: () => {
                 this.msgs.length = 0;
                 this.msgs.push({severity: 'info', summary: 'PrimeNG Showcase', detail: 'Navigate all components'});
             }},

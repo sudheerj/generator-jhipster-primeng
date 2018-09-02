@@ -16,31 +16,31 @@ export class BreadcrumbDemoComponent implements OnInit {
     ngOnInit() {
         this.items = [];
         this.items.push({
-            label: 'Categories', command: (event) => {
+            label: 'Categories', command: event => {
                 this.msgs.length = 0;
                 this.msgs.push({severity: 'info', summary: event.item.label});
             }
         });
         this.items.push({
-            label: 'Best Buy', command: (event) => {
+            label: 'Best Buy', command: event => {
                 this.msgs.length = 0;
                 this.msgs.push({severity: 'info', summary: event.item.label});
             }
         });
         this.items.push({
-            label: 'TV & Video', command: (event) => {
+            label: 'TV & Video', command: event => {
                 this.msgs.length = 0;
                 this.msgs.push({severity: 'info', summary: event.item.label});
             }
         });
         this.items.push({
-            label: 'TVs', command: (event) => {
+            label: 'TVs', command: event => {
                 this.msgs.length = 0;
                 this.msgs.push({severity: 'info', summary: event.item.label});
             }
         });
         this.items.push({
-            label: 'Flat Panel TVs', command: (event) => {
+            label: 'Flat Panel TVs', command: event => {
                 this.msgs.length = 0;
                 this.msgs.push({severity: 'info', summary: event.item.label});
             }
@@ -48,7 +48,7 @@ export class BreadcrumbDemoComponent implements OnInit {
         this.items.push({label: 'LED Flat-Panel', url: 'https://en.wikipedia.org/wiki/LED_display'});
 
         this.home = {
-            label: 'Home', icon: 'fa-globe', command: (event) => {
+            label: 'Home', icon: 'fa-globe', command: event => {
                 this.msgs.length = 0;
                 this.msgs.push({severity: 'info', summary: 'Home'});
             }

@@ -54,8 +54,8 @@ export class TreeTableDemoComponent implements OnInit {
         this.nodeService.getTouristPlaces().subscribe((places: any) => this.lazyTreeTable = places.data);
 
         this.items = [
-            {label: 'View', icon: 'fa-search', command: (event) => this.viewNode(this.selectedPlace)},
-            {label: 'Delete', icon: 'fa-close', command: (event) => this.deleteNode(this.selectedPlace)}
+            {label: 'View', icon: 'fa-search', command: event => this.viewNode(this.selectedPlace)},
+            {label: 'Delete', icon: 'fa-close', command: event => this.deleteNode(this.selectedPlace)}
         ];
     }
 
@@ -87,7 +87,7 @@ export class TreeTableDemoComponent implements OnInit {
     }
 
     deleteNode(node: TreeNode) {
-        node.parent.children = node.parent.children.filter( (n) => n.data !== node.data);
+        node.parent.children = node.parent.children.filter(n => n.data !== node.data);
         this.msgs = [];
         this.msgs.push({severity: 'info', summary: 'Node Deleted', detail: node.data.name});
     }

@@ -35,7 +35,7 @@ import { <%= angularXAppName %>EditorDemoModule } from './inputs/editor/editorde
 
 import { <%= angularXAppName %>GrowlDemoModule } from './messages/growl/growldemo.module';
 import { <%= angularXAppName %>MessagesDemoModule } from './messages/messages/messagesdemo.module';
-import { <%= angularXAppName %>ToastDemoModule } from './messages/toast/toastdemo.module';
+/*import { <%= angularXAppName %>ToastDemoModule } from './messages/toast/toastdemo.module';*/
 import { <%= angularXAppName %>GalleriaDemoModule } from './multimedia/galleria/galleriademo.module';
 
 import { <%= angularXAppName %>FileUploadDemoModule } from './fileupload/fileupload/fileuploaddemo.module';
@@ -146,7 +146,7 @@ import { <%= angularXAppName %>ProgressSpinnerDemoModule } from './misc/progress
 
         <%= angularXAppName %>GrowlDemoModule,
         <%= angularXAppName %>MessagesDemoModule,
-        <%= angularXAppName %>ToastDemoModule,
+        /*<%= angularXAppName %>ToastDemoModule,*/
         <%= angularXAppName %>GalleriaDemoModule,
 
         <%= angularXAppName %>FileUploadDemoModule,

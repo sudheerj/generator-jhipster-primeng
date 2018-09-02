@@ -1,3 +1,4 @@
+/*
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -9,11 +10,11 @@ import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
     ToastDemoComponent,
-    ToastDemoRoute
+    toastDemoRoute
 } from './';
 
 const primeng_STATES = [
-    ToastDemoRoute
+    toastDemoRoute
 ];
 
 @NgModule({
@@ -31,3 +32,4 @@ const primeng_STATES = [
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>ToastDemoModule {}
+*/

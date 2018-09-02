@@ -121,7 +121,7 @@ export class TreeDemoComponent implements OnInit {
     expandRecursive(node: TreeNode, isExpand: boolean) {
         node.expanded = isExpand;
         if (node.children) {
-            node.children.forEach( (childNode) => {
+            node.children.forEach(childNode => {
                 this.expandRecursive(childNode, isExpand);
             } );
         }

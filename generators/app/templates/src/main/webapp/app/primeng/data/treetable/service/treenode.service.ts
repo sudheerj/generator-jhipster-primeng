@@ -12,6 +12,6 @@ export class TreeNodeService {
 
     getTouristPlaces(): Observable<any[]> {
         return this.http.get('content/primeng/assets/data/json/places/places.json')
-            .map((response) => response as any[]);
+            .map(response => response as any[]);
     }
 }

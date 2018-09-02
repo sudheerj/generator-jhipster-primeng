@@ -21,7 +21,7 @@ export class ProgressBarDemoComponent implements OnInit, OnDestroy {
     ngOnInit() {
         const interval = Observable.interval(800).take(100);
         this.interval$ = interval.subscribe(
-            (x) => this.value = x + 1,
+            x => this.value = x + 1,
             () => {/** no error handling */ },
             () => this.msgs = [{severity: 'info', summary: 'Success', detail: 'Process completed'}]
         );
