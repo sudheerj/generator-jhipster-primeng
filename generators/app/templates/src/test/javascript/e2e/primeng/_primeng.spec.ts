@@ -799,6 +799,18 @@ describe('administration', () => {
         });
     });
 
+    it('should load Toast', () => {
+        element(by.css('[routerLink="toast"]')).click();
+        <%_ if (enableTranslation) { _%>
+            const expect1 = /primeng.messages.toast.title/;
+            <%_ } else { _%>
+            const expect1 = /Toast/;
+            <%_ } _%>
+        element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
+            expect(value).toMatch(expect1);
+        });
+    });
+
     it('should load Galleria', () => {
         element(by.css('[routerLink="galleria"]')).click();
         <%_ if (enableTranslation) { _%>

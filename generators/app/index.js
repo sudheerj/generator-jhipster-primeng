@@ -13,8 +13,9 @@ const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
 const ANGULAR_VERSION = '6.0.2';
-const PRIMENG_VERSION = '6.0.0';
-const PRIMEICONS_VERSION = '1.0.0-beta.9';
+const PRIMENG_VERSION = '6.1.4-SNAPSHOT';
+const PRIMEICONS_VERSION = '1.0.0-beta.10';
+const PRIMEFLEX_VERSION = '1.0.0-rc.1';
 const PRIMENG_EXTENSIONS_VERSION = '0.0.39';
 const CHARTJS_VERSION = '2.7.1';
 const MOMENT_VERSION = '2.20.1';
@@ -94,6 +95,18 @@ const THEME_OPTIONS = [
     {
         value: 'voclain',
         name: 'Voclain'
+    },
+    {
+        value: 'nova-colored',
+        name: 'Nova-Colored'
+    },
+    {
+        value: 'nova-dark',
+        name: 'Nova-Dark'
+    },
+    {
+        value: 'nova-light',
+        name: 'Nova-Light'
     }
 ];
 
@@ -429,6 +442,10 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         name: 'Messages',
         value: 'messages',
         checked: false
+    }, {
+        name: 'Toast',
+        value: 'toast',
+        checked: false
     }, new inquirer.Separator(' == Multimedia Components == '), {
         name: 'Galleria',
         value: 'galleria',
@@ -745,6 +762,7 @@ const components = {
     radarchart: 'charts',
     messages: 'messages',
     growl: 'messages',
+    toast: 'messages',
     galleria: 'multimedia',
     dragdrop: 'dragdrop',
     captcha: 'misc',
@@ -791,6 +809,7 @@ const primengTranslation = `"primeng": {
                 "galleria":"Galleria",
                 "messages":"Messages",
                 "growl":"Growl",
+                "toast":"Toast",
                 "dialog":"Dialog",
                 "confirmdialog":"ConfirmDialog",
                 "lightbox": "Lightbox",
@@ -889,6 +908,9 @@ module.exports = JhipsterGenerator.extend({
                     }
                     if (fileData.dependencies.primeicons) {
                         this.libPrimeIconsVersion = fileData.dependencies.primeicons;
+                    }
+                    if (fileData.dependencies.primeflex) {
+                        this.libPrimeFlexVersion = fileData.dependencies.primeflex;
                     }
 
                     if (fileData.dependencies.moment) {
@@ -1028,7 +1050,7 @@ module.exports = JhipsterGenerator.extend({
             );
         };
 
-        const primengResources = `\n@import "~primeng/resources/primeng.min.css";\n@import "~primeng-extensions/resources/primeng-extensions.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
+        const primengResources = `\n@import "~primeicons/primeicons.css";\n@import "~primeng/resources/primeng.min.css";\n@import "~primeng-extensions/resources/primeng-extensions.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
         const primengRootResources = `<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
                                       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css"/>
                                       <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script>
@@ -1124,6 +1146,13 @@ module.exports = JhipsterGenerator.extend({
                 this.addNpmDependency('primeicons', `${PRIMEICONS_VERSION}`);
             }
 
+            if (this.libPrimeFlexVersion) {
+                // the version already exists, so try to upgrade instead
+                this.replaceContent('package.json', `"primeflex": "${this.libPrimeFlexVersion}"`, `"primeflex": "${PRIMEFLEX_VERSION}"`);
+            } else {
+                this.addNpmDependency('primeflex', `${PRIMEFLEX_VERSION}`);
+            }
+
             if (this.libFullcalendarVersion) {
                 // the version already exists, so try to upgrade instead
                 this.replaceContent('package.json', `"moment": "${this.libMomentVersion}"`, `"moment": "${MOMENT_VERSION}"`);
@@ -1148,6 +1177,7 @@ module.exports = JhipsterGenerator.extend({
             this.log(`  "primeng-extensions": "${PRIMENG_EXTENSIONS_VERSION}",`);
             this.log(`  "chart.js": "${CHARTJS_VERSION}",`);
             this.log(`  "primeicons": "${PRIMEICONS_VERSION}",`);
+            this.log(`  "primeflex": "${PRIMEFLEX_VERSION}",`);
             this.log(`  "moment": "${MOMENT_VERSION}",`);
             this.log(`  "fullcalendar": "${FULLCALENDAR_VERSION}",`);
             this.log(`  "quill": "${QUILL_VERSION}",`);
@@ -1303,6 +1333,12 @@ module.exports = JhipsterGenerator.extend({
                         <a class="dropdown-item" routerLink="growl" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.primeng.growl">Growl</span>
+                        </a>
+                    </li>`;
+        this.toastComponent = `<li uiSrefActive="active">
+                        <a class="dropdown-item" routerLink="toast" routerLinkActive="active" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.primeng.toast">Toast</span>
                         </a>
                     </li>`;
         this.galleriaComponent = `<li uiSrefActive="active">
@@ -1670,8 +1706,7 @@ module.exports = JhipsterGenerator.extend({
         this.messageComponents = `
                    <hr/>
                    <span style="font-weight:bold">Messages Components</span>
-                   <hr/> ${
-                    this.messageComponent}${this.growlComponent}`;
+                   <hr/> ${this.messageComponent}${this.growlComponent}${this.toastComponent}`;
 
 
         this.multimediaComponents = `
@@ -1749,7 +1784,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('panelmenu') > -1 ? this.panelmenuComponent : '') + (this.componentList.indexOf('slidemenu') > -1 ? this.slidemenuComponent : '') + (this.componentList.indexOf('steps') > -1 ? this.stepsComponent : '') + (this.componentList.indexOf('tabmenu') > -1 ? this.tabmenuComponent : '') +
                 (this.componentList.indexOf('tieredmenu') > -1 ? this.tieredmenuComponent : '') + (this.componentList.indexOf('barchart') > -1 ? this.barchartComponent : '') + (this.componentList.indexOf('doughnutchart') > -1 ? this.doughnutchartComponent : '') +
                 (this.componentList.indexOf('linechart') > -1 ? this.linechartComponent : '') + (this.componentList.indexOf('piechart') > -1 ? this.piechartComponent : '') + (this.componentList.indexOf('polarareachart') > -1 ? this.polarareachartComponent : '') +
-                (this.componentList.indexOf('radarchart') > -1 ? this.radarchartComponent : '') + (this.componentList.indexOf('growl') > -1 ? this.growlComponent : '') + (this.componentList.indexOf('messages') > -1 ? this.messageComponent : '') +
+                (this.componentList.indexOf('radarchart') > -1 ? this.radarchartComponent : '') + (this.componentList.indexOf('growl') > -1 ? this.growlComponent : '') + (this.componentList.indexOf('messages') > -1 ? this.messageComponent : '') + (this.componentList.indexOf('toast') > -1 ? this.toastComponent : '')  +
                 (this.componentList.indexOf('galleria') > -1 ? this.galleriaComponent : '') + (this.componentList.indexOf('dragdrop') > -1 ? this.dragdropComponent : '') + (this.componentList.indexOf('blockui') > -1 ? this.blockuiComponent : '') +
                 (this.componentList.indexOf('captcha') > -1 ? this.captchaComponent : '') + (this.componentList.indexOf('defer') > -1 ? this.deferComponent : '') + (this.componentList.indexOf('inplace') > -1 ? this.inplaceComponent : '') +
                 (this.componentList.indexOf('progressbar') > -1 ? this.progressbarComponent : '') + (this.componentList.indexOf('rtl') > -1 ? this.rtlComponent : '') + (this.componentList.indexOf('terminal') > -1 ? this.terminalComponent : '') +

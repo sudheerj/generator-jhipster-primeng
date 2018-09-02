@@ -1,0 +1,61 @@
+<form novalidate>
+    <p-toast [style]="{marginTop: '80px'}"></p-toast>
+
+    <p-toast [style]="{marginTop: '80px'}" position="top-left" key="tl"></p-toast>
+
+    <p-toast [style]="{marginTop: '80px'}" position="top-center" key="tc"></p-toast>
+
+    <p-toast [style]="{marginTop: '80px'}" styleClass="custom-toast" key="custom" position="bottom-center"></p-toast>
+
+    <p-toast position="center" key="c" (onClose)="onReject()" [modal]="true" [baseZIndex]="5000">
+        <ng-template let-message pTemplate="message">
+            <div style="text-align: center">
+                <i class="pi pi-exclamation-triangle" style="font-size: 3em"></i>
+                <h3>{{message.summary}}</h3>
+                <p>{{message.detail}}</p>
+            </div>
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-6">
+                    <button type="button" pButton (click)="onConfirm()" label="Yes" class="ui-button-success"></button>
+                </div>
+                <div class="ui-g-6">
+                    <button type="button" pButton (click)="onReject()" label="No" class="ui-button-secondary"></button>
+                </div>
+            </div>
+        </ng-template>
+    </p-toast>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Severities -->
+        <pe-step label="Severities">
+            <button type="button" pButton (click)="showSuccess()" label="Success" class="ui-button-success"></button>
+            <button type="button" pButton (click)="showInfo()" label="Info" class="ui-button-info"></button>
+            <button type="button" pButton (click)="showWarn()" label="Warn" class="ui-button-warning"></button>
+            <button type="button" pButton (click)="showError()" label="Error" class="ui-button-danger"></button>
+        </pe-step>
+
+        <!-- Multiple -->
+        <pe-step label="Multiple" [styleClass]="">
+            <button type="button" pButton (click)="showMultiple()" label="Multiple"></button>
+        </pe-step>
+
+        <!-- Clear -->
+        <pe-step label="Clear">
+            <button type="button" pButton (click)="clear()" icon="pi pi-times" label="Remove All"></button>
+        </pe-step>
+
+        <!-- Positions -->
+        <pe-step label="Positions">
+            <button type="button" pButton (click)="showTopLeft()" label="Top Left" class="ui-button-success"></button>
+            <button type="button" pButton (click)="showTopCenter()" label="Top Center" class="ui-button-info"></button>
+        </pe-step>
+
+        <!-- Template -->
+        <pe-step label="Template">
+            <button type="button" pButton (click)="showConfirm()" label="Confirm" class="ui-button-warning"></button>
+        </pe-step>
+
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>
