@@ -12,7 +12,7 @@ const jhipsterConstants = require('generator-jhipster/generators/generator-const
 const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
-const ANGULAR_VERSION = '6.0.2';
+const ANGULAR_VERSION = '6.1.0';
 const PRIMENG_VERSION = '6.1.3';
 const PRIMEICONS_VERSION = '1.0.0-beta.10';
 const PRIMEFLEX_VERSION = '1.0.0-rc.1';
@@ -28,6 +28,18 @@ const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
 let themeName = 'omega';
 
 const THEME_OPTIONS = [
+    {
+        value: 'nova-colored',
+        name: 'Nova-Colored'
+    },
+    {
+        value: 'nova-dark',
+        name: 'Nova-Dark'
+    },
+    {
+        value: 'nova-light',
+        name: 'Nova-Light'
+    },
     {
         value: 'omega',
         name: 'Omega'
@@ -95,18 +107,6 @@ const THEME_OPTIONS = [
     {
         value: 'voclain',
         name: 'Voclain'
-    },
-    {
-        value: 'nova-colored',
-        name: 'Nova-Colored'
-    },
-    {
-        value: 'nova-dark',
-        name: 'Nova-Dark'
-    },
-    {
-        value: 'nova-light',
-        name: 'Nova-Light'
     }
 ];
 
