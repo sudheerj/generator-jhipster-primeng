@@ -1,6 +1,6 @@
 # generator-jhipster-primeng
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] <!--[![Coverage Status][coveralls-image]][coveralls-url]--> [![npm](https://img.shields.io/npm/dt/generator-jhipster-primeng.svg)]() [![Dependency Status][daviddm-image]][daviddm-url] ![Crates.io](https://img.shields.io/github/license/mashape/apistatus.svg)
-> JHipster module, Generate PrimeNG sample components 
+> JHipster module, Generate PrimeNG application with all component and their features 
  (**86+ components and 17 themes**)
 
 <div align="center">
@@ -69,8 +69,8 @@ npm update -g generator-jhipster-primeng
 ```
 ## Getting Started
 
-1. Run JHipster-PrimeNG module using yo jhipster-primeng
-2. Select your faviourite theme
+1. Run JHipster-PrimeNG module using **yo jhipster-primeng** command
+2. Select your favourite theme
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/theme.png" height="400" width="700">
@@ -94,7 +94,7 @@ npm update -g generator-jhipster-primeng
  </div>
 
 # What next?
-Please check the roadmap list https://github.com/sudheerj/generator-jhipster-primeng/wiki/Roadmap . If you need a new feature please raise a github request for the discussion.
+Please check the road map list https://github.com/sudheerj/generator-jhipster-primeng/wiki/Roadmap. If you need a new feature please raise a github request for the discussion.
 
 # Blog
 http://sudheerjonna.com/blog/2017/10/09/jhipster-meets-primeng-or-primeng-meets-jhipster/
