@@ -37,10 +37,10 @@
             </p-column>
             <p-column styleClass="col-button">
                 <ng-template pTemplate="header">
-                    <button type="button" pButton icon="fa-refresh"></button>
+                    <button type="button" pButton icon="fa fa-refresh"></button>
                 </ng-template>
                 <ng-template let-browser="rowData" pTemplate="body">
-                    <button type="button" pButton (click)="selectBrowser(browser)" icon="fa-search"></button>
+                    <button type="button" pButton (click)="selectBrowser(browser)" icon="fa fa-search"></button>
                 </ng-template>
             </p-column>
         </p-dataTable>
@@ -423,7 +423,7 @@
     <!-- Responsive -->
     <pe-step label="Responsive">
         <button pButton type="button" (click)="toggle()" class="responsive-toggle" label="Toggle"
-                icon="fa-list"></button>
+                icon="fa fa-list"></button>
         <p-dataTable [value]="browsers" [rows]="3" [paginator]="true" [pageLinks]="3" [responsive]="true"
                      [stacked]="stacked">
             <p-header>Responsive</p-header>
@@ -449,7 +449,7 @@
         <p-dataTable #dt [value]="basicBrowsers" exportFilename="browsers" csvSeparator=";">
             <p-header>
                 <div class="ui-helper-clearfix">
-                    <button type="button" pButton icon="fa-file-o" iconPos="left" label="CSV"
+                    <button type="button" pButton icon="fa fa-file-o" iconPos="left" label="CSV"
                             (click)="dt.exportCSV()" style="float:left"></button>
                 </div>
             </p-header>
@@ -483,7 +483,7 @@
             <p-column field="grade" header="Grade" [sortable]="true"></p-column>
             <p-footer>
                 <div class="ui-helper-clearfix" style="width:100%">
-                    <button type="button" pButton icon="fa-plus" style="float:left" (click)="addBrowser()"
+                    <button type="button" pButton icon="fa fa-plus" style="float:left" (click)="addBrowser()"
                             label="Add"></button>
                 </div>
             </p-footer>
@@ -511,8 +511,8 @@
             </div>
             <p-footer>
                 <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-                    <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
-                    <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+                    <button type="button" pButton icon="fa fa-close" (click)="delete()" label="Delete"></button>
+                    <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
                 </div>
             </p-footer>
         </p-dialog>

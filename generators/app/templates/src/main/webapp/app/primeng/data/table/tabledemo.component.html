@@ -777,7 +777,7 @@
     <!-- Responsive -->
     <pe-step label="Responsive">
         <button pButton type="button" (click)="toggle()" class="responsive-toggle" label="Toggle"
-                icon="fa-list"></button>
+                icon="fa fa-list"></button>
         <p-table [columns]="cols" [value]="browsers" [responsive]="true" [rows]="3" [paginator]="true" [pageLinks]="3" [responsive]="true"
                  [stacked]="stacked">
             <ng-template pTemplate="caption">
@@ -833,8 +833,8 @@
         <p-table #dt [columns]="cols" [value]="basicBrowsers" selectionMode="multiple" [(selection)]="selectedBrowsers" exportFilename="browsers" csvSeparator=";">
             <ng-template pTemplate="caption">
                 <div class="ui-helper-clearfix">
-                    <button type="button" pButton icon="fa-file-o" iconPos="left" label="All Data" (click)="dt.exportCSV()" style="float:left"></button>
-                    <button type="button" pButton icon="fa-file" iconPos="left" label="Selection Only" (click)="dt.exportCSV({selectionOnly:true})" style="float:right"></button>
+                    <button type="button" pButton icon="fa fa-file-o" iconPos="left" label="All Data" (click)="dt.exportCSV()" style="float:left"></button>
+                    <button type="button" pButton icon="fa fa-file" iconPos="left" label="Selection Only" (click)="dt.exportCSV({selectionOnly:true})" style="float:right"></button>
                 </div>
             </ng-template>
             <ng-template pTemplate="header" let-columns>
@@ -894,7 +894,7 @@
 
             <ng-template pTemplate="summary" let-rowData>
                 <div style="text-align:left">
-                    <button type="button" pButton icon="fa-plus" (click)="addBrowser()" label="Add"></button>
+                    <button type="button" pButton icon="fa fa-plus" (click)="addBrowser()" label="Add"></button>
                 </div>
             </ng-template>
 
@@ -922,8 +922,8 @@
             </div>
             <p-footer>
                 <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-                    <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
-                    <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+                    <button type="button" pButton icon="fa fa-close" (click)="delete()" label="Delete"></button>
+                    <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
                 </div>
             </p-footer>
         </p-dialog>

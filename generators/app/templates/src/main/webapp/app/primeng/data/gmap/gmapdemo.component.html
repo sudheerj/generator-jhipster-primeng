@@ -10,17 +10,17 @@
     <!-- GoogleMap API -->
     <pe-step label="GoogleMap API">
         <p-gmap #gmapObject [options]="options" [style]="{'width':'100%','height':'400px'}"></p-gmap>
-        <button type="button" pButton label="Zoom In" icon="fa-search-plus" (click)="zoomIn(gmapObject.getMap())"></button>
+        <button type="button" pButton label="Zoom In" icon="fa fa-search-plus" (click)="zoomIn(gmapObject.getMap())"></button>
     </pe-step>
 
     <!-- Events-->
     <pe-step label="Events">
         <p-gmap #gmap [options]="options" [overlays]="overlaysEvents"
                 (onMapReady)="handleMapReady($event)" (onMapClick)="handleMapClick($event)" (onOverlayClick)="handleOverlayClick($event)" (onOverlayDragStart)="handleDragStart($event)" (onOverlayDragEnd)="handleDragEnd($event)" (onZoomChanged)="handleZoomChanged($event)" (onMapDragEnd)="handleMapDragEnd($event)" [style]="{'width':'100%','height':'400px'}"></p-gmap>
-        <button type="button" pButton label="Clear" icon="fa-close" (click)="clear()"></button>
-        <button type="button" pButton label="Reset" icon="fa-map-marker" (click)="initOverlays()" ></button>
-        <button type="button" pButton label="Zoom In" icon="fa-search-plus" (click)="zoomIn(gmap.getMap())"></button>
-        <button type="button" pButton label="Zoom Out" icon="fa-search-minus" (click)="zoomOut(gmap.getMap())" ></button>
+        <button type="button" pButton label="Clear" icon="fa fa-close" (click)="clear()"></button>
+        <button type="button" pButton label="Reset" icon="fa fa-map-marker" (click)="initOverlays()" ></button>
+        <button type="button" pButton label="Zoom In" icon="fa fa-search-plus" (click)="zoomIn(gmap.getMap())"></button>
+        <button type="button" pButton label="Zoom Out" icon="fa fa-search-minus" (click)="zoomOut(gmap.getMap())" ></button>
 
         <p-dialog showEffect="fade" [(visible)]="dialogVisible" header="New Location">
             <div class="ui-grid ui-grid-pad ui-fluid" *ngIf="selectedPosition">
@@ -43,7 +43,7 @@
             </div>
             <p-footer>
                 <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-                    <button type="button" pButton label="Add Marker" icon="fa-plus" (click)="addMarker()"></button>
+                    <button type="button" pButton label="Add Marker" icon="fa fa-plus" (click)="addMarker()"></button>
                 </div>
             </p-footer>
         </p-dialog>

@@ -1,16 +1,16 @@
 <form novalidate>
     <p-toolbar name="toolbar">
         <div class="ui-toolbar-group-left">
-            <button pButton type="button" name="open" label="Open" icon="fa-folder-open"></button>
-            <button pButton type="button" name="new" label="New folder" icon="fa-plus"></button>
-            <p-splitButton  name="organize" label="Organize" icon="fa-check" name="organize" [model]="items"></p-splitButton>
+            <button pButton type="button" name="open" label="Open" icon="fa fa-folder-open"></button>
+            <button pButton type="button" name="new" label="New folder" icon="fa fa-plus"></button>
+            <p-splitButton  name="organize" label="Organize" icon="fa fa-check" name="organize" [model]="items"></p-splitButton>
         </div>
 
         <div class="ui-toolbar-group-right">
             <input name="search" type="text" size="30" pInputText [(ngModel)]="search" placeholder="Search files here"/>
             <i class="fa fa-bars"></i>
-            <button name="refresh" pButton type="button" icon="fa-refresh"></button>
-            <button name="help" pButton type="button" icon="fa-question-circle"></button>
+            <button name="refresh" pButton type="button" icon="fa fa-refresh"></button>
+            <button name="help" pButton type="button" icon="fa fa-question-circle"></button>
         </div>
     </p-toolbar>
 </form>

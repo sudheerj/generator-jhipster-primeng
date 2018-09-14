@@ -22,7 +22,7 @@
             <p-dataTable [value]="scores">
                 <p-column header="Result">
                     <ng-template let-score="rowData" pTemplate="body">
-                        <button type="button" pButton (click)="selectScore($event,score,overlayintegration);" icon="fa-search"></button>
+                        <button type="button" pButton (click)="selectScore($event,score,overlayintegration);" icon="fa fa-search"></button>
                     </ng-template>
                 </p-column>
                 <p-column field="name" header="Name"></p-column>

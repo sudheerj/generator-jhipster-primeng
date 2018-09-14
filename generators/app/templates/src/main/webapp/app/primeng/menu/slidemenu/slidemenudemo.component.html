@@ -7,15 +7,15 @@
         <!-- Popup -->
         <pe-step label="Popup" [styleClass]="'layout-format'">
             <p-slideMenu #popmenu [model]="items" [popup]="true"></p-slideMenu>
-            <button type="button" pButton icon="fa fa-list" label="Show" (click)="popmenu.toggle($event)"></button>
+            <button type="button" pButton icon="fa fa fa-list" label="Show" (click)="popmenu.toggle($event)"></button>
         </pe-step>
 
         <!-- Methods -->
         <pe-step label="Methods" [styleClass]="'layout-format'">
             <p-slideMenu #menu [model]="items" [popup]="true"></p-slideMenu>
-            <button type="button" pButton icon="fa fa-list" label="Toggle" (click)="menu.toggle($event)"></button>
-            <button type="button" pButton icon="fa fa-list" label="Show" (click)="menu.show($event)"></button>
-            <button type="button" pButton icon="fa fa-list" label="Hide" (click)="menu.hide()"></button>
+            <button type="button" pButton icon="fa fa fa-list" label="Toggle" (click)="menu.toggle($event)"></button>
+            <button type="button" pButton icon="fa fa fa-list" label="Show" (click)="menu.show($event)"></button>
+            <button type="button" pButton icon="fa fa fa-list" label="Hide" (click)="menu.hide()"></button>
         </pe-step>
 
         <!-- Effects -->
