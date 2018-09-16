@@ -25,7 +25,7 @@ const QUILL_VERSION = '1.3.5';
 const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
 const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
 
-let themeName = 'omega';
+let themeName = 'nova-colored';
 
 const THEME_OPTIONS = [
     {
@@ -1050,8 +1050,9 @@ module.exports = JhipsterGenerator.extend({
             );
         };
 
-        const primengResources = `\n@import "~primeicons/primeicons.css";\n@import "~primeng/resources/primeng.min.css";\n@import "~primeng-extensions/resources/primeng-extensions.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
+        const primengResources = `\n@import "~primeicons/primeicons.css";\n@import "~primeicons/primeicons.css";\n@import "~primeng/resources/primeng.min.css";\n@import "~primeng-extensions/resources/primeng-extensions.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
         const primengRootResources = `<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+                                      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css"/>
                                       <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script>
                                       <script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>  
