@@ -13,6 +13,10 @@ import {
     tabmenuDemoRoute
 } from './';
 
+import { OverviewComponent } from './pages/overview.component';
+import { DownloadsComponent } from './pages/downloads.component';
+
+
 const primeng_STATES = [
     tabmenuDemoRoute
 ];
@@ -29,7 +33,9 @@ const primeng_STATES = [
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [
-        TabMenuDemoComponent
+        TabMenuDemoComponent,
+        OverviewComponent,
+        DownloadsComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
