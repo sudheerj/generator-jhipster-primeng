@@ -12,15 +12,15 @@ const jhipsterConstants = require('generator-jhipster/generators/generator-const
 const JhipsterGenerator = generator.extend({});
 util.inherits(JhipsterGenerator, BaseGenerator);
 
-const ANGULAR_VERSION = '6.1.0';
-const PRIMENG_VERSION = '6.1.4';
-const PRIMEICONS_VERSION = '1.0.0-beta.10';
+const ANGULAR_VERSION = '7.0.0';
+const PRIMENG_VERSION = '7.0.0-beta.1';
+const PRIMEICONS_VERSION = '1.0.0';
 const PRIMEFLEX_VERSION = '1.0.0-rc.1';
 const PRIMENG_EXTENSIONS_VERSION = '0.0.45';
 const CHARTJS_VERSION = '2.7.1';
 const MOMENT_VERSION = '2.20.1';
-const FULLCALENDAR_VERSION = '3.8.2';
-const QUILL_VERSION = '1.3.5';
+const FULLCALENDAR_VERSION = '4.0.0-alpha.2';
+const QUILL_VERSION = '1.3.6';
 
 const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
 const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
