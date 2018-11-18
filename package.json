@@ -58,7 +58,7 @@
   },
   "scripts": {
     "test": "mocha test/* --timeout 500000",
-    "lint": "eslint ."
+    "lint": "eslint ./generators --fix"
   },
   "license": "Apache-2.0",
   "bugs": {

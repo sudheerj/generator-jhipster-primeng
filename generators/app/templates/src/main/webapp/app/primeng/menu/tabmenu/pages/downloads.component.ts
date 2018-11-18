@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-    selector: 'section',
+    selector: 'jhi-download-component',
     templateUrl: 'downloads.component.html'
 })
 export class DownloadsComponent {

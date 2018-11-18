@@ -16,7 +16,6 @@ import {
 import { OverviewComponent } from './pages/overview.component';
 import { DownloadsComponent } from './pages/downloads.component';
 
-
 const primeng_STATES = [
     tabmenuDemoRoute
 ];
