@@ -13,86 +13,33 @@ export const QUILL_VERSION = '1.3.6';
 export const THEME_OPTIONS = [
     {
         value: 'nova-colored',
-        name: 'Nova-Colored'
+        name: 'Nova Colored'
     },
     {
         value: 'nova-dark',
-        name: 'Nova-Dark'
+        name: 'Nova Dark'
     },
     {
         value: 'nova-light',
-        name: 'Nova-Light'
+        name: 'Nova Light'
     },
     {
-        value: 'omega',
-        name: 'Omega'
+        value: 'luna-amber',
+        name: 'Luna Amber'
     },
     {
-        value: 'cruze',
-        name: 'Cruze'
+        value: 'luna-blue',
+        name: 'Luna Blue'
     },
     {
-        value: 'darkness',
-        name: 'Darkness'
+        value: 'luna-green',
+        name: 'Luna Green'
     },
     {
-        value: 'home',
-        name: 'Home'
-    },
-    {
-        value: 'bootstrap',
-        name: 'Bootstrap'
-    },
-    {
-        value: 'cupertino',
-        name: 'Cupertino'
-    },
-    {
-        value: 'flick',
-        name: 'Flick'
-    },
-    {
-        value: 'kasper',
-        name: 'Kasper'
-    },
-    {
-        value: 'lightness',
-        name: 'Lightness'
-    },
-    {
-        value: 'ludvig',
-        name: 'Ludvig'
-    },
-    {
-        value: 'pepper-grinder',
-        name: 'Pepper-Grinder'
-    },
-    {
-        value: 'redmond',
-        name: 'Redmond'
-    },
-    {
-        value: 'rocket',
-        name: 'Rocket'
-    },
-    {
-        value: 'south-street',
-        name: 'South-Street'
-    },
-    {
-        value: 'start',
-        name: 'Start'
-    },
-    {
-        value: 'tronstatic',
-        name: 'Tronstatic'
-    },
-    {
-        value: 'voclain',
-        name: 'Voclain'
+        value: 'luna-pink',
+        name: 'Luna Pink'
     }
 ];
-
 
 
 export const COMPONENT_GROUP_CHOICE_LIST = [{
