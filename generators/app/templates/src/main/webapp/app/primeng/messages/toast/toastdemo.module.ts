@@ -1,4 +1,3 @@
-/*
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -32,4 +31,3 @@ const primeng_STATES = [
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>ToastDemoModule {}
-*/
