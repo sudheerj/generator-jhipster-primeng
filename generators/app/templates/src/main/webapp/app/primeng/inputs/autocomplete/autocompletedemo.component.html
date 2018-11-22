@@ -25,7 +25,7 @@
             <h3>Dropdown</h3>
             <p-autoComplete [(ngModel)]="topAsianCountry" name="dropdown" [suggestions]="filteredTopAsiaCountries"
                             (completeMethod)="filterTopAsiaCountries($event)" [size]="30"
-                            [minLength]="1" placeholder="Type top asian country name" [dropdown]="true"
+                            [minLength]="1" placeholder="Type B/C/H/I/J/Q/S/U for country" [dropdown]="true"
                             (onDropdownClick)="handleDropdownClick($event)" >
             </p-autoComplete>
         </pe-step>

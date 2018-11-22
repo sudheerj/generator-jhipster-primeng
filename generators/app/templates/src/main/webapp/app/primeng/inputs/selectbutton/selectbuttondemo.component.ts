@@ -9,34 +9,35 @@ import {Message, SelectItem} from 'primeng/components/common/api';
 export class SelectButtonDemoComponent implements OnInit {
     msgs: Message[] = [];
 
-    basicinput: number;
-
-    custominput: number;
-
-    separatorinput: number;
-
-    eventsinput: number;
-
-    readonlyinput = 50;
-
-    disabledinput = 100;
-
     types: SelectItem[];
 
-    selectedType = 'readonly';
+    selectedType: string;
+
+    selectedTypes: string[] = ['PrimeNG','PrimeReact'];
+
+    selectedModes: string[];
+
+    modes: SelectItem[];
 
     activeIndex = 0;
 
     onChange(event: any) {
         this.msgs = [];
         this.msgs.push(
-            {severity: 'info', summary: 'Spinner value is changed'});
+            {severity: 'info', summary: 'Library name is changed'});
     }
 
     ngOnInit() {
         this.types = [];
-        this.types.push({label: 'ReadOnly', value: 'readonly'});
-        this.types.push({label: 'Disabled', value: 'disable'});
+        this.types.push({label: 'PrimeNG', value: 'PrimeNG'});
+        this.types.push({label: 'PrimeReact', value: 'PrimeReact'});
+        this.types.push({label: 'PrimeUI', value: 'PrimeUI'});
+
+        this.modes = [
+            {value: 'Bold', title: 'Bold', icon: 'fa fa-fw fa-bold'},
+            {value: 'Italic', title: 'Italic', icon: 'fa fa-fw fa-italic'},
+            {value: 'Underline', title: 'Underline', icon: 'fa fa-fw fa-underline'}
+        ];
     }
 
     onChangeStep(label: string) {

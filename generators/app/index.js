@@ -1077,7 +1077,7 @@ module.exports = JhipsterGenerator.extend({
             this.template(`src/main/webapp/app/primeng/${CONSTANTS.components[component]}/${component}/${component}demo.route.ts`, `src/main/webapp/app/primeng/${CONSTANTS.components[component]}/${component}/${component}demo.route.ts`);
         });
 
-
+        this.template(`src/main/webapp/app/primeng/slider/slider/sliderdemo.component.css`, `src/main/webapp/app/primeng/slider/slider/sliderdemo.component.css`);
         Object.keys(DEMO_CONSTANTS.browserComponents).forEach((component) => {
             this.template(`src/main/webapp/app/primeng/${DEMO_CONSTANTS.browserComponents[component]}/${component}/service/browser.service.ts`, `src/main/webapp/app/primeng/${DEMO_CONSTANTS.browserComponents[component]}/${component}/service/browser.service.ts`);
             this.template(`src/main/webapp/app/primeng/${DEMO_CONSTANTS.browserComponents[component]}/${component}/service/browser.ts`, `src/main/webapp/app/primeng/${DEMO_CONSTANTS.browserComponents[component]}/${component}/service/browser.ts`);

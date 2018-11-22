@@ -4,7 +4,7 @@ import {Message, SelectItem} from 'primeng/components/common/api';
 @Component({
     selector: 'jhi-slider',
     templateUrl: './sliderdemo.component.html',
-    styles: []
+    styleUrls: ['./sliderdemo.component.css']
 })
 export class SliderDemoComponent implements OnInit {
     msgs: Message[] = [];

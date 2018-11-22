@@ -12,6 +12,11 @@
             <p-selectButton [options]="types" [(ngModel)]="selectedTypes" name="advanced" multiple="multiple"></p-selectButton>
         </pe-step>
 
+        <pe-step label="IconOnly">
+            <p-selectButton [options]="modes" [(ngModel)]="selectedModes" multiple="multiple"></p-selectButton>
+            <p>Selected Modes: <span style="font-weight: bold" *ngFor="let mode of selectedModes">{{mode}} </span></p>
+        </pe-step>
+
         <!-- Events -->
         <pe-step label="Events">
             <p-selectButton [options]="types" [(ngModel)]="selectedTypeEvents" name="events" (onChange)="handleChange($event)"></p-selectButton>
