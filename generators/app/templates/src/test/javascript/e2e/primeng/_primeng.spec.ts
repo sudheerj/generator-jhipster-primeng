@@ -355,18 +355,6 @@ describe('administration', () => {
         });
     });
 
-    it('should load DataGrid', () => {
-        element(by.css('[routerLink="datagrid"]')).click();
-        <%_ if (enableTranslation) { _%>
-            const expect1 = /primeng.data.datagrid.title/;
-            <%_ } else { _%>
-            const expect1 = /DataGrid/;
-            <%_ } _%>
-        element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
-            expect(value).toMatch(expect1);
-        });
-    });
-
     it('should load Carousel', () => {
         element(by.css('[routerLink="carousel"]')).click();
         <%_ if (enableTranslation) { _%>
@@ -385,18 +373,6 @@ describe('administration', () => {
             const expect1 = /primeng.data.orderlist.title/;
             <%_ } else { _%>
             const expect1 = /OrderList/;
-            <%_ } _%>
-        element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
-            expect(value).toMatch(expect1);
-        });
-    });
-
-    it('should load DataList', () => {
-        element(by.css('[routerLink="datalist"]')).click();
-        <%_ if (enableTranslation) { _%>
-            const expect1 = /primeng.data.datalist.title/;
-            <%_ } else { _%>
-            const expect1 = /DataList/;
             <%_ } _%>
         element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
             expect(value).toMatch(expect1);

@@ -529,26 +529,14 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.table">Table</span>
                         </a>
                     </li>`;
-        this.datagridComponent = `<li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="datagrid" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-            <span jhiTranslate="global.menu.primeng.datagrid">Datagrid</span>
-            </a>
-            </li>`;
         this.orderlistComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="orderlist" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.orderlist">OrderList</span>
             </a>
             </li>`;
-        this.datalistComponent = `<li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="datalist" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-            <span jhiTranslate="global.menu.primeng.datalist">DataList</span>
-            </a>
-            </li>`;
         this.dataviewComponent = `<li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="datalist" routerLinkActive="active" (click)="collapseNavbar()">
+            <a class="dropdown-item" routerLink="dataview" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.dataview">DataView</span>
             </a>
@@ -883,7 +871,7 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <span style="font-weight:bold">Data Components</span>
                    <hr/>
-                    ${this.carouselComponent}${this.datagridComponent}${this.datalistComponent}${this.datascrollerComponent}${this.datatableComponent}${this.tableComponent}${this.gmapComponent}${this.orderlistComponent}${this.orgchartComponent}${this.paginatorComponent}${this.picklistComponent}${this.scheduleComponent}${this.treeComponent}${this.treetableComponent}`;
+                    ${this.carouselComponent}${this.datascrollerComponent}${this.datatableComponent}${this.tableComponent}${this.gmapComponent}${this.orderlistComponent}${this.orgchartComponent}${this.paginatorComponent}${this.picklistComponent}${this.scheduleComponent}${this.treeComponent}${this.treetableComponent}`;
         this.dragdropComponents = `
                    <hr/>
                     <span style="font-weight:bold">Dragdrop Components</span>
@@ -929,7 +917,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('rating') > -1 ? this.ratingComponent : '') + (this.componentList.indexOf('select') > -1 ? this.selectComponent : '') + (this.componentList.indexOf('selectbutton') > -1 ? this.selectbuttonComponent : '') +
                 (this.componentList.indexOf('slider') > -1 ? this.sliderComponent : '') + (this.componentList.indexOf('spinner') > -1 ? this.spinnerComponent : '') + (this.componentList.indexOf('togglebutton') > -1 ? this.togglebuttonComponent : '') +
                 (this.componentList.indexOf('button') > -1 ? this.buttonComponent : '') + (this.componentList.indexOf('splitbutton') > -1 ? this.splitbuttonComponent : '') + (this.componentList.indexOf('carousel') > -1 ? this.carouselComponent : '') +
-                (this.componentList.indexOf('datagrid') > -1 ? this.datagridComponent : '') + (this.componentList.indexOf('datalist') > -1 ? this.datalistComponent : '') + (this.componentList.indexOf('datascroller') > -1 ? this.datascrollerComponent : '') +
+                (this.componentList.indexOf('datascroller') > -1 ? this.datascrollerComponent : '') +
                 (this.componentList.indexOf('datatable') > -1 ? this.datatableComponent : '') + (this.componentList.indexOf('table') > -1 ? this.tableComponent : '') + (this.componentList.indexOf('dataview') > -1 ? this.dataviewComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
                 (this.componentList.indexOf('paginator') > -1 ? this.paginatorComponent : '') + (this.componentList.indexOf('picklist') > -1 ? this.picklistComponent : '') + (this.componentList.indexOf('schedule') > -1 ? this.scheduleComponent : '') +
                 (this.componentList.indexOf('tree') > -1 ? this.treeComponent : '') + (this.componentList.indexOf('treetable') > -1 ? this.treetableComponent : '') + (this.componentList.indexOf('accordion') > -1 ? this.accordionComponent : '') + (this.componentList.indexOf('card') > -1 ? this.cardComponent : '') +

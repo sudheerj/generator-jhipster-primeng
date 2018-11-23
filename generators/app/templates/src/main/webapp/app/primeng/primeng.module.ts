@@ -51,8 +51,6 @@ import { <%= angularXAppName %>CardDemoModule } from './panel/card/carddemo.modu
 
 import { <%= angularXAppName %>DataTableDemoModule } from './data/datatable/datatabledemo.module';
 import { <%= angularXAppName %>TableDemoModule } from './data/table/tabledemo.module';
-import { <%= angularXAppName %>DataGridDemoModule } from './data/datagrid/datagriddemo.module';
-import { <%= angularXAppName %>DataListDemoModule } from './data/datalist/datalistdemo.module';
 import { <%= angularXAppName %>DataScrollerDemoModule } from './data/datascroller/datascrollerdemo.module';
 import { <%= angularXAppName %>PickListDemoModule } from './data/picklist/picklistdemo.module';
 import { <%= angularXAppName %>OrderListDemoModule } from './data/orderlist/orderlistdemo.module';
@@ -178,8 +176,6 @@ import { <%= angularXAppName %>ProgressSpinnerDemoModule } from './misc/progress
 
         <%= angularXAppName %>DataTableDemoModule,
         <%= angularXAppName %>TableDemoModule,
-        <%= angularXAppName %>DataGridDemoModule,
-        <%= angularXAppName %>DataListDemoModule,
         <%= angularXAppName %>DataViewDemoModule,
         <%= angularXAppName %>DataScrollerDemoModule,
         <%= angularXAppName %>ScheduleDemoModule,

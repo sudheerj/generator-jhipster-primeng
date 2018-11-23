@@ -167,22 +167,6 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/data/carousel/service/browser.service.ts',
         'src/main/webapp/app/primeng/data/carousel/service/browser.ts',
 
-        'src/main/webapp/app/primeng/data/datagrid/index.ts',
-        'src/main/webapp/app/primeng/data/datagrid/datagriddemo.component.html',
-        'src/main/webapp/app/primeng/data/datagrid/datagriddemo.component.ts',
-        'src/main/webapp/app/primeng/data/datagrid/datagriddemo.module.ts',
-        'src/main/webapp/app/primeng/data/datagrid/datagriddemo.route.ts',
-        'src/main/webapp/app/primeng/data/datagrid/service/browser.service.ts',
-        'src/main/webapp/app/primeng/data/datagrid/service/browser.ts',
-
-        'src/main/webapp/app/primeng/data/datalist/index.ts',
-        'src/main/webapp/app/primeng/data/datalist/datalistdemo.component.html',
-        'src/main/webapp/app/primeng/data/datalist/datalistdemo.component.ts',
-        'src/main/webapp/app/primeng/data/datalist/datalistdemo.module.ts',
-        'src/main/webapp/app/primeng/data/datalist/datalistdemo.route.ts',
-        'src/main/webapp/app/primeng/data/datalist/service/browser.service.ts',
-        'src/main/webapp/app/primeng/data/datalist/service/browser.ts',
-
         'src/main/webapp/app/primeng/data/datascroller/index.ts',
         'src/main/webapp/app/primeng/data/datascroller/datascrollerdemo.component.html',
         'src/main/webapp/app/primeng/data/datascroller/datascrollerdemo.component.ts',

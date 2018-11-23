@@ -1,7 +1,5 @@
 export const browserComponents = {
     carousel: 'data',
-    datagrid: 'data',
-    datalist: 'data',
     datascroller: 'data',
     datatable: 'data',
     table: 'data',

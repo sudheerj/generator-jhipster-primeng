@@ -82,17 +82,11 @@
             "table": {
                 "title": "Table"
             },
-            "datagrid": {
-                "title": "DataGrid"
-            },
             "carousel": {
                 "title": "Carousel"
             },
             "orderlist": {
                 "title": "OrderList"
-            },
-            "datalist": {
-                "title": "DataList"
             },
             "paginator": {
                 "title": "Paginator"

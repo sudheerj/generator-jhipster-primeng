@@ -187,14 +187,6 @@ export const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Componen
         value: 'carousel',
         checked: false
     }, {
-        name: 'DataGrid',
-        value: 'datagrid',
-        checked: false
-    }, {
-        name: 'DataList',
-        value: 'datalist',
-        checked: false
-    }, {
         name: 'DataScroller',
         value: 'datascroller',
         checked: false
@@ -648,10 +640,8 @@ export const components = {
     splitbutton: 'buttons',
     datatable: 'data',
     table: 'data',
-    datagrid: 'data',
     carousel: 'data',
     orderlist: 'data',
-    datalist: 'data',
     dataview: 'data',
     paginator: 'data',
     schedule: 'data',
@@ -750,10 +740,8 @@ export const primengTranslation = `"primeng": {
                 "tooltip": "Tooltip",
                 "datatable": "DataTable",
                 "table": "Table",
-                "datagrid": "DataGrid",
                 "carousel": "Carousel",
                 "orderlist": "OrderList",
-                "datalist": "DataList",
                 "dataview": "DataView",
                 "paginator": "Paginator",
                 "schedule": "Schedule",

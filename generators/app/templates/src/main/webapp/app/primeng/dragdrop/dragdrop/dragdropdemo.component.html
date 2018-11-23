@@ -3,38 +3,39 @@
         <!-- Basic -->
         <pe-step label="Basic">
             <div class="dnd-container">
-                <p-dataGrid [value]="availableDocs">
-                    <p-header>
-                        Available Documents
-                    </p-header>
-                    <ng-template let-doc pTemplate="item">
-                        <div class="ui-g-12 ui-md-4" pDraggable="docs"
-                             dragHandle=".ui-panel-titlebar" dragEffect="move"
-                             (onDragStart)="dragStart($event, doc)" (onDragEnd)="dragEnd($event)">
-                            <p-panel [header]="doc.title" [style]="{'text-align':'center'}">
-                                <img src="/content/primeng/assets/data/images/docs/{{doc.extension}}.png">
-                            </p-panel>
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-6 ui-g-nopad drag-column">
+                        <ul style="margin:0;padding:0">
+                            <li *ngFor="let doc of availableDocs" class="ui-helper-clearfix" pDraggable="docs"
+                                (onDragStart)="dragStart($event,car)" (onDragEnd)="dragEnd($event)">
+                                <i class="fa fa-arrows fa-2x" style="float:right;margin-top:8px"></i>
+                                <p-panel [header]="doc.title" [style]="{'text-align':'center'}">
+                                    <img src="/content/primeng/assets/data/images/docs/{{doc.extension}}.png">
+                                </p-panel>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <br/><br/>
+                    <div class="ui-g-12 ui-md-6 drop-column">
+                        <div pDroppable="docs" (onDrop)="drop($event)" [ngClass]="{'dragged-doc': draggedDoc}">
+                            <p-dataTable [value]="deletedDocs">
+                                <p-header>Recycle Bin</p-header>
+                                <p-column field="title" header="Title"></p-column>
+                                <p-column field="size" header="Size (bytes)"></p-column>
+                                <p-column field="creator" header="Creator"></p-column>
+                                <p-column field="creationDate" header="Creation Date">
+                                    <ng-template let-col let-doc="rowData" pTemplate="body">
+                                        {{doc[col.field].toLocaleDateString()}}
+                                    </ng-template>
+                                </p-column>
+                            </p-dataTable>
                         </div>
-                    </ng-template>
-                </p-dataGrid>
+                    </div>
 
-                <br/><br/>
-
-                <div pDroppable="docs" (onDrop)="drop($event)" [ngClass]="{'dragged-doc': draggedDoc}">
-                    <p-dataTable [value]="deletedDocs">
-                        <p-header>Recycle Bin</p-header>
-                        <p-column field="title" header="Title"></p-column>
-                        <p-column field="size" header="Size (bytes)"></p-column>
-                        <p-column field="creator" header="Creator"></p-column>
-                        <p-column field="creationDate" header="Creation Date">
-                            <ng-template let-col let-doc="rowData" pTemplate="body">
-                                {{doc[col.field].toLocaleDateString()}}
-                            </ng-template>
-                        </p-column>
-                    </p-dataTable>
+                    <br/><br/>
                 </div>
-
-                <br/><br/>
             </div>
         </pe-step>
     </pe-steps>
