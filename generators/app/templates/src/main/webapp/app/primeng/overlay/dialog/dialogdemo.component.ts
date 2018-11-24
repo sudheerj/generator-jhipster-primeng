@@ -11,6 +11,7 @@ export class DialogDemoComponent implements OnInit {
     basic = false;
     custom = false;
     advanced = false;
+    maximizable = false;
     events = false;
 
     msgs: Message[] = [];
@@ -24,6 +25,7 @@ export class DialogDemoComponent implements OnInit {
         this.basic = true;
         this.custom = false;
         this.advanced = false;
+        this.maximizable = false;
         this.events = false;
     }
 
@@ -31,6 +33,7 @@ export class DialogDemoComponent implements OnInit {
         this.basic = false;
         this.custom = true;
         this.advanced = false;
+        this.maximizable = false;
         this.events = false;
     }
 
@@ -38,6 +41,7 @@ export class DialogDemoComponent implements OnInit {
         this.basic = false;
         this.custom = false;
         this.advanced = true;
+        this.maximizable = false;
         this.events = false;
     }
 
@@ -45,16 +49,19 @@ export class DialogDemoComponent implements OnInit {
         this.basic = false;
         this.custom = false;
         this.advanced = false;
+        this.maximizable = false;
         this.events = true;
     }
 
     showDialog() {
         this.msgs.length = 0;
+        this.maximizable = true;
         this.msgs.push({severity: 'info', summary: 'Show dialog', detail: 'When dialog is shown'});
     }
 
     hideDialog() {
         this.msgs.length = 0;
+        this.maximizable = false;
         this.msgs.push({severity: 'info', summary: 'Hide dialog', detail: 'when dialog is hidden'});
     }
 
@@ -69,3 +76,4 @@ export class DialogDemoComponent implements OnInit {
     }
 
 }
+
