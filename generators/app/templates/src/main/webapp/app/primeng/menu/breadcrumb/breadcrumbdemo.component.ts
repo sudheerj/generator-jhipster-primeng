@@ -48,7 +48,7 @@ export class BreadcrumbDemoComponent implements OnInit {
         this.items.push({label: 'LED Flat-Panel', url: 'https://en.wikipedia.org/wiki/LED_display'});
 
         this.home = {
-            label: 'Home', icon: 'fa-globe', command: event => {
+            label: 'Home', icon: 'pi pi-home', command: event => {
                 this.msgs.length = 0;
                 this.msgs.push({severity: 'info', summary: 'Home'});
             }
