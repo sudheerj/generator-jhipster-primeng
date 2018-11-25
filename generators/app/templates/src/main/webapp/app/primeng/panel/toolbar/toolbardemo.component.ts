@@ -11,9 +11,9 @@ export class ToolbarDemoComponent implements OnInit {
     search: string;
     ngOnInit() {
         this.items = [
-            {label: 'Cut', icon: 'fa-cut'},
-            {label: 'Copy', icon: 'fa-copy'},
-            {label: 'Paste', icon: 'fa-paste'},
+            {label: 'Cut', icon: 'fa fa-cut'},
+            {label: 'Copy', icon: 'fa fa-copy'},
+            {label: 'Paste', icon: 'fa fa-paste'},
         ];
     }
 }

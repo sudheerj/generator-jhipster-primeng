@@ -15,9 +15,9 @@ export class PanelDemoComponent implements OnInit {
 
     ngOnInit() {
         this.items = [
-            {label: 'Showcase', icon: 'fa-briefcase', url: 'https://www.primefaces.org/primeng/'},
-            {label: 'Github', icon: 'fa-github-square', url: 'https://github.com/primefaces/primeng'},
-            {label: 'Forum', icon: 'fa-forumbee', url: 'https://forum.primefaces.org/viewforum.php?f=35'},
+            {label: 'Showcase', icon: 'fa fa-briefcase', url: 'https://www.primefaces.org/primeng/'},
+            {label: 'Github', icon: 'fa fa-github-square', url: 'https://github.com/primefaces/primeng'},
+            {label: 'Forum', icon: 'fa fa-forumbee', url: 'https://forum.primefaces.org/viewforum.php?f=35'},
         ];
     }
 

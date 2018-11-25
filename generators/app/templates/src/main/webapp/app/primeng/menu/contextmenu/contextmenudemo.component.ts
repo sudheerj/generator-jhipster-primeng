@@ -28,10 +28,10 @@ export class ContextMenuDemoComponent implements OnInit {
         this.documentItems = [
             {
                 label: 'File',
-                icon: 'fa-file-o',
+                icon: 'fa fa-file-o',
                 items: [{
                     label: 'New',
-                    icon: 'fa-plus',
+                    icon: 'fa fa-plus',
                     items: [
                         {label: 'Project'},
                         {label: 'Other'},
@@ -45,15 +45,15 @@ export class ContextMenuDemoComponent implements OnInit {
 
             {
                 label: 'Edit',
-                icon: 'fa-edit',
+                icon: 'fa fa-edit',
                 items: [
-                    {label: 'Cut', icon: 'fa-cut'},
-                    {label: 'Copy', icon: 'fa-copy'},
-                    {label: 'Paste', icon: 'fa-paste'},
-                    {label: 'Undo', icon: 'fa-mail-forward'},
-                    {label: 'Redo', icon: 'fa-mail-reply'},
+                    {label: 'Cut', icon: 'fa fa-cut'},
+                    {label: 'Copy', icon: 'fa fa-copy'},
+                    {label: 'Paste', icon: 'fa fa-paste'},
+                    {label: 'Undo', icon: 'fa fa-mail-forward'},
+                    {label: 'Redo', icon: 'fa fa-mail-reply'},
                     {
-                        label: 'Find', icon: 'fa-search', items: [
+                        label: 'Find', icon: 'fa fa-search', items: [
                         {label: 'Find Next'},
                         {label: 'Find Previous'},
                     ]
@@ -62,14 +62,14 @@ export class ContextMenuDemoComponent implements OnInit {
             },
             {
                 label: 'View',
-                icon: 'fa-question',
+                icon: 'fa fa-question',
                 items: [
                     {
                         label: ''
                     },
                     {
                         label: 'Tool windows',
-                        icon: 'fa-search',
+                        icon: 'fa fa-search',
                         items: [
                             {
                                 label: 'Project',
@@ -88,14 +88,14 @@ export class ContextMenuDemoComponent implements OnInit {
             },
             {
                 label: 'Help',
-                icon: 'fa-question',
+                icon: 'fa fa-question',
                 items: [
                     {
                         label: 'Contents'
                     },
                     {
                         label: 'Search',
-                        icon: 'fa-search',
+                        icon: 'fa fa-search',
                         items: [
                             {
                                 label: 'Text',
@@ -117,18 +117,18 @@ export class ContextMenuDemoComponent implements OnInit {
         this.targetItems = [
             {
                 label: 'Next',
-                icon: 'fa-chevron-right'
+                icon: 'fa fa-chevron-right'
             },
             {
                 label: 'Prev',
-                icon: 'fa-chevron-left'
+                icon: 'fa fa-chevron-left'
             }
         ];
 
         this.tableItems = [
-            {label: 'View', icon: 'fa-search', command: event => this.viewEmployee(this.selectedEmployee)},
-            {label: 'Delete', icon: 'fa-close', command: event => this.deleteEmployee(this.selectedEmployee)},
-            {label: 'Help', icon: 'fa-close', url: 'https://www.opm.gov/policy-data-oversight/worklife/employee-assistance-programs/'}
+            {label: 'View', icon: 'fa fa-search', command: event => this.viewEmployee(this.selectedEmployee)},
+            {label: 'Delete', icon: 'fa fa-close', command: event => this.deleteEmployee(this.selectedEmployee)},
+            {label: 'Help', icon: 'fa fa-close', url: 'https://www.opm.gov/policy-data-oversight/worklife/employee-assistance-programs/'}
         ];
     }
 
