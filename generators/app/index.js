@@ -607,12 +607,6 @@ module.exports = JhipsterGenerator.extend({
             <span jhiTranslate="global.menu.primeng.fieldset">Fieldset</span>
             </a>
             </li>`;
-        this.gridComponent = `<li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="grid" routerLinkActive="active" (click)="collapseNavbar()">
-            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-            <span jhiTranslate="global.menu.primeng.grid">grid</span>
-            </a>
-            </li>`;
         this.panelComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="panel" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
@@ -890,7 +884,7 @@ module.exports = JhipsterGenerator.extend({
         this.panelComponents = `
                    <hr/>
                     <span style="font-weight:bold">Panel Components</span>
-                   <hr/>${this.accordionComponent}${this.fieldsetComponent}${this.gridComponent}${this.panelComponent}${this.tabviewComponent}${this.toolbarComponent}${this.scrollpanelComponent}`;
+                   <hr/>${this.accordionComponent}${this.fieldsetComponent}${this.panelComponent}${this.tabviewComponent}${this.toolbarComponent}${this.scrollpanelComponent}`;
         this.buttonComponents = `
                    <hr/>
                    <span style="font-weight:bold">Button Components</span>
@@ -921,7 +915,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('datatable') > -1 ? this.datatableComponent : '') + (this.componentList.indexOf('table') > -1 ? this.tableComponent : '') + (this.componentList.indexOf('dataview') > -1 ? this.dataviewComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
                 (this.componentList.indexOf('paginator') > -1 ? this.paginatorComponent : '') + (this.componentList.indexOf('picklist') > -1 ? this.picklistComponent : '') + (this.componentList.indexOf('schedule') > -1 ? this.scheduleComponent : '') +
                 (this.componentList.indexOf('tree') > -1 ? this.treeComponent : '') + (this.componentList.indexOf('treetable') > -1 ? this.treetableComponent : '') + (this.componentList.indexOf('accordion') > -1 ? this.accordionComponent : '') + (this.componentList.indexOf('card') > -1 ? this.cardComponent : '') +
-                (this.componentList.indexOf('fieldset') > -1 ? this.fieldsetComponent : '') + (this.componentList.indexOf('grid') > -1 ? this.gridComponent : '') + (this.componentList.indexOf('panel') > -1 ? this.panelComponent : '') + (this.componentList.indexOf('scrollpanel') > -1 ? this.scrollpanelComponent : '') +
+                (this.componentList.indexOf('fieldset') > -1 ? this.fieldsetComponent : '') + (this.componentList.indexOf('panel') > -1 ? this.panelComponent : '') + (this.componentList.indexOf('scrollpanel') > -1 ? this.scrollpanelComponent : '') +
                 (this.componentList.indexOf('tabview') > -1 ? this.tabviewComponent : '') + (this.componentList.indexOf('toolbar') > -1 ? this.toolbarComponent : '') + (this.componentList.indexOf('confirmdialog') > -1 ? this.confirmdialogComponent : '') +
                 (this.componentList.indexOf('dialog') > -1 ? this.dialogComponent : '') + (this.componentList.indexOf('lightbox') > -1 ? this.lightboxComponent : '') + (this.componentList.indexOf('overlaypanel') > -1 ? this.overlaypanelComponent : '') +
                 (this.componentList.indexOf('sidebar') > -1 ? this.sidebarComponent : '') + (this.componentList.indexOf('tooltip') > -1 ? this.tooltipComponent : '') + (this.componentList.indexOf('fileupload') > -1 ? this.fileuploadComponent : '') +

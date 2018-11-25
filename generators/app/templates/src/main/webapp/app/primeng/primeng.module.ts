@@ -45,7 +45,6 @@ import { <%= angularXAppName %>PanelDemoModule } from './panel/panel/paneldemo.m
 import { <%= angularXAppName %>TabViewDemoModule } from './panel/tabview/tabviewdemo.module';
 import { <%= angularXAppName %>FieldsetDemoModule } from './panel/fieldset/fieldsetdemo.module';
 import { <%= angularXAppName %>ToolbarDemoModule } from './panel/toolbar/toolbardemo.module';
-import { <%= angularXAppName %>GridDemoModule } from './panel/grid/griddemo.module';
 import { <%= angularXAppName %>ScrollPanelDemoModule } from './panel/scrollpanel/scrollpaneldemo.module';
 import { <%= angularXAppName %>CardDemoModule } from './panel/card/carddemo.module';
 
@@ -154,7 +153,6 @@ import { <%= angularXAppName %>ProgressSpinnerDemoModule } from './misc/progress
         <%= angularXAppName %>TabViewDemoModule,
         <%= angularXAppName %>FieldsetDemoModule,
         <%= angularXAppName %>ToolbarDemoModule,
-        <%= angularXAppName %>GridDemoModule,
         <%= angularXAppName %>ScrollPanelDemoModule,
         <%= angularXAppName %>CardDemoModule,
 
