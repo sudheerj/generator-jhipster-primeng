@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 
 export const ANGULAR_VERSION = '7.0.0';
-export const PRIMENG_VERSION = '7.0.0-beta.1';
+export const PRIMENG_VERSION = '7.0.0';
 export const PRIMEICONS_VERSION = '1.0.0';
 export const PRIMEFLEX_VERSION = '1.0.0-rc.1';
 export const PRIMENG_EXTENSIONS_VERSION = '0.0.45';
@@ -189,10 +189,6 @@ export const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Componen
     }, {
         name: 'DataScroller',
         value: 'datascroller',
-        checked: false
-    }, {
-        name: 'DataTable',
-        value: 'datatable',
         checked: false
     }, {
         name: 'Table',
@@ -638,7 +634,6 @@ export const components = {
     keyfilter: 'inputs',
     button: 'buttons',
     splitbutton: 'buttons',
-    datatable: 'data',
     table: 'data',
     carousel: 'data',
     orderlist: 'data',
@@ -738,7 +733,6 @@ export const primengTranslation = `"primeng": {
                 "overlaypanel":"OverlayPanel",
                 "sidebar": "SideBar",
                 "tooltip": "Tooltip",
-                "datatable": "DataTable",
                 "table": "Table",
                 "carousel": "Carousel",
                 "orderlist": "OrderList",

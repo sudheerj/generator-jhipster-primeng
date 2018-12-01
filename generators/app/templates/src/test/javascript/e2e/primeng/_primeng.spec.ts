@@ -343,18 +343,6 @@ describe('administration', () => {
         });
     });
 
-    it('should load DataTable', () => {
-        element(by.css('[routerLink="datatable"]')).click();
-        <%_ if (enableTranslation) { _%>
-            const expect1 = /primeng.data.datatable.title/;
-            <%_ } else { _%>
-            const expect1 = /DataTable/;
-            <%_ } _%>
-        element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
-            expect(value).toMatch(expect1);
-        });
-    });
-
     it('should load Carousel', () => {
         element(by.css('[routerLink="carousel"]')).click();
         <%_ if (enableTranslation) { _%>

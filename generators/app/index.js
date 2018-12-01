@@ -517,12 +517,6 @@ module.exports = JhipsterGenerator.extend({
             <span jhiTranslate="global.menu.primeng.carousel">Carousel</span>
             </a>
             </li>`;
-        this.datatableComponent = `<li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="datatable" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.datatable">Datatable</span>
-                        </a>
-                    </li>`;
         this.tableComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="table" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
@@ -865,7 +859,7 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <span style="font-weight:bold">Data Components</span>
                    <hr/>
-                    ${this.carouselComponent}${this.datascrollerComponent}${this.datatableComponent}${this.tableComponent}${this.gmapComponent}${this.orderlistComponent}${this.orgchartComponent}${this.paginatorComponent}${this.picklistComponent}${this.scheduleComponent}${this.treeComponent}${this.treetableComponent}`;
+                    ${this.carouselComponent}${this.datascrollerComponent}${this.tableComponent}${this.gmapComponent}${this.orderlistComponent}${this.orgchartComponent}${this.paginatorComponent}${this.picklistComponent}${this.scheduleComponent}${this.treeComponent}${this.treetableComponent}`;
         this.dragdropComponents = `
                    <hr/>
                     <span style="font-weight:bold">Dragdrop Components</span>
@@ -912,7 +906,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('slider') > -1 ? this.sliderComponent : '') + (this.componentList.indexOf('spinner') > -1 ? this.spinnerComponent : '') + (this.componentList.indexOf('togglebutton') > -1 ? this.togglebuttonComponent : '') +
                 (this.componentList.indexOf('button') > -1 ? this.buttonComponent : '') + (this.componentList.indexOf('splitbutton') > -1 ? this.splitbuttonComponent : '') + (this.componentList.indexOf('carousel') > -1 ? this.carouselComponent : '') +
                 (this.componentList.indexOf('datascroller') > -1 ? this.datascrollerComponent : '') +
-                (this.componentList.indexOf('datatable') > -1 ? this.datatableComponent : '') + (this.componentList.indexOf('table') > -1 ? this.tableComponent : '') + (this.componentList.indexOf('dataview') > -1 ? this.dataviewComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
+                (this.componentList.indexOf('table') > -1 ? this.tableComponent : '') + (this.componentList.indexOf('dataview') > -1 ? this.dataviewComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
                 (this.componentList.indexOf('paginator') > -1 ? this.paginatorComponent : '') + (this.componentList.indexOf('picklist') > -1 ? this.picklistComponent : '') + (this.componentList.indexOf('schedule') > -1 ? this.scheduleComponent : '') +
                 (this.componentList.indexOf('tree') > -1 ? this.treeComponent : '') + (this.componentList.indexOf('treetable') > -1 ? this.treetableComponent : '') + (this.componentList.indexOf('accordion') > -1 ? this.accordionComponent : '') + (this.componentList.indexOf('card') > -1 ? this.cardComponent : '') +
                 (this.componentList.indexOf('fieldset') > -1 ? this.fieldsetComponent : '') + (this.componentList.indexOf('panel') > -1 ? this.panelComponent : '') + (this.componentList.indexOf('scrollpanel') > -1 ? this.scrollpanelComponent : '') +
@@ -1065,7 +1059,6 @@ module.exports = JhipsterGenerator.extend({
             this.template(`src/main/webapp/app/primeng/${DEMO_CONSTANTS.browserComponents[component]}/${component}/service/browser.ts`, `src/main/webapp/app/primeng/${DEMO_CONSTANTS.browserComponents[component]}/${component}/service/browser.ts`);
         });
 
-        this.template('src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts', 'src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts');
         this.template('src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts', 'src/main/webapp/app/primeng/misc/defer/service/mybrowser.ts');
         this.template('src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts', 'src/main/webapp/app/primeng/misc/inplace/service/mybrowser.ts');
         this.template('src/main/webapp/app/primeng/data/table/service/mybrowser.ts', 'src/main/webapp/app/primeng/data/table/service/mybrowser.ts');
