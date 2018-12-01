@@ -2,83 +2,180 @@
     <!-- Basic -->
     <pe-step label="Basic">
         <p-treeTable [value]="basicTreeTable">
-            <p-header>Basic</p-header>
-            <p-column field="name" header="Name"></p-column>
-            <p-column field="days" header="Days"></p-column>
-            <p-column field="type" header="Type"></p-column>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Name</th>
+                    <th>Days</th>
+                    <th>Type</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowNode let-rowNodeIndex="rowNodeIndex"  let-rowData="rowData">
+                <tr [ttRow]="rowNode">
+                    <td>
+                        <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+                        {{rowData.name}}
+                    </td>
+                    <td>{{rowData.days}}</td>
+                    <td>{{rowData.type}}</td>
+                </tr>
+            </ng-template>
         </p-treeTable>
     </pe-step>
     <!-- Singe Selection-->
     <pe-step label="Singe Selection">
-        <p-treeTable [value]="singleSelectionTreeTable" selectionMode="single" [(selection)]="selectedTouristPlace"
-                     (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)" (onRowDblclick)="onRowDblclick($event)" >
-            <p-header>Singe Selection</p-header>
-            <p-column field="name" header="Name"></p-column>
-            <p-column field="days" header="Days"></p-column>
-            <p-column field="type" header="Type"></p-column>
+        <p-treeTable [value]="singleSelectionTreeTable" [columns]="cols" selectionMode="single" [(selection)]="selectedTouristPlace"
+                     (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)" (onRowDblclick)="onRowDblclick($event)" dataKey="name">
+            <ng-template pTemplate="caption">
+                Singe Selection
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                <tr [ttRow]="rowNode" [ttRow]="rowNode" [ttSelectableRow]="rowNode">
+                    <td *ngFor="let col of columns; let i = index">
+                        <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <p>Selected Node: {{selectedTouristPlace ? selectedTouristPlace.data.name : 'none'}}</p>
+            </ng-template>
         </p-treeTable>
-        <p>Selected Node: {{selectedTouristPlace ? selectedTouristPlace.data.name : 'none'}}</p>
     </pe-step>
     <!-- Multiple Selection -->
     <pe-step label="Multiple Selection">
-        <p-treeTable [value]="multipleSelectionTreeTable" selectionMode="multiple" [(selection)]="selectedTouristPlaces"
-                     (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)">
-            <p-header>Multiple Selection</p-header>
-            <p-column field="name" header="Name"></p-column>
-            <p-column field="days" header="Days"></p-column>
-            <p-column field="type" header="Type"></p-column>
+        <p-treeTable [value]="multipleSelectionTreeTable" [columns]="cols" selectionMode="multiple" [(selection)]="selectedTouristPlaces"
+                     (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)" dataKey="name">
+            <ng-template pTemplate="caption">
+                Multiple Selection
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                <tr [ttRow]="rowNode" [ttRow]="rowNode" [ttSelectableRow]="rowNode">
+                    <td *ngFor="let col of columns; let i = index">
+                        <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <p>Selected Nodes: <span *ngFor="let place of selectedTouristPlaces">{{place.data.name}} </span></p>
+            </ng-template>
         </p-treeTable>
-        <p>Selected Nodes: <span *ngFor="let place of selectedTouristPlaces">{{place.data.name}} </span></p>
     </pe-step>
     <!-- Checkbox Selection -->
     <pe-step label="Checkbox Selection">
-        <p-treeTable [value]="checkboxSelectionTreeTable" selectionMode="checkbox" [(selection)]="selectedMultiTouristPlaces">
-            <p-header>Checkbox Selection</p-header>
-            <p-column field="name" header="Name"></p-column>
-            <p-column field="days" header="Days"></p-column>
-            <p-column field="type" header="Type"></p-column>
+        <p-treeTable [value]="checkboxSelectionTreeTable" [columns]="cols" selectionMode="checkbox" [(selection)]="selectedMultiTouristPlaces" dataKey="name" [metaKeySelection]="true">
+            <ng-template pTemplate="caption">
+                <div style="text-align:left">
+                    <p-treeTableHeaderCheckbox></p-treeTableHeaderCheckbox>
+                    <span style="margin-left: .25em; vertical-align: middle">Toggle All</span>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns; let i = index">
+                        <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+                        <p-treeTableCheckbox [value]="rowNode" *ngIf="i == 0"></p-treeTableCheckbox>
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template>
+                <p>Selected Nodes: <span *ngFor="let place of selectedMultiTouristPlaces">{{place.data.name}} </span></p>
+            </ng-template>
         </p-treeTable>
-        <p>Selected Nodes: <span *ngFor="let place of selectedMultiTouristPlaces">{{place.data.name}} </span></p>
     </pe-step>
 
     <!-- Editable Cells with Templating -->
     <pe-step label="Editable Cells with Templating">
-        <p-treeTable [value]="templateTreeTable">
-            <p-header>Editable Cells with Templating</p-header>
-            <p-column field="name" header="Name">
-                <ng-template let-node="rowData" pTemplate="body">
-                    <input type="text" [(ngModel)]="node.data.name" class="edit-input">
-                </ng-template>
-            </p-column>
-            <p-column field="days" header="Days">
-                <ng-template let-node="rowData" pTemplate="body">
-                    <input type="text" [(ngModel)]="node.data.days" class="edit-input">
-                </ng-template>
-            </p-column>
-            <p-column field="type" header="Type">
-                <ng-template let-node="rowData" pTemplate="body">
-                    <input type="text" [(ngModel)]="node.data.type" class="edit-input">
-                </ng-template>
-            </p-column>
+        <p-treeTable [value]="templateTreeTable" [columns]="cols">
+            <ng-template pTemplate="caption">Editable Cells with Templating
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns; let i = index" ttEditableColumn [ngClass]="{'ui-toggler-column': i === 0}">
+                        <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0"></p-treeTableToggler>
+                        <p-treeTableCellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="rowData[col.field]" [ngStyle]="{'width': i == 0 ? '90%': '100%'}">
+                            </ng-template>
+                            <ng-template pTemplate="output">{{rowData[col.field]}}</ng-template>
+                        </p-treeTableCellEditor>
+                    </td>
+                </tr>
+            </ng-template>
         </p-treeTable>
     </pe-step>
     <!-- Context Menu -->
     <pe-step label="Context Menu">
-        <p-treeTable [value]="contextmenuTreeTable" selectionMode="single" [(selection)]="selectedPlace" [contextMenu]="cm">
-            <p-header>Context Menu</p-header>
-            <p-column field="name" header="Name"></p-column>
-            <p-column field="days" header="Days"></p-column>
-            <p-column field="type" header="Type"></p-column>
+        <p-treeTable [value]="contextmenuTreeTable" [columns]="cols" selectionMode="single" dataKey="name" [(contextMenuSelection)]="selectedPlace" [contextMenu]="cm">
+            <ng-template pTemplate="caption">Context Menu</ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                <tr [ttContextMenuRow]="rowNode">
+                    <td *ngFor="let col of columns; let i = index">
+                        <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
         </p-treeTable>
+        <p-contextMenu #cm [model]="items"></p-contextMenu>
     </pe-step>
 
     <!-- Lazy Loading-->
     <pe-step label="Lazy Loading">
-        <p-treeTable [value]="lazyTreeTable" (onNodeExpand)="nodeExpand($event)">
+        <p-treeTable [value]="lazyTreeTable" (onNodeExpand)="onNodeExpandLazy($event)" [columns]="cols" [paginator]="true" [rows]="10" [lazy]="true"
+                     (onLazyLoad)="loadNodes($event)" [totalRecords]="1000" [loading]="loading">
             <p-header>Lazy Loading</p-header>
-            <p-column field="name" header="Name"></p-column>
-            <p-column field="days" header="Days"></p-column>
-            <p-column field="type" header="Type"></p-column>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns; let i = index">
+                        <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
         </p-treeTable>
     </pe-step>
 

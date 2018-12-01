@@ -37,6 +37,10 @@ export class TreeTableDemoComponent implements OnInit {
 
     items: MenuItem[];
 
+    cols: any[];
+
+    loading: boolean;
+
     constructor(private nodeService: TreeNodeService) { }
 
     onChangeStep(label: string) {
@@ -54,9 +58,18 @@ export class TreeTableDemoComponent implements OnInit {
         this.nodeService.getTouristPlaces().subscribe((places: any) => this.lazyTreeTable = places.data);
 
         this.items = [
-            {label: 'View', icon: 'fa-search', command: event => this.viewNode(this.selectedPlace)},
-            {label: 'Delete', icon: 'fa-close', command: event => this.deleteNode(this.selectedPlace)}
+            {label: 'View', icon: 'fa fa-search', command: event => this.viewNode(this.selectedPlace)},
+            {label: 'Delete', icon: 'fa fa-close', command: event => this.deleteNode(this.selectedPlace)}
         ];
+
+        this.cols = [
+            { field: 'name', header: 'Name' },
+            { field: 'days', header: 'Days' },
+            { field: 'type', header: 'Type' }
+        ];
+        this.totalRecords = 1000;
+
+        this.loading = true;
     }
 
     nodeSelect(event: any) {
@@ -90,5 +103,64 @@ export class TreeTableDemoComponent implements OnInit {
         node.parent.children = node.parent.children.filter(n => n.data !== node.data);
         this.msgs = [];
         this.msgs.push({severity: 'info', summary: 'Node Deleted', detail: node.data.name});
+    }
+
+    loadNodes(event) {
+        this.loading = true;
+
+        //in a production application, make a remote request to load data using state metadata from event
+        //event.first = First row offset
+        //event.rows = Number of rows per page
+        //event.sortField = Field name to sort with
+        //event.sortOrder = Sort order as number, 1 for asc and -1 for dec
+        //filters: FilterMetadata object having field as key and filter value, filter matchMode as value
+
+        //imitate db connection over a network
+        setTimeout(() => {
+            this.loading = false;
+            this.lazyTreeTable = [];
+
+            for(let i = 0; i < event.rows; i++) {
+                let node = {
+                    data: {
+                        name: 'Country ' + (event.first + i),
+                        days: Math.floor(Math.random() * 100) + 1,
+                        type: 'Type ' + (event.first + i)
+                    },
+                    leaf: false
+                };
+
+                this.lazyTreeTable.push(node);
+            }
+        }, 1000);
+    }
+
+    onNodeExpandLazy(event) {
+        this.loading = true;
+
+        setTimeout(() => {
+            this.loading = false;
+            const node = event.node;
+
+            node.children = [
+                {
+                    data: {
+                        name: node.data.name + ' - 0',
+                        days: Math.floor(Math.random() * 100) + 1,
+                        type: 'Type0'
+                    },
+                },
+                {
+                    data: {
+                        name: node.data.name + ' - 1',
+                        days: Math.floor(Math.random() * 100) + 1,
+                        type: 'Type1'
+                    }
+                }
+            ];
+
+            this.lazyTreeTable = [...this.lazyTreeTable];
+        }, 250);
+
     }
 }
