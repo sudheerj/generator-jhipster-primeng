@@ -78,14 +78,6 @@
     <!-- Style -->
     <pe-step label="Style">
         <p-table [columns]="cols" [value]="basicBrowsers">
-            <ng-template pTemplate="colgroup" let-columns>
-                <colgroup>
-                    <col>
-                    <col>
-                    <col>
-                    <col style="background-color:#E89E16 !important">
-                </colgroup>
-            </ng-template>
             <ng-template pTemplate="header" let-columns>
                 <tr>
                     <th *ngFor="let col of columns">
@@ -96,7 +88,7 @@
             <ng-template pTemplate="body" let-rowData let-columns="columns">
                 <tr [ngClass]="rowData.version > 5 ? 'new-version' : null">
                     <td *ngFor="let col of columns" [ngClass]="rowData[col.field] < 5 ? 'old-version' : null">
-                    <td>rowData[col.field]</td>
+                        {{rowData[col.field]}}
                     </td>
                 </tr>
             </ng-template>
@@ -183,7 +175,7 @@
         <p-table [columns]="cols" [value]="basicBrowsers" [(selection)]="selectedBrowser" dataKey="id">
             <ng-template pTemplate="header" let-columns>
                 <tr>
-                    <th style="width: 2.25em"></th>
+                    <th style="width: 3.25em"></th>
                     <th *ngFor="let col of columns">
                         {{col.header}}
                     </th>
@@ -212,7 +204,7 @@
         <p-table [columns]="cols" [value]="basicBrowsers" [(selection)]="selectedBrowsers" dataKey="id">
             <ng-template pTemplate="header" let-columns>
                 <tr>
-                    <th style="width: 2.25em">
+                    <th style="width: 3.25em">
                         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                     </th>
                     <th *ngFor="let col of columns">
@@ -401,7 +393,7 @@
         <p-table [columns]="cols" [value]="browsers" dataKey="id">
             <ng-template pTemplate="header" let-columns>
                 <tr>
-                    <th style="width: 2.25em"></th>
+                    <th style="width: 3.25em"></th>
                     <th *ngFor="let col of columns">
                         {{col.header}}
                     </th>
@@ -822,7 +814,7 @@
             <ng-template pTemplate="body" let-rowData let-columns="columns">
                 <tr>
                     <td *ngFor="let col of columns">
-                    <td>rowData[col.field]</td>
+                        {{rowData[col.field]}}
                     </td>
                 </tr>
             </ng-template>

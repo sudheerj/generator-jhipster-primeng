@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message, SelectItem} from 'primeng/components/common/api';
+import {Message, SelectItem, MenuItem} from 'primeng/components/common/api';
 import {LazyLoadEvent} from 'primeng/components/common/api';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
@@ -10,12 +10,82 @@ import MyBrowser from './service/mybrowser';
     selector: 'jhi-table',
     templateUrl: './tabledemo.component.html',
     styles: [`
+        .new-version {
+            background-color: #1CA979 !important;
+            color: #ffffff !important;
+        }
         .ui-grid-row div {
             padding: 4px 10px
         }
 
         .ui-grid-row div label {
             font-weight: bold;
+        }
+
+        /* Column Priorities */
+        @media only all {
+            th.ui-p-6,
+            td.ui-p-6,
+            th.ui-p-5,
+            td.ui-p-5,
+            th.ui-p-4,
+            td.ui-p-4,
+            th.ui-p-3,
+            td.ui-p-3,
+            th.ui-p-2,
+            td.ui-p-2,
+            th.ui-p-1,
+            td.ui-p-1 {
+                display: none;
+            }
+        }
+
+        /* Show priority 1 at 320px (20em x 16px) */
+        @media screen and (min-width: 20em) {
+            th.ui-p-1,
+            td.ui-p-1 {
+                display: table-cell;
+            }
+        }
+
+        /* Show priority 2 at 480px (30em x 16px) */
+        @media screen and (min-width: 30em) {
+            th.ui-p-2,
+            td.ui-p-2 {
+                display: table-cell;
+            }
+        }
+
+        /* Show priority 3 at 640px (40em x 16px) */
+        @media screen and (min-width: 40em) {
+            th.ui-p-3,
+            td.ui-p-3 {
+                display: table-cell;
+            }
+        }
+
+        /* Show priority 4 at 800px (50em x 16px) */
+        @media screen and (min-width: 50em) {
+            th.ui-p-4,
+            td.ui-p-4 {
+                display: table-cell;
+            }
+        }
+
+        /* Show priority 5 at 960px (60em x 16px) */
+        @media screen and (min-width: 60em) {
+            th.ui-p-5,
+            td.ui-p-5 {
+                display: table-cell;
+            }
+        }
+
+        /* Show priority 6 at 1,120px (70em x 16px) */
+        @media screen and (min-width: 70em) {
+            th.ui-p-6,
+            td.ui-p-6 {
+                display: table-cell;
+            }
         }
     `]})
 export class TableDemoComponent implements OnInit {
@@ -51,6 +121,8 @@ export class TableDemoComponent implements OnInit {
 
     columnOptions: SelectItem[];
 
+    tableItems: MenuItem[];
+
     constructor(private browserService: BrowserService) { }
 
     ngOnInit() {
@@ -77,6 +149,11 @@ export class TableDemoComponent implements OnInit {
         this.grades.push({label: 'A', value: 'A'});
         this.grades.push({label: 'B', value: 'B'});
         this.grades.push({label: 'C', value: 'C'});
+
+        this.tableItems = [
+            { label: 'View', icon: 'pi pi-search', command: (event) => this.selectBrowser(this.selectedBrowser) },
+            { label: 'Delete', icon: 'pi pi-times', command: (event) => this.delete() }
+        ];
 
     }
 
