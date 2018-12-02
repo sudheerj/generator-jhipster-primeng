@@ -10,7 +10,7 @@ export class EventService {
     }
 
     getEvents(): Observable<any> {
-        return this.http.get('content/primeng/assets/data/json/events/scheduleevents.json')
+        return this.http.get('content/primeng/assets/data/json/events/fullcalendarevents.json')
             .map(response => response);
     }
 }

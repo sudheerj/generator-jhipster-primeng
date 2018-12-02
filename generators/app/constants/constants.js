@@ -215,8 +215,8 @@ export const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Componen
         value: 'picklist',
         checked: false
     }, {
-        name: 'Schedule',
-        value: 'schedule',
+        name: 'FullCalendar',
+        value: 'fullcalendar',
         checked: false
     }, {
         name: 'Tree',
@@ -639,7 +639,7 @@ export const components = {
     orderlist: 'data',
     dataview: 'data',
     paginator: 'data',
-    schedule: 'data',
+    fullcalendar: 'data',
     treetable: 'data',
     datascroller: 'data',
     orgchart: 'data',
@@ -738,7 +738,7 @@ export const primengTranslation = `"primeng": {
                 "orderlist": "OrderList",
                 "dataview": "DataView",
                 "paginator": "Paginator",
-                "schedule": "Schedule",
+                "fullcalendar": "FullCalendar",
                 "treetable": "TreeTable",
                 "datascroller": "DataScroller",
                 "orgchart": "OrgChart",

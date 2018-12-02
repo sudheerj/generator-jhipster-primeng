@@ -5,8 +5,8 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {ScheduleModule} from 'primeng/components/schedule/schedule';
+import { TestSharedModule } from '../../../shared';
+import {FullCalendarModule} from 'primeng/components/fullcalendar/fullcalendar';
 import {RadioButtonModule} from 'primeng/components/radiobutton/radiobutton';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {DialogModule} from 'primeng/components/dialog/dialog';
@@ -21,12 +21,12 @@ import {EventService} from './service/event.service';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
-    ScheduleDemoComponent,
-    scheduleDemoRoute
+    FullCalendarDemoComponent,
+    fullcalendarDemoRoute
 } from './';
 
 const primeng_STATES = [
-    scheduleDemoRoute
+    fullcalendarDemoRoute
 ];
 
 @NgModule({
@@ -37,7 +37,7 @@ const primeng_STATES = [
         FormsModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        ScheduleModule,
+        FullCalendarModule,
         RadioButtonModule,
         DialogModule,
         InputTextModule,
@@ -50,8 +50,8 @@ const primeng_STATES = [
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, EventService],
     declarations: [
-        ScheduleDemoComponent
+        FullCalendarDemoComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angularXAppName %>ScheduleDemoModule {}
+export class <%= angularXAppName %>FullCalenndarDemoModule {}

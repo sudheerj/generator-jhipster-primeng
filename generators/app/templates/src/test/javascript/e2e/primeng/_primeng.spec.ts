@@ -379,12 +379,12 @@ describe('administration', () => {
         });
     });
 
-    it('should load Schedule', () => {
-        element(by.css('[routerLink="schedule"]')).click();
+    it('should load FullCalendar', () => {
+        element(by.css('[routerLink="fullcalendar"]')).click();
         <%_ if (enableTranslation) { _%>
-            const expect1 = /primeng.data.schedule.title/;
+            const expect1 = /primeng.data.fullcalendar.title/;
             <%_ } else { _%>
-            const expect1 = /Schedule/;
+            const expect1 = /fullcalendar/;
             <%_ } _%>
         element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
             expect(value).toMatch(expect1);

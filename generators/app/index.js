@@ -541,10 +541,10 @@ module.exports = JhipsterGenerator.extend({
             <span jhiTranslate="global.menu.primeng.paginator">Paginator</span>
             </a>
             </li>`;
-        this.scheduleComponent = `<li uiSrefActive="active">
-            <a class="dropdown-item" routerLink="schedule" routerLinkActive="active" (click)="collapseNavbar()">
+        this.fullcalendarComponent = `<li uiSrefActive="active">
+            <a class="dropdown-item" routerLink="fullcalendar" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-            <span jhiTranslate="global.menu.primeng.schedule">Schedule</span>
+            <span jhiTranslate="global.menu.primeng.fullcalendar">FullCalendar</span>
             </a>
             </li>`;
         this.datascrollerComponent = `<li uiSrefActive="active">
@@ -859,7 +859,7 @@ module.exports = JhipsterGenerator.extend({
                    <hr/>
                    <span style="font-weight:bold">Data Components</span>
                    <hr/>
-                    ${this.carouselComponent}${this.datascrollerComponent}${this.tableComponent}${this.gmapComponent}${this.orderlistComponent}${this.orgchartComponent}${this.paginatorComponent}${this.picklistComponent}${this.scheduleComponent}${this.treeComponent}${this.treetableComponent}`;
+                    ${this.carouselComponent}${this.datascrollerComponent}${this.tableComponent}${this.gmapComponent}${this.orderlistComponent}${this.orgchartComponent}${this.paginatorComponent}${this.picklistComponent}${this.fullcalendarComponent}${this.treeComponent}${this.treetableComponent}`;
         this.dragdropComponents = `
                    <hr/>
                     <span style="font-weight:bold">Dragdrop Components</span>
@@ -907,7 +907,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('button') > -1 ? this.buttonComponent : '') + (this.componentList.indexOf('splitbutton') > -1 ? this.splitbuttonComponent : '') + (this.componentList.indexOf('carousel') > -1 ? this.carouselComponent : '') +
                 (this.componentList.indexOf('datascroller') > -1 ? this.datascrollerComponent : '') +
                 (this.componentList.indexOf('table') > -1 ? this.tableComponent : '') + (this.componentList.indexOf('dataview') > -1 ? this.dataviewComponent : '') + (this.componentList.indexOf('gmap') > -1 ? this.gmapComponent : '') + (this.componentList.indexOf('orderlist') > -1 ? this.orderlistComponent : '') + (this.componentList.indexOf('orgchart') > -1 ? this.orgchartComponent : '') +
-                (this.componentList.indexOf('paginator') > -1 ? this.paginatorComponent : '') + (this.componentList.indexOf('picklist') > -1 ? this.picklistComponent : '') + (this.componentList.indexOf('schedule') > -1 ? this.scheduleComponent : '') +
+                (this.componentList.indexOf('paginator') > -1 ? this.paginatorComponent : '') + (this.componentList.indexOf('picklist') > -1 ? this.picklistComponent : '') + (this.componentList.indexOf('fullcalendar') > -1 ? this.fullcalendarComponent : '') +
                 (this.componentList.indexOf('tree') > -1 ? this.treeComponent : '') + (this.componentList.indexOf('treetable') > -1 ? this.treetableComponent : '') + (this.componentList.indexOf('accordion') > -1 ? this.accordionComponent : '') + (this.componentList.indexOf('card') > -1 ? this.cardComponent : '') +
                 (this.componentList.indexOf('fieldset') > -1 ? this.fieldsetComponent : '') + (this.componentList.indexOf('panel') > -1 ? this.panelComponent : '') + (this.componentList.indexOf('scrollpanel') > -1 ? this.scrollpanelComponent : '') +
                 (this.componentList.indexOf('tabview') > -1 ? this.tabviewComponent : '') + (this.componentList.indexOf('toolbar') > -1 ? this.toolbarComponent : '') + (this.componentList.indexOf('confirmdialog') > -1 ? this.confirmdialogComponent : '') +
@@ -1067,8 +1067,8 @@ module.exports = JhipsterGenerator.extend({
             this.template(`src/main/webapp/app/primeng/${DEMO_CONSTANTS.cityComponents[component]}/${component}/service/treenode.service.ts`, `src/main/webapp/app/primeng/${DEMO_CONSTANTS.cityComponents[component]}/${component}/service/treenode.service.ts`);
         });
 
-        this.template('src/main/webapp/app/primeng/data/schedule/event/event.ts', 'src/main/webapp/app/primeng/data/schedule/event/event.ts');
-        this.template('src/main/webapp/app/primeng/data/schedule/service/event.service.ts', 'src/main/webapp/app/primeng/data/schedule/service/event.service.ts');
+        this.template('src/main/webapp/app/primeng/data/fullcalendar/event/event.ts', 'src/main/webapp/app/primeng/data/fullcalendar/event/event.ts');
+        this.template('src/main/webapp/app/primeng/data/fullcalendar/service/event.service.ts', 'src/main/webapp/app/primeng/data/fullcalendar/service/event.service.ts');
         this.template('src/main/webapp/app/primeng/data/orgchart/service/vcard.ts', 'src/main/webapp/app/primeng/data/orgchart/service/vcard.ts');
         this.template('src/main/webapp/app/primeng/data/orgchart/service/vcard.service.ts', 'src/main/webapp/app/primeng/data/orgchart/service/vcard.service.ts');
         this.template('src/main/webapp/app/primeng/menu/contextmenu/service/employee.ts', 'src/main/webapp/app/primeng/menu/contextmenu/service/employee.ts');
@@ -1096,7 +1096,7 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles('src/main/webapp/assets/data/images/browsers/safari.png', 'src/main/webapp/content/primeng/assets/data/images/browsers/safari.png');
         this.template('src/main/webapp/assets/data/json/cities/cities.json', 'src/main/webapp/content/primeng/assets/data/json/cities/cities.json');
         this.template('src/main/webapp/assets/data/json/places/places.json', 'src/main/webapp/content/primeng/assets/data/json/places/places.json');
-        this.template('src/main/webapp/assets/data/json/events/scheduleevents.json', 'src/main/webapp/content/primeng/assets/data/json/events/scheduleevents.json');
+        this.template('src/main/webapp/assets/data/json/events/fullcalendarevents.json', 'src/main/webapp/content/primeng/assets/data/json/events/fullcalendarevents.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/man.png', 'src/main/webapp/content/primeng/assets/data/images/avatars/man.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/avatars/women.png', 'src/main/webapp/content/primeng/assets/data/images/avatars/women.png');
         this.template('src/main/webapp/assets/data/json/vcards/vcards.json', 'src/main/webapp/content/primeng/assets/data/json/vcards/vcards.json');

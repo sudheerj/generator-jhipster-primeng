@@ -91,8 +91,8 @@
             "paginator": {
                 "title": "Paginator"
             },
-            "schedule": {
-                "title": "Schedule"
+            "fullcalendar": {
+                "title": "FullCalendar"
             },
             "treetable": {
                 "title": "TreeTable"
