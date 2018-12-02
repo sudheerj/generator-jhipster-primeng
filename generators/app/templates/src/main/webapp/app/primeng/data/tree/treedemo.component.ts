@@ -55,7 +55,7 @@ export class TreeDemoComponent implements OnInit {
         this.nodeService.getTouristPlaces().subscribe((places: any) => {
             this.horizontalTree = [{
                 label: 'Root',
-                children: places
+                children: places.data
             }];
         });
         this.nodeService.getTouristPlaces().subscribe((files: any) => this.dragDropTreeOne = files.data);
