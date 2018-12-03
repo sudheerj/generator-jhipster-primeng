@@ -123,6 +123,8 @@ export class TableDemoComponent implements OnInit {
 
     tableItems: MenuItem[];
 
+    selectedColumns: any[];
+
     constructor(private browserService: BrowserService) { }
 
     ngOnInit() {
@@ -154,6 +156,7 @@ export class TableDemoComponent implements OnInit {
             { label: 'View', icon: 'pi pi-search', command: (event) => this.selectBrowser(this.selectedBrowser) },
             { label: 'Delete', icon: 'pi pi-times', command: (event) => this.delete() }
         ];
+        this.selectedColumns = this.cols;
 
     }
 
