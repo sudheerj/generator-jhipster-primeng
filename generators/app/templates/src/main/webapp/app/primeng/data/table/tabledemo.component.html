@@ -273,10 +273,10 @@
     </pe-step>
     <!-- Filtering -->
     <pe-step label="Filtering">
-        <p-table #dt [columns]="cols" [value]="browsers" [paginator]="true" [rows]="10" (onFilter)="onFilter($event)">
+        <p-table #dtf [columns]="cols" [value]="browsers" [paginator]="true" [rows]="10" (onFilter)="onFilter($event)">
             <ng-template pTemplate="caption">
                 <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
-                <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+                <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dtf.filterGlobal($event.target.value, 'contains')" style="width:auto">
             </ng-template>
             <ng-template pTemplate="header" let-columns>
                 <tr>
@@ -286,19 +286,19 @@
                 </tr>
                 <tr>
                     <th *ngFor="let col of columns" [ngSwitch]="col.field">
-                        <input *ngSwitchCase="'browser'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+                        <input *ngSwitchCase="'browser'" pInputText type="text" (input)="dtf.filter($event.target.value, col.field, col.filterMatchMode)">
                         <div *ngSwitchCase="'rating'">
                             <i class="fa fa-close"
-                               (click)="ratingFilter=null;dt.filter(null,col.field,col.filterMatchMode)"></i>
+                               (click)="ratingFilter=null;dtf.filter(null,col.field,col.filterMatchMode)"></i>
                             <p-slider [styleClass]="'slider-layout'" [(ngModel)]="ratingFilter" [min]="1"
                                       [max]="10"
-                                      (onSlideEnd)="dt.filter($event.value,col.field,col.filterMatchMode)"></p-slider>
+                                      (onSlideEnd)="dtf.filter($event.value,col.field,col.filterMatchMode)"></p-slider>
                         </div>
                         <p-dropdown *ngSwitchCase="'engine'" [options]="engines" [style]="{'width':'100%'}"
-                                    (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)"
+                                    (onChange)="dtf.filter($event.value,col.field,'equals')"
                                     styleClass="ui-column-filter"></p-dropdown>
                         <p-multiSelect  *ngSwitchCase="'grade'"  [options]="grades" defaultLabel="All grades"
-                                        (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)"
+                                        (onChange)="dtf.filter($event.value,col.field,'in')"
                                         styleClass="ui-column-filter"></p-multiSelect>
                     </th>
                 </tr>
