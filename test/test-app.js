@@ -436,14 +436,6 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/panel/fieldset/fieldsetdemo.module.ts',
         'src/main/webapp/app/primeng/panel/fieldset/fieldsetdemo.route.ts',
 
-        'src/main/webapp/app/primeng/panel/grid/index.ts',
-        'src/main/webapp/app/primeng/panel/grid/griddemo.component.html',
-        'src/main/webapp/app/primeng/panel/grid/griddemo.component.ts',
-        'src/main/webapp/app/primeng/panel/grid/griddemo.module.ts',
-        'src/main/webapp/app/primeng/panel/grid/griddemo.route.ts',
-        'src/main/webapp/app/primeng/panel/grid/service/browser.service.ts',
-        'src/main/webapp/app/primeng/panel/grid/service/browser.ts',
-
         'src/main/webapp/app/primeng/panel/panel/index.ts',
         'src/main/webapp/app/primeng/panel/panel/paneldemo.component.html',
         'src/main/webapp/app/primeng/panel/panel/paneldemo.component.ts',

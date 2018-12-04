@@ -239,10 +239,6 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         value: 'fieldset',
         checked: false
     }, {
-        name: 'Grid',
-        value: 'grid',
-        checked: false
-    }, {
         name: 'Panel',
         value: 'panel',
         checked: false
@@ -654,7 +650,6 @@ const components = {
     panel: 'panel',
     tabview: 'panel',
     fieldset: 'panel',
-    grid: 'panel',
     toolbar: 'panel',
     scrollpanel: 'panel',
     card: 'panel',
@@ -766,7 +761,6 @@ const primengTranslation = `"primeng": {
                 "panel":  "Panel",
                 "tabview":  "TabView",
                 "fieldset":  "Fieldset",
-                "grid":  "Grid",
                 "toolbar": "Toolbar",
                 "validation":"validation",
                 "captcha": "Captcha",
