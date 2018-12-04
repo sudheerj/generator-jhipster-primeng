@@ -511,7 +511,7 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.fileupload">FileUpload</span>
                         </a>
                     </li>`;
-        this.carouselComponent = `<li uiSrefActive="active" style="pointer-events: none;">
+        this.carouselComponent = `<li uiSrefActive="active">
             <a class="dropdown-item" routerLink="carousel" routerLinkActive="active" (click)="collapseNavbar()">
             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
             <span jhiTranslate="global.menu.primeng.carousel">Carousel</span>

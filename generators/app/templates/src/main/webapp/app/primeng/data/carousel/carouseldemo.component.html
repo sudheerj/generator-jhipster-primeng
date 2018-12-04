@@ -4,27 +4,21 @@
         <pe-step label="Basic" >
             <p-carousel headerText="Basic" [value]="basicBrowsers">
                 <ng-template let-browser pTemplate="item">
-                    <div class="ui-grid ui-grid-responsive">
-                        <div class="ui-grid-row">
-                            <div class="ui-grid-col-12">
-                                <img src="/content/primeng/assets/data/images/browsers/{{browser.code}}.png" width="60">
-                            </div>
+                    <div class="p-grid">
+                        <div class="p-col-12">
+                            <img src="/content/primeng/assets/data/images/browsers/{{browser.code}}.png" width="60">
                         </div>
-                        <div class="ui-grid-row">
-                            <div class="ui-grid-col-6">Engine:</div>
-                            <div class="ui-grid-col-6">{{browser.engine}}</div>
+                        <div class="p-col-12">
+                            Engine: {{browser.engine}}
                         </div>
-                        <div class="ui-grid-row">
-                            <div class="ui-grid-col-6">Browser:</div>
-                            <div class="ui-grid-col-6">{{browser.browser}}</div>
+                        <div class="p-col-12">
+                            Browser: {{browser.browser}}
                         </div>
-                        <div class="ui-grid-row">
-                            <div class="ui-grid-col-6">Platform: </div>
-                            <div class="ui-grid-col-6">{{browser.platform}}</div>
+                        <div class="p-col-12">
+                            Platform: {{browser.platform}}
                         </div>
-                        <div class="ui-grid-row">
-                            <div class="ui-grid-col-6">Grade: </div>
-                            <div class="ui-grid-col-6">{{browser.grade}}</div>
+                        <div class="p-col-12">
+                            Grade: {{browser.grade}}
                         </div>
                     </div>
                 </ng-template>
