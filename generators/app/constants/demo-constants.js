@@ -1,4 +1,4 @@
-export const browserComponents = {
+const browserComponents = {
     carousel: 'data',
     datascroller: 'data',
     table: 'data',
@@ -8,6 +8,10 @@ export const browserComponents = {
     inplace: 'misc'
 };
 
-export const cityComponents = { tree: 'data', treetable: 'data' };
+const cityComponents = { tree: 'data', treetable: 'data' };
 
-export const countryComponents = { orderlist: 'data', picklist: 'data', autocomplete: 'inputs', select: 'inputs' };
+const countryComponents = { orderlist: 'data', picklist: 'data', autocomplete: 'inputs', select: 'inputs' };
+
+module.exports = {
+    browserComponents, cityComponents, countryComponents
+};

@@ -1,16 +1,16 @@
 const inquirer = require('inquirer');
 
-export const ANGULAR_VERSION = '7.0.0';
-export const PRIMENG_VERSION = '7.0.0';
-export const PRIMEICONS_VERSION = '1.0.0';
-export const PRIMEFLEX_VERSION = '1.0.0-rc.1';
-export const PRIMENG_EXTENSIONS_VERSION = '0.0.45';
-export const CHARTJS_VERSION = '2.7.1';
-export const MOMENT_VERSION = '2.20.1';
-export const FULLCALENDAR_VERSION = '4.0.0-alpha.2';
-export const QUILL_VERSION = '1.3.6';
+const ANGULAR_VERSION = '7.0.0';
+const PRIMENG_VERSION = '7.0.0';
+const PRIMEICONS_VERSION = '1.0.0';
+const PRIMEFLEX_VERSION = '1.0.0-rc.1';
+const PRIMENG_EXTENSIONS_VERSION = '0.0.45';
+const CHARTJS_VERSION = '2.7.1';
+const MOMENT_VERSION = '2.20.1';
+const FULLCALENDAR_VERSION = '4.0.0-alpha.2';
+const QUILL_VERSION = '1.3.6';
 
-export const THEME_OPTIONS = [
+const THEME_OPTIONS = [
     {
         value: 'nova-colored',
         name: 'Nova Colored'
@@ -42,7 +42,7 @@ export const THEME_OPTIONS = [
 ];
 
 
-export const COMPONENT_GROUP_CHOICE_LIST = [{
+const COMPONENT_GROUP_CHOICE_LIST = [{
     name: 'inputs',
     value: 'inputs',
     checked: true
@@ -93,7 +93,7 @@ export const COMPONENT_GROUP_CHOICE_LIST = [{
 }
 ];
 
-export const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '),
+const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '),
     {
         name: 'AutoComplete',
         value: 'autocomplete',
@@ -417,7 +417,7 @@ export const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Componen
     }
 ];
 
-export const codes = ['ad.png',
+const codes = ['ad.png',
     'ae.png',
     'af.png',
     'ag.png',
@@ -614,7 +614,7 @@ export const codes = ['ad.png',
     'zm.png',
     'zw.png'];
 
-export const components = {
+const components = {
     inputgroup: 'inputs',
     inputtext: 'inputs',
     inputtextarea: 'inputs',
@@ -698,7 +698,7 @@ export const components = {
     progressspinner: 'misc'
 };
 
-export const primengTranslation = `"primeng": {
+const primengTranslation = `"primeng": {
                 "main": "primeng",
                 "barchart": "BarChart",
                 "doughnutchart": "DoughnutChart",
@@ -783,3 +783,20 @@ export const primengTranslation = `"primeng": {
                 "keyfilter": "KeyFilter"
             },`;
 
+module.exports = {
+    ANGULAR_VERSION,
+    PRIMEICONS_VERSION,
+    PRIMEFLEX_VERSION,
+    PRIMENG_EXTENSIONS_VERSION,
+    PRIMENG_VERSION,
+    CHARTJS_VERSION,
+    COMPONENT_CHOICE_LIST,
+    COMPONENT_GROUP_CHOICE_LIST,
+    MOMENT_VERSION,
+    FULLCALENDAR_VERSION,
+    QUILL_VERSION,
+    THEME_OPTIONS,
+    codes,
+    primengTranslation,
+    components
+};

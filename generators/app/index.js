@@ -1,5 +1,5 @@
-import * as CONSTANTS from './constants/constants';
-import * as DEMO_CONSTANTS from './constants/demo-constants';
+const CONSTANTS = require('./constants/constants');
+const DEMO_CONSTANTS = require('./constants/demo-constants');
 
 const util = require('util');
 const chalk = require('chalk');
