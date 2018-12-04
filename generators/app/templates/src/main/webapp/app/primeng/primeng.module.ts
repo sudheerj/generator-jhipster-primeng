@@ -47,6 +47,7 @@ import { <%= angularXAppName %>FieldsetDemoModule } from './panel/fieldset/field
 import { <%= angularXAppName %>ToolbarDemoModule } from './panel/toolbar/toolbardemo.module';
 import { <%= angularXAppName %>ScrollPanelDemoModule } from './panel/scrollpanel/scrollpaneldemo.module';
 import { <%= angularXAppName %>CardDemoModule } from './panel/card/carddemo.module';
+import { <%= angularXAppName %>FlexGridDemoModule } from './panel/flexgrid/flexgriddemo.module';
 
 import { <%= angularXAppName %>DataTableDemoModule } from './data/datatable/datatabledemo.module';
 import { <%= angularXAppName %>TableDemoModule } from './data/table/tabledemo.module';
@@ -155,6 +156,7 @@ import { <%= angularXAppName %>ProgressSpinnerDemoModule } from './misc/progress
         <%= angularXAppName %>ToolbarDemoModule,
         <%= angularXAppName %>ScrollPanelDemoModule,
         <%= angularXAppName %>CardDemoModule,
+        <%= angularXAppName %>FlexGridDemoModule,
 
         <%= angularXAppName %>BarchartDemoModule,
         <%= angularXAppName %>DoughnutchartDemoModule,

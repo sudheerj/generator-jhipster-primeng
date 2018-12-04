@@ -475,6 +475,18 @@ describe('administration', () => {
         });
     });
 
+    it('should load FlexGrid', () => {
+        element(by.css('[routerLink="flexgrid"]')).click();
+        <%_ if (enableTranslation) { _%>
+            const expect1 = /primeng.panel.flexgrid.title/;
+            <%_ } else { _%>
+            const expect1 = /FlexGrid/;
+            <%_ } _%>
+        element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
+            expect(value).toMatch(expect1);
+        });
+    });
+
     it('should load Panel', () => {
         element(by.css('[routerLink="panel"]')).click();
         <%_ if (enableTranslation) { _%>

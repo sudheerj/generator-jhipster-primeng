@@ -424,6 +424,12 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/panel/accordion/accordiondemo.module.ts',
         'src/main/webapp/app/primeng/panel/accordion/accordiondemo.route.ts',
 
+        'src/main/webapp/app/primeng/panel/flexgrid/index.ts',
+        'src/main/webapp/app/primeng/panel/flexgrid/flexgriddemo.component.html',
+        'src/main/webapp/app/primeng/panel/flexgrid/flexgriddemo.component.ts',
+        'src/main/webapp/app/primeng/panel/flexgrid/flexgriddemo.module.ts',
+        'src/main/webapp/app/primeng/panel/flexgrid/flexgriddemo.route.ts',
+
         'src/main/webapp/app/primeng/panel/fieldset/index.ts',
         'src/main/webapp/app/primeng/panel/fieldset/fieldsetdemo.component.html',
         'src/main/webapp/app/primeng/panel/fieldset/fieldsetdemo.component.ts',

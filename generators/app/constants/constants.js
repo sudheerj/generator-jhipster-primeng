@@ -262,6 +262,10 @@ export const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Componen
         name: 'Card',
         value: 'card',
         checked: false
+    }, {
+        name: 'FlexGrid',
+        value: 'flexgrid',
+        checked: false
     }, new inquirer.Separator(' == Overlay Components == '), {
         name: 'ConfirmDialog',
         value: 'confirmdialog',
@@ -654,6 +658,7 @@ export const components = {
     toolbar: 'panel',
     scrollpanel: 'panel',
     card: 'panel',
+    flexgrid: 'panel',
     sidebar: 'overlay',
     dialog: 'overlay',
     confirmdialog: 'overlay',
@@ -774,6 +779,7 @@ export const primengTranslation = `"primeng": {
                 "progressspinner": "ProgressSpinner",
                 "scrollpanel": "ScrollPanel",
                 "card": "Card",
+                "flexgrid": "FlexGrid",
                 "keyfilter": "KeyFilter"
             },`;
 
