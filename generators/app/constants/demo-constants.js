@@ -3,7 +3,6 @@ const browserComponents = {
     datascroller: 'data',
     table: 'data',
     dataview: 'data',
-    grid: 'panel',
     defer: 'misc',
     inplace: 'misc'
 };
