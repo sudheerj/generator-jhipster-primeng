@@ -49,7 +49,6 @@ import { <%= angularXAppName %>ScrollPanelDemoModule } from './panel/scrollpanel
 import { <%= angularXAppName %>CardDemoModule } from './panel/card/carddemo.module';
 import { <%= angularXAppName %>FlexGridDemoModule } from './panel/flexgrid/flexgriddemo.module';
 
-import { <%= angularXAppName %>DataTableDemoModule } from './data/datatable/datatabledemo.module';
 import { <%= angularXAppName %>TableDemoModule } from './data/table/tabledemo.module';
 import { <%= angularXAppName %>DataScrollerDemoModule } from './data/datascroller/datascrollerdemo.module';
 import { <%= angularXAppName %>PickListDemoModule } from './data/picklist/picklistdemo.module';
@@ -174,7 +173,6 @@ import { <%= angularXAppName %>ProgressSpinnerDemoModule } from './misc/progress
         <%= angularXAppName %>OverlayPanelDemoModule,
         <%= angularXAppName %>SideBarDemoModule,
 
-        <%= angularXAppName %>DataTableDemoModule,
         <%= angularXAppName %>TableDemoModule,
         <%= angularXAppName %>DataViewDemoModule,
         <%= angularXAppName %>DataScrollerDemoModule,

@@ -38,7 +38,6 @@ import {trigger,state,style,transition,animate,AnimationEvent} from '@angular/an
             padding-bottom: 1em;
         }
     `],
-    templateUrl: './flexgriddemo.html',
     animations: [
         trigger('animation', [
             state('visible', style({

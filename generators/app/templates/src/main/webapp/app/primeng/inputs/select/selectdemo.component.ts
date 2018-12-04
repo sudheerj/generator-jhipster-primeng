@@ -48,7 +48,7 @@ export class SelectDemoComponent implements OnInit {
     generateCountries(countriesArray: Country[]) {
         const countryList: any[] = [];
         const countryCodes: any[] = [];
-        for (const country of countriesArray.data) {
+        for (const country of countriesArray) {
             countryList.push({label: country.name, value: {name: country.name, dial_code: country.dial_code, code: country.code}});
             countryCodes.push({label: country.code, value: {name: country.name, dial_code: country.dial_code, code: country.code}});
         }

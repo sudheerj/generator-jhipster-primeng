@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { TestSharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FullCalendarModule} from 'primeng/components/fullcalendar/fullcalendar';
 import {RadioButtonModule} from 'primeng/components/radiobutton/radiobutton';
 import {GrowlModule} from 'primeng/components/growl/growl';
@@ -54,4 +54,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angularXAppName %>FullCalenndarDemoModule {}
+export class <%= angularXAppName %>FullCalendarDemoModule {}

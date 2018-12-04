@@ -67,8 +67,6 @@ export class TreeTableDemoComponent implements OnInit {
             { field: 'days', header: 'Days' },
             { field: 'type', header: 'Type' }
         ];
-        this.totalRecords = 1000;
-
         this.loading = true;
     }
 

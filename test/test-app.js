@@ -175,15 +175,6 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/data/datascroller/service/browser.service.ts',
         'src/main/webapp/app/primeng/data/datascroller/service/browser.ts',
 
-        'src/main/webapp/app/primeng/data/datatable/index.ts',
-        'src/main/webapp/app/primeng/data/datatable/datatabledemo.component.html',
-        'src/main/webapp/app/primeng/data/datatable/datatabledemo.component.ts',
-        'src/main/webapp/app/primeng/data/datatable/datatabledemo.module.ts',
-        'src/main/webapp/app/primeng/data/datatable/datatabledemo.route.ts',
-        'src/main/webapp/app/primeng/data/datatable/service/browser.service.ts',
-        'src/main/webapp/app/primeng/data/datatable/service/browser.ts',
-        'src/main/webapp/app/primeng/data/datatable/service/mybrowser.ts',
-
         'src/main/webapp/app/primeng/data/gmap/index.ts',
         'src/main/webapp/app/primeng/data/gmap/gmapdemo.component.html',
         'src/main/webapp/app/primeng/data/gmap/gmapdemo.component.ts',
