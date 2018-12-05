@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
-import {Message} from 'primeng/components/common/api';
+import {Message, SelectItem, LazyLoadEvent} from 'primeng/components/common/api';
 
 @Component({
     selector: 'jhi-virtualscroller',
@@ -77,13 +77,12 @@ export class VirtualScrollerDemoComponent implements OnInit {
         ];
     }
 
-
     loadData(event: any) {
-        //in a real application, make a remote request to load data using state metadata from event
-        //event.first = First row offset
-        //event.rows = Number of rows per page
+        // in a real application, make a remote request to load data using state metadata from event
+        // event.first = First row offset
+        // event.rows = Number of rows per page
 
-        //imitate db connection over a network
+        // imitate db connection over a network
         if (this.timeout) {
             clearTimeout(this.timeout);
         }
@@ -96,23 +95,25 @@ export class VirtualScrollerDemoComponent implements OnInit {
     }
 
     onSortChange() {
-        if (this.sortKey.indexOf('!') === 0)
+        if (this.sortKey.indexOf('!') === 0) {
             this.sort(-1);
-        else
+        }
+        else {
             this.sort(1);
+        }
     }
 
     sort(order: number): void {
-        let browserService = [...this.browserService];
-        browserService.sort((data1, data2) => {
-            let value1 = data1.grade;
-            let value2 = data2.grade;
-            let result = (value1 < value2) ? -1 : (value1 > value2) ? 1 : 0;
+        const basicBrowsers = [...this.basicBrowsers];
+        basicBrowsers.sort((data1, data2) => {
+            const value1 = data1.grade;
+            const value2 = data2.grade;
+            const result = (value1 < value2) ? -1 : (value1 > value2) ? 1 : 0;
 
             return (order * result);
         });
 
-        this.browserService = browserService;
+        this.basicBrowsers = basicBrowsers;
     }
 
     onChangeStep(label: string) {

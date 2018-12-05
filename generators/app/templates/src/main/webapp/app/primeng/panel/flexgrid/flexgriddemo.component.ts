@@ -1,11 +1,11 @@
-import {Message} from 'primeng/components/common/api';
-import {Component,ViewEncapsulation} from '@angular/core';
-import {trigger,state,style,transition,animate,AnimationEvent} from '@angular/animations';
+import { Message } from 'primeng/components/common/api';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { trigger, state, style, transition, animate, AnimationEvent } from '@angular/animations';
 
 @Component({
     selector: 'jhi-flexgrid',
     templateUrl: './flexgriddemo.component.html',
-    styles:[`
+    styles: [`
         .box,
         .sample-layout > div {
             background-color: #cce4f7;
@@ -59,7 +59,7 @@ import {trigger,state,style,transition,animate,AnimationEvent} from '@angular/an
     ],
     encapsulation: ViewEncapsulation.None
 })
-export class FlexGridDemoComponent {
+export class FlexGridDemoComponent implements OnInit {
     msgs: Message[] = [];
 
     activeIndex = 0;

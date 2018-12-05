@@ -34,8 +34,6 @@ export class FullCalendarDemoComponent implements OnInit {
         };
     }
 
-
-
     onChangeStep(label: string) {
         this.msgs.length = 0;
         this.msgs.push({severity: 'info', summary: label});

@@ -153,8 +153,8 @@ export class TableDemoComponent implements OnInit {
         this.grades.push({label: 'C', value: 'C'});
 
         this.tableItems = [
-            { label: 'View', icon: 'pi pi-search', command: (event) => this.selectBrowser(this.selectedBrowser) },
-            { label: 'Delete', icon: 'pi pi-times', command: (event) => this.delete() }
+            { label: 'View', icon: 'pi pi-search', command: event => this.selectBrowser(this.selectedBrowser) },
+            { label: 'Delete', icon: 'pi pi-times', command: event => this.delete() }
         ];
         this.selectedColumns = this.cols;
 

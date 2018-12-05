@@ -36,4 +36,4 @@ const primeng_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angularXAppName %>CardDemoModule {}
+export class <%= angularXAppName %>FlexGridDemoModule {}
