@@ -51,6 +51,9 @@ module.exports = JhipsterGenerator.extend({
                     if (fileData.dependencies['@angular/common']) {
                         this.libAngularVersion = fileData.dependencies['@angular/common'];
                     }
+                    if (fileData.dependencies['@angular/cdk']) {
+                        this.libAngularScrollingVersion = fileData.dependencies['@angular/cdk'];
+                    }
                     if (fileData.dependencies['@angular/animations']) {
                         this.libAngularAnimationsVersion = fileData.dependencies['@angular/animations'];
                     }
@@ -276,6 +279,14 @@ module.exports = JhipsterGenerator.extend({
                 this.addNpmDependency('@angular/animations', `${this.libAngularVersion}`);
             }
 
+            if (this.libAngularScrollingVersion) {
+                // the version already exists, so try to upgrade instead
+                this.replaceContent('package.json',
+                    `"@angular/cdk": "${this.libAngularScrollingVersion}"`, `"@angular/cdk": "${this.libAngularVersion}"`);
+            } else {
+                this.addNpmDependency('@angular/cdk', `${this.libAngularVersion}`);
+            }
+
             if (this.libPrimeNgVersion) {
                 // the version already exists, so try to upgrade instead
                 this.replaceContent('package.json', `"primeng": "${this.libPrimeNgVersion}"`, `"primeng": "${CONSTANTS.PRIMENG_VERSION}"`);
@@ -331,6 +342,7 @@ module.exports = JhipsterGenerator.extend({
             this.log('  Problem when adding the new librairies in your package.json');
             this.log('  You need to add manually:\n');
             this.log(`  "@angular/animations": "${this.libAngularVersion}",`);
+            this.log(`  "@angular/cdk": "${this.libAngularScrollingVersion}",`);
             this.log(`  "primeng": "${CONSTANTS.PRIMENG_VERSION}",`);
             this.log(`  "primeng-extensions": "${CONSTANTS.PRIMENG_EXTENSIONS_VERSION}",`);
             this.log(`  "chart.js": "${CONSTANTS.CHARTJS_VERSION}",`);
