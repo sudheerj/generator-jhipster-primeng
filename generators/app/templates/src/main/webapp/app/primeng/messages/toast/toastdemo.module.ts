@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {ButtonModule} from 'primeng/primeng';
-import {ToastModule} from 'primeng/primeng';
+import {ToastModule} from 'primeng/toast';
 import {GrowlModule} from 'primeng/primeng';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 

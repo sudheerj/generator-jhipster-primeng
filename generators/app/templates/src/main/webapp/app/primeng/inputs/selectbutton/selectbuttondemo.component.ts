@@ -13,7 +13,7 @@ export class SelectButtonDemoComponent implements OnInit {
 
     selectedType: string;
 
-    selectedTypes: string[] = ['PrimeNG','PrimeReact'];
+    selectedTypes: string[] = ['PrimeNG', 'PrimeReact'];
 
     selectedModes: string[];
 

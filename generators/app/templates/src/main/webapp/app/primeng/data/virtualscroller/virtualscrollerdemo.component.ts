@@ -68,7 +68,7 @@ export class VirtualScrollerDemoComponent implements OnInit {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 4));
         this.browserService.getBrowsers().subscribe((browsers: any) => this.lazyloadingBrowsers = browsers.data.slice(0, 4));
 
-        //in a real application, make a remote request to retrieve the number of records only, not the actual records
+        // in a real application, make a remote request to retrieve the number of records only, not the actual records
         this.totalLazyBrowsersLength = 10000;
 
         this.sortOptions = [
@@ -97,8 +97,7 @@ export class VirtualScrollerDemoComponent implements OnInit {
     onSortChange() {
         if (this.sortKey.indexOf('!') === 0) {
             this.sort(-1);
-        }
-        else {
+        } else {
             this.sort(1);
         }
     }
