@@ -94,8 +94,8 @@
             "treetable": {
                 "title": "TreeTable"
             },
-            "datascroller": {
-                "title": "DataScroller"
+            "virtualscroller": {
+                "title": "VirtualScroller"
             },
             "orgchart": {
                 "title": "OrgChart"

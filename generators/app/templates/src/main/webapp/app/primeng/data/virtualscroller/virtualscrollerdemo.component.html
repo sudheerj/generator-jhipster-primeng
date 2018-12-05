@@ -1,0 +1,105 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);" [stepClass]="'layout-format'">
+        <!-- Lazy Loading -->
+        <pe-step label="Lazy Loading" >
+            <p-virtualScroller [value]="lazyloadingBrowsers" scrollHeight="500px" [itemSize]="150" [rows]="100" [cache]="false"
+                               [lazy]="true" (onLazyLoad)="loadData($event)" [totalRecords]="totalLazyBrowsersLength">
+                <p-header>
+                    List of Browsers
+                </p-header>
+                <ng-template let-browser pTemplate="item" let-i="index">
+                    <div class="p-grid browser-item">
+                        <div class="p-col-12">
+                            <div style="font-size: 24px; text-align: center; padding-top: 48px">{{i}}</div>
+                        </div>
+                        <div class="p-col-12">
+                            <img src="/content/primeng/assets/data/images/browsers/{{browser.code}}.png" width="100" height="80">
+                        </div>
+                        <div class="p-col-12">
+                                <div class="p-col-2">Engine: </div>
+                                <div class="p-col-10">{{browser.engine}}</div>
+
+                                <div class="p-col-2">Browser: </div>
+                                <div class="p-col-10">{{browser.browser}}</div>
+
+                                <div class="p-col-2">Platform: </div>
+                                <div class="p-col-10">{{browser.platform}}</div>
+
+                                <div class="p-col-2">Version: </div>
+                                <div class="p-col-10">{{browser.version}}</div>
+
+                                <div class="p-col-2">Grade: </div>
+                                <div class="p-col-10">{{browser.grade}}</div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template let-browser pTemplate="loadingItem">
+                    <div class="p-grid browser-item empty-browser-item">
+                        <div class="p-col-12">
+                            <div class="empty-browser-item-index"></div>
+                        </div>
+                        <div class="p-col-12">
+                            <div class="empty-browser-item-index"></div>
+                        </div>
+                        <div class="p-col-12">
+                            <div class="p-grid">
+                                <div class="p-col-12"><div class="empty-browser-item-index"></div></div>
+                                <div class="p-col-12"><div class="empty-browser-item-index"></div></div>
+                                <div class="p-col-12"><div class="empty-browser-item-index"></div></div>
+                                <div class="p-col-12"><div class="empty-browser-item-index"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-virtualScroller>
+        </pe-step>
+
+
+        <!-- Prepopulated List -->
+        <pe-step label="Prepopulated List">
+            <p-virtualScroller [value]="basicBrowsers" scrollHeight="500px" [itemSize]="150">
+                <p-header>
+                    <div class="p-grid">
+                        <div class="p-col-6 sort-container">
+                            <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" (onChange)="onSortChange()" [autoWidth]="false" [style]="{'min-width':'140px'}"></p-dropdown>
+                        </div>
+                        <div class="p-col-6 title-container">
+                            List of Browsers
+                        </div>
+                    </div>
+                </p-header>
+                <ng-template let-browser pTemplate="item" let-i="index">
+                    <div class="p-grid browser-item">
+                        <div class="p-col-12">
+                            <div style="font-size: 24px; text-align: center; padding-top: 48px">{{i}}</div>
+                        </div>
+                        <div class="p-col-12">
+                            <img src="/content/primeng/assets/data/images/browsers/{{browser.code}}.png" width="100" height="80">
+                        </div>
+                        <div class="p-col-12">
+                            <div class="p-grid">
+                                <div class="p-col-2">Engine: </div>
+                                <div class="p-col-10">{{browser.engine}}</div>
+
+                                <div class="p-col-2">Browser: </div>
+                                <div class="p-col-10">{{browser.browser}}</div>
+
+                                <div class="p-col-2">Platform: </div>
+                                <div class="p-col-10">{{browser.platform}}</div>
+
+                                <div class="p-col-2">Version: </div>
+                                <div class="p-col-10">{{browser.version}}</div>
+
+                                <div class="p-col-2">Grade: </div>
+                                <div class="p-col-10">{{browser.grade}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-virtualScroller>
+        </pe-step>
+
+    </pe-steps>
+</form>
+
+<p-growl [value]="msgs"></p-growl>

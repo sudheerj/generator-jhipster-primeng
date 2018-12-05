@@ -50,7 +50,7 @@ import { <%= angularXAppName %>CardDemoModule } from './panel/card/carddemo.modu
 import { <%= angularXAppName %>FlexGridDemoModule } from './panel/flexgrid/flexgriddemo.module';
 
 import { <%= angularXAppName %>TableDemoModule } from './data/table/tabledemo.module';
-import { <%= angularXAppName %>DataScrollerDemoModule } from './data/datascroller/datascrollerdemo.module';
+import { <%= angularXAppName %>VirtualScrollerDemoModule } from './data/virtualscroller/virtualscrollerdemo.module';
 import { <%= angularXAppName %>PickListDemoModule } from './data/picklist/picklistdemo.module';
 import { <%= angularXAppName %>OrderListDemoModule } from './data/orderlist/orderlistdemo.module';
 import { <%= angularXAppName %>FullCalendarDemoModule } from './data/fullcalendar/fullcalendardemo.module';
@@ -175,7 +175,7 @@ import { <%= angularXAppName %>ProgressSpinnerDemoModule } from './misc/progress
 
         <%= angularXAppName %>TableDemoModule,
         <%= angularXAppName %>DataViewDemoModule,
-        <%= angularXAppName %>DataScrollerDemoModule,
+        <%= angularXAppName %>VirtualScrollerDemoModule,
         <%= angularXAppName %>FullCalendarDemoModule,
         <%= angularXAppName %>OrderListDemoModule,
         <%= angularXAppName %>PickListDemoModule,

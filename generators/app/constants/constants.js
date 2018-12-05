@@ -187,8 +187,8 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         value: 'carousel',
         checked: false
     }, {
-        name: 'DataScroller',
-        value: 'datascroller',
+        name: 'VirtualScroller',
+        value: 'virtualscroller',
         checked: false
     }, {
         name: 'Table',
@@ -641,7 +641,7 @@ const components = {
     paginator: 'data',
     fullcalendar: 'data',
     treetable: 'data',
-    datascroller: 'data',
+    virtualscroller: 'data',
     orgchart: 'data',
     gmap: 'data',
     picklist: 'data',
@@ -740,7 +740,7 @@ const primengTranslation = `"primeng": {
                 "paginator": "Paginator",
                 "fullcalendar": "FullCalendar",
                 "treetable": "TreeTable",
-                "datascroller": "DataScroller",
+                "virtualscroller": "VirtualScroller",
                 "orgchart": "OrgChart",
                 "gmap":  "Gmap",
                 "picklist":  "PickList",

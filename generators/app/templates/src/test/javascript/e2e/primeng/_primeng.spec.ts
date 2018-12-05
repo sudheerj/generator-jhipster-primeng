@@ -403,12 +403,12 @@ describe('administration', () => {
         });
     });
 
-    it('should load DataScroller', () => {
-        element(by.css('[routerLink="datascroller"]')).click();
+    it('should load VirtualScroller', () => {
+        element(by.css('[routerLink="virtualscroller"]')).click();
         <%_ if (enableTranslation) { _%>
-            const expect1 = /primeng.data.datascroller.title/;
+            const expect1 = /primeng.data.virtualscroller.title/;
             <%_ } else { _%>
-            const expect1 = /DataScroller/;
+            const expect1 = /VirtualScroller/;
             <%_ } _%>
         element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
             expect(value).toMatch(expect1);

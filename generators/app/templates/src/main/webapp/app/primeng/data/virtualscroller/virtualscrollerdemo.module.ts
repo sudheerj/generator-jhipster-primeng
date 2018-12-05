@@ -5,8 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {DataScrollerModule} from 'primeng/components/datascroller/datascroller';
-import {DialogModule} from 'primeng/components/dialog/dialog';
+import {VirtualScrollerModule} from 'primeng/components/virtualscroller/virtualscroller';
 import {ButtonModule} from 'primeng/components/button/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
@@ -14,31 +13,30 @@ import {BrowserService} from './service/browser.service';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {
-    DataScrollerDemoComponent,
-    datascrollerDemoRoute
+    VirtualScrollerDemoComponent,
+    virtualscrollerDemoRoute
 } from './';
 
 const primeng_STATES = [
-    datascrollerDemoRoute
+    virtualscrollerDemoRoute
 ];
 
 @NgModule({
     imports: [
         <%= angularXAppName %>SharedModule,
         FormsModule,
-        DataScrollerModule,
+        VirtualScrollerModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        DialogModule,
         ButtonModule,
         WizardModule,
         GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [
-        DataScrollerDemoComponent
+        VirtualScrollerDemoComponent
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angularXAppName %>DataScrollerDemoModule {}
+export class <%= angularXAppName %>VirtualScrollerDemoModule {}

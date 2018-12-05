@@ -1,6 +1,6 @@
 const browserComponents = {
     carousel: 'data',
-    datascroller: 'data',
+    virtualscroller: 'data',
     table: 'data',
     dataview: 'data',
     defer: 'misc',
