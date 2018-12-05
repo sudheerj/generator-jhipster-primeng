@@ -15,7 +15,7 @@ export class ChipsDemoComponent implements OnInit {
 
     complexcontacts: string[];
 
-    disabledcontacts: string[] = ['PrimeTek', 'GeekoTek'];
+    disabledcontacts: string[] = ['PrimeTek', 'InfoTek'];
 
     activeIndex = 0;
 
@@ -29,6 +29,12 @@ export class ChipsDemoComponent implements OnInit {
         this.msgs.length = 0;
         this.msgs.push(
             {severity: 'info', summary: 'The contact is removed'});
+    }
+
+    onContactClick() {
+        this.msgs.length = 0;
+        this.msgs.push(
+            {severity: 'info', summary: 'The contact is clicked'});
     }
 
     onChangeStep(label: string) {

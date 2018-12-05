@@ -6,7 +6,7 @@ import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {GrowlModule} from 'primeng/components/growl/growl';
-import {DataTableModule} from 'primeng/components/datatable/datatable';
+import {TableModule} from 'primeng/components/table/table';
 import {DeferModule} from 'primeng/components/defer/defer';
 import {BrowserService} from './service/browser.service';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
@@ -26,7 +26,7 @@ const primeng_STATES = [
         CommonModule,
         BrowserAnimationsModule,
         GrowlModule,
-        DataTableModule,
+        TableModule,
         DeferModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

@@ -4,7 +4,7 @@ import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {OverlayPanelModule} from 'primeng/components/overlaypanel/overlaypanel';
-import {DataTableModule} from 'primeng/components/datatable/datatable';
+import {TableModule} from 'primeng/components/table/table';
 import {ButtonModule} from 'primeng/components/button/button';
 import {GrowlModule} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +25,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         ButtonModule,
         OverlayPanelModule,
-        DataTableModule,
+        TableModule,
         GrowlModule,
         BrowserAnimationsModule,
         WizardModule,

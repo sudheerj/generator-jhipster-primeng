@@ -32,7 +32,7 @@
         <pe-step label="Events">
             <h3>Events</h3>
             <p-chips [(ngModel)]="contactsnotified" name="events" placeholder="Enter contacts" (onAdd)="onAddContact()"
-                     (onRemove)="onRemoveContact()"></p-chips>
+                     (onRemove)="onRemoveContact()" (onChipClick)="onContactClick()"></p-chips>
         </pe-step>
 
         <!-- Disabled -->

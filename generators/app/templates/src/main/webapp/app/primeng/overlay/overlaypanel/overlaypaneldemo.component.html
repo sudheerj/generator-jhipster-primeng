@@ -17,19 +17,31 @@
 
         </pe-step>
 
-        <!-- DataTable Integration -->
-        <pe-step label="DataTable Integration">
-            <p-dataTable [value]="scores">
-                <p-column header="Result">
-                    <ng-template let-score="rowData" pTemplate="body">
-                        <button type="button" pButton (click)="selectScore($event,score,overlayintegration);" icon="fa fa-search"></button>
-                    </ng-template>
-                </p-column>
-                <p-column field="name" header="Name"></p-column>
-                <p-column field="java" header="Java"></p-column>
-                <p-column field="scala" header="Scala"></p-column>
-                <p-column field="play" header="Play"></p-column>
-            </p-dataTable>
+        <!-- Table Integration -->
+        <pe-step label="Table Integration">
+            <p-table [value]="scores" [style]="{width: '500px'}" [paginator]="true" [rows]="5">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 4em"></th>
+                        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                        <th pSortableColumn="java">Java <p-sortIcon field="java"></p-sortIcon></th>
+                        <th pSortableColumn="scala">Scala <p-sortIcon field="scala"></p-sortIcon></th>
+                        <th pSortableColumn="play">Play <p-sortIcon field="play"></p-sortIcon></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-browser>
+                    <tr>
+                        <td>
+                            <button type="button" pButton (click)="selectScore($event,score,overlayintegration);" icon="fa fa-search"></button>
+                        </td>
+                        <td>{{browser.name}}</td>
+                        <td>{{browser.java}}</td>
+                        <td>{{browser.scala}}</td>
+                        <td>{{browser.play}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
             <p-overlayPanel #overlayintegration appendTo="body">
                 Total marks: <span>{{marks}}</span> <br/>
                 Percentage: <span>{{percentage}}%</span>

@@ -13,13 +13,27 @@
 
     <pe-step label="DataTable Integration">
         <p-contextMenu #contextmenu [model]="tableItems" appendTo="body"></p-contextMenu>
-        <p-dataTable [value]="employees" selectionMode="single" [(selection)]="selectedEmployee" [contextMenu]="contextmenu">
-            <p-header>Employee Information</p-header>
-            <p-column field="id" header="Employee ID"></p-column>
-            <p-column field="name" header="Name"></p-column>
-            <p-column field="email" header="Email"></p-column>
-            <p-column field="contact" header="Telephone"></p-column>
-        </p-dataTable>
+            <p-table  [value]="browsers" [(contextMenuSelection)]="selectedEmployee" [contextMenu]="contextmenu">
+                <ng-template pTemplate="caption">
+                    Employee Information
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Telephone</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-employee>
+                    <tr>
+                        <td>{{employee.id}}</td>
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.contact}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
     </pe-step>
 
 </pe-steps>

@@ -2,15 +2,33 @@
     <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
         <!-- Basic -->
         <pe-step label="Basic">
+            <div style="height:800px">
+                Table is not loaded, scroll down to initialize it.
+            </div>
+
+            <p-toast [style]="{marginTop: '80px'}"></p-toast>
+
             <div pDefer (onLoad)="initData()">
-            <ng-template>
-                <p-dataTable [value]="browsers">
-                    <p-column field="engine" header="Engine"></p-column>
-                    <p-column field="browser" header="Browser"></p-column>
-                    <p-column field="platform" header="Platform"></p-column>
-                    <p-column field="grade" header="Grade"></p-column>
-                </p-dataTable>
-            </ng-template>
+                <ng-template>
+                    <p-table [value]="browsers">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>Engine</th>
+                                <th>Browser</th>
+                                <th>Platform</th>
+                                <th>Grade</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-browser>
+                            <tr>
+                                <td>{{browser.engine}}</td>
+                                <td>{{browser.browser}}</td>
+                                <td>{{browser.platform}}</td>
+                                <td>{{browser.grade}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </ng-template>
             </div>
         </pe-step>
     </pe-steps>

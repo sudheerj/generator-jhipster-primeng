@@ -16,11 +16,11 @@ export class ColorpickerDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    colorFormat1: string;
+    colorFormat1 = 'FF0000';
 
-    colorFormat2: string;
+    colorFormat2 = '00FF00';
 
-    colorFormat3: string;
+    colorFormat3 = '0000FF';
 
     onChangeColor(event: any) {
         this.msgs = [];
