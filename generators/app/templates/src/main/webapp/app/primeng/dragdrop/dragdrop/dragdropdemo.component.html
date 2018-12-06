@@ -1,13 +1,25 @@
 <form novalidate>
     <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);" [stepClass]="'layout-format'">
-        <!-- Basic -->
-        <pe-step label="Basic">
+        <!-- Drag Only -->
+        <pe-step label="Drag Only">
+            <div pDraggable="pnl"  dragHandle=".ui-panel-titlebar">
+                <p-panel header="Drag Header">
+                    The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
+                    His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
+                    Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
+                    kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
+                </p-panel>
+            </div>
+        </pe-step>
+
+        <!-- Drag and Drop to Table -->
+        <pe-step label="Drag and Drop to Table">
             <div class="dnd-container">
-                <div class="p-grid">
-                    <div class="p-col-12 ui-md-6 drag-column">
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-6 ui-g-nopad drag-column">
                         <ul style="margin:0;padding:0">
                             <li *ngFor="let doc of availableDocs" class="ui-helper-clearfix" pDraggable="docs"
-                                (onDragStart)="dragStart($event,car)" (onDragEnd)="dragEnd($event)">
+                                (onDragStart)="dragStart($event, doc)" (onDragEnd)="dragEnd($event)">
                                 <i class="fa fa-arrows fa-2x" style="float:right;margin-top:8px"></i>
                                 <p-panel [header]="doc.title" [style]="{'text-align':'center'}">
                                     <img src="/content/primeng/assets/data/images/docs/{{doc.extension}}.png">
@@ -16,32 +28,28 @@
                         </ul>
                     </div>
 
-
-                    <br/><br/>
-                    <div class="p-col-12 ui-md-6 drop-column">
-                        <div pDroppable="docs" (onDrop)="drop($event)" [ngClass]="{'dragged-doc': draggedDoc}">
-                            <p-table [value]="deletedDocs">
-                                <ng-template pTemplate="caption">
-                                    Recycle Bin
-                                </ng-template>
-                                <ng-template pTemplate="header">
-                                    <tr>
-                                        <th>Title</th>
-                                        <th>Size (bytes)</th>
-                                        <th>Creator</th>
-                                        <th>Creation Date</th>
-                                    </tr>
-                                </ng-template>
-                                <ng-template pTemplate="body" let-doc>
-                                    <tr>
-                                        <td>{{doc.title}}</td>
-                                        <td>{{doc.size}}</td>
-                                        <td>{{doc.creator}}</td>
-                                        <td>{{doc[creationDate].toLocaleDateString()}}</td>
-                                    </tr>
-                                </ng-template>
-                            </p-table>
-                        </div>
+                    <div class="ui-g-12 ui-md-6 drop-column" pDroppable="docs" (onDrop)="drop($event)" [ngClass]="{'dragged-doc': draggedDoc}">
+                        <p-table [value]="seletedDocs">
+                            <ng-template pTemplate="caption">
+                                Recycle Bin
+                            </ng-template>
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Size (bytes)</th>
+                                    <th>Creator</th>
+                                    <th>Creation Date</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-doc>
+                                <tr>
+                                    <td>{{doc.title}}</td>
+                                    <td>{{doc.size}}</td>
+                                    <td>{{doc.creator}}</td>
+                                    <td>{{doc[creationDate]}}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
                     </div>
 
                     <br/><br/>

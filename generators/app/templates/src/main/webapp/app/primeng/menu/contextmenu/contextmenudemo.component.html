@@ -13,7 +13,7 @@
 
     <pe-step label="DataTable Integration">
         <p-contextMenu #contextmenu [model]="tableItems" appendTo="body"></p-contextMenu>
-            <p-table  [value]="browsers" [(contextMenuSelection)]="selectedEmployee" [contextMenu]="contextmenu">
+            <p-table  [value]="employees" [(contextMenuSelection)]="selectedEmployee" [contextMenu]="contextmenu">
                 <ng-template pTemplate="caption">
                     Employee Information
                 </ng-template>

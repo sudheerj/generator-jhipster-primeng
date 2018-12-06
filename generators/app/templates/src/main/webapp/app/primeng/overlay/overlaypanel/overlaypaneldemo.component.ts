@@ -27,7 +27,7 @@ export class OverlayPanelDemoComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.scoreService.getScores().subscribe((scores: Score[]) => this.scores = scores);
+        this.scoreService.getScores().subscribe((scores: Score[]) => this.scores = scores.data);
     }
 
     onChangeStep(label: string) {
@@ -35,24 +35,14 @@ export class OverlayPanelDemoComponent implements OnInit {
         this.msgs.push({severity: 'info', summary: label});
     }
 
-    onBeforeShow() {
+    onShow() {
         this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: 'Show dialog', detail: 'Before shown'});
+        this.msgs.push({severity: 'info', summary: 'Show dialog', detail: 'Overlay shown'});
     }
 
-    onAfterShow() {
+    onHide() {
         this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: 'Show dialog', detail: 'After shown'});
-    }
-
-    onBeforeHide() {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: 'Hide dialog', detail: 'Before hide'});
-    }
-
-    onAfterHide() {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: 'Hide dialog', detail: 'After hide'});
+        this.msgs.push({severity: 'info', summary: 'Hide dialog', detail: 'Overlay hide'});
     }
 
 }

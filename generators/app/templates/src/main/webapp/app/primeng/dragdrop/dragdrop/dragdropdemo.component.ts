@@ -7,20 +7,37 @@ import {Message} from 'primeng/components/common/api';
 @Component({
     selector: 'jhi-dragdrop',
     templateUrl: './dragdropdemo.component.html',
-    styles: []
+    styles: [`
+        :host ::ng-deep .drag-column {
+            padding-right: .5em;
+        }
+
+        :host ::ng-deep .drop-column {
+            border: 1px solid #c8c8c8;
+            background-color: #ffffff;
+        }
+
+        .ui-g li {
+            list-style-type: none;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #c8c8c8;
+            background-color: #ffffff;
+        }
+    `]
 })
 export class DragdropDemoComponent implements OnInit {
     msgs: Message[] = [];
     activeIndex = 0;
     availableDocs: Document[];
-    deletedDocs: Document[];
+    seletedDocs: Document[];
     draggedDoc: Document;
 
     constructor(private docService: DocumentService) {
     }
 
     ngOnInit() {
-        this.deletedDocs = [];
+        this.seletedDocs = [];
         this.docService.getDocuments().subscribe((docs: any) => this.availableDocs = docs.data);
     }
 
@@ -31,7 +48,7 @@ export class DragdropDemoComponent implements OnInit {
     drop(event: any) {
         if (this.draggedDoc) {
             // add draggable element to the deleted documents list
-            this.deletedDocs = [...this.deletedDocs, this.draggedDoc];
+            this.seletedDocs = [...this.seletedDocs, this.draggedDoc];
             // remove draggable element from the available documents list
             this.availableDocs = this.availableDocs.filter((e: Document) => e.id !== this.draggedDoc.id);
             this.draggedDoc = null;
