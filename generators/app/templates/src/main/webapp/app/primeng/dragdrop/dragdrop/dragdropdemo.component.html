@@ -3,8 +3,8 @@
         <!-- Basic -->
         <pe-step label="Basic">
             <div class="dnd-container">
-                <div class="ui-g">
-                    <div class="ui-g-12 ui-md-6 ui-g-nopad drag-column">
+                <div class="p-grid">
+                    <div class="p-col-12 ui-md-6 drag-column">
                         <ul style="margin:0;padding:0">
                             <li *ngFor="let doc of availableDocs" class="ui-helper-clearfix" pDraggable="docs"
                                 (onDragStart)="dragStart($event,car)" (onDragEnd)="dragEnd($event)">
@@ -18,19 +18,29 @@
 
 
                     <br/><br/>
-                    <div class="ui-g-12 ui-md-6 drop-column">
+                    <div class="p-col-12 ui-md-6 drop-column">
                         <div pDroppable="docs" (onDrop)="drop($event)" [ngClass]="{'dragged-doc': draggedDoc}">
-                            <p-dataTable [value]="deletedDocs">
-                                <p-header>Recycle Bin</p-header>
-                                <p-column field="title" header="Title"></p-column>
-                                <p-column field="size" header="Size (bytes)"></p-column>
-                                <p-column field="creator" header="Creator"></p-column>
-                                <p-column field="creationDate" header="Creation Date">
-                                    <ng-template let-col let-doc="rowData" pTemplate="body">
-                                        {{doc[col.field].toLocaleDateString()}}
-                                    </ng-template>
-                                </p-column>
-                            </p-dataTable>
+                            <p-table [value]="deletedDocs">
+                                <ng-template pTemplate="caption">
+                                    Recycle Bin
+                                </ng-template>
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Size (bytes)</th>
+                                        <th>Creator</th>
+                                        <th>Creation Date</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-doc>
+                                    <tr>
+                                        <td>{{doc.title}}</td>
+                                        <td>{{doc.size}}</td>
+                                        <td>{{doc.creator}}</td>
+                                        <td>{{doc[creationDate].toLocaleDateString()}}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
                         </div>
                     </div>
 
