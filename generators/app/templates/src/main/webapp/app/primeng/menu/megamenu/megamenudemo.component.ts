@@ -15,7 +15,7 @@ export class MegaMenuDemoComponent implements OnInit {
     ngOnInit() {
         this.items = [
             {
-                label: 'HOME & FURNITURE', icon: 'fa-home',
+                label: 'HOME & FURNITURE', icon: 'fa fa-home',
                 items: [
                     [
                         {
@@ -40,7 +40,7 @@ export class MegaMenuDemoComponent implements OnInit {
                 ]
             },
             {
-                label: 'Men', icon: 'fa-male',
+                label: 'Men', icon: 'fa fa-male',
                 items: [
                     [
                         {
@@ -76,7 +76,7 @@ export class MegaMenuDemoComponent implements OnInit {
                 ]
             },
             {
-                label: 'Women', icon: 'fa-female',
+                label: 'Women', icon: 'fa fa-female',
                 items: [
                     [
                         {
@@ -101,7 +101,7 @@ export class MegaMenuDemoComponent implements OnInit {
                 ]
             },
             {
-                label: 'Kids', icon: 'fa-child',
+                label: 'Kids', icon: 'fa fa-child',
                 items: [
                     [
                         {

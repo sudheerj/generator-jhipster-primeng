@@ -16,10 +16,10 @@ export class MenuBarDemoComponent implements OnInit {
         this.items = [
             {
                 label: 'File',
-                icon: 'fa-file-o',
+                icon: 'fa fa-file-o',
                 items: [{
                     label: 'New',
-                    icon: 'fa-plus',
+                    icon: 'fa fa-plus',
                     items: [
                         {label: 'File'},
                         {label: 'Directory'},
@@ -31,14 +31,14 @@ export class MenuBarDemoComponent implements OnInit {
             },
             {
                 label: 'Edit',
-                icon: 'fa-edit',
+                icon: 'fa fa-edit',
                 items: [
-                    {label: 'Cut', icon: 'fa-cut'},
-                    {label: 'Copy', icon: 'fa-copy'},
-                    {label: 'Paste', icon: 'fa-paste'},
-                    {label: 'Undo', icon: 'fa-mail-forward'},
-                    {label: 'Redo', icon: 'fa-mail-reply'},
-                    {label: 'Find', icon: 'fa-search', items: [
+                    {label: 'Cut', icon: 'fa fa-cut'},
+                    {label: 'Copy', icon: 'fa fa-copy'},
+                    {label: 'Paste', icon: 'fa fa-paste'},
+                    {label: 'Undo', icon: 'fa fa-mail-forward'},
+                    {label: 'Redo', icon: 'fa fa-mail-reply'},
+                    {label: 'Find', icon: 'fa fa-search', items: [
                         {label: 'Find Next'},
                         {label: 'Find Previous'},
                     ]}
@@ -46,14 +46,14 @@ export class MenuBarDemoComponent implements OnInit {
             },
             {
                 label: 'View',
-                icon: 'fa-question',
+                icon: 'fa fa-question',
                 items: [
                     {
                         label: ''
                     },
                     {
                         label: 'Tool windows',
-                        icon: 'fa-search',
+                        icon: 'fa fa-search',
                         items: [
                             {
                                 label: 'Project',
@@ -71,14 +71,14 @@ export class MenuBarDemoComponent implements OnInit {
             },
             {
                 label: 'Help',
-                icon: 'fa-question',
+                icon: 'fa fa-question',
                 items: [
                     {
                         label: 'Contents'
                     },
                     {
                         label: 'Search',
-                        icon: 'fa-search',
+                        icon: 'fa fa-search',
                         items: [
                             {
                                 label: 'Text',

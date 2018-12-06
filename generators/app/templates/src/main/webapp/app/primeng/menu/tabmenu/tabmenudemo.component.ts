@@ -16,16 +16,16 @@ export class TabMenuDemoComponent implements OnInit {
 
     ngOnInit() {
         this.items = [
-            {label: 'Overview', icon: 'fa-bar-chart', routerLink: ['/pages/overview']},
-            {label: 'Showcase', icon: 'fa-calendar', command: () => {
+            {label: 'Overview', icon: 'fa fa-bar-chart', routerLink: ['/pages/overview']},
+            {label: 'Showcase', icon: 'fa fa-calendar', command: () => {
                 this.msgs.length = 0;
                 this.msgs.push({severity: 'info', summary: 'PrimeNG Showcase', detail: 'Navigate all components'});
             }},
-            {label: 'Documentation', icon: 'fa-book', url: 'https://www.primefaces.org/documentation/'},
-            {label: 'Downloads', icon: 'fa-download', routerLink: ['/pages/downloads']},
-            {label: 'Support', icon: 'fa-support', url: 'https://www.primefaces.org/support/'},
-            {label: 'Social', icon: 'fa-twitter', url: 'https://twitter.com/prime_ng'},
-            {label: 'License', icon: 'fa-twitter', url: 'https://www.primefaces.org/license/'}
+            {label: 'Documentation', icon: 'fa fa-book', url: 'https://www.primefaces.org/documentation/'},
+            {label: 'Downloads', icon: 'fa fa-download', routerLink: ['/pages/downloads']},
+            {label: 'Support', icon: 'fa fa-support', url: 'https://www.primefaces.org/support/'},
+            {label: 'Social', icon: 'fa fa-twitter', url: 'https://twitter.com/prime_ng'},
+            {label: 'License', icon: 'fa fa-twitter', url: 'https://www.primefaces.org/license/'}
         ];
         this.activeItem = this.items[2];
     }
