@@ -50,6 +50,7 @@ export class MessagesDemoComponent implements OnInit {
 
     onChangeStep(label: string) {
         this.msgs.length = 0;
+        this.clearMessages();
         this.msgs.push({severity: 'info', summary: label});
     }
 

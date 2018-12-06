@@ -355,10 +355,6 @@ const COMPONENT_CHOICE_LIST = [new inquirer.Separator(' == Input Components == '
         value: 'radarchart',
         checked: false
     }, new inquirer.Separator(' == Message Components == '), {
-        name: 'Growl',
-        value: 'growl',
-        checked: false
-    }, {
         name: 'Messages',
         value: 'messages',
         checked: false
@@ -678,7 +674,6 @@ const components = {
     polarareachart: 'charts',
     radarchart: 'charts',
     messages: 'messages',
-    growl: 'messages',
     toast: 'messages',
     galleria: 'multimedia',
     dragdrop: 'dragdrop',
@@ -725,7 +720,6 @@ const primengTranslation = `"primeng": {
                 "selectbutton": "SelectButton",
                 "galleria":"Galleria",
                 "messages":"Messages",
-                "growl":"Growl",
                 "toast":"Toast",
                 "dialog":"Dialog",
                 "confirmdialog":"ConfirmDialog",

@@ -763,18 +763,6 @@ describe('administration', () => {
         });
     });
 
-    it('should load Growl', () => {
-        element(by.css('[routerLink="growl"]')).click();
-        <%_ if (enableTranslation) { _%>
-            const expect1 = /primeng.messages.growl.title/;
-            <%_ } else { _%>
-            const expect1 = /Growl/;
-            <%_ } _%>
-        element.all(by.css('h2 span')).first().<%- elementGetter %>.then((value) => {
-            expect(value).toMatch(expect1);
-        });
-    });
-
     it('should load Toast', () => {
         element(by.css('[routerLink="toast"]')).click();
         <%_ if (enableTranslation) { _%>

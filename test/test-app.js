@@ -299,17 +299,17 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/menu/tieredmenu/tieredmenudemo.module.ts',
         'src/main/webapp/app/primeng/menu/tieredmenu/tieredmenudemo.route.ts',
 
-        'src/main/webapp/app/primeng/messages/growl/index.ts',
-        'src/main/webapp/app/primeng/messages/growl/growldemo.component.html',
-        'src/main/webapp/app/primeng/messages/growl/growldemo.component.ts',
-        'src/main/webapp/app/primeng/messages/growl/growldemo.module.ts',
-        'src/main/webapp/app/primeng/messages/growl/growldemo.route.ts',
-
         'src/main/webapp/app/primeng/messages/messages/index.ts',
         'src/main/webapp/app/primeng/messages/messages/messagesdemo.component.html',
         'src/main/webapp/app/primeng/messages/messages/messagesdemo.component.ts',
         'src/main/webapp/app/primeng/messages/messages/messagesdemo.module.ts',
         'src/main/webapp/app/primeng/messages/messages/messagesdemo.route.ts',
+
+        'src/main/webapp/app/primeng/messages/toast/index.ts',
+        'src/main/webapp/app/primeng/messages/toast/toastdemo.component.html',
+        'src/main/webapp/app/primeng/messages/toast/toastdemo.component.ts',
+        'src/main/webapp/app/primeng/messages/toast/toastdemo.module.ts',
+        'src/main/webapp/app/primeng/messages/toast/toastdemo.route.ts',
 
         'src/main/webapp/app/primeng/misc/blockui/index.ts',
         'src/main/webapp/app/primeng/misc/blockui/blockuidemo.component.html',

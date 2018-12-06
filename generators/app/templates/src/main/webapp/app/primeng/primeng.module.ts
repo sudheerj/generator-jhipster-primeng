@@ -33,7 +33,6 @@ import { <%= angularXAppName %>RadioButtonDemoModule } from './inputs/radiobutto
 import { <%= angularXAppName %>ToggleButtonDemoModule } from './inputs/togglebutton/togglebuttondemo.module';
 import { <%= angularXAppName %>EditorDemoModule } from './inputs/editor/editordemo.module';
 
-import { <%= angularXAppName %>GrowlDemoModule } from './messages/growl/growldemo.module';
 import { <%= angularXAppName %>MessagesDemoModule } from './messages/messages/messagesdemo.module';
 import { <%= angularXAppName %>ToastDemoModule } from './messages/toast/toastdemo.module';
 import { <%= angularXAppName %>GalleriaDemoModule } from './multimedia/galleria/galleriademo.module';
@@ -141,9 +140,8 @@ import { <%= angularXAppName %>ProgressSpinnerDemoModule } from './misc/progress
         <%= angularXAppName %>CheckboxDemoModule,
         <%= angularXAppName %>KeyFilterDemoModule,
 
-        <%= angularXAppName %>GrowlDemoModule,
         <%= angularXAppName %>MessagesDemoModule,
-        /*<%= angularXAppName %>ToastDemoModule,*/
+        <%= angularXAppName %>ToastDemoModule,
         <%= angularXAppName %>GalleriaDemoModule,
 
         <%= angularXAppName %>FileUploadDemoModule,

@@ -499,12 +499,6 @@ module.exports = JhipsterGenerator.extend({
                             <span jhiTranslate="global.menu.primeng.messages">Messages</span>
                         </a>
                     </li>`;
-        this.growlComponent = `<li uiSrefActive="active">
-                        <a class="dropdown-item" routerLink="growl" routerLinkActive="active" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.primeng.growl">Growl</span>
-                        </a>
-                    </li>`;
         this.toastComponent = `<li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="toast" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-circle-o" aria-hidden="true"></i>
@@ -858,7 +852,7 @@ module.exports = JhipsterGenerator.extend({
         this.messageComponents = `
                    <hr/>
                    <span style="font-weight:bold">Messages Components</span>
-                   <hr/> ${this.messageComponent}${this.growlComponent}${this.toastComponent}`;
+                   <hr/> ${this.messageComponent}${this.toastComponent}`;
 
 
         this.multimediaComponents = `
@@ -936,7 +930,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('panelmenu') > -1 ? this.panelmenuComponent : '') + (this.componentList.indexOf('slidemenu') > -1 ? this.slidemenuComponent : '') + (this.componentList.indexOf('steps') > -1 ? this.stepsComponent : '') + (this.componentList.indexOf('tabmenu') > -1 ? this.tabmenuComponent : '') +
                 (this.componentList.indexOf('tieredmenu') > -1 ? this.tieredmenuComponent : '') + (this.componentList.indexOf('barchart') > -1 ? this.barchartComponent : '') + (this.componentList.indexOf('doughnutchart') > -1 ? this.doughnutchartComponent : '') +
                 (this.componentList.indexOf('linechart') > -1 ? this.linechartComponent : '') + (this.componentList.indexOf('piechart') > -1 ? this.piechartComponent : '') + (this.componentList.indexOf('polarareachart') > -1 ? this.polarareachartComponent : '') +
-                (this.componentList.indexOf('radarchart') > -1 ? this.radarchartComponent : '') + (this.componentList.indexOf('growl') > -1 ? this.growlComponent : '') + (this.componentList.indexOf('messages') > -1 ? this.messageComponent : '') + (this.componentList.indexOf('toast') > -1 ? this.toastComponent : '')  +
+                (this.componentList.indexOf('radarchart') > -1 ? this.radarchartComponent : '') + (this.componentList.indexOf('messages') > -1 ? this.messageComponent : '') + (this.componentList.indexOf('toast') > -1 ? this.toastComponent : '')  +
                 (this.componentList.indexOf('galleria') > -1 ? this.galleriaComponent : '') + (this.componentList.indexOf('dragdrop') > -1 ? this.dragdropComponent : '') + (this.componentList.indexOf('blockui') > -1 ? this.blockuiComponent : '') +
                 (this.componentList.indexOf('captcha') > -1 ? this.captchaComponent : '') + (this.componentList.indexOf('defer') > -1 ? this.deferComponent : '') + (this.componentList.indexOf('inplace') > -1 ? this.inplaceComponent : '') +
                 (this.componentList.indexOf('progressbar') > -1 ? this.progressbarComponent : '') + (this.componentList.indexOf('rtl') > -1 ? this.rtlComponent : '') + (this.componentList.indexOf('terminal') > -1 ? this.terminalComponent : '') +
