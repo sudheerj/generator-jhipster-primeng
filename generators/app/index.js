@@ -213,12 +213,12 @@ module.exports = JhipsterGenerator.extend({
 
         const primengResources = `\n@import "~primeicons/primeicons.css";\n@import "~primeflex/primeflex.css";\n@import "~primeicons/primeicons.css";\n@import "~primeng/resources/primeng.min.css";\n@import "~primeng-extensions/resources/primeng-extensions.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
         const primengRootResources = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css"/>
+                                      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.0.0-alpha.2/fullcalendar.css"/>
                                       <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script>
                                       <script src="https://cdn.quilljs.com/1.1.8/quill.js"></script>  
                                       <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyA6Ar0UymhiklJBzEPLKKn2QHwbjdz3XV0" ></script>
                                       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.0/moment.min.js"></script>
-                                      <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>\n`;
+                                      <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.0.0-alpha.2/fullcalendar.js"></script>\n`;
 
         if (this.copyExternalAssetsInWebpack) {
             this.copyExternalAssetsInWebpack('primeng', 'primeng');
@@ -890,7 +890,7 @@ module.exports = JhipsterGenerator.extend({
         this.panelComponents = `
                    <hr/>
                     <span style="font-weight:bold">Panel Components</span>
-                   <hr/>${this.accordionComponent}${this.fieldsetComponent}${this.panelComponent}${this.tabviewComponent}${this.toolbarComponent}${this.scrollpanelComponent}`;
+                   <hr/>${this.accordionComponent}${this.fieldsetComponent}${this.panelComponent}${this.tabviewComponent}${this.toolbarComponent}${this.scrollpanelComponent}${this.cardComponent}${this.flexgridComponent}`;
         this.buttonComponents = `
                    <hr/>
                    <span style="font-weight:bold">Button Components</span>
