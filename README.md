@@ -1,7 +1,7 @@
 # generator-jhipster-primeng
 > Click :star:if you like the project. Pull Request are highly appreciated.
 
-[![NPM version][npm-image]][npm-url] <!--[![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url]--> [![npm](https://img.shields.io/npm/dt/generator-jhipster-primeng.svg)]() [![Dependency Status][daviddm-image]][daviddm-url] ![Crates.io](https://img.shields.io/github/license/mashape/apistatus.svg)
+[![NPM version][npm-image]][npm-url] [![npm](https://img.shields.io/npm/dt/generator-jhipster-primeng.svg)]() ![Crates.io](https://img.shields.io/github/license/mashape/apistatus.svg)
 > JHipster module, Generate PrimeNG application with 90+ components and their features 
 
 <div align="center">
@@ -68,7 +68,7 @@ npm update -g generator-jhipster-primeng
 2. Select your favourite theme
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/theme.png" height="400" width="700">
+    <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/theme-2.1.png" height="400" width="700">
 </div>
 
 3. Either select component group or individual components
@@ -79,7 +79,7 @@ npm update -g generator-jhipster-primeng
  
  
  <div align="center">
-     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/components.png" height="400" width="700">
+     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/components-2.1.png" height="400" width="700">
  </div>
  
  4. Select your component and navigate to required features

@@ -1119,6 +1119,7 @@ module.exports = JhipsterGenerator.extend({
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/angularjs.png', 'src/main/webapp/content/primeng/assets/data/images/logos/angularjs.png');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/angular2.svg', 'src/main/webapp/content/primeng/assets/data/images/logos/angular2.svg');
         this.copyImageFiles('src/main/webapp/assets/data/images/logos/angular4.png', 'src/main/webapp/content/primeng/assets/data/images/logos/angular4.png');
+        this.copyImageFiles('src/main/webapp/assets/data/images/user.png', 'src/main/webapp/content/primeng/assets/data/images/user.png');
 
         this.template('src/main/webapp/assets/data/json/employees/employees.json', 'src/main/webapp/content/primeng/assets/data/json/employees/employees.json');
         this.copyImageFiles('src/main/webapp/assets/data/images/cars/Golf.png', 'src/main/webapp/content/primeng/assets/data/images/cars/Golf.png');
