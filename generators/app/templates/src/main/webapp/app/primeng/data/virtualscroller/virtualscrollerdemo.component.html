@@ -8,45 +8,44 @@
                     List of Browsers
                 </p-header>
                 <ng-template let-browser pTemplate="item" let-i="index">
-                    <div class="p-grid browser-item">
-                        <div class="p-col-12">
+                    <div class="ui-g browser-item">
+                        <div class="ui-g-12 ui-md-2">
                             <div style="font-size: 24px; text-align: center; padding-top: 48px">{{i}}</div>
                         </div>
-                        <div class="p-col-12">
+                        <div class="ui-g-12 ui-md-2">
                             <img src="/content/primeng/assets/data/images/browsers/{{browser.code}}.png" width="100" height="80">
                         </div>
-                        <div class="p-col-12">
-                                <div class="p-col-2">Engine: </div>
-                                <div class="p-col-10">{{browser.engine}}</div>
+                        <div class="ui-g-12 ui-md-8">
+                            <div class="ui-g">
+                                <div class="ui-g-2 ui-sm-6">Engine: </div>
+                                <div class="ui-g-10 ui-sm-6">{{browser.engine}}</div>
 
-                                <div class="p-col-2">Browser: </div>
-                                <div class="p-col-10">{{browser.browser}}</div>
+                                <div class="ui-g-2 ui-sm-6">Browser: </div>
+                                <div class="ui-g-10 ui-sm-6">{{browser.browser}}</div>
 
-                                <div class="p-col-2">Platform: </div>
-                                <div class="p-col-10">{{browser.platform}}</div>
+                                <div class="ui-g-2 ui-sm-6">Platform: </div>
+                                <div class="ui-g-10 ui-sm-6">{{browser.platform}}</div>
 
-                                <div class="p-col-2">Version: </div>
-                                <div class="p-col-10">{{browser.version}}</div>
+                                <div class="ui-g-2 ui-sm-6">Version: </div>
+                                <div class="ui-g-10 ui-sm-6">{{browser.version}}</div>
 
-                                <div class="p-col-2">Grade: </div>
-                                <div class="p-col-10">{{browser.grade}}</div>
+                            </div>
                         </div>
-                    </div>
                 </ng-template>
                 <ng-template let-browser pTemplate="loadingItem">
-                    <div class="p-grid browser-item empty-browser-item">
-                        <div class="p-col-12">
+                    <div class="ui-g browser-item empty-browser-item">
+                        <div class="ui-g-12 ui-md-2">
                             <div class="empty-browser-item-index"></div>
                         </div>
-                        <div class="p-col-12">
+                        <div class="ui-g-12 ui-md-2">
                             <div class="empty-browser-item-index"></div>
                         </div>
-                        <div class="p-col-12">
-                            <div class="p-grid">
-                                <div class="p-col-12"><div class="empty-browser-item-index"></div></div>
-                                <div class="p-col-12"><div class="empty-browser-item-index"></div></div>
-                                <div class="p-col-12"><div class="empty-browser-item-index"></div></div>
-                                <div class="p-col-12"><div class="empty-browser-item-index"></div></div>
+                        <div class="ui-g-12 ui-md-8">
+                            <div class="ui-g">
+                                <div class="ui-g-12"><div class="empty-browser-item-index"></div></div>
+                                <div class="ui-g-12"><div class="empty-browser-item-index"></div></div>
+                                <div class="ui-g-12"><div class="empty-browser-item-index"></div></div>
+                                <div class="ui-g-12"><div class="empty-browser-item-index"></div></div>
                             </div>
                         </div>
                     </div>
@@ -59,39 +58,36 @@
         <pe-step label="Prepopulated List">
             <p-virtualScroller [value]="basicBrowsers" scrollHeight="500px" [itemSize]="150">
                 <p-header>
-                    <div class="p-grid">
-                        <div class="p-col-6 sort-container">
-                            <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" (onChange)="onSortChange()" [autoWidth]="false" [style]="{'min-width':'140px'}"></p-dropdown>
+                    <div class="ui-g browser-item">
+                        <div class="ui-g-6 sort-container">
+                            <p-dropdown name="dropdown" [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" (onChange)="onSortChange()" [autoWidth]="false" [style]="{'min-width':'140px'}"></p-dropdown>
                         </div>
-                        <div class="p-col-6 title-container">
+                        <div class="ui-g-6 title-container">
                             List of Browsers
                         </div>
                     </div>
                 </p-header>
                 <ng-template let-browser pTemplate="item" let-i="index">
-                    <div class="p-grid browser-item">
-                        <div class="p-col-12">
+                    <div class="ui-g browser-item">
+                        <div class="ui-g-12 ui-md-2">
                             <div style="font-size: 24px; text-align: center; padding-top: 48px">{{i}}</div>
                         </div>
-                        <div class="p-col-12">
+                        <div class="ui-g-12 ui-md-2">
                             <img src="/content/primeng/assets/data/images/browsers/{{browser.code}}.png" width="100" height="80">
                         </div>
-                        <div class="p-col-12">
-                            <div class="p-grid">
-                                <div class="p-col-2">Engine: </div>
-                                <div class="p-col-10">{{browser.engine}}</div>
+                        <div class="ui-g-12 ui-md-8">
+                            <div class="ui-g">
+                                <div class="ui-g-2 ui-sm-6">Engine: </div>
+                                <div class="ui-g-10 ui-sm-6">{{browser.engine}}</div>
 
-                                <div class="p-col-2">Browser: </div>
-                                <div class="p-col-10">{{browser.browser}}</div>
+                                <div class="ui-g-2 ui-sm-6">Browser: </div>
+                                <div class="ui-g-10 ui-sm-6">{{browser.browser}}</div>
 
-                                <div class="p-col-2">Platform: </div>
-                                <div class="p-col-10">{{browser.platform}}</div>
+                                <div class="ui-g-2 ui-sm-6">Platform: </div>
+                                <div class="ui-g-10 ui-sm-6">{{browser.platform}}</div>
 
-                                <div class="p-col-2">Version: </div>
-                                <div class="p-col-10">{{browser.version}}</div>
-
-                                <div class="p-col-2">Grade: </div>
-                                <div class="p-col-10">{{browser.grade}}</div>
+                                <div class="ui-g-2 ui-sm-6">Grade: </div>
+                                <div class="ui-g-10 ui-sm-6">{{browser.grade}}</div>
                             </div>
                         </div>
                     </div>

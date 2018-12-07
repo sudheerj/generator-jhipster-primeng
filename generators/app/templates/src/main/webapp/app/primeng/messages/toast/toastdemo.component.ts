@@ -6,7 +6,23 @@ import {MessageService} from 'primeng/components/common/messageservice';
 @Component({
     selector: 'jhi-toast',
     templateUrl: './toastdemo.component.html',
-    styles: []
+    styles: [`
+        :host ::ng-deep button {
+            margin-right: .25em;
+        }
+
+        :host ::ng-deep .custom-toast .ui-toast-message {
+            color: #ffffff;
+            background: #FC466B;
+            background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);
+            background: linear-gradient(to right, #3F5EFB, #FC466B);
+        }
+
+        :host ::ng-deep .custom-toast .ui-toast-close-icon {
+            color: #ffffff;
+        }
+    `],
+    providers: [MessageService]
 })
 export class ToastDemoComponent implements OnInit {
     messages: Message[] = [];
@@ -70,6 +86,12 @@ export class ToastDemoComponent implements OnInit {
 
     clear() {
         this.messageService.clear();
+    }
+
+    onChangeStep(label: string) {
+        this.msgs.length = 0;
+        this.clear();
+        this.msgs.push({severity: 'info', summary: label});
     }
 
 }

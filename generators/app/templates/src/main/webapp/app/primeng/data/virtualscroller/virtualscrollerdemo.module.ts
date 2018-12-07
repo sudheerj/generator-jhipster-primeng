@@ -7,6 +7,8 @@ import {APP_BASE_HREF} from '@angular/common';
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {VirtualScrollerModule} from 'primeng/components/virtualscroller/virtualscroller';
 import {ButtonModule} from 'primeng/components/button/button';
+import {DropdownModule} from 'primeng/components/dropdown/dropdown';
+import {InputTextModule} from 'primeng/components/inputtext/inputtext';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {BrowserService} from './service/browser.service';
@@ -29,6 +31,8 @@ const primeng_STATES = [
         HttpClientModule,
         BrowserAnimationsModule,
         ButtonModule,
+        DropdownModule,
+        InputTextModule,
         WizardModule,
         GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

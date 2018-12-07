@@ -27,7 +27,7 @@ export class OverlayPanelDemoComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.scoreService.getScores().subscribe((scores: Score[]) => this.scores = scores.data);
+        this.scoreService.getScores().subscribe((scores: any) => this.scores = scores.data);
     }
 
     onChangeStep(label: string) {

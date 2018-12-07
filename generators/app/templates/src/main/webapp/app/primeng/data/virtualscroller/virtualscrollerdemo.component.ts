@@ -65,7 +65,7 @@ export class VirtualScrollerDemoComponent implements OnInit {
     constructor(private browserService: BrowserService) { }
 
     ngOnInit() {
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 4));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data);
         this.browserService.getBrowsers().subscribe((browsers: any) => this.lazyloadingBrowsers = browsers.data.slice(0, 4));
 
         // in a real application, make a remote request to retrieve the number of records only, not the actual records

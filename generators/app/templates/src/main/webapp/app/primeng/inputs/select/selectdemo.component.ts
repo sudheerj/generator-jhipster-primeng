@@ -57,7 +57,7 @@ export class SelectDemoComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.countryService.getCountries().subscribe((countriesArray: Country[]) => {
+        this.countryService.getCountries().subscribe((countriesArray: any) => {
             this.generateCountries(countriesArray.data);
         });
     }

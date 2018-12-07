@@ -37,6 +37,7 @@ import {MenuItem, Message} from 'primeng/components/common/api';
 })
 export class StepsDemoComponent implements OnInit {
     activeIndexContainer = 0;
+    activeIndex = 0;
     msgs: Message[] = [];
     private items: MenuItem[];
 
