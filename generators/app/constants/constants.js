@@ -1,10 +1,10 @@
 const inquirer = require('inquirer');
 
 const ANGULAR_VERSION = '7.0.0';
-const PRIMENG_VERSION = '7.0.0';
+const PRIMENG_VERSION = '7.0.4';
 const PRIMEICONS_VERSION = '1.0.0';
 const PRIMEFLEX_VERSION = '1.0.0-rc.1';
-const PRIMENG_EXTENSIONS_VERSION = '0.0.45';
+const PRIMENG_EXTENSIONS_VERSION = '0.1.2';
 const CHARTJS_VERSION = '2.7.1';
 const MOMENT_VERSION = '2.20.1';
 const FULLCALENDAR_VERSION = '4.0.0-alpha.2';
