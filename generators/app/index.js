@@ -1,30 +1,22 @@
 const CONSTANTS = require('./constants/constants');
 const DEMO_CONSTANTS = require('./constants/demo-constants');
 
-const util = require('util');
 const chalk = require('chalk');
-const generator = require('yeoman-generator');
 const packagejs = require('../../package.json');
 const semver = require('semver');
 const shelljs = require('shelljs');
 const fs = require('fs');
-const inquirer = require('inquirer');
 const BaseGenerator = require('generator-jhipster/generators/generator-base');
 const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
-
-const JhipsterGenerator = generator.extend({});
-util.inherits(JhipsterGenerator, BaseGenerator);
 
 const CLIENT_MAIN_SRC_DIR = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
 const CLIENT_TEST_SRC_DIR = jhipsterConstants.CLIENT_TEST_SRC_DIR;
 
 let themeName = 'nova-colored';
 
-
-module.exports = JhipsterGenerator.extend({
-
-    constructor: function (...args) { // eslint-disable-line object-shorthand
-        generator.apply(this, args);
+module.exports = class extends BaseGenerator {
+    constructor(args, opts) {
+        super(args, opts);
 
         this.option('default', {
             type: String,
@@ -33,90 +25,94 @@ module.exports = JhipsterGenerator.extend({
         });
 
         this.defaultOption = this.options.default;
-    },
+    }
 
-    initializing: {
-        readConfig() {
-            this.jhipsterAppConfig = this.getJhipsterAppConfig();
-            if (!this.jhipsterAppConfig) {
-                this.error('Can\'t read .yo-rc.json');
-            }
-        },
-        readPackageJson() {
-            const fromPath = 'package.json';
-            this.libAngularVersion = CONSTANTS.ANGULAR_VERSION;
-            if (shelljs.test('-f', fromPath)) {
-                const fileData = this.fs.readJSON(fromPath);
-                if (fileData && fileData.dependencies) {
-                    if (fileData.dependencies['@angular/common']) {
-                        this.libAngularVersion = fileData.dependencies['@angular/common'];
-                    }
-                    if (fileData.dependencies['@angular/cdk']) {
-                        this.libAngularScrollingVersion = fileData.dependencies['@angular/cdk'];
-                    }
-                    if (fileData.dependencies['@angular/animations']) {
-                        this.libAngularAnimationsVersion = fileData.dependencies['@angular/animations'];
-                    }
-                    if (fileData.dependencies.primeng) {
-                        this.libPrimeNgVersion = fileData.dependencies.primeng;
-                    }
-                    if (fileData.dependencies['primeng-extensions']) {
-                        this.libPrimeNgExtensionsVersion = fileData.dependencies['primeng-extensions'];
-                    }
+    get initializing() {
+        return {
+            readConfig() {
+                this.jhipsterAppConfig = this.getJhipsterAppConfig();
+                if (!this.jhipsterAppConfig) {
+                    this.error('Can\'t read .yo-rc.json');
+                }
+            },
+            readPackageJson() {
+                const fromPath = 'package.json';
+                this.libAngularVersion = CONSTANTS.ANGULAR_VERSION;
+                if (shelljs.test('-f', fromPath)) {
+                    const fileData = this.fs.readJSON(fromPath);
+                    if (fileData && fileData.dependencies) {
+                        if (fileData.dependencies['@angular/common']) {
+                            this.libAngularVersion = fileData.dependencies['@angular/common'];
+                        }
+                        if (fileData.dependencies['@angular/cdk']) {
+                            this.libAngularScrollingVersion = fileData.dependencies['@angular/cdk'];
+                        }
+                        if (fileData.dependencies['@angular/animations']) {
+                            this.libAngularAnimationsVersion = fileData.dependencies['@angular/animations'];
+                        }
+                        if (fileData.dependencies.primeng) {
+                            this.libPrimeNgVersion = fileData.dependencies.primeng;
+                        }
+                        if (fileData.dependencies['primeng-extensions']) {
+                            this.libPrimeNgExtensionsVersion = fileData.dependencies['primeng-extensions'];
+                        }
 
-                    if (fileData.dependencies['chart.js']) {
-                        this.libChartJsVersion = fileData.dependencies['chart.js'];
-                    }
-                    if (fileData.dependencies.primeicons) {
-                        this.libPrimeIconsVersion = fileData.dependencies.primeicons;
-                    }
-                    if (fileData.dependencies.primeflex) {
-                        this.libPrimeFlexVersion = fileData.dependencies.primeflex;
-                    }
+                        if (fileData.dependencies['chart.js']) {
+                            this.libChartJsVersion = fileData.dependencies['chart.js'];
+                        }
+                        if (fileData.dependencies.primeicons) {
+                            this.libPrimeIconsVersion = fileData.dependencies.primeicons;
+                        }
+                        if (fileData.dependencies.primeflex) {
+                            this.libPrimeFlexVersion = fileData.dependencies.primeflex;
+                        }
 
-                    if (fileData.dependencies.moment) {
-                        this.libMomentVersion = fileData.dependencies.moment;
-                    }
+                        if (fileData.dependencies.moment) {
+                            this.libMomentVersion = fileData.dependencies.moment;
+                        }
 
-                    if (fileData.dependencies.fullcalendar) {
-                        this.libFullcalendarVersion = fileData.dependencies.fullcalendar;
-                    }
+                        if (fileData.dependencies.fullcalendar) {
+                            this.libFullcalendarVersion = fileData.dependencies.fullcalendar;
+                        }
 
-                    if (fileData.dependencies.quill) {
-                        this.libQuillVersion = fileData.dependencies.quill;
-                    }
+                        if (fileData.dependencies.quill) {
+                            this.libQuillVersion = fileData.dependencies.quill;
+                        }
 
-                    if (fileData.dependencies['chart.js']) {
-                        this.libChartJsVersion = fileData.dependencies['chart.js'];
+                        if (fileData.dependencies['chart.js']) {
+                            this.libChartJsVersion = fileData.dependencies['chart.js'];
+                        }
                     }
                 }
-            }
-        },
-        displayLogo() {
-            // Have Yeoman greet the user.
-            this.log('');
-            this.log(`${chalk.red('██████╗  ██████╗  ██╗ ███╗   ███╗ ███████╗ ███╗   ██╗  ██████╗')}`);
-            this.log(`${chalk.red('██╔══██╗ ██╔══██╗ ██║ ████╗ ████║ ██╔════╝ ████╗  ██║ ██╔════╝')}`);
-            this.log(`${chalk.red('██████╔╝ ██████╔╝ ██║ ██╔████╔██║ █████╗   ██╔██╗ ██║ ██║  ███╗')}`);
-            this.log(`${chalk.red('██╔═══╝  ██╔══██╗ ██║ ██║╚██╔╝██║ ██╔══╝   ██║╚██╗██║ ██║   ██║')}`);
-            this.log(`${chalk.red('██║      ██║  ██║ ██║ ██║ ╚═╝ ██║ ███████╗ ██║ ╚████║ ╚██████╔╝')}`);
-            this.log(`${chalk.red('╚═╝      ╚═╝  ╚═╝ ╚═╝ ╚═╝     ╚═╝ ╚══════╝ ╚═╝  ╚═══╝  ╚═════╝')}`);
-            this.log(`\nWelcome to the ${chalk.bold.yellow('JHipster primeng')} generator! ${chalk.yellow(`v${packagejs.version}\n`)}`);
-        },
-        checkclientFramework() {
-            if (this.jhipsterAppConfig.clientFramework !== 'angular5' && this.jhipsterAppConfig.clientFramework !== 'angularX') {
-                this.env.error(`${chalk.red.bold('ERROR!')} This module works only for Angular5...`);
-            }
-        },
-        checkJhipster() {
-            const jhipsterVersion = this.jhipsterAppConfig.jhipsterVersion;
-            const minimumJhipsterVersion = packagejs.dependencies['generator-jhipster'];
-            if (!semver.satisfies(jhipsterVersion, minimumJhipsterVersion)) {
-                this.warning(`\nYour generated project used an old JHipster version (${jhipsterVersion})... you need at least (${minimumJhipsterVersion})\n`);
-            }
-        }
-    },
+            },
 
+            displayLogo() {
+                // Have Yeoman greet the user.
+                this.log('');
+                this.log(`${chalk.red('██████╗  ██████╗  ██╗ ███╗   ███╗ ███████╗ ███╗   ██╗  ██████╗')}`);
+                this.log(`${chalk.red('██╔══██╗ ██╔══██╗ ██║ ████╗ ████║ ██╔════╝ ████╗  ██║ ██╔════╝')}`);
+                this.log(`${chalk.red('██████╔╝ ██████╔╝ ██║ ██╔████╔██║ █████╗   ██╔██╗ ██║ ██║  ███╗')}`);
+                this.log(`${chalk.red('██╔═══╝  ██╔══██╗ ██║ ██║╚██╔╝██║ ██╔══╝   ██║╚██╗██║ ██║   ██║')}`);
+                this.log(`${chalk.red('██║      ██║  ██║ ██║ ██║ ╚═╝ ██║ ███████╗ ██║ ╚████║ ╚██████╔╝')}`);
+                this.log(`${chalk.red('╚═╝      ╚═╝  ╚═╝ ╚═╝ ╚═╝     ╚═╝ ╚══════╝ ╚═╝  ╚═══╝  ╚═════╝')}`);
+                this.log(`\nWelcome to the ${chalk.bold.yellow('JHipster primeng')} generator! ${chalk.yellow(`v${packagejs.version}\n`)}`);
+            },
+
+            checkclientFramework() {
+                if (this.jhipsterAppConfig.clientFramework !== 'angular5' && this.jhipsterAppConfig.clientFramework !== 'angularX') {
+                    this.env.error(`${chalk.red.bold('ERROR!')} This module works only for Angular5...`);
+                }
+            },
+
+            checkJhipster() {
+                const jhipsterVersion = this.jhipsterAppConfig.jhipsterVersion;
+                const minimumJhipsterVersion = packagejs.dependencies['generator-jhipster'];
+                if (!semver.satisfies(jhipsterVersion, minimumJhipsterVersion)) {
+                    this.warning(`\nYour generated project used an old JHipster version (${jhipsterVersion})... you need at least (${minimumJhipsterVersion})\n`);
+                }
+            }
+        };
+    }
 
     prompting() {
         const done = this.async();
@@ -183,7 +179,7 @@ module.exports = JhipsterGenerator.extend({
             // To access props later use this.props.someOption;
             done();
         });
-    },
+    }
 
     writing() {
         if (this.defaultOption === undefined && !this.props.confirmation) {
@@ -266,7 +262,6 @@ module.exports = JhipsterGenerator.extend({
         this.clientPackageManager = this.jhipsterAppConfig.clientPackageManager;
         this.protractorTests = this.jhipsterAppConfig.testFrameworks.indexOf('protractor') !== -1;
         this.angularXAppName = this.getAngularXAppName();
-
 
         // add dependencies
         try {
@@ -930,7 +925,7 @@ module.exports = JhipsterGenerator.extend({
                 (this.componentList.indexOf('panelmenu') > -1 ? this.panelmenuComponent : '') + (this.componentList.indexOf('slidemenu') > -1 ? this.slidemenuComponent : '') + (this.componentList.indexOf('steps') > -1 ? this.stepsComponent : '') + (this.componentList.indexOf('tabmenu') > -1 ? this.tabmenuComponent : '') +
                 (this.componentList.indexOf('tieredmenu') > -1 ? this.tieredmenuComponent : '') + (this.componentList.indexOf('barchart') > -1 ? this.barchartComponent : '') + (this.componentList.indexOf('doughnutchart') > -1 ? this.doughnutchartComponent : '') +
                 (this.componentList.indexOf('linechart') > -1 ? this.linechartComponent : '') + (this.componentList.indexOf('piechart') > -1 ? this.piechartComponent : '') + (this.componentList.indexOf('polarareachart') > -1 ? this.polarareachartComponent : '') +
-                (this.componentList.indexOf('radarchart') > -1 ? this.radarchartComponent : '') + (this.componentList.indexOf('messages') > -1 ? this.messageComponent : '') + (this.componentList.indexOf('toast') > -1 ? this.toastComponent : '')  +
+                (this.componentList.indexOf('radarchart') > -1 ? this.radarchartComponent : '') + (this.componentList.indexOf('messages') > -1 ? this.messageComponent : '') + (this.componentList.indexOf('toast') > -1 ? this.toastComponent : '') +
                 (this.componentList.indexOf('galleria') > -1 ? this.galleriaComponent : '') + (this.componentList.indexOf('dragdrop') > -1 ? this.dragdropComponent : '') + (this.componentList.indexOf('blockui') > -1 ? this.blockuiComponent : '') +
                 (this.componentList.indexOf('captcha') > -1 ? this.captchaComponent : '') + (this.componentList.indexOf('defer') > -1 ? this.deferComponent : '') + (this.componentList.indexOf('inplace') > -1 ? this.inplaceComponent : '') +
                 (this.componentList.indexOf('progressbar') > -1 ? this.progressbarComponent : '') + (this.componentList.indexOf('rtl') > -1 ? this.rtlComponent : '') + (this.componentList.indexOf('terminal') > -1 ? this.terminalComponent : '') +
@@ -1065,7 +1060,7 @@ module.exports = JhipsterGenerator.extend({
             this.template(`src/main/webapp/app/primeng/${CONSTANTS.components[component]}/${component}/${component}demo.route.ts`, `src/main/webapp/app/primeng/${CONSTANTS.components[component]}/${component}/${component}demo.route.ts`);
         });
 
-        this.template(`src/main/webapp/app/primeng/inputs/slider/sliderdemo.component.css`, `src/main/webapp/app/primeng/inputs/slider/sliderdemo.component.css`);
+        this.template('src/main/webapp/app/primeng/inputs/slider/sliderdemo.component.css', 'src/main/webapp/app/primeng/inputs/slider/sliderdemo.component.css');
         Object.keys(DEMO_CONSTANTS.browserComponents).forEach((component) => {
             this.template(`src/main/webapp/app/primeng/${DEMO_CONSTANTS.browserComponents[component]}/${component}/service/browser.service.ts`, `src/main/webapp/app/primeng/${DEMO_CONSTANTS.browserComponents[component]}/${component}/service/browser.service.ts`);
             this.template(`src/main/webapp/app/primeng/${DEMO_CONSTANTS.browserComponents[component]}/${component}/service/browser.ts`, `src/main/webapp/app/primeng/${DEMO_CONSTANTS.browserComponents[component]}/${component}/service/browser.ts`);
@@ -1095,7 +1090,6 @@ module.exports = JhipsterGenerator.extend({
         this.template('src/main/webapp/app/primeng/menu/tabmenu/pages/downloads.component.ts', 'src/main/webapp/app/primeng/menu/tabmenu/pages/downloads.component.ts');
         this.template('src/main/webapp/app/primeng/menu/tabmenu/pages/overview.component.html', 'src/main/webapp/app/primeng/menu/tabmenu/pages/overview.component.html');
         this.template('src/main/webapp/app/primeng/menu/tabmenu/pages/overview.component.ts', 'src/main/webapp/app/primeng/menu/tabmenu/pages/overview.component.ts');
-
 
 
         Object.keys(DEMO_CONSTANTS.countryComponents).forEach((component) => {
@@ -1146,7 +1140,7 @@ module.exports = JhipsterGenerator.extend({
         CONSTANTS.codes.forEach((code) => {
             _this.copyImageFiles(`src/main/webapp/assets/data/images/countries/${code}`, `src/main/webapp/content/primeng/assets/data/images/countries/${code}`);
         });
-    },
+    }
 
     install() {
         if (!this.props.confirmation) {
@@ -1172,9 +1166,9 @@ module.exports = JhipsterGenerator.extend({
         } else {
             this.warning(`There is some problem. You need to resolve them, and launch ${chalk.yellow.bold('npm install')}`);
         }
-    },
+    }
 
     end() {
         this.log('End of primeng components generator');
     }
-});
+};
