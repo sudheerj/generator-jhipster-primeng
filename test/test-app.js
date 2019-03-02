@@ -212,7 +212,7 @@ const expectedFiles = {
         'src/main/webapp/app/primeng/data/picklist/service/country.ts',
 
         'src/main/webapp/app/primeng/data/fullcalendar/index.ts',
-        'src/main/webapp/app/primeng/data/fullcalendar/fullcalendaredemo.component.html',
+        'src/main/webapp/app/primeng/data/fullcalendar/fullcalendardemo.component.html',
         'src/main/webapp/app/primeng/data/fullcalendar/fullcalendardemo.component.ts',
         'src/main/webapp/app/primeng/data/fullcalendar/fullcalendardemo.module.ts',
         'src/main/webapp/app/primeng/data/fullcalendar/fullcalendardemo.route.ts',

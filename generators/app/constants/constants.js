@@ -1,14 +1,15 @@
 const inquirer = require('inquirer');
 
-const ANGULAR_VERSION = '7.0.0';
+const ANGULAR_VERSION = '7.2.7';
 const PRIMENG_VERSION = '7.0.5';
 const PRIMEICONS_VERSION = '1.0.0';
 const PRIMEFLEX_VERSION = '1.0.0-rc.1';
 const PRIMENG_EXTENSIONS_VERSION = '0.1.2';
-const CHARTJS_VERSION = '2.7.1';
-const MOMENT_VERSION = '2.20.1';
-const FULLCALENDAR_VERSION = '4.0.0-alpha.2';
+const CHARTJS_VERSION = '2.7.3';
+const MOMENT_VERSION = '2.24.0';
+const FULLCALENDAR_VERSION = '4.0.0-alpha.4';
 const QUILL_VERSION = '1.3.6';
+const FONTAWESOME_VERSION = '4.7.0';
 
 const THEME_OPTIONS = [
     {
@@ -778,6 +779,7 @@ module.exports = {
     PRIMENG_EXTENSIONS_VERSION,
     PRIMENG_VERSION,
     CHARTJS_VERSION,
+    FONTAWESOME_VERSION,
     COMPONENT_CHOICE_LIST,
     COMPONENT_GROUP_CHOICE_LIST,
     MOMENT_VERSION,
