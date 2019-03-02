@@ -1,5 +1,5 @@
 # generator-jhipster-primeng
-> Click :star:if you like the project. Pull Request are highly appreciated.
+> Click :star:if you like the project. Pull Requests are highly appreciated.
 
 [![NPM version][npm-image]][npm-url] [![npm](https://img.shields.io/npm/dt/generator-jhipster-primeng.svg)]() ![Crates.io](https://img.shields.io/github/license/mashape/apistatus.svg)
 > JHipster module, Generate PrimeNG application with 90+ components and their features 
@@ -17,7 +17,7 @@
 
 This is a [JHipster](http://jhipster.github.io/) module, that is meant to be used in a JHipster application.
 
-The minimum required version of JHipster is **>=5.7.0**
+The minimum required version of JHipster is **>=5.8.2**
 
 This module is used to generate components, using [PrimeNG](https://www.primefaces.org/primeng).
 
@@ -74,7 +74,7 @@ npm update -g generator-jhipster-primeng
 3. Either select component group or individual components
 
  <div align="center">
-     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/groups.png" height="400" width="700">
+     <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/groups-2.3.png" height="400" width="700">
  </div>
  
  
@@ -87,6 +87,14 @@ npm update -g generator-jhipster-primeng
  <div align="center">
      <img src="https://raw.githubusercontent.com/sudheerj/generator-jhipster-primeng/master/images/application.png" height="400" width="700">
  </div>
+ 
+ 5. Run client and server side environments
+ 
+    **Client: npm start**
+    
+    **Server: ./mvnw**
+    
+ 6. Open application in the browser using http://localhost:9000    
 
 # What next?
 Please check the road map list https://github.com/sudheerj/generator-jhipster-primeng/wiki/Roadmap. If you need a new feature please raise a github request for the discussion.
