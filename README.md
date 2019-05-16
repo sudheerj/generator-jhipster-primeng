@@ -1,5 +1,5 @@
 # generator-jhipster-primeng
-> Click :star:if you like the project. Pull Requests are highly appreciated.
+> Click :star:if you like the project. Pull Requests are highly appreciated. Follow me [@SudheerJonna](https://twitter.com/SudheerJonna) for technical updates.
 
 [![NPM version][npm-image]][npm-url] [![npm](https://img.shields.io/npm/dt/generator-jhipster-primeng.svg)]() ![Crates.io](https://img.shields.io/github/license/mashape/apistatus.svg)
 > JHipster module, Generate PrimeNG application with 90+ components and their features 
