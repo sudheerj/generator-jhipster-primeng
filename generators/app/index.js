@@ -67,12 +67,20 @@ module.exports = class extends BaseGenerator {
                             this.libPrimeFlexVersion = fileData.dependencies.primeflex;
                         }
 
-                        if (fileData.dependencies.moment) {
-                            this.libMomentVersion = fileData.dependencies.moment;
+                        if (fileData.dependencies['@fullcalendar/core']) {
+                            this.libFullcalendarCoreVersion = fileData.dependencies['@fullcalendar/core'];
                         }
 
-                        if (fileData.dependencies.fullcalendar) {
-                            this.libFullcalendarVersion = fileData.dependencies.fullcalendar;
+                        if (fileData.dependencies['@fullcalendar/daygrid']) {
+                            this.libFullcalendarDaygridVersion = fileData.dependencies['@fullcalendar/daygrid'];
+                        }
+
+                        if (fileData.dependencies['@fullcalendar/interaction']) {
+                            this.libFullcalendarInteractionVersion = fileData.dependencies['@fullcalendar/interaction'];
+                        }
+
+                        if (fileData.dependencies['@fullcalendar/timegrid']) {
+                            this.libFullcalendarTimegridVersion = fileData.dependencies['@fullcalendar/timegrid'];
                         }
 
                         if (fileData.dependencies.quill) {
@@ -209,12 +217,9 @@ module.exports = class extends BaseGenerator {
 
         const primengResources = `\n@import "~primeicons/primeicons.css";\n@import "~primeflex/primeflex.css";\n@import "~primeicons/primeicons.css";\n@import "~primeng/resources/primeng.min.css";\n@import "~primeng-extensions/resources/primeng-extensions.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
         const primengRootResources = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/${CONSTANTS.FONTAWESOME_VERSION}/css/font-awesome.min.css">
-                                      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/${CONSTANTS.FULLCALENDAR_VERSION}/fullcalendar.css"/>
                                       <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script>
                                       <script src="https://cdn.quilljs.com/${CONSTANTS.QUILL_VERSION}/quill.js"></script>  
-                                      <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyA6Ar0UymhiklJBzEPLKKn2QHwbjdz3XV0" ></script>
-                                      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/${CONSTANTS.MOMENT_VERSION}/moment.min.js"></script>
-                                      <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/${CONSTANTS.FULLCALENDAR_VERSION}/fullcalendar.js"></script>\n`;
+                                      <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyA6Ar0UymhiklJBzEPLKKn2QHwbjdz3XV0" ></script>\n`;
 
         if (this.copyExternalAssetsInWebpack) {
             this.copyExternalAssetsInWebpack('primeng', 'primeng');
@@ -317,10 +322,10 @@ module.exports = class extends BaseGenerator {
                 this.addNpmDependency('primeflex', `${CONSTANTS.PRIMEFLEX_VERSION}`);
             }
 
-            if (this.libFullcalendarVersion) {
+            if (this.libFullcalendarCoreVersion) {
                 // the version already exists, so try to upgrade instead
-                this.replaceContent('package.json', `"moment": "${this.libMomentVersion}"`, `"moment": "${CONSTANTS.MOMENT_VERSION}"`);
-                this.replaceContent('package.json', `"fullcalendar": "${this.libFullcalendarVersion}"`, `"fullcalendar": "${CONSTANTS.FULLCALENDAR_VERSION}"`);
+                this.replaceContent('package.json', `"@fullcalendar/core": "${this.libFullcalendarCoreVersion}"`, `"@fullcalendar/core": "${CONSTANTS.MOMENT_VERSION}"`);
+                this.replaceContent('package.json', `"@fullcalendar/daygrid": "${this.libFullcalendarDaygridVersion}"`, `"fullcalendar": "${CONSTANTS.FULLCALENDAR_VERSION}"`);
             } else {
                 this.addNpmDependency('moment', `${CONSTANTS.MOMENT_VERSION}`);
                 this.addNpmDependency('fullcalendar', `${CONSTANTS.FULLCALENDAR_VERSION}`);
