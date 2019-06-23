@@ -42,7 +42,7 @@ export class ConfirmDialogDemoComponent implements OnInit {
 
     confirmCustomAccept() {
         this.confirmationService.confirm({
-            message: 'Do you like to use DataTable component?',
+            message: 'Do you like to use Table component?',
             accept: () => {
                 this.msgs = [];
                 this.msgs.push({severity: 'info', summary: 'Confirmed', detail: 'You have accepted'});

@@ -9,9 +9,9 @@
         <img #image src="/content/primeng/assets/data/images/logos/primeng.png" alt="Logo">
     </pe-step>
 
-    <!-- DataTable Integration-->
+    <!-- Table Integration-->
 
-    <pe-step label="DataTable Integration">
+    <pe-step label="Table Integration">
         <p-contextMenu #contextmenu [model]="tableItems" appendTo="body"></p-contextMenu>
             <p-table  [value]="employees" [(contextMenuSelection)]="selectedEmployee" [contextMenu]="contextmenu">
                 <ng-template pTemplate="caption">

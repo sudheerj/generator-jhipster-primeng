@@ -846,8 +846,8 @@
         </p-table>
     </pe-step>
 
-    <!-- DataTable Contextmenu Integration-->
-    <pe-step label="DataTable + ContextMenu">
+    <!-- Table Contextmenu Integration-->
+    <pe-step label="Table + ContextMenu">
         <p-contextMenu #contextmenu [model]="tableItems" appendTo="body"></p-contextMenu>
         <p-table [columns]="cols" [value]="browsers" [(contextMenuSelection)]="selectedBrowser" [contextMenu]="contextmenu">
             <ng-template pTemplate="header" let-columns>
