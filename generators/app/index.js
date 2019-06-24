@@ -324,11 +324,15 @@ module.exports = class extends BaseGenerator {
 
             if (this.libFullcalendarCoreVersion) {
                 // the version already exists, so try to upgrade instead
-                this.replaceContent('package.json', `"@fullcalendar/core": "${this.libFullcalendarCoreVersion}"`, `"@fullcalendar/core": "${CONSTANTS.MOMENT_VERSION}"`);
-                this.replaceContent('package.json', `"@fullcalendar/daygrid": "${this.libFullcalendarDaygridVersion}"`, `"fullcalendar": "${CONSTANTS.FULLCALENDAR_VERSION}"`);
+                this.replaceContent('package.json', `"@fullcalendar/core": "${this.libFullcalendarCoreVersion}"`, `"@fullcalendar/core": "${CONSTANTS.FULLCALENDAR_CORE_VERSION}"`);
+                this.replaceContent('package.json', `"@fullcalendar/daygrid": "${this.libFullcalendarDaygridVersion}"`, `"@fullcalendar/daygrid": "${CONSTANTS.FULLCALENDAR_DAYGRID_VERSION}"`);
+                this.replaceContent('package.json', `"@fullcalendar/interaction": "${this.libFullcalendarInteractionVersion}"`, `"@fullcalendar/interaction": "${CONSTANTS.FULLCALENDAR_INTERACTION_VERSION}"`);
+                this.replaceContent('package.json', `"@fullcalendar/timegrid": "${this.libFullcalendarTimegridVersion}"`, `"@fullcalendar/timegrid": "${CONSTANTS.FULLCALENDAR_TIMEGRID_VERSION}"`);
             } else {
-                this.addNpmDependency('moment', `${CONSTANTS.MOMENT_VERSION}`);
-                this.addNpmDependency('fullcalendar', `${CONSTANTS.FULLCALENDAR_VERSION}`);
+                this.addNpmDependency('@fullcalendar/core', `${CONSTANTS.FULLCALENDAR_CORE_VERSION}`);
+                this.addNpmDependency('@fullcalendar/daygrid', `${CONSTANTS.FULLCALENDAR_DAYGRID_VERSION}`);
+                this.addNpmDependency('@fullcalendar/interaction', `${CONSTANTS.FULLCALENDAR_INTERACTION_VERSION}`);
+                this.addNpmDependency('@fullcalendar/timegrid', `${CONSTANTS.FULLCALENDAR_TIMEGRID_VERSION}`);
             }
 
             if (this.libQuillVersion) {
@@ -348,8 +352,7 @@ module.exports = class extends BaseGenerator {
             this.log(`  "chart.js": "${CONSTANTS.CHARTJS_VERSION}",`);
             this.log(`  "primeicons": "${CONSTANTS.PRIMEICONS_VERSION}",`);
             this.log(`  "primeflex": "${CONSTANTS.PRIMEFLEX_VERSION}",`);
-            this.log(`  "moment": "${CONSTANTS.MOMENT_VERSION}",`);
-            this.log(`  "fullcalendar": "${CONSTANTS.FULLCALENDAR_VERSION}",`);
+            this.log(`  "fullcalendar": "${CONSTANTS.FULLCALENDAR_CORE_VERSION}",`);
             this.log(`  "quill": "${CONSTANTS.QUILL_VERSION}",`);
             this.log('');
             this.anyError = true;
@@ -1007,7 +1010,7 @@ module.exports = class extends BaseGenerator {
             this.rewriteFile(
                 'src/main/webapp/app/vendor.ts',
                 'jhipster-needle-add-element-to-vendor',
-                'import \'quill/dist/quill.js\';\n import \'../../../../node_modules/fullcalendar/dist/fullcalendar.js\';');
+                'import \'quill/dist/quill.js\';');
         } catch (e) {
             this.log(`${chalk.red.bold('ERROR!')}`);
             this.log('  Missing needle \'jhipster-needle-add-element-to-vendor\' in src/main/webapp/app/vendor.ts');
