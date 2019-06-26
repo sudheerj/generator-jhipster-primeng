@@ -13,7 +13,7 @@ export class TreeDemoComponent implements OnInit {
     msgs: Message[] = [];
     activeIndex = 0;
 
-    @ViewChild('expandingTree')
+    @ViewChild('expandingTree', { static: false })
     expandingTree: Tree;
 
     basicTree: TreeNode[];
