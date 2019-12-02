@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {TableModule} from 'primeng/components/table/table';
 import {DeferModule} from 'primeng/components/defer/defer';
@@ -16,7 +16,7 @@ import {
     deferDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     deferDemoRoute
 ];
 
@@ -29,7 +29,7 @@ const primeng_STATES = [
         TableModule,
         DeferModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         DeferDemoComponent

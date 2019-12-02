@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {OverlayPanelModule} from 'primeng/components/overlaypanel/overlaypanel';
 import {TableModule} from 'primeng/components/table/table';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -16,7 +16,7 @@ import {
     overlaypanelDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     overlaypanelDemoRoute
 ];
 
@@ -29,7 +29,7 @@ const primeng_STATES = [
         GrowlModule,
         BrowserAnimationsModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         OverlayPanelDemoComponent

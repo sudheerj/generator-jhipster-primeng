@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {CommonModule} from '@angular/common';
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {GrowlModule} from 'primeng/primeng';
 import {PanelModule} from 'primeng/components/panel/panel';
 import {DropdownModule} from 'primeng/components/dropdown/dropdown';
@@ -22,7 +22,7 @@ import {
     validationDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     validationDemoRoute
 ];
 
@@ -43,7 +43,7 @@ const primeng_STATES = [
         InputTextareaModule,
         ButtonModule,
         GrowlModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         ValidationDemoComponent

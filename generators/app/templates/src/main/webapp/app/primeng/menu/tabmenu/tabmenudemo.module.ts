@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {GrowlModule} from 'primeng/primeng';
 import {TabMenuModule} from 'primeng/components/tabmenu/tabmenu';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -16,7 +16,7 @@ import {
 import { OverviewComponent } from './pages/overview.component';
 import { DownloadsComponent } from './pages/downloads.component';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     tabmenuDemoRoute
 ];
 
@@ -29,7 +29,7 @@ const primeng_STATES = [
         GrowlModule,
         ButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         TabMenuDemoComponent,

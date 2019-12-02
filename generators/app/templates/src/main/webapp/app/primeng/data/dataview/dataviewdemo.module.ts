@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {DataViewModule} from 'primeng/components/dataview/dataview';
 import {DialogModule} from 'primeng/components/dialog/dialog';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -18,7 +18,7 @@ import {
     dataviewDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     dataviewDemoRoute
 ];
 
@@ -33,7 +33,7 @@ const primeng_STATES = [
         ButtonModule,
         WizardModule,
         GrowlModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         DataViewDemoComponent

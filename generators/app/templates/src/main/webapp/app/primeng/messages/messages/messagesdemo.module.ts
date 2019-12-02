@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {ButtonModule} from 'primeng/primeng';
 import {MessagesModule} from 'primeng/primeng';
 import {GrowlModule} from 'primeng/primeng';
@@ -12,7 +12,7 @@ import {
     messagesDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     messagesDemoRoute
 ];
 
@@ -23,7 +23,7 @@ const primeng_STATES = [
         MessagesModule,
         GrowlModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         MessagesDemoComponent

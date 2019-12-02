@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
 import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {AccordionModule} from 'primeng/components/accordion/accordion';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -18,7 +18,7 @@ import {
     accordionDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     accordionDemoRoute
 ];
 
@@ -33,7 +33,7 @@ const primeng_STATES = [
         SelectButtonModule,
         ButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         AccordionDemoComponent

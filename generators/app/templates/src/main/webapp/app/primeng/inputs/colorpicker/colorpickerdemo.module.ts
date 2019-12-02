@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {ColorPickerModule} from 'primeng/components/colorpicker/colorpicker';
 import {GrowlModule} from 'primeng/components/growl/growl';
@@ -12,7 +12,7 @@ import {
     colorpickerDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     colorpickerDemoRoute
 ];
 
@@ -23,7 +23,7 @@ const primeng_STATES = [
         ColorPickerModule,
         GrowlModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         ColorpickerDemoComponent

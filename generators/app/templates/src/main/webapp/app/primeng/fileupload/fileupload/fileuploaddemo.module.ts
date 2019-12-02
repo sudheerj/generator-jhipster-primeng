@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {GrowlModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/primeng';
 import {FileUploadModule} from 'primeng/components/fileupload/fileupload';
@@ -16,7 +16,7 @@ import {
     fileuploadDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     fileuploadDemoRoute
 ];
 
@@ -30,7 +30,7 @@ const primeng_STATES = [
         GrowlModule,
         ButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         FileUploadDemoComponent

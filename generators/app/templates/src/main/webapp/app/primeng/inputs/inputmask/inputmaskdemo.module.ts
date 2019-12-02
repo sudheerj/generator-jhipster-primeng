@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {InputMaskModule} from 'primeng/primeng';
 import {RadioButtonModule} from 'primeng/components/radiobutton/radiobutton';
@@ -13,7 +13,7 @@ import {
     inputmaskDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     inputmaskDemoRoute
 ];
 
@@ -25,7 +25,7 @@ const primeng_STATES = [
         GrowlModule,
         RadioButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         InputMaskDemoComponent

@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {BrowserService} from './service/browser.service';
@@ -14,7 +14,7 @@ import {
     carouselDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     carouselDemoRoute
 ];
 
@@ -25,7 +25,7 @@ const primeng_STATES = [
         GrowlModule,
         CarouselModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         CarouselDemoComponent

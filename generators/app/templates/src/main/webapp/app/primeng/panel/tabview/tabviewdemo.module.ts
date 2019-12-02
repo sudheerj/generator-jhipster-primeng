@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 
 // import needed PrimeNG modules here
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {TabViewModule} from 'primeng/components/tabview/tabview';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
@@ -15,7 +15,7 @@ import {
     tabviewDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     tabviewDemoRoute
 ];
 
@@ -27,7 +27,7 @@ const primeng_STATES = [
         TabViewModule,
         GrowlModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         TabViewDemoComponent

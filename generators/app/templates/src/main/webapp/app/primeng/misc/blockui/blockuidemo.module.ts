@@ -7,7 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {ButtonModule} from 'primeng/components/button/button';
 import {PanelModule} from 'primeng/components/panel/panel';
 import {BlockUIModule} from 'primeng/components/blockui/blockui';
@@ -18,7 +18,7 @@ import {
     blockuiDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     blockuiDemoRoute
 ];
 
@@ -33,7 +33,7 @@ const primeng_STATES = [
         PanelModule,
         WizardModule,
         BlockUIModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         BlockUIDemoComponent

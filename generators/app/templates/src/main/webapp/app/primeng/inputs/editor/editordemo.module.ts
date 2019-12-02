@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {EditorModule} from 'primeng/components/editor/editor';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -14,7 +14,7 @@ import {
     editorDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     editorDemoRoute
 ];
 
@@ -27,7 +27,7 @@ const primeng_STATES = [
         ButtonModule,
         WizardModule,
         SharedModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         EditorDemoComponent

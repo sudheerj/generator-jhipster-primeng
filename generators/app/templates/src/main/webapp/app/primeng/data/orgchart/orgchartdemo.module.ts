@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {OrganizationChartModule} from 'primeng/components/organizationchart/organizationchart';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {DialogModule} from 'primeng/components/dialog/dialog';
@@ -18,7 +18,7 @@ import {
     orgchartDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     orgchartDemoRoute
 ];
 
@@ -33,7 +33,7 @@ const primeng_STATES = [
         WizardModule,
         GrowlModule,
         DialogModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, VCardService],
     declarations: [

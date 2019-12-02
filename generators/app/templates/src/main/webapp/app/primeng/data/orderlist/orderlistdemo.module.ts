@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {OrderListModule} from 'primeng/components/orderlist/orderlist';
 import {GrowlModule} from 'primeng/components/growl/growl';
 
@@ -18,7 +18,7 @@ import {
     orderlistDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     orderlistDemoRoute
 ];
 
@@ -31,7 +31,7 @@ const primeng_STATES = [
         OrderListModule,
         WizardModule,
         GrowlModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService],
     declarations: [

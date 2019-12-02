@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -13,7 +13,7 @@ import {
     inputTextDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     inputTextDemoRoute
 ];
 
@@ -25,7 +25,7 @@ const primeng_STATES = [
         GrowlModule,
         ButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         InputTextDemoComponent

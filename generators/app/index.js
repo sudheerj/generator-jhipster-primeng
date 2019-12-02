@@ -281,10 +281,23 @@ module.exports = class extends BaseGenerator {
 
             if (this.libAngularScrollingVersion) {
                 // the version already exists, so try to upgrade instead
+                if(this.libAngularVersion < "8.2.4"){
                 this.replaceContent('package.json',
                     `"@angular/cdk": "${this.libAngularScrollingVersion}"`, `"@angular/cdk": "^${this.libAngularVersion}"`);
+                } 
+                // If angular version is higher (or equal) than 8.2.4  use "@angular/cdk": "^8.2.3", since version 8.2.4 is not yet available
+                else {
+                    this.replaceContent('package.json',`"@angular/cdk": "${this.libAngularScrollingVersion}"`, `"@angular/cdk": "^8.2.3"`);
+                }
+                
             } else {
+                if(this.libAngularVersion < "8.2.4"){
                 this.addNpmDependency('@angular/cdk', `^${this.libAngularVersion}`);
+                } 
+                 // If angular version is higher (or equal) than 8.2.4  use "@angular/cdk": "^8.2.3", since version 8.2.4 is not yet available
+                else{
+                this.addNpmDependency('@angular/cdk', `^8.2.3`);
+                }
             }
 
             if (this.libPrimeNgVersion) {

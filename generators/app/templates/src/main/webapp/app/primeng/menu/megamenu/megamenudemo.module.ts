@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {GrowlModule} from 'primeng/primeng';
 import {MegaMenuModule} from 'primeng/components/megamenu/megamenu';
 import {InputTextModule} from 'primeng/components/inputtext/inputtext';
@@ -14,7 +14,7 @@ import {
     megamenuDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     megamenuDemoRoute
 ];
 
@@ -28,7 +28,7 @@ const primeng_STATES = [
         ButtonModule,
         WizardModule,
         InputTextModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         MegaMenuDemoComponent

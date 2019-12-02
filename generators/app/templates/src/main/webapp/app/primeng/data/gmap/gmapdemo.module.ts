@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {GMapModule} from 'primeng/components/gmap/gmap';
 import {GrowlModule} from 'primeng/components/growl/growl';
 import {DialogModule} from 'primeng/components/dialog/dialog';
@@ -19,7 +19,7 @@ import {
     gmapDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     gmapDemoRoute
 ];
 
@@ -35,7 +35,7 @@ const primeng_STATES = [
         ButtonModule,
         BrowserAnimationsModule,
         GrowlModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         GmapDemoComponent

@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {DragDropModule} from 'primeng/components/dragdrop/dragdrop';
 import {TableModule} from 'primeng/components/table/table';
 import {PanelModule} from 'primeng/components/panel/panel';
@@ -13,7 +13,7 @@ import {
     dragdropDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     dragdropDemoRoute
 ];
 
@@ -24,7 +24,7 @@ const primeng_STATES = [
         TableModule,
         PanelModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         DragdropDemoComponent

@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {FullCalendarModule} from 'primeng/components/fullcalendar/fullcalendar';
 import {RadioButtonModule} from 'primeng/components/radiobutton/radiobutton';
 import {GrowlModule} from 'primeng/components/growl/growl';
@@ -25,7 +25,7 @@ import {
     fullcalendarDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     fullcalendarDemoRoute
 ];
 
@@ -46,7 +46,7 @@ const primeng_STATES = [
         ButtonModule,
         WizardModule,
         GrowlModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, EventService],
     declarations: [

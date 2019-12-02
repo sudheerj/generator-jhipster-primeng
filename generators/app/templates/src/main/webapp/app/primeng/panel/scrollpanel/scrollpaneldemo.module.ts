@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {ScrollPanelModule} from 'primeng/primeng';
 import {CodeHighlighterModule} from 'primeng/primeng';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
@@ -11,7 +11,7 @@ import {
     scrollPanelDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     scrollPanelDemoRoute
 ];
 
@@ -22,7 +22,7 @@ const primeng_STATES = [
         ScrollPanelModule,
         CodeHighlighterModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         ScrollPanelDemoComponent

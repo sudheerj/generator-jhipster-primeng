@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {TreeModule} from 'primeng/components/tree/tree';
 import {TreeDragDropService} from 'primeng/components/common/api';
 import {ButtonModule} from 'primeng/components/button/button';
@@ -19,7 +19,7 @@ import {
     treeDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     treeDemoRoute
 ];
 
@@ -34,7 +34,7 @@ const primeng_STATES = [
         ContextMenuModule,
         GrowlModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         TreeDemoComponent

@@ -3,7 +3,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {GrowlModule} from 'primeng/primeng';
 import {ContextMenuModule} from 'primeng/components/contextmenu/contextmenu';
 import {TableModule} from 'primeng/components/table/table';
@@ -15,7 +15,7 @@ import {
     contextmenuDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     contextmenuDemoRoute
 ];
 
@@ -28,7 +28,7 @@ const primeng_STATES = [
         GrowlModule,
         TableModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         ContextMenuDemoComponent

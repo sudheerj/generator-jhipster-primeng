@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import needed PrimeNG modules here
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {FieldsetModule} from 'primeng/components/fieldset/fieldset';
 import {GrowlModule} from 'primeng/components/growl/growl';
@@ -16,7 +16,7 @@ import {
     fieldsetDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     fieldsetDemoRoute
 ];
 
@@ -29,7 +29,7 @@ const primeng_STATES = [
         FieldsetModule,
         GrowlModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         FieldsetDemoComponent
