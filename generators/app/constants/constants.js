@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 
-const ANGULAR_VERSION = '9.0.0-rc.4';
+const ANGULAR_VERSION = '9.0.0-rc.6';
 const PRIMENG_VERSION = '9.0.0-rc.2';
 const PRIMEICONS_VERSION = '2.0.0';
 const PRIMEFLEX_VERSION = '1.0.0';
