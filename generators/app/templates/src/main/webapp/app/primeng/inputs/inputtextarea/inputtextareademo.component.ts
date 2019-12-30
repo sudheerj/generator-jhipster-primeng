@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-inputtextarea',
@@ -17,5 +17,8 @@ export class InputTextAreaDemoComponent implements OnInit {
     }
 
     ngOnInit() {
+    }
+
+    constructor(private messageService: MessageService) {
     }
 }

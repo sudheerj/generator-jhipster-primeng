@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message, TreeNode, MenuItem} from 'primeng/components/common/api';
+import {MessageService, TreeNode, MenuItem} from 'primeng/api';
 import {TreeNodeService} from './service/treenode.service';
 
 @Component({
@@ -9,7 +9,6 @@ import {TreeNodeService} from './service/treenode.service';
     styles: []
 })
 export class TreeTableDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     activeIndex = 0;
 
@@ -41,7 +40,7 @@ export class TreeTableDemoComponent implements OnInit {
 
     loading: boolean;
 
-    constructor(private nodeService: TreeNodeService) { }
+    constructor(private nodeService: TreeNodeService, private messageService: MessageService) { }
 
     onChangeStep(label: string) {
         this.msgs.length = 0;
@@ -71,18 +70,15 @@ export class TreeTableDemoComponent implements OnInit {
     }
 
     nodeSelect(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Node Selected', detail: event.node.data.name});
+        this.messageService.add({severity: 'info', summary: 'Node Selected', detail: event.node.data.name});
     }
 
     nodeUnselect(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Node Unselected', detail: event.node.data.name});
+        this.messageService.add({severity: 'info', summary: 'Node Unselected', detail: event.node.data.name});
     }
 
     onRowDblclick(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Node Selected', detail: 'The TreeTable row double click is invoked'});
+        this.messageService.add({severity: 'info', summary: 'Node Selected', detail: 'The TreeTable row double click is invoked'});
     }
 
     nodeExpand(event: any) {
@@ -93,14 +89,12 @@ export class TreeTableDemoComponent implements OnInit {
     }
 
     viewNode(node: TreeNode) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Node Selected', detail: node.data.name});
+        this.messageService.add({severity: 'info', summary: 'Node Selected', detail: node.data.name});
     }
 
     deleteNode(node: TreeNode) {
         node.parent.children = node.parent.children.filter(n => n.data !== node.data);
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Node Deleted', detail: node.data.name});
+        this.messageService.add({severity: 'info', summary: 'Node Deleted', detail: node.data.name});
     }
 
     loadNodes(event) {

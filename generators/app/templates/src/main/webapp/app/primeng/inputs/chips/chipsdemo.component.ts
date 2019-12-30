@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-chips',
@@ -19,27 +19,26 @@ export class ChipsDemoComponent implements OnInit {
 
     activeIndex = 0;
 
+    constructor(private messageService: MessageService) {
+    }
+
     onAddContact() {
-        this.msgs.length = 0;
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'The contact is added'});
     }
 
     onRemoveContact() {
-        this.msgs.length = 0;
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'The contact is removed'});
     }
 
     onContactClick() {
-        this.msgs.length = 0;
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'The contact is clicked'});
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     ngOnInit() {

@@ -4,9 +4,8 @@ import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {GrowlModule} from 'primeng/components/growl/growl';
 import {BrowserService} from './service/browser.service';
-import {CarouselModule} from 'primeng/components/carousel/carousel';
+import {CarouselModule} from 'primeng/carousel';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -22,7 +21,6 @@ const primeng_STATES = [
     imports: [
         <%= angularXAppName %>SharedModule,
         BrowserAnimationsModule,
-        GrowlModule,
         CarouselModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

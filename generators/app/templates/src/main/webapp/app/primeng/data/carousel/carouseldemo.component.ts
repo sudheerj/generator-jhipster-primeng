@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
-import {Message} from 'primeng/components/common/api';
+import {Message} from 'primeng/api';
 
 @Component({
     selector: 'jhi-carousel',

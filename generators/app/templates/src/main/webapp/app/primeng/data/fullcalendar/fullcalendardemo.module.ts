@@ -6,15 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {FullCalendarModule} from 'primeng/components/fullcalendar/fullcalendar';
-import {RadioButtonModule} from 'primeng/components/radiobutton/radiobutton';
-import {GrowlModule} from 'primeng/components/growl/growl';
-import {DialogModule} from 'primeng/components/dialog/dialog';
-import {InputTextModule} from 'primeng/components/inputtext/inputtext';
-import {CalendarModule} from 'primeng/components/calendar/calendar';
-import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
+import {FullCalendarModule} from 'primeng/fullcalendar';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {DialogModule} from 'primeng/dialog';
+import {InputTextModule} from 'primeng/inputtext';
+import {CalendarModule} from 'primeng/calendar';
+import {CheckboxModule} from 'primeng/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {ButtonModule} from 'primeng/components/button/button';
+import {ButtonModule} from 'primeng/button';
 
 import {EventService} from './service/event.service';
 
@@ -45,7 +44,6 @@ const primeng_STATES = [
         CheckboxModule,
         ButtonModule,
         WizardModule,
-        GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, EventService],

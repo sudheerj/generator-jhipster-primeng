@@ -3,9 +3,9 @@ import { RouterModule } from '@angular/router';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
-import {InputSwitchModule} from 'primeng/primeng';
-import {ButtonModule} from 'primeng/components/button/button';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {InputSwitchModule} from 'primeng/inputswitch';
+import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -22,7 +22,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         FormsModule,
         InputSwitchModule,
-        GrowlModule,
+        ToastModule,
         ButtonModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

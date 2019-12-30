@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-inputtext',
@@ -8,8 +8,6 @@ import {Message} from 'primeng/components/common/api';
 })
 export class InputTextDemoComponent implements OnInit {
     activeIndex = 0;
-
-    msgs: Message[] = [];
 
     text: string;
 
@@ -20,10 +18,12 @@ export class InputTextDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     ngOnInit() {
+    }
+
+    constructor(private messageService: MessageService) {
     }
 }

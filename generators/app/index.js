@@ -38,6 +38,8 @@ module.exports = class extends BaseGenerator {
             readPackageJson() {
                 const fromPath = 'package.json';
                 this.libAngularVersion = CONSTANTS.ANGULAR_VERSION;
+                this.libAngularCDKVersion = CONSTANTS.ANGULAR_CDK_VERSION;
+                this.libAngularAnimationsVersion = CONSTANTS.ANGULAR_ANIMATIONS_VERSION;
                 if (shelljs.test('-f', fromPath)) {
                     const fileData = this.fs.readJSON(fromPath);
                     if (fileData && fileData.dependencies) {
@@ -276,7 +278,7 @@ module.exports = class extends BaseGenerator {
                     `"@angular/animations": "${this.libAngularAnimationsVersion}"`,
                     `"@angular/animations": "${this.libAngularVersion}"`);
             } else {
-                this.addNpmDependency('@angular/animations', `${this.libAngularVersion}`);
+                this.addNpmDependency('@angular/animations', `${this.libAngularAnimationsVersion}`);
             }
 
             if (this.libAngularScrollingVersion) {
@@ -284,7 +286,7 @@ module.exports = class extends BaseGenerator {
                 this.replaceContent('package.json',
                     `"@angular/cdk": "${this.libAngularScrollingVersion}"`, `"@angular/cdk": "^${this.libAngularVersion}"`);
             } else {
-                this.addNpmDependency('@angular/cdk', `^${this.libAngularVersion}`);
+                this.addNpmDependency('@angular/cdk', `^${this.libAngularCDKVersion}`);
             }
 
             if (this.libPrimeNgVersion) {

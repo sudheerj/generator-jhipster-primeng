@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {Subscription} from 'rxjs';
-import {Message, TreeNode} from 'primeng/components/common/api';
+import {Message, TreeNode} from 'primeng/api';
 import {VCardService} from './service/vcard.service';
 import {VCard} from './service/vcard';
 

@@ -3,11 +3,11 @@ import { RouterModule } from '@angular/router';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
-import {EditorModule} from 'primeng/components/editor/editor';
-import {ButtonModule} from 'primeng/components/button/button';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {EditorModule} from 'primeng/editor';
+import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
-import {SharedModule} from 'primeng/components/common/shared';
+import {SharedModule} from 'primeng/shared';
 
 import {
     EditorDemoComponent,
@@ -23,7 +23,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         FormsModule,
         EditorModule,
-        GrowlModule,
+        ToastModule,
         ButtonModule,
         WizardModule,
         SharedModule,

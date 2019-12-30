@@ -4,9 +4,9 @@ import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
-import {AutoCompleteModule} from 'primeng/components/autocomplete/autocomplete';
-import {GrowlModule} from 'primeng/components/growl/growl';
-import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import {ToastModule} from 'primeng/toast';
+import {SelectButtonModule} from 'primeng/selectbutton';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {CountryService} from './service/country.service';
 
@@ -24,7 +24,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         FormsModule,
         AutoCompleteModule,
-        GrowlModule,
+        ToastModule,
         SelectButtonModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

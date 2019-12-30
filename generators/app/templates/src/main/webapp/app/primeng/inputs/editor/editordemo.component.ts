@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-editor',
@@ -19,21 +19,21 @@ export class EditorDemoComponent implements OnInit {
 
     activeIndex = 0;
 
+    constructor(private messageService: MessageService) {
+    }
+
     onTextChange() {
-        this.msgs = [];
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'The editor text is changed'});
     }
 
     onSelectionChange() {
-        this.msgs = [];
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'The editor selected text is changed'});
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     ngOnInit() {}

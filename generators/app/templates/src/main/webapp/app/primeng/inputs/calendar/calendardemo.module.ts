@@ -7,9 +7,9 @@ import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
-import {CalendarModule} from 'primeng/components/calendar/calendar';
-import {ButtonModule} from 'primeng/components/button/button';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {CalendarModule} from 'primeng/calendar';
+import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -26,7 +26,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         FormsModule,
         CalendarModule,
-        GrowlModule,
+        ToastModule,
         CheckboxModule,
         SelectButtonModule,
         ButtonModule,

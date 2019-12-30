@@ -5,12 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {VirtualScrollerModule} from 'primeng/components/virtualscroller/virtualscroller';
-import {ButtonModule} from 'primeng/components/button/button';
-import {DropdownModule} from 'primeng/components/dropdown/dropdown';
-import {InputTextModule} from 'primeng/components/inputtext/inputtext';
+import {VirtualScrollerModule} from 'primeng/virtualscroller';
+import {ButtonModule} from 'primeng/button';
+import {DropdownModule} from 'primeng/dropdown';
+import {InputTextModule} from 'primeng/inputtext';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {ToastModule} from 'primeng/toast';
 import {BrowserService} from './service/browser.service';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
@@ -34,7 +34,7 @@ const primeng_STATES = [
         DropdownModule,
         InputTextModule,
         WizardModule,
-        GrowlModule,
+        ToastModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

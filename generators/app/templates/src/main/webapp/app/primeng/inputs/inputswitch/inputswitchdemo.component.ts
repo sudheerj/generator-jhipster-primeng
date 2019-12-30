@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message, SelectItem} from 'primeng/components/common/api';
+import {MessageService, SelectItem} from 'primeng/api';
 
 @Component({
     selector: 'jhi-inputswitch',
@@ -7,7 +7,6 @@ import {Message, SelectItem} from 'primeng/components/common/api';
     styles: []
 })
 export class InputSwitchDemoComponent implements OnInit {
-    msgs: Message[] = [];
     activeIndex = 0;
 
     checked1 = false;
@@ -15,11 +14,13 @@ export class InputSwitchDemoComponent implements OnInit {
     checked2 = true;
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     ngOnInit() {
 
+    }
+
+    constructor(private messageService: MessageService) {
     }
 }

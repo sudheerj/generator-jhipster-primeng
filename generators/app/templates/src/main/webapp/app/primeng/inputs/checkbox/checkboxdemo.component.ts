@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message, SelectItem} from 'primeng/components/common/api';
+import {MessageService, SelectItem} from 'primeng/api';
 
 @Component({
     selector: 'jhi-checkbox',
@@ -7,7 +7,6 @@ import {Message, SelectItem} from 'primeng/components/common/api';
     styles: []
 })
 export class CheckboxDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     checked: boolean;
     selectedVersions: string[] = ['AngularJS1.0', 'AngularV4.0'];
@@ -18,18 +17,18 @@ export class CheckboxDemoComponent implements OnInit {
 
     ngOnInit() {}
 
+    constructor(private messageService: MessageService) {
+    }
+
     onChangeCheckbox() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Checkbox status is changed'});
+        this.messageService.add({severity: 'info', summary: 'Checkbox status is changed'});
     }
 
     onChangeTristate() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Tristate Checkbox status is changed'});
+        this.messageService.add({severity: 'info', summary: 'Tristate Checkbox status is changed'});
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

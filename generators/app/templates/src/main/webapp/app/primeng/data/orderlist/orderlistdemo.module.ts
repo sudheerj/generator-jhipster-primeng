@@ -6,9 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {OrderListModule} from 'primeng/components/orderlist/orderlist';
-import {GrowlModule} from 'primeng/components/growl/growl';
-
+import {OrderListModule} from 'primeng/orderlist';
 import {CountryService} from './service/country.service';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
@@ -30,7 +28,6 @@ const primeng_STATES = [
         HttpClientModule,
         OrderListModule,
         WizardModule,
-        GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService],

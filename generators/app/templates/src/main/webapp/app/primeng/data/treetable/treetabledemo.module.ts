@@ -6,10 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {TreeTableModule} from 'primeng/components/treetable/treetable';
-import {ButtonModule} from 'primeng/components/button/button';
-import {ContextMenuModule} from 'primeng/components/contextmenu/contextmenu';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {TreeTableModule} from 'primeng/treetable';
+import {ButtonModule} from 'primeng/button';
+import {ContextMenuModule} from 'primeng/contextmenu';
+import {ToastModule} from 'primeng/toast';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
@@ -34,7 +34,7 @@ const primeng_STATES = [
         ButtonModule,
         ContextMenuModule,
         WizardModule,
-        GrowlModule,
+        ToastModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

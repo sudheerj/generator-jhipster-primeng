@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, Message} from 'primeng/components/common/api';
+import {MenuItem, Message} from 'primeng/api';
 
 @Component({
     selector: 'jhi-splitbutton',

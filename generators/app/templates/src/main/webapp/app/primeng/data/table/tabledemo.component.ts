@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message, SelectItem, MenuItem} from 'primeng/components/common/api';
-import {LazyLoadEvent} from 'primeng/components/common/api';
+import {MessageService, SelectItem, MenuItem, LazyLoadEvent} from 'primeng/api';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
 import MyBrowser from './service/mybrowser';
@@ -125,7 +124,7 @@ export class TableDemoComponent implements OnInit {
 
     selectedColumns: any[];
 
-    constructor(private browserService: BrowserService) { }
+    constructor(private browserService: BrowserService, private messageService: MessageService) { }
 
     ngOnInit() {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.browsers = browsers.data);
@@ -161,108 +160,89 @@ export class TableDemoComponent implements OnInit {
     }
 
     onRowClick(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Browser clicked', detail: event.data.engine + ' - ' + event.data.browser});
+        this.messageService.add({severity: 'info', summary: 'Browser clicked', detail: event.data.engine + ' - ' + event.data.browser});
     }
 
     onRowDblClick(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Browser double clicked', detail: event.data.engine + ' - ' + event.data.browser});
+        this.messageService.add({severity: 'info', summary: 'Browser double clicked', detail: event.data.engine + ' - ' + event.data.browser});
     }
 
     onRowSelect(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Type of selection:', detail: event.type});
-        this.msgs.push({severity: 'info', summary: 'Browser Selected', detail: event.data.engine + ' - ' + event.data.browser});
+        this.messageService.add({severity: 'info', summary: 'Type of selection:', detail: event.type});
+        this.messageService.add({severity: 'info', summary: 'Browser Selected', detail: event.data.engine + ' - ' + event.data.browser});
     }
 
     onRowUnselect(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Type of selection:', detail: event.type});
-        this.msgs.push({severity: 'info', summary: 'Browser Unselected', detail: event.data.engine + ' - ' + event.data.browser});
+        this.messageService.add({severity: 'info', summary: 'Type of selection:', detail: event.type});
+        this.messageService.add({severity: 'info', summary: 'Browser Unselected', detail: event.data.engine + ' - ' + event.data.browser});
     }
 
     onHeaderCheckboxToggle(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Header checkbox toggled:', detail: event.checked});
+        this.messageService.add({severity: 'info', summary: 'Header checkbox toggled:', detail: event.checked});
     }
 
     onContextMenuSelect(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Selected data', detail: event.data.engine + ' - ' + event.data.browser});
+        this.messageService.add({severity: 'info', summary: 'Selected data', detail: event.data.engine + ' - ' + event.data.browser});
     }
 
     onColResize(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Resized column header' + event.element,
+        this.messageService.add({severity: 'info', summary: 'Resized column header' + event.element,
             detail: 'Change of column width' +  event.delta + 'px'});
     }
 
     onColReorder(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Index of dragged column', detail: event.dragIndex});
-        this.msgs.push({severity: 'info', summary: 'Index of dropped column', detail: event.dropIndex});
-        this.msgs.push({severity: 'info', summary: 'Columns array after reorder', detail: event.columns});
+        this.messageService.add({severity: 'info', summary: 'Index of dragged column', detail: event.dragIndex});
+        this.messageService.add({severity: 'info', summary: 'Index of dropped column', detail: event.dropIndex});
+        this.messageService.add({severity: 'info', summary: 'Columns array after reorder', detail: event.columns});
     }
 
     onEditInit(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Column is ', detail: event.column});
-        this.msgs.push({severity: 'info', summary: 'Row data', detail: event.data.engine + ' - ' + event.data.browser});
+        this.messageService.add({severity: 'info', summary: 'Column is ', detail: event.column});
+        this.messageService.add({severity: 'info', summary: 'Row data', detail: event.data.engine + ' - ' + event.data.browser});
     }
 
     onEdit(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Row index', detail: event.index});
-        this.msgs.push({severity: 'info', summary: 'Column is ', detail: event.column});
-        this.msgs.push({severity: 'info', summary: 'Row data', detail: event.data.engine + ' - ' + event.data.browser});
+        this.messageService.add({severity: 'info', summary: 'Row index', detail: event.index});
+        this.messageService.add({severity: 'info', summary: 'Column is ', detail: event.column});
+        this.messageService.add({severity: 'info', summary: 'Row data', detail: event.data.engine + ' - ' + event.data.browser});
     }
     onEditComplete(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Row index', detail: event.index});
-        this.msgs.push({severity: 'info', summary: 'Column is ', detail: event.column});
-        this.msgs.push({severity: 'info', summary: 'Row data', detail: event.data.engine + ' - ' + event.data.browser});
+        this.messageService.add({severity: 'info', summary: 'Row index', detail: event.index});
+        this.messageService.add({severity: 'info', summary: 'Column is ', detail: event.column});
+        this.messageService.add({severity: 'info', summary: 'Row data', detail: event.data.engine + ' - ' + event.data.browser});
     }
 
     onEditCancel(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Row index', detail: event.index});
-        this.msgs.push({severity: 'info', summary: 'Column is ', detail: event.column});
-        this.msgs.push({severity: 'info', summary: 'Row data', detail: event.data.engine + ' - ' + event.data.browser});
+        this.messageService.add({severity: 'info', summary: 'Row index', detail: event.index});
+        this.messageService.add({severity: 'info', summary: 'Column is ', detail: event.column});
+        this.messageService.add({severity: 'info', summary: 'Row data', detail: event.data.engine + ' - ' + event.data.browser});
     }
 
     onPage(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Index of first record:', detail: event.first});
-        this.msgs.push({severity: 'info', summary: 'Number of rows: ', detail: event.rows});
+        this.messageService.add({severity: 'info', summary: 'Index of first record:', detail: event.first});
+        this.messageService.add({severity: 'info', summary: 'Number of rows: ', detail: event.rows});
     }
 
     onSort(event: any) {
-        this.msgs = [];
     }
 
     onFilter(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Filter object(field,value and matchmode):', detail: event.filters});
+        this.messageService.add({severity: 'info', summary: 'Filter object(field,value and matchmode):', detail: event.filters});
     }
 
     onRowExpand(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Expanded row:', detail: event.data});
+        this.messageService.add({severity: 'info', summary: 'Expanded row:', detail: event.data});
     }
     onRowCollapse(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Collapsed row:', detail: event.data});
+        this.messageService.add({severity: 'info', summary: 'Collapsed row:', detail: event.data});
     }
 
     onRowGroupExpand(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Row group expanded:', detail: event.group});
+        this.messageService.add({severity: 'info', summary: 'Row group expanded:', detail: event.group});
     }
 
     onRowGroupCollapse(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Row group collapsed:', detail: event.group});
+        this.messageService.add({severity: 'info', summary: 'Row group collapsed:', detail: event.group});
     }
 
     loadBrowsersLazy(event: LazyLoadEvent) {
@@ -312,8 +292,7 @@ export class TableDemoComponent implements OnInit {
     }
 
     selectBrowser(browser: Browser) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Browser selected', detail: 'Browser: ' + browser.browser});
+        this.messageService.add({severity: 'info', summary: 'Browser selected', detail: 'Browser: ' + browser.browser});
     }
 
     toggle() {
@@ -321,8 +300,7 @@ export class TableDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-colorpicker',
@@ -7,7 +7,6 @@ import {Message} from 'primeng/components/common/api';
     styles: []
 })
 export class ColorpickerDemoComponent implements OnInit {
-    msgs: Message[] = [];
     color1 = '55ff66';
 
     color2: string;
@@ -22,14 +21,15 @@ export class ColorpickerDemoComponent implements OnInit {
 
     colorFormat3 = '0000FF';
 
+    constructor(private messageService: MessageService) {
+    }
+
     onChangeColor(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The new Color is selected ' + event.value});
+        this.messageService.add({severity: 'info', summary: 'The new Color is selected ' + event.value});
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     ngOnInit() {

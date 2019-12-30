@@ -3,8 +3,8 @@ import { RouterModule } from '@angular/router';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
-import {InputTextareaModule} from 'primeng/primeng';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -21,7 +21,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         FormsModule,
         InputTextareaModule,
-        GrowlModule,
+        ToastModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

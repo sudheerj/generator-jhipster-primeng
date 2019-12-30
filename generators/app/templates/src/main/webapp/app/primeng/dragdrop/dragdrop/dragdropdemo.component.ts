@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {DocumentService} from './service/document.service';
 import {Document} from './service/document';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
+import {BrowserService} from "../../data/virtualscroller/service/browser.service";
 
 @Component({
     selector: 'jhi-dragdrop',
@@ -27,13 +28,12 @@ import {Message} from 'primeng/components/common/api';
     `]
 })
 export class DragdropDemoComponent implements OnInit {
-    msgs: Message[] = [];
     activeIndex = 0;
     availableDocs: Document[];
     seletedDocs: Document[];
     draggedDoc: Document;
 
-    constructor(private docService: DocumentService) {
+    constructor(private docService: DocumentService, private messageService: MessageService) {
     }
 
     ngOnInit() {
@@ -60,7 +60,6 @@ export class DragdropDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }
