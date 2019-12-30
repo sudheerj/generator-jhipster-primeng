@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, Message} from 'primeng/components/common/api';
+import {MenuItem, MessageService} from 'primeng/api';
+import {DocumentService} from "../../dragdrop/dragdrop/service/document.service";
 
 @Component({
     selector: 'jhi-fileupload',
@@ -12,11 +13,12 @@ export class FileUploadDemoComponent implements OnInit {
     activeIndex = 0;
     multiple = false;
     auto = false;
-    msgs: Message[] = [];
-    uploadMsgs: Message[] = [];
     uploadedFiles: any[] = [];
 
     ngOnInit() {}
+
+    constructor(private messageService: MessageService) {
+    }
 
     onBeforeSend(event: any) {
         (<XMLHttpRequest>event.xhr).setRequestHeader('jwt', 'xyz123');
@@ -27,12 +29,10 @@ export class FileUploadDemoComponent implements OnInit {
             this.uploadedFiles.push(file);
         }
 
-        this.uploadMsgs = [];
-        this.uploadMsgs.push({severity: 'info', summary: 'File Uploaded', detail: ''});
+        this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message, TreeNode, MenuItem} from 'primeng/components/common/api';
+import {MessageService, TreeNode, MenuItem} from 'primeng/api';
 import {TreeNodeService} from './service/treenode.service';
 import {Tree} from 'primeng/components/tree/tree';
 
@@ -10,7 +10,6 @@ import {Tree} from 'primeng/components/tree/tree';
     styles: []
 })
 export class TreeDemoComponent implements OnInit {
-    msgs: Message[] = [];
     activeIndex = 0;
 
     @ViewChild('expandingTree', { static: false })
@@ -40,7 +39,7 @@ export class TreeDemoComponent implements OnInit {
 
     items: MenuItem[];
 
-    constructor(private nodeService: TreeNodeService) { }
+    constructor(private nodeService: TreeNodeService, private messageService: MessageService) { }
 
     ngOnInit() {
         this.nodeService.getTouristPlaces().subscribe((places: any) => this.basicTree = places.data);
@@ -76,18 +75,15 @@ export class TreeDemoComponent implements OnInit {
     }
 
     nodeSelect(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Node Selected', detail: event.node.label});
+        this.messageService.add({severity: 'info', summary: 'Node Selected', detail: event.node.label});
     }
 
     nodeUnselect(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Node Unselected', detail: event.node.label});
+        this.messageService.add({severity: 'info', summary: 'Node Unselected', detail: event.node.label});
     }
 
     nodeExpandMessage(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Node Expanded', detail: event.node.label});
+        this.messageService.add({severity: 'info', summary: 'Node Expanded', detail: event.node.label});
     }
 
     nodeExpand(event: any) {
@@ -98,8 +94,7 @@ export class TreeDemoComponent implements OnInit {
     }
 
     viewFile(selectPlace: TreeNode[]) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Node selected with right click', detail: selectPlace[0].label});
+        this.messageService.add({severity: 'info', summary: 'Node selected with right click', detail: selectPlace[0].label});
     }
 
     unselectFile() {
@@ -127,7 +122,6 @@ export class TreeDemoComponent implements OnInit {
         }
     }
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

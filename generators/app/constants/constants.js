@@ -1,6 +1,8 @@
 const inquirer = require('inquirer');
 
 const ANGULAR_VERSION = '9.0.0-rc.6';
+const ANGULAR_CDK_VERSION = '8.2.3';
+const ANGULAR_ANIMATIONS_VERSION = '8.2.14';
 const PRIMENG_VERSION = '9.0.0-rc.2';
 const PRIMEICONS_VERSION = '2.0.0';
 const PRIMEFLEX_VERSION = '1.0.0';
@@ -776,6 +778,8 @@ const primengTranslation = `"primeng": {
 
 module.exports = {
     ANGULAR_VERSION,
+    ANGULAR_CDK_VERSION,
+    ANGULAR_ANIMATIONS_VERSION,
     PRIMEICONS_VERSION,
     PRIMEFLEX_VERSION,
     PRIMENG_EXTENSIONS_VERSION,

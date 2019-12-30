@@ -5,11 +5,10 @@ import {FormsModule} from '@angular/forms';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {GMapModule} from 'primeng/components/gmap/gmap';
-import {GrowlModule} from 'primeng/components/growl/growl';
-import {DialogModule} from 'primeng/components/dialog/dialog';
-import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
-import {ButtonModule} from 'primeng/components/button/button';
+import {GMapModule} from 'primeng/gmap';
+import {DialogModule} from 'primeng/dialog';
+import {CheckboxModule} from 'primeng/checkbox';
+import {ButtonModule} from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
@@ -34,7 +33,6 @@ const primeng_STATES = [
         CheckboxModule,
         ButtonModule,
         BrowserAnimationsModule,
-        GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

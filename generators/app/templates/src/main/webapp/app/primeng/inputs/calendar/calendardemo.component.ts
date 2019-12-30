@@ -1,5 +1,6 @@
 import {Component, OnInit } from '@angular/core';
-import {Message, SelectItem} from 'primeng/components/common/api';
+import {MessageService, SelectItem} from 'primeng/api';
+import {CountryService} from "../autocomplete/service/country.service";
 
 @Component({
     selector: 'jhi-calendar',
@@ -26,24 +27,25 @@ export class CalendarDemoComponent implements OnInit {
     de: any;
     types: SelectItem[];
     selectedHourFormat = '12';
-    msgs: Message[] = [];
     activeIndex = 0;
 
+    constructor(private messageService: MessageService) {
+    }
+
     onSelect() {
-        this.msgs.push({severity: 'info', summary: 'The calendar date is selected'});
+        this.messageService.add({severity: 'info', summary: 'The calendar date is selected'});
     }
 
     onBlur() {
-        this.msgs.push({severity: 'info', summary: 'Calendar lost the focus'});
+        this.messageService.add({severity: 'info', summary: 'Calendar lost the focus'});
     }
 
     onFocus() {
-        this.msgs.push({severity: 'info', summary: 'Calendar got the focus'});
+        this.messageService.add({severity: 'info', summary: 'Calendar got the focus'});
     }
 
     onClear() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The Calendar is closed'});
+        this.messageService.add({severity: 'info', summary: 'The Calendar is closed'});
     }
 
     set hourFormat(hourFormat: string) {
@@ -95,8 +97,7 @@ export class CalendarDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
 }

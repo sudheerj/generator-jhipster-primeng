@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message} from 'primeng/components/common/api';
+import {Message} from 'primeng/api';
 import {CountryService} from './service/country.service';
 import Country from './service/country';
 

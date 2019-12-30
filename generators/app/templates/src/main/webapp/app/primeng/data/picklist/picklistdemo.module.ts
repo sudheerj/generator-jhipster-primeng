@@ -6,8 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {PickListModule} from 'primeng/components/picklist/picklist';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {PickListModule} from 'primeng/picklist';
 import {CountryService} from './service/country.service';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
@@ -27,7 +26,6 @@ const primeng_STATES = [
         HttpClientModule,
         PickListModule,
         WizardModule,
-        GrowlModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService],

@@ -2,9 +2,10 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {DragDropModule} from 'primeng/components/dragdrop/dragdrop';
-import {TableModule} from 'primeng/components/table/table';
-import {PanelModule} from 'primeng/components/panel/panel';
+import {DragDropModule} from 'primeng/dragdrop';
+import {TableModule} from 'primeng/table';
+import {PanelModule} from 'primeng/panel';
+import {ToastModule} from 'primeng/toast';
 import {DocumentService} from './service/document.service';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
@@ -24,6 +25,7 @@ const primeng_STATES = [
         TableModule,
         PanelModule,
         WizardModule,
+        ToastModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

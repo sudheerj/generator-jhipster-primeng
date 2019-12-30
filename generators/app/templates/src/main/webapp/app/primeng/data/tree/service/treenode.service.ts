@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {TreeNode} from 'primeng/components/common/api';
+import {TreeNode} from 'primeng/api';
 
 @Injectable()
 export class TreeNodeService {

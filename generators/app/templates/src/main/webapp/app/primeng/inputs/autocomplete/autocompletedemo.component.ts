@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message, SelectItem} from 'primeng/components/common/api';
+import {MessageService, SelectItem} from 'primeng/api';
 import {CountryService} from './service/country.service';
 import Country from './service/country';
 
@@ -28,32 +28,27 @@ export class AutocompleteDemoComponent implements OnInit {
     msgs: Message[] = [];
     activeIndex = 0;
 
-    constructor(private countryService: CountryService) {
+    constructor(private countryService: CountryService, private messageService: MessageService) {
     }
 
     onFocus() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The autocomplete gets focus'});
+        this.messageService.add({severity: 'info', summary: 'The autocomplete gets focus'});
     }
 
     onBlur() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The autocomplete loses focus'});
+        this.messageService.add({severity: 'info', summary: 'The autocomplete loses focus'});
     }
 
     onSelect() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The autocomplete suggestion is selected'});
+        this.messageService.add({severity: 'info', summary: 'The autocomplete suggestion is selected'});
     }
 
     onUnselect() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The autocomplete selected item is removed'});
+        this.messageService.add({severity: 'info', summary: 'The autocomplete selected item is removed'});
     }
 
     onClearInput(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The autocomplete input is cleared'});
+        this.messageService.add({severity: 'info', summary: 'The autocomplete input is cleared'});
     }
 
     filterCountryInstances(event: any) {
@@ -117,7 +112,6 @@ export class AutocompleteDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

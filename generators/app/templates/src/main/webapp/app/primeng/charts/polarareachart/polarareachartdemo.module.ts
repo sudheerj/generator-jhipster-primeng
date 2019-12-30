@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import { ChartModule } from 'primeng/primeng';
+import { ChartModule } from 'primeng/chart';
 
 import {
     PolarareachartDemoComponent,

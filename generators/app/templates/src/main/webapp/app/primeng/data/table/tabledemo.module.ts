@@ -7,15 +7,15 @@ import {APP_BASE_HREF} from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {ButtonModule} from 'primeng/components/button/button';
-import {DialogModule} from 'primeng/components/dialog/dialog';
-import {ContextMenuModule} from 'primeng/components/contextmenu/contextmenu';
-import {InputTextModule} from 'primeng/components/inputtext/inputtext';
-import {MultiSelectModule} from 'primeng/components/multiselect/multiselect';
-import {SliderModule} from 'primeng/components/slider/slider';
-import {DropdownModule} from 'primeng/components/dropdown/dropdown';
-import {GrowlModule} from 'primeng/components/growl/growl';
-import { TableModule } from 'primeng/components/table/table';
+import {ButtonModule} from 'primeng/button';
+import {DialogModule} from 'primeng/dialog';
+import {ContextMenuModule} from 'primeng/contextmenu';
+import {InputTextModule} from 'primeng/inputtext';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {SliderModule} from 'primeng/slider';
+import {DropdownModule} from 'primeng/dropdown';
+import {ToastModule} from 'primeng/toast';
+import { TableModule } from 'primeng/table';
 import {BrowserService} from './service/browser.service';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
@@ -45,7 +45,7 @@ const primeng_STATES = [
         MultiSelectModule,
         TableModule,
         WizardModule,
-        GrowlModule,
+        ToastModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [
