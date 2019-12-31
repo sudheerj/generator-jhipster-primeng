@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message, MenuItem} from 'primeng/components/common/api';
+import {MessageService, MenuItem} from 'primeng/api';
 
 @Component({
     selector: 'jhi-panel',
@@ -7,7 +7,6 @@ import {Message, MenuItem} from 'primeng/components/common/api';
     styles: []
 })
 export class PanelDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     items: MenuItem[];
 
@@ -22,20 +21,20 @@ export class PanelDemoComponent implements OnInit {
     }
 
     beforeToggle() {
-        this.msgs = [];
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'Before toggle the content'});
     }
 
     afterToggle() {
-        this.msgs = [];
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'After toggle the content'});
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    constructor(private messageService: MessageService) {
     }
 
 }

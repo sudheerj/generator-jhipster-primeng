@@ -9,7 +9,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 // import needed PrimeNG modules here
 import {ProgressSpinnerModule} from 'primeng/components/progressspinner/progressspinner';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {ToastModule} from 'primeng/toast';
 
 import {
     ProgressSpinnerDemoComponent,
@@ -27,7 +27,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         FormsModule,
         ProgressSpinnerModule,
-        GrowlModule,
+        ToastModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

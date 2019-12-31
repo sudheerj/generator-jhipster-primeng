@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-tooltip',
@@ -8,13 +8,14 @@ import {Message} from 'primeng/components/common/api';
     styles: []
 })
 export class TooltipDemoComponent implements OnInit {
-    msgs: Message[] = [];
     activeIndex = 0;
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     ngOnInit() {}
+
+    constructor(private messageService: MessageService) {
+    }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message} from 'primeng/api';
+import {MessageService} from 'primeng/api';
 import {EventService} from './service/event.service';
+import {BrowserService} from "../dataview/service/browser.service";
 
 @Component({
     selector: 'jhi-fullcalendar',
@@ -9,7 +10,6 @@ import {EventService} from './service/event.service';
     styles: []
 })
 export class FullCalendarDemoComponent implements OnInit {
-    msgs: Message[] = [];
     activeIndex = 0;
 
     events: any[];
@@ -18,7 +18,7 @@ export class FullCalendarDemoComponent implements OnInit {
 
     header: any;
 
-    constructor(private eventService: EventService) { }
+    constructor(private eventService: EventService, private messageService: MessageService) { }
 
     ngOnInit() {
         this.eventService.getEvents().subscribe((events: any) => {this.events = events.data; });
@@ -35,8 +35,7 @@ export class FullCalendarDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
 }

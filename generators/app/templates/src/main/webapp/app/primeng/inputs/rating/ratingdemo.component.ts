@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message, SelectItem} from 'primeng/components/common/api';
+import {MessageService, SelectItem} from 'primeng/api';
 
 @Component({
     selector: 'jhi-rating',
@@ -7,7 +7,6 @@ import {Message, SelectItem} from 'primeng/components/common/api';
     styles: []
 })
 export class RatingDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     angular = 5;
 
@@ -25,13 +24,16 @@ export class RatingDemoComponent implements OnInit {
 
     activeIndex = 0;
 
+    constructor(private messageService: MessageService) {
+    }
+
     handleRate(event: any) {
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'You have rated with ' + event.value});
     }
 
     handleCancel(event: any) {
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'Rating is Cancelled'});
     }
 
@@ -43,7 +45,6 @@ export class RatingDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

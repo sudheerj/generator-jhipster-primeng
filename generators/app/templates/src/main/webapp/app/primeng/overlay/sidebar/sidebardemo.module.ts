@@ -2,9 +2,9 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {ButtonModule} from 'primeng/components/button/button';
-import {SidebarModule} from 'primeng/components/sidebar/sidebar';
-import {GrowlModule} from 'primeng/primeng';
+import {ButtonModule} from 'primeng/button';
+import {SidebarModule} from 'primeng/sidebar';
+import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
@@ -22,7 +22,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         ButtonModule,
         SidebarModule,
-        GrowlModule,
+        ToastModule,
         BrowserAnimationsModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

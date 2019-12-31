@@ -3,8 +3,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {GrowlModule} from 'primeng/primeng';
-import {BreadcrumbModule} from 'primeng/components/breadcrumb/breadcrumb';
+import {ToastModule} from 'primeng/toast';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {

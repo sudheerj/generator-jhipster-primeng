@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, Message} from 'primeng/components/common/api';
+import {MenuItem, MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-menu',
@@ -9,7 +9,6 @@ import {MenuItem, Message} from 'primeng/components/common/api';
 })
 export class MenuDemoComponent implements OnInit {
     activeIndex = 0;
-    msgs: Message[] = [];
     private items: MenuItem[];
 
     ngOnInit() {
@@ -90,8 +89,10 @@ export class MenuDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    constructor(private messageService: MessageService) {
     }
 
 }

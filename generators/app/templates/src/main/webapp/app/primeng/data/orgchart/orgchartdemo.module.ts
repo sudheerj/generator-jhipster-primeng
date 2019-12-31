@@ -9,6 +9,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {OrganizationChartModule} from 'primeng/organizationchart';
 import {DialogModule} from 'primeng/dialog';
+import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {VCardService} from './service/vcard.service';
 
@@ -30,7 +31,7 @@ const primeng_STATES = [
         HttpClientModule,
         OrganizationChartModule,
         WizardModule,
-        GrowlModule,
+        ToastModule,
         DialogModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

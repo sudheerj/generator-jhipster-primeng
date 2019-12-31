@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, Message} from 'primeng/components/common/api';
+import {MenuItem, MessageService} from 'primeng/api';
 import {MessageService} from 'primeng/components/common/messageservice';
 
 @Component({
@@ -25,8 +25,6 @@ import {MessageService} from 'primeng/components/common/messageservice';
     providers: [MessageService]
 })
 export class ToastDemoComponent implements OnInit {
-    messages: Message[] = [];
-    msgs: Message[] = [];
     activeIndex = 0;
 
     ngOnInit() {
@@ -89,9 +87,8 @@ export class ToastDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
         this.clear();
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
 }

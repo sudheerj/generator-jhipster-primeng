@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message, SelectItem} from 'primeng/components/common/api';
+import {MessageService, SelectItem} from 'primeng/api';
 import {CountryService} from './service/country.service';
 import Country from './service/country';
 
@@ -9,7 +9,6 @@ import Country from './service/country';
     styles: []
 })
 export class SelectDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     countries: SelectItem[];
 
@@ -21,28 +20,24 @@ export class SelectDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    constructor(private countryService: CountryService) {
+    constructor(private countryService: CountryService, private messageService: MessageService) {
 
     }
 
     onFocus() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The dropdown gets focus'});
+        this.messageService.add({severity: 'info', summary: 'The dropdown gets focus'});
     }
 
     onBlur() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The dropwdown loses focus'});
+        this.messageService.add({severity: 'info', summary: 'The dropwdown loses focus'});
     }
 
     onChange() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The dropdown is changed'});
+        this.messageService.add({severity: 'info', summary: 'The dropdown is changed'});
     }
 
     onChangeMultiselect() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The Multiselect selection is changed'});
+        this.messageService.add({severity: 'info', summary: 'The Multiselect selection is changed'});
     }
 
     generateCountries(countriesArray: Country[]) {
@@ -63,7 +58,6 @@ export class SelectDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

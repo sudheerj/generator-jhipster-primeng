@@ -8,6 +8,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {OrderListModule} from 'primeng/orderlist';
 import {CountryService} from './service/country.service';
+import {ToastModule} from 'primeng/toast';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
@@ -27,6 +28,7 @@ const primeng_STATES = [
         FormsModule,
         HttpClientModule,
         OrderListModule,
+        ToastModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

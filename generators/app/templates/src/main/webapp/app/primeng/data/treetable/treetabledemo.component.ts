@@ -43,8 +43,7 @@ export class TreeTableDemoComponent implements OnInit {
     constructor(private nodeService: TreeNodeService, private messageService: MessageService) { }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     ngOnInit() {

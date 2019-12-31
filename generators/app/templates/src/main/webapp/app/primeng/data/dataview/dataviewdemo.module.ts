@@ -8,6 +8,7 @@ import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {DataViewModule} from 'primeng/dataview';
 import {DialogModule} from 'primeng/dialog';
 import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {BrowserService} from './service/browser.service';
 
@@ -30,6 +31,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         DialogModule,
         ButtonModule,
+        ToastModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

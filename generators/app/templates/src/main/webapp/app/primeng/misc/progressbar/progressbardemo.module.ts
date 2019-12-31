@@ -8,8 +8,8 @@ import {FormsModule} from '@angular/forms';
 import {APP_BASE_HREF} from '@angular/common';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 // import needed PrimeNG modules here
-import {ProgressBarModule} from 'primeng/components/progressbar/progressbar';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {ProgressBarModule} from 'primeng/progressbar';
+import {ToastModule} from 'primeng/toast';
 
 import {
     ProgressBarDemoComponent,
@@ -27,7 +27,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         FormsModule,
         ProgressBarModule,
-        GrowlModule,
+        ToastModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

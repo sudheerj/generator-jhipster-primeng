@@ -2,9 +2,9 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {TooltipModule} from 'primeng/components/tooltip/tooltip';
-import {InputTextModule} from 'primeng/components/inputtext/inputtext';
-import {GrowlModule} from 'primeng/primeng';
+import {TooltipModule} from 'primeng/tooltip';
+import {InputTextModule} from 'primeng/inputtext';
+import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
@@ -22,7 +22,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         TooltipModule,
         InputTextModule,
-        GrowlModule,
+        ToastModule,
         BrowserAnimationsModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

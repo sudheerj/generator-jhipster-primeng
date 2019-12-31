@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message} from 'primeng/api';
+import {MessageService} from 'primeng/api';
+import {VCardService} from "../orgchart/service/vcard.service";
 
 @Component({
     selector: 'jhi-paginator',
@@ -13,10 +14,12 @@ export class PaginatorDemoComponent implements OnInit {
     totalRecords = 100;
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     ngOnInit() {
+    }
+
+    constructor(private messageService: MessageService) {
     }
 }

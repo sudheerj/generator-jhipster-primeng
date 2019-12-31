@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message} from 'primeng/api';
+import {MessageService} from 'primeng/api';
 import {CountryService} from './service/country.service';
 import Country from './service/country';
 
@@ -10,12 +10,11 @@ import Country from './service/country';
     styles: []
 })
 export class OrderlistDemoComponent implements OnInit {
-    msgs: Message[] = [];
     activeIndex = 0;
 
     countries: Country[];
 
-    constructor(private countryService: CountryService) { }
+    constructor(private countryService: CountryService, private messageService: MessageService) { }
 
     ngOnInit() {
         this.countryService.getCountries().subscribe((countries: any) => {
@@ -24,13 +23,11 @@ export class OrderlistDemoComponent implements OnInit {
     }
 
     onReorder(event: any) {
-        this.msgs = [];
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'onReorder Event', detail: event.items});
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

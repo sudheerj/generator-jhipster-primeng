@@ -7,7 +7,6 @@ import {MessageService} from 'primeng/api';
     styles: []
 })
 export class ChipsDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     contactnames: string[];
 

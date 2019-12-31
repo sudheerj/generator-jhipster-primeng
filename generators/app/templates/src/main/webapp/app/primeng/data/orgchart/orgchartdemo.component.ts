@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {Subscription} from 'rxjs';
-import {Message, TreeNode} from 'primeng/api';
+import {MessageService, TreeNode} from 'primeng/api';
 import {VCardService} from './service/vcard.service';
 import {VCard} from './service/vcard';
 
@@ -12,7 +12,6 @@ import {VCard} from './service/vcard';
 })
 export class OrgChartDemoComponent implements OnInit, OnDestroy {
     activeIndex = 0;
-    msgs: Message[] = [];
     get$: Subscription;
 
     dataBasic: TreeNode[];
@@ -23,7 +22,7 @@ export class OrgChartDemoComponent implements OnInit, OnDestroy {
     selectedVCard: VCard;
     private availableVCards: VCard[];
 
-    constructor(private vcardService: VCardService) {
+    constructor(private vcardService: VCardService, private messageService: MessageService) {
     }
 
     ngOnInit() {
@@ -130,8 +129,7 @@ export class OrgChartDemoComponent implements OnInit, OnDestroy {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     private showInfo(event: any) {
@@ -149,8 +147,8 @@ export class OrgChartDemoComponent implements OnInit, OnDestroy {
             this.display = true;
         } else {
             // show node label in growl
-            this.msgs = [];
-            this.msgs.push({severity: 'Label', summary: event.node.label});
+            this.messageService.add({severity: 'Label', summary: event.node.label});
         }
     }
+
 }

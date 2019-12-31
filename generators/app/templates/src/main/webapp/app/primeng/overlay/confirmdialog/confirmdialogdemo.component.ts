@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, Message} from 'primeng/components/common/api';
-import {ConfirmationService} from 'primeng/components/common/api';
+import {MenuItem, MessageService, ConfirmationService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-confirmdialog',
@@ -9,12 +8,11 @@ import {ConfirmationService} from 'primeng/components/common/api';
     styles: []
 })
 export class ConfirmDialogDemoComponent implements OnInit {
-    msgs: Message[] = [];
     activeIndex = 0;
 
     ngOnInit() {}
 
-    constructor(private confirmationService: ConfirmationService) {}
+    constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {}
 
     confirmAccept() {
         this.confirmationService.confirm({
@@ -22,8 +20,7 @@ export class ConfirmDialogDemoComponent implements OnInit {
             header: 'Subscribe',
             icon: 'fa fa-question-circle',
             accept: () => {
-                this.msgs = [];
-                this.msgs.push({severity: 'info', summary: 'Confirmed', detail: 'You have accepted'});
+                this.messageService.add({severity: 'info', summary: 'Confirmed', detail: 'You have accepted'});
             }
         });
     }
@@ -34,8 +31,7 @@ export class ConfirmDialogDemoComponent implements OnInit {
             header: 'UnSubscribe',
             icon: 'fa fa-trash',
             accept: () => {
-                this.msgs = [];
-                this.msgs.push({severity: 'info', summary: 'Confirmed', detail: 'The record is deleted'});
+                this.messageService.add({severity: 'info', summary: 'Confirmed', detail: 'The record is deleted'});
             }
         });
     }
@@ -44,14 +40,12 @@ export class ConfirmDialogDemoComponent implements OnInit {
         this.confirmationService.confirm({
             message: 'Do you like to use Table component?',
             accept: () => {
-                this.msgs = [];
-                this.msgs.push({severity: 'info', summary: 'Confirmed', detail: 'You have accepted'});
+                this.messageService.add({severity: 'info', summary: 'Confirmed', detail: 'You have accepted'});
             }
         });
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

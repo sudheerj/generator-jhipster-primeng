@@ -7,11 +7,10 @@ import {FormsModule} from '@angular/forms';
 // import needed PrimeNG modules here
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {ToolbarModule} from 'primeng/components/toolbar/toolbar';
-import {InputTextModule} from 'primeng/components/inputtext/inputtext';
-import {SplitButtonModule} from 'primeng/components/splitbutton/splitbutton';
-import {ButtonModule} from 'primeng/components/button/button';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {ToolbarModule} from 'primeng/toolbar';
+import {InputTextModule} from 'primeng/inputtext';
+import {SplitButtonModule} from 'primeng/splitbutton';
+import {ButtonModule} from 'primeng/button';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -33,7 +32,6 @@ const primeng_STATES = [
         InputTextModule,
         SplitButtonModule,
         ButtonModule,
-        GrowlModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

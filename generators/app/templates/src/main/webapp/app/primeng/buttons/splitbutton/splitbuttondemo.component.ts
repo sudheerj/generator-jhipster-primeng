@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, Message} from 'primeng/api';
+import {MenuItem, MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-splitbutton',
@@ -8,7 +8,6 @@ import {MenuItem, Message} from 'primeng/api';
     styles: []
 })
 export class SplitbuttonDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     items: MenuItem[];
     itemsIcons: MenuItem[];
@@ -38,22 +37,21 @@ export class SplitbuttonDemoComponent implements OnInit {
     }
 
     create() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Success', detail: 'AngularConnect user account is created'});
+        this.messageService.add({severity: 'info', summary: 'Success', detail: 'AngularConnect user account is created'});
     }
 
     update() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Success', detail: 'AngularConnect user account is updated'});
+        this.messageService.add({severity: 'info', summary: 'Success', detail: 'AngularConnect user account is updated'});
     }
 
     delete() {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Success', detail: 'AngularConnect user account is deleted'});
+        this.messageService.add({severity: 'info', summary: 'Success', detail: 'AngularConnect user account is deleted'});
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    constructor(private messageService: MessageService) {
     }
 }

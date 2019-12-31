@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message, SelectItem} from 'primeng/components/common/api';
+import {MessageService, SelectItem} from 'primeng/api';
 
 @Component({
     selector: 'jhi-listbox',
@@ -7,7 +7,6 @@ import {Message, SelectItem} from 'primeng/components/common/api';
     styles: []
 })
 export class ListboxDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     cities: SelectItem[];
 
@@ -21,7 +20,7 @@ export class ListboxDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    constructor() {
+    constructor(private messageService: MessageService) {
         this.cities = [];
         this.cities.push({label: 'New York', value: 'New York'});
         this.cities.push({label: 'Rome', value: 'Rome'});
@@ -47,7 +46,6 @@ export class ListboxDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

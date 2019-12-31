@@ -3,10 +3,10 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {GrowlModule} from 'primeng/primeng';
-import {MegaMenuModule} from 'primeng/components/megamenu/megamenu';
-import {InputTextModule} from 'primeng/components/inputtext/inputtext';
-import {ButtonModule} from 'primeng/components/button/button';
+import {ToastModule} from 'primeng/toast';
+import {MegaMenuModule} from 'primeng/megamenu';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -24,7 +24,7 @@ const primeng_STATES = [
         CommonModule,
         BrowserAnimationsModule,
         MegaMenuModule,
-        GrowlModule,
+        ToastModule,
         ButtonModule,
         WizardModule,
         InputTextModule,

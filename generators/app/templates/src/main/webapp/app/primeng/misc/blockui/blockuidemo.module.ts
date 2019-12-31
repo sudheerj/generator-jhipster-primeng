@@ -8,9 +8,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {ButtonModule} from 'primeng/components/button/button';
-import {PanelModule} from 'primeng/components/panel/panel';
-import {BlockUIModule} from 'primeng/components/blockui/blockui';
+import {ButtonModule} from 'primeng/button';
+import {PanelModule} from 'primeng/panel';
+import {BlockUIModule} from 'primeng/blockui';
+import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -31,6 +32,7 @@ const primeng_STATES = [
         HttpClientModule,
         ButtonModule,
         PanelModule,
+        ToastModule,
         WizardModule,
         BlockUIModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

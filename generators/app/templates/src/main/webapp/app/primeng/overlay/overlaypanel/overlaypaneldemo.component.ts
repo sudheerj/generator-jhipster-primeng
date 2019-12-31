@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
 import {ScoreService} from './service/score.service';
 import Score from './service/score';
 import {OverlayPanel} from 'primeng/components/overlaypanel/overlaypanel';
@@ -15,10 +15,9 @@ export class OverlayPanelDemoComponent implements OnInit {
 
     marks: string;
     percentage: string;
-    msgs: Message[] = [];
     activeIndex = 0;
 
-    constructor(private scoreService: ScoreService) { }
+    constructor(private scoreService: ScoreService, private messageService: MessageService) { }
 
     selectScore(event: any, score: Score, overlaypanel: OverlayPanel) {
         this.marks = score.marks;
@@ -31,18 +30,15 @@ export class OverlayPanelDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     onShow() {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: 'Show dialog', detail: 'Overlay shown'});
+        this.messageService.add({severity: 'info', summary: 'Show dialog', detail: 'Overlay shown'});
     }
 
     onHide() {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: 'Hide dialog', detail: 'Overlay hide'});
+        this.messageService.add({severity: 'info', summary: 'Hide dialog', detail: 'Overlay hide'});
     }
 
 }

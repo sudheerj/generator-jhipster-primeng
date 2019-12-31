@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-dialog',
@@ -14,7 +14,6 @@ export class DialogDemoComponent implements OnInit {
     maximizable = false;
     events = false;
 
-    msgs: Message[] = [];
     activeIndex = 0;
 
     ngOnInit() {
@@ -54,15 +53,13 @@ export class DialogDemoComponent implements OnInit {
     }
 
     showDialog() {
-        this.msgs.length = 0;
         this.maximizable = true;
-        this.msgs.push({severity: 'info', summary: 'Show dialog', detail: 'When dialog is shown'});
+        this.messageService.add({severity: 'info', summary: 'Show dialog', detail: 'When dialog is shown'});
     }
 
     hideDialog() {
-        this.msgs.length = 0;
         this.maximizable = false;
-        this.msgs.push({severity: 'info', summary: 'Hide dialog', detail: 'when dialog is hidden'});
+        this.messageService.add({severity: 'info', summary: 'Hide dialog', detail: 'when dialog is hidden'});
     }
 
     onComplete() {
@@ -71,7 +68,9 @@ export class DialogDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    constructor(private messageService: MessageService) {
     }
 }

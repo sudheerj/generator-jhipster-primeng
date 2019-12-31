@@ -88,7 +88,6 @@ import MyBrowser from './service/mybrowser';
         }
     `]})
 export class TableDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     activeIndex = 0;
 

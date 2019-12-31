@@ -6,9 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
-import {CardModule} from 'primeng/primeng';
-import {ButtonModule} from 'primeng/primeng';
-import {GrowlModule} from 'primeng/primeng';
+import {CardModule} from 'primeng/card';
+import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -26,7 +26,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         FormsModule,
         CardModule,
-        GrowlModule,
+        ToastModule,
         ButtonModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

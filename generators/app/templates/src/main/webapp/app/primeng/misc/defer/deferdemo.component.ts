@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
 import { JhiLanguageService } from 'ng-jhipster';
@@ -10,13 +10,12 @@ import { JhiLanguageService } from 'ng-jhipster';
     styles: []
 })
 export class DeferDemoComponent {
-    msgs: Message[] = [];
 
     activeIndex = 0;
 
     browsers: Browser[];
 
-    constructor(private browserService: BrowserService, private cdr: ChangeDetectorRef) { }
+    constructor(private browserService: BrowserService, private cdr: ChangeDetectorRef, private messageService: MessageService) { }
 
     initData() {
         this.browserService.getBrowsers().subscribe((browsers: any) => setTimeout(() => this.browsers = browsers.data, 0));
@@ -24,8 +23,7 @@ export class DeferDemoComponent {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
 }

@@ -1,5 +1,6 @@
 import {Component, OnInit } from '@angular/core';
-import {Message, SelectItem} from 'primeng/components/common/api';
+import {MessageService, SelectItem} from 'primeng/api';
+import {CountryService} from "../select/service/country.service";
 
 @Component({
     selector: 'jhi-selectbutton',
@@ -7,7 +8,6 @@ import {Message, SelectItem} from 'primeng/components/common/api';
     styles: []
 })
 export class SelectButtonDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     types: SelectItem[];
 
@@ -21,9 +21,12 @@ export class SelectButtonDemoComponent implements OnInit {
 
     activeIndex = 0;
 
+    constructor(private messageService: MessageService) {
+
+    }
+
     onChange(event: any) {
-        this.msgs = [];
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'Library name is changed'});
     }
 
@@ -41,7 +44,6 @@ export class SelectButtonDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

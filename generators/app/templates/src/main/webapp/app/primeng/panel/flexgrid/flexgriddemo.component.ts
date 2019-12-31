@@ -1,4 +1,4 @@
-import { Message } from 'primeng/components/common/api';
+import { MessageService } from 'primeng/api';
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate, AnimationEvent } from '@angular/animations';
 
@@ -60,7 +60,6 @@ import { trigger, state, style, transition, animate, AnimationEvent } from '@ang
     encapsulation: ViewEncapsulation.None
 })
 export class FlexGridDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     activeIndex = 0;
 
@@ -79,8 +78,10 @@ export class FlexGridDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    constructor(private messageService: MessageService) {
     }
 
 }

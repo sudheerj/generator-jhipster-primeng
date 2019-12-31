@@ -6,10 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
-import {PanelModule} from 'primeng/primeng';
-import {ButtonModule} from 'primeng/primeng';
-import {SplitButtonModule} from 'primeng/primeng';
-import {GrowlModule} from 'primeng/primeng';
+import {PanelModule} from 'primeng/panel';
+import {ButtonModule} from 'primeng/button';
+import {SplitButtonModule} from 'primeng/splitbutton';
+import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -27,7 +27,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         FormsModule,
         PanelModule,
-        GrowlModule,
+        ToastModule,
         SplitButtonModule,
         ButtonModule,
         WizardModule,

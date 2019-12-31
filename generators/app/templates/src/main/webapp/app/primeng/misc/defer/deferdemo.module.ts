@@ -5,9 +5,9 @@ import {CommonModule} from '@angular/common';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {GrowlModule} from 'primeng/components/growl/growl';
-import {TableModule} from 'primeng/components/table/table';
-import {DeferModule} from 'primeng/components/defer/defer';
+import {ToastModule} from 'primeng/toast';
+import {TableModule} from 'primeng/table';
+import {DeferModule} from 'primeng/defer';
 import {BrowserService} from './service/browser.service';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
@@ -25,7 +25,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         CommonModule,
         BrowserAnimationsModule,
-        GrowlModule,
+        ToastModule,
         TableModule,
         DeferModule,
         WizardModule,

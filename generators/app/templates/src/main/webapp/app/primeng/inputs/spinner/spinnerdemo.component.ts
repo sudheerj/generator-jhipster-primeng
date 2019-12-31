@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message, SelectItem} from 'primeng/components/common/api';
+import {MessageService, SelectItem} from 'primeng/api';
 
 @Component({
     selector: 'jhi-spinner',
@@ -7,7 +7,6 @@ import {Message, SelectItem} from 'primeng/components/common/api';
     styles: []
 })
 export class SpinnerDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     basicinput: number;
 
@@ -27,9 +26,11 @@ export class SpinnerDemoComponent implements OnInit {
 
     activeIndex = 0;
 
+    constructor(private messageService: MessageService) {
+    }
+
     onChange(event: any) {
-        this.msgs = [];
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'Spinner value is changed'});
     }
 
@@ -40,7 +41,6 @@ export class SpinnerDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

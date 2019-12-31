@@ -9,6 +9,7 @@ import {GMapModule} from 'primeng/gmap';
 import {DialogModule} from 'primeng/dialog';
 import {CheckboxModule} from 'primeng/checkbox';
 import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
@@ -31,6 +32,7 @@ const primeng_STATES = [
         WizardModule,
         DialogModule,
         CheckboxModule,
+        ToastModule,
         ButtonModule,
         BrowserAnimationsModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

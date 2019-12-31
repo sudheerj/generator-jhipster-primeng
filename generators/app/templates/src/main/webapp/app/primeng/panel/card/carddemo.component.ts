@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Message, MenuItem} from 'primeng/components/common/api';
+import {MessageService, MenuItem} from 'primeng/api';
 
 @Component({
     selector: 'jhi-card',
@@ -7,15 +7,16 @@ import {Message, MenuItem} from 'primeng/components/common/api';
     styles: []
 })
 export class CardDemoComponent {
-    msgs: Message[] = [];
 
     items: MenuItem[];
 
     activeIndex = 0;
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.push({severity: 'info', summary: label});
+    }
+
+    constructor(private messageService: MessageService) {
     }
 
 }

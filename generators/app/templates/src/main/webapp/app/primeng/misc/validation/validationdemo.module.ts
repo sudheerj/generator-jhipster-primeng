@@ -2,15 +2,15 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {CommonModule} from '@angular/common';
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {GrowlModule} from 'primeng/primeng';
-import {PanelModule} from 'primeng/components/panel/panel';
-import {DropdownModule} from 'primeng/components/dropdown/dropdown';
-import {InputTextModule} from 'primeng/components/inputtext/inputtext';
-import {InputMaskModule} from 'primeng/components/inputmask/inputmask';
-import {InputTextareaModule} from 'primeng/components/inputtextarea/inputtextarea';
-import {ButtonModule} from 'primeng/components/button/button';
-import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
-import {TriStateCheckboxModule} from 'primeng/components/tristatecheckbox/tristatecheckbox';
+import {ToastModule} from 'primeng/toast';
+import {PanelModule} from 'primeng/panel';
+import {DropdownModule} from 'primeng/dropdown';
+import {InputTextModule} from 'primeng/inputtext';
+import {InputMaskModule} from 'primeng/inputmask';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {ButtonModule} from 'primeng/button';
+import {CheckboxModule} from 'primeng/checkbox';
+import {TriStateCheckboxModule} from 'primeng/tristatecheckbox';
 import {BrowserModule} from '@angular/platform-browser';
 import {APP_BASE_HREF} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -42,7 +42,7 @@ const primeng_STATES = [
         InputMaskModule,
         InputTextareaModule,
         ButtonModule,
-        GrowlModule,
+        ToastModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

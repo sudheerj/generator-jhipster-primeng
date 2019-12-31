@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, Message} from 'primeng/components/common/api';
+import {MenuItem, MessageService} from 'primeng/api';
 import {Subscription} from 'rxjs';
 import { interval } from 'rxjs';
 import 'rxjs/add/observable/interval';
@@ -13,7 +13,6 @@ import 'rxjs/add/operator/take';
 })
 export class ProgressBarDemoComponent implements OnInit, OnDestroy {
     activeIndex = 0;
-    msgs: Message[] = [];
 
     value: number;
     interval$: Subscription;
@@ -23,7 +22,7 @@ export class ProgressBarDemoComponent implements OnInit, OnDestroy {
         this.interval$ = intervalObject.subscribe(
             x => this.value = x + 1,
             () => {/** no error handling */ },
-            () => this.msgs = [{severity: 'info', summary: 'Success', detail: 'Process completed'}]
+            () => this.messageService = [{severity: 'info', summary: 'Success', detail: 'Process completed'}]
         );
     }
 
@@ -32,8 +31,10 @@ export class ProgressBarDemoComponent implements OnInit, OnDestroy {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    constructor(private messageService: MessageService) {
     }
 
 }

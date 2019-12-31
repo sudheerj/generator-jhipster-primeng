@@ -14,6 +14,7 @@ import {CalendarModule} from 'primeng/calendar';
 import {CheckboxModule} from 'primeng/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
 
 import {EventService} from './service/event.service';
 
@@ -43,6 +44,7 @@ const primeng_STATES = [
         CalendarModule,
         CheckboxModule,
         ButtonModule,
+        ToastModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

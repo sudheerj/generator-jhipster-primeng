@@ -8,9 +8,9 @@ import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
-import {AccordionModule} from 'primeng/components/accordion/accordion';
-import {ButtonModule} from 'primeng/components/button/button';
-import {GrowlModule} from 'primeng/components/growl/growl';
+import {AccordionModule} from 'primeng/accordion';
+import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -28,7 +28,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         FormsModule,
         AccordionModule,
-        GrowlModule,
+        ToastModule,
         CheckboxModule,
         SelectButtonModule,
         ButtonModule,

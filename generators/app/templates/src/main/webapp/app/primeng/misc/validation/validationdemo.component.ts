@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, Message, SelectItem} from 'primeng/components/common/api';
+import {MenuItem, MessageService, SelectItem} from 'primeng/api';
 import {Validators, FormControl, FormGroup, FormBuilder} from '@angular/forms';
 
 @Component({
@@ -9,7 +9,6 @@ import {Validators, FormControl, FormGroup, FormBuilder} from '@angular/forms';
     styles: []
 })
 export class ValidationDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     registrationform: FormGroup;
 
@@ -19,7 +18,7 @@ export class ValidationDemoComponent implements OnInit {
 
     address: string;
 
-    constructor(private formBuilder: FormBuilder) {
+    constructor(private formBuilder: FormBuilder, private messageService: MessageService) {
     }
 
     ngOnInit() {
@@ -40,8 +39,7 @@ export class ValidationDemoComponent implements OnInit {
 
     onSubmit(value: string) {
         this.submitted = true;
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Success', detail: 'Form Submitted'});
+        this.messageService.add({severity: 'info', summary: 'Success', detail: 'Form Submitted'});
     }
 
     get diagnostic() {

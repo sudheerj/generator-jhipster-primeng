@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, Message} from 'primeng/components/common/api';
+import {MenuItem, MessageService} from 'primeng/api';
 import {TerminalService} from 'primeng/components/terminal/terminalservice';
 import {Subscription} from 'rxjs/Subscription';
 
@@ -11,14 +11,12 @@ import {Subscription} from 'rxjs/Subscription';
     providers: [TerminalService]
 })
 export class TerminalDemoComponent implements OnInit, OnDestroy {
-    msgs: Message[] = [];
-    messages: Message[] = [];
     activeIndex = 0;
     subscription: Subscription;
 
     ngOnInit() {}
 
-    constructor(private terminalService: TerminalService) {
+    constructor(private terminalService: TerminalService, , private messageService: MessageService) {
         this.terminalService.commandHandler.subscribe(command => {
             const response = (command === 'date') ? new Date().toDateString() : 'Unknown command: ' + command;
             this.terminalService.sendResponse(response);
@@ -29,6 +27,9 @@ export class TerminalDemoComponent implements OnInit, OnDestroy {
         if (this.subscription) {
             this.subscription.unsubscribe();
         }
+    }
+
+    constructor(private messageService: MessageService) {
     }
 
 }

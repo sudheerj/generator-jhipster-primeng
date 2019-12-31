@@ -3,10 +3,10 @@ import { RouterModule } from '@angular/router';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {FormsModule} from '@angular/forms';
-import {InputTextModule} from 'primeng/primeng';
-import {ButtonModule} from 'primeng/components/button/button';
-import {GrowlModule} from 'primeng/components/growl/growl';
-import {KeyFilterModule} from 'primeng/components/keyfilter/keyfilter';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
+import {KeyFilterModule} from 'primeng/keyfilter';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -23,7 +23,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         FormsModule,
         InputTextModule,
-        GrowlModule,
+        ToastModule,
         ButtonModule,
         WizardModule,
         KeyFilterModule,

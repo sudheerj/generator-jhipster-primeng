@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import { Message } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 declare var google: any;
 
@@ -30,7 +30,8 @@ export class GmapDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    msgs: Message[] = [];
+    constructor(private messageService: MessageService) {
+    }
 
     ngOnInit() {
         this.options = {
@@ -44,20 +45,17 @@ export class GmapDemoComponent implements OnInit {
     }
 
     handleMapReady(event: any) {
-        this.msgs = [];
         this.map = event.map;
-        this.msgs.push({severity: 'info', summary: 'Map is ready', detail: 'Map is loaded'});
+        this.messageService.add({severity: 'info', summary: 'Map is ready', detail: 'Map is loaded'});
     }
 
     handleMapClick(event: any) {
-        this.msgs = [];
         this.dialogVisible = true;
         this.selectedPosition = event.latLng;
-        this.msgs.push({severity: 'info', summary: 'Map is clicked', detail: this.selectedPosition});
+        this.messageService.add({severity: 'info', summary: 'Map is clicked', detail: this.selectedPosition});
     }
 
     handleOverlayClick(event: any) {
-        this.msgs = [];
         const isMarker = event.overlay.getTitle !== undefined;
 
         if (isMarker) {
@@ -66,20 +64,18 @@ export class GmapDemoComponent implements OnInit {
             this.infoWindow.open(event.map, event.overlay);
             event.map.setCenter(event.overlay.getPosition());
 
-            this.msgs.push({severity: 'info', summary: 'Marker Selected', detail: title});
+            this.messageService.add({severity: 'info', summary: 'Marker Selected', detail: title});
         } else {
-            this.msgs.push({severity: 'info', summary: 'Shape Selected', detail: ''});
+            this.messageService.add({severity: 'info', summary: 'Shape Selected', detail: ''});
         }
     }
 
     handleZoomChanged(event: any) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: 'The map zoom options are changed'});
+        this.messageService.add({severity: 'info', summary: 'The map zoom options are changed'});
     }
 
     handleMapDragEnd(event: any) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: 'The map drag is reached end'});
+        this.messageService.add({severity: 'info', summary: 'The map drag is reached end'});
     }
 
     addMarker() {
@@ -90,13 +86,11 @@ export class GmapDemoComponent implements OnInit {
     }
 
     handleDragStart(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Marker Drag started', detail: event.overlay.getTitle()});
+        this.messageService.add({severity: 'info', summary: 'Marker Drag started', detail: event.overlay.getTitle()});
     }
 
     handleDragEnd(event: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Marker Dragged', detail: event.overlay.getTitle()});
+        this.messageService.add({severity: 'info', summary: 'Marker Dragged', detail: event.overlay.getTitle()});
     }
 
     initOverlays() {
@@ -146,8 +140,7 @@ export class GmapDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
 }

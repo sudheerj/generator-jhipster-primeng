@@ -6,6 +6,7 @@ import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {BrowserService} from './service/browser.service';
 import {CarouselModule} from 'primeng/carousel';
+import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -23,6 +24,7 @@ const primeng_STATES = [
         BrowserAnimationsModule,
         CarouselModule,
         WizardModule,
+        ToastModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

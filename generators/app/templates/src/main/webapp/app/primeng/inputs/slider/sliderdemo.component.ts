@@ -1,12 +1,11 @@
 import {Component, OnInit } from '@angular/core';
-import {Message, SelectItem} from 'primeng/components/common/api';
+import {MessageService, SelectItem} from 'primeng/api';
 
 @Component({
     selector: 'jhi-slider',
     templateUrl: './sliderdemo.component.html'
 })
 export class SliderDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     basicinput: number;
 
@@ -30,15 +29,16 @@ export class SliderDemoComponent implements OnInit {
 
     activeIndex = 0;
 
+    constructor(private messageService: MessageService) {
+    }
+
     onChange() {
-        this.msgs.length = 0;
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'Slider value is changed'});
     }
 
     onSlideEnd() {
-        this.msgs.length = 0;
-        this.msgs.push(
+        this.messageService.add(
             {severity: 'info', summary: 'Slide end is reached'});
     }
 
@@ -51,7 +51,6 @@ export class SliderDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

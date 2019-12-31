@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-togglebutton',
@@ -7,7 +7,6 @@ import {Message} from 'primeng/components/common/api';
     styles: []
 })
 export class ToggleButtonDemoComponent implements OnInit {
-    msgs: Message[] = [];
 
     basic = false;
 
@@ -19,23 +18,23 @@ export class ToggleButtonDemoComponent implements OnInit {
 
     activeIndex = 0;
 
+    constructor(private messageService: MessageService) {
+    }
+
     onToggleButton(e: any) {
-        this.msgs = [];
         if (e.checked) {
-            this.msgs.push({severity: 'info', summary: 'I like Angular Framework'});
+            this.messageService.add({severity: 'info', summary: 'I like Angular Framework'});
         } else {
-            this.msgs.push({severity: 'info', summary: 'I dont like Angular Framework'});
+            this.messageService.add({severity: 'info', summary: 'I dont like Angular Framework'});
         }
     }
 
     onChange(e: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'The selected options are ' + e.value});
+        this.messageService.add({severity: 'info', summary: 'The selected options are ' + e.value});
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     ngOnInit() {}

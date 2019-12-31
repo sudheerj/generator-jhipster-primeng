@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {PaginatorModule} from 'primeng/paginator';
+import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
@@ -20,6 +21,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         PaginatorModule,
         WizardModule,
+        ToastModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
     declarations: [

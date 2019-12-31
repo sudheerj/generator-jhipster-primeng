@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, Message} from 'primeng/components/common/api';
+import {MenuItem, MessageServie} from 'primeng/api';
 import {EmployeeService} from './service/employee.service';
 import Employee from './service/employee';
 
@@ -11,14 +11,13 @@ import Employee from './service/employee';
 })
 export class ContextMenuDemoComponent implements OnInit {
     selectedEmployee: Employee;
-    msgs: Message[] = [];
     activeIndex = 0;
     employees: Employee[];
     private documentItems: MenuItem[];
     private targetItems: MenuItem[];
     private tableItems: MenuItem[];
 
-    constructor(private employeeService: EmployeeService) {
+    constructor(private employeeService: EmployeeService, private messageService: MessageService) {
     }
 
     ngOnInit() {
@@ -133,8 +132,7 @@ export class ContextMenuDemoComponent implements OnInit {
     }
 
     viewEmployee(employee: Employee) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Employee Selected', detail: employee.name + ' - ' + employee.id});
+        this.messageService.add({severity: 'info', summary: 'Employee Selected', detail: employee.name + ' - ' + employee.id});
     }
 
     deleteEmployee(employee: Employee) {
@@ -142,14 +140,13 @@ export class ContextMenuDemoComponent implements OnInit {
         for (let i = 0; i < this.employees.length; i++) {
             if (this.employees[i].id === employee.id) {
                 this.employees.splice(i, 1);
-                this.msgs.push({severity: 'info', summary: 'Employee Deleted', detail: employee.name + ' - ' + employee.id});
+                this.messageService.add({severity: 'info', summary: 'Employee Deleted', detail: employee.name + ' - ' + employee.id});
                 break;
             }
         }
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 }

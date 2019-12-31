@@ -3,8 +3,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {GrowlModule} from 'primeng/components/growl/growl';
-import {CaptchaModule} from 'primeng/components/captcha/captcha';
+import {ToastModule} from 'primeng/toast';
+import {CaptchaModule} from 'primeng/captcha';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -21,7 +21,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         CommonModule,
         BrowserAnimationsModule,
-        GrowlModule,
+        ToastModule,
         CaptchaModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })

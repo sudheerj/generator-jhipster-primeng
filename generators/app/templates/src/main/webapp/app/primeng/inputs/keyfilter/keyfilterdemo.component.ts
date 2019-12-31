@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/api';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
@@ -22,8 +22,6 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 export class KeyFilterDemoComponent implements OnInit {
     activeIndex = 0;
 
-    msgs: Message[] = [];
-
     blockSpecial: RegExp = /^[^<>*!]+$/;
 
     blockSpace: RegExp = /[^\s]/;
@@ -33,10 +31,12 @@ export class KeyFilterDemoComponent implements OnInit {
     cc: string;
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     ngOnInit() {
+    }
+
+    constructor(private messageService: MessageService) {
     }
 }

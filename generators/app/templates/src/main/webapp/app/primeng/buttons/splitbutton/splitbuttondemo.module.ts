@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
 import { <%= angularXAppName %>SharedModule } from '../../../shared';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
-import {GrowlModule} from 'primeng/growl';
+import {ToastModule} from 'primeng/toast';
 
 import {
     SplitbuttonDemoComponent,
@@ -22,7 +22,7 @@ const primeng_STATES = [
         CommonModule,
         BrowserAnimationsModule,
         SplitButtonModule,
-        GrowlModule,
+        ToastModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],
