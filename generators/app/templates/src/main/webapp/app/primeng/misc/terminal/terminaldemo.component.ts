@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {MenuItem, MessageService} from 'primeng/api';
-import {TerminalService} from 'primeng/components/terminal/terminalservice';
+import {TerminalService} from 'primeng/terminal/terminalservice';
 import {Subscription} from 'rxjs/Subscription';
 
 @Component({

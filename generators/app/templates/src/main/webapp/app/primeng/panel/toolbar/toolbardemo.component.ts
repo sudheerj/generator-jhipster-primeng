@@ -16,4 +16,8 @@ export class ToolbarDemoComponent implements OnInit {
             {label: 'Paste', icon: 'fa fa-paste'},
         ];
     }
+
+    constructor() {
+        this.search ='';
+    }
 }

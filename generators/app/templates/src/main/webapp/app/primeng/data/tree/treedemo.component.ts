@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild} from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {MessageService, TreeNode, MenuItem} from 'primeng/api';
 import {TreeNodeService} from './service/treenode.service';
-import {Tree} from 'primeng/components/tree/tree';
+import {Tree} from 'primeng/tree/tree';
 
 @Component({
     selector: 'jhi-tree',

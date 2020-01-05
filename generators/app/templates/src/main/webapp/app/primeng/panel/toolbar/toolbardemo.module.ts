@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 
 // import needed PrimeNG modules here
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {ToolbarModule} from 'primeng/toolbar';
 import {InputTextModule} from 'primeng/inputtext';
 import {SplitButtonModule} from 'primeng/splitbutton';

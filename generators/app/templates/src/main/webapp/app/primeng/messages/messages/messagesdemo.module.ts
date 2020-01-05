@@ -1,10 +1,10 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
-import {ButtonModule} from 'primeng/primeng';
-import {MessagesModule} from 'primeng/primeng';
-import {GrowlModule} from 'primeng/primeng';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
+import {ButtonModule} from 'primeng/button';
+import {MessagesModule} from 'primeng/messages';
+import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
 import {
@@ -21,7 +21,7 @@ const primeng_STATES = [
         <%= angularXAppName %>SharedModule,
         ButtonModule,
         MessagesModule,
-        GrowlModule,
+        ToastModule,
         WizardModule,
         RouterModule.forRoot(primeng_STATES, { useHash: true })
     ],

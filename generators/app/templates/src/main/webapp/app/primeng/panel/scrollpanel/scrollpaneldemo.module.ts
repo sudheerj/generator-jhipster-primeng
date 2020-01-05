@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {CodeHighlighterModule} from 'primeng/codehighlighter';
 import {ToastModule} from 'primeng/toast';

@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {OrganizationChartModule} from 'primeng/organizationchart';
 import {DialogModule} from 'primeng/dialog';
 import {ToastModule} from 'primeng/toast';

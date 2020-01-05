@@ -3,10 +3,10 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import needed PrimeNG modules here
-import {CheckboxModule} from 'primeng/components/checkbox/checkbox';
-import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
+import {CheckboxModule} from 'primeng/checkbox';
+import {SelectButtonModule} from 'primeng/selectbutton';
 
-import { <%= angularXAppName %>SharedModule } from '../../../shared';
+import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {AccordionModule} from 'primeng/accordion';
 import {ButtonModule} from 'primeng/button';

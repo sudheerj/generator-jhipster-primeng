@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import { Message } from 'primeng/components/common/api';
+import { MessageService } from 'primeng/api';
+import {BrowserService} from "../../data/dataview/service/browser.service";
 
 @Component({
     selector: 'jhi-linechart',
@@ -9,9 +10,7 @@ import { Message } from 'primeng/components/common/api';
 })
 export class LinechartDemoComponent implements OnInit {
     data: any;
-    msgs: Message[];
-
-    constructor() {
+    constructor(private messageService: MessageService) {
         this.data = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
@@ -35,7 +34,6 @@ export class LinechartDemoComponent implements OnInit {
     }
 
     selectData(event) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Data Selected', 'detail': this.data.datasets[event.element._datasetIndex].data[event.element._index]});
+        this.messageService.add({severity: 'info', summary: 'Data Selected', 'detail': this.data.datasets[event.element._datasetIndex].data[event.element._index]});
     }
 }
