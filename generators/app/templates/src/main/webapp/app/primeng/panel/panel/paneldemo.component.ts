@@ -35,6 +35,7 @@ export class PanelDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.items = [];
     }
 
 }

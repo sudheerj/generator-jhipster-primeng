@@ -82,6 +82,7 @@ export class FlexGridDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.columns = [];
     }
 
 }

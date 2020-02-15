@@ -53,5 +53,7 @@ export class SplitbuttonDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.items = [];
+        this.itemsIcons = [];
     }
 }

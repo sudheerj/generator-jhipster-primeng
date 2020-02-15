@@ -28,5 +28,6 @@ export class FieldsetDemoComponent implements OnInit {
     ngOnInit() {}
 
     constructor(private messageService: MessageService) {
+        this.basic = '';
     }
 }

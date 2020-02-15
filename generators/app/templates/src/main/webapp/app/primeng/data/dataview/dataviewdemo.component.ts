@@ -31,7 +31,20 @@ export class DataViewDemoComponent implements OnInit {
 
     sortOrder: number;
 
-    constructor(private browserService: BrowserService, private messageService: MessageService) { }
+    constructor(private browserService: BrowserService, private messageService: MessageService) {
+        this.basicBrowsers = [];
+        this.facetBrowsers = [];
+        this.inlineBrowsers = [];
+        this.lazyloadingBrowsers = [];
+        this.loaderBrowsers = [];
+        this.selectBrowser = null;
+
+        this.displayDialog = false;
+        this.sortOptions = [];
+        this.sortKey = '';
+        this.sortField = '';
+        this.sortOrder = 1;
+    }
 
     ngOnInit() {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 4));

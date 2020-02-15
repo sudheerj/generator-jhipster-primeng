@@ -4,4 +4,12 @@ export class MyEvent {
     start: string;
     end: string;
     allDay = true;
+
+    constructor() {
+        this.id = 0;
+        this.title = '';
+        this.start = '';
+        this.end = '';
+        this.allDay = false
+    }
 }

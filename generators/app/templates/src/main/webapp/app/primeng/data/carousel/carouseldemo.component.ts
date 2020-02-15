@@ -13,7 +13,9 @@ export class CarouselDemoComponent implements OnInit {
     activeIndex = 0;
     basicBrowsers: Browser[];
 
-    constructor(private browserService: BrowserService, private messageService: MessageService) { }
+    constructor(private browserService: BrowserService, private messageService: MessageService) {
+        this.basicBrowsers = [];
+    }
 
     ngOnInit() {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 10));

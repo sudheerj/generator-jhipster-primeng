@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 
-const ANGULAR_VERSION = '9.0.0-rc.6';
-const ANGULAR_CDK_VERSION = '9.0.0-rc.6';
-const ANGULAR_ANIMATIONS_VERSION = '9.0.0-rc.6';
-const PRIMENG_VERSION = '9.0.0-rc.2';
+const ANGULAR_VERSION = '9.0.0';
+const ANGULAR_CDK_VERSION = '9.0.0';
+const ANGULAR_ANIMATIONS_VERSION = '9.0.0';
+const PRIMENG_VERSION = '9.0.0-rc.4';
 const PRIMEICONS_VERSION = '2.0.0';
 const PRIMEFLEX_VERSION = '1.0.0';
 const PRIMENG_EXTENSIONS_VERSION = '0.1.2';

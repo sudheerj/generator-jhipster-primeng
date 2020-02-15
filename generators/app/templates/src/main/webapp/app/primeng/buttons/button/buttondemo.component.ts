@@ -13,7 +13,6 @@ export class ButtonDemoComponent implements OnInit {
     clicks = 0;
 
     clickMe() {
-        this.msgs = [];
         this.messageService.add({severity: 'info', summary: 'The button is clicked ' + (++this.clicks) + ' times'});
     }
 

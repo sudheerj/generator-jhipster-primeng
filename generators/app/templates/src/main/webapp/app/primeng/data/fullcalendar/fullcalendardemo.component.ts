@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {MessageService} from 'primeng/api';
 import {EventService} from './service/event.service';
-import {BrowserService} from "../dataview/service/browser.service";
 
 @Component({
     selector: 'jhi-fullcalendar',
