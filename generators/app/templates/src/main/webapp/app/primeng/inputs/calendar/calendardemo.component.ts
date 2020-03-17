@@ -26,10 +26,30 @@ export class CalendarDemoComponent implements OnInit {
     time: boolean;
     de: any;
     types: SelectItem[];
-    selectedHourFormat = '12';
+    selectedHourFormat: number;
     activeIndex = 0;
 
     constructor(private messageService: MessageService) {
+        this.basicDateInput = null;
+        this.localizedDateInput = null;
+        this.advancedDateInput = null;
+        this.timeDateInput = null;
+        this.inlineDateInput = null;
+        this.iconDateInput = null;
+        this.navigatorDateInput = null;
+        this.minmaxDateInput = null;
+        this.disabeDaysDateInput = null;
+        this.eventsDateInput = null;
+        this.readonlyDateInput = null;
+        this.disabeDaysDateInput = null;
+        this.disableDateInput = null;
+        this.invalidDates = [];
+        this.minDate = null;
+        this.maxDate = null;
+        this.time = false;
+        this.de = null;
+        this.types = [];
+        this.selectedHourFormat = '12';
     }
 
     onSelect() {

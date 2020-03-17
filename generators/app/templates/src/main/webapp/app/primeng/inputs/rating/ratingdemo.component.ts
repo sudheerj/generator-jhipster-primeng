@@ -8,23 +8,30 @@ import {MessageService, SelectItem} from 'primeng/api';
 })
 export class RatingDemoComponent implements OnInit {
 
-    angular = 5;
+    angular: number;
 
     react: number;
 
-    ember = 6;
+    ember: number;
 
-    knockout = 2;
+    knockout: number;
 
-    vuejs = 3;
+    vuejs: number;
 
     types: SelectItem[];
 
-    selectedType = 'readonly';
+    selectedType: string;
 
     activeIndex = 0;
 
     constructor(private messageService: MessageService) {
+        this.angular = 9;
+        this.react = 0;
+        this.ember = 6;
+        this.knockout =2;
+        this.vuejs = 3;
+        this.types = [];
+        this.selectedType = '';
     }
 
     handleRate(event: any) {

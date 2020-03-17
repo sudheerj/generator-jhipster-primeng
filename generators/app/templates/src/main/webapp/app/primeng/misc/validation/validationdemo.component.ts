@@ -19,6 +19,10 @@ export class ValidationDemoComponent implements OnInit {
     address: string;
 
     constructor(private formBuilder: FormBuilder, private messageService: MessageService) {
+        this.submitted = false;
+        this.registrationform = null;
+        this.genders = [];
+        this.address = '';
     }
 
     ngOnInit() {

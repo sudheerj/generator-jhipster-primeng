@@ -21,7 +21,10 @@ export class SelectDemoComponent implements OnInit {
     activeIndex = 0;
 
     constructor(private countryService: CountryService, private messageService: MessageService) {
-
+        this.countries = [];
+        this.countrycodes = [];
+        this.selectedCountry = '';
+        this.selectedCountries = [];
     }
 
     onFocus() {

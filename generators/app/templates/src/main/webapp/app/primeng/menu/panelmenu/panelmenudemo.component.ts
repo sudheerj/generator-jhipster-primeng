@@ -176,6 +176,8 @@ export class PanelMenuDemoComponent implements OnInit {
         this.messageService.add({severity: 'info', summary: label});
     }
     constructor(private messageService: MessageService) {
+        this.items = [];
+        this.expandeditems = [];
     }
 
 }

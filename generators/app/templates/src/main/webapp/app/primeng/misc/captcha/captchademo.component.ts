@@ -8,7 +8,6 @@ import {MenuItem, MessageService} from 'primeng/api';
     styles: []
 })
 export class CaptchaDemoComponent implements OnInit {
-    msgs: Message[] = [];
     activeIndex = 0;
 
     ngOnInit() {
@@ -16,13 +15,14 @@ export class CaptchaDemoComponent implements OnInit {
     }
 
     showResponse(event) {
-    this.msgs = [];
-    this.msgs.push({severity: 'info', summary: 'Succees', detail: 'User Responded'});
+    this.messageService.add({severity: 'info', summary: 'Succees', detail: 'User Responded'});
     }
 
     onChangeStep(label: string) {
-        this.msgs.length = 0;
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    constructor(private messageService: MessageService) {
     }
 
 }

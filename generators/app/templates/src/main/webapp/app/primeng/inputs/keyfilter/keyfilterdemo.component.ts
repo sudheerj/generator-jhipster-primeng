@@ -22,11 +22,11 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 export class KeyFilterDemoComponent implements OnInit {
     activeIndex = 0;
 
-    blockSpecial: RegExp = /^[^<>*!]+$/;
+    blockSpecial: RegExp;
 
-    blockSpace: RegExp = /[^\s]/;
+    blockSpace: RegExp;
 
-    ccRegex: RegExp = /[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/;
+    ccRegex: RegExp;
 
     cc: string;
 
@@ -38,9 +38,9 @@ export class KeyFilterDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
-        this.blockSpace = null;
-        this.blockSpecial = null;
-        this.ccRegex = null;
-        this.cc = null;
+        this.blockSpace = /[^\s]/;
+        this.blockSpecial = /^[^<>*!]+$/;
+        this.ccRegex = /[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/;
+        this.cc = '';
     }
 }

@@ -53,6 +53,8 @@ export class BreadcrumbDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.home = null;
+        this.items = [];
     }
 
 }

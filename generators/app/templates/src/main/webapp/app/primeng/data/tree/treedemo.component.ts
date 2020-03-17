@@ -39,7 +39,25 @@ export class TreeDemoComponent implements OnInit {
 
     items: MenuItem[];
 
-    constructor(private nodeService: TreeNodeService, private messageService: MessageService) { }
+    constructor(private nodeService: TreeNodeService, private messageService: MessageService) {
+        this.basicTree = [];
+        this.singleSelectionTree = [];
+        this.multipleSelectionTree = [];
+        this.checkboxSelectionTree = [];
+        this.templateTree = [];
+        this.horizontalTree = [];
+        this.lazyTree = [];
+        this.contextMenuTree = [];
+        this.dragDropTreeOne = [];
+        this.dragDropTreeTwo = [];
+        this.programmaticTree = [];
+        this.selectedPlace = null;
+        this.selectedPlaces = null;
+        this.selectMultiplePlaces = null;
+        this.selectedTour = [];
+        this.selectedTouristPlace = [];
+        this.items = [];
+    }
 
     ngOnInit() {
         this.nodeService.getTouristPlaces().subscribe((places: any) => this.basicTree = places.data);

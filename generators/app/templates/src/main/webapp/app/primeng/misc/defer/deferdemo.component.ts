@@ -15,7 +15,9 @@ export class DeferDemoComponent {
 
     browsers: Browser[];
 
-    constructor(private browserService: BrowserService, private cdr: ChangeDetectorRef, private messageService: MessageService) { }
+    constructor(private browserService: BrowserService, private cdr: ChangeDetectorRef, private messageService: MessageService) {
+        this.browsers = [];
+    }
 
     initData() {
         this.browserService.getBrowsers().subscribe((browsers: any) => setTimeout(() => this.browsers = browsers.data, 0));

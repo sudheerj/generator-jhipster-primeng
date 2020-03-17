@@ -19,5 +19,6 @@ export class ToolbarDemoComponent implements OnInit {
 
     constructor() {
         this.search ='';
+        this.items = [];
     }
 }

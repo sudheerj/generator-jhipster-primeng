@@ -61,7 +61,14 @@ export class VirtualScrollerDemoComponent implements OnInit {
 
     sortOptions: SelectItem[];
 
-    constructor(private browserService: BrowserService, private messageService: MessageService) { }
+    constructor(private browserService: BrowserService, private messageService: MessageService) {
+        this.basicBrowsers = [];
+        this.lazyloadingBrowsers = [];
+        this.totalLazyBrowsersLength = 0;
+        this.timeout = null;
+        this.sortKey = '';
+        this.sortOptions = [];
+    }
 
     ngOnInit() {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data);

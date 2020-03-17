@@ -18,7 +18,7 @@ export class InputMaskDemoComponent implements OnInit {
     optional: string;
     readonly = true;
     disabled = true;
-    format = 'Option1';
+    format: string;
 
 
     onComplete(e: any) {
@@ -35,5 +35,15 @@ export class InputMaskDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.basic = '';
+        this.event = '';
+        this.phone = '';
+        this.date = '';
+        this.serial = '';
+        this.slot = '';
+        this.optional = '';
+        this.readonly = false;
+        this.disabled = false;
+        this.format = 'Option1';
     }
 }

@@ -11,9 +11,9 @@ export class BlockUIDemoComponent {
 
     activeIndex = 0;
 
-    blockedPanel = false;
+    blockedPanel: boolean;
 
-    blockedDocument = false;
+    blockedDocument: boolean;
 
     blockDocument() {
         this.blockedDocument = true;
@@ -27,6 +27,8 @@ export class BlockUIDemoComponent {
     }
 
     constructor(private messageService: MessageService) {
+        this.blockedPanel = false;
+        this.blockedDocument = false;
     }
 
 }

@@ -15,7 +15,9 @@ export class InplaceDemoComponent implements OnInit {
 
     basicBrowsers: Browser[];
 
-    constructor(private browserService: BrowserService, private messageService: MessageService) { }
+    constructor(private browserService: BrowserService, private messageService: MessageService) {
+        this.basicBrowsers = [];
+    }
 
     ngOnInit() {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 10));

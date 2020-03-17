@@ -9,7 +9,7 @@ export class SliderDemoComponent implements OnInit {
 
     basicinput: number;
 
-    custominput = 20;
+    custominput: number;
 
     eventsinput: number;
 
@@ -21,15 +21,25 @@ export class SliderDemoComponent implements OnInit {
 
     verticalinput: number;
 
-    rangeValues: number[] = [30, 90];
+    rangeValues: number[];
 
     types: SelectItem[];
 
-    selectedType = 'readonly';
+    selectedType: string;
 
     activeIndex = 0;
 
     constructor(private messageService: MessageService) {
+        this.basicinput = 0;
+        this.custominput = 20;
+        this.eventsinput = 0;
+        this.disabledinput = 0;
+        this.sliderinput = 0;
+        this.animateinput = 0;
+        this.verticalinput = 0;
+        this.rangeValues = [30, 90];
+        this.types = [];
+        this.selectedType = 'readonly'
     }
 
     onChange() {

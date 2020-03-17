@@ -9,9 +9,9 @@ import {MessageService} from 'primeng/api';
 export class RadioButtonDemoComponent implements OnInit {
 
     basic: string;
-    defaultSelection = 'Angular';
+    defaultSelection: string;
     eventsSelection: string;
-    disabledSelection = 'Angular';
+    disabledSelection: string;
 
     activeIndex = 0;
 
@@ -27,5 +27,9 @@ export class RadioButtonDemoComponent implements OnInit {
     ngOnInit() {}
 
     constructor(private messageService: MessageService) {
+        this.basic = '';
+        this.defaultSelection = 'Angular';
+        this.eventsSelection = '';
+        this.disabledSelection = 'Angular'
     }
 }

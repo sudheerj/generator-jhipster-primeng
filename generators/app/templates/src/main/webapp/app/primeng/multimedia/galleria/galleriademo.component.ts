@@ -60,5 +60,6 @@ export class GalleriaDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.images = [];
     }
 }

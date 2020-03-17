@@ -8,16 +8,24 @@ import {MessageService} from 'primeng/api';
     styles: []
 })
 export class DialogDemoComponent implements OnInit {
-    basic = false;
-    custom = false;
-    advanced = false;
-    maximizable = false;
-    events = false;
+    basic: boolean;
+    custom: boolean;
+    advanced: boolean;
+    maximizable: boolean;
+    events: boolean;
 
     activeIndex = 0;
 
     ngOnInit() {
 
+    }
+
+    constructor(private messageService: MessageService) {
+        this.basic = false;
+        this.custom = false;
+        this.advanced = false;
+        this.maximizable = false;
+        this.events = false;
     }
 
     showBasicDialog() {
@@ -71,6 +79,4 @@ export class DialogDemoComponent implements OnInit {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    constructor(private messageService: MessageService) {
-    }
 }

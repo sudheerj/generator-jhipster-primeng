@@ -9,15 +9,19 @@ import {MessageService, SelectItem} from 'primeng/api';
 export class CheckboxDemoComponent implements OnInit {
 
     checked: boolean;
-    selectedVersions: string[] = ['AngularJS1.0', 'AngularV4.0'];
-    status: any = true;
-    feature = true;
+    selectedVersions: string[];
+    status: any;
+    feature: boolean;
 
     activeIndex = 0;
 
     ngOnInit() {}
 
     constructor(private messageService: MessageService) {
+        this.checked = false;
+        this.selectedVersions = ['AngularJS1.0', 'AngularV4.0'];
+        this.status = true;
+        this.feature = true;
     }
 
     onChangeCheckbox() {

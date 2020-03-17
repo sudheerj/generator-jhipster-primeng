@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, Message} from 'primeng/components/common/api';
+import {Message, MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-messages',
@@ -48,6 +48,10 @@ export class MessagesDemoComponent implements OnInit {
         this.messages.push({severity: 'info', summary: 'Message 3', detail: 'PrimeNG is awesome'});
     }
 
+    showViaService() {
+        this.messageService.add({severity:'success', summary:'Service Message', detail:'Via MessageService'});
+    }
+
     onChangeStep(label: string) {
         this.msgs.length = 0;
         this.clearMessages();
@@ -57,5 +61,7 @@ export class MessagesDemoComponent implements OnInit {
     clearMessages() {
         this.messages = [];
     }
+
+    constructor(private messageService: MessageService) {}
 
 }

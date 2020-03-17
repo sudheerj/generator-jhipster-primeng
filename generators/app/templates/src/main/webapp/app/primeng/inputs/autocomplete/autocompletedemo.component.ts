@@ -16,8 +16,7 @@ export class AutocompleteDemoComponent implements OnInit {
     topAsianCountry: string;
     countryInstance: Country;
     customCountry: Country;
-    topAsiaCountries: string[] = ['Singapore', 'Hong Kong', 'South Korea', 'Japan', 'Israel',
-        'Brunei', 'Qatar', 'Cyprus', 'Saudi Arabia', 'United Arab Emirates'];
+    topAsiaCountries: string[];
     filteredCountries: Country[];
     filteredCountriesMultiple: Country[];
     filteredTopAsiaCountries: any[];
@@ -25,10 +24,26 @@ export class AutocompleteDemoComponent implements OnInit {
     filteredCustomCountries: Country[];
     selectedType = 'readonly';
     types: SelectItem[];
-    msgs: Message[] = [];
     activeIndex = 0;
 
     constructor(private countryService: CountryService, private messageService: MessageService) {
+        this.country = null;
+        this.countries = [];
+        this.topcountry = '';
+        this.topcountrySingle = '';
+        this.topAsianCountry = '';
+        this.countryInstance = null;
+        this.customCountry = null;
+        this.topAsiaCountries = ['Singapore', 'Hong Kong', 'South Korea', 'Japan', 'Israel',
+            'Brunei', 'Qatar', 'Cyprus', 'Saudi Arabia', 'United Arab Emirates'];
+        this.filteredCountries = [];
+        this.filteredCountriesMultiple = [];
+        this.filteredCustomCountries = [];
+        this.filteredTopAsiaCountries = [];
+        this.filteredCountryInstances = [];
+        this.filteredCustomCountries = [];
+        this.selectedType = '';
+        this.types = [];
     }
 
     onFocus() {

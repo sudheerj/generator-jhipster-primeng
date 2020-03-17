@@ -13,7 +13,7 @@ export class SelectButtonDemoComponent implements OnInit {
 
     selectedType: string;
 
-    selectedTypes: string[] = ['PrimeNG', 'PrimeReact'];
+    selectedTypes: string[];
 
     selectedModes: string[];
 
@@ -22,7 +22,11 @@ export class SelectButtonDemoComponent implements OnInit {
     activeIndex = 0;
 
     constructor(private messageService: MessageService) {
-
+        this.types = [];
+        this.selectedType = '';
+        this.selectedTypes = ['PrimeNG', 'PrimeReact'];
+        this.selectedModes = [];
+        this.modes = [];
     }
 
     onChange(event: any) {

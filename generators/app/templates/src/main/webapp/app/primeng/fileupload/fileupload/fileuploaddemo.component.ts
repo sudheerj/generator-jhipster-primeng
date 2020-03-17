@@ -11,13 +11,16 @@ import {DocumentService} from "../../dragdrop/dragdrop/service/document.service"
 export class FileUploadDemoComponent implements OnInit {
 
     activeIndex = 0;
-    multiple = false;
-    auto = false;
-    uploadedFiles: any[] = [];
+    multiple: boolean;
+    auto: boolean;
+    uploadedFiles: any[];
 
     ngOnInit() {}
 
     constructor(private messageService: MessageService) {
+        this.multiple = false;
+        this.auto = false;
+        this.uploadedFiles = [];
     }
 
     onBeforeSend(event: any) {

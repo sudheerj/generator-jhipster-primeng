@@ -77,6 +77,8 @@ export class StepsDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.items = [];
+        this.activeIndexContainer = 0;
     }
 
 }

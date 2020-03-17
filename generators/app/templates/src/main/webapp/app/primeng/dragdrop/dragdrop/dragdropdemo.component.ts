@@ -34,6 +34,9 @@ export class DragdropDemoComponent implements OnInit {
     draggedDoc: Document;
 
     constructor(private docService: DocumentService, private messageService: MessageService) {
+        this.availableDocs = [];
+        this.seletedDocs = [];
+        this.draggedDoc = null;
     }
 
     ngOnInit() {

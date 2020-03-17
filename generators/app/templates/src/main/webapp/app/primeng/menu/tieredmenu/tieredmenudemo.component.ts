@@ -93,6 +93,7 @@ export class TieredMenuDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.items = [];
     }
 
 }

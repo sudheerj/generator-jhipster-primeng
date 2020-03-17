@@ -100,6 +100,7 @@ export class MenuBarDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.items = [];
     }
 
 }

@@ -35,6 +35,8 @@ export class ProgressBarDemoComponent implements OnInit, OnDestroy {
     }
 
     constructor(private messageService: MessageService) {
+        this.value = 0;
+        this.interval$ = null;
     }
 
 }

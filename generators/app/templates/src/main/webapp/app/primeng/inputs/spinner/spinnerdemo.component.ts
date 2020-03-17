@@ -16,17 +16,25 @@ export class SpinnerDemoComponent implements OnInit {
 
     eventsinput: number;
 
-    readonlyinput = 50;
+    readonlyinput: number;
 
-    disabledinput = 100;
+    disabledinput: number;
 
     types: SelectItem[];
 
-    selectedType = 'readonly';
+    selectedType: string;
 
     activeIndex = 0;
 
     constructor(private messageService: MessageService) {
+        this.basicinput = 0;
+        this.custominput = 0;
+        this.separatorinput = 0;
+        this.eventsinput = 0;
+        this.readonlyinput = 50;
+        this.disabledinput = 100;
+        this.types = [];
+        this.selectedType = 'readonly';
     }
 
     onChange(event: any) {

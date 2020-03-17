@@ -8,17 +8,21 @@ import {MessageService} from 'primeng/api';
 })
 export class ToggleButtonDemoComponent implements OnInit {
 
-    basic = false;
+    basic: boolean;
 
-    customized = true;
+    customized: boolean;
 
-    events = false;
+    events: boolean;
 
-    disabled = false;
+    disabled: boolean;
 
     activeIndex = 0;
 
     constructor(private messageService: MessageService) {
+        this.basic = false;
+        this.customized = true;
+        this.events = false;
+        this.disabled = false;
     }
 
     onToggleButton(e: any) {

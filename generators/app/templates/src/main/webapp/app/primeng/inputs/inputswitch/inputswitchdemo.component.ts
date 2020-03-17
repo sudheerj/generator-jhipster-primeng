@@ -9,9 +9,9 @@ import {MessageService, SelectItem} from 'primeng/api';
 export class InputSwitchDemoComponent implements OnInit {
     activeIndex = 0;
 
-    checked1 = false;
+    checked1: boolean;
 
-    checked2 = true;
+    checked2: boolean;
 
     onChangeStep(label: string) {
         this.messageService.add({severity: 'info', summary: label});
@@ -22,5 +22,7 @@ export class InputSwitchDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.checked1 = false;
+        this.checked2 = true;
     }
 }

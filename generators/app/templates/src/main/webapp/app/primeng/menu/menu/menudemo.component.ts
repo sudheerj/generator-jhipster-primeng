@@ -93,6 +93,7 @@ export class MenuDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.items = [];
     }
 
 }

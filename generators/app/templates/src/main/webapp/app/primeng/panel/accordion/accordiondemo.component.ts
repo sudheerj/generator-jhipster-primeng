@@ -9,9 +9,10 @@ import {MessageService} from 'primeng/api';
 export class AccordionDemoComponent implements OnInit {
     activeIndex = 0;
 
-    accordionActiveIndexes: number[] = [0, 2];
+    accordionActiveIndexes: number[];
 
     constructor(private messageService: MessageService) {
+        this.accordionActiveIndexes = [0, 2];
     }
 
     onTabClose(event: any) {

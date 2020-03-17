@@ -40,7 +40,22 @@ export class TreeTableDemoComponent implements OnInit {
 
     loading: boolean;
 
-    constructor(private nodeService: TreeNodeService, private messageService: MessageService) { }
+    constructor(private nodeService: TreeNodeService, private messageService: MessageService) {
+        this.basicTreeTable = [];
+        this.singleSelectionTreeTable = [];
+        this.multipleSelectionTreeTable = [];
+        this.checkboxSelectionTreeTable = [];
+        this.templateTreeTable = [];
+        this.contextmenuTreeTable =[];
+        this.lazyTreeTable = [];
+        this.selectedTouristPlace = null;
+        this.selectedPlace = null;
+        this.selectedMultiTouristPlaces = [];
+        this.selectedMultiTouristPlaces = [];
+        this.items = [];
+        this.cols = [];
+        this.loading = false;
+    }
 
     onChangeStep(label: string) {
         this.messageService.add({severity: 'info', summary: label});

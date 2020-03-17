@@ -11,7 +11,7 @@ export class InputTextDemoComponent implements OnInit {
 
     text: string;
 
-    disabled = true;
+    disabled: boolean;
 
     toggleDisabled() {
         this.disabled = !this.disabled;
@@ -25,5 +25,7 @@ export class InputTextDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.text = '';
+        this.disabled = true;
     }
 }

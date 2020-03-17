@@ -19,5 +19,6 @@ export class PasswordIndicatorDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.password = '';
     }
 }

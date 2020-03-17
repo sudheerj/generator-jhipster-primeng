@@ -14,11 +14,15 @@ export class ChipsDemoComponent implements OnInit {
 
     complexcontacts: string[];
 
-    disabledcontacts: string[] = ['PrimeTek', 'InfoTek'];
+    disabledcontacts: string[];
 
     activeIndex = 0;
 
     constructor(private messageService: MessageService) {
+        this.contactnames = [];
+        this.contactnotified = [];
+        this.complexcontacts = [];
+        this.disabledcontacts = ['PrimeTek', 'InfoTek'];
     }
 
     onAddContact() {

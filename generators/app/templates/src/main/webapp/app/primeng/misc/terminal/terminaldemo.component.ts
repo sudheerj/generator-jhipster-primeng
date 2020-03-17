@@ -21,15 +21,13 @@ export class TerminalDemoComponent implements OnInit, OnDestroy {
             const response = (command === 'date') ? new Date().toDateString() : 'Unknown command: ' + command;
             this.terminalService.sendResponse(response);
         });
+        this.subscription = null;
     }
 
     ngOnDestroy() {
         if (this.subscription) {
             this.subscription.unsubscribe();
         }
-    }
-
-    constructor(private messageService: MessageService) {
     }
 
 }

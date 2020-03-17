@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, MessageServie} from 'primeng/api';
+import {MenuItem, MessageService} from 'primeng/api';
 import {EmployeeService} from './service/employee.service';
 import Employee from './service/employee';
 
@@ -18,6 +18,11 @@ export class ContextMenuDemoComponent implements OnInit {
     private tableItems: MenuItem[];
 
     constructor(private employeeService: EmployeeService, private messageService: MessageService) {
+        this.selectedEmployee = null;
+        this.employees = [];
+        this.documentItems = [];
+        this.targetItems = [];
+        this.tableItems = [];
     }
 
     ngOnInit() {

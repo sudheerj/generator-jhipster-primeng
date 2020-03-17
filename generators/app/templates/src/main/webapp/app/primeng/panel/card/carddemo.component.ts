@@ -17,6 +17,7 @@ export class CardDemoComponent {
     }
 
     constructor(private messageService: MessageService) {
+        this.items = [];
     }
 
 }
