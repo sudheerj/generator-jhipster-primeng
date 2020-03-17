@@ -17,7 +17,11 @@ export class FullCalendarDemoComponent implements OnInit {
 
     header: any;
 
-    constructor(private eventService: EventService, private messageService: MessageService) { }
+    constructor(private eventService: EventService, private messageService: MessageService) {
+        this.events = [];
+        this.options = {};
+        this.header = {};
+    }
 
     ngOnInit() {
         this.eventService.getEvents().subscribe((events: any) => {this.events = events.data; });

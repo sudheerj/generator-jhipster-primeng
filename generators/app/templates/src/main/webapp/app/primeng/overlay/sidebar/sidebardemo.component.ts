@@ -10,15 +10,15 @@ import {MessageService} from 'primeng/api';
 export class SideBarDemoComponent implements OnInit {
     activeIndex = 0;
 
-    visibleSidebar1;
+    visibleSidebar1: boolean;
 
-    visibleSidebar2;
+    visibleSidebar2: boolean;
 
-    visibleSidebar3;
+    visibleSidebar3: boolean;
 
-    visibleSidebar4;
+    visibleSidebar4: boolean;
 
-    visibleSidebar5;
+    visibleSidebar5: boolean;
 
     onChangeStep(label: string) {
         this.messageService.add({severity: 'info', summary: label});
@@ -27,5 +27,10 @@ export class SideBarDemoComponent implements OnInit {
     ngOnInit() {}
 
     constructor(private messageService: MessageService) {
+        this.visibleSidebar1 = false;
+        this.visibleSidebar2 = false;
+        this.visibleSidebar3 = false;
+        this.visibleSidebar4 = false;
+        this.visibleSidebar5 = false;
     }
 }

@@ -17,7 +17,7 @@
 
 This is a [JHipster](http://jhipster.github.io/) module, that is meant to be used in a JHipster application.
 
-The minimum required version of JHipster is **>=6.5.1**
+The minimum required version of JHipster is **>=6.8.0**
 
 This module is used to generate components, using [PrimeNG](https://www.primefaces.org/primeng).
 

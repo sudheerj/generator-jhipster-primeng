@@ -18,11 +18,18 @@ export class OrgChartDemoComponent implements OnInit, OnDestroy {
     dataAdvanced: TreeNode[];
     selectedNode: TreeNode;
 
-    display = false;
+    display: boolean;
     selectedVCard: VCard;
     private availableVCards: VCard[];
 
     constructor(private vcardService: VCardService, private messageService: MessageService) {
+        this.get$ = null;
+        this.dataBasic = [];
+        this.dataAdvanced = [];
+        this.selectedNode = null;
+        this.display = false;
+        this.selectedVCard = null;
+        this.availableVCards = [];
     }
 
     ngOnInit() {

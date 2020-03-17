@@ -9,9 +9,8 @@ import {VCardService} from "../orgchart/service/vcard.service";
     styles: []
 })
 export class PaginatorDemoComponent implements OnInit {
-    msgs: Message[] = [];
     activeIndex = 0;
-    totalRecords = 100;
+    totalRecords : number;
 
     onChangeStep(label: string) {
         this.messageService.add({severity: 'info', summary: label});
@@ -21,5 +20,6 @@ export class PaginatorDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.totalRecords = 100;
     }
 }

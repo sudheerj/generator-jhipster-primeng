@@ -10,7 +10,7 @@ import {MessageService} from 'primeng/api';
 export class ButtonDemoComponent implements OnInit {
     activeIndex = 0;
 
-    clicks = 0;
+    clicks : number;
 
     clickMe() {
         this.messageService.add({severity: 'info', summary: 'The button is clicked ' + (++this.clicks) + ' times'});
@@ -23,5 +23,6 @@ export class ButtonDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.clicks = 0;
     }
 }

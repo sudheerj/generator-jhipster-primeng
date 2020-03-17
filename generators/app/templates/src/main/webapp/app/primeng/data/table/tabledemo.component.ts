@@ -91,7 +91,7 @@ export class TableDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    browser: Browser = new MyBrowser();
+    browser: Browser;
 
     basicBrowsers: Browser[];
 
@@ -107,7 +107,7 @@ export class TableDemoComponent implements OnInit {
 
     newBrowser: boolean;
 
-    totalRecords = 100;
+    totalRecords: number;
 
     engines: SelectItem[];
 
@@ -123,7 +123,24 @@ export class TableDemoComponent implements OnInit {
 
     selectedColumns: any[];
 
-    constructor(private browserService: BrowserService, private messageService: MessageService) { }
+    constructor(private browserService: BrowserService, private messageService: MessageService) {
+        this.browser = new MyBrowser();
+        this.basicBrowsers = [];
+        this.browsers = [];
+        this.selectedBrowser = null;
+        this.selectedBrowsers = [];
+        this.displayDialog = false;
+        this.stacked = false;
+        this.newBrowser = false;
+        this.totalRecords = 100;
+        this.engines = [];
+        this.grades = [];
+        this.expandedRows = [];
+        this.cols = [];
+        this.columnOptions = [];
+        this.tableItems = [];
+        this.selectedColumns = [];
+    }
 
     ngOnInit() {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.browsers = browsers.data);

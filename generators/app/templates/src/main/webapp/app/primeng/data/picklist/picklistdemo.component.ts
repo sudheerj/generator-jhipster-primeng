@@ -16,7 +16,10 @@ export class PicklistDemoComponent implements OnInit {
 
     targetCountries: Country[];
 
-    constructor(private countryService: CountryService, private messageService: MessageService) { }
+    constructor(private countryService: CountryService, private messageService: MessageService) {
+        this.sourceCountries = [];
+        this.targetCountries = [];
+    }
 
     ngOnInit() {
         this.countryService.getCountries().subscribe((countries: any) => {

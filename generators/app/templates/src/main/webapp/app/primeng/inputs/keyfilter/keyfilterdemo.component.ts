@@ -38,5 +38,9 @@ export class KeyFilterDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.blockSpace = null;
+        this.blockSpecial = null;
+        this.ccRegex = null;
+        this.cc = null;
     }
 }

@@ -3,7 +3,7 @@ import { JhiLanguageService } from 'ng-jhipster';
 import {MessageService} from 'primeng/api';
 import {ScoreService} from './service/score.service';
 import Score from './service/score';
-import {OverlayPanel} from 'primeng/components/overlaypanel/overlaypanel';
+import {OverlayPanel} from 'primeng/overlaypanel';
 
 @Component({
     selector: 'jhi-overlaypanel',
@@ -17,7 +17,12 @@ export class OverlayPanelDemoComponent implements OnInit {
     percentage: string;
     activeIndex = 0;
 
-    constructor(private scoreService: ScoreService, private messageService: MessageService) { }
+    constructor(private scoreService: ScoreService, private messageService: MessageService) {
+        this.scores = [];
+        this.marks = '';
+        this.percentage = '';
+        this.activeIndex = 0;
+    }
 
     selectScore(event: any, score: Score, overlaypanel: OverlayPanel) {
         this.marks = score.marks;

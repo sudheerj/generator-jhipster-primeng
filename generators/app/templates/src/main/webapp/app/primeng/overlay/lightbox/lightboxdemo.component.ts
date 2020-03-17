@@ -9,7 +9,6 @@ import {MessageService} from 'primeng/api';
 })
 export class LightboxDemoComponent implements OnInit {
     images: any[];
-    msgs: Message[] = [];
     activeIndex = 0;
 
     ngOnInit() {
@@ -29,5 +28,6 @@ export class LightboxDemoComponent implements OnInit {
     }
 
     constructor(private messageService: MessageService) {
+        this.images = [];
     }
 }

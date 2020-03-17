@@ -37,7 +37,7 @@ export class DataViewDemoComponent implements OnInit {
         this.inlineBrowsers = [];
         this.lazyloadingBrowsers = [];
         this.loaderBrowsers = [];
-        this.selectBrowser = null;
+        this.selectedBrowser = null;
 
         this.displayDialog = false;
         this.sortOptions = [];

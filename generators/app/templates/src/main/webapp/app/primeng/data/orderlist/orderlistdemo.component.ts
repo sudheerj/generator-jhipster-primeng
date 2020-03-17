@@ -14,7 +14,9 @@ export class OrderlistDemoComponent implements OnInit {
 
     countries: Country[];
 
-    constructor(private countryService: CountryService, private messageService: MessageService) { }
+    constructor(private countryService: CountryService, private messageService: MessageService) {
+        this.countries = [];
+    }
 
     ngOnInit() {
         this.countryService.getCountries().subscribe((countries: any) => {

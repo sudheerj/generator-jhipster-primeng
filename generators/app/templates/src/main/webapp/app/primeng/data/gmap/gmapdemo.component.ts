@@ -31,6 +31,15 @@ export class GmapDemoComponent implements OnInit {
     activeIndex = 0;
 
     constructor(private messageService: MessageService) {
+        this.options = {};
+        this.overlays = [];
+        this.overlaysEvents = [];
+        this.dialogVisible = false;
+        this.markerTitle = '';
+        this.map = {};
+        this.selectedPosition = {};
+        this.infoWindow = {};
+        this.draggable = false;
     }
 
     ngOnInit() {
