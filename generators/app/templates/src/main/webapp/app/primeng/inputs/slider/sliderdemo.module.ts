@@ -13,7 +13,7 @@ import {
     sliderDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     sliderDemoRoute
 ];
 
@@ -25,7 +25,7 @@ const primeng_STATES = [
         ToastModule,
         InputTextModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         SliderDemoComponent

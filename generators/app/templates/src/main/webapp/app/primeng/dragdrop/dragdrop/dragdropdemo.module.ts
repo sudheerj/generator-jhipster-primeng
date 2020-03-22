@@ -14,7 +14,7 @@ import {
     dragdropDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     dragdropDemoRoute
 ];
 
@@ -26,7 +26,7 @@ const primeng_STATES = [
         PanelModule,
         WizardModule,
         ToastModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         DragdropDemoComponent

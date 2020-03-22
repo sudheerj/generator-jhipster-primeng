@@ -14,7 +14,7 @@ import {
     megamenuDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     megamenuDemoRoute
 ];
 
@@ -28,7 +28,7 @@ const primeng_STATES = [
         ButtonModule,
         WizardModule,
         InputTextModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         MegaMenuDemoComponent

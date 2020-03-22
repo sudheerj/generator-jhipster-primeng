@@ -16,7 +16,7 @@ import {
     progressspinnerDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     progressspinnerDemoRoute
 ];
 
@@ -29,7 +29,7 @@ const primeng_STATES = [
         ProgressSpinnerModule,
         ToastModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         ProgressSpinnerDemoComponent

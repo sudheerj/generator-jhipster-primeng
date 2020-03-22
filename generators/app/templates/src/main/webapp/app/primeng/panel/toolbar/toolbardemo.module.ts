@@ -18,7 +18,7 @@ import {
     toolbarDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     toolbarDemoRoute
 ];
 
@@ -33,7 +33,7 @@ const primeng_STATES = [
         SplitButtonModule,
         ButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         ToolbarDemoComponent

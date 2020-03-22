@@ -16,7 +16,7 @@ import {
     deferDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     deferDemoRoute
 ];
 
@@ -29,7 +29,7 @@ const primeng_STATES = [
         TableModule,
         DeferModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         DeferDemoComponent

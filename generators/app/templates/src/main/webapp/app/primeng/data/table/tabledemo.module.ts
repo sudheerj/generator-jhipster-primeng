@@ -24,7 +24,7 @@ import {
     tableDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     tableDemoRoute
 ];
 
@@ -46,7 +46,7 @@ const primeng_STATES = [
         TableModule,
         WizardModule,
         ToastModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         TableDemoComponent

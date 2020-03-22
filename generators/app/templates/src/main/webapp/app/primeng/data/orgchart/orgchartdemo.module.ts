@@ -18,7 +18,7 @@ import {
     orgchartDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     orgchartDemoRoute
 ];
 
@@ -33,7 +33,7 @@ const primeng_STATES = [
         WizardModule,
         ToastModule,
         DialogModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, VCardService],
     declarations: [

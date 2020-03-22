@@ -16,7 +16,7 @@ import {
     progressbarDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     progressbarDemoRoute
 ];
 
@@ -29,7 +29,7 @@ const primeng_STATES = [
         ProgressBarModule,
         ToastModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         ProgressBarDemoComponent

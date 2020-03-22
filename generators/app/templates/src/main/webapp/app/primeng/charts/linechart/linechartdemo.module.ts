@@ -9,7 +9,7 @@ import {
     linechartDemoRoute
 } from '../../charts/linechart';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     linechartDemoRoute
 ];
 
@@ -17,7 +17,7 @@ const primeng_STATES = [
     imports: [
         <%= angularXAppName %>SharedModule,
         ChartModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         LinechartDemoComponent

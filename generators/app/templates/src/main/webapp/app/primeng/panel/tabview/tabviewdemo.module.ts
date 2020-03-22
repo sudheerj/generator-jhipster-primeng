@@ -15,7 +15,7 @@ import {
     tabviewDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     tabviewDemoRoute
 ];
 
@@ -27,7 +27,7 @@ const primeng_STATES = [
         TabViewModule,
         ToastModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         TabViewDemoComponent

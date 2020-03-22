@@ -16,7 +16,7 @@ import {
     cardDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     cardDemoRoute
 ];
 
@@ -29,7 +29,7 @@ const primeng_STATES = [
         ToastModule,
         ButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         CardDemoComponent

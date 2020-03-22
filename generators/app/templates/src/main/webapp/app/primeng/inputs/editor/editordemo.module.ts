@@ -14,7 +14,7 @@ import {
     editorDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     editorDemoRoute
 ];
 
@@ -27,7 +27,7 @@ const primeng_STATES = [
         ButtonModule,
         WizardModule,
         SharedModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         EditorDemoComponent

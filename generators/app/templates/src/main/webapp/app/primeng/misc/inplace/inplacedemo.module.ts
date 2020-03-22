@@ -16,7 +16,7 @@ import {
     inplaceDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     inplaceDemoRoute
 ];
 
@@ -29,7 +29,7 @@ const primeng_STATES = [
         InplaceModule,
         TableModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         InplaceDemoComponent

@@ -13,7 +13,7 @@ import {
     inputmaskDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     inputmaskDemoRoute
 ];
 
@@ -25,7 +25,7 @@ const primeng_STATES = [
         ToastModule,
         RadioButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         InputMaskDemoComponent

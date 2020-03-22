@@ -13,7 +13,7 @@ import {
     stepsDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     stepsDemoRoute
 ];
 
@@ -26,7 +26,7 @@ const primeng_STATES = [
         ToastModule,
         ButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         StepsDemoComponent

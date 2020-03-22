@@ -25,7 +25,7 @@ import {
     fullcalendarDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     fullcalendarDemoRoute
 ];
 
@@ -46,7 +46,7 @@ const primeng_STATES = [
         ButtonModule,
         ToastModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, EventService],
     declarations: [

@@ -18,7 +18,7 @@ import {
     dataviewDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     dataviewDemoRoute
 ];
 
@@ -33,7 +33,7 @@ const primeng_STATES = [
         ButtonModule,
         ToastModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         DataViewDemoComponent

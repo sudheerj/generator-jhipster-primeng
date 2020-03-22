@@ -12,7 +12,7 @@ import {
     inputTextAreaDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     inputTextAreaDemoRoute
 ];
 
@@ -23,7 +23,7 @@ const primeng_STATES = [
         InputTextareaModule,
         ToastModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         InputTextAreaDemoComponent

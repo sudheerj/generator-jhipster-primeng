@@ -12,7 +12,7 @@ import {
     galleriaDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     galleriaDemoRoute
 ];
 
@@ -24,7 +24,7 @@ const primeng_STATES = [
         ToastModule,
         GalleriaModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         GalleriaDemoComponent

@@ -17,7 +17,7 @@ import {
     calendarDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     calendarDemoRoute
 ];
 
@@ -31,7 +31,7 @@ const primeng_STATES = [
         SelectButtonModule,
         ButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         CalendarDemoComponent

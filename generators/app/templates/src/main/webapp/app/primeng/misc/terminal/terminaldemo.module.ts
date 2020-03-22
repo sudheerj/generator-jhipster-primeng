@@ -12,7 +12,7 @@ import {
     terminalDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     terminalDemoRoute];
 
 @NgModule({
@@ -23,7 +23,7 @@ const primeng_STATES = [
         ToastModule,
         TerminalModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         TerminalDemoComponent

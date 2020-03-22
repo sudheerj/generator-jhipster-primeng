@@ -12,7 +12,7 @@ import {
     captchaDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     captchaDemoRoute
 ];
 
@@ -24,7 +24,7 @@ const primeng_STATES = [
         ToastModule,
         CaptchaModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         CaptchaDemoComponent

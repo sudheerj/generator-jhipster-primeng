@@ -22,7 +22,7 @@ import {
     validationDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     validationDemoRoute
 ];
 
@@ -43,7 +43,7 @@ const primeng_STATES = [
         InputTextareaModule,
         ButtonModule,
         ToastModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         ValidationDemoComponent

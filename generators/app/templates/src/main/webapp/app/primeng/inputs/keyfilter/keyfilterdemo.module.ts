@@ -14,7 +14,7 @@ import {
     keyFilterDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     keyFilterDemoRoute
 ];
 
@@ -27,7 +27,7 @@ const primeng_STATES = [
         ButtonModule,
         WizardModule,
         KeyFilterModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         KeyFilterDemoComponent

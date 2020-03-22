@@ -12,7 +12,7 @@ import {
     splitbuttonDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     splitbuttonDemoRoute
 ];
 
@@ -24,7 +24,7 @@ const primeng_STATES = [
         SplitButtonModule,
         ToastModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         SplitbuttonDemoComponent

@@ -19,7 +19,7 @@ import {
     treeDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     treeDemoRoute
 ];
 
@@ -34,7 +34,7 @@ const primeng_STATES = [
         ContextMenuModule,
         ToastModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         TreeDemoComponent

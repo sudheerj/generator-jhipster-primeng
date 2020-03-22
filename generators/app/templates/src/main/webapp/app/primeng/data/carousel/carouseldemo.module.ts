@@ -14,7 +14,7 @@ import {
     carouselDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     carouselDemoRoute
 ];
 
@@ -25,7 +25,7 @@ const primeng_STATES = [
         CarouselModule,
         WizardModule,
         ToastModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         CarouselDemoComponent

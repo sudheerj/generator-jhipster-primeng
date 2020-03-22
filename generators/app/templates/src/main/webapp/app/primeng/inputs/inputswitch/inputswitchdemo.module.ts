@@ -13,7 +13,7 @@ import {
     inputswitchDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     inputswitchDemoRoute
 ];
 
@@ -25,7 +25,7 @@ const primeng_STATES = [
         ToastModule,
         ButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         InputSwitchDemoComponent

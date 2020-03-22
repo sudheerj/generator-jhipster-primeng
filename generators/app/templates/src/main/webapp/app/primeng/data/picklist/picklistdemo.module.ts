@@ -16,7 +16,7 @@ import {
     picklistDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     picklistDemoRoute
 ];
 
@@ -28,7 +28,7 @@ const primeng_STATES = [
         PickListModule,
         WizardModule,
         ToastModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService],
     declarations: [

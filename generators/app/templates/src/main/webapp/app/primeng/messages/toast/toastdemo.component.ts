@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import {MessageService} from 'primeng/api';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
     selector: 'jhi-toast',

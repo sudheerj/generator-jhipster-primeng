@@ -17,7 +17,7 @@ import {
     panelDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     panelDemoRoute
 ];
 
@@ -31,7 +31,7 @@ const primeng_STATES = [
         SplitButtonModule,
         ButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         PanelDemoComponent

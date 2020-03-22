@@ -19,7 +19,7 @@ import {
     gmapDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     gmapDemoRoute
 ];
 
@@ -35,7 +35,7 @@ const primeng_STATES = [
         ToastModule,
         ButtonModule,
         BrowserAnimationsModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         GmapDemoComponent

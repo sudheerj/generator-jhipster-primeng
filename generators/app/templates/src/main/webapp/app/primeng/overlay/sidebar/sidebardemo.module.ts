@@ -13,7 +13,7 @@ import {
     sidebarDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     sidebarDemoRoute
 ];
 
@@ -25,7 +25,7 @@ const primeng_STATES = [
         ToastModule,
         BrowserAnimationsModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         SideBarDemoComponent

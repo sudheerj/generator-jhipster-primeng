@@ -13,7 +13,7 @@ import {
     dialogDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     dialogDemoRoute
 ];
 
@@ -25,7 +25,7 @@ const primeng_STATES = [
         ToastModule,
         BrowserAnimationsModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         DialogDemoComponent

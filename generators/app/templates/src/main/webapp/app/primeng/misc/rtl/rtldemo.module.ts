@@ -12,7 +12,7 @@ import {
     rtlDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     rtlDemoRoute
 ];
 
@@ -24,7 +24,7 @@ const primeng_STATES = [
         ToastModule,
         AccordionModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         RTLDemoComponent

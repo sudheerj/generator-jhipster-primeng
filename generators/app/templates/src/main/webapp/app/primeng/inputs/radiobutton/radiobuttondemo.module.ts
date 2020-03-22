@@ -12,7 +12,7 @@ import {
     radiobuttonDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     radiobuttonDemoRoute
 ];
 
@@ -23,7 +23,7 @@ const primeng_STATES = [
         RadioButtonModule,
         ToastModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         RadioButtonDemoComponent

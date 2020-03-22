@@ -9,7 +9,7 @@ import {
     radarchartDemoRoute
 } from '../../charts/radarchart';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     radarchartDemoRoute
 ];
 
@@ -17,7 +17,7 @@ const primeng_STATES = [
     imports: [
         <%= angularXAppName %>SharedModule,
         ChartModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         RadarchartDemoComponent

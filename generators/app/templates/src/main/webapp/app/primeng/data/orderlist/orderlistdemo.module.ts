@@ -17,7 +17,7 @@ import {
     orderlistDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     orderlistDemoRoute
 ];
 
@@ -30,7 +30,7 @@ const primeng_STATES = [
         OrderListModule,
         ToastModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService],
     declarations: [

@@ -19,7 +19,7 @@ import {
     virtualscrollerDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     virtualscrollerDemoRoute
 ];
 
@@ -35,7 +35,7 @@ const primeng_STATES = [
         InputTextModule,
         WizardModule,
         ToastModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         VirtualScrollerDemoComponent

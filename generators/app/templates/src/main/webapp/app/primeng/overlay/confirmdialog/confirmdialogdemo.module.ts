@@ -15,7 +15,7 @@ import {
     confirmDialogDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     confirmDialogDemoRoute
 ];
 
@@ -28,7 +28,7 @@ const primeng_STATES = [
         ToastModule,
         WizardModule,
         ButtonModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         ConfirmDialogDemoComponent

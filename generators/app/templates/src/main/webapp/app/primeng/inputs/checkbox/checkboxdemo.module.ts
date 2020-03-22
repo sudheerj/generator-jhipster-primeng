@@ -13,7 +13,7 @@ import {
     checkboxDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     checkboxDemoRoute
 ];
 
@@ -25,7 +25,7 @@ const primeng_STATES = [
         ToastModule,
         TriStateCheckboxModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         CheckboxDemoComponent

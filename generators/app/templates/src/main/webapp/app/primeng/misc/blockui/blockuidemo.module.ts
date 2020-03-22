@@ -19,7 +19,7 @@ import {
     blockuiDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     blockuiDemoRoute
 ];
 
@@ -35,7 +35,7 @@ const primeng_STATES = [
         ToastModule,
         WizardModule,
         BlockUIModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         BlockUIDemoComponent

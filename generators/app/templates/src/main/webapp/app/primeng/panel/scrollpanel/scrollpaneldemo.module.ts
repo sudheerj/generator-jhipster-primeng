@@ -12,7 +12,7 @@ import {
     scrollPanelDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     scrollPanelDemoRoute
 ];
 
@@ -24,7 +24,7 @@ const primeng_STATES = [
         CodeHighlighterModule,
         ToastModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         ScrollPanelDemoComponent

@@ -12,7 +12,7 @@ import {
     breadcrumbDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     breadcrumbDemoRoute
 ];
 
@@ -24,7 +24,7 @@ const primeng_STATES = [
         GrowlModule,
         BreadcrumbModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         BreadcrumbDemoComponent

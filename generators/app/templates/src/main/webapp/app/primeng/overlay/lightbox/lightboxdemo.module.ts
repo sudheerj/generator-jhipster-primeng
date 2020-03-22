@@ -12,7 +12,7 @@ import {
     lightboxDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     lightboxDemoRoute
 ];
 
@@ -23,7 +23,7 @@ const primeng_STATES = [
         ToastModule,
         BrowserAnimationsModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         LightboxDemoComponent

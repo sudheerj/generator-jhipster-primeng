@@ -16,7 +16,7 @@ import {
     selectDemoRoute
 } from './';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     selectDemoRoute
 ];
 
@@ -29,7 +29,7 @@ const primeng_STATES = [
         ToastModule,
         SelectButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         SelectDemoComponent

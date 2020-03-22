@@ -16,7 +16,7 @@ import {
 import { OverviewComponent } from './pages/overview.component';
 import { DownloadsComponent } from './pages/downloads.component';
 
-const primeng_STATES = [
+const PRIMENG_STATES = [
     tabmenuDemoRoute
 ];
 
@@ -29,7 +29,7 @@ const primeng_STATES = [
         ToastModule,
         ButtonModule,
         WizardModule,
-        RouterModule.forRoot(primeng_STATES, { useHash: true })
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [
         TabMenuDemoComponent,
