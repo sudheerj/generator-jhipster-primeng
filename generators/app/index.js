@@ -49,9 +49,6 @@ module.exports = class extends BaseGenerator {
                         if (fileData.dependencies['@angular/cdk']) {
                             this.libAngularScrollingVersion = fileData.dependencies['@angular/cdk'];
                         }
-                        if (fileData.dependencies['@angular/animations']) {
-                            this.libAngularAnimationsVersion = fileData.dependencies['@angular/animations'];
-                        }
                         if (fileData.dependencies.primeng) {
                             this.libPrimeNgVersion = fileData.dependencies.primeng;
                         }
@@ -273,53 +270,48 @@ module.exports = class extends BaseGenerator {
         // add dependencies
         try {
             if (this.libAngularAnimationsVersion) {
-                // the version already exists, so try to upgrade instead
-                this.replaceContent('package.json',
-                    `"@angular/animations": "${this.libAngularAnimationsVersion}"`,
-                    `"@angular/animations": "${this.libAngularVersion}"`);
-            } else {
-                this.addNpmDependency('@angular/animations', `${this.libAngularAnimationsVersion}`);
+                this.addNpmDependency('@angular/animations', `^${CONSTANTS.ANGULAR_ANIMATIONS_VERSION}`);
             }
 
             if (this.libAngularScrollingVersion) {
                 // the version already exists, so try to upgrade instead
                 this.replaceContent('package.json',
-                    `"@angular/cdk": "${this.libAngularScrollingVersion}"`, `"@angular/cdk": "^${this.libAngularVersion}"`);
+                    `"@angular/cdk": "${this.libAngularScrollingVersion}"`, `"@angular/cdk": "^${this.libAngularVersion}"`, '');
             } else {
-                this.addNpmDependency('@angular/cdk', `^${this.libAngularCDKVersion}`);
+                this.addNpmDependency('@angular/cdk', `^${CONSTANTS.ANGULAR_CDK_VERSION}`);
             }
 
             if (this.libPrimeNgVersion) {
                 // the version already exists, so try to upgrade instead
-                this.replaceContent('package.json', `"primeng": "${this.libPrimeNgVersion}"`, `"primeng": "${CONSTANTS.PRIMENG_VERSION}"`);
+                this.replaceContent('package.json', `"primeng": "${this.libPrimeNgVersion}"`, `"primeng": "${CONSTANTS.PRIMENG_VERSION}"`, '');
             } else {
                 this.addNpmDependency('primeng', `${CONSTANTS.PRIMENG_VERSION}`);
             }
 
             if (this.libPrimeNgExtensionsVersion) {
                 // the version already exists, so try to upgrade instead
-                this.replaceContent('package.json', `"primeng-extensions": "${this.libPrimeNgExtensionsVersion}"`, `"primeng-extensions": "${CONSTANTS.PRIMENG_EXTENSIONS_VERSION}"`);
+                this.replaceContent('package.json', `"primeng-extensions": "${this.libPrimeNgExtensionsVersion}"`, `"primeng-extensions": "${CONSTANTS.PRIMENG_EXTENSIONS_VERSION}"`, '');
             } else {
                 this.addNpmDependency('primeng-extensions', `${CONSTANTS.PRIMENG_EXTENSIONS_VERSION}`);
             }
 
             if (this.libChartJsVersion) {
                 // the version already exists, so try to upgrade instead
-                this.replaceContent('package.json', `"chart.js": "${this.libChartJsVersion}"`, `"chart.js": "${CONSTANTS.CHARTJS_VERSION}"`);
+                this.replaceContent('package.json', `"chart.js": "${this.libChartJsVersion}"`, `"chart.js": "${CONSTANTS.CHARTJS_VERSION}"`, '');
             } else {
                 this.addNpmDependency('chart.js', `${CONSTANTS.CHARTJS_VERSION}`);
             }
 
             if (this.libPrimeIconsVersion) {
                 // the version already exists, so try to upgrade instead
-                this.replaceContent('package.json', `"primeicons": "${this.libPrimeIconsVersion}"`, `"primeicons": "${CONSTANTS.PRIMEICONS_VERSION}"`);
+                this.replaceContent('package.json', `"primeicons": "${this.libPrimeIconsVersion}"`, `"primeicons": "${CONSTANTS.PRIMEICONS_VERSION}"`, '');
             } else {
                 this.addNpmDependency('primeicons', `${CONSTANTS.PRIMEICONS_VERSION}`);
             }
 
             if (this.libPrimeFlexVersion) {
                 // the version already exists, so try to upgrade instead
-                this.replaceContent('package.json', `"primeflex": "${this.libPrimeFlexVersion}"`, `"primeflex": "${CONSTANTS.PRIMEFLEX_VERSION}"`);
+                this.replaceContent('package.json', `"primeflex": "${this.libPrimeFlexVersion}"`, `"primeflex": "${CONSTANTS.PRIMEFLEX_VERSION}"`, '');
             } else {
                 this.addNpmDependency('primeflex', `${CONSTANTS.PRIMEFLEX_VERSION}`);
             }
@@ -345,9 +337,9 @@ module.exports = class extends BaseGenerator {
             }
         } catch (e) {
             this.log(`${chalk.red.bold('ERROR!')}`);
-            this.log('  Problem when adding the new librairies in your package.json');
+            this.log('  Problem when adding the new libraries in your package.json');
             this.log('  You need to add manually:\n');
-            this.log(`  "@angular/animations": "${this.libAngularVersion}",`);
+            this.log(`  "@angular/animations": "${this.libAngularAnimationsVersion}",`);
             this.log(`  "@angular/cdk": "${this.libAngularScrollingVersion}",`);
             this.log(`  "primeng": "${CONSTANTS.PRIMENG_VERSION}",`);
             this.log(`  "primeng-extensions": "${CONSTANTS.PRIMENG_EXTENSIONS_VERSION}",`);
