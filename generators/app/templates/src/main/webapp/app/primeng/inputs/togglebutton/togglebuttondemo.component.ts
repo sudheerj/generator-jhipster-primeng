@@ -25,7 +25,7 @@ export class ToggleButtonDemoComponent implements OnInit {
         this.disabled = false;
     }
 
-    onToggleButton(e: any) {
+    onToggleButton(e: any): void {
         if (e.checked) {
             this.messageService.add({severity: 'info', summary: 'I like Angular Framework'});
         } else {
@@ -33,13 +33,13 @@ export class ToggleButtonDemoComponent implements OnInit {
         }
     }
 
-    onChange(e: any) {
+    onChange(e: any): void {
         this.messageService.add({severity: 'info', summary: 'The selected options are ' + e.value});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    ngOnInit() {}
+    ngOnInit(): void {}
 }

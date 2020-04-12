@@ -14,8 +14,6 @@ export class TerminalDemoComponent implements OnInit, OnDestroy {
     activeIndex = 0;
     subscription: Subscription;
 
-    ngOnInit() {}
-
     constructor(private terminalService: TerminalService, private messageService: MessageService) {
         this.terminalService.commandHandler.subscribe(command => {
             const response = (command === 'date') ? new Date().toDateString() : 'Unknown command: ' + command;
@@ -24,7 +22,9 @@ export class TerminalDemoComponent implements OnInit, OnDestroy {
         this.subscription = null;
     }
 
-    ngOnDestroy() {
+    ngOnInit(): void {}
+
+    ngOnDestroy(): void {
         if (this.subscription) {
             this.subscription.unsubscribe();
         }

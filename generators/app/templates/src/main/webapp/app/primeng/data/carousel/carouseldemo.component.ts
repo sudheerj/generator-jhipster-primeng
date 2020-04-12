@@ -17,11 +17,11 @@ export class CarouselDemoComponent implements OnInit {
         this.basicBrowsers = [];
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 10));
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

@@ -13,19 +13,20 @@ export class InputTextDemoComponent implements OnInit {
 
     disabled: boolean;
 
-    toggleDisabled() {
-        this.disabled = !this.disabled;
-    }
-
-    onChangeStep(label: string) {
-        this.messageService.add({severity: 'info', summary: label});
-    }
-
-    ngOnInit() {
-    }
-
     constructor(private messageService: MessageService) {
         this.text = '';
         this.disabled = true;
     }
+
+    toggleDisabled(): void {
+        this.disabled = !this.disabled;
+    }
+
+    onChangeStep(label: string): void {
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    ngOnInit(): void {
+    }
+
 }

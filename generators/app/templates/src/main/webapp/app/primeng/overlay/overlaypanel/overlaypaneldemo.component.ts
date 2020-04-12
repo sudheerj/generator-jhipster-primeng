@@ -24,25 +24,25 @@ export class OverlayPanelDemoComponent implements OnInit {
         this.activeIndex = 0;
     }
 
-    selectScore(event: any, score: Score, overlaypanel: OverlayPanel) {
+    selectScore(event: any, score: Score, overlaypanel: OverlayPanel): void {
         this.marks = score.marks;
         this.percentage = score.percentage;
         overlaypanel.toggle(event);
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.scoreService.getScores().subscribe((scores: any) => this.scores = scores.data);
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    onShow() {
+    onShow(): void {
         this.messageService.add({severity: 'info', summary: 'Show dialog', detail: 'Overlay shown'});
     }
 
-    onHide() {
+    onHide(): void {
         this.messageService.add({severity: 'info', summary: 'Hide dialog', detail: 'Overlay hide'});
     }
 

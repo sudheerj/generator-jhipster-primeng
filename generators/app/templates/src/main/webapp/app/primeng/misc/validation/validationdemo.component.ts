@@ -25,7 +25,7 @@ export class ValidationDemoComponent implements OnInit {
         this.address = '';
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.registrationform = this.formBuilder.group({
             firstname: new FormControl('', Validators.required),
             lastname: new FormControl('', Validators.required),
@@ -41,12 +41,12 @@ export class ValidationDemoComponent implements OnInit {
         this.genders.push({label: 'Female', value: 'Female'});
     }
 
-    onSubmit(value: string) {
+    onSubmit(value: string): void {
         this.submitted = true;
         this.messageService.add({severity: 'info', summary: 'Success', detail: 'Form Submitted'});
     }
 
-    get diagnostic() {
+    get diagnostic(): string {
         return JSON.stringify(this.registrationform.value);
     }
 

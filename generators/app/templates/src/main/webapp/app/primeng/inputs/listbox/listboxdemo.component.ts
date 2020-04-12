@@ -45,11 +45,11 @@ export class ListboxDemoComponent implements OnInit {
         this.selectedCar = '';
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
 
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

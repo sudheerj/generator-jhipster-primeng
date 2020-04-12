@@ -37,18 +37,18 @@ export class SpinnerDemoComponent implements OnInit {
         this.selectedType = 'readonly';
     }
 
-    onChange(event: any) {
+    onChange(event: any): void {
         this.messageService.add(
             {severity: 'info', summary: 'Spinner value is changed'});
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.types = [];
         this.types.push({label: 'ReadOnly', value: 'readonly'});
         this.types.push({label: 'Disabled', value: 'disable'});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

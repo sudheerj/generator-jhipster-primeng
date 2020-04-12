@@ -46,55 +46,55 @@ export class AutocompleteDemoComponent implements OnInit {
         this.types = [];
     }
 
-    onFocus() {
+    onFocus(): void {
         this.messageService.add({severity: 'info', summary: 'The autocomplete gets focus'});
     }
 
-    onBlur() {
+    onBlur(): void {
         this.messageService.add({severity: 'info', summary: 'The autocomplete loses focus'});
     }
 
-    onSelect() {
+    onSelect(): void {
         this.messageService.add({severity: 'info', summary: 'The autocomplete suggestion is selected'});
     }
 
-    onUnselect() {
+    onUnselect(): void {
         this.messageService.add({severity: 'info', summary: 'The autocomplete selected item is removed'});
     }
 
-    onClearInput(event: any) {
+    onClearInput(event: any): void {
         this.messageService.add({severity: 'info', summary: 'The autocomplete input is cleared'});
     }
 
-    filterCountryInstances(event: any) {
+    filterCountryInstances(event: any): void {
         const query = event.query;
         this.countryService.getCountries().subscribe((countries: any) => {
             this.filteredCountryInstances = this.filterCountry(query, countries.data);
         });
     }
 
-    filterCountries(event: any) {
+    filterCountries(event: any): void {
         const query = event.query;
         this.countryService.getCountries().subscribe((countries: any) => {
             this.filteredCountries = this.filterCountry(query, countries.data);
         });
     }
 
-    filterCountriesMultiple(event: any) {
+    filterCountriesMultiple(event: any): void {
         const query = event.query;
         this.countryService.getCountries().subscribe((countries: any) => {
             this.filteredCountriesMultiple = this.filterCountry(query, countries.data);
         });
     }
 
-    filterCustomCountries(event: any) {
+    filterCustomCountries(event: any): void {
         const query = event.query;
         this.countryService.getCountries().subscribe((countries: any) => {
             this.filteredCustomCountries = this.filterCountry(query, countries.data);
         });
     }
 
-    filterTopAsiaCountries(event: any) {
+    filterTopAsiaCountries(event: any): void {
         this.filteredTopAsiaCountries = [];
         for (const country of this.topAsiaCountries) {
             if (country.toLowerCase().indexOf(event.query.toLowerCase()) === 0) {
@@ -103,7 +103,7 @@ export class AutocompleteDemoComponent implements OnInit {
         }
     }
 
-    handleDropdownClick() {
+    handleDropdownClick(): void {
         this.filteredTopAsiaCountries = [];
         setTimeout(() => {
             this.filteredTopAsiaCountries = this.topAsiaCountries;
@@ -120,13 +120,13 @@ export class AutocompleteDemoComponent implements OnInit {
         return filtered;
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.types = [];
         this.types.push({label: 'ReadOnly', value: 'readonly'});
         this.types.push({label: 'Disabled', value: 'disable'});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

@@ -12,7 +12,11 @@ export class GalleriaDemoComponent implements OnInit {
 
     images: any[];
 
-    ngOnInit() {
+    constructor(private messageService: MessageService) {
+        this.images = [];
+    }
+
+    ngOnInit(): void {
         this.images = [];
         this.images.push({
             source: '/content/primeng/assets/data/images/cars/Yeni.png',
@@ -51,15 +55,12 @@ export class GalleriaDemoComponent implements OnInit {
         });
     }
 
-    onImageClicked($event: any) {
+    onImageClicked($event: any): void {
         window.open($event.image.source, '_blank');
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    constructor(private messageService: MessageService) {
-        this.images = [];
-    }
 }

@@ -40,7 +40,12 @@ export class StepsDemoComponent implements OnInit {
     activeIndex = 0;
     private items: MenuItem[];
 
-    ngOnInit() {
+    constructor(private messageService: MessageService) {
+        this.items = [];
+        this.activeIndexContainer = 0;
+    }
+
+    ngOnInit(): void {
         this.items = [{
             label: 'Personal',
             command: (event: any) => {
@@ -72,13 +77,8 @@ export class StepsDemoComponent implements OnInit {
         ];
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
-    }
-
-    constructor(private messageService: MessageService) {
-        this.items = [];
-        this.activeIndexContainer = 0;
     }
 
 }

@@ -12,14 +12,15 @@ export class PaginatorDemoComponent implements OnInit {
     activeIndex = 0;
     totalRecords : number;
 
-    onChangeStep(label: string) {
-        this.messageService.add({severity: 'info', summary: label});
-    }
-
-    ngOnInit() {
-    }
-
     constructor(private messageService: MessageService) {
         this.totalRecords = 100;
     }
+
+    onChangeStep(label: string): void {
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    ngOnInit(): void {
+    }
+
 }

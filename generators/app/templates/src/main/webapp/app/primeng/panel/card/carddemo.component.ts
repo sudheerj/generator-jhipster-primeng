@@ -12,12 +12,12 @@ export class CardDemoComponent {
 
     activeIndex = 0;
 
-    onChangeStep(label: string) {
-        this.messageService.push({severity: 'info', summary: label});
-    }
-
     constructor(private messageService: MessageService) {
         this.items = [];
+    }
+
+    onChangeStep(label: string): void {
+        this.messageService.push({severity: 'info', summary: label});
     }
 
 }

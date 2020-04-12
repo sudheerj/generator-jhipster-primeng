@@ -10,11 +10,11 @@ import {MenuItem, MessageService, ConfirmationService} from 'primeng/api';
 export class ConfirmDialogDemoComponent implements OnInit {
     activeIndex = 0;
 
-    ngOnInit() {}
-
     constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {}
 
-    confirmAccept() {
+    ngOnInit(): void {}
+
+    confirmAccept(): void {
         this.confirmationService.confirm({
             message: 'Do you want to subscribe for Angular news feeds?',
             header: 'Subscribe',
@@ -25,7 +25,7 @@ export class ConfirmDialogDemoComponent implements OnInit {
         });
     }
 
-    confirmDelete() {
+    confirmDelete(): void {
         this.confirmationService.confirm({
             message: 'Do you want to delete AngularNews account?',
             header: 'UnSubscribe',
@@ -36,7 +36,7 @@ export class ConfirmDialogDemoComponent implements OnInit {
         });
     }
 
-    confirmCustomAccept() {
+    confirmCustomAccept(): void {
         this.confirmationService.confirm({
             message: 'Do you like to use Table component?',
             accept: () => {
@@ -45,7 +45,7 @@ export class ConfirmDialogDemoComponent implements OnInit {
         });
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

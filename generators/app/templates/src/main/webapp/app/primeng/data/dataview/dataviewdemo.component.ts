@@ -46,7 +46,7 @@ export class DataViewDemoComponent implements OnInit {
         this.sortOrder = 1;
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 4));
         this.browserService.getBrowsers().subscribe((browsers: any) => this.facetBrowsers = browsers.data.slice(0, 4));
         this.browserService.getBrowsers().subscribe((browsers: any) => this.inlineBrowsers = browsers.data);
@@ -60,7 +60,7 @@ export class DataViewDemoComponent implements OnInit {
         ];
     }
 
-    onSortChange(event) {
+    onSortChange(event): void {
         const value = event.value;
 
         if (value.indexOf('!') === 0) {
@@ -72,22 +72,22 @@ export class DataViewDemoComponent implements OnInit {
         }
     }
 
-    selectBrowser(browser: Browser) {
+    selectBrowser(browser: Browser): void {
         this.selectedBrowser = browser;
         this.displayDialog = true;
     }
 
-    onDialogHide() {
+    onDialogHide(): void {
         this.selectedBrowser = null;
     }
 
-    loadData(event: any) {
+    loadData(event: any): void {
         const start = event.first; // event.first = First row offset
         const end = start + event.rows; // event.rows = Number of rows per page
         this.browserService.getBrowsers().subscribe((browsers: any) => this.lazyloadingBrowsers = browsers.data.slice(start, end));
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

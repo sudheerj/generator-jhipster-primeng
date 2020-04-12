@@ -10,11 +10,11 @@ import {MenuItem, MessageService} from 'primeng/api';
 export class RTLDemoComponent implements OnInit {
     activeIndex = 0;
 
-    ngOnInit() {
-
+    constructor(private messageService: MessageService) {
     }
 
-    constructor(private messageService: MessageService) {
+    ngOnInit(): void {
+
     }
 
 }

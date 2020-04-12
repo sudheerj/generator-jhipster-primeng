@@ -12,7 +12,12 @@ export class BreadcrumbDemoComponent implements OnInit {
     activeIndex = 0;
     private items: MenuItem[];
 
-    ngOnInit() {
+    constructor(private messageService: MessageService) {
+        this.home = null;
+        this.items = [];
+    }
+
+    ngOnInit(): void {
         this.items = [];
         this.items.push({
             label: 'Categories', command: event => {
@@ -48,13 +53,8 @@ export class BreadcrumbDemoComponent implements OnInit {
         };
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
-    }
-
-    constructor(private messageService: MessageService) {
-        this.home = null;
-        this.items = [];
     }
 
 }

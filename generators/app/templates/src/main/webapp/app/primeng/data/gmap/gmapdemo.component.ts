@@ -42,7 +42,7 @@ export class GmapDemoComponent implements OnInit {
         this.draggable = false;
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.options = {
             center: {lat: 14.4426, lng: 79.9865},
             zoom: 8
@@ -53,18 +53,18 @@ export class GmapDemoComponent implements OnInit {
         this.infoWindow = new google.maps.InfoWindow();
     }
 
-    handleMapReady(event: any) {
+    handleMapReady(event: any): void {
         this.map = event.map;
         this.messageService.add({severity: 'info', summary: 'Map is ready', detail: 'Map is loaded'});
     }
 
-    handleMapClick(event: any) {
+    handleMapClick(event: any): void {
         this.dialogVisible = true;
         this.selectedPosition = event.latLng;
         this.messageService.add({severity: 'info', summary: 'Map is clicked', detail: this.selectedPosition});
     }
 
-    handleOverlayClick(event: any) {
+    handleOverlayClick(event: any): void {
         const isMarker = event.overlay.getTitle !== undefined;
 
         if (isMarker) {
@@ -79,30 +79,30 @@ export class GmapDemoComponent implements OnInit {
         }
     }
 
-    handleZoomChanged(event: any) {
+    handleZoomChanged(event: any): void {
         this.messageService.add({severity: 'info', summary: 'The map zoom options are changed'});
     }
 
-    handleMapDragEnd(event: any) {
+    handleMapDragEnd(event: any): void {
         this.messageService.add({severity: 'info', summary: 'The map drag is reached end'});
     }
 
-    addMarker() {
+    addMarker(): void {
         this.overlaysEvents.push(new google.maps.Marker({position: {lat: this.selectedPosition.lat(),
             lng: this.selectedPosition.lng()}, title: this.markerTitle, draggable: this.draggable}));
         this.markerTitle = null;
         this.dialogVisible = false;
     }
 
-    handleDragStart(event: any) {
+    handleDragStart(event: any): void {
         this.messageService.add({severity: 'info', summary: 'Marker Drag started', detail: event.overlay.getTitle()});
     }
 
-    handleDragEnd(event: any) {
+    handleDragEnd(event: any): void {
         this.messageService.add({severity: 'info', summary: 'Marker Dragged', detail: event.overlay.getTitle()});
     }
 
-    initOverlays() {
+    initOverlays(): void {
         if (!this.overlays || !this.overlays.length) {
             this.overlays = [
                 new google.maps.Marker({position: {lat: 14.6188043, lng: 79.9630253}, title: 'Talamanchi'}),
@@ -136,19 +136,19 @@ export class GmapDemoComponent implements OnInit {
         }
     }
 
-    zoomIn(map: any) {
+    zoomIn(map: any): void {
         map.setZoom(map.getZoom() + 1);
     }
 
-    zoomOut(map: any) {
+    zoomOut(map: any): void {
         map.setZoom(map.getZoom() - 1);
     }
 
-    clear() {
+    clear(): void {
         this.overlaysEvents = [];
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 

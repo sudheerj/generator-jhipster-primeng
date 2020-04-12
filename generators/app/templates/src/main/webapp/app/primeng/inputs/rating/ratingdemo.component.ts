@@ -34,24 +34,24 @@ export class RatingDemoComponent implements OnInit {
         this.selectedType = '';
     }
 
-    handleRate(event: any) {
+    handleRate(event: any): void {
         this.messageService.add(
             {severity: 'info', summary: 'You have rated with ' + event.value});
     }
 
-    handleCancel(event: any) {
+    handleCancel(event: any): void {
         this.messageService.add(
             {severity: 'info', summary: 'Rating is Cancelled'});
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.types = [];
         this.types.push({label: 'ReadOnly', value: 'readonly'});
         this.types.push({label: 'Disabled', value: 'disable'});
 
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

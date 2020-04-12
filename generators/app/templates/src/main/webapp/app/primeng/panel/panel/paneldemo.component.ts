@@ -12,7 +12,11 @@ export class PanelDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    ngOnInit() {
+    constructor(private messageService: MessageService) {
+        this.items = [];
+    }
+
+    ngOnInit(): void {
         this.items = [
             {label: 'Showcase', icon: 'fa fa-briefcase', url: 'https://www.primefaces.org/primeng/'},
             {label: 'Github', icon: 'fa fa-github-square', url: 'https://github.com/primefaces/primeng'},
@@ -20,22 +24,18 @@ export class PanelDemoComponent implements OnInit {
         ];
     }
 
-    beforeToggle() {
+    beforeToggle(): void {
         this.messageService.add(
             {severity: 'info', summary: 'Before toggle the content'});
     }
 
-    afterToggle() {
+    afterToggle(): void {
         this.messageService.add(
             {severity: 'info', summary: 'After toggle the content'});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
-    }
-
-    constructor(private messageService: MessageService) {
-        this.items = [];
     }
 
 }

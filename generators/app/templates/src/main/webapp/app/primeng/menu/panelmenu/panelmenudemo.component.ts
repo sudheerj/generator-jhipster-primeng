@@ -12,7 +12,12 @@ export class PanelMenuDemoComponent implements OnInit {
     private items: MenuItem[];
     private expandeditems: MenuItem[];
 
-    ngOnInit() {
+    constructor(private messageService: MessageService) {
+        this.items = [];
+        this.expandeditems = [];
+    }
+
+    ngOnInit(): void {
         this.items = [
             {
                 label: 'File',
@@ -172,12 +177,8 @@ export class PanelMenuDemoComponent implements OnInit {
             }
         ];
     }
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
-    }
-    constructor(private messageService: MessageService) {
-        this.items = [];
-        this.expandeditems = [];
     }
 
 }

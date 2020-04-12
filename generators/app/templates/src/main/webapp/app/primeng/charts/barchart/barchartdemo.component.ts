@@ -29,6 +29,6 @@ export class BarchartDemoComponent implements OnInit {
         };
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
     }
 }

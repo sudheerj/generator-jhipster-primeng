@@ -59,7 +59,7 @@ export class TreeDemoComponent implements OnInit {
         this.items = [];
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.nodeService.getTouristPlaces().subscribe((places: any) => this.basicTree = places.data);
         this.nodeService.getTouristPlaces().subscribe((places: any) => this.singleSelectionTree = places.data);
         this.nodeService.getTouristPlaces().subscribe((places: any) => this.multipleSelectionTree = places.data);
@@ -92,46 +92,46 @@ export class TreeDemoComponent implements OnInit {
         ];
     }
 
-    nodeSelect(event: any) {
+    nodeSelect(event: any): void {
         this.messageService.add({severity: 'info', summary: 'Node Selected', detail: event.node.label});
     }
 
-    nodeUnselect(event: any) {
+    nodeUnselect(event: any): void {
         this.messageService.add({severity: 'info', summary: 'Node Unselected', detail: event.node.label});
     }
 
-    nodeExpandMessage(event: any) {
+    nodeExpandMessage(event: any): void {
         this.messageService.add({severity: 'info', summary: 'Node Expanded', detail: event.node.label});
     }
 
-    nodeExpand(event: any) {
+    nodeExpand(event: any): void {
         if (event.node) {
             // in a real application, make a call to a remote url to load children of the current node and add the new nodes as children
             this.nodeService.getTouristPlaces().subscribe((nodes: any) => event.node.children = nodes.data);
         }
     }
 
-    viewFile(selectPlace: TreeNode[]) {
+    viewFile(selectPlace: TreeNode[]): void {
         this.messageService.add({severity: 'info', summary: 'Node selected with right click', detail: selectPlace[0].label});
     }
 
-    unselectFile() {
+    unselectFile(): void {
         this.selectedTouristPlace = null;
     }
 
-    expandAll() {
+    expandAll(): void {
         this.programmaticTree.forEach( (node: any) => {
             this.expandRecursive(node, true);
         } );
     }
 
-    collapseAll() {
+    collapseAll(): void {
         this.programmaticTree.forEach((node: any) => {
             this.expandRecursive(node, false);
         } );
     }
 
-    expandRecursive(node: TreeNode, isExpand: boolean) {
+    expandRecursive(node: TreeNode, isExpand: boolean): void {
         node.expanded = isExpand;
         if (node.children) {
             node.children.forEach(childNode => {
@@ -139,7 +139,7 @@ export class TreeDemoComponent implements OnInit {
             } );
         }
     }
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

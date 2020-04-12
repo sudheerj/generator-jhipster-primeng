@@ -15,21 +15,22 @@ export class RadioButtonDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    selectFramework(e: any) {
-        this.msgs = [];
-        this.msgs.push({severity: 'info', summary: this.defaultSelection + ' is selected as SPA technology'});
-    }
-
-    onChangeStep(label: string) {
-        this.messageService.add({severity: 'info', summary: label});
-    }
-
-    ngOnInit() {}
-
     constructor(private messageService: MessageService) {
         this.basic = '';
         this.defaultSelection = 'Angular';
         this.eventsSelection = '';
         this.disabledSelection = 'Angular'
     }
+
+    selectFramework(e: any): void {
+        this.msgs = [];
+        this.msgs.push({severity: 'info', summary: this.defaultSelection + ' is selected as SPA technology'});
+    }
+
+    onChangeStep(label: string): void {
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    ngOnInit(): void {}
+
 }

@@ -12,17 +12,18 @@ export class ButtonDemoComponent implements OnInit {
 
     clicks : number;
 
-    clickMe() {
-        this.messageService.add({severity: 'info', summary: 'The button is clicked ' + (++this.clicks) + ' times'});
-    }
-
-    onChangeStep(label: string) {
-        this.messageService.add({severity: 'info', summary: label});
-    }
-    ngOnInit() {
-    }
-
     constructor(private messageService: MessageService) {
         this.clicks = 0;
     }
+
+    clickMe(): void {
+        this.messageService.add({severity: 'info', summary: 'The button is clicked ' + (++this.clicks) + ' times'});
+    }
+
+    onChangeStep(label: string): void {
+        this.messageService.add({severity: 'info', summary: label});
+    }
+    ngOnInit(): void {
+    }
+
 }

@@ -32,7 +32,7 @@ export class OrgChartDemoComponent implements OnInit, OnDestroy {
         this.availableVCards = [];
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.dataBasic = [
             {
                 label: 'CEO',
@@ -117,13 +117,13 @@ export class OrgChartDemoComponent implements OnInit, OnDestroy {
         ];
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         if (this.get$) {
             this.get$.unsubscribe();
         }
     }
 
-    onNodeSelect(event: any) {
+    onNodeSelect(event: any): void {
         if (this.availableVCards == null) {
             this.get$ = this.vcardService.getVCards().subscribe(
                 (vcards: any) => {
@@ -135,11 +135,11 @@ export class OrgChartDemoComponent implements OnInit, OnDestroy {
         }
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    private showInfo(event: any) {
+    private showInfo(event: any): void {
         this.selectedVCard = null;
 
         this.availableVCards.some((element: VCard) => {

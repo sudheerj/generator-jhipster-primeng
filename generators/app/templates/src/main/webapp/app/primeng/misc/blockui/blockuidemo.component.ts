@@ -15,20 +15,20 @@ export class BlockUIDemoComponent {
 
     blockedDocument: boolean;
 
-    blockDocument() {
+    constructor(private messageService: MessageService) {
+        this.blockedPanel = false;
+        this.blockedDocument = false;
+    }
+
+    blockDocument(): void {
         this.blockedDocument = true;
         setTimeout(() => {
             this.blockedDocument = false;
         }, 3000);
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
-    }
-
-    constructor(private messageService: MessageService) {
-        this.blockedPanel = false;
-        this.blockedDocument = false;
     }
 
 }

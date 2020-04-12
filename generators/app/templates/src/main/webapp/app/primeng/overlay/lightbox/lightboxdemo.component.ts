@@ -11,7 +11,11 @@ export class LightboxDemoComponent implements OnInit {
     images: any[];
     activeIndex = 0;
 
-    ngOnInit() {
+    constructor(private messageService: MessageService) {
+        this.images = [];
+    }
+
+    ngOnInit(): void {
         this.images = [];
         this.images.push({source: '/content/primeng/assets/data/images/logos/primefaces.png',
             thumbnail: '/content/primeng/assets/data/images/logos/primefaces.png', title: 'PrimeFaces'});
@@ -23,11 +27,7 @@ export class LightboxDemoComponent implements OnInit {
             thumbnail: '/content/primeng/assets/data/images/logos/primeui.png', title: 'PrimeUI'});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
-    }
-
-    constructor(private messageService: MessageService) {
-        this.images = [];
     }
 }

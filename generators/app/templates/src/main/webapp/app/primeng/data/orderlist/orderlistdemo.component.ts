@@ -18,18 +18,18 @@ export class OrderlistDemoComponent implements OnInit {
         this.countries = [];
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.countryService.getCountries().subscribe((countries: any) => {
             this.countries = countries.data;
         });
     }
 
-    onReorder(event: any) {
+    onReorder(event: any): void {
         this.messageService.add(
             {severity: 'info', summary: 'onReorder Event', detail: event.items});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

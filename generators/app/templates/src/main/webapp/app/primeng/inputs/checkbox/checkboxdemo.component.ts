@@ -15,8 +15,6 @@ export class CheckboxDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    ngOnInit() {}
-
     constructor(private messageService: MessageService) {
         this.checked = false;
         this.selectedVersions = ['AngularJS1.0', 'AngularV4.0'];
@@ -24,15 +22,17 @@ export class CheckboxDemoComponent implements OnInit {
         this.feature = true;
     }
 
-    onChangeCheckbox() {
+    ngOnInit(): void {}
+
+    onChangeCheckbox(): void {
         this.messageService.add({severity: 'info', summary: 'Checkbox status is changed'});
     }
 
-    onChangeTristate() {
+    onChangeTristate(): void {
         this.messageService.add({severity: 'info', summary: 'Tristate Checkbox status is changed'});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

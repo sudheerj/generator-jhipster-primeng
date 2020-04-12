@@ -30,6 +30,6 @@ export class DoughnutchartDemoComponent implements OnInit {
         };
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
     }
 }

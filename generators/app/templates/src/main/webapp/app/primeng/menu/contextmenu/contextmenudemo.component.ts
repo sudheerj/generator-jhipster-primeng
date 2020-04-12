@@ -25,7 +25,7 @@ export class ContextMenuDemoComponent implements OnInit {
         this.tableItems = [];
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.employeeService.getEmployees().subscribe((employees: any) => {
             this.employees = employees.data;
         });
@@ -136,11 +136,11 @@ export class ContextMenuDemoComponent implements OnInit {
         ];
     }
 
-    viewEmployee(employee: Employee) {
+    viewEmployee(employee: Employee): void {
         this.messageService.add({severity: 'info', summary: 'Employee Selected', detail: employee.name + ' - ' + employee.id});
     }
 
-    deleteEmployee(employee: Employee) {
+    deleteEmployee(employee: Employee): void {
         this.msgs = [];
         for (let i = 0; i < this.employees.length; i++) {
             if (this.employees[i].id === employee.id) {
@@ -151,7 +151,7 @@ export class ContextMenuDemoComponent implements OnInit {
         }
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

@@ -10,15 +10,16 @@ export class PasswordIndicatorDemoComponent implements OnInit {
     password: string;
     activeIndex = 0;
 
-    onChangeStep(label: string) {
-        this.messageService.add({severity: 'info', summary: label});
-    }
-
-    ngOnInit() {
-
-    }
-
     constructor(private messageService: MessageService) {
         this.password = '';
     }
+
+    onChangeStep(label: string): void {
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    ngOnInit(): void {
+
+    }
+
 }

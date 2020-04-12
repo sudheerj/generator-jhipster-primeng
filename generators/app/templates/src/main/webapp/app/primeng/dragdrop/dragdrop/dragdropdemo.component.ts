@@ -39,16 +39,16 @@ export class DragdropDemoComponent implements OnInit {
         this.draggedDoc = null;
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.seletedDocs = [];
         this.docService.getDocuments().subscribe((docs: any) => this.availableDocs = docs.data);
     }
 
-    dragStart(event: any, doc: Document) {
+    dragStart(event: any, doc: Document): void {
         this.draggedDoc = doc;
     }
 
-    drop(event: any) {
+    drop(event: any): void {
         if (this.draggedDoc) {
             // add draggable element to the deleted documents list
             this.seletedDocs = [...this.seletedDocs, this.draggedDoc];
@@ -58,11 +58,11 @@ export class DragdropDemoComponent implements OnInit {
         }
     }
 
-    dragEnd(event: any) {
+    dragEnd(event: any): void {
         this.draggedDoc = null;
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

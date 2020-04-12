@@ -14,15 +14,15 @@ import 'rxjs/add/operator/take';
 export class ProgressSpinnerDemoComponent implements OnInit {
     activeIndex = 0;
 
-    ngOnInit() {
-
-    }
-
-    onChangeStep(label: string) {
-        this.messageService.add({severity: 'info', summary: label});
-    }
-
     constructor(private messageService: MessageService) {
+    }
+
+    ngOnInit(): void {
+
+    }
+
+    onChangeStep(label: string): void {
+        this.messageService.add({severity: 'info', summary: label});
     }
 
 }

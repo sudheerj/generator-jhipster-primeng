@@ -29,12 +29,12 @@ export class SelectButtonDemoComponent implements OnInit {
         this.modes = [];
     }
 
-    onChange(event: any) {
+    onChange(event: any): void {
         this.messageService.add(
             {severity: 'info', summary: 'Library name is changed'});
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.types = [];
         this.types.push({label: 'PrimeNG', value: 'PrimeNG'});
         this.types.push({label: 'PrimeReact', value: 'PrimeReact'});
@@ -47,7 +47,7 @@ export class SelectButtonDemoComponent implements OnInit {
         ];
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

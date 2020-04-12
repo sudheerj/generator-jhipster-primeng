@@ -23,7 +23,7 @@ export class FullCalendarDemoComponent implements OnInit {
         this.header = {};
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.eventService.getEvents().subscribe((events: any) => {this.events = events.data; });
 
         this.options = {
@@ -37,7 +37,7 @@ export class FullCalendarDemoComponent implements OnInit {
         };
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 

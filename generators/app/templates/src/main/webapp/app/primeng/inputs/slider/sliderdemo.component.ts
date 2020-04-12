@@ -42,17 +42,17 @@ export class SliderDemoComponent implements OnInit {
         this.selectedType = 'readonly'
     }
 
-    onChange() {
+    onChange(): void {
         this.messageService.add(
             {severity: 'info', summary: 'Slider value is changed'});
     }
 
-    onSlideEnd() {
+    onSlideEnd(): void {
         this.messageService.add(
             {severity: 'info', summary: 'Slide end is reached'});
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
 
         this.types = [];
         this.types.push({label: 'ReadOnly', value: 'readonly'});
@@ -60,7 +60,7 @@ export class SliderDemoComponent implements OnInit {
 
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

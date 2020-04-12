@@ -10,19 +10,17 @@ import {MenuItem, MessageService} from 'primeng/api';
 export class CaptchaDemoComponent implements OnInit {
     activeIndex = 0;
 
-    ngOnInit() {
-
+    constructor(private messageService: MessageService) {
     }
 
-    showResponse(event) {
+    ngOnInit(): void {}
+
+    showResponse(event): void {
     this.messageService.add({severity: 'info', summary: 'Succees', detail: 'User Responded'});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
-    }
-
-    constructor(private messageService: MessageService) {
     }
 
 }

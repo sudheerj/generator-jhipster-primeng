@@ -27,23 +27,23 @@ export class SelectDemoComponent implements OnInit {
         this.selectedCountries = [];
     }
 
-    onFocus() {
+    onFocus(): void {
         this.messageService.add({severity: 'info', summary: 'The dropdown gets focus'});
     }
 
-    onBlur() {
+    onBlur(): void {
         this.messageService.add({severity: 'info', summary: 'The dropwdown loses focus'});
     }
 
-    onChange() {
+    onChange(): void {
         this.messageService.add({severity: 'info', summary: 'The dropdown is changed'});
     }
 
-    onChangeMultiselect() {
+    onChangeMultiselect(): void {
         this.messageService.add({severity: 'info', summary: 'The Multiselect selection is changed'});
     }
 
-    generateCountries(countriesArray: Country[]) {
+    generateCountries(countriesArray: Country[]): void {
         const countryList: any[] = [];
         const countryCodes: any[] = [];
         for (const country of countriesArray) {
@@ -54,13 +54,13 @@ export class SelectDemoComponent implements OnInit {
         this.countrycodes = countryCodes;
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.countryService.getCountries().subscribe((countriesArray: any) => {
             this.generateCountries(countriesArray.data);
         });
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

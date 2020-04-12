@@ -27,46 +27,44 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class ToastDemoComponent implements OnInit {
     activeIndex = 0;
 
-    ngOnInit() {
-
-    }
-
     constructor(private messageService: MessageService) {}
 
-    showSuccess() {
+    ngOnInit(): void {}
+
+    showSuccess(): void {
         this.messageService.add({severity: 'success', summary: 'Success Message', detail: 'Order submitted'});
     }
 
-    showInfo() {
+    showInfo(): void {
         this.messageService.add({severity: 'info', summary: 'Info Message', detail: 'PrimeNG rocks'});
     }
 
-    showWarn() {
+    showWarn(): void {
         this.messageService.add({severity: 'warn', summary: 'Warn Message', detail: 'There are unsaved changes'});
     }
 
-    showError() {
+    showError(): void {
         this.messageService.add({severity: 'error', summary: 'Error Message', detail: 'Validation failed'});
     }
 
-    showCustom() {
+    showCustom(): void {
         this.messageService.add({key: 'custom', severity: 'info', summary: 'Custom Toast', detail: 'With a Gradient'});
     }
 
-    showTopLeft() {
+    showTopLeft(): void {
         this.messageService.add({key: 'tl', severity: 'info', summary: 'Success Message', detail: 'Order submitted'});
     }
 
-    showTopCenter() {
+    showTopCenter(): void {
         this.messageService.add({key: 'tc', severity: 'warn', summary: 'Info Message', detail: 'PrimeNG rocks'});
     }
 
-    showConfirm() {
+    showConfirm(): void {
         this.messageService.clear();
         this.messageService.add({key: 'c', sticky: true, severity: 'warn', summary: 'Are you sure?', detail: 'Confirm to proceed'});
     }
 
-    showMultiple() {
+    showMultiple(): void {
         this.messageService.addAll([
             {severity: 'info', summary: 'Message 1', detail: 'PrimeNG rocks'},
             {severity: 'info', summary: 'Message 2', detail: 'PrimeUI rocks'},
@@ -74,19 +72,19 @@ export class ToastDemoComponent implements OnInit {
         ]);
     }
 
-    onConfirm() {
+    onConfirm(): void {
         this.messageService.clear('c');
     }
 
-    onReject() {
+    onReject(): void {
         this.messageService.clear('c');
     }
 
-    clear() {
+    clear(): void {
         this.messageService.clear();
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.clear();
         this.messageService.add({severity: 'info', summary: label});
     }

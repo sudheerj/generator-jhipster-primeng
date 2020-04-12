@@ -12,22 +12,23 @@ export class FieldsetDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    beforeToggle() {
+    constructor(private messageService: MessageService) {
+        this.basic = '';
+    }
+
+    beforeToggle(): void {
         this.messageService.add(
             {severity: 'info', summary: 'Before toggle the content'});
     }
 
-    afterToggle() {
+    afterToggle(): void {
         this.messageService.add(
             {severity: 'info', summary: 'After toggle the content'});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
-    ngOnInit() {}
+    ngOnInit(): void {}
 
-    constructor(private messageService: MessageService) {
-        this.basic = '';
-    }
 }

@@ -16,10 +16,6 @@ export class DialogDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    ngOnInit() {
-
-    }
-
     constructor(private messageService: MessageService) {
         this.basic = false;
         this.custom = false;
@@ -28,7 +24,11 @@ export class DialogDemoComponent implements OnInit {
         this.events = false;
     }
 
-    showBasicDialog() {
+    ngOnInit(): void {
+
+    }
+
+    showBasicDialog(): void {
         this.basic = true;
         this.custom = false;
         this.advanced = false;
@@ -36,7 +36,7 @@ export class DialogDemoComponent implements OnInit {
         this.events = false;
     }
 
-    showCustomDialog() {
+    showCustomDialog(): void {
         this.basic = false;
         this.custom = true;
         this.advanced = false;
@@ -44,7 +44,7 @@ export class DialogDemoComponent implements OnInit {
         this.events = false;
     }
 
-    showAdvancedDialog() {
+    showAdvancedDialog(): void {
         this.basic = false;
         this.custom = false;
         this.advanced = true;
@@ -52,7 +52,7 @@ export class DialogDemoComponent implements OnInit {
         this.events = false;
     }
 
-    showEventsDialog() {
+    showEventsDialog(): void {
         this.basic = false;
         this.custom = false;
         this.advanced = false;
@@ -60,22 +60,22 @@ export class DialogDemoComponent implements OnInit {
         this.events = true;
     }
 
-    showDialog() {
+    showDialog(): void {
         this.maximizable = true;
         this.messageService.add({severity: 'info', summary: 'Show dialog', detail: 'When dialog is shown'});
     }
 
-    hideDialog() {
+    hideDialog(): void {
         this.maximizable = false;
         this.messageService.add({severity: 'info', summary: 'Hide dialog', detail: 'when dialog is hidden'});
     }
 
-    onComplete() {
+    onComplete(): void {
         this.custom = false;
         this.advanced = false;
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 

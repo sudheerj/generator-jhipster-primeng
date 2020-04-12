@@ -70,7 +70,7 @@ export class VirtualScrollerDemoComponent implements OnInit {
         this.sortOptions = [];
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data);
         this.browserService.getBrowsers().subscribe((browsers: any) => this.lazyloadingBrowsers = browsers.data.slice(0, 4));
 
@@ -83,7 +83,7 @@ export class VirtualScrollerDemoComponent implements OnInit {
         ];
     }
 
-    loadData(event: any) {
+    loadData(event: any): void {
         // in a real application, make a remote request to load data using state metadata from event
         // event.first = First row offset
         // event.rows = Number of rows per page
@@ -100,7 +100,7 @@ export class VirtualScrollerDemoComponent implements OnInit {
         }, 1000);
     }
 
-    onSortChange() {
+    onSortChange(): void {
         if (this.sortKey.indexOf('!') === 0) {
             this.sort(-1);
         } else {
@@ -121,7 +121,7 @@ export class VirtualScrollerDemoComponent implements OnInit {
         this.basicBrowsers = basicBrowsers;
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

@@ -28,6 +28,6 @@ export class PiechartDemoComponent implements OnInit {
         };
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
     }
 }

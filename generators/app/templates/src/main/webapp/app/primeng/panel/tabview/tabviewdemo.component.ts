@@ -10,20 +10,20 @@ export class TabViewDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    onTabChange(event: any) {
+    constructor(private messageService: MessageService) {
+    }
+
+    onTabChange(event: any): void {
         this.messageService.add({severity: 'info', summary: 'Tab Expanded', detail: 'Index: ' + event.index});
     }
 
-    onTabClose(event: any) {
+    onTabClose(event: any): void {
         this.messageService.add({severity: 'info', summary: 'Tab closed', detail: 'Index: ' + event.index});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    ngOnInit() {}
-
-    constructor(private messageService: MessageService) {
-    }
+    ngOnInit(): void {}
 }

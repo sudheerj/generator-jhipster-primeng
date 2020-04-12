@@ -20,20 +20,6 @@ export class InputMaskDemoComponent implements OnInit {
     disabled = true;
     format: string;
 
-
-    onComplete(e: any) {
-        this.messageService.add(
-            {severity: 'info', summary: 'InputMask is completed'});
-    }
-
-    onChangeStep(label: string) {
-        this.messageService.add({severity: 'info', summary: label});
-    }
-
-    ngOnInit() {
-
-    }
-
     constructor(private messageService: MessageService) {
         this.basic = '';
         this.event = '';
@@ -46,4 +32,18 @@ export class InputMaskDemoComponent implements OnInit {
         this.disabled = false;
         this.format = 'Option1';
     }
+
+    onComplete(e: any): void {
+        this.messageService.add(
+            {severity: 'info', summary: 'InputMask is completed'});
+    }
+
+    onChangeStep(label: string): void {
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    ngOnInit(): void {
+
+    }
+
 }

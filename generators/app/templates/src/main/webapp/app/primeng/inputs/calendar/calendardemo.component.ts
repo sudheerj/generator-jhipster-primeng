@@ -52,23 +52,23 @@ export class CalendarDemoComponent implements OnInit {
         this.selectedHourFormat = '12';
     }
 
-    onSelect() {
+    onSelect(): void {
         this.messageService.add({severity: 'info', summary: 'The calendar date is selected'});
     }
 
-    onBlur() {
+    onBlur(): void {
         this.messageService.add({severity: 'info', summary: 'Calendar lost the focus'});
     }
 
-    onFocus() {
+    onFocus(): void {
         this.messageService.add({severity: 'info', summary: 'Calendar got the focus'});
     }
 
-    onClear() {
+    onClear(): void {
         this.messageService.add({severity: 'info', summary: 'The Calendar is closed'});
     }
 
-    set hourFormat(hourFormat: string) {
+    set hourFormat(hourFormat: string): void {
         this.selectedHourFormat = hourFormat;
         if (this.timeDateInput) {
             this.timeDateInput = new Date(this.timeDateInput.getTime());
@@ -79,7 +79,7 @@ export class CalendarDemoComponent implements OnInit {
         return this.selectedHourFormat;
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.de = {
             firstDayOfWeek: 1,
             dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
@@ -116,7 +116,7 @@ export class CalendarDemoComponent implements OnInit {
 
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 

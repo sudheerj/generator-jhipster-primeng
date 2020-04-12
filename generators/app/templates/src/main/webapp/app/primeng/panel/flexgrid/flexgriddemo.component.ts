@@ -65,24 +65,24 @@ export class FlexGridDemoComponent implements OnInit {
 
     columns: number[];
 
-    ngOnInit() {
+    constructor(private messageService: MessageService) {
+        this.columns = [];
+    }
+
+    ngOnInit(): void {
         this.columns = [0, 1, 2, 3, 4, 5];
     }
 
-    addColumn() {
+    addColumn(): void {
         this.columns.push(this.columns.length);
     }
 
-    removeColumn() {
+    removeColumn(): void {
         this.columns.splice(-1, 1);
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
-    }
-
-    constructor(private messageService: MessageService) {
-        this.columns = [];
     }
 
 }

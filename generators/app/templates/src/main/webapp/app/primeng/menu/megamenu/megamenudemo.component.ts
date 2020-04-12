@@ -11,7 +11,11 @@ export class MegaMenuDemoComponent implements OnInit {
     activeIndex = 0;
     private items: MenuItem[];
 
-    ngOnInit() {
+    constructor(private messageService: MessageService) {
+        this.items = [];
+    }
+
+    ngOnInit(): void {
         this.items = [
             {
                 label: 'HOME & FURNITURE', icon: 'fa fa-home',
@@ -127,11 +131,8 @@ export class MegaMenuDemoComponent implements OnInit {
         ];
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    constructor(private messageService: MessageService) {
-        this.items = [];
-    }
 }

@@ -13,7 +13,13 @@ export class TabMenuDemoComponent implements OnInit {
     private items: MenuItem[];
     private expandeditems: MenuItem[];
 
-    ngOnInit() {
+    constructor(private messageService: MessageService) {
+        this.activeItem = null;
+        this.items = [];
+        this.expandeditems = [];
+    }
+
+    ngOnInit(): void {
         this.items = [
             {label: 'Overview', icon: 'fa fa-bar-chart', routerLink: ['/pages/overview']},
             {label: 'Showcase', icon: 'fa fa-calendar', command: () => {
@@ -27,14 +33,8 @@ export class TabMenuDemoComponent implements OnInit {
         ];
         this.activeItem = this.items[2];
     }
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
-    }
-
-    constructor(private messageService: MessageService) {
-        this.activeItem = null;
-        this.items = [];
-        this.expandeditems = [];
     }
 
 }

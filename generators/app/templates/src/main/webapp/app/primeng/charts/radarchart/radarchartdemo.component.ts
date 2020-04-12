@@ -37,6 +37,6 @@ export class RadarchartDemoComponent implements OnInit {
         };
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
     }
 }

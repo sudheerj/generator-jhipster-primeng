@@ -57,11 +57,11 @@ export class TreeTableDemoComponent implements OnInit {
         this.loading = false;
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.nodeService.getTouristPlaces().subscribe((places: any) => this.basicTreeTable = places.data);
         this.nodeService.getTouristPlaces().subscribe((places: any) => this.singleSelectionTreeTable = places.data);
         this.nodeService.getTouristPlaces().subscribe((places: any) => this.multipleSelectionTreeTable = places.data);
@@ -83,35 +83,35 @@ export class TreeTableDemoComponent implements OnInit {
         this.loading = true;
     }
 
-    nodeSelect(event: any) {
+    nodeSelect(event: any): void {
         this.messageService.add({severity: 'info', summary: 'Node Selected', detail: event.node.data.name});
     }
 
-    nodeUnselect(event: any) {
+    nodeUnselect(event: any): void {
         this.messageService.add({severity: 'info', summary: 'Node Unselected', detail: event.node.data.name});
     }
 
-    onRowDblclick(event: any) {
+    onRowDblclick(event: any): void {
         this.messageService.add({severity: 'info', summary: 'Node Selected', detail: 'The TreeTable row double click is invoked'});
     }
 
-    nodeExpand(event: any) {
+    nodeExpand(event: any): void {
         if (event.node) {
             // in a real application, make a call to a remote url to load children of the current node and add the new nodes as children
             this.nodeService.getTouristPlaces().subscribe((nodes: any) => event.node.children = nodes.data);
         }
     }
 
-    viewNode(node: TreeNode) {
+    viewNode(node: TreeNode): void {
         this.messageService.add({severity: 'info', summary: 'Node Selected', detail: node.data.name});
     }
 
-    deleteNode(node: TreeNode) {
+    deleteNode(node: TreeNode): void {
         node.parent.children = node.parent.children.filter(n => n.data !== node.data);
         this.messageService.add({severity: 'info', summary: 'Node Deleted', detail: node.data.name});
     }
 
-    loadNodes(event) {
+    loadNodes(event): void {
         this.loading = true;
 
         // in a production application, make a remote request to load data using state metadata from event
@@ -141,7 +141,7 @@ export class TreeTableDemoComponent implements OnInit {
         }, 1000);
     }
 
-    onNodeExpandLazy(event) {
+    onNodeExpandLazy(event): void {
         this.loading = true;
 
         setTimeout(() => {

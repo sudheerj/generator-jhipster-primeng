@@ -21,34 +21,34 @@ export class PicklistDemoComponent implements OnInit {
         this.targetCountries = [];
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.countryService.getCountries().subscribe((countries: any) => {
             this.sourceCountries = countries.data;
         });
         this.targetCountries = [];
     }
 
-    onMoveToTarget(event: any) {
+    onMoveToTarget(event: any): void {
         this.messageService.add(
             {severity: 'info', summary: 'onMoveToTarget Event', detail: event.items});
     }
 
-    onMoveToSource(event: any) {
+    onMoveToSource(event: any): void {
         this.messageService.add(
             {severity: 'info', summary: 'onMoveToSource Event', detail: event.items});
     }
 
-    onSourceReorder(event: any) {
+    onSourceReorder(event: any): void {
         this.messageService.add(
             {severity: 'info', summary: 'onSourceReorder Event', detail: event.items});
     }
 
-    onTargetReorder(event: any) {
+    onTargetReorder(event: any): void {
         this.messageService.add(
             {severity: 'info', summary: 'onTargetReorder Event', detail: event.items});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

@@ -20,12 +20,6 @@ export class SideBarDemoComponent implements OnInit {
 
     visibleSidebar5: boolean;
 
-    onChangeStep(label: string) {
-        this.messageService.add({severity: 'info', summary: label});
-    }
-
-    ngOnInit() {}
-
     constructor(private messageService: MessageService) {
         this.visibleSidebar1 = false;
         this.visibleSidebar2 = false;
@@ -33,4 +27,10 @@ export class SideBarDemoComponent implements OnInit {
         this.visibleSidebar4 = false;
         this.visibleSidebar5 = false;
     }
+
+    onChangeStep(label: string): void {
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    ngOnInit(): void {}
 }

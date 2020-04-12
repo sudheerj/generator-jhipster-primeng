@@ -30,17 +30,18 @@ export class KeyFilterDemoComponent implements OnInit {
 
     cc: string;
 
-    onChangeStep(label: string) {
-        this.messageService.add({severity: 'info', summary: label});
-    }
-
-    ngOnInit() {
-    }
-
     constructor(private messageService: MessageService) {
         this.blockSpace = /[^\s]/;
         this.blockSpecial = /^[^<>*!]+$/;
         this.ccRegex = /[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/;
         this.cc = '';
     }
+
+    onChangeStep(label: string): void {
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+    ngOnInit(): void {
+    }
+
 }

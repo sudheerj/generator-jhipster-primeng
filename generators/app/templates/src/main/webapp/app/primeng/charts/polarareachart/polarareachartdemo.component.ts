@@ -38,6 +38,6 @@ export class PolarareachartDemoComponent implements OnInit {
         };
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
     }
 }

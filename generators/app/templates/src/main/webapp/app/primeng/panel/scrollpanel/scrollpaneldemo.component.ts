@@ -40,10 +40,11 @@ export class ScrollPanelDemoComponent {
 
     activeIndex = 0;
 
-    onChangeStep(label: string) {
+    constructor(private messageService: MessageService) {
+    }
+
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    constructor(private messageService: MessageService) {
-    }
 }

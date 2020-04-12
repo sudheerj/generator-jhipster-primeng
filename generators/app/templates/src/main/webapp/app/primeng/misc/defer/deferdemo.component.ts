@@ -19,12 +19,12 @@ export class DeferDemoComponent {
         this.browsers = [];
     }
 
-    initData() {
+    initData(): void {
         this.browserService.getBrowsers().subscribe((browsers: any) => setTimeout(() => this.browsers = browsers.data, 0));
         this.cdr.detectChanges();
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 

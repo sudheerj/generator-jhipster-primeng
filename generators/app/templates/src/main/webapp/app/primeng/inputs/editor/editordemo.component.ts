@@ -25,19 +25,19 @@ export class EditorDemoComponent implements OnInit {
         this.readonlytext = 'PrimeNG <b>Editor</b> is rich text editor component based on <i>Quill</i> Edtior 1.0.';
     }
 
-    onTextChange() {
+    onTextChange(): void {
         this.messageService.add(
             {severity: 'info', summary: 'The editor text is changed'});
     }
 
-    onSelectionChange() {
+    onSelectionChange(): void {
         this.messageService.add(
             {severity: 'info', summary: 'The editor selected text is changed'});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    ngOnInit() {}
+    ngOnInit(): void {}
 }

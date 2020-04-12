@@ -9,13 +9,14 @@ import {MessageService} from 'primeng/api';
 export class InputGroupDemoComponent implements OnInit {
     activeIndex = 0;
 
-    onChangeStep(label: string) {
+    constructor(private messageService: MessageService) {
+    }
+
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
     }
 
-    constructor(private messageService: MessageService) {
-    }
 }

@@ -14,7 +14,12 @@ export class SplitbuttonDemoComponent implements OnInit {
 
     activeIndex = 0;
 
-    ngOnInit() {
+    constructor(private messageService: MessageService) {
+        this.items = [];
+        this.itemsIcons = [];
+    }
+
+    ngOnInit(): void {
         this.items = [
             {label: 'Update', command: () => {
                 this.update();
@@ -36,24 +41,20 @@ export class SplitbuttonDemoComponent implements OnInit {
         ];
     }
 
-    create() {
+    create(): void {
         this.messageService.add({severity: 'info', summary: 'Success', detail: 'AngularConnect user account is created'});
     }
 
-    update() {
+    update(): void {
         this.messageService.add({severity: 'info', summary: 'Success', detail: 'AngularConnect user account is updated'});
     }
 
-    delete() {
+    delete(): void {
         this.messageService.add({severity: 'info', summary: 'Success', detail: 'AngularConnect user account is deleted'});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    constructor(private messageService: MessageService) {
-        this.items = [];
-        this.itemsIcons = [];
-    }
 }

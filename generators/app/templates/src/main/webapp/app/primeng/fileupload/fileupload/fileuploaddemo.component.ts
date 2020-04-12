@@ -15,19 +15,19 @@ export class FileUploadDemoComponent implements OnInit {
     auto: boolean;
     uploadedFiles: any[];
 
-    ngOnInit() {}
-
     constructor(private messageService: MessageService) {
         this.multiple = false;
         this.auto = false;
         this.uploadedFiles = [];
     }
 
-    onBeforeSend(event: any) {
+    ngOnInit(): void {}
+
+    onBeforeSend(event: any): void {
         (<XMLHttpRequest>event.xhr).setRequestHeader('jwt', 'xyz123');
     }
 
-    onUpload(event: any) {
+    onUpload(event: any): void {
         for (const file of event.files) {
             this.uploadedFiles.push(file);
         }
@@ -35,7 +35,7 @@ export class FileUploadDemoComponent implements OnInit {
         this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 }

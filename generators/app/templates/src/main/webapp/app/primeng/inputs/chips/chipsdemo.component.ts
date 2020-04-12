@@ -25,26 +25,26 @@ export class ChipsDemoComponent implements OnInit {
         this.disabledcontacts = ['PrimeTek', 'InfoTek'];
     }
 
-    onAddContact() {
+    onAddContact(): void {
         this.messageService.add(
             {severity: 'info', summary: 'The contact is added'});
     }
 
-    onRemoveContact() {
+    onRemoveContact(): void {
         this.messageService.add(
             {severity: 'info', summary: 'The contact is removed'});
     }
 
-    onContactClick() {
+    onContactClick(): void {
         this.messageService.add(
             {severity: 'info', summary: 'The contact is clicked'});
     }
 
-    onChangeStep(label: string) {
+    onChangeStep(label: string): void {
         this.messageService.add({severity: 'info', summary: label});
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
 
     }
 }
