@@ -10,7 +10,7 @@ export class ChipsDemoComponent implements OnInit {
 
     contactnames: string[];
 
-    contactnotified: string[];
+    contactsnotified: string[];
 
     complexcontacts: string[];
 
@@ -20,7 +20,7 @@ export class ChipsDemoComponent implements OnInit {
 
     constructor(private messageService: MessageService) {
         this.contactnames = [];
-        this.contactnotified = [];
+        this.contactsnotified = [];
         this.complexcontacts = [];
         this.disabledcontacts = ['PrimeTek', 'InfoTek'];
     }

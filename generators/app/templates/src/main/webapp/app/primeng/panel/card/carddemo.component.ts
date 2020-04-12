@@ -17,7 +17,7 @@ export class CardDemoComponent {
     }
 
     onChangeStep(label: string): void {
-        this.messageService.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
 }

@@ -10,10 +10,10 @@ import {MenuItem, MessageService} from 'primeng/api';
 export class BreadcrumbDemoComponent implements OnInit {
     home: MenuItem;
     activeIndex = 0;
-    private items: MenuItem[];
+    items: MenuItem[];
 
     constructor(private messageService: MessageService) {
-        this.home = null;
+        this.home = {} as MenuItem;
         this.items = [];
     }
 

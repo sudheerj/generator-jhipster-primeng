@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/internal/Observable';
+import { map } from 'rxjs/operators';
 import {VCard} from './vcard';
 
 @Injectable()
@@ -11,6 +11,6 @@ export class VCardService {
 
     getVCards(): Observable<VCard[]> {
         return this.http.get('content/primeng/assets/data/json/vcards/vcards.json')
-            .map(response => response as VCard[]);
+            .pipe(map(response => response as VCard[]));
     }
 }

@@ -123,11 +123,23 @@ export class TableDemoComponent implements OnInit {
 
     selectedColumns: any[];
 
+    sortField: string;
+
+    frozenBrowsers: Browser[];
+
+    frozenCols: any[];
+
+    scrollableCols: any[];
+
+    ratingFilter: number;
+
+    loading: boolean;
+
     constructor(private browserService: BrowserService, private messageService: MessageService) {
         this.browser = new MyBrowser();
         this.basicBrowsers = [];
         this.browsers = [];
-        this.selectedBrowser = null;
+        this.selectedBrowser = new MyBrowser();
         this.selectedBrowsers = [];
         this.displayDialog = false;
         this.stacked = false;
@@ -140,11 +152,17 @@ export class TableDemoComponent implements OnInit {
         this.columnOptions = [];
         this.tableItems = [];
         this.selectedColumns = [];
+        this.sortField = '';
+        this.frozenBrowsers = [];
+        this.frozenCols = [];
+        this.scrollableCols = [];
+        this.ratingFilter = 0;
+        this.loading = false;
     }
 
     ngOnInit(): void {
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.browsers = browsers.data);
-        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 10));
+        this.browserService.getBrowsers().subscribe((browsers: Browser[]) => this.browsers = browsers);
+        this.browserService.getBrowsers().subscribe((browsers: Browser[]) => this.basicBrowsers = browsers.slice(0, 10));
         this.cols = [
             {field: 'engine', header: 'Engine'},
             {field: 'browser', header: 'Browser'},
@@ -168,10 +186,25 @@ export class TableDemoComponent implements OnInit {
         this.grades.push({label: 'C', value: 'C'});
 
         this.tableItems = [
-            { label: 'View', icon: 'pi pi-search', command: event => this.selectBrowser(this.selectedBrowser) },
-            { label: 'Delete', icon: 'pi pi-times', command: event => this.delete() }
+            { label: 'View', icon: 'pi pi-search', command: () => this.selectBrowser(this.selectedBrowser) },
+            { label: 'Delete', icon: 'pi pi-times', command: () => this.delete() }
         ];
         this.selectedColumns = this.cols;
+        this.frozenCols = [
+            { field: 'engine', header: 'Engine' },
+            { field: 'browser', header: 'Browser' }
+        ];
+
+        this.frozenBrowsers = [
+            { "engine": "Trident", "browser": "Internet Explorer 4.0", "platform": "Win 95+", "version": 4, "code":"ie", "grade":"X" },
+            { "engine": "Gecko", "browser": "Firefox 1.5", "platform": "Win 98+ / OSX.2+", "version": 1.8, "code":"firefox", "grade":"A"  }
+        ];
+
+        this.scrollableCols = [
+            { field: 'engine', header: 'Engine' },
+            { field: 'browser', header: 'Browser' },
+            {field: 'platform', header: 'Platform'},
+        ];
 
     }
 
@@ -240,6 +273,7 @@ export class TableDemoComponent implements OnInit {
     }
 
     onSort(event: any): void {
+        this.sortField = event.field;
     }
 
     onFilter(event: any): void {
@@ -267,9 +301,12 @@ export class TableDemoComponent implements OnInit {
         // event.sortField = Field name to sort with
         // event.sortOrder = Sort order as number, 1 for asc and -1 for dec
         // filters: FilterMetadata object having field as key and filter value, filter matchMode as value
-
-        this.browserService.getBrowsers().subscribe((browsers: any) =>
-            this.browsers = browsers.data.slice(event.first, (event.first + event.rows)));
+        this.loading = true;
+        this.browserService.getBrowsers().subscribe((browsers: Browser[]) => {
+            if (event.first && event.rows) {
+            this.browsers = browsers.slice(event.first, (event.first + event.rows));
+            }});
+        this.loading = false;
     }
 
     addBrowser(): void {
@@ -286,14 +323,14 @@ export class TableDemoComponent implements OnInit {
             browsers[this.findSelectedBrowserIndex()] = this.browser;
         }
         this.browsers = browsers;
-        this.browser = null;
+        this.browser = {} as Browser;
         this.displayDialog = false;
     }
 
     delete(): void {
         const index = this.findSelectedBrowserIndex();
         this.browsers = this.browsers.filter( (val, i) => i !== index);
-        this.browser = null;
+        this.browser = {};
         this.displayDialog = false;
     }
 

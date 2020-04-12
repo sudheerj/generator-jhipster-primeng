@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/internal/Observable';
+import { map } from 'rxjs/operators';
 import {Document} from './document';
 
 @Injectable()
@@ -11,6 +11,6 @@ export class DocumentService {
 
     getDocuments(): Observable<Document[]> {
         return this.http.get('content/primeng/assets/data/json/documents/documents.json')
-            .map(response => response as any);
+            .pipe(map(response => response as Document[]));
     }
 }

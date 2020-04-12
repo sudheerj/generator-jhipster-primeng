@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/internal/Observable';
+import { map } from 'rxjs/operators';
 import Country from './country';
+import Browser from "../../carousel/service/browser";
 
 @Injectable()
 export class CountryService {
@@ -12,6 +13,6 @@ export class CountryService {
 
     getCountries(): Observable<Country[]> {
         return this.http.get('content/primeng/assets/data/json/countries/countries.json')
-            .map(response => response as Country[]);
+            .pipe(map((response) => response as Country[]));
     }
 }

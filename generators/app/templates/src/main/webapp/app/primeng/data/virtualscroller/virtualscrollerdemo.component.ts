@@ -55,7 +55,6 @@ export class VirtualScrollerDemoComponent implements OnInit {
     lazyloadingBrowsers: Browser[];
 
     totalLazyBrowsersLength: number;
-    timeout: any;
 
     sortKey: string;
 
@@ -65,7 +64,6 @@ export class VirtualScrollerDemoComponent implements OnInit {
         this.basicBrowsers = [];
         this.lazyloadingBrowsers = [];
         this.totalLazyBrowsersLength = 0;
-        this.timeout = null;
         this.sortKey = '';
         this.sortOptions = [];
     }
@@ -89,11 +87,8 @@ export class VirtualScrollerDemoComponent implements OnInit {
         // event.rows = Number of rows per page
 
         // imitate db connection over a network
-        if (this.timeout) {
-            clearTimeout(this.timeout);
-        }
 
-        this.timeout = setTimeout(() => {
+        window.setTimeout(() => {
         const start = event.first; // event.first = First row offset
         const end = start + event.rows; // event.rows = Number of rows per page
         this.browserService.getBrowsers().subscribe((browsers: any) => this.lazyloadingBrowsers = browsers.data.slice(start, end));
@@ -101,7 +96,7 @@ export class VirtualScrollerDemoComponent implements OnInit {
     }
 
     onSortChange(): void {
-        if (this.sortKey.indexOf('!') === 0) {
+        if (this.sortKey.startsWith('!')) {
             this.sort(-1);
         } else {
             this.sort(1);

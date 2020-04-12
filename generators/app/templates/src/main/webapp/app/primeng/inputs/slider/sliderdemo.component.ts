@@ -9,7 +9,7 @@ export class SliderDemoComponent implements OnInit {
 
     basicinput: number;
 
-    custominput: number;
+    customizedinput: number;
 
     eventsinput: number;
 
@@ -31,7 +31,7 @@ export class SliderDemoComponent implements OnInit {
 
     constructor(private messageService: MessageService) {
         this.basicinput = 0;
-        this.custominput = 20;
+        this.customizedinput = 20;
         this.eventsinput = 0;
         this.disabledinput = 0;
         this.sliderinput = 0;

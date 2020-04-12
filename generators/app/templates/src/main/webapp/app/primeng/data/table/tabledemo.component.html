@@ -289,7 +289,7 @@
                         <input *ngSwitchCase="'browser'" pInputText type="text" (input)="dtf.filter($event.target.value, col.field, col.filterMatchMode)">
                         <div *ngSwitchCase="'rating'">
                             <i class="fa fa-close"
-                               (click)="ratingFilter=null;dtf.filter(null,col.field,col.filterMatchMode)"></i>
+                               (click)="ratingFilter=0;dtf.filter(0,col.field,col.filterMatchMode)"></i>
                             <p-slider [styleClass]="'slider-layout'" [(ngModel)]="ratingFilter" [min]="1"
                                       [max]="10"
                                       (onSlideEnd)="dtf.filter($event.value,col.field,col.filterMatchMode)"></p-slider>

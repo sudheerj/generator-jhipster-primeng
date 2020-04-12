@@ -48,8 +48,9 @@ export class TreeTableDemoComponent implements OnInit {
         this.templateTreeTable = [];
         this.contextmenuTreeTable =[];
         this.lazyTreeTable = [];
-        this.selectedTouristPlace = null;
-        this.selectedPlace = null;
+        this.selectedTouristPlace = {} as TreeNode;
+        this.selectedTouristPlaces = [];
+        this.selectedPlace = {} as TreeNode;
         this.selectedMultiTouristPlaces = [];
         this.selectedMultiTouristPlaces = [];
         this.items = [];
@@ -107,11 +108,13 @@ export class TreeTableDemoComponent implements OnInit {
     }
 
     deleteNode(node: TreeNode): void {
-        node.parent.children = node.parent.children.filter(n => n.data !== node.data);
+        if (node.parent && node.parent.children) {
+            node.parent.children = node.parent.children.filter(n => n.data !== node.data);
+        }
         this.messageService.add({severity: 'info', summary: 'Node Deleted', detail: node.data.name});
     }
 
-    loadNodes(event): void {
+    loadNodes(event: any): void {
         this.loading = true;
 
         // in a production application, make a remote request to load data using state metadata from event
@@ -141,7 +144,7 @@ export class TreeTableDemoComponent implements OnInit {
         }, 1000);
     }
 
-    onNodeExpandLazy(event): void {
+    onNodeExpandLazy(event: any): void {
         this.loading = true;
 
         setTimeout(() => {

@@ -33,7 +33,7 @@ export class LinechartDemoComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    selectData(event): void {
+    selectData(event: any): void {
         this.messageService.add({severity: 'info', summary: 'Data Selected', 'detail': this.data.datasets[event.element._datasetIndex].data[event.element._index]});
     }
 }

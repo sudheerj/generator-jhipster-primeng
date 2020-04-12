@@ -24,30 +24,30 @@ export class CalendarDemoComponent implements OnInit {
     minDate: Date;
     maxDate: Date;
     time: boolean;
-    de: any;
+    de: object;
     types: SelectItem[];
-    selectedHourFormat: number;
+    selectedHourFormat: string;
     activeIndex = 0;
 
     constructor(private messageService: MessageService) {
-        this.basicDateInput = null;
-        this.localizedDateInput = null;
-        this.advancedDateInput = null;
-        this.timeDateInput = null;
-        this.inlineDateInput = null;
-        this.iconDateInput = null;
-        this.navigatorDateInput = null;
-        this.minmaxDateInput = null;
-        this.disabeDaysDateInput = null;
-        this.eventsDateInput = null;
-        this.readonlyDateInput = null;
-        this.disabeDaysDateInput = null;
-        this.disableDateInput = null;
+        this.basicDateInput = new Date();
+        this.localizedDateInput = new Date();
+        this.advancedDateInput = new Date();
+        this.timeDateInput = new Date();
+        this.inlineDateInput = new Date();
+        this.iconDateInput = new Date();
+        this.navigatorDateInput = new Date();
+        this.minmaxDateInput = new Date();
+        this.disabeDaysDateInput = new Date();
+        this.eventsDateInput = new Date();
+        this.readonlyDateInput = new Date();
+        this.disabeDaysDateInput = new Date();
+        this.disableDateInput = new Date();
         this.invalidDates = [];
-        this.minDate = null;
-        this.maxDate = null;
+        this.minDate = new Date();
+        this.maxDate = new Date();
         this.time = false;
-        this.de = null;
+        this.de = {} as object;
         this.types = [];
         this.selectedHourFormat = '12';
     }
@@ -64,11 +64,11 @@ export class CalendarDemoComponent implements OnInit {
         this.messageService.add({severity: 'info', summary: 'Calendar got the focus'});
     }
 
-    onClear(): void {
+    onClose(): void {
         this.messageService.add({severity: 'info', summary: 'The Calendar is closed'});
     }
 
-    set hourFormat(hourFormat: string): void {
+    set hourFormat(hourFormat: string) {
         this.selectedHourFormat = hourFormat;
         if (this.timeDateInput) {
             this.timeDateInput = new Date(this.timeDateInput.getTime());

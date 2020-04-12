@@ -2,7 +2,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
@@ -45,4 +44,4 @@ const PRIMENG_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class <%= angularXAppName %>BlockUIDemoModule {} {}
+export class <%= angularXAppName %>BlockUIDemoModule {}

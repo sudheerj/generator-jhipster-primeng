@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
 import { MessageService } from 'primeng/api';
 
+// tslint:disable-next-line
 declare var google: any;
 
 @Component({
@@ -80,17 +81,17 @@ export class GmapDemoComponent implements OnInit {
     }
 
     handleZoomChanged(event: any): void {
-        this.messageService.add({severity: 'info', summary: 'The map zoom options are changed'});
+        this.messageService.add({severity: 'info', summary: 'The map zoom options are changed', detail: event});
     }
 
     handleMapDragEnd(event: any): void {
-        this.messageService.add({severity: 'info', summary: 'The map drag is reached end'});
+        this.messageService.add({severity: 'info', summary: 'The map drag is reached end', detail: event});
     }
 
     addMarker(): void {
         this.overlaysEvents.push(new google.maps.Marker({position: {lat: this.selectedPosition.lat(),
             lng: this.selectedPosition.lng()}, title: this.markerTitle, draggable: this.draggable}));
-        this.markerTitle = null;
+        this.markerTitle = '';
         this.dialogVisible = false;
     }
 

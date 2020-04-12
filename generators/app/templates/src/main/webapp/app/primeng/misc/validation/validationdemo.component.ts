@@ -20,7 +20,7 @@ export class ValidationDemoComponent implements OnInit {
 
     constructor(private formBuilder: FormBuilder, private messageService: MessageService) {
         this.submitted = false;
-        this.registrationform = null;
+        this.registrationform = {} as FormGroup;
         this.genders = [];
         this.address = '';
     }

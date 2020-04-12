@@ -10,11 +10,11 @@ import {MenuItem, MessageService} from 'primeng/api';
 export class TabMenuDemoComponent implements OnInit {
     activeIndex = 0;
     activeItem: MenuItem;
-    private items: MenuItem[];
-    private expandeditems: MenuItem[];
+    items: MenuItem[];
+    expandeditems: MenuItem[];
 
     constructor(private messageService: MessageService) {
-        this.activeItem = null;
+        this.activeItem = {} as MenuItem;
         this.items = [];
         this.expandeditems = [];
     }

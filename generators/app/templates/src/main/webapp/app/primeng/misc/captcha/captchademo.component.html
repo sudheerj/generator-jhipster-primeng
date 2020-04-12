@@ -2,9 +2,6 @@
     <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
         <!-- Basic -->
         <pe-step label="Basic">
-
-            <p-growl [value]="msgs" sticky="sticky"></p-growl>
-
             <p-captcha siteKey="6Lf2XQkTAAAAANcvOwYqPxWL4iZDksFqHpS39GDA" (onResponse)="showResponse($event)"></p-captcha>
         </pe-step>
 

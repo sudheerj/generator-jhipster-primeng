@@ -21,7 +21,7 @@ const PRIMENG_STATES = [
         <%= angularXAppName %>SharedModule,
         CommonModule,
         BrowserAnimationsModule,
-        GrowlModule,
+        ToastModule,
         BreadcrumbModule,
         WizardModule,
         RouterModule.forRoot(PRIMENG_STATES, { useHash: true })

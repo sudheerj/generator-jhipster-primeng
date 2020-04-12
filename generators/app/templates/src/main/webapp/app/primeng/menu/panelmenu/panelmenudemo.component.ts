@@ -9,8 +9,8 @@ import {MenuItem, MessageService} from 'primeng/api';
 })
 export class PanelMenuDemoComponent implements OnInit {
     activeIndex = 0;
-    private items: MenuItem[];
-    private expandeditems: MenuItem[];
+    items: MenuItem[];
+    expandeditems: MenuItem[];
 
     constructor(private messageService: MessageService) {
         this.items = [];

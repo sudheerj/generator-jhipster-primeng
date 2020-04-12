@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, MessageService} from 'primeng/api';
-import {DocumentService} from "../../dragdrop/dragdrop/service/document.service";
+import { MessageService } from 'primeng/api';
 
 @Component({
     selector: 'jhi-fileupload',
@@ -24,7 +23,7 @@ export class FileUploadDemoComponent implements OnInit {
     ngOnInit(): void {}
 
     onBeforeSend(event: any): void {
-        (<XMLHttpRequest>event.xhr).setRequestHeader('jwt', 'xyz123');
+        (event.xhr as XMLHttpRequest).setRequestHeader('jwt', 'xyz123');
     }
 
     onUpload(event: any): void {

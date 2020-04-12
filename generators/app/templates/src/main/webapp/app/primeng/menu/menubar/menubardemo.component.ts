@@ -9,7 +9,7 @@ import {MenuItem, MessageService} from 'primeng/api';
 })
 export class MenuBarDemoComponent implements OnInit {
     activeIndex = 0;
-    private items: MenuItem[];
+    items: MenuItem[];
 
     constructor(private messageService: MessageService) {
         this.items = [];

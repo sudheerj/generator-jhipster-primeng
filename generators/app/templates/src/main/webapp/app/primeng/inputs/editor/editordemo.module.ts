@@ -7,7 +7,6 @@ import {EditorModule} from 'primeng/editor';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
-import {SharedModule} from 'primeng/api/shared';
 
 import {
     EditorDemoComponent,
@@ -26,7 +25,6 @@ const PRIMENG_STATES = [
         ToastModule,
         ButtonModule,
         WizardModule,
-        SharedModule,
         RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
     declarations: [

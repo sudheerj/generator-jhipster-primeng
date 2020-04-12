@@ -1,6 +1,6 @@
 interface Country {
     name: any;
-    dial_code?: any;
+    dialCode?: any;
     code?: any;
 }
 

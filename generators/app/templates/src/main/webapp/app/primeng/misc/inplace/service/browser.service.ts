@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/internal/Observable';
 import Browser from './browser';
+import { map } from "rxjs/operators";
 
 @Injectable()
 export class BrowserService {
@@ -12,6 +12,6 @@ export class BrowserService {
 
     getBrowsers(): Observable<Browser[]> {
         return this.http.get('content/primeng/assets/data/json/browsers/browsers.json')
-            .map(response => response as Browser[]);
+            .pipe(map((response) => response as Browser[]));
     }
 }

@@ -37,7 +37,7 @@ export class DataViewDemoComponent implements OnInit {
         this.inlineBrowsers = [];
         this.lazyloadingBrowsers = [];
         this.loaderBrowsers = [];
-        this.selectedBrowser = null;
+        this.selectedBrowser = {} as Browser;
 
         this.displayDialog = false;
         this.sortOptions = [];
@@ -60,7 +60,7 @@ export class DataViewDemoComponent implements OnInit {
         ];
     }
 
-    onSortChange(event): void {
+    onSortChange(event: any): void {
         const value = event.value;
 
         if (value.indexOf('!') === 0) {
@@ -78,7 +78,7 @@ export class DataViewDemoComponent implements OnInit {
     }
 
     onDialogHide(): void {
-        this.selectedBrowser = null;
+        this.selectedBrowser = {} as Browser;
     }
 
     loadData(event: any): void {

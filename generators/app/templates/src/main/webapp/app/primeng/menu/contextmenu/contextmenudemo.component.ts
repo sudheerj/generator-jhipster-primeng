@@ -13,12 +13,12 @@ export class ContextMenuDemoComponent implements OnInit {
     selectedEmployee: Employee;
     activeIndex = 0;
     employees: Employee[];
-    private documentItems: MenuItem[];
-    private targetItems: MenuItem[];
-    private tableItems: MenuItem[];
+    documentItems: MenuItem[];
+    targetItems: MenuItem[];
+    tableItems: MenuItem[];
 
     constructor(private employeeService: EmployeeService, private messageService: MessageService) {
-        this.selectedEmployee = null;
+        this.selectedEmployee = {} as Employee;
         this.employees = [];
         this.documentItems = [];
         this.targetItems = [];
@@ -141,7 +141,6 @@ export class ContextMenuDemoComponent implements OnInit {
     }
 
     deleteEmployee(employee: Employee): void {
-        this.msgs = [];
         for (let i = 0; i < this.employees.length; i++) {
             if (this.employees[i].id === employee.id) {
                 this.employees.splice(i, 1);

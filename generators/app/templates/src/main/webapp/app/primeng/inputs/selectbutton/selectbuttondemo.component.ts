@@ -15,6 +15,10 @@ export class SelectButtonDemoComponent implements OnInit {
 
     selectedTypes: string[];
 
+    selectedTypeEvents: string[];
+
+    selectedTypeDisabled: string[];
+
     selectedModes: string[];
 
     modes: SelectItem[];
@@ -25,13 +29,10 @@ export class SelectButtonDemoComponent implements OnInit {
         this.types = [];
         this.selectedType = '';
         this.selectedTypes = ['PrimeNG', 'PrimeReact'];
+        this.selectedTypeEvents = ['PrimeNG', 'PrimeUI'];
         this.selectedModes = [];
+        this.selectedTypeDisabled = [];
         this.modes = [];
-    }
-
-    onChange(event: any): void {
-        this.messageService.add(
-            {severity: 'info', summary: 'Library name is changed'});
     }
 
     ngOnInit(): void {
@@ -45,6 +46,11 @@ export class SelectButtonDemoComponent implements OnInit {
             {value: 'Italic', title: 'Italic', icon: 'fa fa-fw fa-italic'},
             {value: 'Underline', title: 'Underline', icon: 'fa fa-fw fa-underline'}
         ];
+    }
+
+    handleChange(event: any): void {
+        this.messageService.add(
+            {severity: 'info', summary: 'Library name is changed'});
     }
 
     onChangeStep(label: string): void {
