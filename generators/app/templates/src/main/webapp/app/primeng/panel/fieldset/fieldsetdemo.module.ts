@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {FieldsetModule} from 'primeng/fieldset';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     FieldsetDemoComponent,
@@ -34,6 +35,7 @@ const PRIMENG_STATES = [
     declarations: [
         FieldsetDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>FieldsetDemoModule {}

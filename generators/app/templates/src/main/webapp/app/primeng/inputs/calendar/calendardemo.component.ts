@@ -1,6 +1,5 @@
 import {Component, OnInit } from '@angular/core';
 import {MessageService, SelectItem} from 'primeng/api';
-import {CountryService} from "../autocomplete/service/country.service";
 
 @Component({
     selector: 'jhi-calendar',

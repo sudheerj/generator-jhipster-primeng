@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {MessageService, SelectItem, MenuItem, LazyLoadEvent} from 'primeng/api';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
@@ -161,8 +160,8 @@ export class TableDemoComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.browserService.getBrowsers().subscribe((browsers: Browser[]) => this.browsers = browsers);
-        this.browserService.getBrowsers().subscribe((browsers: Browser[]) => this.basicBrowsers = browsers.slice(0, 10));
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.browsers = browsers.data);
+        this.browserService.getBrowsers().subscribe((browsers: any) => this.basicBrowsers = browsers.data.slice(0, 10));
         this.cols = [
             {field: 'engine', header: 'Engine'},
             {field: 'browser', header: 'Browser'},

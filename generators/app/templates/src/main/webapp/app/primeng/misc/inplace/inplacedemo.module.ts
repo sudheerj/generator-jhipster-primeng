@@ -10,6 +10,7 @@ import {InplaceModule} from 'primeng/inplace';
 import {TableModule} from 'primeng/table';
 import {BrowserService} from './service/browser.service';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     InplaceDemoComponent,
@@ -34,7 +35,7 @@ const PRIMENG_STATES = [
     declarations: [
         InplaceDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService, MessageService],
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

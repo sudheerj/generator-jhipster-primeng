@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 
 @Component({
     selector: 'jhi-polarareachart',
-    templateUrl: '../../charts/polarareachart/polarareachartdemo.component.html',
+    templateUrl: './polarareachartdemo.component.html',
     styles: []
 })
 export class PolarareachartDemoComponent implements OnInit {

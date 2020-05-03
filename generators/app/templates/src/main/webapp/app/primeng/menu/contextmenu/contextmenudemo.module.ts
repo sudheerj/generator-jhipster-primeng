@@ -9,6 +9,7 @@ import {ContextMenuModule} from 'primeng/contextmenu';
 import {TableModule} from 'primeng/table';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {EmployeeService} from './service/employee.service';
+import {MessageService} from 'primeng/api';
 
 import {
     ContextMenuDemoComponent,
@@ -33,7 +34,7 @@ const PRIMENG_STATES = [
     declarations: [
         ContextMenuDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, EmployeeService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, EmployeeService, MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>ContextMenuDemoModule {}

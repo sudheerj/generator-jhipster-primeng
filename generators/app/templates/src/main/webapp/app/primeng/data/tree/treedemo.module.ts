@@ -7,7 +7,7 @@ import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {TreeModule} from 'primeng/tree';
-import {TreeDragDropService} from 'primeng/api';
+import {TreeDragDropService, MessageService} from 'primeng/api';
 import {ButtonModule} from 'primeng/button';
 import {ContextMenuModule} from 'primeng/contextmenu';
 import {ToastModule} from 'primeng/toast';
@@ -39,7 +39,7 @@ const PRIMENG_STATES = [
     declarations: [
         TreeDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, TreeDragDropService, TreeNodeService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, TreeDragDropService, TreeNodeService, MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>TreeDemoModule {}

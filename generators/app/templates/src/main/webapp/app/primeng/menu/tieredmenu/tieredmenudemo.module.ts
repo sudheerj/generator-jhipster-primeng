@@ -7,6 +7,7 @@ import {ToastModule} from 'primeng/toast';
 import {TieredMenuModule} from 'primeng/tieredmenu';
 import {ButtonModule} from 'primeng/button';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     TieredMenuDemoComponent,
@@ -31,6 +32,7 @@ const PRIMENG_STATES = [
     declarations: [
         TieredMenuDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>TieredMenuDemoModule {}

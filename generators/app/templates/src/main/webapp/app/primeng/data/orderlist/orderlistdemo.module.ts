@@ -4,6 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
+import {MessageService} from 'primeng/api';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {OrderListModule} from 'primeng/orderlist';
@@ -32,7 +33,7 @@ const PRIMENG_STATES = [
         WizardModule,
         RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService, MessageService],
     declarations: [
         OrderlistDemoComponent
     ],

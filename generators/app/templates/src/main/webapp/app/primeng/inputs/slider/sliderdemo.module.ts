@@ -7,6 +7,7 @@ import {SliderModule} from 'primeng/slider';
 import {InputTextModule} from 'primeng/inputtext';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     SliderDemoComponent,
@@ -30,6 +31,7 @@ const PRIMENG_STATES = [
     declarations: [
         SliderDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>SliderDemoModule {}

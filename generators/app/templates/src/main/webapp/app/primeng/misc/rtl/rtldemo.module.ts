@@ -6,6 +6,7 @@ import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.modul
 import {ToastModule} from 'primeng/toast';
 import {AccordionModule} from 'primeng/accordion';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     RTLDemoComponent,
@@ -29,6 +30,7 @@ const PRIMENG_STATES = [
     declarations: [
         RTLDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>RTLDemoModule {}

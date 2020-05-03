@@ -12,6 +12,7 @@ import {PanelModule} from 'primeng/panel';
 import {BlockUIModule} from 'primeng/blockui';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     BlockUIDemoComponent,
@@ -40,7 +41,7 @@ const PRIMENG_STATES = [
         BlockUIDemoComponent
     ],
     providers: [
-        {provide: APP_BASE_HREF, useValue: '/'},
+        {provide: APP_BASE_HREF, useValue: '/'}, MessageService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -6,6 +6,7 @@ import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.modul
 import {SplitButtonModule} from 'primeng/splitbutton';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {ToastModule} from 'primeng/toast';
+import {MessageService} from 'primeng/api';
 
 import {
     SplitbuttonDemoComponent,
@@ -29,6 +30,7 @@ const PRIMENG_STATES = [
     declarations: [
         SplitbuttonDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>SplitbuttonDemoModule {}

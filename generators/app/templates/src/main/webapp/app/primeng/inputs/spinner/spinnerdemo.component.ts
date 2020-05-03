@@ -39,7 +39,7 @@ export class SpinnerDemoComponent implements OnInit {
 
     onChange(event: any): void {
         this.messageService.add(
-            {severity: 'info', summary: 'Spinner value is changed'});
+            {severity: 'info', summary: `Spinner value is changed ${event}`});
     }
 
     ngOnInit(): void {

@@ -17,12 +17,12 @@
         <pe-step label="Image">
             <h3>Image</h3>
             <p-inplace>
-    <span pInplaceDisplay>
-        <span class="fa fa-picture-o"></span><span style="margin-left:8px">View Picture</span>
-    </span>
+            <span pInplaceDisplay>
+                <span class="fa fa-picture-o"></span><span style="margin-left:8px">View Picture</span>
+            </span>
                 <span pInplaceContent>
-        <img src="/content/primeng/assets/data/images/browsers/safari.png" alt="Safari">
-    </span>
+                <img src="/content/primeng/assets/data/images/browsers/safari.png" alt="Safari">
+            </span>
             </p-inplace>
         </pe-step>
 
@@ -30,17 +30,29 @@
         <pe-step label="Data">
             <h3>Data</h3>
             <p-inplace>
-    <span pInplaceDisplay>
-        <span class="fa fa-table"></span><span style="margin-left:8px">View Data</span>
-    </span>
+                <span pInplaceDisplay>
+                    <span class="fa fa-table"></span><span style="margin-left:8px">View Data</span>
+                </span>
                 <span pInplaceContent>
-        <p-table [value]="basicBrowsers">
-            <p-column field="engine" header="Engine"></p-column>
-            <p-column field="browser" header="Browser"></p-column>
-            <p-column field="platform" header="Platform"></p-column>
-            <p-column field="grade" header="Grade"></p-column>
-        </p-table>
-    </span>
+                <p-table [value]="basicBrowsers">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Engine</th>
+                            <th>Browser</th>
+                            <th>Platform</th>
+                            <th>Grade</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-browser>
+                        <tr>
+                            <td>{{browser.engine}}</td>
+                            <td>{{browser.browser}}</td>
+                            <td>{{browser.platform}}</td>
+                            <td>{{browser.grade}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+                </span>
             </p-inplace>
         </pe-step>
 

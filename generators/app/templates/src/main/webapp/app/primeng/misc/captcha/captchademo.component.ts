@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {JhiLanguageService} from 'ng-jhipster';
-import {MenuItem, MessageService} from 'primeng/api';
+import { MessageService} from 'primeng/api';
 
 @Component({
     selector: 'jhi-captcha',
@@ -16,7 +15,7 @@ export class CaptchaDemoComponent implements OnInit {
     ngOnInit(): void {}
 
     showResponse(event: any): void {
-    this.messageService.add({severity: 'info', summary: 'Succees', detail: 'User Responded'});
+    this.messageService.add({severity: 'info', summary: 'Succees', detail: `User Responded ${event}`});
     }
 
     onChangeStep(label: string): void {

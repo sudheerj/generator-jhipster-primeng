@@ -10,6 +10,7 @@ import {TableModule} from 'primeng/table';
 import {DeferModule} from 'primeng/defer';
 import {BrowserService} from './service/browser.service';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     DeferDemoComponent,
@@ -34,7 +35,7 @@ const PRIMENG_STATES = [
     declarations: [
         DeferDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService, MessageService],
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -35,7 +35,7 @@ export class InputMaskDemoComponent implements OnInit {
 
     onComplete(e: any): void {
         this.messageService.add(
-            {severity: 'info', summary: 'InputMask is completed'});
+            {severity: 'info', summary: `InputMask is completed with ${e}`});
     }
 
     onChangeStep(label: string): void {

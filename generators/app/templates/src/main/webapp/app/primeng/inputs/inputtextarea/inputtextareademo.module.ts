@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     InputTextAreaDemoComponent,
@@ -28,6 +29,7 @@ const PRIMENG_STATES = [
     declarations: [
         InputTextAreaDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>InputTextAreaDemoModule {}

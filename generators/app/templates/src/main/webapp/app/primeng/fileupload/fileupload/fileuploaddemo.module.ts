@@ -8,8 +8,8 @@ import {ButtonModule} from 'primeng/button';
 import {FileUploadModule} from 'primeng/fileupload';
 import {CheckboxModule} from 'primeng/checkbox';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
-import {HttpClientModule} from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
+import {MessageService} from 'primeng/api';
 
 import {
     FileUploadDemoComponent,
@@ -35,7 +35,7 @@ const PRIMENG_STATES = [
     declarations: [
         FileUploadDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>FileUploadDemoModule {}

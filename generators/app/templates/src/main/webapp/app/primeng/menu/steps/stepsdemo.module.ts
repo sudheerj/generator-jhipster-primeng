@@ -7,6 +7,7 @@ import {ToastModule} from 'primeng/toast';
 import {StepsModule} from 'primeng/steps';
 import {ButtonModule} from 'primeng/button';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     StepsDemoComponent,
@@ -31,6 +32,7 @@ const PRIMENG_STATES = [
     declarations: [
         StepsDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>StepsDemoModule {}

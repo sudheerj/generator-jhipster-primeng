@@ -1,6 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
@@ -10,6 +9,7 @@ import {PickListModule} from 'primeng/picklist';
 import {ToastModule} from 'primeng/toast';
 import {CountryService} from './service/country.service';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     PicklistDemoComponent,
@@ -30,7 +30,7 @@ const PRIMENG_STATES = [
         ToastModule,
         RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService, MessageService],
     declarations: [
         PicklistDemoComponent
     ],

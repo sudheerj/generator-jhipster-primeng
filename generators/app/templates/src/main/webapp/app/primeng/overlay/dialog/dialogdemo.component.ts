@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {MessageService} from 'primeng/api';
 
 @Component({
@@ -13,6 +12,9 @@ export class DialogDemoComponent implements OnInit {
     advanced: boolean;
     maximizable: boolean;
     events: boolean;
+    displayPosition: boolean;
+
+    position: string;
 
     activeIndex = 0;
 
@@ -22,6 +24,8 @@ export class DialogDemoComponent implements OnInit {
         this.advanced = false;
         this.maximizable = false;
         this.events = false;
+        this.displayPosition = false;
+        this.position = '';
     }
 
     ngOnInit(): void {
@@ -50,6 +54,11 @@ export class DialogDemoComponent implements OnInit {
         this.advanced = true;
         this.maximizable = false;
         this.events = false;
+    }
+
+    showPositionDialog(position: string): void {
+        this.position = position;
+        this.displayPosition = true;
     }
 
     showEventsDialog(): void {

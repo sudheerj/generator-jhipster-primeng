@@ -7,6 +7,7 @@ import {RatingModule} from 'primeng/rating';
 import {ToastModule} from 'primeng/toast';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     RatingDemoComponent,
@@ -30,6 +31,7 @@ const PRIMENG_STATES = [
     declarations: [
         RatingDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>RatingDemoModule {}

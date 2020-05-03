@@ -41,7 +41,7 @@ export class RatingDemoComponent implements OnInit {
 
     handleCancel(event: any): void {
         this.messageService.add(
-            {severity: 'info', summary: 'Rating is Cancelled'});
+            {severity: 'info', summary: `Rating is Cancelled ${event}`});
     }
 
     ngOnInit(): void {

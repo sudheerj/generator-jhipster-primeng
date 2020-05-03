@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     SelectButtonDemoComponent,
@@ -29,6 +30,7 @@ const PRIMENG_STATES = [
     declarations: [
         SelectButtonDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>SelectButtonDemoModule {}

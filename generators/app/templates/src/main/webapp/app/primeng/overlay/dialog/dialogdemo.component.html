@@ -32,8 +32,8 @@
         </pe-step>
         <!-- Advanced features -->
         <pe-step label="Advanced">
-            <p-dialog header="PrimeNG" [(visible)]="advanced" modal="true" minWidth="100" minHeight="100" width="500"
-                      height="300" responsive="true" closable="true" dismissableMask="true" rtl="true">
+            <p-dialog header="PrimeNG" [(visible)]="advanced" modal="true" [style]="{width: '50vw'}"
+                      responsive="true" closable="true" dismissableMask="true" rtl="true">
                 <p>TPrimeNG is a collection of rich UI components for Angular. PrimeNG is a sibling of the popular
                     JavaServer Faces Component Suite, PrimeFaces.
                     All widgets are open source and free to use under MIT License.
@@ -51,7 +51,7 @@
         </pe-step>
         <!-- maximizable -->
         <pe-step label="Maximizable">
-            <p-dialog header="Godfather I" [(visible)]="maximizable" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70"
+            <p-dialog header="Godfather I" [(visible)]="maximizable" [modal]="true" [responsive]="true" [style]="{width: '50vw'}" [minY]="70"
                       [maximizable]="true" [baseZIndex]="10000">
                 <p>PrimeNG is a collection of rich UI components for Angular. PrimeNG is a sibling of the popular
                     JavaServer Faces Component Suite, PrimeFaces.
@@ -59,12 +59,44 @@
                     PrimeNG is developed by PrimeTek Informatics, a company with years of expertise in developing open
                     source UI components.</p>
                 <p-footer>
-                    <button type="button" pButton icon="pi pi-check" (click)="display=false" label="Yes"></button>
-                    <button type="button" pButton icon="pi pi-close" (click)="display=false" label="No"></button>
+                    <button type="button" pButton icon="pi pi-check" (click)="maximizable=false" label="Yes"></button>
+                    <button type="button" pButton icon="pi pi-close" (click)="maximizable=false" label="No"></button>
                 </p-footer>
             </p-dialog>
 
             <button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" label="Show"></button>
+        </pe-step>
+        <!-- Position -->
+        <pe-step label="Position">
+            <h3>Position</h3>
+            <div class="p-grid p-dir-col">
+                <div class="p-col">
+                    <button type="button" (click)="showPositionDialog('left')" pButton icon="pi pi-arrow-right" label="Left" class="ui-button-warning"></button>
+                    <button type="button" (click)="showPositionDialog('right')" pButton icon="pi pi-arrow-left" label="Right" class="ui-button-warning"></button>
+                </div>
+                <div class="p-col">
+                    <button type="button" (click)="showPositionDialog('topleft')" pButton icon="pi pi-arrow-down" label="TopLeft" class="ui-button-warning"></button>
+                    <button type="button" (click)="showPositionDialog('top')" pButton icon="pi pi-arrow-down" label="Top" class="ui-button-warning"></button>
+                    <button type="button" (click)="showPositionDialog('topright')" pButton icon="pi pi-arrow-down" label="TopRight" class="ui-button-warning"></button>
+                </div>
+                <div class="p-col">
+                    <button type="button" (click)="showPositionDialog('bottomleft')" pButton icon="pi pi-arrow-up" label="BottomLeft" class="ui-button-warning"></button>
+                    <button type="button" (click)="showPositionDialog('bottom')" pButton icon="pi pi-arrow-up" label="Top" class="ui-button-warning"></button>
+                    <button type="button" (click)="showPositionDialog('bottomright')" pButton icon="pi pi-arrow-up" label="BottomRight" class="ui-button-warning"></button>
+                </div>
+            </div>
+            <p-dialog header="Godfather I" [(visible)]="displayPosition" [position]="position" [modal]="true" [style]="{width: '50vw'}" [maximizable]="true" [baseZIndex]="10000"
+                      [draggable]="false" [resizable]="false">
+                <p>PrimeNG is a collection of rich UI components for Angular. PrimeNG is a sibling of the popular
+                    JavaServer Faces Component Suite, PrimeFaces.
+                    All widgets are open source and free to use under MIT License.
+                    PrimeNG is developed by PrimeTek Informatics, a company with years of expertise in developing open
+                    source UI components.</p>
+                <p-footer>
+                    <button type="button" pButton icon="pi pi-check" (click)="displayPosition=false" label="Yes"></button>
+                    <button type="button" pButton icon="pi pi-times" (click)="displayPosition=false" label="No" class="ui-button-secondary"></button>
+                </p-footer>
+            </p-dialog>
         </pe-step>
         <!-- Events -->
         <pe-step label="Events">

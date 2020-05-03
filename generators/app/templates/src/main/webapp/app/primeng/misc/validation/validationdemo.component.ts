@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, MessageService, SelectItem} from 'primeng/api';
+import { MessageService, SelectItem } from 'primeng/api';
 import {Validators, FormControl, FormGroup, FormBuilder} from '@angular/forms';
 
 @Component({
@@ -43,7 +42,7 @@ export class ValidationDemoComponent implements OnInit {
 
     onSubmit(value: string): void {
         this.submitted = true;
-        this.messageService.add({severity: 'info', summary: 'Success', detail: 'Form Submitted'});
+        this.messageService.add({severity: 'info', summary: 'Success', detail: `Form Submitted with value ${value}`});
     }
 
     get diagnostic(): string {

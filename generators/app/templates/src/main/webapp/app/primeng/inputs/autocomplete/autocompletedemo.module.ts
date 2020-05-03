@@ -9,6 +9,7 @@ import {ToastModule} from 'primeng/toast';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {CountryService} from './service/country.service';
+import {MessageService} from 'primeng/api';
 
 import {
     AutocompleteDemoComponent,
@@ -32,7 +33,7 @@ const PRIMENG_STATES = [
     declarations: [
         AutocompleteDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, CountryService, MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>AutoCompleteDemoModule {}

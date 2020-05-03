@@ -7,6 +7,7 @@ import {ListboxModule} from 'primeng/listbox';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     ListboxDemoComponent,
@@ -30,6 +31,7 @@ const PRIMENG_STATES = [
     declarations: [
         ListboxDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>ListboxDemoModule {}

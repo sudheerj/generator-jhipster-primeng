@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {MessageService, TreeNode, MenuItem} from 'primeng/api';
 import {TreeNodeService} from './service/treenode.service';
 
@@ -72,8 +71,8 @@ export class TreeTableDemoComponent implements OnInit {
         this.nodeService.getTouristPlaces().subscribe((places: any) => this.lazyTreeTable = places.data);
 
         this.items = [
-            {label: 'View', icon: 'fa fa-search', command: event => this.viewNode(this.selectedPlace)},
-            {label: 'Delete', icon: 'fa fa-close', command: event => this.deleteNode(this.selectedPlace)}
+            {label: 'View', icon: 'fa fa-search', command: () => this.viewNode(this.selectedPlace)},
+            {label: 'Delete', icon: 'fa fa-close', command: () => this.deleteNode(this.selectedPlace)}
         ];
 
         this.cols = [
@@ -93,7 +92,7 @@ export class TreeTableDemoComponent implements OnInit {
     }
 
     onRowDblclick(event: any): void {
-        this.messageService.add({severity: 'info', summary: 'Node Selected', detail: 'The TreeTable row double click is invoked'});
+        this.messageService.add({severity: 'info', summary: 'Node Selected', detail: `The TreeTable row double click is invoked: ${event}`});
     }
 
     nodeExpand(event: any): void {

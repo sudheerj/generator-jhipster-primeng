@@ -8,6 +8,7 @@ import {PanelModule} from 'primeng/panel';
 import {ToastModule} from 'primeng/toast';
 import {DocumentService} from './service/document.service';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     DragdropDemoComponent,
@@ -31,7 +32,7 @@ const PRIMENG_STATES = [
     declarations: [
         DragdropDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, DocumentService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, DocumentService, MessageService],
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

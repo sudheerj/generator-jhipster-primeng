@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
 import Country from './country';
-import Browser from "../../carousel/service/browser";
 
 @Injectable()
 export class CountryService {

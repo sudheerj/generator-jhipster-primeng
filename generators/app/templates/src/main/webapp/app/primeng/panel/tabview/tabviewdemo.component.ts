@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import {MessageService, MenuItem} from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 @Component({
     selector: 'jhi-tabview',

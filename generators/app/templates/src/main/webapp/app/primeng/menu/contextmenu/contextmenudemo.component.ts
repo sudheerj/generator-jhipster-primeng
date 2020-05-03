@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {MenuItem, MessageService} from 'primeng/api';
 import {EmployeeService} from './service/employee.service';
 import Employee from './service/employee';
@@ -130,8 +129,8 @@ export class ContextMenuDemoComponent implements OnInit {
         ];
 
         this.tableItems = [
-            {label: 'View', icon: 'fa fa-search', command: event => this.viewEmployee(this.selectedEmployee)},
-            {label: 'Delete', icon: 'fa fa-close', command: event => this.deleteEmployee(this.selectedEmployee)},
+            {label: 'View', icon: 'fa fa-search', command: () => this.viewEmployee(this.selectedEmployee)},
+            {label: 'Delete', icon: 'fa fa-close', command: () => this.deleteEmployee(this.selectedEmployee)},
             {label: 'Help', icon: 'fa fa-close', url: 'https://www.opm.gov/policy-data-oversight/worklife/employee-assistance-programs/'}
         ];
     }

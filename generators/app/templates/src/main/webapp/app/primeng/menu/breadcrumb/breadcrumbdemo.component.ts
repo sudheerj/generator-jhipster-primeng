@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {MenuItem, MessageService} from 'primeng/api';
 
 @Component({
@@ -47,7 +46,7 @@ export class BreadcrumbDemoComponent implements OnInit {
         this.items.push({label: 'LED Flat-Panel', url: 'https://en.wikipedia.org/wiki/LED_display'});
 
         this.home = {
-            label: 'Home', icon: 'pi pi-home', command: event => {
+            label: 'Home', icon: 'pi pi-home', command: () => {
                 this.messageService.add({severity: 'info', summary: 'Home'});
             }
         };

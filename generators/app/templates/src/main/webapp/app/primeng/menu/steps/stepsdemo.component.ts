@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {MenuItem, MessageService} from 'primeng/api';
 
 @Component({

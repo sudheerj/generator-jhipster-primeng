@@ -12,6 +12,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import {ButtonModule} from 'primeng/button';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     ToolbarDemoComponent,
@@ -38,6 +39,7 @@ const PRIMENG_STATES = [
     declarations: [
         ToolbarDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>ToolbarDemoModule {}

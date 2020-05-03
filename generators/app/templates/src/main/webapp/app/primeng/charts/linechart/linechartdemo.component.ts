@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import { MessageService } from 'primeng/api';
-import {BrowserService} from "../../data/dataview/service/browser.service";
 
 @Component({
     selector: 'jhi-linechart',
-    templateUrl: '../../charts/linechart/linechartdemo.component.html',
+    templateUrl: './linechartdemo.component.html',
     styles: []
 })
 export class LinechartDemoComponent implements OnInit {

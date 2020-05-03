@@ -8,6 +8,7 @@ import {BrowserService} from './service/browser.service';
 import {CarouselModule} from 'primeng/carousel';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     CarouselDemoComponent,
@@ -30,7 +31,7 @@ const PRIMENG_STATES = [
     declarations: [
         CarouselDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService, MessageService],
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -7,6 +7,7 @@ import {InputSwitchModule} from 'primeng/inputswitch';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     InputSwitchDemoComponent,
@@ -30,6 +31,7 @@ const PRIMENG_STATES = [
     declarations: [
         InputSwitchDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>InputSwitchDemoModule {}

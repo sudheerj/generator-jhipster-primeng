@@ -1,6 +1,5 @@
 import {Component, OnInit } from '@angular/core';
 import {MessageService, SelectItem} from 'primeng/api';
-import {CountryService} from "../select/service/country.service";
 
 @Component({
     selector: 'jhi-selectbutton',
@@ -50,7 +49,7 @@ export class SelectButtonDemoComponent implements OnInit {
 
     handleChange(event: any): void {
         this.messageService.add(
-            {severity: 'info', summary: 'Library name is changed'});
+            {severity: 'info', summary: `Library name is changed ${event}`});
     }
 
     onChangeStep(label: string): void {

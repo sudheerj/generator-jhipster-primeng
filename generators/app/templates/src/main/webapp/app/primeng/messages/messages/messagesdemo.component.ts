@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {Message, MessageService} from 'primeng/api';
 
 @Component({
@@ -9,7 +8,6 @@ import {Message, MessageService} from 'primeng/api';
 })
 export class MessagesDemoComponent implements OnInit {
     messages: Message[] = [];
-    msgs: Message[] = [];
     activeIndex = 0;
 
     constructor(private messageService: MessageService) {}
@@ -55,9 +53,8 @@ export class MessagesDemoComponent implements OnInit {
     }
 
     onChangeStep(label: string): void {
-        this.msgs.length = 0;
         this.clearMessages();
-        this.msgs.push({severity: 'info', summary: label});
+        this.messageService.add({severity: 'info', summary: label});
     }
 
     clearMessages(): void {

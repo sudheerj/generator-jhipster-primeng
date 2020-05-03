@@ -10,6 +10,7 @@ import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {ScoreService} from './service/score.service';
+import {MessageService} from 'primeng/api';
 
 import {
     OverlayPanelDemoComponent,
@@ -34,7 +35,7 @@ const PRIMENG_STATES = [
     declarations: [
         OverlayPanelDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, ScoreService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, ScoreService, MessageService],
 
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

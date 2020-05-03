@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import { MessageService } from 'primeng/api';
 
-// tslint:disable-next-line
-declare var google: any;
+declare const google: any;
 
 @Component({
     selector: 'jhi-gmap',
@@ -38,7 +36,7 @@ export class GmapDemoComponent implements OnInit {
         this.dialogVisible = false;
         this.markerTitle = '';
         this.map = {};
-        this.selectedPosition = {};
+        this.selectedPosition = null;
         this.infoWindow = {};
         this.draggable = false;
     }

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 
 @Component({
     selector: 'jhi-radarchart',
-    templateUrl: '../../charts/radarchart/radarchartdemo.component.html',
+    templateUrl: './radarchartdemo.component.html',
     styles: []
 })
 export class RadarchartDemoComponent implements OnInit {

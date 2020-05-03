@@ -24,7 +24,7 @@
         <!-- Events -->
         <pe-step label="Events" [styleClass]="'multicheckbox-height'">
             <h3>Events</h3>
-            <p-spinner name="minmax" size="40" [(ngModel)]="eventsinput" (onChange)="onChange()"
+            <p-spinner name="minmax" size="40" [(ngModel)]="eventsinput" (onChange)="onChange($event)"
                        placeholder="Enter your input or use spinner controls"></p-spinner>
         </pe-step>
 

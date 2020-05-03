@@ -542,7 +542,7 @@
     <!-- Row grouping -->
     <pe-step label="Row grouping">
         <h3 class="first">Subheader</h3>
-        <p-table [value]="browsers"  sortMode="single" (onSort)="onSort()">
+        <p-table [value]="browsers"  sortMode="single" (onSort)="onSort($event)">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Engine</th>
@@ -566,7 +566,7 @@
         </p-table>
 
         <h3>Rowspan</h3>
-        <p-table [value]="browsers"  sortMode="single" (onSort)="onSort()">
+        <p-table [value]="browsers"  sortMode="single" (onSort)="onSort($event)">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Browser</th>

@@ -6,6 +6,7 @@ import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.modul
 import {ToastModule} from 'primeng/toast';
 import {GalleriaModule} from 'primeng/galleria';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     GalleriaDemoComponent,
@@ -29,6 +30,7 @@ const PRIMENG_STATES = [
     declarations: [
         GalleriaDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>GalleriaDemoModule {}

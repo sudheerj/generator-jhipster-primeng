@@ -17,6 +17,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {ToastModule} from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import {BrowserService} from './service/browser.service';
+import {MessageService} from 'primeng/api';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {
@@ -51,7 +52,7 @@ const PRIMENG_STATES = [
     declarations: [
         TableDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, BrowserService, MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>TableDemoModule {}

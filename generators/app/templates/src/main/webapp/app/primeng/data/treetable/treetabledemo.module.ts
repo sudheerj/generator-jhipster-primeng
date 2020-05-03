@@ -10,6 +10,7 @@ import {TreeTableModule} from 'primeng/treetable';
 import {ButtonModule} from 'primeng/button';
 import {ContextMenuModule} from 'primeng/contextmenu';
 import {ToastModule} from 'primeng/toast';
+import {MessageService} from 'primeng/api';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
@@ -40,7 +41,7 @@ const PRIMENG_STATES = [
     declarations: [
         TreeTableDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, TreeNodeService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, TreeNodeService, MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>TreeTableDemoModule {}

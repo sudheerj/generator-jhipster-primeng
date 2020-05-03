@@ -214,11 +214,11 @@ module.exports = class extends BaseGenerator {
             );
         };
 
-        const primengResources = `\n@import "~primeicons/primeicons.css";\n@import "~primeflex/primeflex.css";\n@import "~primeicons/primeicons.css";\n@import "~primeng/resources/primeng.min.css";\n@import "~primeng-extensions/resources/primeng-extensions.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";`;
+        const primengResources = `\n@import "~primeicons/primeicons.css";\n@import "~primeflex/primeflex.css";\n@import "~primeicons/primeicons.css";\n@import "~primeng/resources/primeng.min.css";\n@import "~primeng-extensions/resources/primeng-extensions.min.css";\n @import "~primeng/resources/themes/${themeName}/theme.css";\n @import "~quill/dist/quill.core.css";\n @import "~quill/dist/quill.snow.css";\n @import "~@fullcalendar/core/main.css";\n  @import "~@fullcalendar/daygrid/main.css";\n @import "~@fullcalendar/timegrid/main.css";`;
         const primengRootResources = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/${CONSTANTS.FONTAWESOME_VERSION}/css/font-awesome.min.css">
                                       <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script>
                                       <script src="https://cdn.quilljs.com/${CONSTANTS.QUILL_VERSION}/quill.js"></script>  
-                                      <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyA6Ar0UymhiklJBzEPLKKn2QHwbjdz3XV0" ></script>\n`;
+                                      <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=" ></script>\n`;
 
         if (this.copyExternalAssetsInWebpack) {
             this.copyExternalAssetsInWebpack('primeng', 'primeng');

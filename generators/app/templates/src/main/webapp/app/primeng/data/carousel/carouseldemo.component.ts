@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
 import {MessageService} from 'primeng/api';

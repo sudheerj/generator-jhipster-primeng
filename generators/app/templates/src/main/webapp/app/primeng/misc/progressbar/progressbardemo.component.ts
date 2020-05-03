@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, MessageService} from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import {Subscription, interval} from 'rxjs';
 import { take } from 'rxjs/operators';
 

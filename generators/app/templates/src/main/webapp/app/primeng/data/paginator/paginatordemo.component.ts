@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {MessageService} from 'primeng/api';
-import {VCardService} from "../orgchart/service/vcard.service";
 
 @Component({
     selector: 'jhi-paginator',

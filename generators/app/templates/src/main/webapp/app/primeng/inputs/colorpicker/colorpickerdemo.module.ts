@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {ColorPickerModule} from 'primeng/colorpicker';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     ColorpickerDemoComponent,
@@ -28,6 +29,7 @@ const PRIMENG_STATES = [
     declarations: [
         ColorpickerDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>ColorPickerDemoModule {}

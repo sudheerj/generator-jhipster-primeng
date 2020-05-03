@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {MessageService, TreeNode, MenuItem} from 'primeng/api';
 import {Tree} from 'primeng';
 import {TreeNodeService} from './service/treenode.service';
@@ -33,7 +32,7 @@ export class TreeDemoComponent implements OnInit {
 
     selectMultiplePlaces: TreeNode[];
 
-    selectedTour: TreeNode[];
+    selectedTour: TreeNode;
 
     selectedTouristPlace: TreeNode[];
 
@@ -51,10 +50,10 @@ export class TreeDemoComponent implements OnInit {
         this.dragDropTreeOne = [];
         this.dragDropTreeTwo = [];
         this.programmaticTree = [];
-        this.selectedPlace = {} as TreeNode;
+        this.selectedPlace = {} as any;
         this.selectedPlaces = [];
         this.selectMultiplePlaces = [];
-        this.selectedTour = [];
+        this.selectedTour = {} as any;
         this.selectedTouristPlace = [];
         this.items = [];
         this.expandingTree = {} as Tree;
@@ -88,8 +87,8 @@ export class TreeDemoComponent implements OnInit {
         ];
 
         this.items = [
-            {label: 'View', icon: 'fa fa-search', command: (event: any) => this.viewFile(this.selectedTouristPlace)},
-            {label: 'Unselect', icon: 'fa fa-close', command: (event: any) => this.unselectFile()}
+            {label: 'View', icon: 'fa fa-search', command: () => this.viewFile(this.selectedTouristPlace)},
+            {label: 'Unselect', icon: 'fa fa-close', command: () => this.unselectFile()}
         ];
     }
 

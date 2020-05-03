@@ -41,7 +41,7 @@
                 </div>
                 <div class="ui-grid-col-4">
             <span class="ui-message ui-messages-error ui-corner-all"
-                  *ngIf="!registrationform.controls['password'].valid&&registrationform.controls['password'].dirty">
+                  *ngIf="!registrationform.controls['password'].valid&&registrationform.controls['password'].dirty && registrationform.controls['password'].errors">
                                 <i class="fa fa-close"></i>
                                 <span *ngIf="registrationform.controls['password'].errors['required']">Password is required</span>
                                 <span *ngIf="registrationform.controls['password'].errors['minlength']">Must be longer than 8 characters</span>
@@ -70,7 +70,7 @@
                     <span class="label-width">Gender *:</span>
                 </div>
                 <div class="ui-grid-col-2">
-                    <p-dropdown [options]="genders" formControlName="gender" [autoWidth]="false"></p-dropdown>
+                    <p-dropdown [options]="genders" formControlName="gender"></p-dropdown>
                 </div>
                 <div class="ui-grid-col-2">
             <span class="ui-message ui-messages-error ui-corner-all"

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {MessageService} from 'primeng/api';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
 import {EventService} from './service/event.service';
 
 @Component({
@@ -27,6 +29,7 @@ export class FullCalendarDemoComponent implements OnInit {
         this.eventService.getEvents().subscribe((events: any) => {this.events = events.data; });
 
         this.options = {
+            plugins:[ dayGridPlugin, timeGridPlugin, interactionPlugin ],
             defaultDate: '2017-02-01',
             header: {
                 left: 'prev,next',

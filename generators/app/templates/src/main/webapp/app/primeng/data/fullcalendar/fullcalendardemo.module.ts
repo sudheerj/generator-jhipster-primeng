@@ -15,6 +15,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
+import {MessageService} from 'primeng/api';
 
 import {EventService} from './service/event.service';
 
@@ -48,7 +49,7 @@ const PRIMENG_STATES = [
         WizardModule,
         RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, EventService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, EventService, MessageService],
     declarations: [
         FullCalendarDemoComponent
     ],

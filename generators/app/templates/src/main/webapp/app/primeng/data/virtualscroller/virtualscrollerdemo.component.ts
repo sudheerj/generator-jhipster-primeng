@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
-import {MessageService, SelectItem, LazyLoadEvent} from 'primeng/api';
+import { MessageService, SelectItem } from 'primeng/api';
 
 @Component({
     selector: 'jhi-virtualscroller',

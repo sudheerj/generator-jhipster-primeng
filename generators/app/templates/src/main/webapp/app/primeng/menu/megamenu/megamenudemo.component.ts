@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, MessageService} from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 @Component({
     selector: 'jhi-megamenu',
@@ -9,7 +8,7 @@ import {MenuItem, MessageService} from 'primeng/api';
 })
 export class MegaMenuDemoComponent implements OnInit {
     activeIndex = 0;
-    items: MenuItem[];
+    items: any;
 
     constructor(private messageService: MessageService) {
         this.items = [];

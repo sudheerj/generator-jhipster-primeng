@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
-import {MenuItem, MessageService, ConfirmationService} from 'primeng/api';
+import { MessageService, ConfirmationService } from 'primeng/api';
 
 @Component({
     selector: 'jhi-confirmdialog',

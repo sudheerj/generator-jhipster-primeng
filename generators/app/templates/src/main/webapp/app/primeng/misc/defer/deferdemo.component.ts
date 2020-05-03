@@ -2,7 +2,6 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import {MessageService} from 'primeng/api';
 import {BrowserService} from './service/browser.service';
 import Browser from './service/browser';
-import { JhiLanguageService } from 'ng-jhipster';
 
 @Component({
     selector: 'jhi-defer',

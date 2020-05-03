@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {MessageService} from 'primeng/api';
+import { Component, ViewEncapsulation} from '@angular/core';
+import { MessageService } from 'primeng/api';
 
 @Component({
     templateUrl: './scrollpaneldemo.component.html',

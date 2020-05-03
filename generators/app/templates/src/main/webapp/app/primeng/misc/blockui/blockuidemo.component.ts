@@ -1,5 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
+import { Component } from '@angular/core';
 import {MessageService} from 'primeng/api';
 
 @Component({

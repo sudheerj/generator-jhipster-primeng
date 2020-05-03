@@ -9,6 +9,7 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
 import {APP_BASE_HREF} from '@angular/common';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     ConfirmDialogDemoComponent,
@@ -33,7 +34,7 @@ const PRIMENG_STATES = [
     declarations: [
         ConfirmDialogDemoComponent
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, ConfirmationService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, ConfirmationService, MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>ConfirmDialogDemoModule {}

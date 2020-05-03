@@ -6,6 +6,7 @@ import {LightboxModule} from 'primeng/lightbox';
 import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     LightboxDemoComponent,
@@ -28,6 +29,7 @@ const PRIMENG_STATES = [
     declarations: [
         LightboxDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>LightboxDemoModule {}

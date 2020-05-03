@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 
 @Component({
     selector: 'jhi-barchart',
-    templateUrl: '../../charts/barchart/barchartdemo.component.html',
+    templateUrl: './barchartdemo.component.html',
     styles: []
 })
 export class BarchartDemoComponent implements OnInit {

@@ -36,13 +36,13 @@
             <h3>Select your favourite Framework</h3>
             <div class="ui-g">
                 <div class="ui-g-12">
-                    <p-radioButton name="group3" value="Angular" label="Angular" [(ngModel)]="eventsSelection" (onClick)="selectFramework()"></p-radioButton>
+                    <p-radioButton name="group3" value="Angular" label="Angular" [(ngModel)]="eventsSelection" (onClick)="selectFramework($event)"></p-radioButton>
                 </div>
                 <div class="ui-g-12">
-                    <p-radioButton name="group3" value="React" label="React" [(ngModel)]="eventsSelection" (onClick)="selectFramework()"></p-radioButton>
+                    <p-radioButton name="group3" value="React" label="React" [(ngModel)]="eventsSelection" (onClick)="selectFramework($event)"></p-radioButton>
                 </div>
                 <div class="ui-g-12">
-                    <p-radioButton name="group3" value="Polymer" label="Polymer" [(ngModel)]="eventsSelection" (onClick)="selectFramework()"></p-radioButton>
+                    <p-radioButton name="group3" value="Polymer" label="Polymer" [(ngModel)]="eventsSelection" (onClick)="selectFramework($event)"></p-radioButton>
                 </div>
             </div>
         </pe-step>

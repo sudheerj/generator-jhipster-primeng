@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 
 @Component({
     selector: 'jhi-piechart',
-    templateUrl: '../../charts/piechart/piechartdemo.component.html',
+    templateUrl: './piechartdemo.component.html',
     styles: []
 })
 export class PiechartDemoComponent implements OnInit {

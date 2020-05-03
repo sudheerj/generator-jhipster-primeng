@@ -8,6 +8,7 @@ import {MegaMenuModule} from 'primeng/megamenu';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     MegaMenuDemoComponent,
@@ -33,6 +34,7 @@ const PRIMENG_STATES = [
     declarations: [
         MegaMenuDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>MegaMenuDemoModule {}

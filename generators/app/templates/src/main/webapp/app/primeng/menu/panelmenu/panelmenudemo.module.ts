@@ -6,6 +6,7 @@ import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.modul
 import {ToastModule} from 'primeng/toast';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     PanelMenuDemoComponent,
@@ -29,6 +30,7 @@ const PRIMENG_STATES = [
     declarations: [
         PanelMenuDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>PanelMenuDemoModule {}

@@ -5,6 +5,7 @@ import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.modul
 import {ButtonModule} from 'primeng/button';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import {ToastModule} from 'primeng/toast';
+import {MessageService} from 'primeng/api';
 
 import {
     ButtonDemoComponent,
@@ -26,6 +27,7 @@ const PRIMENG_STATES = [
     declarations: [
         ButtonDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>ButtonDemoModule {}

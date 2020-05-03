@@ -4,8 +4,8 @@ import { RouterModule } from '@angular/router';
 import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {PaginatorModule} from 'primeng/paginator';
 import {ToastModule} from 'primeng/toast';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     PaginatorDemoComponent,
@@ -27,6 +27,7 @@ const PRIMENG_STATES = [
     declarations: [
         PaginatorDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>PaginatorDemoModule {}

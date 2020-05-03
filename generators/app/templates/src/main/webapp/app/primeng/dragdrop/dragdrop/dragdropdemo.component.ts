@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import {DocumentService} from './service/document.service';
 import {Document} from './service/document';
 import {MessageService} from 'primeng/api';
-import {BrowserService} from "../../data/virtualscroller/service/browser.service";
 
 @Component({
     selector: 'jhi-dragdrop',
@@ -46,6 +44,7 @@ export class DragdropDemoComponent implements OnInit {
 
     dragStart(event: any, doc: Document): void {
         this.draggedDoc = doc;
+        this.messageService.add({severity: 'info', summary: event});
     }
 
     drop(event: any): void {
@@ -56,10 +55,12 @@ export class DragdropDemoComponent implements OnInit {
             this.availableDocs = this.availableDocs.filter((e: Document) => e.id !== this.draggedDoc.id);
             this.draggedDoc = {} as Document;
         }
+        this.messageService.add({severity: 'info', summary: event});
     }
 
     dragEnd(event: any): void {
         this.draggedDoc = {} as Document;
+        this.messageService.add({severity: 'info', summary: event});
     }
 
     onChangeStep(label: string): void {

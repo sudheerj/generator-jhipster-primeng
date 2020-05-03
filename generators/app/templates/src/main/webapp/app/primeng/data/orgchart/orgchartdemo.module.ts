@@ -5,6 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {APP_BASE_HREF} from '@angular/common';
+import {MessageService} from 'primeng/api';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {OrganizationChartModule} from 'primeng/organizationchart';
@@ -35,7 +36,7 @@ const PRIMENG_STATES = [
         DialogModule,
         RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
     ],
-    providers: [{provide: APP_BASE_HREF, useValue: '/'}, VCardService],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, VCardService, MessageService],
     declarations: [
         OrgChartDemoComponent
     ],

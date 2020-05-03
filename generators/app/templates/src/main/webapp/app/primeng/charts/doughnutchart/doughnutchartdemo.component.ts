@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { JhiLanguageService } from 'ng-jhipster';
 
 @Component({
     selector: 'jhi-piechart',
-    templateUrl: '../../charts/doughnutchart/doughnutchartdemo.component.html',
+    templateUrl: './doughnutchartdemo.component.html',
     styles: []
 })
 export class DoughnutchartDemoComponent implements OnInit {

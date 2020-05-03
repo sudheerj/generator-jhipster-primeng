@@ -23,7 +23,7 @@ export class RadioButtonDemoComponent implements OnInit {
     }
 
     selectFramework(e: any): void {
-        this.messageService.add({severity: 'info', summary: this.defaultSelection + ' is selected as SPA technology'});
+        this.messageService.add({severity: 'info', summary: this.defaultSelection + ' is selected as SPA technology', detail: e});
     }
 
     onChangeStep(label: string): void {

@@ -7,6 +7,7 @@ import {ToastModule} from 'primeng/toast';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {ButtonModule} from 'primeng/button';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     TabMenuDemoComponent,
@@ -36,6 +37,7 @@ const PRIMENG_STATES = [
         OverviewComponent,
         DownloadsComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>TabMenuDemoModule {}

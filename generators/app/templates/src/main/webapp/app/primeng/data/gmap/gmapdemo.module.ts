@@ -2,7 +2,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
-import {APP_BASE_HREF} from '@angular/common';
 
 import { <%= angularXAppName %>SharedModule } from '../../../shared/shared.module';
 import {GMapModule} from 'primeng/gmap';
@@ -11,6 +10,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MessageService} from 'primeng/api';
 
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 
@@ -40,6 +40,7 @@ const PRIMENG_STATES = [
     declarations: [
         GmapDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>GmapDemoModule {}

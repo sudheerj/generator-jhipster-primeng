@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     RadioButtonDemoComponent,
@@ -28,6 +29,7 @@ const PRIMENG_STATES = [
     declarations: [
         RadioButtonDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>RadioButtonDemoModule {}

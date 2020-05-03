@@ -6,6 +6,7 @@ import {CodeHighlighterModule} from 'primeng/codehighlighter';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
 import { RouterModule } from '@angular/router';
+import {MessageService} from 'primeng/api';
 
 import {
     ScrollPanelDemoComponent,
@@ -29,6 +30,7 @@ const PRIMENG_STATES = [
     declarations: [
         ScrollPanelDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 

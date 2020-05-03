@@ -7,6 +7,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {TriStateCheckboxModule} from 'primeng/tristatecheckbox';
 import {ToastModule} from 'primeng/toast';
 import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
 
 import {
     CheckboxDemoComponent,
@@ -30,6 +31,7 @@ const PRIMENG_STATES = [
     declarations: [
         CheckboxDemoComponent
     ],
+    providers: [MessageService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class <%= angularXAppName %>CheckboxDemoModule {}
