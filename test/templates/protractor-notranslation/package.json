@@ -27,7 +27,7 @@
     "ngx-infinite-scroll": "0.5.1",
     "reflect-metadata": "0.1.10",
     "rxjs": "5.5.6",
-    "swagger-ui": "2.2.10",
+    "swagger-ui": "3.25.1",
     "tether": "1.4.0",
     "zone.js": "0.8.19"
   },
