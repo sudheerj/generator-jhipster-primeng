@@ -1,8 +1,10 @@
 # generator-jhipster-primeng
+
 > Click :star:if you like the project. Pull Requests are highly appreciated. Follow me [@SudheerJonna](https://twitter.com/SudheerJonna) for technical updates.
 
 [![NPM version][npm-image]][npm-url] [![npm](https://img.shields.io/npm/dt/generator-jhipster-primeng.svg)]() ![Crates.io](https://img.shields.io/github/license/mashape/apistatus.svg)
-> JHipster module, Generate PrimeNG application with 90+ components and their features 
+
+> JHipster module, Generate PrimeNG application with 90+ components and their features
 
 <div align="center">
   <a href="http://jhipster.github.io">
@@ -17,6 +19,8 @@
 
 This is a [JHipster](http://jhipster.github.io/) module, that is meant to be used in a JHipster application.
 
+This is the change
+
 The minimum required version of JHipster is **>=6.8.0**
 
 This module is used to generate components, using [PrimeNG](https://www.primefaces.org/primeng).
@@ -25,7 +29,7 @@ This module is used to generate components, using [PrimeNG](https://www.primefac
 
 As this is a [JHipster](http://jhipster.github.io/) module, we expect you have JHipster and its related tools already installed:
 
-- [Installing JHipster](https://jhipster.github.io/installation.html)
+-   [Installing JHipster](https://jhipster.github.io/installation.html)
 
 # Installation
 
@@ -130,12 +134,14 @@ docker run -it --rm -v $PWD:/home/jhipster/app jhipster-generator-primeng /bin/b
     
     **Server: ./mvnw**
     
- 6. Open application in the browser using http://localhost:9000    
+ 6. Open application in the browser using http://localhost:9000
 
 # What next?
+
 Please check the road map list https://github.com/sudheerj/generator-jhipster-primeng/wiki/Roadmap. If you need a new feature please raise a github request for the discussion.
 
 # Blog
+
 http://sudheerjonna.com/blog/2017/10/09/jhipster-meets-primeng-or-primeng-meets-jhipster/
 
 # Usage
